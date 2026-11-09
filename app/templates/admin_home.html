@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Elever – Hemskola{% endblock %}
+{% block mainclass %}wide{% endblock %}
+{% block content %}
+<h1>Elever</h1>
+{% for st in students %}
+<div class="card">
+  <div class="row" style="justify-content:space-between;align-items:center">
+    <h2 style="margin:0"><a href="/admin/student/{{ st.u.id }}">{{ st.u.display_name }}</a>
+      {% if not st.u.active %}<span class="pill off">avstängd</span>{% endif %}</h2>
+    <span class="muted">Idag: {{ st.today }} svar · 🔥 {{ st.streak }} {{ 'dag' if st.streak == 1 else 'dagar' }} i rad</span>
+  </div>
+  <table>
+    <tr><th>Ämne</th><th>Nivå</th><th>Senaste 7 dagarna</th><th>Senast aktiv</th></tr>
+    {% for s in st.subjects %}
+    <tr>
+      <td>{{ label(s.subject) }}</td>
+      <td>{% if s.level %}<strong>{{ s.level }}</strong> <span class="muted">({{ LEVEL_HINTS[s.level] }})</span>{% else %}<span class="muted">inte testad</span>{% endif %}</td>
+      <td>{% if s.n7 %}{{ s.n7 }} svar, {{ s.acc7 }} % rätt{% else %}<span class="muted">–</span>{% endif %}</td>
+      <td>{{ s.last|dt }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% else %}
+<div class="card">Inga elever än. <a href="/admin/users">Skapa en elev</a>.</div>
+{% endfor %}
+{% endblock %}

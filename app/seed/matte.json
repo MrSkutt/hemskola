@@ -1,0 +1,487 @@
+[
+ {
+  "subject": "matte",
+  "topic": "Huvudräkning",
+  "level": 1,
+  "type": "text",
+  "question": "Vad är 47 + 38?\nSvara endast med talet.",
+  "answer": "85",
+  "explanation": "47 + 38: ta 47 + 40 = 87 och dra bort 2 = 85."
+ },
+ {
+  "subject": "matte",
+  "topic": "Huvudräkning",
+  "level": 1,
+  "type": "text",
+  "question": "Vad är 100 − 64?\nSvara endast med talet.",
+  "answer": "36",
+  "explanation": "64 + 36 = 100, alltså är 100 − 64 = 36."
+ },
+ {
+  "subject": "matte",
+  "topic": "Multiplikation",
+  "level": 1,
+  "type": "text",
+  "question": "Vad är 7 · 8?\nSvara endast med talet.",
+  "answer": "56",
+  "explanation": "7 · 8 = 56. Tänk 7 · 8 = 5 · 8 + 2 · 8 = 40 + 16."
+ },
+ {
+  "subject": "matte",
+  "topic": "Division",
+  "level": 1,
+  "type": "text",
+  "question": "Vad är 72 : 9?\nSvara endast med talet.",
+  "answer": "8",
+  "explanation": "9 · 8 = 72, så 72 : 9 = 8."
+ },
+ {
+  "subject": "matte",
+  "topic": "Bråk",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket bråk är störst?",
+  "options": [
+   "1/2",
+   "1/4",
+   "1/8",
+   "1/3"
+  ],
+  "answer": "1/2",
+  "explanation": "Ju större nämnare, desto mindre delar. Halv är störst av dessa."
+ },
+ {
+  "subject": "matte",
+  "topic": "Textuppgifter",
+  "level": 1,
+  "type": "text",
+  "question": "Lisa har 3 paket med 12 kulor i varje. Hur många kulor har hon?\nSvara endast med talet.",
+  "answer": "36",
+  "explanation": "3 · 12 = 36."
+ },
+ {
+  "subject": "matte",
+  "topic": "Tid",
+  "level": 1,
+  "type": "text",
+  "question": "Filmen börjar 18:45 och är 1 timme och 30 minuter lång. Hur dags slutar den?\nSkriv t.ex. 19:15.",
+  "answer": [
+   "20:15",
+   "20.15"
+  ],
+  "explanation": "18:45 + 1 h = 19:45, plus 30 min = 20:15."
+ },
+ {
+  "subject": "matte",
+  "topic": "Geometri",
+  "level": 1,
+  "type": "text",
+  "question": "En rektangel är 6 cm lång och 4 cm bred. Hur lång är omkretsen i cm?\nSvara endast med talet.",
+  "answer": "20",
+  "explanation": "Omkrets = 6 + 4 + 6 + 4 = 20."
+ },
+ {
+  "subject": "matte",
+  "topic": "Tal",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket av talen är ett jämnt tal?",
+  "options": [
+   "17",
+   "23",
+   "38",
+   "41"
+  ],
+  "answer": "38",
+  "explanation": "Jämna tal slutar på 0, 2, 4, 6 eller 8."
+ },
+ {
+  "subject": "matte",
+  "topic": "Avrundning",
+  "level": 1,
+  "type": "text",
+  "question": "Avrunda 463 till närmaste tiotal.\nSvara endast med talet.",
+  "answer": "460",
+  "explanation": "Entalssiffran 3 är mindre än 5, så vi avrundar nedåt till 460."
+ },
+ {
+  "subject": "matte",
+  "topic": "Decimaltal",
+  "level": 2,
+  "type": "text",
+  "question": "Vad är 2,5 + 1,75?\nSvara endast med talet.",
+  "answer": "4,25",
+  "explanation": "Ställ upp med decimalkomma under varandra: 2,50 + 1,75 = 4,25."
+ },
+ {
+  "subject": "matte",
+  "topic": "Decimaltal",
+  "level": 2,
+  "type": "text",
+  "question": "Vad är 3,2 · 10?\nSvara endast med talet.",
+  "answer": "32",
+  "explanation": "Att multiplicera med 10 flyttar kommat ett steg åt höger."
+ },
+ {
+  "subject": "matte",
+  "topic": "Bråk",
+  "level": 2,
+  "type": "text",
+  "question": "Förkorta bråket 6/8 så mycket som möjligt.\nSkriv t.ex. 1/2.",
+  "answer": "3/4",
+  "explanation": "Dela täljare och nämnare med 2: 6/8 = 3/4."
+ },
+ {
+  "subject": "matte",
+  "topic": "Procent",
+  "level": 2,
+  "type": "text",
+  "question": "Hur mycket är 50 % av 240?\nSvara endast med talet.",
+  "answer": "120",
+  "explanation": "50 % är hälften. Hälften av 240 är 120."
+ },
+ {
+  "subject": "matte",
+  "topic": "Procent",
+  "level": 2,
+  "type": "text",
+  "question": "Hur mycket är 10 % av 350?\nSvara endast med talet.",
+  "answer": "35",
+  "explanation": "10 % är en tiondel: 350 : 10 = 35."
+ },
+ {
+  "subject": "matte",
+  "topic": "Negativa tal",
+  "level": 2,
+  "type": "text",
+  "question": "Vad är 4 − 9?\nSvara endast med talet.",
+  "answer": [
+   "-5",
+   "−5"
+  ],
+  "explanation": "Du går 9 steg ner från 4, förbi noll, och hamnar på −5."
+ },
+ {
+  "subject": "matte",
+  "topic": "Area",
+  "level": 2,
+  "type": "text",
+  "question": "Hur stor är arean av en rektangel som är 9 cm lång och 7 cm bred?\nSvara med talet (i cm²).",
+  "answer": "63",
+  "explanation": "Area = längd · bredd = 9 · 7 = 63."
+ },
+ {
+  "subject": "matte",
+  "topic": "Enheter",
+  "level": 2,
+  "type": "text",
+  "question": "Hur många centimeter är 2,5 meter?\nSvara endast med talet.",
+  "answer": "250",
+  "explanation": "1 m = 100 cm, så 2,5 m = 250 cm."
+ },
+ {
+  "subject": "matte",
+  "topic": "Division",
+  "level": 2,
+  "type": "text",
+  "question": "Vad är 156 : 12?\nSvara endast med talet.",
+  "answer": "13",
+  "explanation": "12 · 13 = 156."
+ },
+ {
+  "subject": "matte",
+  "topic": "Decimaltal",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket tal är störst?",
+  "options": [
+   "0,7",
+   "0,07",
+   "0,69",
+   "0,709"
+  ],
+  "answer": "0,709",
+  "explanation": "Jämför decimal för decimal: 0,709 > 0,700 > 0,690 > 0,070."
+ },
+ {
+  "subject": "matte",
+  "topic": "Ekvationer",
+  "level": 3,
+  "type": "text",
+  "question": "Lös ekvationen x + 14 = 31.\nSvara endast med talet.",
+  "answer": "17",
+  "explanation": "Dra bort 14 från båda sidor: x = 31 − 14 = 17."
+ },
+ {
+  "subject": "matte",
+  "topic": "Ekvationer",
+  "level": 3,
+  "type": "text",
+  "question": "Lös ekvationen 3x = 27.\nSvara endast med talet.",
+  "answer": "9",
+  "explanation": "Dela båda sidor med 3: x = 9."
+ },
+ {
+  "subject": "matte",
+  "topic": "Procent",
+  "level": 3,
+  "type": "text",
+  "question": "En tröja kostar 400 kr. Priset sänks med 25 %. Vad kostar tröjan nu (kr)?\nSvara endast med talet.",
+  "answer": "300",
+  "explanation": "25 % av 400 är 100. 400 − 100 = 300."
+ },
+ {
+  "subject": "matte",
+  "topic": "Bråk",
+  "level": 3,
+  "type": "text",
+  "question": "Vad är 2/5 + 1/5?\nSkriv som bråk, t.ex. 1/2.",
+  "answer": "3/5",
+  "explanation": "Samma nämnare: addera täljarna, 2 + 1 = 3."
+ },
+ {
+  "subject": "matte",
+  "topic": "Statistik",
+  "level": 3,
+  "type": "text",
+  "question": "Vad är medelvärdet av 4, 8, 6, 10 och 7?\nSvara endast med talet.",
+  "answer": "7",
+  "explanation": "Summan är 35 och det är 5 tal: 35 : 5 = 7."
+ },
+ {
+  "subject": "matte",
+  "topic": "Statistik",
+  "level": 3,
+  "type": "text",
+  "question": "Vad är medianen av 3, 9, 5, 1 och 7?\nSvara endast med talet.",
+  "answer": "5",
+  "explanation": "Sortera: 1, 3, 5, 7, 9. Medianen är mittersta talet, 5."
+ },
+ {
+  "subject": "matte",
+  "topic": "Enheter",
+  "level": 3,
+  "type": "text",
+  "question": "Hur många liter är 4500 ml?\nSvara endast med talet.",
+  "answer": "4,5",
+  "explanation": "1 liter = 1000 ml, så 4500 ml = 4,5 l."
+ },
+ {
+  "subject": "matte",
+  "topic": "Räkneregler",
+  "level": 3,
+  "type": "text",
+  "question": "Vad är 5 + 3 · 4?\nSvara endast med talet.",
+  "answer": "17",
+  "explanation": "Multiplikation före addition: 3 · 4 = 12, 5 + 12 = 17."
+ },
+ {
+  "subject": "matte",
+  "topic": "Geometri",
+  "level": 3,
+  "type": "text",
+  "question": "Vinkelsumman i en triangel är 180°. Två vinklar är 50° och 70°. Hur stor är den tredje vinkeln?\nSvara endast med talet.",
+  "answer": "60",
+  "explanation": "180 − 50 − 70 = 60."
+ },
+ {
+  "subject": "matte",
+  "topic": "Förhållande",
+  "level": 3,
+  "type": "text",
+  "question": "Förhållandet mellan pojkar och flickor i en klass är 2:3. Det finns 10 pojkar. Hur många flickor finns det?\nSvara endast med talet.",
+  "answer": "15",
+  "explanation": "10 pojkar är 5 gånger 2. Flickorna är 5 gånger 3 = 15."
+ },
+ {
+  "subject": "matte",
+  "topic": "Ekvationer",
+  "level": 4,
+  "type": "text",
+  "question": "Lös ekvationen 2x + 7 = 25.\nSvara endast med talet.",
+  "answer": "9",
+  "explanation": "2x = 25 − 7 = 18, så x = 9."
+ },
+ {
+  "subject": "matte",
+  "topic": "Ekvationer",
+  "level": 4,
+  "type": "text",
+  "question": "Lös ekvationen 5x − 8 = 3x + 6.\nSvara endast med talet.",
+  "answer": "7",
+  "explanation": "Subtrahera 3x: 2x − 8 = 6. Addera 8: 2x = 14, x = 7."
+ },
+ {
+  "subject": "matte",
+  "topic": "Procent",
+  "level": 4,
+  "type": "text",
+  "question": "Ett pris höjs från 80 kr till 100 kr. Hur många procent har priset ökat?\nSvara endast med talet.",
+  "answer": [
+   "25",
+   "25%",
+   "25 %"
+  ],
+  "explanation": "Ökning 20 kr av 80 kr: 20/80 = 0,25 = 25 %."
+ },
+ {
+  "subject": "matte",
+  "topic": "Potenser",
+  "level": 4,
+  "type": "text",
+  "question": "Vad är 2⁵?\nSvara endast med talet.",
+  "answer": "32",
+  "explanation": "2 · 2 · 2 · 2 · 2 = 32."
+ },
+ {
+  "subject": "matte",
+  "topic": "Pythagoras",
+  "level": 4,
+  "type": "text",
+  "question": "I en rätvinklig triangel är kateterna 6 cm och 8 cm. Hur lång är hypotenusan (cm)?\nSvara endast med talet.",
+  "answer": "10",
+  "explanation": "6² + 8² = 36 + 64 = 100, och √100 = 10."
+ },
+ {
+  "subject": "matte",
+  "topic": "Funktioner",
+  "level": 4,
+  "type": "text",
+  "question": "Vad är y när x = 4 i funktionen y = 3x − 2?\nSvara endast med talet.",
+  "answer": "10",
+  "explanation": "y = 3 · 4 − 2 = 12 − 2 = 10."
+ },
+ {
+  "subject": "matte",
+  "topic": "Proportionalitet",
+  "level": 4,
+  "type": "text",
+  "question": "5 kg äpplen kostar 60 kr. Vad kostar 8 kg (kr)?\nSvara endast med talet.",
+  "answer": "96",
+  "explanation": "Per kg: 60 : 5 = 12 kr. 8 · 12 = 96."
+ },
+ {
+  "subject": "matte",
+  "topic": "Geometri",
+  "level": 4,
+  "type": "text",
+  "question": "Vad är arean av en cirkel med radien 5 cm? Använd π ≈ 3,14.\nSvara med talet (i cm²).",
+  "answer": "78,5",
+  "explanation": "A = π · r² = 3,14 · 25 = 78,5."
+ },
+ {
+  "subject": "matte",
+  "topic": "Geometri",
+  "level": 4,
+  "type": "text",
+  "question": "En kub har sidan 4 cm. Hur stor är volymen (cm³)?\nSvara endast med talet.",
+  "answer": "64",
+  "explanation": "Volym = 4 · 4 · 4 = 64."
+ },
+ {
+  "subject": "matte",
+  "topic": "Sannolikhet",
+  "level": 4,
+  "type": "text",
+  "question": "I en påse finns 3 röda och 7 blå kulor. Hur stor är sannolikheten att dra en röd kula?\nSvara i procent.",
+  "answer": [
+   "30",
+   "30%",
+   "30 %"
+  ],
+  "explanation": "3 av 10 kulor är röda: 3/10 = 30 %."
+ },
+ {
+  "subject": "matte",
+  "topic": "Ekvationssystem",
+  "level": 5,
+  "type": "text",
+  "question": "Lös ekvationssystemet x + y = 10 och x − y = 4. Vad är x?\nSvara endast med talet.",
+  "answer": "7",
+  "explanation": "Addera ekvationerna: 2x = 14, så x = 7 (och y = 3)."
+ },
+ {
+  "subject": "matte",
+  "topic": "Procent",
+  "level": 5,
+  "type": "text",
+  "question": "Ett pris på 200 kr sänks med 20 %. Sedan höjs det nya priset med 25 %. Vad kostar varan till sist (kr)?\nSvara endast med talet.",
+  "answer": "200",
+  "explanation": "200 · 0,8 = 160 och 160 · 1,25 = 200. Faktorerna 0,8 och 1,25 multiplicerat blir 1, så ändringarna tar ut varandra."
+ },
+ {
+  "subject": "matte",
+  "topic": "Potenser",
+  "level": 5,
+  "type": "text",
+  "question": "Skriv 0,00045 i grundpotensform: a · 10ⁿ. Vad är n?\nSvara endast med talet.",
+  "answer": [
+   "-4",
+   "−4"
+  ],
+  "explanation": "0,00045 = 4,5 · 10⁻⁴."
+ },
+ {
+  "subject": "matte",
+  "topic": "Pythagoras",
+  "level": 5,
+  "type": "text",
+  "question": "Hypotenusan är 13 cm och en katet är 5 cm. Hur lång är den andra kateten (cm)?\nSvara endast med talet.",
+  "answer": "12",
+  "explanation": "13² − 5² = 169 − 25 = 144, och √144 = 12."
+ },
+ {
+  "subject": "matte",
+  "topic": "Funktioner",
+  "level": 5,
+  "type": "text",
+  "question": "En rät linje går genom punkterna (0, 2) och (3, 11). Vad är linjens lutning k?\nSvara endast med talet.",
+  "answer": "3",
+  "explanation": "k = (11 − 2) / (3 − 0) = 9/3 = 3."
+ },
+ {
+  "subject": "matte",
+  "topic": "Procent",
+  "level": 5,
+  "type": "text",
+  "question": "En vara kostar 450 kr inklusive 25 % moms. Vad kostar den utan moms (kr)?\nSvara endast med talet.",
+  "answer": "360",
+  "explanation": "Priset med moms är 125 % av priset utan: 450 : 1,25 = 360."
+ },
+ {
+  "subject": "matte",
+  "topic": "Potenser",
+  "level": 5,
+  "type": "text",
+  "question": "Vad är 5⁰ + 2³?\nSvara endast med talet.",
+  "answer": "9",
+  "explanation": "5⁰ = 1 och 2³ = 8. Summan är 9."
+ },
+ {
+  "subject": "matte",
+  "topic": "Kombinatorik",
+  "level": 5,
+  "type": "text",
+  "question": "Du har 3 tröjor och 4 byxor. Hur många olika klädkombinationer kan du göra?\nSvara endast med talet.",
+  "answer": "12",
+  "explanation": "3 · 4 = 12."
+ },
+ {
+  "subject": "matte",
+  "topic": "Geometri",
+  "level": 5,
+  "type": "text",
+  "question": "En cylinder har radien 2 cm och höjden 5 cm. Hur stor är volymen? Använd π ≈ 3,14.\nSvara med talet (i cm³).",
+  "answer": "62,8",
+  "explanation": "V = π · r² · h = 3,14 · 4 · 5 = 62,8."
+ },
+ {
+  "subject": "matte",
+  "topic": "Ekvationer",
+  "level": 5,
+  "type": "text",
+  "question": "Lös ekvationen 3(x − 2) = 2x + 5.\nSvara endast med talet.",
+  "answer": "11",
+  "explanation": "3x − 6 = 2x + 5. Subtrahera 2x och addera 6: x = 11."
+ }
+]

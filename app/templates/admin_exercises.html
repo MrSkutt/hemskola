@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Övningar – Hemskola{% endblock %}
+{% block mainclass %}wide{% endblock %}
+{% block content %}
+<h1>Övningar</h1>
+<div class="card">
+  <strong>Antal aktiva övningar per nivå</strong>
+  <table style="margin-top:.5rem">
+    <tr><th>Ämne</th>{% for l in range(1, 6) %}<th>Nivå {{ l }}</th>{% endfor %}</tr>
+    {% for s, levels in grid|dictsort %}
+    <tr><td>{{ label(s) }}</td>{% for l in range(1, 6) %}<td>{{ levels.get(l, 0) }}</td>{% endfor %}</tr>
+    {% endfor %}
+  </table>
+  <p class="muted">Tips: sikta på minst 20–30 per nivå, så att eleven inte ser samma frågor om och om igen.</p>
+</div>
+<form method="get" class="row" style="margin-bottom:1rem">
+  <div><label style="margin:0">Ämne</label><select name="subject"><option value="">Alla</option>{% for s in subjects %}<option value="{{ s }}" {{ 'selected' if s == subject }}>{{ label(s) }}</option>{% endfor %}</select></div>
+  <div><label style="margin:0">Nivå</label><select name="level"><option value="0">Alla</option>{% for l in range(1, 6) %}<option value="{{ l }}" {{ 'selected' if l == level }}>{{ l }}</option>{% endfor %}</select></div>
+  <button class="small">Filtrera</button>
+  <a class="btn ghost small" href="/admin/exercises/export.json">Exportera alla (JSON)</a>
+  <a class="btn small" href="/admin/import">Importera fler</a>
+</form>
+<div class="card">
+<table>
+  <tr><th>Ämne</th><th>Nivå</th><th>Område</th><th>Fråga</th><th>Svarat</th><th></th></tr>
+  {% for r in rows %}
+  <tr style="{{ 'opacity:.5' if not r.active }}">
+    <td>{{ label(r.subject) }}</td><td>{{ r.level }}</td><td>{{ r.topic }}</td>
+    <td style="white-space:pre-line">{{ r.question }}</td>
+    <td>{% if r.n %}{{ r.n }} ({{ (100 * r.c / r.n)|round|int }} % rätt){% else %}–{% endif %}</td>
+    <td><form class="inline" method="post" action="/admin/exercises/{{ r.id }}/active"><button class="small ghost">{{ 'Dölj' if r.active else 'Visa' }}</button></form></td>
+  </tr>
+  {% endfor %}
+</table>
+</div>
+{% endblock %}

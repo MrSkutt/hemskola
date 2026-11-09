@@ -1,1 +1,97 @@
-# hemskola
+# Hemskola
+
+Ett litet webbaserat övningssystem för hemmabruk: eleven gör ett inledande test, övar i sin egen takt
+på en nivå som anpassar sig, och gör statusprov då och då. Admin ser resultat och lägger in nya övningar.
+
+* Ämnen från start: **matematik** och **svenska** (50 övningar vardera, nivå 1–5, ungefär åk 4–9)
+* Backend: Python / FastAPI, databas: SQLite, webbserver: nginx, allt i Docker
+* Inloggning med rollerna **admin** och **elev** (flera elever går bra)
+
+## Kom igång
+
+```bash
+cp .env.example .env        # sätt ADMIN_PASSWORD
+docker compose up -d --build
+```
+
+Öppna `http://servern:8080`, logga in som admin och skapa elever under **Användare**.
+Databasen ligger i `./data/hemskola.db`. De 100 startövningarna läggs in automatiskt första gången.
+
+Om du inte sätter `ADMIN_PASSWORD` skapas ett slumpmässigt lösenord som skrivs i loggen
+(`docker compose logs app`).
+
+### Köra utan Docker (test)
+
+```bash
+pip install -r requirements-dev.txt
+ADMIN_PASSWORD=hemligt uvicorn app.main:app --reload
+pytest
+```
+
+## Så fungerar det
+
+| Del | Beskrivning |
+|---|---|
+| Inledande test | 2 frågor per nivå (10 totalt). Uppskattad nivå = högsta nivån där hon klarar minst hälften, i följd uppifrån och ned. Sätter startnivån. |
+| Övning | Mestadels frågor på nuvarande nivå, ibland repetition av tidigare missade frågor och nivån under. Direkt återkoppling med förklaring. |
+| Nivåbyte | Av de senaste 6 svaren på nivån: **5 rätt eller fler → upp**, **2 rätt eller färre → ner**. Därefter börjar ett nytt fönster. |
+| Statusprov | Samma upplägg som det inledande testet. Rätt svar visas först efteråt. Kan höja nivån men sänker den aldrig. Resultaten sparas så att utvecklingen syns. |
+| Admin | Översikt över alla elever, detaljvy med utveckling per dag, svaga områden, prov och senaste svar. Du kan sätta nivå manuellt. |
+
+Eleven ser bara "Nivå 1–5". Kopplingen till ungefärlig årskurs visas bara för admin.
+
+## Lägg in fler övningar
+
+Under **Importera** klistrar du in eller laddar upp JSON. Be Claude generera i det här formatet:
+
+```json
+[
+  {
+    "subject": "matte",
+    "topic": "Procent",
+    "level": 3,
+    "type": "text",
+    "question": "Hur mycket är 10 % av 350?\nSvara endast med talet.",
+    "answer": "35",
+    "explanation": "10 % är en tiondel: 350 : 10 = 35."
+  },
+  {
+    "subject": "svenska",
+    "topic": "Ordklasser",
+    "level": 2,
+    "type": "mc",
+    "question": "Vilket ord är ett adjektiv?",
+    "options": ["springa", "snabb", "bord", "under"],
+    "answer": "snabb",
+    "explanation": "Adjektiv beskriver hur något är."
+  }
+]
+```
+
+* `type`: `mc` (flerval, `answer` måste finnas i `options`) eller `text` (fritext)
+* `answer` kan vara en lista med flera godkända svar, t.ex. `["20:15", "20.15"]`
+* Tal jämförs som tal: `4,25` och `4.25` är samma sak, `1/2` räknas som `0,5` och `%` ignoreras
+* Nya ämnen (t.ex. `engelska`) dyker upp automatiskt hos eleven
+* Samma ämne och samma frågetext läggs bara in en gång
+
+Exempel på prompt: *"Skapa 25 övningar i matte, nivå 3, området bråk, i det här JSON-formatet. Blanda flerval och fritext."*
+Tips: be om minst 20–30 övningar per nivå, så att samma frågor inte kommer för ofta. **Exportera** gärna
+befintliga övningar och klistra in som exempel, så att nya får samma stil. Granska gärna nya övningar
+innan eleven får dem, särskilt facit.
+
+## Drift
+
+* **Backup:** `sqlite3 data/hemskola.db ".backup data/backup-$(date +%F).db"` (eller kopiera `data/` medan appen står still).
+* **Åtkomst utanför hemnätet:** lägg HTTPS framför (egen reverse proxy, Caddy/Traefik eller certbot) och sätt `COOKIE_SECURE=1` i `.env`.
+  Utan HTTPS bör sidan bara nås i hemnätet eller via VPN.
+* **Port:** ändra `8080:80` i `docker-compose.yml`, eller ta bort `ports` om en annan proxy kopplas till nginx-containern.
+* Inloggningen stoppar efter 10 felaktiga försök per IP-adress och 10 minuter. Lösenord lagras med scrypt.
+* Sidan har ingen CSRF-token utan förlitar sig på `SameSite=Lax` på sessionskakan, vilket räcker för hemmabruk.
+
+## Idéer framåt
+
+* Fler ämnen (engelska, NO, SO) och fler övningar per nivå
+* Genererade huvudräkningsuppgifter med slumptal, så att de aldrig tar slut
+* Eget val av område att öva på, mål per dag, och belöningar/poäng
+* Bilder och diagram i frågor
+* Påminnelser/veckorapport till admin

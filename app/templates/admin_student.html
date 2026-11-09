@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block title %}{{ s.display_name }} – Hemskola{% endblock %}
+{% block mainclass %}wide{% endblock %}
+{% block content %}
+<p><a href="/admin">← Alla elever</a></p>
+<h1>{{ s.display_name }} <span class="muted" style="font-size:1rem">({{ s.username }})</span></h1>
+<p class="muted">Idag: {{ today }} svar · 🔥 {{ streak }} {{ 'dag' if streak == 1 else 'dagar' }} i rad</p>
+
+<div class="card">
+  <strong>Svar per dag, senaste 14 dagarna</strong> <span class="muted">(grönt = rätt, rött = fel)</span>
+  <div class="chart" style="margin-top:.6rem">
+    {% for c in chart %}
+    <div class="col" title="{{ c.date }}: {{ c.correct }} av {{ c.total }} rätt">
+      <div class="b" style="height:{{ ((c.total - c.correct) / chart_max * 100)|round }}%"></div>
+      <div class="g" style="height:{{ (c.correct / chart_max * 100)|round }}%"></div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="chartlabels">{% for c in chart %}<span>{{ c.date.day }}</span>{% endfor %}</div>
+</div>
+
+{% for b in blocks %}
+<h2>{{ label(b.subject) }}</h2>
+<div class="card">
+  <div class="row" style="justify-content:space-between">
+    <div>
+      {% if b.summary.level %}Nivå <span class="level">{{ b.summary.level }}</span> <span class="muted">({{ LEVEL_HINTS[b.summary.level] }})</span>
+      {% else %}<span class="muted">Inte testad än – eleven gör ett inledande test vid nästa inloggning.</span>{% endif %}
+      <div class="muted">Senaste 7 dagarna: {% if b.summary.n7 %}{{ b.summary.n7 }} svar, {{ b.summary.acc7 }} % rätt{% else %}inga svar{% endif %}</div>
+    </div>
+    <form method="post" action="/admin/student/{{ s.id }}/level" class="row">
+      <input type="hidden" name="subject" value="{{ b.subject }}">
+      <div><label style="margin:0">Sätt nivå</label>
+        <select name="level">{% for l in range(1, 6) %}<option value="{{ l }}" {{ 'selected' if l == b.summary.level }}>{{ l }} – {{ LEVEL_HINTS[l] }}</option>{% endfor %}</select></div>
+      <button class="small">Spara</button>
+    </form>
+  </div>
+
+  {% if b.tests %}
+  <h3>Prov</h3>
+  <table>
+    <tr><th>Datum</th><th>Typ</th><th>Resultat</th><th>Uppskattad nivå</th><th></th></tr>
+    {% for t in b.tests %}
+    <tr><td>{{ t.finished_at|ts }}</td><td>{{ 'Inledande' if t.kind == 'placement' else 'Status' }}</td>
+        <td>{{ t.score }} av {{ t.total }}</td><td>{{ t.estimated_level }}</td>
+        <td><a href="/admin/test/{{ t.id }}">Visa</a></td></tr>
+    {% endfor %}
+  </table>
+  {% endif %}
+
+  {% if b.topics %}
+  <h3>Områden <span class="muted" style="font-weight:400">(svagast först)</span></h3>
+  <table>
+    <tr><th>Område</th><th>Svar</th><th>Andel rätt</th></tr>
+    {% for t in b.topics %}
+    <tr><td>{{ t.topic }}</td><td>{{ t.n }}</td>
+        <td class="{{ 'ok' if t.pct >= 70 else 'bad' if t.pct < 50 else '' }}">{{ t.pct }} %</td></tr>
+    {% endfor %}
+  </table>
+  {% endif %}
+</div>
+{% endfor %}
+
+<h2>Senaste svaren</h2>
+<div class="card">
+  <table>
+    <tr><th>Tid</th><th>Ämne</th><th>Fråga</th><th>Svar</th><th></th></tr>
+    {% for r in recent %}
+    <tr>
+      <td>{{ r.created_at|ts }}</td>
+      <td>{{ label(r.subject) }} · n{{ r.level }}{% if r.test_id %} · prov{% endif %}</td>
+      <td style="white-space:pre-line">{{ r.question }}</td>
+      <td>{{ r.given }}{% if not r.correct %}<br><span class="muted">rätt: {{ json.loads(r.answers)[0] }}</span>{% endif %}</td>
+      <td class="{{ 'ok' if r.correct else 'bad' }}">{{ '✓' if r.correct else '✗' }}</td>
+    </tr>
+    {% else %}<tr><td colspan="5" class="muted">Inga svar än.</td></tr>{% endfor %}
+  </table>
+</div>
+{% endblock %}

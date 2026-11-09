@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Användare – Hemskola{% endblock %}
+{% block content %}
+<h1>Användare</h1>
+<div class="card">
+  <h2 style="margin-top:0">Ny användare</h2>
+  <form method="post" action="/admin/users/new" class="row">
+    <div><label>Visningsnamn</label><input name="display_name" required></div>
+    <div><label>Användarnamn</label><input name="username" required autocapitalize="off"></div>
+    <div><label>Lösenord (minst 6 tecken)</label><input name="password" type="text" required minlength="6"></div>
+    <div><label>Roll</label><select name="role"><option value="student">Elev</option><option value="admin">Admin</option></select></div>
+    <button>Skapa</button>
+  </form>
+</div>
+<div class="card">
+  <table>
+    <tr><th>Namn</th><th>Användarnamn</th><th>Roll</th><th>Nytt lösenord</th><th></th></tr>
+    {% for u in users %}
+    <tr>
+      <td>{{ u.display_name }} {% if not u.active %}<span class="pill off">avstängd</span>{% endif %}</td>
+      <td>{{ u.username }}</td><td>{{ 'Admin' if u.role == 'admin' else 'Elev' }}</td>
+      <td><form class="inline" method="post" action="/admin/users/{{ u.id }}/password">
+        <input name="password" minlength="6" placeholder="nytt lösenord" required style="width:140px"> <button class="small ghost">Byt</button></form></td>
+      <td>{% if u.id != user.id %}<form class="inline" method="post" action="/admin/users/{{ u.id }}/active">
+        <button class="small ghost">{{ 'Stäng av' if u.active else 'Aktivera' }}</button></form>{% endif %}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Svar – Hemskola{% endblock %}
+{% block content %}
+<p class="muted">{{ label(ex.subject) }} · {{ ex.topic }}</p>
+<div class="card">
+  <div class="question">{{ ex.question }}</div>
+  {% if a.correct %}
+    <div class="result right">✅ Rätt! Du svarade <strong>{{ a.given }}</strong>.</div>
+  {% else %}
+    <div class="result wrong">Inte riktigt. Du svarade <strong>{{ a.given }}</strong>.<br>Rätt svar: <strong>{{ answers[0] }}</strong></div>
+  {% endif %}
+  {% if ex.explanation %}<p>💡 {{ ex.explanation }}</p>{% endif %}
+  {% if change == 'up' %}<div class="flash ok">🎉 Starkt jobbat! Du har gått upp till <strong>nivå {{ level }}</strong>.</div>
+  {% elif change == 'down' %}<div class="flash warn">Vi tar det lite lugnare och går till <strong>nivå {{ level }}</strong> så blir det mer träning på grunderna. Ingen fara!</div>{% endif %}
+  <p><a class="btn" href="/practice/{{ ex.subject }}" autofocus>Nästa fråga →</a>
+     <a class="btn ghost" href="/home">Avsluta</a></p>
+</div>
+{% endblock %}

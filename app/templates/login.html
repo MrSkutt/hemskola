@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Logga in – Hemskola{% endblock %}
+{% block content %}
+<div class="card" style="max-width:420px;margin:3rem auto">
+  <h1>Välkommen 👋</h1>
+  {% if error %}<div class="flash warn">{{ error }}</div>{% endif %}
+  <form method="post" action="/login">
+    <label for="u">Användarnamn</label>
+    <input id="u" name="username" autocomplete="username" autofocus required style="width:100%">
+    <label for="p">Lösenord</label>
+    <input id="p" name="password" type="password" autocomplete="current-password" required style="width:100%">
+    <p><button>Logga in</button></p>
+  </form>
+</div>
+{% endblock %}

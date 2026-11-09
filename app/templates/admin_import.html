@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Importera – Hemskola{% endblock %}
+{% block content %}
+<h1>Importera övningar</h1>
+{% if result %}
+<div class="flash ok">Klart: {{ result.added }} nya övningar, {{ result.skipped }} fanns redan.</div>
+{% if result.errors %}<div class="flash warn"><strong>{{ result.errors|length }} fel:</strong><br>{% for e in result.errors %}{{ e }}<br>{% endfor %}</div>{% endif %}
+{% endif %}
+<div class="card">
+  <form method="post" action="/admin/import" enctype="multipart/form-data">
+    <label for="up">Välj en JSON-fil</label>
+    <input id="up" type="file" name="upload" accept=".json,application/json">
+    <label for="pasted">…eller klistra in JSON här</label>
+    <textarea id="pasted" name="pasted" placeholder='[{"subject":"matte","topic":"Procent","level":3,"type":"text","question":"Hur mycket är 10 % av 350? Svara endast med talet.","answer":"35","explanation":"10 % är en tiondel."}]'></textarea>
+    <p><button>Importera</button></p>
+  </form>
+</div>
+<div class="card">
+  <h2 style="margin-top:0">Format</h2>
+  <p>En lista av övningar. Fält:</p>
+  <ul>
+    <li><code>subject</code> – t.ex. <code>matte</code>, <code>svenska</code>, <code>engelska</code> (nya ämnen dyker upp automatiskt)</li>
+    <li><code>topic</code> – område, t.ex. "Procent"</li>
+    <li><code>level</code> – 1–5</li>
+    <li><code>type</code> – <code>mc</code> (flerval) eller <code>text</code> (skriv svar)</li>
+    <li><code>question</code>, <code>answer</code> (text eller lista med godkända svar), <code>explanation</code> (valfri)</li>
+    <li><code>options</code> – lista med alternativ (bara för <code>mc</code>; <code>answer</code> måste finnas bland dem)</li>
+  </ul>
+  <p class="muted">Dubbletter (samma ämne och fråga) hoppas över. Be Claude generera övningar i det här formatet och klistra in dem här.</p>
+</div>
+{% endblock %}

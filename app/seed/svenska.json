@@ -1,0 +1,717 @@
+[
+ {
+  "subject": "svenska",
+  "topic": "Ordklasser",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket av orden är ett substantiv?",
+  "options": [
+   "springa",
+   "glad",
+   "hund",
+   "snabbt"
+  ],
+  "answer": "hund",
+  "explanation": "Substantiv är namn på saker, djur och personer: en hund."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Ordklasser",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket av orden är ett verb?",
+  "options": [
+   "bord",
+   "hoppa",
+   "röd",
+   "under"
+  ],
+  "answer": "hoppa",
+  "explanation": "Verb beskriver vad någon gör eller händer: att hoppa."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Skrivregler",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken mening är rätt skriven?",
+  "options": [
+   "i dag är det måndag.",
+   "I dag är det måndag.",
+   "I Dag Är Det Måndag",
+   "I dag är det Måndag."
+  ],
+  "answer": "I dag är det måndag.",
+  "explanation": "Stor bokstav i början av meningen. Veckodagar skrivs med liten bokstav."
+ },
+ {
+  "subject": "svenska",
+  "topic": "En och ett",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket är rätt?",
+  "options": [
+   "en hus",
+   "ett hus",
+   "ett bil",
+   "en bord"
+  ],
+  "answer": "ett hus",
+  "explanation": "Det heter ett hus, en bil och ett bord."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Ordförråd",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad är motsatsen till 'kall'?",
+  "options": [
+   "varm",
+   "kylig",
+   "blöt",
+   "sval"
+  ],
+  "answer": "varm",
+  "explanation": "Motsatsen till kall är varm."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Skiljetecken",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket skiljetecken ska stå sist i 'Vad heter du'?",
+  "options": [
+   ".",
+   "!",
+   "?",
+   ","
+  ],
+  "answer": "?",
+  "explanation": "Frågor avslutas med frågetecken."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Ordböjning",
+  "level": 1,
+  "type": "text",
+  "question": "Skriv ordet 'flicka' i plural (flera stycken).",
+  "answer": "flickor",
+  "explanation": "En flicka, flera flickor."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Rim",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket ord rimmar på 'katt'?",
+  "options": [
+   "bil",
+   "hatt",
+   "kalv",
+   "kakor"
+  ],
+  "answer": "hatt",
+  "explanation": "Katt och hatt låter lika på slutet."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Meningar",
+  "level": 1,
+  "type": "text",
+  "question": "Hur många ord finns i meningen 'Hunden springer i skogen.'?\nSvara med en siffra.",
+  "answer": "4",
+  "explanation": "Hunden – springer – i – skogen."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Alfabetet",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket ord kommer först i alfabetsordning?",
+  "options": [
+   "banan",
+   "apelsin",
+   "citron",
+   "druva"
+  ],
+  "answer": "apelsin",
+  "explanation": "A kommer före B, C och D."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Ordklasser",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket ord är ett adjektiv i meningen 'Den stora hunden skällde högt'?",
+  "options": [
+   "Den",
+   "stora",
+   "hunden",
+   "skällde"
+  ],
+  "answer": "stora",
+  "explanation": "Adjektiv beskriver hur något är. Stora säger hur hunden är."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Sär- och sammanskrivning",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket sätt att skriva ordet är rätt?",
+  "options": [
+   "jordgubbs sylt",
+   "jordgubbssylt",
+   "jordgubb sylt",
+   "jord gubbssylt"
+  ],
+  "answer": "jordgubbssylt",
+  "explanation": "Sammansatta ord skrivs ihop: jordgubbssylt."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Synonymer",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket ord betyder ungefär samma sak som 'glad'?",
+  "options": [
+   "ledsen",
+   "lycklig",
+   "arg",
+   "trött"
+  ],
+  "answer": "lycklig",
+  "explanation": "Synonymer är ord med liknande betydelse."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Verb",
+  "level": 2,
+  "type": "text",
+  "question": "Skriv verbet 'springa' i dåtid så det passar: 'Igår ___ jag fort.'",
+  "answer": "sprang",
+  "explanation": "Springa – sprang – sprungit."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Pronomen",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket ord kan ersätta 'Anna' i 'Anna läser en bok'?",
+  "options": [
+   "Hon",
+   "Han",
+   "Det",
+   "Vi"
+  ],
+  "answer": "Hon",
+  "explanation": "Anna är en flicka eller kvinna, så vi kan säga hon."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Skiljetecken",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken mening har rätt kommatecken?",
+  "options": [
+   "Jag köpte, mjölk bröd och ost.",
+   "Jag köpte mjölk, bröd och ost.",
+   "Jag köpte mjölk bröd, och ost.",
+   "Jag köpte mjölk bröd och, ost."
+  ],
+  "answer": "Jag köpte mjölk, bröd och ost.",
+  "explanation": "I uppräkningar sätter vi komma mellan sakerna, men inte före 'och'."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Ordföljd",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken mening har rätt ordföljd?",
+  "options": [
+   "Igår jag gick till skolan.",
+   "Igår gick jag till skolan.",
+   "Gick igår jag till skolan.",
+   "Jag igår gick till skolan."
+  ],
+  "answer": "Igår gick jag till skolan.",
+  "explanation": "Verbet kommer på andra plats: Igår gick jag."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Sammansatta ord",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket ord är ett sammansatt ord?",
+  "options": [
+   "bil",
+   "skolbuss",
+   "springa",
+   "glad"
+  ],
+  "answer": "skolbuss",
+  "explanation": "Skolbuss är skola + buss."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Ordböjning",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad är pluralformen av 'bok'?",
+  "options": [
+   "böcker",
+   "boks",
+   "bokar",
+   "bokor"
+  ],
+  "answer": "böcker",
+  "explanation": "En bok, flera böcker."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Frågeord",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket ord passar? '___ bor du?' (du frågar efter plats)",
+  "options": [
+   "Var",
+   "Vart",
+   "Vem",
+   "Varför"
+  ],
+  "answer": "Var",
+  "explanation": "Var används om plats: Var bor du?"
+ },
+ {
+  "subject": "svenska",
+  "topic": "Verbformer",
+  "level": 3,
+  "type": "mc",
+  "question": "Välj rätt: 'Jag har ___ boken.'",
+  "options": [
+   "läste",
+   "läst",
+   "läsa",
+   "läser"
+  ],
+  "answer": "läst",
+  "explanation": "Efter 'har' använder vi supinum: har läst."
+ },
+ {
+  "subject": "svenska",
+  "topic": "De och dem",
+  "level": 3,
+  "type": "mc",
+  "question": "Välj rätt: 'Jag ser ___ på gatan.'",
+  "options": [
+   "de",
+   "dem",
+   "dom",
+   "dej"
+  ],
+  "answer": "dem",
+  "explanation": "Dem är objekt. Testa med 'dem': jag ser dem."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Att och och",
+  "level": 3,
+  "type": "mc",
+  "question": "Välj rätt: 'Jag tycker om ___ simma.'",
+  "options": [
+   "och",
+   "att",
+   "å",
+   "ått"
+  ],
+  "answer": "att",
+  "explanation": "Före ett verb i grundform ('simma') använder vi att."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Meningstyper",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken sorts mening är 'Stäng dörren!'?",
+  "options": [
+   "Påstående",
+   "Fråga",
+   "Uppmaning",
+   "Utrop"
+  ],
+  "answer": "Uppmaning",
+  "explanation": "Man ber eller säger åt någon att göra något."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Ordböjning",
+  "level": 3,
+  "type": "text",
+  "question": "Skriv ordet 'äpple' i bestämd form singular.",
+  "answer": "äpplet",
+  "explanation": "Ett äpple, äpplet."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Stavning",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket ord är rätt stavat?",
+  "options": [
+   "vacker",
+   "vaker",
+   "vakker",
+   "vacer"
+  ],
+  "answer": "vacker",
+  "explanation": "Efter kort vokal skrivs ck: vacker."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Läsförståelse",
+  "level": 3,
+  "type": "mc",
+  "question": "Text: 'Mia cyklade till skolan trots att det regnade. Hon hade glömt sitt paraply, så hon blev genomblöt.'\n\nVarför blev Mia genomblöt?",
+  "options": [
+   "Hon cyklade för fort",
+   "Hon hade glömt sitt paraply",
+   "Hon föll i en pöl",
+   "Skolan låg långt bort"
+  ],
+  "answer": "Hon hade glömt sitt paraply",
+  "explanation": "Det står i texten: 'Hon hade glömt sitt paraply'."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Ordklasser",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket ord är ett adverb i 'Hon sjunger vackert'?",
+  "options": [
+   "Hon",
+   "sjunger",
+   "vackert"
+  ],
+  "answer": "vackert",
+  "explanation": "Adverb säger hur, när eller var något sker. Vackert säger hur hon sjunger."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Texttyper",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken texttyp berättar en påhittad historia?",
+  "options": [
+   "Nyhetsartikel",
+   "Saga",
+   "Bruksanvisning",
+   "Recept"
+  ],
+  "answer": "Saga",
+  "explanation": "En saga är en påhittad berättelse."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Ordklasser",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket ord är en preposition?",
+  "options": [
+   "under",
+   "springa",
+   "snabb",
+   "hund"
+  ],
+  "answer": "under",
+  "explanation": "Prepositioner visar läge eller riktning: under, på, i, bakom."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Satsdelar",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad är subjekt i 'Katten jagade musen i trädgården'?",
+  "options": [
+   "Katten",
+   "jagade",
+   "musen",
+   "trädgården"
+  ],
+  "answer": "Katten",
+  "explanation": "Subjektet är den som gör något: Vem jagade? Katten."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Satsdelar",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad är predikat i 'Eleverna läste boken'?",
+  "options": [
+   "Eleverna",
+   "läste",
+   "boken"
+  ],
+  "answer": "läste",
+  "explanation": "Predikatet är verbet: läste."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Satsdelar",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad är objekt i 'Eleverna läste boken'?",
+  "options": [
+   "Eleverna",
+   "läste",
+   "boken"
+  ],
+  "answer": "boken",
+  "explanation": "Objektet får handlingen utförd på sig: Vad läste de? Boken."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Bildspråk",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken mening innehåller en metafor?",
+  "options": [
+   "Hon sprang som en gasell.",
+   "Tiden är en tjuv.",
+   "Det regnade hårt.",
+   "Det var jättestort."
+  ],
+  "answer": "Tiden är en tjuv.",
+  "explanation": "En metafor säger att något ÄR något annat, utan 'som'."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Bildspråk",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken mening innehåller en personifikation?",
+  "options": [
+   "Solen log mot oss.",
+   "Han var stark som en björn.",
+   "Det är fem grader ute.",
+   "Hon bor i Malmö."
+  ],
+  "answer": "Solen log mot oss.",
+  "explanation": "Personifikation är när något som inte är en människa får mänskliga drag: solen ler."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Bildspråk",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket bildspråk används i 'Han var stark som en björn'?",
+  "options": [
+   "Liknelse",
+   "Metafor",
+   "Personifikation",
+   "Ordlek"
+  ],
+  "answer": "Liknelse",
+  "explanation": "Liknelser använder 'som' eller 'liksom'."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Vart och var",
+  "level": 4,
+  "type": "mc",
+  "question": "Välj rätt: '___ ska du gå imorgon?' (du frågar efter riktning)",
+  "options": [
+   "Var",
+   "Vart"
+  ],
+  "answer": "Vart",
+  "explanation": "Vart använder vi vid rörelse: vart ska du gå?"
+ },
+ {
+  "subject": "svenska",
+  "topic": "Verbformer",
+  "level": 4,
+  "type": "text",
+  "question": "Skriv rätt form av 'skriva': 'Hon har ___ ett brev.'",
+  "answer": "skrivit",
+  "explanation": "Skriva – skrev – skrivit."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Läsförståelse",
+  "level": 4,
+  "type": "mc",
+  "question": "Text: 'Det var tyst i huset. Ellen satt vid fönstret och tittade på regnet. På bordet stod en kall kopp te som ingen hade rört.'\n\nVilken stämning beskriver texten bäst?",
+  "options": [
+   "Glad och festlig",
+   "Ensam och stillsam",
+   "Spännande och farlig",
+   "Arg och högljudd"
+  ],
+  "answer": "Ensam och stillsam",
+  "explanation": "Tystnaden, regnet och den orörda koppen ger en ensam, stilla stämning."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Stavning",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken stavning är rätt?",
+  "options": [
+   "tillsammans",
+   "tilsammans",
+   "tillsamman",
+   "til sammans"
+  ],
+  "answer": "tillsammans",
+  "explanation": "Till + sammans skrivs ihop med dubbel-l: tillsammans."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Argumentation",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas påståendet som du vill övertyga om i en debattartikel?",
+  "options": [
+   "Tes",
+   "Faktaruta",
+   "Rubrik",
+   "Citat"
+  ],
+  "answer": "Tes",
+  "explanation": "Tesen är det huvudpåstående som texten argumenterar för."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Retorik",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilket retoriskt begrepp handlar om att väcka känslor hos mottagaren?",
+  "options": [
+   "Logos",
+   "Pathos",
+   "Ethos",
+   "Kairos"
+  ],
+  "answer": "Pathos",
+  "explanation": "Pathos = känslor, ethos = trovärdighet, logos = logik."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Retorik",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad handlar ethos om?",
+  "options": [
+   "Avsändarens trovärdighet",
+   "Logiska argument",
+   "Att väcka känslor",
+   "Rätt tidpunkt"
+  ],
+  "answer": "Avsändarens trovärdighet",
+  "explanation": "Ethos är hur trovärdig och kunnig avsändaren framstår."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Källkritik",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad är viktigast att ta reda på när du bedömer en källa?",
+  "options": [
+   "Hur många som delat den",
+   "Vem avsändaren är och vad syftet är",
+   "Om den har bilder",
+   "Hur snygg sidan är"
+  ],
+  "answer": "Vem avsändaren är och vad syftet är",
+  "explanation": "Källkritik handlar om vem som står bakom, varför texten skrivits och om den går att kontrollera."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Satsdelar",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken del är bisats i 'Jag stannade hemma eftersom jag var sjuk'?",
+  "options": [
+   "Jag stannade hemma",
+   "eftersom jag var sjuk",
+   "Jag",
+   "hemma eftersom"
+  ],
+  "answer": "eftersom jag var sjuk",
+  "explanation": "Bisatsen inleds av en subjunktion (eftersom) och kan inte stå ensam."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Ordklasser",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilket ord är en subjunktion (inleder en bisats)?",
+  "options": [
+   "och",
+   "men",
+   "eftersom",
+   "eller"
+  ],
+  "answer": "eftersom",
+  "explanation": "Och, men och eller är konjunktioner. Eftersom är en subjunktion."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Språkregister",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken mening är mest formell?",
+  "options": [
+   "Jag tänkte höra av mig angående ert erbjudande.",
+   "Tjena, kan ni fixa det där?",
+   "Hej, kör på!",
+   "Det var ju jättebra liksom."
+  ],
+  "answer": "Jag tänkte höra av mig angående ert erbjudande.",
+  "explanation": "Formellt språk undviker slang och talspråk."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Ordspråk",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad betyder ordspråket 'Borta bra men hemma bäst'?",
+  "options": [
+   "Man trivs ofta bäst hemma",
+   "Man ska alltid resa",
+   "Hemma är tråkigt",
+   "Det är bäst att bo borta"
+  ],
+  "answer": "Man trivs ofta bäst hemma",
+  "explanation": "Det är fint att resa, men hemma känns tryggast."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Textbindning",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilket ord passar bäst? 'Jag hade pluggat mycket. ___ klarade jag provet.'",
+  "options": [
+   "Därför",
+   "Eller",
+   "Men",
+   "Fast"
+  ],
+  "answer": "Därför",
+  "explanation": "Pluggandet är orsaken till att provet gick bra, så vi behöver ett ord som visar orsak."
+ },
+ {
+  "subject": "svenska",
+  "topic": "Aktiv och passiv",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken mening är i passiv form?",
+  "options": [
+   "Läraren rättade proven.",
+   "Proven rättades av läraren.",
+   "Eleverna skrev proven.",
+   "Läraren hade rättat."
+  ],
+  "answer": "Proven rättades av läraren.",
+  "explanation": "I passiv är det den som drabbas av handlingen (proven) som står först."
+ }
+]

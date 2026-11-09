@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Provresultat – Hemskola{% endblock %}
+{% block content %}
+{% if admin_view %}<p><a href="/admin/student/{{ t.user_id }}">← Tillbaka till eleven</a></p>{% endif %}
+<h1>{{ 'Inledande test' if t.kind == 'placement' else 'Statusprov' }} – {{ label(t.subject) }}</h1>
+<div class="card">
+  <p style="font-size:1.3rem;margin:.2rem 0"><strong>{{ t.score }} av {{ t.total }} rätt</strong></p>
+  {% if admin_view %}
+    <p>Uppskattad nivå: <strong>{{ t.estimated_level }}</strong> <span class="muted">({{ LEVEL_HINTS[t.estimated_level] }})</span></p>
+  {% else %}
+    <p>{% if t.kind == 'placement' %}Då vet vi var vi ska börja! Du startar på <strong>nivå {{ t.estimated_level }}</strong>.
+       {% else %}Du ligger just nu stabilt kring <strong>nivå {{ t.estimated_level }}</strong>.{% endif %}</p>
+  {% endif %}
+  <table>
+    <tr><th>Nivå</th><th>Rätt</th></tr>
+    {% for lvl, d in per|dictsort %}<tr><td>Nivå {{ lvl }}</td><td>{{ d.correct }} av {{ d.total }}</td></tr>{% endfor %}
+  </table>
+  {% if not admin_view %}<p><a class="btn" href="/home">Till startsidan</a></p>{% endif %}
+</div>
+<h2>Genomgång</h2>
+{% for r in review %}
+<div class="card">
+  <div class="muted">Nivå {{ r.level }} · {{ r.topic }}</div>
+  <div style="white-space:pre-line;margin:.3rem 0">{{ r.question }}</div>
+  {% if r.correct %}<div class="ok">✅ {{ r.given }}</div>
+  {% else %}<div class="bad">✗ Du svarade: {{ r.given or '(inget svar)' }}</div><div>Rätt svar: <strong>{{ r.answers_list[0] }}</strong></div>{% endif %}
+  {% if r.explanation %}<div class="muted">💡 {{ r.explanation }}</div>{% endif %}
+</div>
+{% endfor %}
+{% endblock %}

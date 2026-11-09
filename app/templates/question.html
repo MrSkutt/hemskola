@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Fråga – Hemskola{% endblock %}
+{% block content %}
+<p class="muted">
+  {% if mode == 'test' %}
+    {{ 'Inledande test' if test.kind == 'placement' else 'Statusprov' }} i {{ label(ex.subject) }} · Fråga {{ pos }} av {{ test.total }}
+  {% else %}
+    {{ label(ex.subject) }} · Nivå {{ level }} · {{ ex.topic }}
+  {% endif %}
+</p>
+<div class="card">
+  {% if mode == 'test' %}<div class="bar"><i style="width:{{ ((pos - 1) / test.total * 100)|round }}%"></i></div>{% endif %}
+  <div class="question">{{ ex.question }}</div>
+  <form method="post" action="{{ action }}">
+    <input type="hidden" name="exercise_id" value="{{ ex.id }}">
+    {% if options %}
+      {% for o in options %}<button class="choice" name="given" value="{{ o }}">{{ o }}</button>{% endfor %}
+    {% else %}
+      <div class="answerbox">
+        <input name="given" autocomplete="off" autocapitalize="off" autofocus required placeholder="Skriv ditt svar">
+        <button>Svara</button>
+      </div>
+    {% endif %}
+  </form>
+</div>
+{% if mode == 'test' %}<p class="muted">Du får se rätt svar när provet är klart.</p>{% endif %}
+{% endblock %}

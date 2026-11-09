@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Hemskola{% endblock %}</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/">📚 Hemskola</a>
+  {% if user %}
+  <nav>
+    {% if user.role == 'admin' %}
+      <a href="/admin">Elever</a>
+      <a href="/admin/exercises">Övningar</a>
+      <a href="/admin/import">Importera</a>
+      <a href="/admin/users">Användare</a>
+    {% else %}
+      <a href="/home">Hem</a>
+    {% endif %}
+  </nav>
+  <form method="post" action="/logout"><span class="muted">{{ user.display_name }}</span> <button class="ghost small">Logga ut</button></form>
+  {% endif %}
+</header>
+<main class="{% block mainclass %}{% endblock %}">
+  {% if flash %}<div class="flash {{ flash.kind }}">{{ flash.text }}</div>{% endif %}
+  {% block content %}{% endblock %}
+</main>
+</body>
+</html>

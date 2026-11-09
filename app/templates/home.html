@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Hem – Hemskola{% endblock %}
+{% block content %}
+<h1>Hej {{ user.display_name }}!</h1>
+<p class="muted">
+  {% if count_today %}Idag har du svarat på <strong>{{ count_today }}</strong> frågor. {% else %}Inga frågor än idag – ta en kort runda när du vill. {% endif %}
+  {% if streak > 1 %}🔥 {{ streak }} dagar i rad!{% endif %}
+</p>
+
+{% if open_test %}
+<div class="card">
+  <strong>Du har ett påbörjat prov i {{ label(open_test.subject) }}.</strong>
+  <p><a class="btn" href="/test/{{ open_test.id }}">Fortsätt provet</a></p>
+</div>
+{% endif %}
+
+<div class="grid">
+{% for s in subjects %}
+  <div class="card">
+    <h2 style="margin-top:0">{{ label(s.key) }}</h2>
+    {% if s.level %}
+      <div class="level">Nivå {{ s.level }} <span class="muted" style="font-size:1rem;font-weight:400">av 5</span></div>
+      <div class="bar" style="margin:.5rem 0"><i style="width:{{ s.level * 20 }}%"></i></div>
+      <p class="muted" style="margin:.2rem 0 .8rem">Senaste svaren på nivån:
+        <span class="dots">{% for d in s.dots %}<span class="dot {{ 'y' if d else 'n' }}"></span>{% endfor %}{% for i in range(WINDOW - s.dots|length) %}<span class="dot"></span>{% endfor %}</span>
+      </p>
+      <a class="btn" href="/practice/{{ s.key }}">Öva</a>
+      <form class="inline" method="post" action="/test/start/{{ s.key }}"><button class="ghost">Statusprov</button></form>
+    {% else %}
+      <p>Först ett kort test, så vet vi var vi ska börja. Det är inga betyg – svara bara så gott du kan. Gissa gärna, och hoppa inte över!</p>
+      <form method="post" action="/test/start/{{ s.key }}"><button>Starta inledande test</button></form>
+    {% endif %}
+  </div>
+{% else %}
+  <div class="card">Det finns inga övningar än. Be admin lägga in några.</div>
+{% endfor %}
+</div>
+{% endblock %}
