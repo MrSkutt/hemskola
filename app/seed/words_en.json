@@ -1,0 +1,1107 @@
+{
+"words": [
+{
+"word": "dog",
+"pos": "glosa",
+"level": 1,
+"sv": [
+"hund"
+]
+},
+{
+"word": "cat",
+"pos": "glosa",
+"level": 1,
+"sv": [
+"katt"
+]
+},
+{
+"word": "house",
+"pos": "glosa",
+"level": 1,
+"sv": [
+"hus"
+]
+},
+{
+"word": "car",
+"pos": "glosa",
+"level": 1,
+"sv": [
+"bil"
+]
+},
+{
+"word": "book",
+"pos": "glosa",
+"level": 1,
+"sv": [
+"bok"
+]
+},
+{
+"word": "water",
+"pos": "glosa",
+"level": 1,
+"sv": [
+"vatten"
+]
+},
+{
+"word": "apple",
+"pos": "glosa",
+"level": 1,
+"sv": [
+"äpple"
+]
+},
+{
+"word": "school",
+"pos": "glosa",
+"level": 1,
+"sv": [
+"skola"
+]
+},
+{
+"word": "friend",
+"pos": "glosa",
+"level": 1,
+"sv": [
+"vän",
+"kompis"
+]
+},
+{
+"word": "mother",
+"pos": "glosa",
+"level": 1,
+"sv": [
+"mamma",
+"mor"
+]
+},
+{
+"word": "father",
+"pos": "glosa",
+"level": 1,
+"sv": [
+"pappa",
+"far"
+]
+},
+{
+"word": "red",
+"pos": "glosa",
+"level": 1,
+"sv": [
+"röd"
+]
+},
+{
+"word": "blue",
+"pos": "glosa",
+"level": 1,
+"sv": [
+"blå"
+]
+},
+{
+"word": "big",
+"pos": "glosa",
+"level": 1,
+"sv": [
+"stor"
+]
+},
+{
+"word": "small",
+"pos": "glosa",
+"level": 1,
+"sv": [
+"liten"
+]
+},
+{
+"word": "tree",
+"pos": "glosa",
+"level": 1,
+"sv": [
+"träd"
+]
+},
+{
+"word": "sun",
+"pos": "glosa",
+"level": 1,
+"sv": [
+"sol"
+]
+},
+{
+"word": "milk",
+"pos": "glosa",
+"level": 1,
+"sv": [
+"mjölk"
+]
+},
+{
+"word": "bread",
+"pos": "glosa",
+"level": 1,
+"sv": [
+"bröd"
+]
+},
+{
+"word": "day",
+"pos": "glosa",
+"level": 1,
+"sv": [
+"dag"
+]
+},
+{
+"word": "night",
+"pos": "glosa",
+"level": 1,
+"sv": [
+"natt"
+]
+},
+{
+"word": "eat",
+"pos": "glosa",
+"level": 1,
+"sv": [
+"äta"
+],
+"forms": {
+"past": "ate",
+"pastpart": "eaten"
+}
+},
+{
+"word": "drink",
+"pos": "glosa",
+"level": 1,
+"sv": [
+"dricka"
+],
+"forms": {
+"past": "drank",
+"pastpart": "drunk"
+}
+},
+{
+"word": "sleep",
+"pos": "glosa",
+"level": 1,
+"sv": [
+"sova"
+],
+"forms": {
+"past": "slept",
+"pastpart": "slept"
+}
+},
+{
+"word": "run",
+"pos": "glosa",
+"level": 1,
+"sv": [
+"springa"
+],
+"forms": {
+"past": "ran",
+"pastpart": "run"
+}
+},
+{
+"word": "breakfast",
+"pos": "glosa",
+"level": 2,
+"sv": [
+"frukost"
+]
+},
+{
+"word": "morning",
+"pos": "glosa",
+"level": 2,
+"sv": [
+"morgon"
+]
+},
+{
+"word": "evening",
+"pos": "glosa",
+"level": 2,
+"sv": [
+"kväll"
+]
+},
+{
+"word": "week",
+"pos": "glosa",
+"level": 2,
+"sv": [
+"vecka"
+]
+},
+{
+"word": "kitchen",
+"pos": "glosa",
+"level": 2,
+"sv": [
+"kök"
+]
+},
+{
+"word": "window",
+"pos": "glosa",
+"level": 2,
+"sv": [
+"fönster"
+]
+},
+{
+"word": "door",
+"pos": "glosa",
+"level": 2,
+"sv": [
+"dörr"
+]
+},
+{
+"word": "chair",
+"pos": "glosa",
+"level": 2,
+"sv": [
+"stol"
+]
+},
+{
+"word": "table",
+"pos": "glosa",
+"level": 2,
+"sv": [
+"bord"
+]
+},
+{
+"word": "happy",
+"pos": "glosa",
+"level": 2,
+"sv": [
+"glad"
+]
+},
+{
+"word": "sad",
+"pos": "glosa",
+"level": 2,
+"sv": [
+"ledsen"
+]
+},
+{
+"word": "cold",
+"pos": "glosa",
+"level": 2,
+"sv": [
+"kall"
+]
+},
+{
+"word": "warm",
+"pos": "glosa",
+"level": 2,
+"sv": [
+"varm"
+]
+},
+{
+"word": "fast",
+"pos": "glosa",
+"level": 2,
+"sv": [
+"snabb"
+]
+},
+{
+"word": "slow",
+"pos": "glosa",
+"level": 2,
+"sv": [
+"långsam"
+]
+},
+{
+"word": "sister",
+"pos": "glosa",
+"level": 2,
+"sv": [
+"syster"
+]
+},
+{
+"word": "brother",
+"pos": "glosa",
+"level": 2,
+"sv": [
+"bror"
+]
+},
+{
+"word": "weather",
+"pos": "glosa",
+"level": 2,
+"sv": [
+"väder"
+]
+},
+{
+"word": "open",
+"pos": "glosa",
+"level": 2,
+"sv": [
+"öppna"
+]
+},
+{
+"word": "close",
+"pos": "glosa",
+"level": 2,
+"sv": [
+"stänga"
+]
+},
+{
+"word": "listen",
+"pos": "glosa",
+"level": 2,
+"sv": [
+"lyssna"
+]
+},
+{
+"word": "go",
+"pos": "glosa",
+"level": 2,
+"sv": [
+"gå"
+],
+"forms": {
+"past": "went",
+"pastpart": "gone"
+}
+},
+{
+"word": "see",
+"pos": "glosa",
+"level": 2,
+"sv": [
+"se"
+],
+"forms": {
+"past": "saw",
+"pastpart": "seen"
+}
+},
+{
+"word": "take",
+"pos": "glosa",
+"level": 2,
+"sv": [
+"ta"
+],
+"forms": {
+"past": "took",
+"pastpart": "taken"
+}
+},
+{
+"word": "give",
+"pos": "glosa",
+"level": 2,
+"sv": [
+"ge"
+],
+"forms": {
+"past": "gave",
+"pastpart": "given"
+}
+},
+{
+"word": "come",
+"pos": "glosa",
+"level": 2,
+"sv": [
+"komma"
+],
+"forms": {
+"past": "came",
+"pastpart": "come"
+}
+},
+{
+"word": "buy",
+"pos": "glosa",
+"level": 2,
+"sv": [
+"köpa"
+],
+"forms": {
+"past": "bought",
+"pastpart": "bought"
+}
+},
+{
+"word": "sell",
+"pos": "glosa",
+"level": 2,
+"sv": [
+"sälja"
+],
+"forms": {
+"past": "sold",
+"pastpart": "sold"
+}
+},
+{
+"word": "write",
+"pos": "glosa",
+"level": 2,
+"sv": [
+"skriva"
+],
+"forms": {
+"past": "wrote",
+"pastpart": "written"
+}
+},
+{
+"word": "swim",
+"pos": "glosa",
+"level": 2,
+"sv": [
+"simma"
+],
+"forms": {
+"past": "swam",
+"pastpart": "swum"
+}
+},
+{
+"word": "knowledge",
+"pos": "glosa",
+"level": 3,
+"sv": [
+"kunskap"
+]
+},
+{
+"word": "language",
+"pos": "glosa",
+"level": 3,
+"sv": [
+"språk"
+]
+},
+{
+"word": "neighbour",
+"pos": "glosa",
+"level": 3,
+"sv": [
+"granne"
+]
+},
+{
+"word": "journey",
+"pos": "glosa",
+"level": 3,
+"sv": [
+"resa"
+]
+},
+{
+"word": "dangerous",
+"pos": "glosa",
+"level": 3,
+"sv": [
+"farlig"
+]
+},
+{
+"word": "expensive",
+"pos": "glosa",
+"level": 3,
+"sv": [
+"dyr"
+]
+},
+{
+"word": "cheap",
+"pos": "glosa",
+"level": 3,
+"sv": [
+"billig"
+]
+},
+{
+"word": "difficult",
+"pos": "glosa",
+"level": 3,
+"sv": [
+"svår"
+]
+},
+{
+"word": "easy",
+"pos": "glosa",
+"level": 3,
+"sv": [
+"lätt"
+]
+},
+{
+"word": "borrow",
+"pos": "glosa",
+"level": 3,
+"sv": [
+"låna"
+]
+},
+{
+"word": "remember",
+"pos": "glosa",
+"level": 3,
+"sv": [
+"komma ihåg"
+]
+},
+{
+"word": "choose",
+"pos": "glosa",
+"level": 3,
+"sv": [
+"välja"
+],
+"forms": {
+"past": "chose",
+"pastpart": "chosen"
+}
+},
+{
+"word": "forget",
+"pos": "glosa",
+"level": 3,
+"sv": [
+"glömma"
+],
+"forms": {
+"past": "forgot",
+"pastpart": "forgotten"
+}
+},
+{
+"word": "believe",
+"pos": "glosa",
+"level": 3,
+"sv": [
+"tro"
+]
+},
+{
+"word": "decide",
+"pos": "glosa",
+"level": 3,
+"sv": [
+"bestämma"
+]
+},
+{
+"word": "usually",
+"pos": "glosa",
+"level": 3,
+"sv": [
+"vanligtvis"
+]
+},
+{
+"word": "together",
+"pos": "glosa",
+"level": 3,
+"sv": [
+"tillsammans"
+]
+},
+{
+"word": "between",
+"pos": "glosa",
+"level": 3,
+"sv": [
+"mellan"
+]
+},
+{
+"word": "through",
+"pos": "glosa",
+"level": 3,
+"sv": [
+"genom"
+]
+},
+{
+"word": "speak",
+"pos": "glosa",
+"level": 3,
+"sv": [
+"tala"
+],
+"forms": {
+"past": "spoke",
+"pastpart": "spoken"
+}
+},
+{
+"word": "find",
+"pos": "glosa",
+"level": 3,
+"sv": [
+"hitta"
+],
+"forms": {
+"past": "found",
+"pastpart": "found"
+}
+},
+{
+"word": "think",
+"pos": "glosa",
+"level": 3,
+"sv": [
+"tänka"
+],
+"forms": {
+"past": "thought",
+"pastpart": "thought"
+}
+},
+{
+"word": "tell",
+"pos": "glosa",
+"level": 3,
+"sv": [
+"berätta"
+],
+"forms": {
+"past": "told",
+"pastpart": "told"
+}
+},
+{
+"word": "begin",
+"pos": "glosa",
+"level": 3,
+"sv": [
+"börja"
+],
+"forms": {
+"past": "began",
+"pastpart": "begun"
+}
+},
+{
+"word": "fly",
+"pos": "glosa",
+"level": 3,
+"sv": [
+"flyga"
+],
+"forms": {
+"past": "flew",
+"pastpart": "flown"
+}
+},
+{
+"word": "bring",
+"pos": "glosa",
+"level": 3,
+"sv": [
+"ta med"
+],
+"forms": {
+"past": "brought",
+"pastpart": "brought"
+}
+},
+{
+"word": "environment",
+"pos": "glosa",
+"level": 4,
+"sv": [
+"miljö"
+]
+},
+{
+"word": "government",
+"pos": "glosa",
+"level": 4,
+"sv": [
+"regering"
+]
+},
+{
+"word": "society",
+"pos": "glosa",
+"level": 4,
+"sv": [
+"samhälle"
+]
+},
+{
+"word": "opportunity",
+"pos": "glosa",
+"level": 4,
+"sv": [
+"möjlighet"
+]
+},
+{
+"word": "experience",
+"pos": "glosa",
+"level": 4,
+"sv": [
+"erfarenhet"
+]
+},
+{
+"word": "achieve",
+"pos": "glosa",
+"level": 4,
+"sv": [
+"uppnå"
+]
+},
+{
+"word": "improve",
+"pos": "glosa",
+"level": 4,
+"sv": [
+"förbättra"
+]
+},
+{
+"word": "suggest",
+"pos": "glosa",
+"level": 4,
+"sv": [
+"föreslå"
+]
+},
+{
+"word": "reduce",
+"pos": "glosa",
+"level": 4,
+"sv": [
+"minska"
+]
+},
+{
+"word": "increase",
+"pos": "glosa",
+"level": 4,
+"sv": [
+"öka"
+]
+},
+{
+"word": "require",
+"pos": "glosa",
+"level": 4,
+"sv": [
+"kräva"
+]
+},
+{
+"word": "ordinary",
+"pos": "glosa",
+"level": 4,
+"sv": [
+"vanlig"
+]
+},
+{
+"word": "necessary",
+"pos": "glosa",
+"level": 4,
+"sv": [
+"nödvändig"
+]
+},
+{
+"word": "available",
+"pos": "glosa",
+"level": 4,
+"sv": [
+"tillgänglig"
+]
+},
+{
+"word": "responsible",
+"pos": "glosa",
+"level": 4,
+"sv": [
+"ansvarig"
+]
+},
+{
+"word": "although",
+"pos": "glosa",
+"level": 4,
+"sv": [
+"fastän"
+]
+},
+{
+"word": "rarely",
+"pos": "glosa",
+"level": 4,
+"sv": [
+"sällan"
+]
+},
+{
+"word": "nowadays",
+"pos": "glosa",
+"level": 4,
+"sv": [
+"nuförtiden"
+]
+},
+{
+"word": "research",
+"pos": "glosa",
+"level": 4,
+"sv": [
+"forskning"
+]
+},
+{
+"word": "freedom",
+"pos": "glosa",
+"level": 4,
+"sv": [
+"frihet"
+]
+},
+{
+"word": "lend",
+"pos": "glosa",
+"level": 4,
+"sv": [
+"låna ut"
+],
+"forms": {
+"past": "lent",
+"pastpart": "lent"
+}
+},
+{
+"word": "grow",
+"pos": "glosa",
+"level": 4,
+"sv": [
+"växa"
+],
+"forms": {
+"past": "grew",
+"pastpart": "grown"
+}
+},
+{
+"word": "break",
+"pos": "glosa",
+"level": 4,
+"sv": [
+"gå sönder"
+],
+"forms": {
+"past": "broke",
+"pastpart": "broken"
+}
+},
+{
+"word": "steal",
+"pos": "glosa",
+"level": 4,
+"sv": [
+"stjäla"
+],
+"forms": {
+"past": "stole",
+"pastpart": "stolen"
+}
+},
+{
+"word": "consequence",
+"pos": "glosa",
+"level": 5,
+"sv": [
+"konsekvens"
+]
+},
+{
+"word": "awareness",
+"pos": "glosa",
+"level": 5,
+"sv": [
+"medvetenhet"
+]
+},
+{
+"word": "sustainable",
+"pos": "glosa",
+"level": 5,
+"sv": [
+"hållbar"
+]
+},
+{
+"word": "inevitable",
+"pos": "glosa",
+"level": 5,
+"sv": [
+"oundviklig"
+]
+},
+{
+"word": "reluctant",
+"pos": "glosa",
+"level": 5,
+"sv": [
+"motvillig"
+]
+},
+{
+"word": "ambiguous",
+"pos": "glosa",
+"level": 5,
+"sv": [
+"tvetydig"
+]
+},
+{
+"word": "thoroughly",
+"pos": "glosa",
+"level": 5,
+"sv": [
+"grundligt"
+]
+},
+{
+"word": "convince",
+"pos": "glosa",
+"level": 5,
+"sv": [
+"övertyga"
+]
+},
+{
+"word": "acknowledge",
+"pos": "glosa",
+"level": 5,
+"sv": [
+"erkänna"
+]
+},
+{
+"word": "implement",
+"pos": "glosa",
+"level": 5,
+"sv": [
+"genomföra"
+]
+},
+{
+"word": "sufficient",
+"pos": "glosa",
+"level": 5,
+"sv": [
+"tillräcklig"
+]
+},
+{
+"word": "strengthen",
+"pos": "glosa",
+"level": 5,
+"sv": [
+"stärka"
+]
+},
+{
+"word": "behaviour",
+"pos": "glosa",
+"level": 5,
+"sv": [
+"beteende"
+]
+},
+{
+"word": "achievement",
+"pos": "glosa",
+"level": 5,
+"sv": [
+"prestation"
+]
+},
+{
+"word": "temporary",
+"pos": "glosa",
+"level": 5,
+"sv": [
+"tillfällig"
+]
+},
+{
+"word": "overcome",
+"pos": "glosa",
+"level": 5,
+"sv": [
+"övervinna"
+],
+"forms": {
+"past": "overcame",
+"pastpart": "overcome"
+}
+},
+{
+"word": "undertake",
+"pos": "glosa",
+"level": 5,
+"sv": [
+"åta sig"
+],
+"forms": {
+"past": "undertook",
+"pastpart": "undertaken"
+}
+},
+{
+"word": "withdraw",
+"pos": "glosa",
+"level": 5,
+"sv": [
+"dra sig tillbaka"
+],
+"forms": {
+"past": "withdrew",
+"pastpart": "withdrawn"
+}
+}
+]
+}

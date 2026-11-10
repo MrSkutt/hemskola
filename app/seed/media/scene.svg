@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" width="400" height="260" role="img" aria-label="A house, two trees, a blue car and a sun">
+<rect width="400" height="260" fill="#cfe9ff"/>
+<circle cx="340" cy="45" r="28" fill="#ffd93b"/>
+<g fill="#fff"><ellipse cx="90" cy="45" rx="34" ry="14"/><ellipse cx="115" cy="38" rx="24" ry="12"/><ellipse cx="230" cy="70" rx="30" ry="12"/><ellipse cx="250" cy="63" rx="20" ry="10"/></g>
+<rect y="170" width="400" height="90" fill="#7ccf6a"/>
+<rect x="0" y="225" width="400" height="22" fill="#8a8f98"/>
+<rect x="120" y="105" width="120" height="80" fill="#d9483b"/>
+<polygon points="110,105 180,55 250,105" fill="#5b4636"/>
+<rect x="165" y="140" width="30" height="45" fill="#8b5a2b"/>
+<rect x="132" y="120" width="26" height="24" fill="#bfe3ff" stroke="#fff" stroke-width="3"/>
+<rect x="202" y="120" width="26" height="24" fill="#bfe3ff" stroke="#fff" stroke-width="3"/>
+<g><rect x="28" y="125" width="12" height="55" fill="#7a4b1e"/><circle cx="34" cy="110" r="30" fill="#2f9e44"/></g>
+<g><rect x="304" y="130" width="12" height="50" fill="#7a4b1e"/><circle cx="310" cy="115" r="27" fill="#37b24d"/></g>
+<g><rect x="255" y="195" width="86" height="26" rx="8" fill="#1c7ed6"/><rect x="272" y="178" width="48" height="22" rx="8" fill="#4dabf7"/><circle cx="278" cy="224" r="9" fill="#212529"/><circle cx="320" cy="224" r="9" fill="#212529"/></g>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300" role="img" aria-label="Vattnets kretslopp med tre markerade steg A, B och C">
+<defs><marker id="ah" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto"><path d="M1,1 L12,7 L1,13 z" fill="#1c4e80"/></marker></defs>
+<rect width="480" height="300" fill="#e7f3ff"/>
+<circle cx="50" cy="45" r="26" fill="#ffd93b"/>
+<polygon points="0,230 70,140 130,200 190,120 250,230" fill="#8d99a6"/>
+<polygon points="190,120 177,141 190,137 203,143" fill="#fff"/>
+<rect y="225" width="480" height="75" fill="#3b8fd9"/>
+<g fill="#fff"><ellipse cx="380" cy="55" rx="58" ry="23"/><ellipse cx="420" cy="46" rx="38" ry="20"/><ellipse cx="342" cy="62" rx="32" ry="16"/></g>
+<path d="M310,215 C300,170 300,130 320,95" stroke="#1c4e80" stroke-width="4" fill="none" marker-end="url(#ah)"/>
+<g stroke="#2b6cb0" stroke-width="3" stroke-linecap="round"><path d="M395,92 l-6,22"/><path d="M413,92 l-6,22"/><path d="M431,92 l-6,22"/><path d="M402,128 l-6,22"/><path d="M420,128 l-6,22"/></g>
+<path d="M410,160 L410,208" stroke="#1c4e80" stroke-width="4" fill="none" marker-end="url(#ah)"/>
+<g font-family="sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#1c4e80" stroke="#1c4e80" stroke-width="2">
+<circle cx="280" cy="165" r="16" fill="#fff"/><circle cx="380" cy="50" r="16" fill="#fff"/><circle cx="450" cy="185" r="16" fill="#fff"/>
+</g>
+<g font-family="sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#1c4e80"><text x="280" y="172">A</text><text x="380" y="57">B</text><text x="450" y="192">C</text></g>
+</svg>

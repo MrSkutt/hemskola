@@ -1,0 +1,234 @@
+[
+ {
+  "subject": "so",
+  "topic": "Sverige",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken stad är Sveriges huvudstad?",
+  "options": [
+   "Stockholm",
+   "Göteborg",
+   "Malmö",
+   "Uppsala"
+  ],
+  "answer": "Stockholm",
+  "explanation": "Stockholm är Sveriges huvudstad."
+ },
+ {
+  "subject": "so",
+  "topic": "Sveriges grannar",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket av länderna gränsar till Sverige?",
+  "options": [
+   "Norge",
+   "Frankrike",
+   "Spanien",
+   "Polen"
+  ],
+  "answer": "Norge",
+  "explanation": "Sverige gränsar till Norge och Finland, och har sjögräns till bland annat Danmark."
+ },
+ {
+  "subject": "so",
+  "topic": "Demokrati",
+  "level": 1,
+  "type": "mc",
+  "question": "Klass 7B röstade om utflykten. Vilket förslag fick flest röster?",
+  "options": [
+   "Badhus",
+   "Museum",
+   "Skogen"
+  ],
+  "answer": "Badhus",
+  "explanation": "Badhus har störst del av cirkeln: hälften av rösterna.",
+  "diagram": {
+   "type": "pie_chart",
+   "title": "Röster om utflykt",
+   "labels": [
+    "Badhus",
+    "Museum",
+    "Skogen"
+   ],
+   "values": [
+    12,
+    6,
+    6
+   ],
+   "show_percent": true
+  }
+ },
+ {
+  "subject": "so",
+  "topic": "Sverige",
+  "level": 2,
+  "type": "text",
+  "question": "Hur många landskap finns det i Sverige? Svara endast med talet.",
+  "answer": [
+   "25"
+  ],
+  "explanation": "Sverige har 25 landskap."
+ },
+ {
+  "subject": "so",
+  "topic": "Demokrati",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas det när medborgarna får rösta fram dem som bestämmer?",
+  "options": [
+   "Demokrati",
+   "Diktatur",
+   "Anarki",
+   "Enväldigt styre"
+  ],
+  "answer": "Demokrati",
+  "explanation": "I en demokrati har folket makten genom fria val."
+ },
+ {
+  "subject": "so",
+  "topic": "Demokrati",
+  "level": 2,
+  "type": "mc",
+  "question": "Hur ofta är det val till riksdagen i Sverige?",
+  "options": [
+   "Vart fjärde år",
+   "Vartannat år",
+   "Vart sjätte år",
+   "Varje år"
+  ],
+  "answer": "Vart fjärde år",
+  "explanation": "Det är riksdagsval vart fjärde år."
+ },
+ {
+  "subject": "so",
+  "topic": "Diagram",
+  "level": 2,
+  "type": "text",
+  "question": "Staplarna visar hur eleverna i en fiktiv klass tog sig till skolan. Hur många elever är det i klassen? Svara endast med talet.",
+  "answer": [
+   "25"
+  ],
+  "explanation": "9 + 8 + 6 + 2 = 25 elever.",
+  "diagram": {
+   "type": "bar_chart",
+   "title": "Så kom vi till skolan",
+   "labels": [
+    "Gå",
+    "Cykel",
+    "Buss",
+    "Bil"
+   ],
+   "values": [
+    9,
+    8,
+    6,
+    2
+   ]
+  }
+ },
+ {
+  "subject": "so",
+  "topic": "Sverige i världen",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket år blev Sverige medlem i EU?",
+  "options": [
+   "1995",
+   "1986",
+   "2000",
+   "1973"
+  ],
+  "answer": "1995",
+  "explanation": "Sverige gick med i EU den 1 januari 1995."
+ },
+ {
+  "subject": "so",
+  "topic": "Statsskick",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken statsform har Sverige?",
+  "options": [
+   "Konstitutionell monarki",
+   "Republik",
+   "Enväldig monarki",
+   "Diktatur"
+  ],
+  "answer": "Konstitutionell monarki",
+  "explanation": "Sverige har en kung som statschef, men makten ligger hos riksdag och regering."
+ },
+ {
+  "subject": "so",
+  "topic": "Demokrati",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad är en folkomröstning?",
+  "options": [
+   "En omröstning där medborgarna svarar på en sakfråga",
+   "Ett val av ny kung",
+   "Ett möte i riksdagen",
+   "En domstolsförhandling"
+  ],
+  "answer": "En omröstning där medborgarna svarar på en sakfråga",
+  "explanation": "I en folkomröstning röstar medborgarna direkt i en viss fråga."
+ },
+ {
+  "subject": "so",
+  "topic": "Historia",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket år började andra världskriget i Europa?",
+  "options": [
+   "1939",
+   "1914",
+   "1945",
+   "1933"
+  ],
+  "answer": "1939",
+  "explanation": "Kriget började 1939 när Tyskland anföll Polen."
+ },
+ {
+  "subject": "so",
+  "topic": "Världen",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken organisation grundades 1945 för att främja fred och samarbete mellan länder?",
+  "options": [
+   "FN",
+   "EU",
+   "Nato",
+   "WTO"
+  ],
+  "answer": "FN",
+  "explanation": "FN, Förenta nationerna, grundades 1945."
+ },
+ {
+  "subject": "so",
+  "topic": "Historia",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken händelse 1989 blev en symbol för kalla krigets slut i Europa?",
+  "options": [
+   "Berlinmurens fall",
+   "Ryska revolutionen",
+   "Suezkrisen",
+   "Kubakrisen"
+  ],
+  "answer": "Berlinmurens fall",
+  "explanation": "Muren i Berlin öppnades i november 1989."
+ },
+ {
+  "subject": "so",
+  "topic": "Statsskick",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas det när den politiska makten delas upp mellan olika statsmakter, t.ex. lagstiftande, verkställande och dömande?",
+  "options": [
+   "Maktdelning",
+   "Folksuveränitet",
+   "Federalism",
+   "Majoritetsstyre"
+  ],
+  "answer": "Maktdelning",
+  "explanation": "Maktdelning ska hindra att en enda part får all makt."
+ }
+]

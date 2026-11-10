@@ -236,3 +236,30 @@ def test_old_database_is_upgraded_without_losing_data(tmp_path, monkeypatch):
     _, correct, _ = logic.record_attempt(conn, 1, item, "2")
     assert correct and conn.execute("SELECT COUNT(*) FROM attempts").fetchone()[0] == 2
     conn.close()
+
+
+def test_example_images_and_subjects_are_installed(client):
+    login(client, "admin", "adminpass1")
+    for name in ("scene.svg", "vattnets_kretslopp.svg", "solsystemet.svg", "vaxtens_delar.svg"):
+        r = client.get(f"/media/{name}")
+        assert r.status_code == 200 and r.headers["content-type"] == "image/svg+xml"
+    conn = _conn()
+    subjects = {r[0] for r in conn.execute("SELECT DISTINCT subject FROM exercises WHERE active=1")}
+    assert {"matte", "svenska", "engelska", "no", "so"} <= subjects
+    refs = {r[0] for r in conn.execute("SELECT image FROM exercises WHERE image IS NOT NULL")}
+    conn.close()
+    assert refs and all(client.get(f"/media/{n}").status_code == 200 for n in refs)
+
+
+def test_student_can_take_english_test_and_practice(client):
+    _make_student(client)
+    login(client, "mia", "hemligt1")
+    assert "Engelska" in client.get("/home").text
+    url = client.post("/test/start/engelska").headers["location"]
+    for _ in range(10):
+        page = client.get(url)
+        ex_id = re.search(r'name="exercise_id" value="(\d+)"', page.text).group(1)
+        gen_id = re.search(r'name="generated_id" value="(\d*)"', page.text).group(1)
+        client.post(url, data={"exercise_id": ex_id, "generated_id": gen_id, "given": "x"})
+    assert client.get(client.get(url).headers["location"]).status_code == 200
+    assert client.get("/practice/engelska").status_code == 200

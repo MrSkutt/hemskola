@@ -1,0 +1,486 @@
+[
+ {
+  "subject": "engelska",
+  "topic": "Titta på bilden",
+  "level": 1,
+  "type": "mc",
+  "question": "Look at the picture. What colour is the house?",
+  "options": [
+   "red",
+   "blue",
+   "green",
+   "yellow"
+  ],
+  "answer": "red",
+  "explanation": "Huset är rött: 'red'.",
+  "image": "scene.svg"
+ },
+ {
+  "subject": "engelska",
+  "topic": "Titta på bilden",
+  "level": 1,
+  "type": "text",
+  "question": "Look at the picture. How many trees are there?\nWrite a number.",
+  "answer": [
+   "2",
+   "two"
+  ],
+  "explanation": "Det finns två träd: 'two trees'.",
+  "image": "scene.svg"
+ },
+ {
+  "subject": "engelska",
+  "topic": "Klockan",
+  "level": 1,
+  "type": "mc",
+  "question": "What time is it?",
+  "options": [
+   "half past three",
+   "a quarter past three",
+   "half past four",
+   "a quarter to four"
+  ],
+  "answer": "half past three",
+  "explanation": "Klockan är 3:30. På engelska säger man 'half past three' (på svenska halv fyra).",
+  "diagram": {
+   "type": "clock",
+   "time": "3:30"
+  }
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammatik",
+  "level": 1,
+  "type": "mc",
+  "question": "She ___ a dog.",
+  "options": [
+   "have",
+   "has",
+   "haves",
+   "having"
+  ],
+  "answer": "has",
+  "explanation": "Efter he/she/it används 'has'."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammatik",
+  "level": 1,
+  "type": "mc",
+  "question": "I ___ twelve years old.",
+  "options": [
+   "am",
+   "is",
+   "are",
+   "be"
+  ],
+  "answer": "am",
+  "explanation": "Efter 'I' används 'am'."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammatik",
+  "level": 1,
+  "type": "mc",
+  "question": "Where ___ you from?",
+  "options": [
+   "is",
+   "are",
+   "am",
+   "be"
+  ],
+  "answer": "are",
+  "explanation": "Efter 'you' används 'are'."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Hälsningar",
+  "level": 1,
+  "type": "mc",
+  "question": "What do you say when you meet someone in the morning?",
+  "options": [
+   "Good morning",
+   "Good night",
+   "Goodbye",
+   "Good evening"
+  ],
+  "answer": "Good morning",
+  "explanation": "'Good morning' säger man på morgonen."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Diagram",
+  "level": 1,
+  "type": "mc",
+  "question": "On which day did Tom eat the most apples?",
+  "options": [
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu",
+   "Fri"
+  ],
+  "answer": "Fri",
+  "explanation": "Friday har den högsta stapeln.",
+  "diagram": {
+   "type": "bar_chart",
+   "title": "Apples eaten by Tom",
+   "labels": [
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri"
+   ],
+   "values": [
+    2,
+    4,
+    1,
+    3,
+    5
+   ]
+  }
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammatik",
+  "level": 2,
+  "type": "mc",
+  "question": "Yesterday I ___ to the cinema.",
+  "options": [
+   "go",
+   "went",
+   "gone",
+   "going"
+  ],
+  "answer": "went",
+  "explanation": "Yesterday visar att det hände i dåtid: go – went."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Plural",
+  "level": 2,
+  "type": "mc",
+  "question": "One child, two ___.",
+  "options": [
+   "childs",
+   "children",
+   "childrens",
+   "child"
+  ],
+  "answer": "children",
+  "explanation": "'child' har oregelbunden plural: children."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Klockan",
+  "level": 2,
+  "type": "mc",
+  "question": "Look at the clock. What time is it?",
+  "options": [
+   "a quarter to eight",
+   "a quarter past seven",
+   "half past seven",
+   "a quarter to seven"
+  ],
+  "answer": "a quarter to eight",
+  "explanation": "Klockan är 7:45, alltså kvart i åtta: 'a quarter to eight'.",
+  "diagram": {
+   "type": "clock",
+   "time": "7:45"
+  }
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammatik",
+  "level": 2,
+  "type": "mc",
+  "question": "Which sentence is correct?",
+  "options": [
+   "He don't like fish.",
+   "He doesn't like fish.",
+   "He not like fish.",
+   "He doesn't likes fish."
+  ],
+  "answer": "He doesn't like fish.",
+  "explanation": "Efter he/she/it används 'doesn't' och verbet står i grundform."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Titta på bilden",
+  "level": 2,
+  "type": "mc",
+  "question": "Which of these can you see in the picture?",
+  "options": [
+   "a blue car",
+   "a red bus",
+   "a green boat",
+   "a black bike"
+  ],
+  "answer": "a blue car",
+  "explanation": "Det finns en blå bil på vägen.",
+  "image": "scene.svg"
+ },
+ {
+  "subject": "engelska",
+  "topic": "Jämförelser",
+  "level": 2,
+  "type": "mc",
+  "question": "She is ___ than her brother.",
+  "options": [
+   "tall",
+   "taller",
+   "tallest",
+   "more tall"
+  ],
+  "answer": "taller",
+  "explanation": "Korta adjektiv böjs med -er när man jämför två: tall – taller."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Motsatser",
+  "level": 2,
+  "type": "text",
+  "question": "Write the opposite of 'hot'.\nWrite one word.",
+  "answer": [
+   "cold"
+  ],
+  "explanation": "Motsatsen till 'hot' är 'cold'."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammatik",
+  "level": 3,
+  "type": "mc",
+  "question": "I have lived here ___ 2019.",
+  "options": [
+   "for",
+   "since",
+   "during",
+   "from"
+  ],
+  "answer": "since",
+  "explanation": "'since' används med en tidpunkt (2019), 'for' med en tidsperiod (five years)."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammatik",
+  "level": 3,
+  "type": "mc",
+  "question": "If it ___ tomorrow, we will stay at home.",
+  "options": [
+   "rains",
+   "will rain",
+   "rained",
+   "rain"
+  ],
+  "answer": "rains",
+  "explanation": "I if-satser om framtiden används presens: 'If it rains'."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Ordklasser",
+  "level": 3,
+  "type": "mc",
+  "question": "Which word is a verb?",
+  "options": [
+   "quickly",
+   "beautiful",
+   "decide",
+   "knowledge"
+  ],
+  "answer": "decide",
+  "explanation": "'decide' (bestämma) är ett verb."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Oregelbundna verb",
+  "level": 3,
+  "type": "text",
+  "question": "Write the past simple of 'buy'.\nWrite one word.",
+  "answer": [
+   "bought"
+  ],
+  "explanation": "buy – bought – bought."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Jämförelser",
+  "level": 3,
+  "type": "mc",
+  "question": "This is the ___ book I have ever read.",
+  "options": [
+   "good",
+   "better",
+   "best",
+   "most good"
+  ],
+  "answer": "best",
+  "explanation": "Superlativ av 'good' är 'best'."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Indirekt fråga",
+  "level": 3,
+  "type": "mc",
+  "question": "He asked me ___ I wanted tea.",
+  "options": [
+   "if",
+   "that",
+   "what",
+   "which"
+  ],
+  "answer": "if",
+  "explanation": "'if' betyder 'om' i en indirekt fråga."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammatik",
+  "level": 4,
+  "type": "mc",
+  "question": "She has been working here ___ five years.",
+  "options": [
+   "since",
+   "for",
+   "during",
+   "from"
+  ],
+  "answer": "for",
+  "explanation": "'for' används med en tidsperiod: for five years."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Passiv",
+  "level": 4,
+  "type": "mc",
+  "question": "The window ___ by the boy yesterday.",
+  "options": [
+   "broke",
+   "was broken",
+   "has broken",
+   "is breaking"
+  ],
+  "answer": "was broken",
+  "explanation": "Passiv dåtid: was/were + particip."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Konditionalis",
+  "level": 4,
+  "type": "mc",
+  "question": "I wish I ___ more time.",
+  "options": [
+   "have",
+   "had",
+   "would have",
+   "has"
+  ],
+  "answer": "had",
+  "explanation": "Efter 'I wish' om nutiden används dåtidsform: I wish I had."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Ordförråd",
+  "level": 4,
+  "type": "mc",
+  "question": "Which word means 'very big'?",
+  "options": [
+   "tiny",
+   "huge",
+   "narrow",
+   "brief"
+  ],
+  "answer": "huge",
+  "explanation": "'huge' betyder jättestor."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammatik",
+  "level": 4,
+  "type": "mc",
+  "question": "Despite ___ tired, she finished the race.",
+  "options": [
+   "be",
+   "being",
+   "was",
+   "to be"
+  ],
+  "answer": "being",
+  "explanation": "Efter 'despite' används ing-form: despite being tired."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammatik",
+  "level": 5,
+  "type": "mc",
+  "question": "Hardly ___ the station when the train left.",
+  "options": [
+   "had we reached",
+   "we had reached",
+   "we reached",
+   "did we reach"
+  ],
+  "answer": "had we reached",
+  "explanation": "Efter 'hardly' vänds ordföljden: 'Hardly had we reached…'."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammatik",
+  "level": 5,
+  "type": "mc",
+  "question": "The number of students ___ increasing.",
+  "options": [
+   "is",
+   "are",
+   "were",
+   "be"
+  ],
+  "answer": "is",
+  "explanation": "'The number of' är singular, så 'is'."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammatik",
+  "level": 5,
+  "type": "mc",
+  "question": "She suggested ___ to the cinema.",
+  "options": [
+   "to go",
+   "going",
+   "go",
+   "went"
+  ],
+  "answer": "going",
+  "explanation": "Efter 'suggest' används ing-form: suggested going."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Konditionalis",
+  "level": 5,
+  "type": "mc",
+  "question": "If I had known, I ___ you.",
+  "options": [
+   "would tell",
+   "would have told",
+   "will tell",
+   "told"
+  ],
+  "answer": "would have told",
+  "explanation": "Tredje konditionalis: if + had + particip, would have + particip."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Ordförråd",
+  "level": 5,
+  "type": "mc",
+  "question": "'Reluctant' is closest in meaning to:",
+  "options": [
+   "unwilling",
+   "eager",
+   "careful",
+   "tired"
+  ],
+  "answer": "unwilling",
+  "explanation": "'reluctant' betyder motvillig, alltså 'unwilling'."
+ }
+]

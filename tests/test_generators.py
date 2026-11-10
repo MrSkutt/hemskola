@@ -71,7 +71,7 @@ def test_bar_read_matches_the_chart():
 
 def test_all_generators_have_unique_names_and_valid_levels():
     for n, g in generators.REGISTRY.items():
-        assert g.name == n and 1 <= g.level <= 5 and g.subject in ("matte", "svenska")
+        assert g.name == n and 1 <= g.level <= 5 and g.subject in ("matte", "svenska", "engelska")
 
 
 # ------------------------------------------------------------------ svenska / ordlista
@@ -156,3 +156,53 @@ def test_diagrams_validate_and_escape():
     for t, spec in {"clock": {"time": "12:00"}, "fraction": {"parts": 3, "shaded": 1},
                     "number_line": {"min": 0, "max": 10, "marks": [{"value": 5, "label": "x"}]}}.items():
         assert diagrams.render({"type": t, **spec}).startswith("<svg")
+
+
+# ------------------------------------------------------------------ engelska
+
+EN_WORDS = json.loads((SEED / "words_en.json").read_text(encoding="utf-8"))["words"]
+EN_BANK = WordBank(EN_WORDS)
+EN = {n: g for n, g in generators.REGISTRY.items() if g.subject == "engelska"}
+
+
+def test_english_wordlist_is_valid_and_unique():
+    seen_en, seen_sv = set(), set()
+    for w in EN_WORDS:
+        row, err = validate_word(w)
+        assert err is None, (w, err)
+        assert w["word"] not in seen_en and w["sv"][0] not in seen_sv
+        seen_en.add(w["word"])
+        seen_sv.add(w["sv"][0])
+    assert {w["level"] for w in EN_WORDS} == {1, 2, 3, 4, 5}
+    assert len([w for w in EN_WORDS if "forms" in w]) >= 25
+
+
+def test_english_generators_cover_levels():
+    assert {g.level for g in EN.values()} == {1, 2, 3, 4, 5} and len(EN) >= 12
+
+
+@pytest.mark.parametrize("name", sorted(EN))
+def test_english_generators(name):
+    rng = random.Random(zlib.crc32(name.encode()))
+    by_en = {w["word"]: w for w in EN_WORDS}
+    for _ in range(300):
+        q = EN[name].fn(rng, EN_BANK)
+        assert q.answers and q.question.strip() and "{" not in q.question
+        assert logic.is_correct(q.answers[0], q.answers)
+        if q.options:
+            assert q.answers[0] in q.options and len(set(q.options)) == len(q.options) == 4
+        if "gloss_en_sv" in name:
+            word = re.search(r"'([^']+)'", q.question).group(1)
+            assert q.answers[0] == by_en[word]["sv"][0]
+        elif "gloss_sv_en" in name:
+            sv = re.search(r"'([^']+)'", q.question).group(1)
+            assert q.answers == [w["word"] for w in EN_WORDS if w["sv"][0] == sv]
+        else:
+            verb = re.search(r"'([^']+)'", q.question).group(1)
+            key = "past" if name == "e3_past" else "pastpart"
+            assert q.answers == [by_en[verb]["forms"][key]]
+
+
+def test_english_needs_wordlist():
+    with pytest.raises(generators.NoData):
+        EN["e1_gloss_en_sv"].fn(random.Random(1), WordBank([]))

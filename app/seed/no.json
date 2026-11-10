@@ -1,0 +1,303 @@
+[
+ {
+  "subject": "no",
+  "topic": "Växter",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken del av växten har bokstaven D?",
+  "options": [
+   "Blomma",
+   "Blad",
+   "Stjälk",
+   "Rot"
+  ],
+  "answer": "Rot",
+  "explanation": "D pekar på växtens rötter. Rötterna tar upp vatten och håller fast växten.",
+  "image": "vaxtens_delar.svg"
+ },
+ {
+  "subject": "no",
+  "topic": "Växter",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken bokstav visar växtens blomma?",
+  "options": [
+   "A",
+   "B",
+   "C",
+   "D"
+  ],
+  "answer": "A",
+  "explanation": "A pekar på blomman. B är ett blad, C stjälken och D roten.",
+  "image": "vaxtens_delar.svg"
+ },
+ {
+  "subject": "no",
+  "topic": "Solsystemet",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken planet är markerad med siffran 3?",
+  "options": [
+   "Merkurius",
+   "Venus",
+   "Jorden",
+   "Mars"
+  ],
+  "answer": "Jorden",
+  "explanation": "Planeterna ligger i ordningen Merkurius, Venus, Jorden, Mars, Jupiter, Saturnus, Uranus, Neptunus. Nummer 3 är Jorden.",
+  "image": "solsystemet.svg"
+ },
+ {
+  "subject": "no",
+  "topic": "Vatten",
+  "level": 1,
+  "type": "mc",
+  "question": "Vid vilken temperatur fryser rent vatten?",
+  "options": [
+   "0 °C",
+   "10 °C",
+   "100 °C",
+   "−10 °C"
+  ],
+  "answer": "0 °C",
+  "explanation": "Vatten fryser till is vid 0 °C."
+ },
+ {
+  "subject": "no",
+  "topic": "Solsystemet",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken siffra har den största planeten?",
+  "options": [
+   "3",
+   "5",
+   "6",
+   "8"
+  ],
+  "answer": "5",
+  "explanation": "Nummer 5 är Jupiter, som är solsystemets största planet.",
+  "image": "solsystemet.svg"
+ },
+ {
+  "subject": "no",
+  "topic": "Vattnets kretslopp",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas steget A, där vatten från havet blir till vattenånga?",
+  "options": [
+   "Avdunstning",
+   "Kondensation",
+   "Nederbörd",
+   "Frysning"
+  ],
+  "answer": "Avdunstning",
+  "explanation": "Solen värmer vattnet så att det avdunstar och stiger som vattenånga.",
+  "image": "vattnets_kretslopp.svg"
+ },
+ {
+  "subject": "no",
+  "topic": "Växter",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken gas tar växter upp från luften när de gör fotosyntes?",
+  "options": [
+   "Koldioxid",
+   "Syre",
+   "Kväve",
+   "Väte"
+  ],
+  "answer": "Koldioxid",
+  "explanation": "Växter tar upp koldioxid och vatten och bildar socker och syre."
+ },
+ {
+  "subject": "no",
+  "topic": "Temperatur",
+  "level": 2,
+  "type": "text",
+  "question": "Vilken temperatur visar pricken? Svara endast med talet.",
+  "answer": [
+   "-4",
+   "−4"
+  ],
+  "explanation": "Pricken ligger fyra steg under noll: −4 °C.",
+  "diagram": {
+   "type": "number_line",
+   "min": -10,
+   "max": 10,
+   "step": 1,
+   "label_step": 5,
+   "marks": [
+    {
+     "value": -4,
+     "label": "?"
+    }
+   ]
+  }
+ },
+ {
+  "subject": "no",
+  "topic": "Vattnets kretslopp",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad händer i steg B?",
+  "options": [
+   "Vattenångan kyls och blir små droppar",
+   "Vattnet fryser till is",
+   "Droppar faller mot marken",
+   "Vatten tas upp av rötter"
+  ],
+  "answer": "Vattenångan kyls och blir små droppar",
+  "explanation": "B är molnet. Där kyls vattenångan och blir till små vattendroppar, som kallas kondensation.",
+  "image": "vattnets_kretslopp.svg"
+ },
+ {
+  "subject": "no",
+  "topic": "Celler",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken del av cellen innehåller arvsmassan?",
+  "options": [
+   "Cellkärnan",
+   "Cellväggen",
+   "Mitokondrien",
+   "Cellmembranet"
+  ],
+  "answer": "Cellkärnan",
+  "explanation": "Arvsmassan (DNA) finns i cellkärnan."
+ },
+ {
+  "subject": "no",
+  "topic": "Diagram",
+  "level": 3,
+  "type": "mc",
+  "question": "Staplarna visar medeltemperaturen en vecka i en fiktiv stad. Vilken dag var det varmast?",
+  "options": [
+   "Mån",
+   "Tis",
+   "Ons",
+   "Tor",
+   "Fre"
+  ],
+  "answer": "Tor",
+  "explanation": "Torsdag har den högsta stapeln.",
+  "diagram": {
+   "type": "bar_chart",
+   "title": "Temperatur (°C)",
+   "labels": [
+    "Mån",
+    "Tis",
+    "Ons",
+    "Tor",
+    "Fre"
+   ],
+   "values": [
+    12,
+    14,
+    13,
+    18,
+    15
+   ]
+  }
+ },
+ {
+  "subject": "no",
+  "topic": "Kemi",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken är den kemiska beteckningen för vatten?",
+  "options": [
+   "H2O",
+   "CO2",
+   "O2",
+   "NaCl"
+  ],
+  "answer": "H2O",
+  "explanation": "Vatten består av två väteatomer och en syreatom: H₂O."
+ },
+ {
+  "subject": "no",
+  "topic": "Växter",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas processen där växter omvandlar ljus, vatten och koldioxid till socker och syre?",
+  "options": [
+   "Fotosyntes",
+   "Förbränning",
+   "Jäsning",
+   "Cellandning"
+  ],
+  "answer": "Fotosyntes",
+  "explanation": "Fotosyntesen sker i växtens gröna delar med hjälp av klorofyll."
+ },
+ {
+  "subject": "no",
+  "topic": "Luft",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken gas utgör störst del av luften?",
+  "options": [
+   "Kväve",
+   "Syre",
+   "Koldioxid",
+   "Argon"
+  ],
+  "answer": "Kväve",
+  "explanation": "Luften består av ungefär 78 % kväve och 21 % syre.",
+  "diagram": {
+   "type": "pie_chart",
+   "title": "Luftens innehåll",
+   "labels": [
+    "Kväve",
+    "Syre",
+    "Övrigt"
+   ],
+   "values": [
+    78,
+    21,
+    1
+   ],
+   "show_percent": true
+  }
+ },
+ {
+  "subject": "no",
+  "topic": "Kemi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad är en katalysator?",
+  "options": [
+   "Ett ämne som påskyndar en kemisk reaktion utan att förbrukas",
+   "Ett ämne som bromsar alla reaktioner",
+   "En sorts syra",
+   "En blandning av två metaller"
+  ],
+  "answer": "Ett ämne som påskyndar en kemisk reaktion utan att förbrukas",
+  "explanation": "En katalysator gör att reaktionen går snabbare men finns kvar efteråt."
+ },
+ {
+  "subject": "no",
+  "topic": "Energi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken princip säger att energi varken kan skapas eller förstöras, bara omvandlas?",
+  "options": [
+   "Energiprincipen",
+   "Newtons tredje lag",
+   "Ohms lag",
+   "Arkimedes princip"
+  ],
+  "answer": "Energiprincipen",
+  "explanation": "Energin i ett slutet system är konstant, den byter bara form."
+ },
+ {
+  "subject": "no",
+  "topic": "Atomer",
+  "level": 5,
+  "type": "text",
+  "question": "Hur många elektroner har en neutral kolatom? Svara endast med talet.",
+  "answer": [
+   "6"
+  ],
+  "explanation": "Kol har atomnummer 6, alltså 6 protoner och 6 elektroner i en neutral atom."
+ }
+]

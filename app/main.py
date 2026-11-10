@@ -61,6 +61,7 @@ def bootstrap() -> None:
                     print(f"Seed {f.name}: {result['added']} övningar, {result['words_added']} ord", flush=True)
         logic.ensure_generator_exercises(conn)
         logic.cleanup_generated(conn)
+        install_seed_media()
     finally:
         conn.close()
 
@@ -521,6 +522,18 @@ def media_dir() -> Path:
     d = Path(os.environ.get("MEDIA_DIR") or Path(database.DB_PATH).parent / "media")
     d.mkdir(parents=True, exist_ok=True)
     return d
+
+
+def install_seed_media() -> None:
+    """Kopierar medföljande exempelbilder till mediamappen. Befintliga filer skrivs aldrig över."""
+    src = BASE / "seed" / "media"
+    if not src.is_dir():
+        return
+    dest = media_dir()
+    for f in src.iterdir():
+        target = dest / f.name
+        if f.is_file() and logic.MEDIA_NAME.match(f.name) and not target.exists():
+            target.write_bytes(f.read_bytes())
 
 
 def _looks_like(ext: str, data: bytes) -> bool:

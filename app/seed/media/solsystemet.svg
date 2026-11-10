@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 200" width="640" height="200" role="img" aria-label="Solsystemet med åtta numrerade planeter">
+<rect width="640" height="200" fill="#111a33"/>
+<circle cx="0" cy="100" r="62" fill="#ffd93b"/>
+<circle cx="95" cy="100" r="5" fill="#9b9b9b"/>
+<text x="95" y="178" font-family="sans-serif" font-size="18" font-weight="bold" fill="#fff" text-anchor="middle">1</text>
+<circle cx="131" cy="100" r="9" fill="#e0b46a"/>
+<text x="131" y="178" font-family="sans-serif" font-size="18" font-weight="bold" fill="#fff" text-anchor="middle">2</text>
+<circle cx="172" cy="100" r="10" fill="#3b82d9"/>
+<text x="172" y="178" font-family="sans-serif" font-size="18" font-weight="bold" fill="#fff" text-anchor="middle">3</text>
+<circle cx="211" cy="100" r="7" fill="#d9603b"/>
+<text x="211" y="178" font-family="sans-serif" font-size="18" font-weight="bold" fill="#fff" text-anchor="middle">4</text>
+<circle cx="264" cy="100" r="24" fill="#d9a066"/>
+<text x="264" y="178" font-family="sans-serif" font-size="18" font-weight="bold" fill="#fff" text-anchor="middle">5</text>
+<circle cx="330" cy="100" r="20" fill="#e6cf94"/>
+<ellipse cx="330" cy="100" rx="29" ry="5" fill="none" stroke="#c9b27a" stroke-width="2"/>
+<text x="330" y="178" font-family="sans-serif" font-size="18" font-weight="bold" fill="#fff" text-anchor="middle">6</text>
+<circle cx="387" cy="100" r="15" fill="#8fd3d9"/>
+<text x="387" y="178" font-family="sans-serif" font-size="18" font-weight="bold" fill="#fff" text-anchor="middle">7</text>
+<circle cx="439" cy="100" r="15" fill="#4a63d9"/>
+<text x="439" y="178" font-family="sans-serif" font-size="18" font-weight="bold" fill="#fff" text-anchor="middle">8</text>
+</svg>

@@ -109,6 +109,20 @@ Koppla en bild till en övning med `"image": "filnamn.png"` i importen.
 
 Uppgraderar du en befintlig installation läggs de nya tabellerna och kolumnerna till automatiskt, utan att data försvinner.
 
+## Ämnen: matte, svenska, engelska, NO och SO
+
+Matte och svenska har generatorer. **Engelska** har generatorer för glosor (engelska ↔ svenska, nivå 1–5) och oregelbundna verb,
+som hämtar ord ur ordlistan (ordklass `glosa`, se `app/seed/words_en.json`). Lägg till fler glosor så här:
+
+```json
+{"words": [{"word": "bicycle", "pos": "glosa", "level": 2, "sv": ["cykel"]},
+           {"word": "wake", "pos": "glosa", "level": 3, "sv": ["vakna"], "forms": {"past": "woke", "pastpart": "woken"}}]}
+```
+
+Startövningar för **engelska**, **NO** och **SO** finns i `app/seed/*.json`, bland annat med diagram och med de medföljande
+exempelbilderna i `app/seed/media/` (de kopieras till `data/media` vid start, och befintliga filer skrivs aldrig över).
+Nya ämnen skapas automatiskt: importera övningar med t.ex. `"subject": "engelska"`. Egna visningsnamn läggs i `SUBJECT_LABELS` i `app/logic.py`.
+
 ## Drift
 
 * **Backup:** `sqlite3 data/hemskola.db ".backup data/backup-$(date +%F).db"` (eller kopiera `data/` medan appen står still).
