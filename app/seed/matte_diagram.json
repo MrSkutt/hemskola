@@ -1,0 +1,136 @@
+[
+ {
+  "subject": "matte",
+  "topic": "Diagram",
+  "level": 3,
+  "type": "text",
+  "question": "Cirkeldiagrammet visar vilken frukt 40 elever gillar bäst. Hur många elever valde banan?\nSvara endast med talet.",
+  "answer": "12",
+  "explanation": "Banan är 30 % av eleverna. 30 % av 40 = 12.",
+  "diagram": {
+   "type": "pie_chart",
+   "title": "Favoritfrukt",
+   "labels": [
+    "Äpple",
+    "Banan",
+    "Päron"
+   ],
+   "values": [
+    50,
+    30,
+    20
+   ],
+   "show_percent": true
+  }
+ },
+ {
+  "subject": "matte",
+  "topic": "Diagram",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken dag lånades flest böcker?",
+  "options": [
+   "Mån",
+   "Tis",
+   "Ons",
+   "Tor",
+   "Fre"
+  ],
+  "answer": "Tor",
+  "explanation": "Torsdagens stapel är högst.",
+  "diagram": {
+   "type": "bar_chart",
+   "title": "Utlånade böcker",
+   "labels": [
+    "Mån",
+    "Tis",
+    "Ons",
+    "Tor",
+    "Fre"
+   ],
+   "values": [
+    5,
+    9,
+    4,
+    12,
+    7
+   ]
+  }
+ },
+ {
+  "subject": "matte",
+  "topic": "Negativa tal",
+  "level": 2,
+  "type": "text",
+  "question": "Vilket tal pekar pricken på?\nSvara endast med talet.",
+  "answer": [
+   "-3",
+   "−3"
+  ],
+  "explanation": "Räkna tre steg till vänster om noll: −3.",
+  "diagram": {
+   "type": "number_line",
+   "min": -5,
+   "max": 5,
+   "step": 1,
+   "label_step": 5,
+   "marks": [
+    {
+     "value": -3,
+     "label": "?"
+    }
+   ]
+  }
+ },
+ {
+  "subject": "matte",
+  "topic": "Vinklar",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken sorts vinkel är det här?",
+  "options": [
+   "spetsig",
+   "rät",
+   "trubbig"
+  ],
+  "answer": "trubbig",
+  "explanation": "En vinkel större än 90° men mindre än 180° är trubbig.",
+  "diagram": {
+   "type": "angle",
+   "degrees": 120
+  }
+ },
+ {
+  "subject": "matte",
+  "topic": "Vinklar",
+  "level": 2,
+  "type": "mc",
+  "question": "Är den här vinkeln spetsig, rät eller trubbig?",
+  "options": [
+   "spetsig",
+   "rät",
+   "trubbig"
+  ],
+  "answer": "spetsig",
+  "explanation": "En vinkel mindre än 90° är spetsig.",
+  "diagram": {
+   "type": "angle",
+   "degrees": 40
+  }
+ },
+ {
+  "subject": "matte",
+  "topic": "Bråk",
+  "level": 2,
+  "type": "text",
+  "question": "Vilket bråk visar den färgade delen? Förkorta så mycket som möjligt.\nSkriv t.ex. 1/2.",
+  "answer": "1/2",
+  "explanation": "4 av 8 delar är färgade: 4/8 = 1/2.",
+  "diagram": {
+   "type": "fraction",
+   "shape": "bar",
+   "parts": 8,
+   "shaded": 4
+  }
+ }
+]

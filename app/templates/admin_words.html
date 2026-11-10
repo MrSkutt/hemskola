@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Ordlista – Hemskola{% endblock %}
+{% block mainclass %}wide{% endblock %}
+{% block content %}
+<h1>Ordlista</h1>
+<div class="card">
+  <p>Ordlistan matar de svenska generatorerna (ordklasser, böjning, motsatser m.m.). Varje ord har en ordklass, en nivå och böjningsformer.
+     Lägg till fler under <a href="/admin/import">Importera</a>.</p>
+  <p>{% for c in counts %}<span class="pill">{{ c.pos }}: {{ c.n }}</span> {% endfor %}</p>
+</div>
+<form method="get" class="row" style="margin-bottom:1rem">
+  <div><label style="margin:0">Ordklass</label><select name="pos"><option value="">Alla</option>{% for p in POS %}<option value="{{ p }}" {{ 'selected' if p == pos }}>{{ p }}</option>{% endfor %}</select></div>
+  <div><label style="margin:0">Nivå</label><select name="level"><option value="0">Alla</option>{% for l in range(1, 6) %}<option value="{{ l }}" {{ 'selected' if l == level }}>{{ l }}</option>{% endfor %}</select></div>
+  <button class="small">Filtrera</button>
+</form>
+<div class="card">
+<table>
+  <tr><th>Ord</th><th>Ordklass</th><th>Nivå</th><th>Former</th><th></th></tr>
+  {% for w in rows %}
+  <tr style="{{ 'opacity:.5' if not w.active }}">
+    <td><strong>{{ w.word }}</strong></td><td>{{ w.pos }}</td><td>{{ w.level }}</td>
+    <td class="muted">
+      {% if w.d.gender %}{{ w.d.gender }} · {% endif %}
+      {% for k, v in (w.d.forms or {}).items() %}{{ v }}{{ ', ' if not loop.last }}{% endfor %}
+      {% if w.d.antonym %} · motsats: {{ w.d.antonym }}{% endif %}
+      {% if w.d.synonym %} · synonym: {{ w.d.synonym }}{% endif %}
+      {% if w.d.example %}"{{ w.d.example }}"{% endif %}
+    </td>
+    <td><form class="inline" method="post" action="/admin/words/{{ w.id }}/active"><button class="small ghost">{{ 'Dölj' if w.active else 'Visa' }}</button></form></td>
+  </tr>
+  {% endfor %}
+</table>
+</div>
+{% endblock %}

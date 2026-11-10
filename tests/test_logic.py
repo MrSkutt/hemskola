@@ -39,10 +39,12 @@ def test_level_up_and_down(tmp_path, monkeypatch):
     conn = _setup(tmp_path, monkeypatch)
     logic.set_level(conn, 1, "matte", 2)
     ex = conn.execute("SELECT * FROM exercises WHERE level=2").fetchone()
-    changes = [logic.record_attempt(conn, 1, ex, "1")[2] for _ in range(6)]
+    item = logic.item_from_exercise(ex)
+    changes = [logic.record_attempt(conn, 1, item, "1")[2] for _ in range(6)]
     assert changes[-1] == "up" and logic.get_level(conn, 1, "matte") == 3
     ex3 = conn.execute("SELECT * FROM exercises WHERE level=3").fetchone()
-    changes = [logic.record_attempt(conn, 1, ex3, "9")[2] for _ in range(6)]
+    item3 = logic.item_from_exercise(ex3)
+    changes = [logic.record_attempt(conn, 1, item3, "9")[2] for _ in range(6)]
     assert changes[-1] == "down" and logic.get_level(conn, 1, "matte") == 2
 
 
@@ -50,8 +52,9 @@ def test_no_change_in_the_middle(tmp_path, monkeypatch):
     conn = _setup(tmp_path, monkeypatch)
     logic.set_level(conn, 1, "matte", 2)
     ex = conn.execute("SELECT * FROM exercises WHERE level=2").fetchone()
+    item = logic.item_from_exercise(ex)
     for given in ["1", "1", "1", "1", "9", "9"]:   # 4 av 6 rätt
-        logic.record_attempt(conn, 1, ex, given)
+        logic.record_attempt(conn, 1, item, given)
     assert logic.get_level(conn, 1, "matte") == 2
 
 

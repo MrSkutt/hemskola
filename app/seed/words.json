@@ -1,0 +1,2122 @@
+{
+ "words": [
+  {
+   "word": "hund",
+   "pos": "substantiv",
+   "level": 1,
+   "gender": "en",
+   "forms": {
+    "plural": "hundar",
+    "bestamd": "hunden",
+    "bestamd_plural": "hundarna"
+   }
+  },
+  {
+   "word": "katt",
+   "pos": "substantiv",
+   "level": 1,
+   "gender": "en",
+   "forms": {
+    "plural": "katter",
+    "bestamd": "katten",
+    "bestamd_plural": "katterna"
+   }
+  },
+  {
+   "word": "bil",
+   "pos": "substantiv",
+   "level": 1,
+   "gender": "en",
+   "forms": {
+    "plural": "bilar",
+    "bestamd": "bilen",
+    "bestamd_plural": "bilarna"
+   }
+  },
+  {
+   "word": "hus",
+   "pos": "substantiv",
+   "level": 1,
+   "gender": "ett",
+   "forms": {
+    "plural": "hus",
+    "bestamd": "huset",
+    "bestamd_plural": "husen"
+   }
+  },
+  {
+   "word": "bord",
+   "pos": "substantiv",
+   "level": 1,
+   "gender": "ett",
+   "forms": {
+    "plural": "bord",
+    "bestamd": "bordet",
+    "bestamd_plural": "borden"
+   }
+  },
+  {
+   "word": "flicka",
+   "pos": "substantiv",
+   "level": 1,
+   "gender": "en",
+   "forms": {
+    "plural": "flickor",
+    "bestamd": "flickan",
+    "bestamd_plural": "flickorna"
+   }
+  },
+  {
+   "word": "pojke",
+   "pos": "substantiv",
+   "level": 1,
+   "gender": "en",
+   "forms": {
+    "plural": "pojkar",
+    "bestamd": "pojken",
+    "bestamd_plural": "pojkarna"
+   }
+  },
+  {
+   "word": "bok",
+   "pos": "substantiv",
+   "level": 1,
+   "gender": "en",
+   "forms": {
+    "plural": "böcker",
+    "bestamd": "boken",
+    "bestamd_plural": "böckerna"
+   }
+  },
+  {
+   "word": "stol",
+   "pos": "substantiv",
+   "level": 1,
+   "gender": "en",
+   "forms": {
+    "plural": "stolar",
+    "bestamd": "stolen",
+    "bestamd_plural": "stolarna"
+   }
+  },
+  {
+   "word": "äpple",
+   "pos": "substantiv",
+   "level": 1,
+   "gender": "ett",
+   "forms": {
+    "plural": "äpplen",
+    "bestamd": "äpplet",
+    "bestamd_plural": "äpplena"
+   }
+  },
+  {
+   "word": "barn",
+   "pos": "substantiv",
+   "level": 1,
+   "gender": "ett",
+   "forms": {
+    "plural": "barn",
+    "bestamd": "barnet",
+    "bestamd_plural": "barnen"
+   }
+  },
+  {
+   "word": "skola",
+   "pos": "substantiv",
+   "level": 1,
+   "gender": "en",
+   "forms": {
+    "plural": "skolor",
+    "bestamd": "skolan",
+    "bestamd_plural": "skolorna"
+   }
+  },
+  {
+   "word": "fönster",
+   "pos": "substantiv",
+   "level": 1,
+   "gender": "ett",
+   "forms": {
+    "plural": "fönster",
+    "bestamd": "fönstret",
+    "bestamd_plural": "fönstren"
+   }
+  },
+  {
+   "word": "dörr",
+   "pos": "substantiv",
+   "level": 1,
+   "gender": "en",
+   "forms": {
+    "plural": "dörrar",
+    "bestamd": "dörren",
+    "bestamd_plural": "dörrarna"
+   }
+  },
+  {
+   "word": "träd",
+   "pos": "substantiv",
+   "level": 1,
+   "gender": "ett",
+   "forms": {
+    "plural": "träd",
+    "bestamd": "trädet",
+    "bestamd_plural": "träden"
+   }
+  },
+  {
+   "word": "cykel",
+   "pos": "substantiv",
+   "level": 2,
+   "gender": "en",
+   "forms": {
+    "plural": "cyklar",
+    "bestamd": "cykeln",
+    "bestamd_plural": "cyklarna"
+   }
+  },
+  {
+   "word": "lärare",
+   "pos": "substantiv",
+   "level": 2,
+   "gender": "en",
+   "forms": {
+    "plural": "lärare",
+    "bestamd": "läraren",
+    "bestamd_plural": "lärarna"
+   }
+  },
+  {
+   "word": "sjö",
+   "pos": "substantiv",
+   "level": 2,
+   "gender": "en",
+   "forms": {
+    "plural": "sjöar",
+    "bestamd": "sjön",
+    "bestamd_plural": "sjöarna"
+   }
+  },
+  {
+   "word": "ö",
+   "pos": "substantiv",
+   "level": 2,
+   "gender": "en",
+   "forms": {
+    "plural": "öar",
+    "bestamd": "ön",
+    "bestamd_plural": "öarna"
+   }
+  },
+  {
+   "word": "tåg",
+   "pos": "substantiv",
+   "level": 2,
+   "gender": "ett",
+   "forms": {
+    "plural": "tåg",
+    "bestamd": "tåget",
+    "bestamd_plural": "tågen"
+   }
+  },
+  {
+   "word": "vän",
+   "pos": "substantiv",
+   "level": 2,
+   "gender": "en",
+   "forms": {
+    "plural": "vänner",
+    "bestamd": "vännen",
+    "bestamd_plural": "vännerna"
+   }
+  },
+  {
+   "word": "bild",
+   "pos": "substantiv",
+   "level": 2,
+   "gender": "en",
+   "forms": {
+    "plural": "bilder",
+    "bestamd": "bilden",
+    "bestamd_plural": "bilderna"
+   }
+  },
+  {
+   "word": "hand",
+   "pos": "substantiv",
+   "level": 2,
+   "gender": "en",
+   "forms": {
+    "plural": "händer",
+    "bestamd": "handen",
+    "bestamd_plural": "händerna"
+   }
+  },
+  {
+   "word": "fot",
+   "pos": "substantiv",
+   "level": 2,
+   "gender": "en",
+   "forms": {
+    "plural": "fötter",
+    "bestamd": "foten",
+    "bestamd_plural": "fötterna"
+   }
+  },
+  {
+   "word": "tand",
+   "pos": "substantiv",
+   "level": 2,
+   "gender": "en",
+   "forms": {
+    "plural": "tänder",
+    "bestamd": "tanden",
+    "bestamd_plural": "tänderna"
+   }
+  },
+  {
+   "word": "gata",
+   "pos": "substantiv",
+   "level": 2,
+   "gender": "en",
+   "forms": {
+    "plural": "gator",
+    "bestamd": "gatan",
+    "bestamd_plural": "gatorna"
+   }
+  },
+  {
+   "word": "rum",
+   "pos": "substantiv",
+   "level": 2,
+   "gender": "ett",
+   "forms": {
+    "plural": "rum",
+    "bestamd": "rummet",
+    "bestamd_plural": "rummen"
+   }
+  },
+  {
+   "word": "land",
+   "pos": "substantiv",
+   "level": 2,
+   "gender": "ett",
+   "forms": {
+    "plural": "länder",
+    "bestamd": "landet",
+    "bestamd_plural": "länderna"
+   }
+  },
+  {
+   "word": "mus",
+   "pos": "substantiv",
+   "level": 3,
+   "gender": "en",
+   "forms": {
+    "plural": "möss",
+    "bestamd": "musen",
+    "bestamd_plural": "mössen"
+   }
+  },
+  {
+   "word": "man",
+   "pos": "substantiv",
+   "level": 3,
+   "gender": "en",
+   "forms": {
+    "plural": "män",
+    "bestamd": "mannen",
+    "bestamd_plural": "männen"
+   },
+   "ambig": true
+  },
+  {
+   "word": "bonde",
+   "pos": "substantiv",
+   "level": 3,
+   "gender": "en",
+   "forms": {
+    "plural": "bönder",
+    "bestamd": "bonden",
+    "bestamd_plural": "bönderna"
+   }
+  },
+  {
+   "word": "ko",
+   "pos": "substantiv",
+   "level": 3,
+   "gender": "en",
+   "forms": {
+    "plural": "kor",
+    "bestamd": "kon",
+    "bestamd_plural": "korna"
+   }
+  },
+  {
+   "word": "nyckel",
+   "pos": "substantiv",
+   "level": 3,
+   "gender": "en",
+   "forms": {
+    "plural": "nycklar",
+    "bestamd": "nyckeln",
+    "bestamd_plural": "nycklarna"
+   }
+  },
+  {
+   "word": "spegel",
+   "pos": "substantiv",
+   "level": 3,
+   "gender": "en",
+   "forms": {
+    "plural": "speglar",
+    "bestamd": "spegeln",
+    "bestamd_plural": "speglarna"
+   }
+  },
+  {
+   "word": "museum",
+   "pos": "substantiv",
+   "level": 3,
+   "gender": "ett",
+   "forms": {
+    "plural": "museer",
+    "bestamd": "museet",
+    "bestamd_plural": "museerna"
+   }
+  },
+  {
+   "word": "kvinna",
+   "pos": "substantiv",
+   "level": 3,
+   "gender": "en",
+   "forms": {
+    "plural": "kvinnor",
+    "bestamd": "kvinnan",
+    "bestamd_plural": "kvinnorna"
+   }
+  },
+  {
+   "word": "öga",
+   "pos": "substantiv",
+   "level": 3,
+   "gender": "ett",
+   "forms": {
+    "plural": "ögon",
+    "bestamd": "ögat",
+    "bestamd_plural": "ögonen"
+   }
+  },
+  {
+   "word": "öra",
+   "pos": "substantiv",
+   "level": 3,
+   "gender": "ett",
+   "forms": {
+    "plural": "öron",
+    "bestamd": "örat",
+    "bestamd_plural": "öronen"
+   }
+  },
+  {
+   "word": "bro",
+   "pos": "substantiv",
+   "level": 4,
+   "gender": "en",
+   "forms": {
+    "plural": "broar",
+    "bestamd": "bron",
+    "bestamd_plural": "broarna"
+   }
+  },
+  {
+   "word": "fiende",
+   "pos": "substantiv",
+   "level": 4,
+   "gender": "en",
+   "forms": {
+    "plural": "fiender",
+    "bestamd": "fienden",
+    "bestamd_plural": "fienderna"
+   }
+  },
+  {
+   "word": "program",
+   "pos": "substantiv",
+   "level": 4,
+   "gender": "ett",
+   "forms": {
+    "plural": "program",
+    "bestamd": "programmet",
+    "bestamd_plural": "programmen"
+   }
+  },
+  {
+   "word": "kapitel",
+   "pos": "substantiv",
+   "level": 4,
+   "gender": "ett",
+   "forms": {
+    "plural": "kapitel",
+    "bestamd": "kapitlet",
+    "bestamd_plural": "kapitlen"
+   }
+  },
+  {
+   "word": "problem",
+   "pos": "substantiv",
+   "level": 4,
+   "gender": "ett",
+   "forms": {
+    "plural": "problem",
+    "bestamd": "problemet",
+    "bestamd_plural": "problemen"
+   }
+  },
+  {
+   "word": "sak",
+   "pos": "substantiv",
+   "level": 4,
+   "gender": "en",
+   "forms": {
+    "plural": "saker",
+    "bestamd": "saken",
+    "bestamd_plural": "sakerna"
+   }
+  },
+  {
+   "word": "gäst",
+   "pos": "substantiv",
+   "level": 4,
+   "gender": "en",
+   "forms": {
+    "plural": "gäster",
+    "bestamd": "gästen",
+    "bestamd_plural": "gästerna"
+   }
+  },
+  {
+   "word": "strand",
+   "pos": "substantiv",
+   "level": 4,
+   "gender": "en",
+   "forms": {
+    "plural": "stränder",
+    "bestamd": "stranden",
+    "bestamd_plural": "stränderna"
+   }
+  },
+  {
+   "word": "natt",
+   "pos": "substantiv",
+   "level": 4,
+   "gender": "en",
+   "forms": {
+    "plural": "nätter",
+    "bestamd": "natten",
+    "bestamd_plural": "nätterna"
+   }
+  },
+  {
+   "word": "tå",
+   "pos": "substantiv",
+   "level": 4,
+   "gender": "en",
+   "forms": {
+    "plural": "tår",
+    "bestamd": "tån",
+    "bestamd_plural": "tårna"
+   }
+  },
+  {
+   "word": "bagare",
+   "pos": "substantiv",
+   "level": 4,
+   "gender": "en",
+   "forms": {
+    "plural": "bagare",
+    "bestamd": "bagaren",
+    "bestamd_plural": "bagarna"
+   }
+  },
+  {
+   "word": "forskare",
+   "pos": "substantiv",
+   "level": 5,
+   "gender": "en",
+   "forms": {
+    "plural": "forskare",
+    "bestamd": "forskaren",
+    "bestamd_plural": "forskarna"
+   }
+  },
+  {
+   "word": "kommentar",
+   "pos": "substantiv",
+   "level": 5,
+   "gender": "en",
+   "forms": {
+    "plural": "kommentarer",
+    "bestamd": "kommentaren",
+    "bestamd_plural": "kommentarerna"
+   }
+  },
+  {
+   "word": "hypotes",
+   "pos": "substantiv",
+   "level": 5,
+   "gender": "en",
+   "forms": {
+    "plural": "hypoteser",
+    "bestamd": "hypotesen",
+    "bestamd_plural": "hypoteserna"
+   }
+  },
+  {
+   "word": "analys",
+   "pos": "substantiv",
+   "level": 5,
+   "gender": "en",
+   "forms": {
+    "plural": "analyser",
+    "bestamd": "analysen",
+    "bestamd_plural": "analyserna"
+   }
+  },
+  {
+   "word": "bibliotek",
+   "pos": "substantiv",
+   "level": 5,
+   "gender": "ett",
+   "forms": {
+    "plural": "bibliotek",
+    "bestamd": "biblioteket",
+    "bestamd_plural": "biblioteken"
+   }
+  },
+  {
+   "word": "tema",
+   "pos": "substantiv",
+   "level": 5,
+   "gender": "ett",
+   "forms": {
+    "plural": "teman",
+    "bestamd": "temat",
+    "bestamd_plural": "temana"
+   }
+  },
+  {
+   "word": "exempel",
+   "pos": "substantiv",
+   "level": 5,
+   "gender": "ett",
+   "forms": {
+    "plural": "exempel",
+    "bestamd": "exemplet",
+    "bestamd_plural": "exemplen"
+   }
+  },
+  {
+   "word": "ägg",
+   "pos": "substantiv",
+   "level": 5,
+   "gender": "ett",
+   "forms": {
+    "plural": "ägg",
+    "bestamd": "ägget",
+    "bestamd_plural": "äggen"
+   }
+  },
+  {
+   "word": "springa",
+   "pos": "verb",
+   "level": 1,
+   "forms": {
+    "presens": "springer",
+    "preteritum": "sprang",
+    "supinum": "sprungit",
+    "imperativ": "spring"
+   }
+  },
+  {
+   "word": "äta",
+   "pos": "verb",
+   "level": 1,
+   "forms": {
+    "presens": "äter",
+    "preteritum": "åt",
+    "supinum": "ätit",
+    "imperativ": "ät"
+   }
+  },
+  {
+   "word": "hoppa",
+   "pos": "verb",
+   "level": 1,
+   "forms": {
+    "presens": "hoppar",
+    "preteritum": "hoppade",
+    "supinum": "hoppat",
+    "imperativ": "hoppa"
+   }
+  },
+  {
+   "word": "leka",
+   "pos": "verb",
+   "level": 1,
+   "forms": {
+    "presens": "leker",
+    "preteritum": "lekte",
+    "supinum": "lekt",
+    "imperativ": "lek"
+   }
+  },
+  {
+   "word": "läsa",
+   "pos": "verb",
+   "level": 1,
+   "forms": {
+    "presens": "läser",
+    "preteritum": "läste",
+    "supinum": "läst",
+    "imperativ": "läs"
+   }
+  },
+  {
+   "word": "skriva",
+   "pos": "verb",
+   "level": 1,
+   "forms": {
+    "presens": "skriver",
+    "preteritum": "skrev",
+    "supinum": "skrivit",
+    "imperativ": "skriv"
+   }
+  },
+  {
+   "word": "gå",
+   "pos": "verb",
+   "level": 1,
+   "forms": {
+    "presens": "går",
+    "preteritum": "gick",
+    "supinum": "gått",
+    "imperativ": "gå"
+   }
+  },
+  {
+   "word": "se",
+   "pos": "verb",
+   "level": 1,
+   "forms": {
+    "presens": "ser",
+    "preteritum": "såg",
+    "supinum": "sett",
+    "imperativ": "se"
+   }
+  },
+  {
+   "word": "köra",
+   "pos": "verb",
+   "level": 1,
+   "forms": {
+    "presens": "kör",
+    "preteritum": "körde",
+    "supinum": "kört",
+    "imperativ": "kör"
+   }
+  },
+  {
+   "word": "simma",
+   "pos": "verb",
+   "level": 1,
+   "forms": {
+    "presens": "simmar",
+    "preteritum": "simmade",
+    "supinum": "simmat",
+    "imperativ": "simma"
+   }
+  },
+  {
+   "word": "sova",
+   "pos": "verb",
+   "level": 1,
+   "forms": {
+    "presens": "sover",
+    "preteritum": "sov",
+    "supinum": "sovit",
+    "imperativ": "sov"
+   }
+  },
+  {
+   "word": "ge",
+   "pos": "verb",
+   "level": 1,
+   "forms": {
+    "presens": "ger",
+    "preteritum": "gav",
+    "supinum": "gett",
+    "imperativ": "ge"
+   }
+  },
+  {
+   "word": "komma",
+   "pos": "verb",
+   "level": 1,
+   "forms": {
+    "presens": "kommer",
+    "preteritum": "kom",
+    "supinum": "kommit",
+    "imperativ": "kom"
+   }
+  },
+  {
+   "word": "sitta",
+   "pos": "verb",
+   "level": 1,
+   "forms": {
+    "presens": "sitter",
+    "preteritum": "satt",
+    "supinum": "suttit",
+    "imperativ": "sitt"
+   }
+  },
+  {
+   "word": "dricka",
+   "pos": "verb",
+   "level": 2,
+   "forms": {
+    "presens": "dricker",
+    "preteritum": "drack",
+    "supinum": "druckit",
+    "imperativ": "drick"
+   }
+  },
+  {
+   "word": "stå",
+   "pos": "verb",
+   "level": 2,
+   "forms": {
+    "presens": "står",
+    "preteritum": "stod",
+    "supinum": "stått",
+    "imperativ": "stå"
+   }
+  },
+  {
+   "word": "ligga",
+   "pos": "verb",
+   "level": 2,
+   "forms": {
+    "presens": "ligger",
+    "preteritum": "låg",
+    "supinum": "legat",
+    "imperativ": "ligg"
+   }
+  },
+  {
+   "word": "tala",
+   "pos": "verb",
+   "level": 2,
+   "forms": {
+    "presens": "talar",
+    "preteritum": "talade",
+    "supinum": "talat",
+    "imperativ": "tala"
+   }
+  },
+  {
+   "word": "ringa",
+   "pos": "verb",
+   "level": 2,
+   "forms": {
+    "presens": "ringer",
+    "preteritum": "ringde",
+    "supinum": "ringt",
+    "imperativ": "ring"
+   }
+  },
+  {
+   "word": "bygga",
+   "pos": "verb",
+   "level": 2,
+   "forms": {
+    "presens": "bygger",
+    "preteritum": "byggde",
+    "supinum": "byggt",
+    "imperativ": "bygg"
+   }
+  },
+  {
+   "word": "laga",
+   "pos": "verb",
+   "level": 2,
+   "forms": {
+    "presens": "lagar",
+    "preteritum": "lagade",
+    "supinum": "lagat",
+    "imperativ": "laga"
+   }
+  },
+  {
+   "word": "vara",
+   "pos": "verb",
+   "level": 2,
+   "forms": {
+    "presens": "är",
+    "preteritum": "var",
+    "supinum": "varit",
+    "imperativ": "var"
+   },
+   "ambig": true
+  },
+  {
+   "word": "ha",
+   "pos": "verb",
+   "level": 2,
+   "forms": {
+    "presens": "har",
+    "preteritum": "hade",
+    "supinum": "haft",
+    "imperativ": "ha"
+   }
+  },
+  {
+   "word": "få",
+   "pos": "verb",
+   "level": 2,
+   "forms": {
+    "presens": "får",
+    "preteritum": "fick",
+    "supinum": "fått",
+    "imperativ": "få"
+   }
+  },
+  {
+   "word": "ta",
+   "pos": "verb",
+   "level": 2,
+   "forms": {
+    "presens": "tar",
+    "preteritum": "tog",
+    "supinum": "tagit",
+    "imperativ": "ta"
+   }
+  },
+  {
+   "word": "sälja",
+   "pos": "verb",
+   "level": 2,
+   "forms": {
+    "presens": "säljer",
+    "preteritum": "sålde",
+    "supinum": "sålt",
+    "imperativ": "sälj"
+   }
+  },
+  {
+   "word": "tycka",
+   "pos": "verb",
+   "level": 2,
+   "forms": {
+    "presens": "tycker",
+    "preteritum": "tyckte",
+    "supinum": "tyckt",
+    "imperativ": "tyck"
+   }
+  },
+  {
+   "word": "hjälpa",
+   "pos": "verb",
+   "level": 2,
+   "forms": {
+    "presens": "hjälper",
+    "preteritum": "hjälpte",
+    "supinum": "hjälpt",
+    "imperativ": "hjälp"
+   }
+  },
+  {
+   "word": "skära",
+   "pos": "verb",
+   "level": 3,
+   "forms": {
+    "presens": "skär",
+    "preteritum": "skar",
+    "supinum": "skurit",
+    "imperativ": "skär"
+   }
+  },
+  {
+   "word": "bryta",
+   "pos": "verb",
+   "level": 3,
+   "forms": {
+    "presens": "bryter",
+    "preteritum": "bröt",
+    "supinum": "brutit",
+    "imperativ": "bryt"
+   }
+  },
+  {
+   "word": "binda",
+   "pos": "verb",
+   "level": 3,
+   "forms": {
+    "presens": "binder",
+    "preteritum": "band",
+    "supinum": "bundit",
+    "imperativ": "bind"
+   }
+  },
+  {
+   "word": "sjunga",
+   "pos": "verb",
+   "level": 3,
+   "forms": {
+    "presens": "sjunger",
+    "preteritum": "sjöng",
+    "supinum": "sjungit",
+    "imperativ": "sjung"
+   }
+  },
+  {
+   "word": "dra",
+   "pos": "verb",
+   "level": 3,
+   "forms": {
+    "presens": "drar",
+    "preteritum": "drog",
+    "supinum": "dragit",
+    "imperativ": "dra"
+   }
+  },
+  {
+   "word": "fara",
+   "pos": "verb",
+   "level": 3,
+   "forms": {
+    "presens": "far",
+    "preteritum": "for",
+    "supinum": "farit",
+    "imperativ": "far"
+   },
+   "ambig": true
+  },
+  {
+   "word": "falla",
+   "pos": "verb",
+   "level": 3,
+   "forms": {
+    "presens": "faller",
+    "preteritum": "föll",
+    "supinum": "fallit",
+    "imperativ": "fall"
+   }
+  },
+  {
+   "word": "hålla",
+   "pos": "verb",
+   "level": 3,
+   "forms": {
+    "presens": "håller",
+    "preteritum": "höll",
+    "supinum": "hållit",
+    "imperativ": "håll"
+   }
+  },
+  {
+   "word": "slå",
+   "pos": "verb",
+   "level": 3,
+   "forms": {
+    "presens": "slår",
+    "preteritum": "slog",
+    "supinum": "slagit",
+    "imperativ": "slå"
+   }
+  },
+  {
+   "word": "bära",
+   "pos": "verb",
+   "level": 3,
+   "forms": {
+    "presens": "bär",
+    "preteritum": "bar",
+    "supinum": "burit",
+    "imperativ": "bär"
+   }
+  },
+  {
+   "word": "stjäla",
+   "pos": "verb",
+   "level": 3,
+   "forms": {
+    "presens": "stjäl",
+    "preteritum": "stal",
+    "supinum": "stulit",
+    "imperativ": "stjäl"
+   }
+  },
+  {
+   "word": "veta",
+   "pos": "verb",
+   "level": 3,
+   "forms": {
+    "presens": "vet",
+    "preteritum": "visste",
+    "supinum": "vetat",
+    "imperativ": "vet"
+   }
+  },
+  {
+   "word": "börja",
+   "pos": "verb",
+   "level": 3,
+   "forms": {
+    "presens": "börjar",
+    "preteritum": "började",
+    "supinum": "börjat",
+    "imperativ": "börja"
+   }
+  },
+  {
+   "word": "vinna",
+   "pos": "verb",
+   "level": 4,
+   "forms": {
+    "presens": "vinner",
+    "preteritum": "vann",
+    "supinum": "vunnit",
+    "imperativ": "vinn"
+   }
+  },
+  {
+   "word": "brinna",
+   "pos": "verb",
+   "level": 4,
+   "forms": {
+    "presens": "brinner",
+    "preteritum": "brann",
+    "supinum": "brunnit",
+    "imperativ": "brinn"
+   }
+  },
+  {
+   "word": "gråta",
+   "pos": "verb",
+   "level": 4,
+   "forms": {
+    "presens": "gråter",
+    "preteritum": "grät",
+    "supinum": "gråtit",
+    "imperativ": "gråt"
+   }
+  },
+  {
+   "word": "skrika",
+   "pos": "verb",
+   "level": 4,
+   "forms": {
+    "presens": "skriker",
+    "preteritum": "skrek",
+    "supinum": "skrikit",
+    "imperativ": "skrik"
+   }
+  },
+  {
+   "word": "försvinna",
+   "pos": "verb",
+   "level": 4,
+   "forms": {
+    "presens": "försvinner",
+    "preteritum": "försvann",
+    "supinum": "försvunnit",
+    "imperativ": "försvinn"
+   }
+  },
+  {
+   "word": "låta",
+   "pos": "verb",
+   "level": 4,
+   "forms": {
+    "presens": "låter",
+    "preteritum": "lät",
+    "supinum": "låtit",
+    "imperativ": "låt"
+   }
+  },
+  {
+   "word": "stiga",
+   "pos": "verb",
+   "level": 4,
+   "forms": {
+    "presens": "stiger",
+    "preteritum": "steg",
+    "supinum": "stigit",
+    "imperativ": "stig"
+   }
+  },
+  {
+   "word": "bita",
+   "pos": "verb",
+   "level": 4,
+   "forms": {
+    "presens": "biter",
+    "preteritum": "bet",
+    "supinum": "bitit",
+    "imperativ": "bit"
+   }
+  },
+  {
+   "word": "förstå",
+   "pos": "verb",
+   "level": 5,
+   "forms": {
+    "presens": "förstår",
+    "preteritum": "förstod",
+    "supinum": "förstått",
+    "imperativ": "förstå"
+   }
+  },
+  {
+   "word": "avgöra",
+   "pos": "verb",
+   "level": 5,
+   "forms": {
+    "presens": "avgör",
+    "preteritum": "avgjorde",
+    "supinum": "avgjort",
+    "imperativ": "avgör"
+   }
+  },
+  {
+   "word": "genomföra",
+   "pos": "verb",
+   "level": 5,
+   "forms": {
+    "presens": "genomför",
+    "preteritum": "genomförde",
+    "supinum": "genomfört",
+    "imperativ": "genomför"
+   }
+  },
+  {
+   "word": "uppfinna",
+   "pos": "verb",
+   "level": 5,
+   "forms": {
+    "presens": "uppfinner",
+    "preteritum": "uppfann",
+    "supinum": "uppfunnit",
+    "imperativ": "uppfinn"
+   }
+  },
+  {
+   "word": "tvinga",
+   "pos": "verb",
+   "level": 5,
+   "forms": {
+    "presens": "tvingar",
+    "preteritum": "tvingade",
+    "supinum": "tvingat",
+    "imperativ": "tvinga"
+   }
+  },
+  {
+   "word": "bestämma",
+   "pos": "verb",
+   "level": 5,
+   "forms": {
+    "presens": "bestämmer",
+    "preteritum": "bestämde",
+    "supinum": "bestämt",
+    "imperativ": "bestäm"
+   }
+  },
+  {
+   "word": "beskriva",
+   "pos": "verb",
+   "level": 5,
+   "forms": {
+    "presens": "beskriver",
+    "preteritum": "beskrev",
+    "supinum": "beskrivit",
+    "imperativ": "beskriv"
+   }
+  },
+  {
+   "word": "undvika",
+   "pos": "verb",
+   "level": 5,
+   "forms": {
+    "presens": "undviker",
+    "preteritum": "undvek",
+    "supinum": "undvikit",
+    "imperativ": "undvik"
+   }
+  },
+  {
+   "word": "överväga",
+   "pos": "verb",
+   "level": 5,
+   "forms": {
+    "presens": "överväger",
+    "preteritum": "övervägde",
+    "supinum": "övervägt",
+    "imperativ": "överväg"
+   }
+  },
+  {
+   "word": "stor",
+   "pos": "adjektiv",
+   "level": 1,
+   "forms": {
+    "komparativ": "större",
+    "superlativ": "störst",
+    "neutrum": "stort"
+   },
+   "antonym": "liten"
+  },
+  {
+   "word": "liten",
+   "pos": "adjektiv",
+   "level": 1,
+   "forms": {
+    "komparativ": "mindre",
+    "superlativ": "minst",
+    "neutrum": "litet"
+   },
+   "antonym": "stor"
+  },
+  {
+   "word": "snabb",
+   "pos": "adjektiv",
+   "level": 1,
+   "forms": {
+    "komparativ": "snabbare",
+    "superlativ": "snabbast",
+    "neutrum": "snabbt"
+   },
+   "antonym": "långsam"
+  },
+  {
+   "word": "långsam",
+   "pos": "adjektiv",
+   "level": 1,
+   "forms": {
+    "komparativ": "långsammare",
+    "superlativ": "långsammast",
+    "neutrum": "långsamt"
+   },
+   "antonym": "snabb"
+  },
+  {
+   "word": "glad",
+   "pos": "adjektiv",
+   "level": 1,
+   "forms": {
+    "komparativ": "gladare",
+    "superlativ": "gladast",
+    "neutrum": "glatt"
+   },
+   "antonym": "ledsen",
+   "synonym": "lycklig"
+  },
+  {
+   "word": "ledsen",
+   "pos": "adjektiv",
+   "level": 1,
+   "forms": {
+    "komparativ": "ledsnare",
+    "superlativ": "ledsnast",
+    "neutrum": "ledset"
+   },
+   "antonym": "glad"
+  },
+  {
+   "word": "varm",
+   "pos": "adjektiv",
+   "level": 1,
+   "forms": {
+    "komparativ": "varmare",
+    "superlativ": "varmast",
+    "neutrum": "varmt"
+   },
+   "antonym": "kall"
+  },
+  {
+   "word": "kall",
+   "pos": "adjektiv",
+   "level": 1,
+   "forms": {
+    "komparativ": "kallare",
+    "superlativ": "kallast",
+    "neutrum": "kallt"
+   },
+   "antonym": "varm"
+  },
+  {
+   "word": "ny",
+   "pos": "adjektiv",
+   "level": 1,
+   "forms": {
+    "komparativ": "nyare",
+    "superlativ": "nyast",
+    "neutrum": "nytt"
+   },
+   "antonym": "gammal",
+   "synonym": "modern"
+  },
+  {
+   "word": "gammal",
+   "pos": "adjektiv",
+   "level": 1,
+   "forms": {
+    "komparativ": "äldre",
+    "superlativ": "äldst",
+    "neutrum": "gammalt"
+   },
+   "antonym": "ny"
+  },
+  {
+   "word": "hög",
+   "pos": "adjektiv",
+   "level": 1,
+   "forms": {
+    "komparativ": "högre",
+    "superlativ": "högst",
+    "neutrum": "högt"
+   },
+   "antonym": "låg"
+  },
+  {
+   "word": "låg",
+   "pos": "adjektiv",
+   "level": 1,
+   "forms": {
+    "komparativ": "lägre",
+    "superlativ": "lägst",
+    "neutrum": "lågt"
+   },
+   "antonym": "hög"
+  },
+  {
+   "word": "tung",
+   "pos": "adjektiv",
+   "level": 1,
+   "forms": {
+    "komparativ": "tyngre",
+    "superlativ": "tyngst",
+    "neutrum": "tungt"
+   }
+  },
+  {
+   "word": "lång",
+   "pos": "adjektiv",
+   "level": 2,
+   "forms": {
+    "komparativ": "längre",
+    "superlativ": "längst",
+    "neutrum": "långt"
+   },
+   "antonym": "kort"
+  },
+  {
+   "word": "kort",
+   "pos": "adjektiv",
+   "level": 2,
+   "forms": {
+    "komparativ": "kortare",
+    "superlativ": "kortast",
+    "neutrum": "kort"
+   },
+   "antonym": "lång",
+   "ambig": true
+  },
+  {
+   "word": "bra",
+   "pos": "adjektiv",
+   "level": 2,
+   "forms": {
+    "komparativ": "bättre",
+    "superlativ": "bäst",
+    "neutrum": "bra"
+   },
+   "antonym": "dålig",
+   "ambig": true
+  },
+  {
+   "word": "dålig",
+   "pos": "adjektiv",
+   "level": 2,
+   "forms": {
+    "komparativ": "sämre",
+    "superlativ": "sämst",
+    "neutrum": "dåligt"
+   },
+   "antonym": "bra",
+   "synonym": "usel"
+  },
+  {
+   "word": "stark",
+   "pos": "adjektiv",
+   "level": 2,
+   "forms": {
+    "komparativ": "starkare",
+    "superlativ": "starkast",
+    "neutrum": "starkt"
+   },
+   "antonym": "svag",
+   "synonym": "kraftig"
+  },
+  {
+   "word": "svag",
+   "pos": "adjektiv",
+   "level": 2,
+   "forms": {
+    "komparativ": "svagare",
+    "superlativ": "svagast",
+    "neutrum": "svagt"
+   },
+   "antonym": "stark",
+   "synonym": "kraftlös"
+  },
+  {
+   "word": "tyst",
+   "pos": "adjektiv",
+   "level": 2,
+   "forms": {
+    "komparativ": "tystare",
+    "superlativ": "tystast",
+    "neutrum": "tyst"
+   },
+   "antonym": "högljudd",
+   "ambig": true
+  },
+  {
+   "word": "rolig",
+   "pos": "adjektiv",
+   "level": 2,
+   "forms": {
+    "komparativ": "roligare",
+    "superlativ": "roligast",
+    "neutrum": "roligt"
+   },
+   "antonym": "tråkig",
+   "synonym": "kul"
+  },
+  {
+   "word": "vacker",
+   "pos": "adjektiv",
+   "level": 2,
+   "forms": {
+    "komparativ": "vackrare",
+    "superlativ": "vackrast",
+    "neutrum": "vackert"
+   },
+   "antonym": "ful",
+   "synonym": "snygg"
+  },
+  {
+   "word": "ful",
+   "pos": "adjektiv",
+   "level": 2,
+   "forms": {
+    "komparativ": "fulare",
+    "superlativ": "fulast",
+    "neutrum": "fult"
+   },
+   "antonym": "vacker"
+  },
+  {
+   "word": "tjock",
+   "pos": "adjektiv",
+   "level": 2,
+   "forms": {
+    "komparativ": "tjockare",
+    "superlativ": "tjockast",
+    "neutrum": "tjockt"
+   },
+   "antonym": "tunn"
+  },
+  {
+   "word": "tunn",
+   "pos": "adjektiv",
+   "level": 2,
+   "forms": {
+    "komparativ": "tunnare",
+    "superlativ": "tunnast",
+    "neutrum": "tunt"
+   },
+   "antonym": "tjock"
+  },
+  {
+   "word": "mörk",
+   "pos": "adjektiv",
+   "level": 3,
+   "forms": {
+    "komparativ": "mörkare",
+    "superlativ": "mörkast",
+    "neutrum": "mörkt"
+   },
+   "antonym": "ljus"
+  },
+  {
+   "word": "ljus",
+   "pos": "adjektiv",
+   "level": 3,
+   "forms": {
+    "komparativ": "ljusare",
+    "superlativ": "ljusast",
+    "neutrum": "ljust"
+   },
+   "antonym": "mörk",
+   "ambig": true
+  },
+  {
+   "word": "fattig",
+   "pos": "adjektiv",
+   "level": 3,
+   "forms": {
+    "komparativ": "fattigare",
+    "superlativ": "fattigast",
+    "neutrum": "fattigt"
+   },
+   "antonym": "rik",
+   "synonym": "medellös"
+  },
+  {
+   "word": "rik",
+   "pos": "adjektiv",
+   "level": 3,
+   "forms": {
+    "komparativ": "rikare",
+    "superlativ": "rikast",
+    "neutrum": "rikt"
+   },
+   "antonym": "fattig",
+   "synonym": "förmögen"
+  },
+  {
+   "word": "dyr",
+   "pos": "adjektiv",
+   "level": 3,
+   "forms": {
+    "komparativ": "dyrare",
+    "superlativ": "dyrast",
+    "neutrum": "dyrt"
+   },
+   "antonym": "billig",
+   "synonym": "kostsam"
+  },
+  {
+   "word": "billig",
+   "pos": "adjektiv",
+   "level": 3,
+   "forms": {
+    "komparativ": "billigare",
+    "superlativ": "billigast",
+    "neutrum": "billigt"
+   },
+   "antonym": "dyr",
+   "synonym": "prisvärd"
+  },
+  {
+   "word": "sen",
+   "pos": "adjektiv",
+   "level": 3,
+   "forms": {
+    "komparativ": "senare",
+    "superlativ": "senast",
+    "neutrum": "sent"
+   },
+   "antonym": "tidig",
+   "ambig": true
+  },
+  {
+   "word": "tidig",
+   "pos": "adjektiv",
+   "level": 3,
+   "forms": {
+    "komparativ": "tidigare",
+    "superlativ": "tidigast",
+    "neutrum": "tidigt"
+   },
+   "antonym": "sen"
+  },
+  {
+   "word": "viktig",
+   "pos": "adjektiv",
+   "level": 4,
+   "forms": {
+    "komparativ": "viktigare",
+    "superlativ": "viktigast",
+    "neutrum": "viktigt"
+   },
+   "antonym": "oviktig",
+   "synonym": "betydelsefull"
+  },
+  {
+   "word": "farlig",
+   "pos": "adjektiv",
+   "level": 4,
+   "forms": {
+    "komparativ": "farligare",
+    "superlativ": "farligast",
+    "neutrum": "farligt"
+   },
+   "antonym": "ofarlig"
+  },
+  {
+   "word": "modig",
+   "pos": "adjektiv",
+   "level": 4,
+   "forms": {
+    "komparativ": "modigare",
+    "superlativ": "modigast",
+    "neutrum": "modigt"
+   },
+   "antonym": "feg",
+   "synonym": "djärv"
+  },
+  {
+   "word": "ensam",
+   "pos": "adjektiv",
+   "level": 4,
+   "forms": {
+    "komparativ": "ensammare",
+    "superlativ": "ensammast",
+    "neutrum": "ensamt"
+   }
+  },
+  {
+   "word": "nyfiken",
+   "pos": "adjektiv",
+   "level": 4,
+   "forms": {
+    "komparativ": "nyfiknare",
+    "superlativ": "nyfiknast",
+    "neutrum": "nyfiket"
+   },
+   "synonym": "vetgirig"
+  },
+  {
+   "word": "trött",
+   "pos": "adjektiv",
+   "level": 4,
+   "forms": {
+    "komparativ": "tröttare",
+    "superlativ": "tröttast",
+    "neutrum": "trött"
+   },
+   "antonym": "pigg",
+   "synonym": "utmattad"
+  },
+  {
+   "word": "pigg",
+   "pos": "adjektiv",
+   "level": 4,
+   "forms": {
+    "komparativ": "piggare",
+    "superlativ": "piggast",
+    "neutrum": "piggt"
+   },
+   "antonym": "trött",
+   "synonym": "kry"
+  },
+  {
+   "word": "sällsynt",
+   "pos": "adjektiv",
+   "level": 5,
+   "forms": {
+    "komparativ": "sällsyntare",
+    "superlativ": "sällsyntast",
+    "neutrum": "sällsynt"
+   },
+   "antonym": "vanlig",
+   "synonym": "ovanlig"
+  },
+  {
+   "word": "vanlig",
+   "pos": "adjektiv",
+   "level": 5,
+   "forms": {
+    "komparativ": "vanligare",
+    "superlativ": "vanligast",
+    "neutrum": "vanligt"
+   },
+   "antonym": "sällsynt"
+  },
+  {
+   "word": "ärlig",
+   "pos": "adjektiv",
+   "level": 5,
+   "forms": {
+    "komparativ": "ärligare",
+    "superlativ": "ärligast",
+    "neutrum": "ärligt"
+   },
+   "antonym": "oärlig",
+   "synonym": "uppriktig"
+  },
+  {
+   "word": "tydlig",
+   "pos": "adjektiv",
+   "level": 5,
+   "forms": {
+    "komparativ": "tydligare",
+    "superlativ": "tydligast",
+    "neutrum": "tydligt"
+   },
+   "antonym": "otydlig"
+  },
+  {
+   "word": "noggrann",
+   "pos": "adjektiv",
+   "level": 5,
+   "forms": {
+    "komparativ": "noggrannare",
+    "superlativ": "noggrannast",
+    "neutrum": "noggrant"
+   },
+   "antonym": "slarvig"
+  },
+  {
+   "word": "slarvig",
+   "pos": "adjektiv",
+   "level": 5,
+   "forms": {
+    "komparativ": "slarvigare",
+    "superlativ": "slarvigast",
+    "neutrum": "slarvigt"
+   },
+   "antonym": "noggrann"
+  },
+  {
+   "word": "ofta",
+   "pos": "adverb",
+   "level": 2,
+   "example": "Vi går ofta till parken."
+  },
+  {
+   "word": "alltid",
+   "pos": "adverb",
+   "level": 2,
+   "example": "Hon är alltid glad."
+  },
+  {
+   "word": "aldrig",
+   "pos": "adverb",
+   "level": 2,
+   "example": "Han kommer aldrig för sent."
+  },
+  {
+   "word": "här",
+   "pos": "adverb",
+   "level": 2,
+   "example": "Sätt dig här."
+  },
+  {
+   "word": "där",
+   "pos": "adverb",
+   "level": 2,
+   "example": "Boken ligger där."
+  },
+  {
+   "word": "igår",
+   "pos": "adverb",
+   "level": 2,
+   "example": "Igår regnade det."
+  },
+  {
+   "word": "snart",
+   "pos": "adverb",
+   "level": 2,
+   "example": "Bussen kommer snart."
+  },
+  {
+   "word": "ibland",
+   "pos": "adverb",
+   "level": 3,
+   "example": "Ibland äter vi glass."
+  },
+  {
+   "word": "mycket",
+   "pos": "adverb",
+   "level": 3,
+   "example": "Hon tycker mycket om att läsa."
+  },
+  {
+   "word": "kanske",
+   "pos": "adverb",
+   "level": 3,
+   "example": "Vi går kanske på bio."
+  },
+  {
+   "word": "tyvärr",
+   "pos": "adverb",
+   "level": 3,
+   "example": "Tyvärr hann jag inte."
+  },
+  {
+   "word": "i",
+   "pos": "preposition",
+   "level": 2,
+   "example": "Boken ligger i väskan."
+  },
+  {
+   "word": "på",
+   "pos": "preposition",
+   "level": 2,
+   "example": "Koppen står på bordet."
+  },
+  {
+   "word": "under",
+   "pos": "preposition",
+   "level": 2,
+   "example": "Katten sitter under bordet."
+  },
+  {
+   "word": "över",
+   "pos": "preposition",
+   "level": 2,
+   "example": "Lampan hänger över bordet."
+  },
+  {
+   "word": "till",
+   "pos": "preposition",
+   "level": 2,
+   "example": "Vi går till skolan."
+  },
+  {
+   "word": "från",
+   "pos": "preposition",
+   "level": 2,
+   "example": "Brevet kommer från Lisa."
+  },
+  {
+   "word": "bakom",
+   "pos": "preposition",
+   "level": 3,
+   "example": "Hunden gömmer sig bakom soffan."
+  },
+  {
+   "word": "mellan",
+   "pos": "preposition",
+   "level": 3,
+   "example": "Hon sitter mellan Anna och Ben."
+  },
+  {
+   "word": "genom",
+   "pos": "preposition",
+   "level": 3,
+   "example": "Vi går genom skogen."
+  },
+  {
+   "word": "utan",
+   "pos": "preposition",
+   "level": 3,
+   "example": "Han gick utan jacka."
+  },
+  {
+   "word": "vid",
+   "pos": "preposition",
+   "level": 3,
+   "example": "Vi satt vid bordet."
+  },
+  {
+   "word": "mot",
+   "pos": "preposition",
+   "level": 3,
+   "example": "Hon springer mot målet."
+  },
+  {
+   "word": "jag",
+   "pos": "pronomen",
+   "level": 2,
+   "example": "Jag heter Alva."
+  },
+  {
+   "word": "du",
+   "pos": "pronomen",
+   "level": 2,
+   "example": "Du är min vän."
+  },
+  {
+   "word": "han",
+   "pos": "pronomen",
+   "level": 2,
+   "example": "Han läser en bok."
+  },
+  {
+   "word": "hon",
+   "pos": "pronomen",
+   "level": 2,
+   "example": "Hon bor i Umeå."
+  },
+  {
+   "word": "vi",
+   "pos": "pronomen",
+   "level": 2,
+   "example": "Vi åker tåg."
+  },
+  {
+   "word": "de",
+   "pos": "pronomen",
+   "level": 2,
+   "example": "De leker ute."
+  },
+  {
+   "word": "ni",
+   "pos": "pronomen",
+   "level": 3,
+   "example": "Ni är sena."
+  },
+  {
+   "word": "min",
+   "pos": "pronomen",
+   "level": 3,
+   "example": "Det här är min cykel."
+  },
+  {
+   "word": "din",
+   "pos": "pronomen",
+   "level": 3,
+   "example": "Är det din jacka?"
+  },
+  {
+   "word": "sig",
+   "pos": "pronomen",
+   "level": 3,
+   "example": "Han tvättade sig."
+  },
+  {
+   "word": "två",
+   "pos": "räkneord",
+   "level": 1,
+   "example": "Jag har två systrar."
+  },
+  {
+   "word": "tre",
+   "pos": "räkneord",
+   "level": 1,
+   "example": "Det finns tre katter här."
+  },
+  {
+   "word": "fem",
+   "pos": "räkneord",
+   "level": 1,
+   "example": "Hon är fem år."
+  },
+  {
+   "word": "tio",
+   "pos": "räkneord",
+   "level": 1,
+   "example": "Klockan är tio."
+  },
+  {
+   "word": "tjugo",
+   "pos": "räkneord",
+   "level": 2,
+   "example": "Det kostar tjugo kronor."
+  },
+  {
+   "word": "hundra",
+   "pos": "räkneord",
+   "level": 2,
+   "example": "Det kostar hundra kronor."
+  },
+  {
+   "word": "första",
+   "pos": "räkneord",
+   "level": 2,
+   "example": "Hon blev första i mål."
+  },
+  {
+   "word": "och",
+   "pos": "konjunktion",
+   "level": 3,
+   "example": "Jag köpte mjölk och bröd."
+  },
+  {
+   "word": "men",
+   "pos": "konjunktion",
+   "level": 3,
+   "example": "Jag vill, men jag kan inte."
+  },
+  {
+   "word": "eller",
+   "pos": "konjunktion",
+   "level": 3,
+   "example": "Vill du ha te eller kaffe?"
+  },
+  {
+   "word": "samt",
+   "pos": "konjunktion",
+   "level": 3,
+   "example": "Vi köpte äpplen samt päron."
+  },
+  {
+   "word": "aj",
+   "pos": "interjektion",
+   "level": 3,
+   "example": "Aj! Det gör ont."
+  },
+  {
+   "word": "hej",
+   "pos": "interjektion",
+   "level": 3,
+   "example": "Hej! Hur mår du?"
+  },
+  {
+   "word": "usch",
+   "pos": "interjektion",
+   "level": 3,
+   "example": "Usch, vad kallt det är!"
+  },
+  {
+   "word": "hurra",
+   "pos": "interjektion",
+   "level": 3,
+   "example": "Hurra, vi vann!"
+  },
+  {
+   "word": "eftersom",
+   "pos": "subjunktion",
+   "level": 4,
+   "example": "Jag stannade hemma eftersom jag var sjuk."
+  },
+  {
+   "word": "att",
+   "pos": "subjunktion",
+   "level": 4,
+   "example": "Jag tror att det blir bra."
+  },
+  {
+   "word": "medan",
+   "pos": "subjunktion",
+   "level": 4,
+   "example": "Hon läste medan jag lagade mat."
+  },
+  {
+   "word": "innan",
+   "pos": "subjunktion",
+   "level": 4,
+   "example": "Ring innan du kommer."
+  },
+  {
+   "word": "när",
+   "pos": "subjunktion",
+   "level": 4,
+   "example": "Jag ringer när jag kommer fram."
+  },
+  {
+   "word": "om",
+   "pos": "subjunktion",
+   "level": 4,
+   "example": "Jag vet inte om hon kommer."
+  }
+ ]
+}

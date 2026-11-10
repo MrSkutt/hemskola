@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Bilder – Hemskola{% endblock %}
+{% block content %}
+<h1>Bilder</h1>
+<div class="card">
+  <form method="post" action="/admin/media" enctype="multipart/form-data">
+    <label for="f">Ladda upp bilder (png, jpg, gif, webp, svg – högst 3 MB per fil)</label>
+    <input id="f" type="file" name="files" multiple accept=".png,.jpg,.jpeg,.gif,.webp,.svg,image/*">
+    <p><button>Ladda upp</button></p>
+  </form>
+  <p class="muted">Använd sedan filnamnet i fältet <code>"image"</code> när du importerar övningar, t.ex. <code>"image": "karta-sverige.png"</code>.
+     Bilderna ligger i datamappen (<code>data/media</code>) och finns med i din backup.</p>
+</div>
+{% if files %}
+<div class="thumbs">
+  {% for f in files %}
+  <div class="card" style="padding:.7rem">
+    <img src="/media/{{ f.name }}" alt="{{ f.name }}">
+    <div style="word-break:break-all"><code>{{ f.name }}</code></div>
+    <div class="muted">{{ f.size }} kB · {{ f.used }} övningar</div>
+    <form method="post" action="/admin/media/{{ f.name }}/delete" onsubmit="return confirm('Ta bort {{ f.name }}?')"><button class="small danger">Ta bort</button></form>
+  </div>
+  {% endfor %}
+</div>
+{% else %}<div class="card muted">Inga bilder uppladdade än.</div>{% endif %}
+{% endblock %}

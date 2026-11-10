@@ -4,6 +4,8 @@
 <p class="muted">{{ label(ex.subject) }} · {{ ex.topic }}</p>
 <div class="card">
   <div class="question">{{ ex.question }}</div>
+  {% if ex.image %}<img class="qimg" src="/media/{{ ex.image }}" alt="Bild till frågan">{% endif %}
+  {% if ex.svg %}{{ ex.svg|safe }}{% endif %}
   {% if a.correct %}
     <div class="result right">✅ Rätt! Du svarade <strong>{{ a.given }}</strong>.</div>
   {% else %}

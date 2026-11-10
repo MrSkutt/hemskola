@@ -3,7 +3,7 @@
 {% block content %}
 <h1>Importera övningar</h1>
 {% if result %}
-<div class="flash ok">Klart: {{ result.added }} nya övningar, {{ result.skipped }} fanns redan.</div>
+<div class="flash ok">Klart: {{ result.added }} nya övningar ({{ result.skipped }} fanns redan){% if result.words_added or result.words_skipped %}, {{ result.words_added }} nya ord ({{ result.words_skipped }} fanns redan){% endif %}.</div>
 {% if result.errors %}<div class="flash warn"><strong>{{ result.errors|length }} fel:</strong><br>{% for e in result.errors %}{{ e }}<br>{% endfor %}</div>{% endif %}
 {% endif %}
 <div class="card">
@@ -25,7 +25,31 @@
     <li><code>type</code> – <code>mc</code> (flerval) eller <code>text</code> (skriv svar)</li>
     <li><code>question</code>, <code>answer</code> (text eller lista med godkända svar), <code>explanation</code> (valfri)</li>
     <li><code>options</code> – lista med alternativ (bara för <code>mc</code>; <code>answer</code> måste finnas bland dem)</li>
+    <li><code>image</code> – (valfritt) filnamn på en bild som du laddat upp under <a href="/admin/media">Bilder</a></li>
+    <li><code>diagram</code> – (valfritt) ett diagram som ritas automatiskt, se nedan</li>
   </ul>
+  <h3>Diagram</h3>
+  <p>Lägg till <code>"diagram": {"type": "...", ...}</code> i en övning. Typer:</p>
+  <ul>
+    <li><code>bar_chart</code>: <code>labels</code>, <code>values</code>, valfritt <code>title</code>, <code>show_values</code></li>
+    <li><code>pie_chart</code>: <code>labels</code>, <code>values</code>, valfritt <code>show_percent</code></li>
+    <li><code>clock</code>: <code>time</code> ("3:25")</li>
+    <li><code>fraction</code>: <code>shape</code> ("circle"/"bar"), <code>parts</code>, <code>shaded</code></li>
+    <li><code>rectangle</code>: <code>w</code>, <code>h</code>, valfritt <code>unit</code>, <code>w_label</code>, <code>h_label</code>, <code>center_label</code></li>
+    <li><code>right_triangle</code>: <code>a</code>, <code>b</code> (proportioner), <code>bottom_label</code>, <code>left_label</code>, <code>hyp_label</code></li>
+    <li><code>number_line</code>: <code>min</code>, <code>max</code>, <code>step</code>, <code>label_step</code>, <code>marks</code> [{"value": 7, "label": "?"}]</li>
+    <li><code>coordinate</code>: <code>xmin</code>, <code>xmax</code>, <code>ymin</code>, <code>ymax</code>, <code>points</code> [{"x":2,"y":3,"label":"A"}], valfritt <code>line</code> {"k":2,"m":1}</li>
+    <li><code>angle</code>: <code>degrees</code> (1–180), valfritt <code>label</code></li>
+  </ul>
+  <h3>Ord till ordlistan</h3>
+  <p>Samma fält kan även innehålla ord: <code>{"exercises": [...], "words": [...]}</code>. Ett ord:</p>
+  <pre style="white-space:pre-wrap">{"word": "springa", "pos": "verb", "level": 1,
+ "forms": {"presens": "springer", "preteritum": "sprang", "supinum": "sprungit", "imperativ": "spring"}}
+{"word": "bil", "pos": "substantiv", "level": 1, "gender": "en",
+ "forms": {"plural": "bilar", "bestamd": "bilen", "bestamd_plural": "bilarna"}}
+{"word": "snabb", "pos": "adjektiv", "level": 1, "antonym": "långsam",
+ "forms": {"komparativ": "snabbare", "superlativ": "snabbast", "neutrum": "snabbt"}}
+{"word": "under", "pos": "preposition", "level": 2, "example": "Katten sitter under bordet."}</pre>
   <p class="muted">Dubbletter (samma ämne och fråga) hoppas över. Be Claude generera övningar i det här formatet och klistra in dem här.</p>
 </div>
 {% endblock %}

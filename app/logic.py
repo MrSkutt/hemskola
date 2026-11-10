@@ -2,8 +2,12 @@
 import json
 import os
 import random
+import re
 from datetime import date, datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
+
+from . import diagrams, generators
+from .words import WordBank
 
 TZ = ZoneInfo(os.environ.get("TZ", "Europe/Stockholm"))
 
@@ -134,58 +138,166 @@ def adjust_level(db, user_id: int, subject: str, attempt_id: int):
     return change
 
 
-# ---------------------------------------------------------------- övningar
+# ---------------------------------------------------------------- frågor (item)
+#
+# Ett "item" är en fråga som visas för eleven: antingen en vanlig övning eller en genererad instans.
+# Alla delar av appen arbetar med items, så genererade och vanliga frågor behandlas lika.
+
+def _loads(v, default=None):
+    return json.loads(v) if v else default
+
+
+def _item(row, generated_id=None) -> dict:
+    diagram = _loads(row["diagram"])
+    return {
+        "id": row["exercise_id"] if generated_id else row["id"], "generated_id": generated_id,
+        "subject": row["subject"], "topic": row["topic"], "level": row["level"],
+        "type": row["type"], "question": row["question"], "options": _loads(row["options"]),
+        "answers": json.loads(row["answers"]), "explanation": row["explanation"] or "",
+        "image": row["image"] if "image" in row.keys() else None,
+        "diagram": diagram, "svg": diagrams.render(diagram) if diagram else None,
+    }
+
 
 def exercise_row(db, exercise_id: int):
     return db.execute("SELECT * FROM exercises WHERE id=?", (exercise_id,)).fetchone()
 
 
-def pick_exercise(db, user_id: int, subject: str):
+def item_from_exercise(row) -> dict:
+    return _item(row)
+
+
+def item_from_generated(db, generated_id: int):
+    row = db.execute(
+        """SELECT g.*, e.subject, e.topic, e.level, NULL AS image FROM generated g
+           JOIN exercises e ON e.id = g.exercise_id WHERE g.id=?""", (generated_id,)).fetchone()
+    return _item(row, generated_id) if row else None
+
+
+def present(db, ex_row, user_id=None):
+    """Gör en övning till en fråga. Generatorövningar skapar en ny instans. None om det inte går."""
+    if not ex_row["generator"]:
+        return item_from_exercise(ex_row)
+    generators.load_all()
+    gen = generators.REGISTRY.get(ex_row["generator"])
+    if not gen:
+        return None
+    bank = WordBank.from_db(db) if gen.words else None
+    q = generators.generate(ex_row, bank)
+    if q is None:
+        return None
+    cur = db.execute(
+        """INSERT INTO generated(exercise_id, user_id, type, question, options, answers, explanation, diagram)
+           VALUES (?,?,?,?,?,?,?,?)""",
+        (ex_row["id"], user_id, "mc" if q.options else "text", q.question,
+         json.dumps(q.options, ensure_ascii=False) if q.options else None,
+         json.dumps(q.answers, ensure_ascii=False), q.explanation,
+         json.dumps(q.diagram) if q.diagram else None))
+    db.commit()
+    return item_from_generated(db, cur.lastrowid)
+
+
+def cleanup_generated(db, days: int = 14) -> int:
+    """Tar bort gamla genererade frågor som aldrig besvarats och inte ingår i något prov."""
+    cur = db.execute(
+        """DELETE FROM generated WHERE created_at < datetime('now', ?)
+           AND id NOT IN (SELECT generated_id FROM attempts WHERE generated_id IS NOT NULL)
+           AND id NOT IN (SELECT generated_id FROM test_items WHERE generated_id IS NOT NULL)""",
+        (f"-{int(days)} days",))
+    db.commit()
+    return cur.rowcount
+
+
+def ensure_generator_exercises(db) -> int:
+    """Lägger in en övningsrad per kodad generator (så att de kan slås av/på och väljas som vanliga övningar)."""
+    generators.load_all()
+    added = 0
+    for g in generators.REGISTRY.values():
+        cur = db.execute(
+            """INSERT OR IGNORE INTO exercises(subject, topic, level, type, question, answers, generator)
+               VALUES (?,?,?,'text',?,'[]',?)""", (g.subject, g.topic, g.level, f"gen:{g.name}", g.name))
+        added += cur.rowcount
+    db.commit()
+    return added
+
+
+# ---------------------------------------------------------------- övningar
+
+def pick_exercise(db, user_id: int, subject: str, exclude=()):
     """Väljer nästa övning: mest på nuvarande nivå, lite repetition av missade och av nivån under."""
     level = get_level(db, user_id, subject) or 1
-    rows = db.execute("SELECT id, level FROM exercises WHERE subject=? AND active=1", (subject,)).fetchall()
+    rows = [r for r in db.execute(
+        "SELECT id, level, generator FROM exercises WHERE subject=? AND active=1", (subject,)) if r["id"] not in exclude]
     if not rows:
         return None
-    by_level = {}
+    by_level, level_of = {}, {}
+    gen_ids = set()
     for r in rows:
         by_level.setdefault(r["level"], []).append(r["id"])
-    level_of = {r["id"]: r["level"] for r in rows}
+        level_of[r["id"]] = r["level"]
+        if r["generator"]:
+            gen_ids.add(r["id"])
 
     recent = [r["exercise_id"] for r in db.execute(
         "SELECT exercise_id FROM attempts WHERE user_id=? ORDER BY id DESC LIMIT 12", (user_id,))]
-    last = {}
+    last = {}   # senaste resultat per vanlig övning (genererade frågor är alltid nya)
     for r in db.execute(
         """SELECT a.exercise_id, a.correct FROM attempts a JOIN exercises e ON e.id=a.exercise_id
-           WHERE a.user_id=? AND e.subject=? ORDER BY a.id""", (user_id, subject)):
+           WHERE a.user_id=? AND e.subject=? AND e.generator IS NULL ORDER BY a.id""", (user_id, subject)):
         last[r["exercise_id"]] = r["correct"]
     missed = [e for e, c in last.items() if not c and e not in recent and e in level_of and level_of[e] <= level]
 
     pool = by_level.get(level)
     if not pool:
-        nearest = min(by_level, key=lambda l: abs(l - level))
-        pool = by_level[nearest]
+        pool = by_level[min(by_level, key=lambda l: abs(l - level))]
 
     roll = random.random()
     if roll < 0.2 and missed:
         return random.choice(missed)
     if roll < 0.3 and (level - 1) in by_level:
         pool = by_level[level - 1]
-    fresh = [e for e in pool if e not in recent]
-    unseen = [e for e in fresh if e not in last]
+    fresh = [e for e in pool if (e not in recent[:3] if e in gen_ids else e not in recent)]
+    unseen = [e for e in fresh if e in gen_ids or e not in last]
     return random.choice(unseen or fresh or pool)
 
 
-def record_attempt(db, user_id: int, exercise, given: str, test_id=None):
-    answers = json.loads(exercise["answers"])
-    correct = 1 if is_correct(given, answers) else 0
+def next_item(db, user_id: int, subject: str):
+    bad = set()
+    for _ in range(8):
+        ex_id = pick_exercise(db, user_id, subject, exclude=bad)
+        if ex_id is None:
+            return None
+        item = present(db, exercise_row(db, ex_id), user_id)
+        if item:
+            return item
+        bad.add(ex_id)
+    return None
+
+
+def resolve_item(db, user_id: int, exercise_id: int, generated_id=None):
+    """Hittar frågan som ett inskickat svar hör till. None om den är ogiltig eller redan besvarad."""
+    if generated_id:
+        item = item_from_generated(db, int(generated_id))
+        owner = db.execute("SELECT user_id FROM generated WHERE id=?", (int(generated_id),)).fetchone()
+        if not item or item["id"] != exercise_id or (owner and owner["user_id"] not in (None, user_id)):
+            return None
+        if db.execute("SELECT 1 FROM attempts WHERE generated_id=?", (int(generated_id),)).fetchone():
+            return None
+        return item
+    row = exercise_row(db, exercise_id)
+    return item_from_exercise(row) if row and not row["generator"] else None
+
+
+def record_attempt(db, user_id: int, item: dict, given: str, test_id=None):
+    correct = 1 if is_correct(given, item["answers"]) else 0
     cur = db.execute(
-        "INSERT INTO attempts(user_id, exercise_id, test_id, given, correct) VALUES (?,?,?,?,?)",
-        (user_id, exercise["id"], test_id, given.strip(), correct),
+        "INSERT INTO attempts(user_id, exercise_id, generated_id, test_id, given, correct) VALUES (?,?,?,?,?,?)",
+        (user_id, item["id"], item["generated_id"], test_id, given.strip(), correct),
     )
     attempt_id = cur.lastrowid
     change = None
     if test_id is None:
-        change = adjust_level(db, user_id, exercise["subject"], attempt_id)
+        change = adjust_level(db, user_id, item["subject"], attempt_id)
     db.commit()
     return attempt_id, bool(correct), change
 
@@ -196,37 +308,57 @@ def create_test(db, user_id: int, subject: str):
     kind = "placement" if get_level(db, user_id, subject) is None else "status"
     recent = {r["exercise_id"] for r in db.execute(
         "SELECT exercise_id FROM attempts WHERE user_id=? ORDER BY id DESC LIMIT 40", (user_id,))}
-    chosen = []
+    chosen = []   # (exercise_id, generated_id)
     for lvl in LEVELS:
-        ids = [r["id"] for r in db.execute(
-            "SELECT id FROM exercises WHERE subject=? AND level=? AND active=1", (subject, lvl))]
-        ids.sort(key=lambda e: (e in recent, random.random()))
-        chosen.extend(ids[:PER_LEVEL_IN_TEST])
+        rows = db.execute(
+            "SELECT * FROM exercises WHERE subject=? AND level=? AND active=1", (subject, lvl)).fetchall()
+        rows = sorted(rows, key=lambda r: (r["id"] in recent and not r["generator"], random.random()))
+        taken = []
+        for r in rows:
+            if len(taken) >= PER_LEVEL_IN_TEST:
+                break
+            item = present(db, r, user_id) if r["generator"] else None
+            if r["generator"] and not item:
+                continue
+            taken.append((r["id"], item["generated_id"] if item else None, r))
+        # generatorer kan upprepas med nya slumptal om nivån har för få olika övningar
+        gens = [t for t in taken if t[1]]
+        while gens and len(taken) < PER_LEVEL_IN_TEST:
+            r = gens[0][2]
+            item = present(db, r, user_id)
+            if not item:
+                break
+            taken.append((r["id"], item["generated_id"], r))
+        chosen.extend((t[0], t[1]) for t in taken)
     if not chosen:
         return None
-    cur = db.execute(
-        "INSERT INTO tests(user_id, subject, kind, total) VALUES (?,?,?,?)",
-        (user_id, subject, kind, len(chosen)),
-    )
+    cur = db.execute("INSERT INTO tests(user_id, subject, kind, total) VALUES (?,?,?,?)",
+                     (user_id, subject, kind, len(chosen)))
     test_id = cur.lastrowid
-    for pos, ex_id in enumerate(chosen, start=1):
-        db.execute("INSERT INTO test_items(test_id, position, exercise_id) VALUES (?,?,?)", (test_id, pos, ex_id))
+    for pos, (ex_id, gen_id) in enumerate(chosen, start=1):
+        db.execute("INSERT INTO test_items(test_id, position, exercise_id, generated_id) VALUES (?,?,?,?)",
+                   (test_id, pos, ex_id, gen_id))
     db.commit()
     return test_id
 
 
+def _test_item(db, ti):
+    if ti["generated_id"]:
+        return item_from_generated(db, ti["generated_id"])
+    return item_from_exercise(exercise_row(db, ti["exercise_id"]))
+
+
 def next_test_item(db, test_id: int):
-    """Första obesvarade frågan i provet: (position, exercise_row) eller None."""
-    row = db.execute(
-        """SELECT ti.position, ti.exercise_id FROM test_items ti
+    """Första obesvarade frågan i provet: (position, item) eller None."""
+    ti = db.execute(
+        """SELECT ti.position, ti.exercise_id, ti.generated_id FROM test_items ti
            WHERE ti.test_id=? AND NOT EXISTS (
-               SELECT 1 FROM attempts a WHERE a.test_id=ti.test_id AND a.exercise_id=ti.exercise_id)
-           ORDER BY ti.position LIMIT 1""",
-        (test_id,),
-    ).fetchone()
-    if not row:
+               SELECT 1 FROM attempts a WHERE a.test_id=ti.test_id AND a.exercise_id=ti.exercise_id
+               AND COALESCE(a.generated_id, 0) = COALESCE(ti.generated_id, 0))
+           ORDER BY ti.position LIMIT 1""", (test_id,)).fetchone()
+    if not ti:
         return None
-    return row["position"], exercise_row(db, row["exercise_id"])
+    return ti["position"], _test_item(db, ti)
 
 
 def test_breakdown(db, test_id: int) -> dict:
@@ -273,14 +405,16 @@ def finish_test(db, test_id: int) -> int:
 
 def test_review(db, test_id: int) -> list:
     out = []
-    for r in db.execute(
-        """SELECT e.*, a.given, a.correct FROM test_items ti
-           JOIN exercises e ON e.id=ti.exercise_id
-           LEFT JOIN attempts a ON a.test_id=ti.test_id AND a.exercise_id=ti.exercise_id
-           WHERE ti.test_id=? ORDER BY ti.position""", (test_id,)):
-        d = dict(r)
-        d["answers_list"] = json.loads(r["answers"])
-        out.append(d)
+    for ti in db.execute(
+            "SELECT exercise_id, generated_id FROM test_items WHERE test_id=? ORDER BY position", (test_id,)).fetchall():
+        item = _test_item(db, ti)
+        a = db.execute(
+            """SELECT given, correct FROM attempts WHERE test_id=? AND exercise_id=?
+               AND COALESCE(generated_id, 0) = COALESCE(?, 0)""", (test_id, ti["exercise_id"], ti["generated_id"])).fetchone()
+        item["given"] = a["given"] if a else None
+        item["correct"] = a["correct"] if a else 0
+        item["answers_list"] = item["answers"]
+        out.append(item)
     return out
 
 
@@ -356,6 +490,9 @@ def active_subjects(db) -> list:
 
 # ---------------------------------------------------------------- import
 
+MEDIA_NAME = re.compile(r"^[A-Za-z0-9._-]{1,100}$")
+
+
 def validate_exercise(d) -> tuple:
     """Returnerar (rad, fel). Rad är en dict redo för INSERT."""
     if not isinstance(d, dict):
@@ -387,12 +524,38 @@ def validate_exercise(d) -> tuple:
         options = [str(o).strip() for o in options]
         if not any(a in options for a in answers):
             return None, "answer måste finnas bland options"
+    image = d.get("image")
+    if image:
+        image = str(image).strip()
+        if not MEDIA_NAME.match(image):
+            return None, "image måste vara ett filnamn (bokstäver, siffror, punkt, bindestreck, understreck)"
+    diagram = d.get("diagram")
+    if diagram:
+        err = diagrams.validate(diagram)
+        if err:
+            return None, err
     return {
         "subject": subject, "topic": topic, "level": level, "type": typ, "question": question,
         "options": json.dumps(options, ensure_ascii=False) if options else None,
         "answers": json.dumps(answers, ensure_ascii=False),
         "explanation": str(d.get("explanation", "")).strip(),
+        "image": image or None,
+        "diagram": json.dumps(diagram, ensure_ascii=False) if diagram else None,
     }, None
+
+
+def import_bundle(db, data) -> dict:
+    """Importerar en lista med övningar, eller ett objekt med {"exercises": [...], "words": [...]}."""
+    from .words import import_words
+    if isinstance(data, dict):
+        res = import_exercises(db, data.get("exercises", []))
+        w = import_words(db, data.get("words", []))
+    else:
+        res = import_exercises(db, data)
+        w = {"added": 0, "skipped": 0, "errors": []}
+    res["words_added"], res["words_skipped"] = w["added"], w["skipped"]
+    res["errors"] = res["errors"] + w["errors"]
+    return res
 
 
 def import_exercises(db, data) -> dict:
@@ -408,8 +571,9 @@ def import_exercises(db, data) -> dict:
             errors.append(f"Övning {i}: {err}")
             continue
         cur = db.execute(
-            """INSERT OR IGNORE INTO exercises(subject, topic, level, type, question, options, answers, explanation)
-               VALUES (:subject, :topic, :level, :type, :question, :options, :answers, :explanation)""",
+            """INSERT OR IGNORE INTO exercises(subject, topic, level, type, question, options, answers, explanation,
+                                              image, diagram)
+               VALUES (:subject, :topic, :level, :type, :question, :options, :answers, :explanation, :image, :diagram)""",
             row,
         )
         if cur.rowcount:

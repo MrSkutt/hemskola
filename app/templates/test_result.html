@@ -22,6 +22,8 @@
 <div class="card">
   <div class="muted">Nivå {{ r.level }} · {{ r.topic }}</div>
   <div style="white-space:pre-line;margin:.3rem 0">{{ r.question }}</div>
+  {% if r.image %}<img class="qimg" src="/media/{{ r.image }}" alt="Bild till frågan">{% endif %}
+  {% if r.svg %}{{ r.svg|safe }}{% endif %}
   {% if r.correct %}<div class="ok">✅ {{ r.given }}</div>
   {% else %}<div class="bad">✗ Du svarade: {{ r.given or '(inget svar)' }}</div><div>Rätt svar: <strong>{{ r.answers_list[0] }}</strong></div>{% endif %}
   {% if r.explanation %}<div class="muted">💡 {{ r.explanation }}</div>{% endif %}

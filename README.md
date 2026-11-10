@@ -79,6 +79,36 @@ Tips: be om minst 20–30 övningar per nivå, så att samma frågor inte kommer
 befintliga övningar och klistra in som exempel, så att nya får samma stil. Granska gärna nya övningar
 innan eleven får dem, särskilt facit.
 
+## Genererade övningar, ordlista, bilder och diagram
+
+**Oändliga övningar.** Förutom de vanliga övningarna finns *generatorer*: små program som skapar en ny fråga med slumptal
+(matte nivå 1–5: addition, bråk, procent, ekvationer, klockan, area, stapeldiagram, koordinater, rötter m.m.) eller slumpade ord
+(svenska: ordklasser, böjning av verb/substantiv/adjektiv, en/ett, motsatser, synonymer). Varje gång eleven får en genererad fråga
+sparas den, så att svaret kan rättas och visas i elevens historik. De räknas som vanliga övningar i nivåsystemet och proven.
+Under **Övningar** visas `+ n ∞` för generatorer. Nya generatorer läggs i `app/generators.py` och `app/generators_sv.py`.
+
+**Ordlista.** Under **Ord** ser du ordlistan som driver de svenska generatorerna. Fler ord läggs in via **Importera**:
+
+```json
+{"words": [{"word": "cykla", "pos": "verb", "level": 1, "forms": {"presens": "cyklar", "preteritum": "cyklade"}}]}
+```
+
+Ordklasser: verb, substantiv, adjektiv, adverb, preposition, pronomen, konjunktion, subjunktion, interjektion, räkneord.
+En fil kan ha både `exercises` och `words`: `{"exercises": [...], "words": [...]}`. Dölj ord som ger konstiga frågor med knappen **Dölj**.
+
+**Bilder.** Under **Bilder** laddar du upp png, jpg, gif, webp eller svg (högst 3 MB, svg med script avvisas). Filerna ligger i `data/media`.
+Koppla en bild till en övning med `"image": "filnamn.png"` i importen.
+
+**Diagram.** En övning kan ha ett `"diagram"` som ritas som SVG, utan bildfiler. Typer: `bar_chart`, `pie_chart`, `clock`, `fraction`,
+`rectangle`, `right_triangle`, `number_line`, `coordinate`, `angle`. Exempel:
+
+```json
+{"subject": "matte", "topic": "Diagram", "level": 1, "type": "text", "question": "Vilken dag lånades flest böcker?",
+ "answer": "Tor", "diagram": {"type": "bar_chart", "title": "Utlånade böcker", "labels": ["Mån", "Tor"], "values": [5, 12]}}
+```
+
+Uppgraderar du en befintlig installation läggs de nya tabellerna och kolumnerna till automatiskt, utan att data försvinner.
+
 ## Drift
 
 * **Backup:** `sqlite3 data/hemskola.db ".backup data/backup-$(date +%F).db"` (eller kopiera `data/` medan appen står still).
@@ -91,7 +121,6 @@ innan eleven får dem, särskilt facit.
 ## Idéer framåt
 
 * Fler ämnen (engelska, NO, SO) och fler övningar per nivå
-* Genererade huvudräkningsuppgifter med slumptal, så att de aldrig tar slut
 * Eget val av område att öva på, mål per dag, och belöningar/poäng
-* Bilder och diagram i frågor
+* Fler generatorer och fler ord i ordlistan, t.ex. engelska glosor
 * Påminnelser/veckorapport till admin

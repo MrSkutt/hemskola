@@ -54,3 +54,25 @@ th { color: var(--muted); font-weight: 600; }
 .pill.off { background: var(--line); color: var(--muted); }
 .inline { display: inline; } .row { display: flex; gap: .6rem; flex-wrap: wrap; align-items: end; }
 @media (max-width: 600px) { body { font-size: 16px; } .question { font-size: 1.2rem; } }
+
+/* ---- diagram och bilder ---- */
+.diagram { display: block; width: 100%; max-width: 360px; height: auto; margin: .4rem 0 1rem; stroke-width: 1.5; }
+.diagram text { fill: var(--text); font-family: inherit; font-size: 14px; }
+.diagram .d-axis { fill: var(--muted); font-size: 12px; }
+.diagram .d-title { font-weight: 700; }
+.diagram .d-line { stroke: var(--text); fill: none; stroke-linecap: round; }
+.diagram .d-grid { stroke: var(--line); }
+.diagram .d-bar { fill: var(--accent); }
+.diagram .d-shade { fill: var(--accent); fill-opacity: .55; stroke: var(--text); }
+.diagram .d-empty { fill: var(--card); stroke: var(--text); }
+.diagram .d-face { fill: var(--card); stroke: var(--text); stroke-width: 3; }
+.diagram .d-hand { stroke: var(--text); stroke-linecap: round; }
+.diagram .d-accent { fill: var(--bad); }
+.diagram .d-func { stroke: var(--accent); stroke-width: 3; stroke-linecap: round; }
+.diagram .d-seg { stroke: var(--card); stroke-width: 2; }
+.diagram .d-c0 { fill: #4c9f70; } .diagram .d-c1 { fill: #e0a030; } .diagram .d-c2 { fill: #4a7fb5; }
+.diagram .d-c3 { fill: #c0563f; } .diagram .d-c4 { fill: #8a6bb0; } .diagram .d-c5 { fill: #6aa6a0; }
+.qimg { display: block; max-width: 100%; max-height: 320px; border-radius: 10px; margin: .4rem 0 1rem; }
+.thumbs { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
+.thumbs img { width: 100%; height: 120px; object-fit: contain; background: var(--bg); border-radius: 8px; }
+.diagram .d-num { paint-order: stroke; stroke: var(--card); stroke-width: 4px; stroke-linejoin: round; }

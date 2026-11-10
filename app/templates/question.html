@@ -11,8 +11,11 @@
 <div class="card">
   {% if mode == 'test' %}<div class="bar"><i style="width:{{ ((pos - 1) / test.total * 100)|round }}%"></i></div>{% endif %}
   <div class="question">{{ ex.question }}</div>
+  {% if ex.image %}<img class="qimg" src="/media/{{ ex.image }}" alt="Bild till frågan">{% endif %}
+  {% if ex.svg %}{{ ex.svg|safe }}{% endif %}
   <form method="post" action="{{ action }}">
     <input type="hidden" name="exercise_id" value="{{ ex.id }}">
+    <input type="hidden" name="generated_id" value="{{ ex.generated_id or '' }}">
     {% if options %}
       {% for o in options %}<button class="choice" name="given" value="{{ o }}">{{ o }}</button>{% endfor %}
     {% else %}

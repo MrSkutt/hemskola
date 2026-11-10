@@ -1,19 +1,22 @@
 """Hemskola – FastAPI-app för hemmaövningar med adaptiv nivå."""
 import json
 import os
+import random
+import re
 import secrets
 import time
 from contextlib import asynccontextmanager
 from pathlib import Path
 
 from fastapi import Depends, FastAPI, File, Form, HTTPException, Request, UploadFile
-from fastapi.responses import JSONResponse, RedirectResponse
+from fastapi.responses import FileResponse, JSONResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from starlette.middleware.sessions import SessionMiddleware
 
 from . import db as database
 from . import logic
+from . import words as wordlist
 from .security import hash_password, verify_password
 
 BASE = Path(__file__).parent
@@ -50,12 +53,14 @@ def bootstrap() -> None:
                 (name, "Admin", hash_password(password)),
             )
             conn.commit()
-        if os.environ.get("SEED_ON_START", "1") == "1" and not conn.execute(
-            "SELECT 1 FROM exercises LIMIT 1"
-        ).fetchone():
+        if os.environ.get("SEED_ON_START", "1") == "1":
+            # Idempotent: redan inlagda övningar och ord hoppas över, så nya startmaterial kommer med vid uppgradering.
             for f in sorted((BASE / "seed").glob("*.json")):
-                result = logic.import_exercises(conn, json.loads(f.read_text(encoding="utf-8")))
-                print(f"Seed {f.name}: {result['added']} övningar", flush=True)
+                result = logic.import_bundle(conn, json.loads(f.read_text(encoding="utf-8")))
+                if result["added"] or result["words_added"]:
+                    print(f"Seed {f.name}: {result['added']} övningar, {result['words_added']} ord", flush=True)
+        logic.ensure_generator_exercises(conn)
+        logic.cleanup_generated(conn)
     finally:
         conn.close()
 
@@ -199,31 +204,29 @@ def practice(request: Request, subject: str, user=Depends(student_user), db=Depe
     level = logic.get_level(db, user["id"], subject)
     if level is None:
         return go("/home")
-    ex_id = logic.pick_exercise(db, user["id"], subject)
-    if ex_id is None:
+    item = logic.next_item(db, user["id"], subject)
+    if item is None:
         flash(request, "Det finns inga övningar i det här ämnet än.", "warn")
         return go("/home")
-    ex = logic.exercise_row(db, ex_id)
-    return render(request, "question.html", ex=ex, options=_options(ex), action=f"/practice/{subject}",
+    return render(request, "question.html", ex=item, options=_shuffled(item), action=f"/practice/{subject}",
                   mode="practice", level=level, window=logic.window_results(db, user["id"], subject))
 
 
-def _options(ex):
-    if ex["type"] != "mc":
+def _shuffled(item):
+    if not item["options"]:
         return None
-    import random
-    opts = json.loads(ex["options"])
+    opts = list(item["options"])
     random.shuffle(opts)
     return opts
 
 
 @app.post("/practice/{subject}")
-def practice_answer(subject: str, exercise_id: int = Form(...), given: str = Form(""),
+def practice_answer(subject: str, exercise_id: int = Form(...), generated_id: str = Form(""), given: str = Form(""),
                     user=Depends(student_user), db=Depends(database.get_db)):
-    ex = logic.exercise_row(db, exercise_id)
-    if not ex or ex["subject"] != subject or not given.strip():
+    item = logic.resolve_item(db, user["id"], exercise_id, int(generated_id) if generated_id.isdigit() else None)
+    if not item or item["subject"] != subject or not given.strip():
         return go(f"/practice/{subject}")
-    attempt_id, _, change = logic.record_attempt(db, user["id"], ex, given)
+    attempt_id, _, change = logic.record_attempt(db, user["id"], item, given)
     return go(f"/answer/{attempt_id}" + (f"?change={change}" if change else ""))
 
 
@@ -234,11 +237,12 @@ def answer_page(request: Request, attempt_id: int, change: str = "", user=Depend
                    (attempt_id, user["id"])).fetchone()
     if not a:
         raise HTTPException(404)
-    ex = logic.exercise_row(db, a["exercise_id"])
-    level = logic.get_level(db, user["id"], ex["subject"])
-    return render(request, "answer.html", a=a, ex=ex, answers=json.loads(ex["answers"]),
+    item = (logic.item_from_generated(db, a["generated_id"]) if a["generated_id"]
+            else logic.item_from_exercise(logic.exercise_row(db, a["exercise_id"])))
+    level = logic.get_level(db, user["id"], item["subject"])
+    return render(request, "answer.html", a=a, ex=item, answers=item["answers"],
                   change=change if change in ("up", "down") else "", level=level,
-                  window=logic.window_results(db, user["id"], ex["subject"]))
+                  window=logic.window_results(db, user["id"], item["subject"]))
 
 
 # ---------------------------------------------------------------- prov
@@ -274,19 +278,20 @@ def test_page(request: Request, test_id: int, user=Depends(student_user), db=Dep
     if not nxt:
         logic.finish_test(db, test_id)
         return go(f"/test/{test_id}/result")
-    pos, ex = nxt
-    return render(request, "question.html", ex=ex, options=_options(ex), action=f"/test/{test_id}",
+    pos, item = nxt
+    return render(request, "question.html", ex=item, options=_shuffled(item), action=f"/test/{test_id}",
                   mode="test", test=t, pos=pos)
 
 
 @app.post("/test/{test_id}")
-def test_answer(test_id: int, exercise_id: int = Form(...), given: str = Form(""),
+def test_answer(test_id: int, exercise_id: int = Form(...), generated_id: str = Form(""), given: str = Form(""),
                 user=Depends(student_user), db=Depends(database.get_db)):
     t = _own_test(db, test_id, user)
     if t["finished_at"]:
         return go(f"/test/{test_id}/result")
     nxt = logic.next_test_item(db, test_id)
-    if nxt and nxt[1]["id"] == exercise_id and given.strip():
+    gid = int(generated_id) if generated_id.isdigit() else None
+    if nxt and nxt[1]["id"] == exercise_id and nxt[1]["generated_id"] == gid and given.strip():
         logic.record_attempt(db, user["id"], nxt[1], given, test_id=test_id)
     return go(f"/test/{test_id}")
 
@@ -333,8 +338,9 @@ def admin_student(request: Request, student_id: int, user=Depends(admin_user), d
             "tests": tests,
         })
     recent = db.execute(
-        """SELECT a.created_at, a.given, a.correct, a.test_id, e.question, e.subject, e.topic, e.level, e.answers
-           FROM attempts a JOIN exercises e ON e.id=a.exercise_id
+        """SELECT a.created_at, a.given, a.correct, a.test_id, COALESCE(g.question, e.question) AS question,
+                  e.subject, e.topic, e.level, COALESCE(g.answers, e.answers) AS answers
+           FROM attempts a JOIN exercises e ON e.id=a.exercise_id LEFT JOIN generated g ON g.id=a.generated_id
            WHERE a.user_id=? ORDER BY a.id DESC LIMIT 40""", (student_id,)).fetchall()
     chart = logic.daily_chart(db, student_id)
     streak, count_today = logic.streak_and_today(db, student_id)
@@ -422,13 +428,15 @@ def admin_exercises(request: Request, subject: str = "", level: int = 0, user=De
     if level:
         sql += " AND e.level=?"
         params.append(level)
-    sql += " GROUP BY e.id ORDER BY e.subject, e.level, e.topic, e.id"
+    sql += " GROUP BY e.id ORDER BY e.subject, e.level, e.generator IS NOT NULL, e.topic, e.id"
     rows = db.execute(sql, params).fetchall()
     counts = db.execute(
-        "SELECT subject, level, COUNT(*) AS n FROM exercises WHERE active=1 GROUP BY subject, level").fetchall()
+        """SELECT subject, level, generator IS NOT NULL AS gen, COUNT(*) AS n FROM exercises
+           WHERE active=1 GROUP BY subject, level, gen""").fetchall()
     grid = {}
     for r in counts:
-        grid.setdefault(r["subject"], {})[r["level"]] = r["n"]
+        cell = grid.setdefault(r["subject"], {}).setdefault(r["level"], {"static": 0, "gen": 0})
+        cell["gen" if r["gen"] else "static"] = r["n"]
     return render(request, "admin_exercises.html", rows=rows, grid=grid, subject=subject, level=level,
                   subjects=logic.active_subjects(db))
 
@@ -443,11 +451,15 @@ def admin_exercise_active(ex_id: int, user=Depends(admin_user), db=Depends(datab
 @app.get("/admin/exercises/export.json")
 def admin_export(user=Depends(admin_user), db=Depends(database.get_db)):
     out = []
-    for r in db.execute("SELECT * FROM exercises ORDER BY subject, level, id"):
+    for r in db.execute("SELECT * FROM exercises WHERE generator IS NULL ORDER BY subject, level, id"):
         d = {"subject": r["subject"], "topic": r["topic"], "level": r["level"], "type": r["type"],
              "question": r["question"], "answer": json.loads(r["answers"]), "explanation": r["explanation"]}
         if r["options"]:
             d["options"] = json.loads(r["options"])
+        if r["image"]:
+            d["image"] = r["image"]
+        if r["diagram"]:
+            d["diagram"] = json.loads(r["diagram"])
         out.append(d)
     return JSONResponse(out, headers={"Content-Disposition": "attachment; filename=hemskola-ovningar.json"})
 
@@ -467,8 +479,120 @@ async def admin_import(request: Request, pasted: str = Form(""), upload: UploadF
         flash(request, "Klistra in JSON eller välj en fil.", "warn")
         return go("/admin/import")
     try:
-        result = logic.import_exercises(db, json.loads(text))
+        result = logic.import_bundle(db, json.loads(text))
     except (ValueError, json.JSONDecodeError) as e:
         flash(request, f"Kunde inte läsa JSON: {e}", "warn")
         return go("/admin/import")
     return render(request, "admin_import.html", result=result)
+
+
+# ---------------------------------------------------------------- ordlista
+
+@app.get("/admin/words")
+def admin_words(request: Request, pos: str = "", level: int = 0, user=Depends(admin_user),
+                db=Depends(database.get_db)):
+    sql, params = "SELECT * FROM words WHERE 1=1", []
+    if pos:
+        sql += " AND pos=?"
+        params.append(pos)
+    if level:
+        sql += " AND level=?"
+        params.append(level)
+    rows = [dict(r, d=json.loads(r["data"])) for r in db.execute(sql + " ORDER BY pos, level, word", params)]
+    counts = db.execute("SELECT pos, COUNT(*) AS n FROM words WHERE active=1 GROUP BY pos ORDER BY pos").fetchall()
+    return render(request, "admin_words.html", rows=rows, counts=counts, pos=pos, level=level, POS=wordlist.POS)
+
+
+@app.post("/admin/words/{word_id}/active")
+def admin_word_active(word_id: int, user=Depends(admin_user), db=Depends(database.get_db)):
+    db.execute("UPDATE words SET active = 1 - active WHERE id=?", (word_id,))
+    db.commit()
+    return go("/admin/words")
+
+
+# ---------------------------------------------------------------- bilder
+
+MEDIA_TYPES = {".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".gif": "image/gif",
+               ".webp": "image/webp", ".svg": "image/svg+xml"}
+MAX_UPLOAD = 3_000_000
+
+
+def media_dir() -> Path:
+    d = Path(os.environ.get("MEDIA_DIR") or Path(database.DB_PATH).parent / "media")
+    d.mkdir(parents=True, exist_ok=True)
+    return d
+
+
+def _looks_like(ext: str, data: bytes) -> bool:
+    if ext == ".png":
+        return data.startswith(b"\x89PNG\r\n\x1a\n")
+    if ext in (".jpg", ".jpeg"):
+        return data[:3] == b"\xff\xd8\xff"
+    if ext == ".gif":
+        return data[:6] in (b"GIF87a", b"GIF89a")
+    if ext == ".webp":
+        return data[:4] == b"RIFF" and data[8:12] == b"WEBP"
+    if ext == ".svg":
+        low = data[:200000].lower()
+        return b"<svg" in low[:2000] and not any(x in low for x in (b"<script", b"javascript:", b"onload", b"onerror", b"<foreignobject"))
+    return False
+
+
+@app.get("/media/{name}")
+def media(name: str, user=Depends(current_user)):
+    if not logic.MEDIA_NAME.match(name):
+        raise HTTPException(404)
+    path = media_dir() / name
+    ctype = MEDIA_TYPES.get(path.suffix.lower())
+    if not ctype or not path.is_file() or path.resolve().parent != media_dir().resolve():
+        raise HTTPException(404)
+    return FileResponse(path, media_type=ctype, headers={
+        "X-Content-Type-Options": "nosniff", "Cache-Control": "private, max-age=3600",
+        "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox"})
+
+
+@app.get("/admin/media")
+def admin_media(request: Request, user=Depends(admin_user), db=Depends(database.get_db)):
+    files = []
+    for f in sorted(media_dir().iterdir()):
+        if f.is_file() and f.suffix.lower() in MEDIA_TYPES:
+            used = db.execute("SELECT COUNT(*) AS n FROM exercises WHERE image=?", (f.name,)).fetchone()["n"]
+            files.append({"name": f.name, "size": f.stat().st_size // 1024, "used": used})
+    return render(request, "admin_media.html", files=files)
+
+
+@app.post("/admin/media")
+async def admin_media_upload(request: Request, files: list[UploadFile] = File(default=[]), user=Depends(admin_user)):
+    saved, problems = [], []
+    for up in files:
+        if not up.filename:
+            continue
+        ext = Path(up.filename).suffix.lower()
+        name = re.sub(r"[^A-Za-z0-9._-]", "-", Path(up.filename).name.lower()).lstrip(".")[:100]
+        data = await up.read(MAX_UPLOAD + 1)
+        if ext not in MEDIA_TYPES or not name:
+            problems.append(f"{up.filename}: filtypen stöds inte (png, jpg, gif, webp, svg)")
+        elif len(data) > MAX_UPLOAD:
+            problems.append(f"{up.filename}: filen är större än 3 MB")
+        elif not _looks_like(ext, data):
+            problems.append(f"{up.filename}: innehållet ser inte ut som {ext[1:]}")
+        else:
+            (media_dir() / name).write_bytes(data)
+            saved.append(name)
+    if saved:
+        flash(request, "Uppladdat: " + ", ".join(saved) + ". Använd filnamnet i fältet \"image\" i övningar.")
+    if problems:
+        flash(request, " · ".join(problems), "warn")
+    return go("/admin/media")
+
+
+@app.post("/admin/media/{name}/delete")
+def admin_media_delete(request: Request, name: str, user=Depends(admin_user), db=Depends(database.get_db)):
+    if not logic.MEDIA_NAME.match(name):
+        raise HTTPException(404)
+    path = media_dir() / name
+    if path.is_file() and path.resolve().parent == media_dir().resolve():
+        used = db.execute("SELECT COUNT(*) AS n FROM exercises WHERE image=?", (name,)).fetchone()["n"]
+        path.unlink()
+        flash(request, f"{name} borttagen." + (f" Obs: {used} övningar hänvisade till bilden." if used else ""))
+    return go("/admin/media")

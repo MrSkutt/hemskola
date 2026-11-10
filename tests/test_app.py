@@ -18,7 +18,7 @@ def test_seed_loaded_and_admin_pages(client):
     for url in ["/admin", "/admin/users", "/admin/exercises", "/admin/import", "/admin/exercises/export.json"]:
         r = client.get(url)
         assert r.status_code == 200, url
-    assert len(client.get("/admin/exercises/export.json").json()) == 100
+    assert len(client.get("/admin/exercises/export.json").json()) == 106   # 100 + 6 diagramövningar, generatorer exporteras inte
 
 
 def test_full_student_flow(client):
@@ -39,17 +39,19 @@ def test_full_student_flow(client):
         assert page.status_code == 200
         import re
         ex_id = re.search(r'name="exercise_id" value="(\d+)"', page.text).group(1)
-        client.post(test_url, data={"exercise_id": ex_id, "given": "0"})
+        gen_id = re.search(r'name="generated_id" value="(\d*)"', page.text).group(1)
+        client.post(test_url, data={"exercise_id": ex_id, "generated_id": gen_id, "given": "-999"})
     r = client.get(test_url)
     assert r.headers["location"].endswith("/result")
     res = client.get(r.headers["location"])
-    assert "0 av 10 rätt" in res.text
+    assert "0 av 10 rätt" in res.text   # "-999" är aldrig rätt
 
     # efter provet finns en nivå och man kan öva
     r = client.get("/practice/matte")
     assert r.status_code == 200
     ex_id = re.search(r'name="exercise_id" value="(\d+)"', r.text).group(1)
-    r = client.post("/practice/matte", data={"exercise_id": ex_id, "given": "-12345"})
+    gen_id = re.search(r'name="generated_id" value="(\d*)"', r.text).group(1)
+    r = client.post("/practice/matte", data={"exercise_id": ex_id, "generated_id": gen_id, "given": "-12345"})
     assert r.status_code == 303 and "/answer/" in r.headers["location"]
     assert client.get(r.headers["location"]).status_code == 200
 
