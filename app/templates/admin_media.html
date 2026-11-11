@@ -8,6 +8,13 @@
     <input id="f" type="file" name="files" multiple accept=".png,.jpg,.jpeg,.gif,.webp,.svg,image/*">
     <p><button>Ladda upp</button></p>
   </form>
+  <form method="post" action="/admin/media/url" class="row" style="margin-bottom:.6rem">
+    <div style="flex:2;min-width:15rem"><label for="u">… eller hämta från webbadress (png, jpg, gif, webp)</label>
+      <input id="u" name="image_url" placeholder="https://…" style="width:100%"></div>
+    <div style="flex:1;min-width:11rem"><label for="n">Filnamn (valfritt)</label>
+      <input id="n" name="name" placeholder="t.ex. karta-sverige" maxlength="80" style="width:100%"></div>
+    <button>Hämta</button>
+  </form>
   <p class="muted">Använd sedan filnamnet i fältet <code>"image"</code> när du importerar övningar, t.ex. <code>"image": "karta-sverige.png"</code>.
      Bilderna ligger i datamappen (<code>data/media</code>) och finns med i din backup.</p>
 </div>
@@ -17,7 +24,7 @@
   <div class="card" style="padding:.7rem">
     <img src="/media/{{ f.name }}" alt="{{ f.name }}">
     <div style="word-break:break-all"><code>{{ f.name }}</code></div>
-    <div class="muted">{{ f.size }} kB · {{ f.used }} övningar</div>
+    <div class="muted">{{ f.size }} kB · {{ f.used }} {{ 'övning' if f.used == 1 else 'övningar' }}{% if f.used_tasks %} · {{ f.used_tasks }} {{ 'uppgift' if f.used_tasks == 1 else 'uppgifter' }}{% endif %}</div>
     <form method="post" action="/admin/media/{{ f.name }}/delete" onsubmit="return confirm('Ta bort {{ f.name }}?')"><button class="small danger">Ta bort</button></form>
   </div>
   {% endfor %}

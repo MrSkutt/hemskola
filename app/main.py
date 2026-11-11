@@ -7,7 +7,7 @@ import secrets
 import time
 from contextlib import asynccontextmanager
 from pathlib import Path
-from urllib.parse import quote
+from urllib.parse import quote, unquote, urlsplit
 
 from fastapi import Depends, FastAPI, File, Form, HTTPException, Query, Request, UploadFile
 from fastapi.responses import FileResponse, JSONResponse, RedirectResponse, Response
@@ -771,8 +771,43 @@ def admin_media(request: Request, user=Depends(admin_user), db=Depends(database.
     for f in sorted(media_dir().iterdir()):
         if f.is_file() and f.suffix.lower() in MEDIA_TYPES:
             used = db.execute("SELECT COUNT(*) AS n FROM exercises WHERE image=?", (f.name,)).fetchone()["n"]
-            files.append({"name": f.name, "size": f.stat().st_size // 1024, "used": used})
+            used_tasks = db.execute("SELECT COUNT(*) AS n FROM tasks WHERE image=?", (f.name,)).fetchone()["n"]
+            files.append({"name": f.name, "size": f.stat().st_size // 1024, "used": used, "used_tasks": used_tasks})
     return render(request, "admin_media.html", files=files)
+
+
+def _free_media_name(wanted: str, ext: str) -> str:
+    """Ett ledigt filnamn i mediamappen av ett önskat namn (utan eller med filändelse) och den riktiga ändelsen.
+    Befintliga filer skrivs aldrig över: är namnet upptaget läggs fyra slumpbokstäver till."""
+    stem = Path(wanted).stem if Path(wanted).suffix.lower() in MEDIA_TYPES else wanted
+    base = re.sub(r"[^A-Za-z0-9._-]", "-", stem.lower()).strip(".-_")[:80] or "bild"
+    name = f"{base}{ext}"
+    if (media_dir() / name).exists():
+        name = f"{base}-{secrets.token_hex(2)}{ext}"
+    return name
+
+
+@app.post("/admin/media/url")
+async def admin_media_from_url(request: Request, image_url: str = Form(""), name: str = Form(""),
+                               user=Depends(admin_user)):
+    url = image_url.strip()
+    if not url:
+        flash(request, "Klistra in en webbadress till en bild.", "warn")
+        return go("/admin/media")
+    try:
+        ext, data = await run_in_threadpool(tasks.fetch_image, url)
+    except ValueError as e:
+        flash(request, str(e), "warn")
+        return go("/admin/media")
+    try:
+        from_url = unquote(Path(urlsplit(url).path).name)
+    except ValueError:
+        from_url = ""
+    wanted = name.strip() or from_url
+    saved = _free_media_name(wanted, ext)
+    (media_dir() / saved).write_bytes(data)
+    flash(request, f"Hämtade bilden och sparade den som {saved}. Använd filnamnet i fältet \"image\" i övningar.")
+    return go("/admin/media")
 
 
 @app.post("/admin/media")
@@ -807,8 +842,11 @@ def admin_media_delete(request: Request, name: str, user=Depends(admin_user), db
     path = media_dir() / name
     if path.is_file() and path.resolve().parent == media_dir().resolve():
         used = db.execute("SELECT COUNT(*) AS n FROM exercises WHERE image=?", (name,)).fetchone()["n"]
+        used_tasks = db.execute("UPDATE tasks SET image=NULL WHERE image=?", (name,)).rowcount
+        db.commit()
         path.unlink()
-        flash(request, f"{name} borttagen." + (f" Obs: {used} övningar hänvisade till bilden." if used else ""))
+        notes = [f"{n} {one if n == 1 else many}" for n, one, many in ((used, "övning", "övningar"), (used_tasks, "uppgift", "uppgifter")) if n]
+        flash(request, f"{name} borttagen." + (" Obs: bilden användes av " + " och ".join(notes) + "." if notes else ""))
     return go("/admin/media")
 
 
@@ -824,8 +862,9 @@ def _drop_task_image(db, name) -> None:
     """Tar bort en uppladdad uppgiftsbild från disk när ingen uppgift använder den längre."""
     if not name or not name.startswith("uppgift-") or not logic.MEDIA_NAME.match(name):
         return
-    if db.execute("SELECT 1 FROM tasks WHERE image=?", (name,)).fetchone():
-        return
+    if db.execute("SELECT 1 FROM tasks WHERE image=?", (name,)).fetchone() or \
+            db.execute("SELECT 1 FROM exercises WHERE image=?", (name,)).fetchone():
+        return   # bilden används fortfarande (bilder i mediamappen kan återanvändas)
     path = media_dir() / name
     if path.is_file() and path.resolve().parent == media_dir().resolve():
         path.unlink()
@@ -1019,6 +1058,9 @@ def student_task(request: Request, aid: int, user=Depends(student_user), db=Depe
     a = tasks.assignment(db, aid, user["id"])
     if not a:
         raise HTTPException(404, "Uppgiften finns inte")
+    if tasks.mark_seen(db, aid, user["id"]):
+        db.commit()
+        request.state.task_badge = tasks.badge_count(db, user)   # siffran i fliken ska stämma redan på den här sidan
     return render(request, "task.html", a=a, labels=tasks.STATUS_LABELS, note_max=tasks.NOTE_MAX,
                   show_points=bool(logic.get_prefs(db, user["id"])["points_on"]))
 

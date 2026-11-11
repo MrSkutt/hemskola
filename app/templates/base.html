@@ -25,7 +25,7 @@
     {% else %}
       <a href="/home" {{ 'class=active' if not (path.startswith('/fakta') or path.startswith('/uppgifter')) }}>Övningar</a>
       <a href="/fakta" {{ 'class=active' if path.startswith('/fakta') }}>Fakta</a>
-      <a href="/uppgifter" {{ 'class=active' if path.startswith('/uppgifter') }}>Uppgifter{% if tb %} <span class="pill wait" title="Att göra">{{ tb }}</span>{% endif %}</a>
+      <a href="/uppgifter" {{ 'class=active' if path.startswith('/uppgifter') }}>Uppgifter{% if tb %} <span class="pill wait" title="Uppgifter att göra och nya svar från admin">{{ tb }}</span>{% endif %}</a>
     {% endif %}
   </nav>
   <form method="post" action="/logout"><span class="muted">{{ user.display_name }}</span> <button class="ghost small">Logga ut</button></form>

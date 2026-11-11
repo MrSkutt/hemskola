@@ -158,7 +158,8 @@ CREATE TABLE IF NOT EXISTS task_assignments (
     points_awarded INTEGER NOT NULL DEFAULT 0,
     created_at TEXT NOT NULL DEFAULT (datetime('now')),
     done_at TEXT,
-    reviewed_at TEXT
+    reviewed_at TEXT,
+    result_seen INTEGER NOT NULL DEFAULT 1   -- 0 = eleven har inte sett senaste godkännandet/avslaget än
 );
 CREATE INDEX IF NOT EXISTS idx_assign_user ON task_assignments(user_id, status);
 CREATE INDEX IF NOT EXISTS idx_assign_task ON task_assignments(task_id);
@@ -171,6 +172,7 @@ ADDED_COLUMNS = [
     ("exercises", "image", "TEXT"),
     ("exercises", "diagram", "TEXT"),
     ("exercises", "generator", "TEXT"),
+    ("task_assignments", "result_seen", "INTEGER NOT NULL DEFAULT 1"),
     ("attempts", "generated_id", "INTEGER REFERENCES generated(id)"),
     ("test_items", "generated_id", "INTEGER REFERENCES generated(id)"),
 ]

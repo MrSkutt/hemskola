@@ -98,7 +98,7 @@ Under **Övningar** visas `+ n ∞` för generatorer. Nya generatorer läggs i `
 Ordklasser: verb, substantiv, adjektiv, adverb, preposition, pronomen, konjunktion, subjunktion, interjektion, räkneord.
 En fil kan ha både `exercises` och `words`: `{"exercises": [...], "words": [...]}`. Dölj ord som ger konstiga frågor med knappen **Dölj**.
 
-**Bilder.** Under **Bilder** laddar du upp png, jpg, gif, webp eller svg (högst 3 MB, svg med script avvisas). Filerna ligger i `data/media`.
+**Bilder.** Under **Bilder** laddar du upp png, jpg, gif, webp eller svg (högst 3 MB, svg med script avvisas), eller klistrar in en webbadress till en bild (png, jpg, gif, webp) som servern hämtar åt dig, med ett valfritt filnamn. En befintlig fil skrivs aldrig över, är namnet upptaget läggs fyra slumpbokstäver till. Filerna ligger i `data/media`, och samma bild kan användas i övningar, faktasidor och uppgifter. Bilder som uppgifter använder (och uppgifters egna bilder, som heter `uppgift-….`) visas med antal användningar, och en bild som en övning använder raderas inte när uppgiften ändras. Hämtningen följer samma säkerhetsregler som för uppgifter, se nedan.
 Koppla en bild till en övning med `"image": "filnamn.png"` i importen.
 
 **Diagram.** En övning kan ha ett `"diagram"` som ritas som SVG, utan bildfiler. Typer: `bar_chart`, `pie_chart`, `clock`, `fraction`,
@@ -208,7 +208,7 @@ Nya elever och befintliga elever får standardvärdena (område på, dagsmål 15
 
 Egna uppgifter som eleven ska göra utanför appen (städa rummet, läsa en bok, rita något) och som ger poäng när du godkänt dem.
 Fliken **Uppgifter** finns för både admin och elev, och en siffra i fliken visar hur många som väntar (för admin: uppgifter att
-granska, för eleven: uppgifter att göra).
+granska, för eleven: uppgifter att göra och nya svar från admin, alltså godkännanden och avslag eleven inte har öppnat än).
 
 **Admin** (fliken *Uppgifter*):
 

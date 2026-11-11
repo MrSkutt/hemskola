@@ -149,9 +149,15 @@ def mark_done(db, assignment_id: int, user_id: int, note="") -> str:
         return "Uppgiften finns inte."
     if a["status"] not in OPEN:
         return "Den här uppgiften är redan markerad som klar."
-    db.execute("UPDATE task_assignments SET status='done', student_note=?, done_at=datetime('now') WHERE id=?",
-               (_clean(note, NOTE_MAX), assignment_id))
+    db.execute("UPDATE task_assignments SET status='done', student_note=?, done_at=datetime('now'), result_seen=1 "
+               "WHERE id=?", (_clean(note, NOTE_MAX), assignment_id))
     return ""
+
+
+def mark_seen(db, assignment_id: int, user_id: int) -> bool:
+    """Eleven har öppnat uppgiften och sett admins svar. True om det fanns ett nytt svar att markera."""
+    return db.execute("UPDATE task_assignments SET result_seen=1 WHERE id=? AND user_id=? AND result_seen=0",
+                      (assignment_id, user_id)).rowcount > 0
 
 
 def review(db, assignment_id: int, approve: bool, comment="") -> str:
@@ -170,10 +176,10 @@ def review(db, assignment_id: int, approve: bool, comment="") -> str:
         awarded = db.execute("SELECT points_awarded FROM task_assignments WHERE id=?", (assignment_id,)).fetchone()[0] \
             if a["status"] == "approved" else a["points"]
         db.execute("UPDATE task_assignments SET status='approved', admin_comment=?, points_awarded=?, "
-                   "reviewed_at=datetime('now') WHERE id=?", (comment, awarded, assignment_id))
+                   "reviewed_at=datetime('now'), result_seen=0 WHERE id=?", (comment, awarded, assignment_id))
     else:
         db.execute("UPDATE task_assignments SET status='rejected', admin_comment=?, points_awarded=0, "
-                   "reviewed_at=datetime('now') WHERE id=?", (comment, assignment_id))
+                   "reviewed_at=datetime('now'), result_seen=0 WHERE id=?", (comment, assignment_id))
     return ""
 
 
@@ -185,11 +191,13 @@ def task_points(db, user_id: int, since: str) -> int:
 
 
 def badge_count(db, user) -> int:
-    """Siffran i fliken: för admin antal uppgifter att granska, för elev antal uppgifter att göra."""
+    """Siffran i fliken. Admin: uppgifter att granska. Elev: uppgifter att göra (även de som ska göras om) och
+    godkännanden som eleven inte har sett än. Ett avslag räknas som något att göra tills uppgiften är klar igen."""
     if user["role"] == "admin":
         return db.execute("SELECT COUNT(*) AS c FROM task_assignments WHERE status='done'").fetchone()["c"]
-    return db.execute("SELECT COUNT(*) AS c FROM task_assignments WHERE user_id=? AND status IN ('todo','rejected')",
-                      (user["id"],)).fetchone()["c"]
+    return db.execute(
+        "SELECT COUNT(*) AS c FROM task_assignments WHERE user_id=? AND "
+        "(status IN ('todo','rejected') OR (status='approved' AND result_seen=0))", (user["id"],)).fetchone()["c"]
 
 
 # ---------------------------------------------------------------- bild från webbadress

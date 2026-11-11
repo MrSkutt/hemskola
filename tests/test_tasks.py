@@ -547,3 +547,192 @@ def test_tables_are_added_to_an_old_database(tmp_path, monkeypatch):
     assert {"tasks", "task_assignments"} <= {r[0] for r in conn.execute("SELECT name FROM sqlite_master WHERE type='table'")}
     assert conn.execute("SELECT COUNT(*) FROM users").fetchone()[0] == 1
     conn.close()
+
+
+# ---------------------------------------------------------------- siffra i elevens flik vid godkänt/avslag
+
+def _badge(page: str):
+    """Siffran i fliken Uppgifter (None om ingen siffra visas)."""
+    m = re.search(r'href="/uppgifter"[^>]*>Uppgifter(?: <span class="pill wait"[^>]*>(\d+)</span>)?', page)
+    assert m, "fliken Uppgifter finns inte"
+    return int(m.group(1)) if m.group(1) else None
+
+
+def test_student_gets_a_number_when_a_task_is_approved(client):
+    _make_student(client)
+    tid = _new_task(client)
+    _give(client, tid, "mia")
+    aid = _done(client, tid)
+    assert _badge(client.get("/home").text) is None                     # klar och inväntar granskning: inget att göra
+    _review(client, aid, "approve", "Bra!")
+    _student(client)
+    assert _badge(client.get("/home").text) == 1                        # syns på alla sidor, inte bara på Uppgifter
+    page = client.get("/uppgifter").text
+    assert "Nytt svar från admin" in page and _badge(page) == 1         # markerad i listan
+    assert _badge(client.get("/fakta").text) == 1
+    detail = client.get(f"/uppgifter/{aid}").text
+    assert "Godkänd" in detail and _badge(detail) is None               # siffran är borta redan på den här sidan
+    assert _badge(client.get("/home").text) is None
+    page = client.get("/uppgifter").text
+    assert "Nytt svar från admin" not in page and "Klara" in page
+
+
+def test_rejection_counts_as_a_number_and_stays_until_redone(client):
+    _make_student(client)
+    tid = _new_task(client)
+    _give(client, tid, "mia")
+    aid = _done(client, tid)
+    _review(client, aid, "reject", "Gör om, tack.")
+    _student(client)
+    assert _badge(client.get("/home").text) == 1
+    assert "Nytt svar från admin" in client.get("/uppgifter").text
+    assert _badge(client.get(f"/uppgifter/{aid}").text) == 1             # avslaget är kvar att göra
+    assert "Nytt svar från admin" not in client.get("/uppgifter").text   # men inte längre "nytt"
+    assert client.post(f"/uppgifter/{aid}/klar").status_code == 303
+    assert _badge(client.get("/home").text) is None
+    _review(client, aid, "approve")
+    _student(client)
+    assert _badge(client.get("/home").text) == 1
+
+
+def test_a_changed_decision_is_new_again_and_other_students_do_not_clear_it(client):
+    _make_student(client, "mia")
+    _make_student(client, "ben")
+    tid = _new_task(client)
+    _give(client, tid, "mia", "ben")
+    aid = _done(client, tid, "mia")
+    _review(client, aid, "approve")
+    _student(client, "ben")
+    assert client.get(f"/uppgifter/{aid}").status_code == 404           # bens försök varken visar eller kvitterar
+    assert _conn().execute("SELECT result_seen FROM task_assignments WHERE id=?", (aid,)).fetchone()[0] == 0
+    _student(client, "mia")
+    client.get(f"/uppgifter/{aid}")
+    assert _conn().execute("SELECT result_seen FROM task_assignments WHERE id=?", (aid,)).fetchone()[0] == 1
+    _review(client, aid, "approve", "Bra, och jag la till en kommentar.")      # admin ändrar i efterhand
+    _student(client, "mia")
+    assert _badge(client.get("/home").text) == 1
+
+
+def test_only_the_admin_sees_the_review_count_and_not_the_student_one(client):
+    """Admins siffra är antalet att granska och påverkas inte av elevens notiser."""
+    _make_student(client)
+    tid = _new_task(client)
+    _give(client, tid, "mia")
+    aid = _done(client, tid)
+    _admin(client)
+    assert re.search(r'href="/admin/uppgifter"[^>]*>Uppgifter <span class="pill wait"[^>]*>1</span>', client.get("/admin").text)
+    _review(client, aid, "approve")
+    assert "pill wait" not in re.search(r'<nav>.*?</nav>', client.get("/admin").text, re.S).group(0)
+
+
+def test_result_seen_column_is_added_to_a_database_made_before_it_existed(tmp_path, monkeypatch):
+    """Redan givna uppgifter får inte plötsligt se ut som nya svar när kolumnen läggs till."""
+    import sqlite3
+    path = tmp_path / "mid.db"
+    old = sqlite3.connect(path)
+    old.executescript("""
+        CREATE TABLE users (id INTEGER PRIMARY KEY, username TEXT, display_name TEXT, password_hash TEXT, role TEXT,
+                            active INTEGER DEFAULT 1, created_at TEXT DEFAULT (datetime('now')));
+        INSERT INTO users(username, display_name, password_hash, role) VALUES ('mia','Mia','x','student');
+        CREATE TABLE tasks (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT NOT NULL, body TEXT NOT NULL DEFAULT '', image TEXT,
+                            points INTEGER NOT NULL DEFAULT 0, active INTEGER NOT NULL DEFAULT 1, created_at TEXT DEFAULT (datetime('now')));
+        INSERT INTO tasks(title, points) VALUES ('Gammal', 10);
+        CREATE TABLE task_assignments (id INTEGER PRIMARY KEY AUTOINCREMENT, task_id INTEGER NOT NULL, user_id INTEGER NOT NULL,
+            status TEXT NOT NULL DEFAULT 'todo', student_note TEXT NOT NULL DEFAULT '', admin_comment TEXT NOT NULL DEFAULT '',
+            points_awarded INTEGER NOT NULL DEFAULT 0, created_at TEXT DEFAULT (datetime('now')), done_at TEXT, reviewed_at TEXT);
+        INSERT INTO task_assignments(task_id, user_id, status, points_awarded, reviewed_at) VALUES (1, 1, 'approved', 10, datetime('now'));
+    """)
+    old.commit()
+    old.close()
+    monkeypatch.setattr(database, "DB_PATH", str(path))
+    database.init_db()
+    database.init_db()                                                 # går att köra igen
+    conn = database.connect()
+    row = conn.execute("SELECT status, points_awarded, result_seen FROM task_assignments").fetchone()
+    assert tuple(row) == ("approved", 10, 1)
+    assert tasks.badge_count(conn, {"role": "student", "id": 1}) == 0
+    conn.close()
+
+
+# ---------------------------------------------------------------- Bilder: hämta från webbadress
+
+def _media_flash(client) -> str:
+    return client.get("/admin/media").text
+
+
+def test_media_page_fetches_image_from_url_and_never_overwrites(client, web):
+    from app import main
+    _admin(client)
+    assert 'action="/admin/media/url"' in client.get("/admin/media").text
+    r = client.post("/admin/media/url", data={"image_url": web + "/img.png"})
+    assert r.status_code == 303 and r.headers["location"] == "/admin/media"
+    assert "sparade den som img.png" in _media_flash(client)
+    path = main.media_dir() / "img.png"
+    assert path.read_bytes() == PNG and client.get("/media/img.png").status_code == 200
+    assert "img.png" in client.get("/admin/media").text                  # syns i listan
+
+    path.write_bytes(b"originalet")                                      # samma namn igen skriver inte över
+    client.post("/admin/media/url", data={"image_url": web + "/img.png"})
+    flash = _media_flash(client)
+    assert path.read_bytes() == b"originalet"
+    new = re.search(r"sparade den som (img-[0-9a-f]{4}\.png)", flash).group(1)
+    assert (main.media_dir() / new).read_bytes() == PNG
+
+
+def test_media_from_url_name_handling(client, web):
+    from app import main
+    _admin(client)
+    for given, expected in (("Karta Sverige", "karta-sverige.png"), ("karta.jpg", "karta.png"),      # ändelsen följer innehållet
+                            ("../../evil", "evil.png"), ("   ", "img.png"), ("åäö", "bild.png")):
+        client.post("/admin/media/url", data={"image_url": web + "/img.png", "name": given})
+        saved = re.search(r"sparade den som ([^\s.]+(?:\.[a-z]+)?)\. ", _media_flash(client))
+        assert saved and saved.group(1).startswith(expected.rsplit(".", 1)[0]), (given, saved)
+    names = {f.name for f in main.media_dir().iterdir()}
+    assert "karta-sverige.png" in names and "karta.png" in names and "evil.png" in names
+    assert not any(n.endswith(".jpg") and n.startswith("karta") for n in names)
+    assert all(f.resolve().parent == main.media_dir().resolve() for f in main.media_dir().iterdir())
+
+
+def test_media_from_url_errors_are_shown_and_nothing_is_saved(client, web):
+    from app import main
+    _admin(client)
+    before = {f.name for f in main.media_dir().iterdir()}
+    for url, text in (("", "Klistra in en webbadress"), ("   ", "Klistra in en webbadress"),
+                      ("http://127.0.0.1/a.png", "intern adress"), ("http://192.168.0.1/a.png", "intern adress"),
+                      ("ftp://x/a.png", "börjar med http"), (web + "/text", "ingen bild"), (web + "/missing", "fel \\(404\\)"),
+                      (web + "/big", "större än 3 MB")):
+        r = client.post("/admin/media/url", data={"image_url": url})
+        assert r.status_code == 303
+        assert re.search(text, _media_flash(client)), url
+    assert {f.name for f in main.media_dir().iterdir()} == before
+
+
+def test_media_from_url_is_admin_only(client, web):
+    _make_student(client)
+    _student(client)
+    assert client.post("/admin/media/url", data={"image_url": web + "/img.png"}).status_code == 403
+    client.post("/logout")
+    assert client.post("/admin/media/url", data={"image_url": web + "/img.png"}).status_code == 303   # till inloggningen
+
+
+def test_reused_media_is_safe_for_tasks_and_exercises(client):
+    """Bilder i mediamappen kan återanvändas: en uppgiftsbild som en övning också använder raderas inte, och att ta bort
+    en bild på Bilder-sidan tar bort hänvisningen i uppgiften i stället för att lämna en trasig bild."""
+    from app import main
+    _admin(client)
+    r = client.post("/admin/uppgifter/ny", data={"title": "A", "points": "1"}, files={"image": ("a.png", PNG, "image/png")})
+    tid = int(r.headers["location"].rsplit("/", 1)[1])
+    img = _conn().execute("SELECT image FROM tasks WHERE id=?", (tid,)).fetchone()["image"]
+    assert f"{img}" in client.get("/admin/media").text and "1 uppgift" in client.get("/admin/media").text
+    # en övning återanvänder samma bild
+    ex = _conn().execute("INSERT INTO exercises(subject, topic, level, type, question, answers, image) "
+                         "VALUES ('matte','t',1,'text','Vilken bild?','[\"x\"]', ?)", (img,)).lastrowid
+    client.post(f"/admin/uppgifter/{tid}", data={"title": "A", "points": "1", "remove_image": "1"})
+    assert (main.media_dir() / img).is_file()                             # övningen använder den, så den ligger kvar
+    # tillbaka i en uppgift, och sedan raderas bilden på Bilder-sidan
+    _conn().execute("UPDATE tasks SET image=? WHERE id=?", (img, tid))
+    client.post(f"/admin/media/{img}/delete")
+    assert not (main.media_dir() / img).exists()
+    assert _conn().execute("SELECT image FROM tasks WHERE id=?", (tid,)).fetchone()["image"] is None
+    assert "bilden användes av 1 övning och 1 uppgift." in _media_flash(client)
+    assert ex

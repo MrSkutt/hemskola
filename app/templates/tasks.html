@@ -5,6 +5,7 @@
 <a class="taskcard" href="/uppgifter/{{ a.id }}">
   <div class="ttop"><strong>{{ a.title }}</strong> {% if a.status != 'todo' %}{{ status_pill(a.status, labels) }}{% endif %}
     {% if show_points %}<span class="muted">⭐ {{ a.points_awarded if a.status == 'approved' else a.points }} poäng</span>{% endif %}</div>
+  {% if a.status in ('approved', 'rejected') and not a.result_seen %}<span class="pill wait">🔔 Nytt svar från admin</span>{% endif %}
   {% if a.status == 'rejected' and a.admin_comment %}<div class="muted psmall" style="margin-top:.2rem">Kommentar: {{ a.admin_comment }}</div>{% endif %}
 </a>
 {% endmacro %}
