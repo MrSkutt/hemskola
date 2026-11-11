@@ -484,3 +484,17 @@ def test_new_tables_are_added_to_an_existing_database(tmp_path, monkeypatch):
     assert {"user_prefs", "goal_days", "level_ups", "rewards"} <= tables
     assert conn.execute("SELECT COUNT(*) FROM users").fetchone()[0] == 1
     conn.close()
+
+
+# ------------------------------------------------------------------ elevlistan i admin
+
+def test_admin_student_list_is_collapsed_by_default(client):
+    _make_student(client)
+    _make_student(client, "olle")
+    login(client, "admin", "adminpass1")
+    page = client.get("/admin").text
+    assert page.count('<details class="card student">') == 2            # en rad per elev, stängd som standard
+    assert "<details class=\"card student\" open" not in page
+    assert 'href="/admin/student/' in page and "Mia" in page and "Olle" in page
+    assert "Visa alla" in page and "Dölj alla" in page
+    assert "Idag: 0 svar" in page and "Senaste 7 dagarna" in page          # ämnesöversikten finns inuti raden

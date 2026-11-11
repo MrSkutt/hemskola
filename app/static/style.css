@@ -151,3 +151,12 @@ code { background: var(--bg); border: 1px solid var(--line); border-radius: 5px;
 table.plain td, table.plain th { border-bottom: 0; padding: .2rem .5rem .2rem 0; }
 .areapick { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; margin: .2rem 0 .6rem; }
 .areapick select { flex: 1; min-width: 11rem; }
+
+/* ---- elevlistan i admin: en rad per elev, ämnena visas när man klickar ---- */
+details.student { padding: .75rem 1.2rem; }
+summary.studenthead { display: flex; align-items: center; gap: .7rem; flex-wrap: wrap; cursor: pointer; list-style: none; }
+summary.studenthead::-webkit-details-marker { display: none; }
+summary.studenthead::before { content: "▸"; color: var(--muted); font-size: 1.1rem; width: 1rem; }
+details[open] > summary.studenthead::before { content: "▾"; }
+summary.studenthead .sname { font-size: 1.15rem; }
+summary.studenthead .sopen { margin-left: auto; }

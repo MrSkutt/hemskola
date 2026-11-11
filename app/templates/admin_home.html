@@ -3,14 +3,18 @@
 {% block mainclass %}wide{% endblock %}
 {% block content %}
 <h1>Elever</h1>
+{% if students|length > 1 %}
+<p><button type="button" class="small ghost" data-all="open">Visa alla</button> <button type="button" class="small ghost" data-all="close">Dölj alla</button></p>
+{% endif %}
 {% for st in students %}
-<div class="card">
-  <div class="row" style="justify-content:space-between;align-items:center">
-    <h2 style="margin:0"><a href="/admin/student/{{ st.u.id }}">{{ st.u.display_name }}</a>
-      {% if not st.u.active %}<span class="pill off">avstängd</span>{% endif %}</h2>
+<details class="card student">
+  <summary class="studenthead">
+    <strong class="sname">{{ st.u.display_name }}</strong>
+    {% if not st.u.active %}<span class="pill off">avstängd</span>{% endif %}
     <span class="muted">Idag: {{ st.today }} svar · 🔥 {{ st.streak }} {{ 'dag' if st.streak == 1 else 'dagar' }} i rad</span>
-  </div>
-  <table>
+    <a class="sopen" href="/admin/student/{{ st.u.id }}">Öppna →</a>
+  </summary>
+  <table style="margin-top:.6rem">
     <tr><th>Ämne</th><th>Nivå</th><th>Senaste 7 dagarna</th><th>Senast aktiv</th></tr>
     {% for g in st.groups %}
     <tr><td colspan="4" class="grouprow">{{ g.title }}</td></tr>
@@ -25,8 +29,15 @@
     {% endfor %}
   </table>
   {% if st.off %}<p class="muted" style="margin:.6rem 0 0">Avstängda för eleven: {% for x in st.off %}{{ label(x) }}{{ ', ' if not loop.last }}{% endfor %}. <a href="/admin/student/{{ st.u.id }}">Ändra ämnesval</a></p>{% endif %}
-</div>
+</details>
 {% else %}
 <div class="card">Inga elever än. <a href="/admin/users">Skapa en elev</a>.</div>
 {% endfor %}
+<script>
+document.querySelectorAll('button[data-all]').forEach(function (b) {
+  b.addEventListener('click', function () {
+    document.querySelectorAll('details.student').forEach(function (d) { d.open = b.dataset.all === 'open'; });
+  });
+});
+</script>
 {% endblock %}
