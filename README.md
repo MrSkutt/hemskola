@@ -123,7 +123,9 @@ som hämtar ord ur ordlistan (ordklass `glosa`, se `app/seed/words_en.json`). L�
 Det finns 12 ämnen: matte, svenska, engelska, K-pop, de naturorienterande **biologi, fysik, kemi och teknik** samt de samhällsorienterande
 **geografi, historia, religionskunskap och samhällskunskap** (ämnesnamn i importen: `biologi`, `fysik`, `kemi`, `teknik`, `geografi`, `historia`,
 `religionskunskap`, `samhallskunskap`). Äldre installationer hade samlingsämnena `no` och `so`: vid uppgradering flyttas deras övningar, svar och
-nivåer automatiskt till de nya ämnena. Startövningar finns i `app/seed/*.json`, bland annat med diagram och med de medföljande
+nivåer automatiskt till de nya ämnena. Egna övningar som blev kvar i `no`/`so` visas som "NO (natur)" respektive "SO (samhälle)" tills du flyttar dem:
+under **Övningar** finns en **Flytta**-knapp med val av ämne på varje sådan övning. När ämnet är tomt följer elevernas nivåer med
+till de nya ämnena (så länge ämnet har kvar övningar rörs nivåerna inte). Startövningar finns i `app/seed/*.json`, bland annat med diagram och med de medföljande
 exempelbilderna i `app/seed/media/` (de kopieras till `data/media` vid start, och befintliga filer skrivs aldrig över).
 Varje ämne har ungefär 20–35 färdiga frågor per nivå, och en del av dem använder bilder eller diagram (stapel, cirkel, tidslinje, klocka).
 Filer som heter `<ämne>_2.json` är de utökade frågeuppsättningarna. NO/SO-ämnena har även generatorer (`app/generators_no.py`): grundämnen och

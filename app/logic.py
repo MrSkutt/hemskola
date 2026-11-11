@@ -696,6 +696,11 @@ LEGACY_SUBJECTS = {
 }
 
 
+# En kvarvarande övning i no/so kan flyttas till vilket som helst av de åtta skolämnena (vattnets kretslopp
+# kan till exempel höra hemma i geografi även om det låg i "no").
+LEGACY_TARGETS = tuple(s for group in LEGACY_SUBJECTS.values() for s in group)
+
+
 def adopt_legacy_exercises(db, data) -> int:
     """Flyttar gamla övningar i samlingsämnena no/so till rätt enskilt ämne (matchat på frågetexten),
     så att historik och svar följer med. Anropas före import av startmaterialet."""
@@ -730,6 +735,22 @@ def migrate_legacy_levels(db) -> None:
                            "SELECT ?, ?, ?, COALESCE(MAX(id), 0) FROM attempts WHERE user_id=?",
                            (r["user_id"], sub, r["level"], r["user_id"]))
         db.execute("DELETE FROM user_levels WHERE subject=?", (old,))
+
+
+def move_legacy_exercise(db, ex_id: int, new_subject: str) -> str:
+    """Flyttar en kvarvarande övning i no/so till ett av skolämnena i LEGACY_TARGETS. Returnerar "" om det gick, annars ett
+    felmeddelande. Historik och svar följer med eftersom övningen behåller sitt id. När det gamla ämnet blir
+    tomt flyttas elevernas nivåer över direkt (se migrate_legacy_levels)."""
+    ex = db.execute("SELECT id, subject, question FROM exercises WHERE id=?", (ex_id,)).fetchone()
+    if not ex:
+        return "Övningen finns inte."
+    if ex["subject"] not in LEGACY_SUBJECTS or new_subject not in LEGACY_TARGETS:
+        return "Den övningen kan inte flyttas dit."
+    if db.execute("SELECT 1 FROM exercises WHERE subject=? AND question=?", (new_subject, ex["question"])).fetchone():
+        return f"Det finns redan en likadan fråga i {label(new_subject)}."
+    db.execute("UPDATE exercises SET subject=? WHERE id=?", (new_subject, ex_id))
+    migrate_legacy_levels(db)
+    return ""
 
 
 MEDIA_NAME = re.compile(r"^[A-Za-z0-9._-]{1,100}$")

@@ -29,7 +29,17 @@
     <td>{{ label(r.subject) }}</td><td>{{ r.level }}</td><td>{{ r.topic }}</td>
     <td style="white-space:pre-line">{% if r.generator %}<span class="pill">∞ generator</span> {{ r.topic }} <span class="muted">({{ r.generator }})</span>{% else %}{{ r.question }}{% if r.image or r.diagram %} <span class="pill">{{ 'bild' if r.image else 'diagram' }}</span>{% endif %}{% endif %}</td>
     <td>{% if r.n %}{{ r.n }} ({{ (100 * r.c / r.n)|round|int }} % rätt){% else %}–{% endif %}</td>
-    <td><form class="inline" method="post" action="/admin/exercises/{{ r.id }}/active"><button class="small ghost">{{ 'Dölj' if r.active else 'Visa' }}</button></form></td>
+    <td><form class="inline" method="post" action="/admin/exercises/{{ r.id }}/active"><button class="small ghost">{{ 'Dölj' if r.active else 'Visa' }}</button></form>
+      {% if r.subject in legacy %}
+      <form method="post" action="/admin/exercises/{{ r.id }}/subject" style="display:flex;gap:.35rem;align-items:center;margin-top:.35rem">
+        <select name="subject" aria-label="Flytta till ämne" style="width:auto;margin:0">
+          {% for g in (['no', 'so'] if r.subject == 'no' else ['so', 'no']) %}
+          <optgroup label="{{ 'NO-ämnen' if g == 'no' else 'SO-ämnen' }}">{% for s in legacy[g] %}<option value="{{ s }}">{{ label(s) }}</option>{% endfor %}</optgroup>
+          {% endfor %}
+        </select>
+        <button class="small">Flytta</button>
+      </form>
+      {% endif %}</td>
   </tr>
   {% endfor %}
 </table>

@@ -371,6 +371,72 @@ def test_legacy_levels_are_removed_once_old_subject_is_empty(client):
     conn.close()
 
 
+def test_admin_can_move_leftover_legacy_exercises(client):
+    """Kvarvarande no-övningar flyttas till rätt ämne; när sista är flyttad försvinner "NO (natur)" och nivån
+    följer med till de nya ämnena."""
+    _make_student(client)
+    conn = _conn()
+    uid = conn.execute("SELECT id FROM users WHERE username='mia'").fetchone()["id"]
+    ids = [conn.execute("INSERT INTO exercises(subject, topic, level, type, question, answers) "
+                        "VALUES ('no','Eget',?,'text',?,'[\"x\"]')", (lvl, f"Egen NO-fråga {lvl}?")).lastrowid
+           for lvl in (1, 2, 3)]
+    conn.execute("INSERT INTO attempts(user_id, exercise_id, given, correct) VALUES (?,?,?,1)", (uid, ids[0], "x"))
+    conn.execute("INSERT INTO user_levels(user_id, subject, level) VALUES (?, 'no', 3)", (uid,))
+    conn.commit()
+
+    login(client, "admin", "adminpass1")
+    page = client.get("/admin/exercises?subject=no").text
+    assert page.count('/subject"') == 3 and "Flytta" in page
+    assert "/subject\"" not in client.get("/admin/exercises?subject=matte").text   # ingen knapp på vanliga ämnen
+    assert '<option value="geografi">Geografi</option>' in page and '<option value="teknik">Teknik</option>' in page
+
+    r = client.post(f"/admin/exercises/{ids[0]}/subject", data={"subject": "teknik"})
+    assert r.status_code == 303 and r.headers["location"] == "/admin/exercises?subject=no"
+    assert "Flyttade övningen till Teknik" in client.get("/admin/exercises").text
+    conn = _conn()
+    assert conn.execute("SELECT subject FROM exercises WHERE id=?", (ids[0],)).fetchone()[0] == "teknik"
+    assert conn.execute("SELECT COUNT(*) FROM attempts WHERE exercise_id=?", (ids[0],)).fetchone()[0] == 1
+    assert logic.get_level(conn, uid, "no") == 3                  # ämnet har kvar övningar, nivån orörd
+    assert logic.get_level(conn, uid, "biologi") is None
+
+    assert client.post(f"/admin/exercises/{ids[1]}/subject", data={"subject": "biologi"}).status_code == 303
+    r = client.post(f"/admin/exercises/{ids[2]}/subject", data={"subject": "kemi"})
+    assert r.headers["location"] == "/admin/exercises"            # gamla ämnet är tomt
+    conn = _conn()
+    assert "no" not in logic.active_subjects(conn)
+    assert logic.get_level(conn, uid, "no") is None
+    assert logic.get_level(conn, uid, "biologi") == 3 and logic.get_level(conn, uid, "fysik") == 3
+    conn.close()
+
+
+def test_move_legacy_exercise_rejects_bad_targets(client):
+    _make_student(client)
+    conn = _conn()
+    no_ex = conn.execute("INSERT INTO exercises(subject, topic, level, type, question, answers) "
+                         "VALUES ('no','Eget',1,'text','Dubblett?','[\"x\"]')").lastrowid
+    conn.execute("INSERT INTO exercises(subject, topic, level, type, question, answers) "
+                 "VALUES ('fysik','Eget',1,'text','Dubblett?','[\"x\"]')")
+    matte = conn.execute("SELECT id FROM exercises WHERE subject='matte' LIMIT 1").fetchone()["id"]
+    conn.commit()
+    login(client, "admin", "adminpass1")
+    for ex, target in ((no_ex, "matte"), (no_ex, "kpop"), (no_ex, ""), (matte, "biologi")):   # inte skolämne, tomt, vanligt ämne
+        assert client.post(f"/admin/exercises/{ex}/subject", data={"subject": target}).status_code == 303
+    assert client.post(f"/admin/exercises/{no_ex}/subject", data={"subject": "fysik"}).status_code == 303   # dubblett
+    assert "finns redan en likadan fråga" in client.get("/admin/exercises").text
+    conn = _conn()
+    assert conn.execute("SELECT subject FROM exercises WHERE id=?", (no_ex,)).fetchone()[0] == "no"
+    assert conn.execute("SELECT subject FROM exercises WHERE id=?", (matte,)).fetchone()[0] == "matte"
+    assert client.post("/admin/exercises/99999/subject", data={"subject": "kemi"}).status_code == 404
+    # en no-övning kan också flyttas till ett SO-ämne, t.ex. vattnets kretslopp till geografi
+    assert client.post(f"/admin/exercises/{no_ex}/subject", data={"subject": "geografi"}).status_code == 303
+    conn = _conn()
+    assert conn.execute("SELECT subject FROM exercises WHERE id=?", (no_ex,)).fetchone()[0] == "geografi"
+    conn.close()
+    client.post("/logout")
+    login(client, "mia", "hemligt1")
+    assert client.post(f"/admin/exercises/{no_ex}/subject", data={"subject": "kemi"}).status_code == 403
+
+
 def test_seed_content_integrity():
     """Alla fasta övningar i seed-filerna ska vara hela: rätt svar bland alternativen, giltiga bilder och diagram."""
     import glob

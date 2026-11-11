@@ -621,7 +621,7 @@ def admin_exercises(request: Request, subject: str = "", level: int = 0, user=De
         cell = grid.setdefault(r["subject"], {}).setdefault(r["level"], {"static": 0, "gen": 0})
         cell["gen" if r["gen"] else "static"] = r["n"]
     return render(request, "admin_exercises.html", rows=rows, grid=grid, subject=subject, level=level,
-                  subjects=logic.active_subjects(db))
+                  subjects=logic.active_subjects(db), legacy=logic.LEGACY_SUBJECTS)
 
 
 @app.post("/admin/exercises/{ex_id}/active")
@@ -629,6 +629,23 @@ def admin_exercise_active(ex_id: int, user=Depends(admin_user), db=Depends(datab
     db.execute("UPDATE exercises SET active = 1 - active WHERE id=?", (ex_id,))
     db.commit()
     return go("/admin/exercises")
+
+
+@app.post("/admin/exercises/{ex_id}/subject")
+def admin_exercise_subject(request: Request, ex_id: int, subject: str = Form(""),
+                           user=Depends(admin_user), db=Depends(database.get_db)):
+    ex = db.execute("SELECT subject, question FROM exercises WHERE id=?", (ex_id,)).fetchone()
+    if not ex:
+        raise HTTPException(404, "Övningen finns inte")
+    old = ex["subject"]
+    error = logic.move_legacy_exercise(db, ex_id, subject)
+    if error:
+        flash(request, error, "warn")
+    else:
+        db.commit()
+        flash(request, f"Flyttade övningen till {logic.label(subject)}.")
+    left = db.execute("SELECT 1 FROM exercises WHERE subject=? LIMIT 1", (old,)).fetchone()
+    return go(f"/admin/exercises?subject={old}" if left else "/admin/exercises")
 
 
 @app.get("/admin/exercises/export.json")
