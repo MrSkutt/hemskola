@@ -1,0 +1,911 @@
+[
+ {
+  "subject": "kpop",
+  "topic": "Fans",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas BTS fans?",
+  "options": [
+   "ARMY",
+   "BLINK",
+   "ONCE",
+   "STAY"
+  ],
+  "answer": "ARMY",
+  "explanation": "BTS fans heter ARMY."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Fans",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas BLACKPINKs fans?",
+  "options": [
+   "BLINK",
+   "ARMY",
+   "CARAT",
+   "ONCE"
+  ],
+  "answer": "BLINK",
+  "explanation": "BLACKPINKs fans heter BLINK."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Fans",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas TWICEs fans?",
+  "options": [
+   "ONCE",
+   "STAY",
+   "ARMY",
+   "BLINK"
+  ],
+  "answer": "ONCE",
+  "explanation": "TWICEs fans heter ONCE."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Fans",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas Stray Kids fans?",
+  "options": [
+   "STAY",
+   "ONCE",
+   "CARAT",
+   "BLINK"
+  ],
+  "answer": "STAY",
+  "explanation": "Stray Kids fans heter STAY."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Fans",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas SEVENTEENs fans?",
+  "options": [
+   "CARAT",
+   "ARMY",
+   "ONCE",
+   "STAY"
+  ],
+  "answer": "CARAT",
+  "explanation": "SEVENTEENs fans heter CARAT."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Konsert",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas det här föremålet som fans har med sig på konserter?",
+  "options": [
+   "Lightstick",
+   "Mikrofon",
+   "Trumpinne",
+   "Ficklampa"
+  ],
+  "answer": "Lightstick",
+  "explanation": "En lightstick är en lampa på en pinne som fans viftar med i takt till musiken.",
+  "image": "lightstick.svg"
+ },
+ {
+  "subject": "kpop",
+  "topic": "Konsert",
+  "level": 1,
+  "type": "text",
+  "question": "Titta på scenen. Hur många dansare står på scenen?\nSvara endast med talet.",
+  "answer": [
+   "5",
+   "fem"
+  ],
+  "explanation": "Det står fem dansare på scenen.",
+  "image": "scen.svg"
+ },
+ {
+  "subject": "kpop",
+  "topic": "Konsert",
+  "level": 1,
+  "type": "text",
+  "question": "Titta på scenen. Hur många strålkastare lyser ner på scenen?\nSvara endast med talet.",
+  "answer": [
+   "4",
+   "fyra"
+  ],
+  "explanation": "Det finns fyra strålkastare.",
+  "image": "scen.svg"
+ },
+ {
+  "subject": "kpop",
+  "topic": "Korea",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket land kommer K-pop från?",
+  "options": [
+   "Sydkorea",
+   "Japan",
+   "Kina",
+   "Thailand"
+  ],
+  "answer": "Sydkorea",
+  "explanation": "K-pop betyder koreansk popmusik och kommer från Sydkorea."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Korea",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken stad är Sydkoreas huvudstad?",
+  "options": [
+   "Seoul",
+   "Busan",
+   "Tokyo",
+   "Incheon"
+  ],
+  "answer": "Seoul",
+  "explanation": "Seoul är Sydkoreas huvudstad."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Korea",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket lands flagga är det här (en förenklad teckning)?",
+  "options": [
+   "Sydkorea",
+   "Japan",
+   "Kina",
+   "Thailand"
+  ],
+  "answer": "Sydkorea",
+  "explanation": "Sydkoreas flagga har en röd och blå cirkel och fyra svarta tecken i hörnen.",
+  "image": "taegukgi.svg"
+ },
+ {
+  "subject": "kpop",
+  "topic": "K-pop-ord",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas gruppens yngsta medlem?",
+  "options": [
+   "Maknae",
+   "Ledare",
+   "Visual",
+   "Producent"
+  ],
+  "answer": "Maknae",
+  "explanation": "'Maknae' är koreanska för den yngsta medlemmen."
+ },
+ {
+  "subject": "kpop",
+  "topic": "K-pop-ord",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad betyder 'comeback' i K-pop?",
+  "options": [
+   "En artist eller grupp släpper ny musik",
+   "En grupp splittras",
+   "Man köper en biljett",
+   "En konsert ställs in"
+  ],
+  "answer": "En artist eller grupp släpper ny musik",
+  "explanation": "Ett comeback är när en grupp kommer tillbaka med nytt album eller ny låt."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Grupper",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken av dessa är en K-pop-grupp?",
+  "options": [
+   "BLACKPINK",
+   "Coldplay",
+   "ABBA",
+   "Queen"
+  ],
+  "answer": "BLACKPINK",
+  "explanation": "BLACKPINK är en sydkoreansk tjejgrupp."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Grupper",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket år debuterade BTS?",
+  "options": [
+   "2013",
+   "2010",
+   "2016",
+   "2019"
+  ],
+  "answer": "2013",
+  "explanation": "BTS debuterade 2013."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Grupper",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket år debuterade BLACKPINK?",
+  "options": [
+   "2016",
+   "2012",
+   "2019",
+   "2021"
+  ],
+  "answer": "2016",
+  "explanation": "BLACKPINK debuterade 2016."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Grupper",
+  "level": 2,
+  "type": "mc",
+  "question": "Hur många medlemmar har BLACKPINK (Jisoo, Jennie, Rosé och Lisa)?",
+  "options": [
+   "4",
+   "3",
+   "5",
+   "7"
+  ],
+  "answer": "4",
+  "explanation": "Det är fyra medlemmar."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Grupper",
+  "level": 2,
+  "type": "mc",
+  "question": "Hur många medlemmar är BTS?",
+  "options": [
+   "7",
+   "5",
+   "9",
+   "13"
+  ],
+  "answer": "7",
+  "explanation": "BTS har sju medlemmar: RM, Jin, Suga, J-Hope, Jimin, V och Jung Kook."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Film",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad heter den fiktiva tjejgruppen i Netflix-filmen KPop Demon Hunters?",
+  "options": [
+   "HUNTR/X",
+   "TWICE",
+   "aespa",
+   "ITZY"
+  ],
+  "answer": "HUNTR/X",
+  "explanation": "HUNTR/X är gruppen som både sjunger och jagar demoner i filmen."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Korea",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket land ligger norr om Sydkorea?",
+  "options": [
+   "Nordkorea",
+   "Japan",
+   "Vietnam",
+   "Mongoliet"
+  ],
+  "answer": "Nordkorea",
+  "explanation": "Korea är delat i Sydkorea och Nordkorea."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Språk",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas det koreanska skriftsystemet?",
+  "options": [
+   "Hangul",
+   "Kanji",
+   "Kyrilliska",
+   "Latinska alfabetet"
+  ],
+  "answer": "Hangul",
+  "explanation": "Koreanska skrivs med hangul."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Språk",
+  "level": 2,
+  "type": "mc",
+  "question": "Bilden visar hur hangul-bokstäver sätts ihop till ett block. Hur uttalas blocket längst till höger?",
+  "options": [
+   "han",
+   "hon",
+   "ham",
+   "hat"
+  ],
+  "answer": "han",
+  "explanation": "ㅎ (h) + ㅏ (a) + ㄴ (n) blir 한 (han).",
+  "image": "hangul_block.svg"
+ },
+ {
+  "subject": "kpop",
+  "topic": "K-pop-ord",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas din favoritmedlem i en grupp?",
+  "options": [
+   "Bias",
+   "Maknae",
+   "Trainee",
+   "Comeback"
+  ],
+  "answer": "Bias",
+  "explanation": "Din 'bias' är den medlem du gillar mest."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Matte",
+  "level": 2,
+  "type": "text",
+  "question": "En låt är 3 minuter och 20 sekunder lång. Hur många sekunder är det?\nSvara endast med talet.",
+  "answer": [
+   "200"
+  ],
+  "explanation": "3 · 60 + 20 = 200 sekunder."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Matte",
+  "level": 2,
+  "type": "text",
+  "question": "En koreografi har 16 delar med 8 steg i varje. Hur många steg är det totalt?\nSvara endast med talet.",
+  "answer": [
+   "128"
+  ],
+  "explanation": "16 · 8 = 128."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Matte",
+  "level": 2,
+  "type": "text",
+  "question": "Ett fanklubbspaket kostar 349 kr och ett lightstick-fodral 99 kr. Hur mycket kostar de tillsammans (kr)?\nSvara endast med talet.",
+  "answer": [
+   "448"
+  ],
+  "explanation": "349 + 99 = 448."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Diagram",
+  "level": 2,
+  "type": "mc",
+  "question": "Fansen röstade om vilken låt som ska vara med på konserten (fiktivt). Vilken låt fick flest röster?",
+  "options": [
+   "Låt A",
+   "Låt B",
+   "Låt C",
+   "Låt D"
+  ],
+  "answer": "Låt C",
+  "explanation": "Låt C har den högsta stapeln.",
+  "diagram": {
+   "type": "bar_chart",
+   "title": "Röster per låt",
+   "labels": [
+    "Låt A",
+    "Låt B",
+    "Låt C",
+    "Låt D"
+   ],
+   "values": [
+    18,
+    25,
+    41,
+    16
+   ]
+  }
+ },
+ {
+  "subject": "kpop",
+  "topic": "Konsert",
+  "level": 2,
+  "type": "mc",
+  "question": "Klockan visar när portarna till konserten öppnar. Vad är klockan?",
+  "options": [
+   "6:30",
+   "5:30",
+   "6:00",
+   "7:30"
+  ],
+  "answer": "6:30",
+  "explanation": "Timvisaren är mellan 6 och 7 och minutvisaren pekar på 6: klockan är 6:30.",
+  "diagram": {
+   "type": "clock",
+   "time": "6:30"
+  }
+ },
+ {
+  "subject": "kpop",
+  "topic": "Historia",
+  "level": 3,
+  "type": "mc",
+  "question": "Vem sjöng 'Gangnam Style' (2012)?",
+  "options": [
+   "PSY",
+   "G-Dragon",
+   "Jung Kook",
+   "Rain"
+  ],
+  "answer": "PSY",
+  "explanation": "'Gangnam Style' med PSY blev en världshit 2012."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Historia",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad blev 'Gangnam Style' först med på YouTube?",
+  "options": [
+   "Första videon med över 1 miljard visningar",
+   "Första videon som lades upp",
+   "Första videon med textning",
+   "Första livesända konserten"
+  ],
+  "answer": "Första videon med över 1 miljard visningar",
+  "explanation": "I december 2012 nådde videon som första en miljard visningar."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Historia",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad betyder 'Hallyu'?",
+  "options": [
+   "Den koreanska vågen",
+   "En dansstil",
+   "En sorts mat",
+   "Ett musikpris"
+  ],
+  "answer": "Den koreanska vågen",
+  "explanation": "Hallyu är namnet på hur koreansk musik, film och serier sprids över världen."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Bolag",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket bolag står bakom BTS?",
+  "options": [
+   "HYBE",
+   "YG Entertainment",
+   "JYP Entertainment",
+   "SM Entertainment"
+  ],
+  "answer": "HYBE",
+  "explanation": "BTS tillhör HYBE (tidigare Big Hit)."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Bolag",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket bolag har BLACKPINK?",
+  "options": [
+   "YG Entertainment",
+   "HYBE",
+   "JYP Entertainment",
+   "SM Entertainment"
+  ],
+  "answer": "YG Entertainment",
+  "explanation": "BLACKPINK tillhör YG Entertainment."
+ },
+ {
+  "subject": "kpop",
+  "topic": "K-pop-ord",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad är en 'trainee' i K-pop?",
+  "options": [
+   "Någon som tränar sång och dans för att kunna debutera",
+   "En fan som sjunger med på konserter",
+   "En manager",
+   "En kameraman"
+  ],
+  "answer": "Någon som tränar sång och dans för att kunna debutera",
+  "explanation": "Trainees tränar ofta i flera år hos ett bolag innan de eventuellt debuterar."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Musik",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken BTS-låt från 2020 nådde förstaplatsen på Billboard Hot 100?",
+  "options": [
+   "Dynamite",
+   "Fire",
+   "Spring Day",
+   "Boy With Luv"
+  ],
+  "answer": "Dynamite",
+  "explanation": "'Dynamite' var BTS första låt på förstaplatsen på Billboard Hot 100."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Film",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken låt från filmen KPop Demon Hunters (HUNTR/X) nådde förstaplatsen på Billboard Hot 100?",
+  "options": [
+   "Golden",
+   "Dynamite",
+   "Gangnam Style",
+   "How You Like That"
+  ],
+  "answer": "Golden",
+  "explanation": "'Golden' blev en etta på Billboard Hot 100."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Språk",
+  "level": 3,
+  "type": "mc",
+  "question": "Hur många grundbokstäver har hangul (14 konsonanter och 10 vokaler)?",
+  "options": [
+   "24",
+   "14",
+   "10",
+   "40"
+  ],
+  "answer": "24",
+  "explanation": "14 + 10 = 24 grundbokstäver."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Språk",
+  "level": 3,
+  "type": "mc",
+  "question": "Vem lät skapa hangul på 1400-talet?",
+  "options": [
+   "Kung Sejong",
+   "Kejsar Qin",
+   "Kejsar Meiji",
+   "Kung Gojong"
+  ],
+  "answer": "Kung Sejong",
+  "explanation": "Hangul skapades under kung Sejong."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Matte",
+  "level": 3,
+  "type": "text",
+  "question": "Ett album kostar 25 000 won. Anta att 1 000 won motsvarar 7 kr. Hur många kronor kostar albumet?\nSvara endast med talet.",
+  "answer": [
+   "175"
+  ],
+  "explanation": "25 · 7 = 175 kr."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Matte",
+  "level": 3,
+  "type": "text",
+  "question": "En låt har 120 BPM (slag per minut). Hur många slag blir det på 30 sekunder?\nSvara endast med talet.",
+  "answer": [
+   "60"
+  ],
+  "explanation": "30 sekunder är en halv minut, och 120 / 2 = 60."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Diagram",
+  "level": 3,
+  "type": "mc",
+  "question": "Cirkeldiagrammet visar vilken grupp 50 elever i en fiktiv klass gillar mest. Vilken grupp fick flest röster?",
+  "options": [
+   "Grupp A",
+   "Grupp B",
+   "Grupp C"
+  ],
+  "answer": "Grupp B",
+  "explanation": "Grupp B har den största delen: 50 %.",
+  "diagram": {
+   "type": "pie_chart",
+   "title": "Favoritgrupp",
+   "labels": [
+    "Grupp A",
+    "Grupp B",
+    "Grupp C"
+   ],
+   "values": [
+    20,
+    50,
+    30
+   ],
+   "show_percent": true
+  }
+ },
+ {
+  "subject": "kpop",
+  "topic": "Diagram",
+  "level": 3,
+  "type": "text",
+  "question": "Diagrammet visar en fiktiv låts streams (miljoner). Hur många miljoner streams fick låten i mars?\nSvara endast med talet.",
+  "answer": [
+   "14"
+  ],
+  "explanation": "Stapeln för mars är 14.",
+  "diagram": {
+   "type": "bar_chart",
+   "title": "Streams (miljoner)",
+   "labels": [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr"
+   ],
+   "values": [
+    6,
+    9,
+    14,
+    11
+   ]
+  }
+ },
+ {
+  "subject": "kpop",
+  "topic": "Historia",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken grupp blev först från Sydkorea med en etta på Billboard Hot 100?",
+  "options": [
+   "BTS",
+   "BLACKPINK",
+   "PSY",
+   "TWICE"
+  ],
+  "answer": "BTS",
+  "explanation": "BTS toppade listan 2020 med 'Dynamite'."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Historia",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket år släpptes 'Gangnam Style'?",
+  "options": [
+   "2012",
+   "2008",
+   "2016",
+   "2020"
+  ],
+  "answer": "2012",
+  "explanation": "'Gangnam Style' släpptes sommaren 2012."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Historia",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken placering nådde 'Gangnam Style' som bäst på Billboard Hot 100?",
+  "options": [
+   "2",
+   "1",
+   "5",
+   "10"
+  ],
+  "answer": "2",
+  "explanation": "Låten nådde plats 2."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Tid",
+  "level": 4,
+  "type": "mc",
+  "question": "När klockan är 12:00 i Sverige (vintertid) är den 20:00 i Seoul. Hur många timmar före Sverige går klockan i Seoul på vintern?",
+  "options": [
+   "8",
+   "6",
+   "9",
+   "12"
+  ],
+  "answer": "8",
+  "explanation": "20 − 12 = 8 timmar."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Tid",
+  "level": 4,
+  "type": "text",
+  "question": "En konsert i Seoul börjar klockan 19:00 lokal tid. Seoul ligger 8 timmar före Sverige (vintertid). Vad är klockan i Sverige då? Svara på formen 11:00.",
+  "answer": [
+   "11:00",
+   "11.00",
+   "kl 11"
+  ],
+  "explanation": "19 − 8 = 11, alltså klockan 11:00 svensk vintertid."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Språk",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad betyder 'oppa' ungefär?",
+  "options": [
+   "Storebror (sagt av en tjej)",
+   "Tack",
+   "Sångare",
+   "Lärare"
+  ],
+  "answer": "Storebror (sagt av en tjej)",
+  "explanation": "Tjejer säger 'oppa' till äldre killar, ofta killkompisar eller en pojkvän."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Språk",
+  "level": 4,
+  "type": "mc",
+  "question": "Hur många vokaler finns bland hangul-bokstävernas grundtecken?",
+  "options": [
+   "10",
+   "14",
+   "24",
+   "5"
+  ],
+  "answer": "10",
+  "explanation": "Hangul har 14 konsonanter och 10 vokaler."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Matte",
+  "level": 4,
+  "type": "text",
+  "question": "En konsertbiljett kostar 895 kr. Du köper 4 biljetter med 10 % rabatt på hela summan. Vad betalar du (kr)?\nSvara endast med talet.",
+  "answer": [
+   "3222",
+   "3222,0",
+   "3222.0"
+  ],
+  "explanation": "4 · 895 = 3580. 10 % av 3580 är 358. 3580 − 358 = 3222 kr."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Matte",
+  "level": 4,
+  "type": "text",
+  "question": "En låt hade 2,4 miljoner streams första dagen och dubbelt så många andra dagen. Hur många miljoner streams hade den totalt efter två dagar?\nSvara endast med talet.",
+  "answer": [
+   "7,2",
+   "7.2"
+  ],
+  "explanation": "2,4 + 4,8 = 7,2 miljoner."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Musik",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas det när en grupp släpper en kortare skiva än ett album, med några få låtar?",
+  "options": [
+   "EP (mini-album)",
+   "Soundtrack",
+   "Remix",
+   "Singel"
+  ],
+  "answer": "EP (mini-album)",
+  "explanation": "Många K-pop-grupper släpper mini-album, som är kortare än ett vanligt album."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Historia",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken festival headlinade BLACKPINK 2023, som första koreanska grupp?",
+  "options": [
+   "Coachella",
+   "Glastonbury",
+   "Roskilde",
+   "Lollapalooza"
+  ],
+  "answer": "Coachella",
+  "explanation": "BLACKPINK var först från Korea att headlina Coachella."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Historia",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas det när koreansk kultur som K-pop, film och serier sprids i världen?",
+  "options": [
+   "Hallyu",
+   "Gangnam",
+   "Hangul",
+   "Hanbok"
+  ],
+  "answer": "Hallyu",
+  "explanation": "'Hallyu' betyder 'den koreanska vågen'."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Språk",
+  "level": 5,
+  "type": "mc",
+  "question": "Hangul är känt som ett mycket logiskt skriftsystem. Vad är skillnaden mot kinesiska tecken?",
+  "options": [
+   "Hangul har bokstäver för ljud, kinesiska tecken står för ord eller betydelser",
+   "Hangul har ett tecken per ord",
+   "Hangul skrivs bara på datorer",
+   "Hangul har över 5 000 tecken"
+  ],
+  "answer": "Hangul har bokstäver för ljud, kinesiska tecken står för ord eller betydelser",
+  "explanation": "Hangul är ett alfabet med bokstäver för ljud, vilket gör det relativt lätt att lära sig."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Matte",
+  "level": 5,
+  "type": "text",
+  "question": "En fiktiv låt har 120 miljoner streams. 35 % kom från Sverige. Hur många miljoner streams kom från Sverige?\nSvara endast med talet.",
+  "answer": [
+   "42"
+  ],
+  "explanation": "0,35 · 120 = 42 miljoner."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Matte",
+  "level": 5,
+  "type": "text",
+  "question": "En världsturné har 24 konserter. Varje konsert har 45 000 åskådare. Hur många åskådare blir det totalt? Svara endast med talet (utan mellanslag).",
+  "answer": [
+   "1080000"
+  ],
+  "explanation": "24 · 45 000 = 1 080 000."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Matte",
+  "level": 5,
+  "type": "text",
+  "question": "En lightstick drar 3 batterier. Ett paket innehåller 12 batterier och kostar 60 kr. Du ska köpa batterier till 20 lightsticks. Hur många kronor kostar de nödvändiga paketen?\nSvara endast med talet.",
+  "answer": [
+   "300"
+  ],
+  "explanation": "20 · 3 = 60 batterier. 60 / 12 = 5 paket. 5 · 60 = 300 kr."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Diagram",
+  "level": 5,
+  "type": "mc",
+  "question": "Staplarna visar antal sålda album per år (fiktivt, tusental). Mellan vilka två år ökade försäljningen mest?",
+  "options": [
+   "2021→2022",
+   "2020→2021",
+   "2022→2023",
+   "2023→2024"
+  ],
+  "answer": "2021→2022",
+  "explanation": "Ökningarna är 20, 35, 15 och 5. Störst ökning är 2021→2022.",
+  "diagram": {
+   "type": "bar_chart",
+   "title": "Sålda album (tusental)",
+   "labels": [
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024"
+   ],
+   "values": [
+    40,
+    60,
+    95,
+    110,
+    115
+   ]
+  }
+ }
+]

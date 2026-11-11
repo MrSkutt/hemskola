@@ -1,0 +1,445 @@
+{
+"words": [
+{
+"word": "annyeong",
+"pos": "koreanska",
+"level": 1,
+"sv": [
+"hej (till kompisar)"
+],
+"hangul": "안녕"
+},
+{
+"word": "annyeonghaseyo",
+"pos": "koreanska",
+"level": 1,
+"sv": [
+"hej (artigt)"
+],
+"hangul": "안녕하세요"
+},
+{
+"word": "gamsahamnida",
+"pos": "koreanska",
+"level": 1,
+"sv": [
+"tack"
+],
+"hangul": "감사합니다"
+},
+{
+"word": "saranghae",
+"pos": "koreanska",
+"level": 1,
+"sv": [
+"jag älskar dig"
+],
+"hangul": "사랑해"
+},
+{
+"word": "ne",
+"pos": "koreanska",
+"level": 1,
+"sv": [
+"ja"
+],
+"hangul": "네"
+},
+{
+"word": "aniyo",
+"pos": "koreanska",
+"level": 1,
+"sv": [
+"nej"
+],
+"hangul": "아니요"
+},
+{
+"word": "mianhae",
+"pos": "koreanska",
+"level": 1,
+"sv": [
+"förlåt"
+],
+"hangul": "미안해"
+},
+{
+"word": "daebak",
+"pos": "koreanska",
+"level": 1,
+"sv": [
+"wow, fantastiskt"
+],
+"hangul": "대박"
+},
+{
+"word": "fighting",
+"pos": "koreanska",
+"level": 1,
+"sv": [
+"heja, kämpa på"
+],
+"hangul": "파이팅"
+},
+{
+"word": "oppa",
+"pos": "koreanska",
+"level": 1,
+"sv": [
+"storebror (sagt av en tjej)"
+],
+"hangul": "오빠"
+},
+{
+"word": "unnie",
+"pos": "koreanska",
+"level": 1,
+"sv": [
+"storasyster (sagt av en tjej)"
+],
+"hangul": "언니"
+},
+{
+"word": "maknae",
+"pos": "koreanska",
+"level": 1,
+"sv": [
+"yngst i gruppen"
+],
+"hangul": "막내"
+},
+{
+"word": "chingu",
+"pos": "koreanska",
+"level": 2,
+"sv": [
+"vän"
+],
+"hangul": "친구"
+},
+{
+"word": "eomma",
+"pos": "koreanska",
+"level": 2,
+"sv": [
+"mamma"
+],
+"hangul": "엄마"
+},
+{
+"word": "appa",
+"pos": "koreanska",
+"level": 2,
+"sv": [
+"pappa"
+],
+"hangul": "아빠"
+},
+{
+"word": "hakgyo",
+"pos": "koreanska",
+"level": 2,
+"sv": [
+"skola"
+],
+"hangul": "학교"
+},
+{
+"word": "norae",
+"pos": "koreanska",
+"level": 2,
+"sv": [
+"sång"
+],
+"hangul": "노래"
+},
+{
+"word": "chum",
+"pos": "koreanska",
+"level": 2,
+"sv": [
+"dans"
+],
+"hangul": "춤"
+},
+{
+"word": "mul",
+"pos": "koreanska",
+"level": 2,
+"sv": [
+"vatten"
+],
+"hangul": "물"
+},
+{
+"word": "bap",
+"pos": "koreanska",
+"level": 2,
+"sv": [
+"ris, mat"
+],
+"hangul": "밥"
+},
+{
+"word": "noona",
+"pos": "koreanska",
+"level": 2,
+"sv": [
+"storasyster (sagt av en kille)"
+],
+"hangul": "누나"
+},
+{
+"word": "hyung",
+"pos": "koreanska",
+"level": 2,
+"sv": [
+"storebror (sagt av en kille)"
+],
+"hangul": "형"
+},
+{
+"word": "hana",
+"pos": "koreanska",
+"level": 2,
+"sv": [
+"1"
+],
+"hangul": "하나"
+},
+{
+"word": "dul",
+"pos": "koreanska",
+"level": 2,
+"sv": [
+"2"
+],
+"hangul": "둘"
+},
+{
+"word": "set",
+"pos": "koreanska",
+"level": 2,
+"sv": [
+"3"
+],
+"hangul": "셋"
+},
+{
+"word": "net",
+"pos": "koreanska",
+"level": 2,
+"sv": [
+"4"
+],
+"hangul": "넷"
+},
+{
+"word": "daseot",
+"pos": "koreanska",
+"level": 2,
+"sv": [
+"5"
+],
+"hangul": "다섯"
+},
+{
+"word": "sarang",
+"pos": "koreanska",
+"level": 3,
+"sv": [
+"kärlek"
+],
+"hangul": "사랑"
+},
+{
+"word": "haneul",
+"pos": "koreanska",
+"level": 3,
+"sv": [
+"himmel"
+],
+"hangul": "하늘"
+},
+{
+"word": "byeol",
+"pos": "koreanska",
+"level": 3,
+"sv": [
+"stjärna"
+],
+"hangul": "별"
+},
+{
+"word": "dal",
+"pos": "koreanska",
+"level": 3,
+"sv": [
+"måne"
+],
+"hangul": "달"
+},
+{
+"word": "kkum",
+"pos": "koreanska",
+"level": 3,
+"sv": [
+"dröm"
+],
+"hangul": "꿈"
+},
+{
+"word": "eumak",
+"pos": "koreanska",
+"level": 3,
+"sv": [
+"musik"
+],
+"hangul": "음악"
+},
+{
+"word": "gasu",
+"pos": "koreanska",
+"level": 3,
+"sv": [
+"sångare"
+],
+"hangul": "가수"
+},
+{
+"word": "mudae",
+"pos": "koreanska",
+"level": 3,
+"sv": [
+"scen"
+],
+"hangul": "무대"
+},
+{
+"word": "paen",
+"pos": "koreanska",
+"level": 3,
+"sv": [
+"fan"
+],
+"hangul": "팬"
+},
+{
+"word": "saengil",
+"pos": "koreanska",
+"level": 3,
+"sv": [
+"födelsedag"
+],
+"hangul": "생일"
+},
+{
+"word": "noraebang",
+"pos": "koreanska",
+"level": 3,
+"sv": [
+"karaokerum"
+],
+"hangul": "노래방"
+},
+{
+"word": "gomawo",
+"pos": "koreanska",
+"level": 4,
+"sv": [
+"tack (till kompisar)"
+],
+"hangul": "고마워"
+},
+{
+"word": "jjang",
+"pos": "koreanska",
+"level": 4,
+"sv": [
+"bäst, toppen"
+],
+"hangul": "짱"
+},
+{
+"word": "heol",
+"pos": "koreanska",
+"level": 4,
+"sv": [
+"oj! (förvåning)"
+],
+"hangul": "헐"
+},
+{
+"word": "haengbok",
+"pos": "koreanska",
+"level": 4,
+"sv": [
+"lycka"
+],
+"hangul": "행복"
+},
+{
+"word": "yeonseupsaeng",
+"pos": "koreanska",
+"level": 4,
+"sv": [
+"trainee (elev på artistskola)"
+],
+"hangul": "연습생"
+},
+{
+"word": "debyu",
+"pos": "koreanska",
+"level": 4,
+"sv": [
+"debut"
+],
+"hangul": "데뷔"
+},
+{
+"word": "seonbae",
+"pos": "koreanska",
+"level": 4,
+"sv": [
+"äldre kollega eller elev"
+],
+"hangul": "선배"
+},
+{
+"word": "bogo sipeo",
+"pos": "koreanska",
+"level": 5,
+"sv": [
+"jag saknar dig"
+],
+"hangul": "보고 싶어"
+},
+{
+"word": "saenggil chukha",
+"pos": "koreanska",
+"level": 5,
+"sv": [
+"grattis på födelsedagen"
+],
+"hangul": "생일 축하"
+},
+{
+"word": "hangugeo",
+"pos": "koreanska",
+"level": 5,
+"sv": [
+"koreanska (språket)"
+],
+"hangul": "한국어"
+},
+{
+"word": "hangeul",
+"pos": "koreanska",
+"level": 5,
+"sv": [
+"det koreanska alfabetet"
+],
+"hangul": "한글"
+}
+]
+}

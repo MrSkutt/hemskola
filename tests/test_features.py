@@ -240,12 +240,12 @@ def test_old_database_is_upgraded_without_losing_data(tmp_path, monkeypatch):
 
 def test_example_images_and_subjects_are_installed(client):
     login(client, "admin", "adminpass1")
-    for name in ("scene.svg", "vattnets_kretslopp.svg", "solsystemet.svg", "vaxtens_delar.svg"):
+    for name in ("scene.svg", "vattnets_kretslopp.svg", "solsystemet.svg", "vaxtens_delar.svg", "lightstick.svg", "scen.svg", "hangul_block.svg", "taegukgi.svg"):
         r = client.get(f"/media/{name}")
         assert r.status_code == 200 and r.headers["content-type"] == "image/svg+xml"
     conn = _conn()
     subjects = {r[0] for r in conn.execute("SELECT DISTINCT subject FROM exercises WHERE active=1")}
-    assert {"matte", "svenska", "engelska", "no", "so"} <= subjects
+    assert {"matte", "svenska", "engelska", "no", "so", "kpop"} <= subjects
     refs = {r[0] for r in conn.execute("SELECT image FROM exercises WHERE image IS NOT NULL")}
     conn.close()
     assert refs and all(client.get(f"/media/{n}").status_code == 200 for n in refs)

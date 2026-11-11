@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 320" width="240" height="320" role="img" aria-label="En lightstick: en handhållen lampa som fans använder på konserter">
+<defs><radialGradient id="g" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".45" stop-color="#ff7ac8" stop-opacity=".7"/><stop offset="1" stop-color="#ff7ac8" stop-opacity="0"/></radialGradient></defs>
+<rect width="240" height="320" fill="#1b1033"/>
+<circle cx="120" cy="90" r="82" fill="url(#g)"/>
+<circle cx="120" cy="90" r="40" fill="#ffd6f0" stroke="#fff" stroke-width="4"/>
+<g stroke="#fff" stroke-width="3" opacity=".8"><path d="M95 70 Q120 40 145 70" fill="none"/></g>
+<rect x="100" y="128" width="40" height="22" rx="6" fill="#c9ccd6"/>
+<rect x="106" y="150" width="28" height="140" rx="12" fill="#9aa0b4"/>
+<rect x="106" y="190" width="28" height="10" fill="#6c7288"/><rect x="106" y="212" width="28" height="10" fill="#6c7288"/>
+<circle cx="120" cy="272" r="7" fill="#ff7ac8"/>
+<path d="M134 280 q40 10 30 -30" stroke="#ff7ac8" stroke-width="5" fill="none" stroke-linecap="round"/>
+</svg>

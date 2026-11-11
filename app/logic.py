@@ -23,6 +23,7 @@ SUBJECT_LABELS = {
     "engelska": "Engelska",
     "no": "NO (natur)",
     "so": "SO (samhälle)",
+    "kpop": "K-pop",
 }
 
 LEVEL_HINTS = {  # visas bara för admin

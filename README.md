@@ -123,6 +123,17 @@ Startövningar för **engelska**, **NO** och **SO** finns i `app/seed/*.json`, b
 exempelbilderna i `app/seed/media/` (de kopieras till `data/media` vid start, och befintliga filer skrivs aldrig över).
 Nya ämnen skapas automatiskt: importera övningar med t.ex. `"subject": "engelska"`. Egna visningsnamn läggs i `SUBJECT_LABELS` i `app/logic.py`.
 
+## K-pop
+
+Ämnet **K-pop** (`"subject": "kpop"`) har 59 frågor om grupper, fans, historia, koreanska och hangul, plus matteuppgifter med konserter, streams och biljetter.
+Det finns även generatorer för koreanska glosor (ordklass `koreanska`, se `app/seed/words_kpop.json`): koreanska → svenska, svenska → koreanska
+och att läsa hangul. Bilderna (lightstick, scen, hangul, flagga) är egenritade SVG-filer i `app/seed/media/`. Inga fotografier av artister används.
+Fakta om grupper ändras med tiden, så granska gärna frågorna ibland. Lägg till ord så här:
+
+```json
+{"words": [{"word": "jjang", "pos": "koreanska", "level": 4, "hangul": "짱", "sv": ["bäst, toppen"]}]}
+```
+
 ## Drift
 
 * **Backup:** `sqlite3 data/hemskola.db ".backup data/backup-$(date +%F).db"` (eller kopiera `data/` medan appen står still).

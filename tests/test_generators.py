@@ -71,7 +71,7 @@ def test_bar_read_matches_the_chart():
 
 def test_all_generators_have_unique_names_and_valid_levels():
     for n, g in generators.REGISTRY.items():
-        assert g.name == n and 1 <= g.level <= 5 and g.subject in ("matte", "svenska", "engelska")
+        assert g.name == n and 1 <= g.level <= 5 and g.subject in ("matte", "svenska", "engelska", "kpop")
 
 
 # ------------------------------------------------------------------ svenska / ordlista
@@ -206,3 +206,39 @@ def test_english_generators(name):
 def test_english_needs_wordlist():
     with pytest.raises(generators.NoData):
         EN["e1_gloss_en_sv"].fn(random.Random(1), WordBank([]))
+
+
+# ------------------------------------------------------------------ k-pop / koreanska
+
+KO_WORDS = json.loads((SEED / "words_kpop.json").read_text(encoding="utf-8"))["words"]
+KO_BANK = WordBank(KO_WORDS)
+KO = {n: g for n, g in generators.REGISTRY.items() if g.subject == "kpop"}
+
+
+def test_korean_wordlist_is_valid():
+    ro, sv = set(), set()
+    for w in KO_WORDS:
+        row, err = validate_word(w)
+        assert err is None, (w, err)
+        assert w["word"] not in ro and w["sv"][0] not in sv and w["hangul"]
+        ro.add(w["word"])
+        sv.add(w["sv"][0])
+    assert {w["level"] for w in KO_WORDS} == {1, 2, 3, 4, 5}
+
+
+@pytest.mark.parametrize("name", sorted(KO))
+def test_korean_generators(name):
+    rng = random.Random(zlib.crc32(name.encode()))
+    by_ro = {w["word"]: w for w in KO_WORDS}
+    for _ in range(300):
+        q = KO[name].fn(rng, KO_BANK)
+        assert q.options and len(set(q.options)) == 4 and q.answers[0] in q.options and "{" not in q.question
+        if name.endswith("_ko_sv"):
+            word = re.search(r"'([^']+)'", q.question).group(1)
+            assert q.answers == [by_ro[word]["sv"][0]]
+        elif name.endswith("_sv_ko"):
+            sv = re.search(r"'([^']+)'", q.question).group(1)
+            assert by_ro[q.answers[0]]["sv"][0] == sv
+        else:
+            hangul = q.question.split("ordet ", 1)[1].rstrip("?")
+            assert by_ro[q.answers[0]]["hangul"] == hangul

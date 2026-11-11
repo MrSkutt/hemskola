@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300" role="img" aria-label="En scen med fem dansare och fyra strålkastare">
+<rect width="480" height="300" fill="#150b2e"/>
+<polygon points="62,0 78,0 125,210 15,210" fill="#ffe27a" opacity=".22"/><circle cx="70" cy="6" r="9" fill="#ffe27a"/>
+<polygon points="182,0 198,0 245,210 135,210" fill="#ffe27a" opacity=".22"/><circle cx="190" cy="6" r="9" fill="#ffe27a"/>
+<polygon points="282,0 298,0 345,210 235,210" fill="#ffe27a" opacity=".22"/><circle cx="290" cy="6" r="9" fill="#ffe27a"/>
+<polygon points="402,0 418,0 465,210 355,210" fill="#ffe27a" opacity=".22"/><circle cx="410" cy="6" r="9" fill="#ffe27a"/>
+<rect y="205" width="480" height="40" fill="#3a2670"/><rect y="245" width="480" height="55" fill="#0b0618"/>
+<g stroke="#ff5fa2" stroke-width="7" stroke-linecap="round" fill="none"><circle cx="80" cy="132" r="11" fill="#ff5fa2" stroke="none"/><path d="M80 146 L80 182"/><path d="M80 182 L66 208"/><path d="M80 182 L94 208"/><path d="M80 155 L60 136"/><path d="M80 155 L100 164"/></g>
+<g stroke="#4dd0ff" stroke-width="7" stroke-linecap="round" fill="none"><circle cx="160" cy="132" r="11" fill="#4dd0ff" stroke="none"/><path d="M160 146 L160 182"/><path d="M160 182 L146 208"/><path d="M160 182 L174 208"/><path d="M160 155 L140 164"/><path d="M160 155 L180 136"/></g>
+<g stroke="#ffd43b" stroke-width="7" stroke-linecap="round" fill="none"><circle cx="240" cy="132" r="11" fill="#ffd43b" stroke="none"/><path d="M240 146 L240 182"/><path d="M240 182 L226 208"/><path d="M240 182 L254 208"/><path d="M240 155 L220 136"/><path d="M240 155 L260 164"/></g>
+<g stroke="#8cff8c" stroke-width="7" stroke-linecap="round" fill="none"><circle cx="320" cy="132" r="11" fill="#8cff8c" stroke="none"/><path d="M320 146 L320 182"/><path d="M320 182 L306 208"/><path d="M320 182 L334 208"/><path d="M320 155 L300 164"/><path d="M320 155 L340 136"/></g>
+<g stroke="#c792ff" stroke-width="7" stroke-linecap="round" fill="none"><circle cx="400" cy="132" r="11" fill="#c792ff" stroke="none"/><path d="M400 146 L400 182"/><path d="M400 182 L386 208"/><path d="M400 182 L414 208"/><path d="M400 155 L380 136"/><path d="M400 155 L420 164"/></g>
+<circle cx="9" cy="266" r="11" fill="#000"/>
+<circle cx="28" cy="274" r="11" fill="#000"/>
+<circle cx="43" cy="265" r="11" fill="#000"/>
+<circle cx="67" cy="272" r="11" fill="#000"/>
+<circle cx="79" cy="269" r="11" fill="#000"/>
+<circle cx="101" cy="264" r="11" fill="#000"/>
+<circle cx="119" cy="267" r="11" fill="#000"/>
+<circle cx="133" cy="265" r="11" fill="#000"/>
+<circle cx="154" cy="270" r="11" fill="#000"/>
+<circle cx="169" cy="267" r="11" fill="#000"/>
+<circle cx="187" cy="272" r="11" fill="#000"/>
+<circle cx="208" cy="264" r="11" fill="#000"/>
+<circle cx="229" cy="273" r="11" fill="#000"/>
+<circle cx="241" cy="267" r="11" fill="#000"/>
+<circle cx="264" cy="274" r="11" fill="#000"/>
+<circle cx="281" cy="264" r="11" fill="#000"/>
+<circle cx="299" cy="273" r="11" fill="#000"/>
+<circle cx="316" cy="264" r="11" fill="#000"/>
+<circle cx="332" cy="264" r="11" fill="#000"/>
+<circle cx="353" cy="277" r="11" fill="#000"/>
+<circle cx="368" cy="268" r="11" fill="#000"/>
+<circle cx="388" cy="266" r="11" fill="#000"/>
+<circle cx="407" cy="265" r="11" fill="#000"/>
+<circle cx="425" cy="268" r="11" fill="#000"/>
+<circle cx="443" cy="277" r="11" fill="#000"/>
+<circle cx="462" cy="266" r="11" fill="#000"/>
+<rect x="40" y="235" width="4" height="22" fill="#cfd3e6"/><circle cx="42" cy="231" r="6" fill="#ff7ac8"/>
+<rect x="130" y="235" width="4" height="22" fill="#cfd3e6"/><circle cx="132" cy="231" r="6" fill="#ff7ac8"/>
+<rect x="250" y="235" width="4" height="22" fill="#cfd3e6"/><circle cx="252" cy="231" r="6" fill="#ff7ac8"/>
+<rect x="360" y="235" width="4" height="22" fill="#cfd3e6"/><circle cx="362" cy="231" r="6" fill="#ff7ac8"/>
+<rect x="440" y="235" width="4" height="22" fill="#cfd3e6"/><circle cx="442" cy="231" r="6" fill="#ff7ac8"/>
+</svg>

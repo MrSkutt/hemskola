@@ -2,7 +2,7 @@
 import json
 
 POS = ["substantiv", "verb", "adjektiv", "adverb", "preposition", "pronomen", "räkneord",
-       "konjunktion", "subjunktion", "interjektion", "glosa"]
+       "konjunktion", "subjunktion", "interjektion", "glosa", "koreanska"]
 FORM_KEYS = {"plural", "bestamd", "bestamd_plural", "presens", "preteritum", "supinum", "imperativ",
              "komparativ", "superlativ", "neutrum", "past", "pastpart"}
 
@@ -92,12 +92,16 @@ def validate_word(d):
     for k in ("antonym", "synonym", "example"):
         if d.get(k):
             data[k] = str(d[k]).strip()[:120]
-    if pos == "glosa":
+    if pos in ("glosa", "koreanska"):
         sv = d.get("sv")
         sv = [sv] if isinstance(sv, str) else sv
         if not isinstance(sv, list) or not sv or not all(isinstance(x, str) and x.strip() and len(x) <= 40 for x in sv):
             return None, "glosor måste ha 'sv' (svensk översättning, en text eller en lista)"
         data["sv"] = [x.strip() for x in sv]
+        if d.get("hangul"):
+            if not isinstance(d["hangul"], str) or len(d["hangul"]) > 20:
+                return None, "hangul är ogiltigt"
+            data["hangul"] = d["hangul"].strip()
     if d.get("ambig"):
         data["ambig"] = True
     return {"word": word, "pos": pos, "level": level, "data": json.dumps(data, ensure_ascii=False)}, None

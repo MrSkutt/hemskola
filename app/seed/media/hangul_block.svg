@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 190" width="520" height="190" role="img" aria-label="Hangulbokstäverna ㅎ (h), ㅏ (a) och ㄴ (n) sätts ihop till ett block">
+<rect width="520" height="190" fill="#f7f3ff"/>
+<g font-family="Noto Sans KR, Malgun Gothic, Apple SD Gothic Neo, sans-serif" text-anchor="middle">
+<g><rect x="20" y="25" width="90" height="90" rx="12" fill="#fff" stroke="#7c4dff" stroke-width="3"/><text x="65" y="92" font-size="56" fill="#3b1c8c">ㅎ</text><text x="65" y="148" font-size="26" fill="#3b1c8c">h</text></g>
+<text x="135" y="86" font-size="40" fill="#7c4dff">+</text>
+<g><rect x="160" y="25" width="90" height="90" rx="12" fill="#fff" stroke="#7c4dff" stroke-width="3"/><text x="205" y="92" font-size="56" fill="#3b1c8c">ㅏ</text><text x="205" y="148" font-size="26" fill="#3b1c8c">a</text></g>
+<text x="275" y="86" font-size="40" fill="#7c4dff">+</text>
+<g><rect x="300" y="25" width="90" height="90" rx="12" fill="#fff" stroke="#7c4dff" stroke-width="3"/><text x="345" y="92" font-size="56" fill="#3b1c8c">ㄴ</text><text x="345" y="148" font-size="26" fill="#3b1c8c">n</text></g>
+<text x="415" y="86" font-size="40" fill="#7c4dff">=</text>
+<g><rect x="435" y="15" width="70" height="110" rx="12" fill="#7c4dff"/><text x="470" y="95" font-size="64" fill="#fff">한</text></g>
+</g></svg>
