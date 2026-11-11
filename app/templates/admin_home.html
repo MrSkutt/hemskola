@@ -3,6 +3,24 @@
 {% block mainclass %}wide{% endblock %}
 {% block content %}
 <h1>Elever</h1>
+{% if reward_requests %}
+<div class="card">
+  <h2 style="margin-top:0">🎁 Belöningar att godkänna <span class="pill wait">{{ reward_requests|length }}</span></h2>
+  <p class="muted" style="margin-top:0">Eleven har bett om dem. Poängen dras först när du godkänner.</p>
+  {% for q in reward_requests %}
+  <div class="reward">
+    <div class="rtop"><strong>{{ q.student }}</strong> vill ha <strong>{% if q.quantity > 1 %}{{ q.quantity }} × {% endif %}{{ q.title }}</strong>
+      <span class="muted">{{ q.total }} poäng · har {{ q.balance }} · skickad {{ q.created_at|ts }}</span></div>
+    {% if not q.enough %}<div class="notebox redo">{{ q.student }} har inte tillräckligt med poäng längre. Avslå förfrågan eller vänta.</div>{% endif %}
+    <div class="row" style="margin-top:.3rem">
+      <form method="post" action="/admin/belonningar/{{ q.id }}/godkann" class="inline"><input type="hidden" name="back" value="/admin"><button class="small" {{ 'disabled' if not q.enough }}>✔ Godkänn</button></form>
+      <form method="post" action="/admin/belonningar/{{ q.id }}/avsla" class="inline"><input type="hidden" name="back" value="/admin"><button class="small danger">✖ Avslå</button></form>
+      <a class="muted" href="/admin/student/{{ q.user_id }}#motivation">Visa {{ q.student }}</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
 {% if students|length > 1 %}
 <p><button type="button" class="small ghost" data-all="open">Visa alla</button> <button type="button" class="small ghost" data-all="close">Dölj alla</button></p>
 {% endif %}

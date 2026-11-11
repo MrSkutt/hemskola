@@ -14,7 +14,8 @@
     {% set path = request.url.path %}
     {% set tb = request.state.task_badge or 0 %}
     {% if user.role == 'admin' %}
-      <a href="/admin">Elever</a>
+      {% set rb = request.state.reward_badge or 0 %}
+      <a href="/admin">Elever{% if rb %} <span class="pill wait" title="Belöningar att godkänna">{{ rb }}</span>{% endif %}</a>
       <a href="/fakta" {{ 'class=active' if path.startswith('/fakta') }}>Fakta</a>
       <a href="/admin/uppgifter" {{ 'class=active' if path.startswith('/admin/uppgifter') }}>Uppgifter{% if tb %} <span class="pill wait" title="Väntar på granskning">{{ tb }}</span>{% endif %}</a>
       <a href="/admin/exercises">Övningar</a>

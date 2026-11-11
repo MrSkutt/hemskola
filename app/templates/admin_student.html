@@ -76,7 +76,7 @@ document.querySelectorAll('input[data-toggle]').forEach(function (t) {
   </form>
 
   <h3 style="margin-top:1.2rem">Belöningar</h3>
-  <p class="muted" style="margin-top:0">Poäng just nu: <strong>{{ pts.balance }}</strong> (tjänat {{ pts.total }}{% if pts.spent %}, utdelat för {{ pts.spent }}{% endif %}).
+  <p class="muted" style="margin-top:0">Poäng just nu: <strong>{{ pts.balance }}</strong> (tjänat {{ pts.total }}{% if pts.spent %}, utdelat för {{ pts.spent }}{% endif %}){% if pts.reserved %}, varav <strong>{{ pts.reserved }}</strong> reserverade för belöningar {{ s.display_name }} bett om{% endif %}.
     När du markerar en belöning som utdelad dras dess poäng av. En belöning som kan tas ut flera gånger dras av varje gång.</p>
   {% if rewards %}
   <table>
@@ -86,7 +86,12 @@ document.querySelectorAll('input[data-toggle]').forEach(function (t) {
       <td>{{ r.title }}{% if r.repeatable %} <span class="pill off" title="Kan tas ut flera gånger tills du tar bort den">🔁 flera gånger</span>{% endif %}</td><td>{{ r.cost }}</td>
       <td>{% if r.given %}<span class="pill">utdelad {{ r.given_at|ts }}</span>
         {% elif r.ready %}<span class="pill">uppnådd, kan delas ut</span>{% else %}<span class="muted">{{ r.missing }} poäng kvar</span>{% endif %}
-        {% if r.repeatable and r.times_given %}<div class="muted psmall">Utdelad {{ r.times_given }} {{ 'gång' if r.times_given == 1 else 'gånger' }}, senast {{ r.given_at|ts }}</div>{% endif %}</td>
+        {% if r.repeatable and r.times_given %}<div class="muted psmall">Utdelad {{ r.times_given }} {{ 'gång' if r.times_given == 1 else 'gånger' }}, senast {{ r.given_at|ts }}</div>{% endif %}
+        {% if r.pending %}<div class="notebox wait" style="margin:.4rem 0 0;padding:.4rem .7rem">🙋 {{ s.display_name }} har bett om {{ (r.pending ~ ' st') if r.pending > 1 else 'den' }} ({{ r.pending * r.cost }} poäng).
+          <div class="row" style="margin-top:.3rem">
+            <form class="inline" method="post" action="/admin/belonningar/{{ r.request_id }}/godkann"><input type="hidden" name="back" value="/admin/student/{{ s.id }}#motivation"><button class="small">✔ Godkänn</button></form>
+            <form class="inline" method="post" action="/admin/belonningar/{{ r.request_id }}/avsla"><input type="hidden" name="back" value="/admin/student/{{ s.id }}#motivation"><button class="small danger">✖ Avslå</button></form>
+          </div></div>{% endif %}</td>
       <td>
         <form method="post" action="/admin/student/{{ s.id }}/rewards/{{ r.id }}" class="inline">
           {% if r.times_given %}<button class="small ghost" name="action" value="undo" title="Ångrar den senaste utdelningen">Ångra</button>{% endif %}

@@ -191,3 +191,5 @@ details.pickerbox > summary { cursor: pointer; font-weight: 600; }
 .picker label:has(input:checked) { border-color: var(--accent); color: var(--text); }
 .picker img { width: 88px; height: 62px; object-fit: contain; background: #fff; border-radius: 4px; }
 .picker label.none { justify-content: center; min-height: 80px; }
+
+button:disabled { opacity: .45; cursor: not-allowed; }

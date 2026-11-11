@@ -647,3 +647,374 @@ def test_reward_columns_are_added_to_an_old_database_and_old_gifts_count_once(tm
     assert rows["Gammal öppen"]["times_given"] == 0
     assert conn.execute("SELECT COALESCE(SUM(cost * times_given), 0) FROM rewards").fetchone()[0] == 80
     conn.close()
+
+
+# ---------------------------------------------------------------- eleven ber om belöningar
+
+def _rich(client, points_rows=13):
+    """Elev med poäng (130 vid 13 rader) och en belöning som kan tas ut flera gånger (50) samt en engångsbelöning (60)."""
+    conn, uid = _student(client)
+    logic.get_prefs(conn, uid)
+    _ins(conn, uid, "matte", points_rows)
+    motivation.add_reward(conn, uid, "Godis", 50, repeatable=True)
+    motivation.add_reward(conn, uid, "Bio", 60)
+    conn.commit()
+    rid = {r["title"]: r["id"] for r in conn.execute("SELECT id, title FROM rewards")}
+    return conn, uid, rid
+
+
+def test_requesting_a_reward_reserves_points_but_does_not_spend_them(client):
+    conn, uid, rid = _rich(client)
+    assert motivation.request_reward(conn, uid, rid["Godis"], 2) == ""
+    conn.commit()
+    p = motivation.points(conn, uid)
+    assert (p["balance"], p["reserved"], p["available"], p["spent"]) == (130, 100, 30, 0)
+    assert conn.execute("SELECT times_given FROM rewards WHERE title='Godis'").fetchone()[0] == 0   # inget utdelat än
+    rows = {r["title"]: r for r in motivation.reward_list(conn, uid, p["available"])}
+    assert rows["Godis"]["pending"] == 2 and rows["Godis"]["request_id"] and not rows["Godis"]["can_request"]
+    assert rows["Bio"]["pending"] == 0 and not rows["Bio"]["can_request"]     # 30 kvar räcker inte till 60
+    assert motivation.pending_count(conn) == 1
+    conn.close()
+
+
+def test_request_validation(client):
+    conn, uid, rid = _rich(client)
+    assert motivation.request_reward(conn, uid, 9999, 1) == "Belöningen finns inte."
+    assert "mellan 1 och 20" in motivation.request_reward(conn, uid, rid["Godis"], 0)
+    assert "mellan 1 och 20" in motivation.request_reward(conn, uid, rid["Godis"], -3)
+    assert "mellan 1 och 20" in motivation.request_reward(conn, uid, rid["Godis"], 21)
+    assert "heltal" in motivation.request_reward(conn, uid, rid["Godis"], "två")
+    assert "heltal" in motivation.request_reward(conn, uid, rid["Godis"], "")
+    msg = motivation.request_reward(conn, uid, rid["Godis"], 3)              # 150 > 130
+    assert "inte tillräckligt" in msg and "2 st" in msg                       # säger hur många som räcker
+    motivation.add_reward(conn, uid, "Resa", 500)
+    resa = conn.execute("SELECT id FROM rewards WHERE title='Resa'").fetchone()["id"]
+    msg = motivation.request_reward(conn, uid, resa, 1)
+    assert "inte tillräckligt" in msg and "st" not in msg                     # engångsbelöning: ingen "räcker till N st"
+    assert conn.execute("SELECT COUNT(*) FROM reward_requests").fetchone()[0] == 0
+    conn.close()
+
+
+def test_one_time_reward_can_only_be_requested_once_and_quantity_is_forced_to_one(client):
+    conn, uid, rid = _rich(client)
+    assert motivation.request_reward(conn, uid, rid["Bio"], 5) == ""         # antalet ignoreras för en engångsbelöning
+    assert conn.execute("SELECT quantity FROM reward_requests").fetchone()[0] == 1
+    assert "redan bett" in motivation.request_reward(conn, uid, rid["Bio"], 1)
+    assert conn.execute("SELECT COUNT(*) FROM reward_requests").fetchone()[0] == 1
+    conn.commit()
+    rows = {r["title"]: r for r in motivation.reward_list(conn, uid, motivation.points(conn, uid)["available"])}
+    assert rows["Bio"]["pending"] == 1 and not rows["Bio"]["can_request"]
+    conn.close()
+
+
+def test_requests_for_the_same_repeatable_reward_are_merged_and_limited_by_available_points(client):
+    conn, uid, rid = _rich(client)
+    assert motivation.request_reward(conn, uid, rid["Godis"], 1) == ""
+    conn.commit()
+    assert motivation.request_reward(conn, uid, rid["Godis"], 1) == ""       # läggs på samma förfrågan
+    conn.commit()
+    assert conn.execute("SELECT COUNT(*), SUM(quantity) FROM reward_requests").fetchone()[:] == (1, 2)
+    assert "inte tillräckligt" in motivation.request_reward(conn, uid, rid["Godis"], 1)   # 30 kvar
+    assert motivation.points(conn, uid)["available"] == 30
+    conn.close()
+
+
+def test_cannot_request_a_reward_that_was_already_given(client):
+    conn, uid, rid = _rich(client)
+    assert motivation.give_reward(conn, uid, rid["Bio"]) == ""
+    assert motivation.request_reward(conn, uid, rid["Bio"], 1) == "Du har redan fått den."
+    conn.close()
+
+
+def test_cancelling_a_request_frees_the_points_and_only_your_own(client):
+    conn, uid, rid = _rich(client)
+    motivation.request_reward(conn, uid, rid["Godis"], 2)
+    conn.commit()
+    qid = conn.execute("SELECT id FROM reward_requests").fetchone()["id"]
+    assert motivation.cancel_request(conn, uid + 99, qid) != ""              # någon annans förfrågan
+    assert motivation.cancel_request(conn, uid, qid) == ""
+    conn.commit()
+    assert motivation.points(conn, uid)["available"] == 130
+    assert motivation.cancel_request(conn, uid, qid) != ""                   # redan borta
+    conn.close()
+
+
+def test_approving_a_request_spends_the_points_for_real(client):
+    conn, uid, rid = _rich(client)
+    motivation.request_reward(conn, uid, rid["Godis"], 2)
+    conn.commit()
+    qid = conn.execute("SELECT id FROM reward_requests").fetchone()["id"]
+    (q,) = motivation.pending_requests(conn)
+    assert (q["student"], q["title"], q["quantity"], q["total"], q["balance"], q["enough"]) == ("Mia", "Godis", 2, 100, 130, True)
+    assert motivation.approve_request(conn, qid) == ""
+    conn.commit()
+    row = conn.execute("SELECT times_given, given_at FROM rewards WHERE title='Godis'").fetchone()
+    assert row["times_given"] == 2 and row["given_at"]
+    p = motivation.points(conn, uid)
+    assert (p["spent"], p["balance"], p["reserved"], p["available"]) == (100, 30, 0, 30)   # inte dubbelt avdrag
+    st = conn.execute("SELECT status, handled_at FROM reward_requests").fetchone()
+    assert st["status"] == "approved" and st["handled_at"]
+    assert motivation.pending_count(conn) == 0 and motivation.pending_requests(conn) == []
+    assert motivation.approve_request(conn, qid) != ""                       # kan inte godkännas två gånger
+    assert conn.execute("SELECT times_given FROM rewards WHERE title='Godis'").fetchone()[0] == 2
+    conn.close()
+
+
+def test_approve_fails_when_the_student_no_longer_has_the_points(client):
+    conn, uid, rid = _rich(client)
+    motivation.request_reward(conn, uid, rid["Godis"], 2)                    # 100 av 130 reserverade
+    conn.commit()
+    assert motivation.give_reward(conn, uid, rid["Bio"]) == ""               # admin delar ut Bio direkt: 60 poäng dras, 70 kvar
+    conn.commit()
+    (q,) = motivation.pending_requests(conn)
+    assert q["balance"] == 70 and not q["enough"]
+    assert "inte tillräckligt" in motivation.approve_request(conn, q["id"])
+    assert conn.execute("SELECT status FROM reward_requests").fetchone()[0] == "pending"
+    assert conn.execute("SELECT times_given FROM rewards WHERE title='Godis'").fetchone()[0] == 0
+    assert motivation.points(conn, uid)["available"] == 0                    # aldrig negativt
+    conn.close()
+
+
+def test_declining_a_request_frees_the_points(client):
+    conn, uid, rid = _rich(client)
+    motivation.request_reward(conn, uid, rid["Godis"], 2)
+    conn.commit()
+    qid = conn.execute("SELECT id FROM reward_requests").fetchone()["id"]
+    assert motivation.decline_request(conn, qid) == ""
+    conn.commit()
+    assert conn.execute("SELECT status FROM reward_requests").fetchone()[0] == "declined"
+    p = motivation.points(conn, uid)
+    assert (p["balance"], p["reserved"], p["available"], p["spent"]) == (130, 0, 130, 0)
+    assert conn.execute("SELECT times_given FROM rewards WHERE title='Godis'").fetchone()[0] == 0
+    assert motivation.decline_request(conn, qid) != ""
+    assert motivation.approve_request(conn, qid) != ""                       # en avslagen förfrågan kan inte godkännas
+    assert motivation.request_reward(conn, uid, rid["Godis"], 2) == ""       # och eleven kan be igen
+    conn.close()
+
+
+def test_giving_a_one_time_reward_directly_closes_its_pending_request(client):
+    conn, uid, rid = _rich(client)
+    motivation.request_reward(conn, uid, rid["Bio"], 1)
+    conn.commit()
+    assert motivation.give_reward(conn, uid, rid["Bio"]) == ""
+    conn.commit()
+    assert conn.execute("SELECT status FROM reward_requests").fetchone()[0] == "approved"
+    assert motivation.points(conn, uid)["reserved"] == 0
+    assert motivation.points(conn, uid)["spent"] == 60                       # dras bara en gång
+    conn.close()
+
+
+def test_deleting_a_given_reward_declines_its_pending_requests(client):
+    conn, uid, rid = _rich(client)
+    motivation.give_reward(conn, uid, rid["Godis"])                          # utdelad en gång, så den döljs när den tas bort
+    motivation.request_reward(conn, uid, rid["Godis"], 1)
+    conn.commit()
+    motivation.delete_reward(conn, uid, rid["Godis"])
+    conn.commit()
+    assert conn.execute("SELECT status FROM reward_requests").fetchone()[0] == "declined"
+    assert motivation.pending_count(conn) == 0 and motivation.points(conn, uid)["reserved"] == 0
+    conn.close()
+
+
+def test_deleting_a_never_given_reward_removes_its_requests(client):
+    conn, uid, rid = _rich(client)
+    motivation.request_reward(conn, uid, rid["Godis"], 1)
+    conn.commit()
+    motivation.delete_reward(conn, uid, rid["Godis"])
+    conn.commit()
+    assert conn.execute("SELECT COUNT(*) FROM reward_requests").fetchone()[0] == 0   # ON DELETE CASCADE
+    assert motivation.pending_count(conn) == 0
+    conn.close()
+
+
+def test_pending_requests_are_oldest_first_and_per_student(client):
+    conn, uid, rid = _rich(client)
+    _make_student(client, "olle")
+    conn.commit()
+    olle = _uid(conn, "olle")
+    logic.get_prefs(conn, olle)
+    _ins(conn, olle, "matte", 6)
+    motivation.add_reward(conn, olle, "Glass", 20)
+    conn.commit()
+    gl = conn.execute("SELECT id FROM rewards WHERE user_id=?", (olle,)).fetchone()["id"]
+    assert motivation.request_reward(conn, olle, rid["Godis"], 1) == "Belöningen finns inte."   # Mias belöning
+    motivation.request_reward(conn, uid, rid["Godis"], 1)
+    motivation.request_reward(conn, olle, gl, 1)
+    conn.commit()
+    conn.execute("UPDATE reward_requests SET created_at='2020-01-01 10:00:00' WHERE user_id=?", (olle,))
+    conn.commit()
+    assert [q["student"] for q in motivation.pending_requests(conn)] == ["Olle", "Mia"]
+    assert motivation.points(conn, olle)["reserved"] == 20 and motivation.points(conn, uid)["reserved"] == 50
+    conn.close()
+
+
+# --- rutter
+
+def _req_routes(client):
+    conn, uid, rid = _rich(client)
+    login(client, "mia", "hemligt1")
+    return conn, uid, rid
+
+
+def test_student_requests_via_route_and_sees_it_pending(client):
+    conn, uid, rid = _req_routes(client)
+    r = client.post(f"/framsteg/belonning/{rid['Godis']}/be-om", data={"quantity": "2"})
+    assert r.status_code == 303 and r.headers["location"] == "/framsteg#belonningar"
+    assert conn.execute("SELECT quantity, status FROM reward_requests").fetchone()[:] == (2, "pending")
+    page = client.get("/framsteg").text
+    assert "Du har bett om 2 st" in page and "ta-tillbaka" in page
+    assert "100 poäng är reserverade" in page
+    assert "30" in page                                                       # tillgängliga poäng
+    assert 'id="belonningar"' in page
+    assert f"/framsteg/belonning/{rid['Godis']}/be-om" not in page            # 30 kvar: ingen ny förfrågan av Godis
+    conn.close()
+
+
+def test_student_request_form_shows_quantity_only_for_repeatable(client):
+    conn, uid, rid = _req_routes(client)
+    page = client.get("/framsteg").text
+    assert f'action="/framsteg/belonning/{rid["Godis"]}/be-om"' in page and f'action="/framsteg/belonning/{rid["Bio"]}/be-om"' in page
+    godis = page.split(f'/framsteg/belonning/{rid["Godis"]}/be-om')[1].split("</form>")[0]
+    bio = page.split(f'/framsteg/belonning/{rid["Bio"]}/be-om')[1].split("</form>")[0]
+    assert 'name="quantity"' in godis and 'max="2"' in godis                  # 130 // 50
+    assert 'name="quantity"' not in bio
+    conn.close()
+
+
+def test_student_route_errors_are_flashed_not_crashes(client):
+    conn, uid, rid = _req_routes(client)
+    for q in ("0", "99", "abc", "3"):
+        r = client.post(f"/framsteg/belonning/{rid['Godis']}/be-om", data={"quantity": q})
+        assert r.status_code == 303
+    assert conn.execute("SELECT COUNT(*) FROM reward_requests").fetchone()[0] == 0
+    assert client.post("/framsteg/belonning/9999/be-om", data={"quantity": "1"}).status_code == 303
+    page = client.get("/framsteg").text                                        # felet visas som meddelande (flash)
+    assert "finns inte" in page
+    conn.close()
+
+
+def test_student_cannot_cancel_or_request_for_others_and_admin_routes_are_closed(client):
+    conn, uid, rid = _req_routes(client)
+    client.post(f"/framsteg/belonning/{rid['Godis']}/be-om", data={"quantity": "1"})
+    qid = conn.execute("SELECT id FROM reward_requests").fetchone()["id"]
+    assert client.post(f"/admin/belonningar/{qid}/godkann").status_code in (303, 401, 403)
+    assert conn.execute("SELECT status FROM reward_requests").fetchone()[0] == "pending"   # eleven kan inte godkänna själv
+    assert motivation.points(conn, uid)["spent"] == 0
+    client.post("/logout")
+    assert client.post(f"/framsteg/belonning/{rid['Godis']}/be-om", data={"quantity": "1"}).status_code in (303, 401, 403)
+    assert conn.execute("SELECT COUNT(*) FROM reward_requests").fetchone()[0] == 1
+    conn.close()
+
+
+def test_student_cancel_route(client):
+    conn, uid, rid = _req_routes(client)
+    client.post(f"/framsteg/belonning/{rid['Godis']}/be-om", data={"quantity": "2"})
+    qid = conn.execute("SELECT id FROM reward_requests").fetchone()["id"]
+    r = client.post(f"/framsteg/forfragan/{qid}/ta-tillbaka")
+    assert r.status_code == 303
+    assert conn.execute("SELECT COUNT(*) FROM reward_requests").fetchone()[0] == 0
+    assert motivation.points(conn, uid)["available"] == 130
+    conn.commit()                                                              # släpp testets öppna transaktion
+    assert client.post(f"/framsteg/forfragan/{qid}/ta-tillbaka").status_code == 303   # ingen krasch
+    conn.close()
+
+
+def test_requests_are_blocked_when_points_are_off(client):
+    conn, uid, rid = _req_routes(client)
+    conn.execute("UPDATE user_prefs SET points_on=0 WHERE user_id=?", (uid,))
+    conn.commit()
+    assert client.post(f"/framsteg/belonning/{rid['Godis']}/be-om", data={"quantity": "1"}).status_code == 403
+    assert conn.execute("SELECT COUNT(*) FROM reward_requests").fetchone()[0] == 0
+    conn.close()
+
+
+def test_admin_sees_requests_on_start_page_and_approves(client):
+    conn, uid, rid = _req_routes(client)
+    client.post(f"/framsteg/belonning/{rid['Godis']}/be-om", data={"quantity": "2"})
+    client.post("/logout")
+    login(client, "admin", "adminpass1")
+    page = client.get("/admin").text
+    assert "Belöningar att godkänna" in page and "2 × Godis" in page and "100 poäng" in page
+    assert "har 130" in page
+    qid = conn.execute("SELECT id FROM reward_requests").fetchone()["id"]
+    assert f"/admin/belonningar/{qid}/godkann" in page and f"/admin/belonningar/{qid}/avsla" in page
+    nav = client.get("/admin/uppgifter").text
+    assert 'class="pill wait"' in nav.split("Elever")[1].split("</a>")[0]      # siffran vid Elever-fliken
+    r = client.post(f"/admin/belonningar/{qid}/godkann", data={"back": "/admin"})
+    assert r.status_code == 303 and r.headers["location"] == "/admin"
+    p = motivation.points(conn, uid)
+    assert (p["spent"], p["balance"], p["reserved"]) == (100, 30, 0)
+    page = client.get("/admin").text
+    assert "Belöningar att godkänna" not in page
+    assert "Godkänt. Mia fick 2 × Godis och 100 poäng drogs." in page          # meddelandet
+    conn.close()
+
+
+def test_admin_declines_via_route_and_back_param_is_safe(client):
+    conn, uid, rid = _req_routes(client)
+    client.post(f"/framsteg/belonning/{rid['Godis']}/be-om", data={"quantity": "1"})
+    client.post("/logout")
+    login(client, "admin", "adminpass1")
+    qid = conn.execute("SELECT id FROM reward_requests").fetchone()["id"]
+    r = client.post(f"/admin/belonningar/{qid}/avsla", data={"back": "https://evil.example/x"})
+    assert r.status_code == 303 and r.headers["location"] == "/admin"          # extern adress ignoreras
+    assert conn.execute("SELECT status FROM reward_requests").fetchone()[0] == "declined"
+    assert motivation.points(conn, uid)["available"] == 130
+    assert client.post(f"/admin/belonningar/{qid}/oops").status_code == 404
+    assert client.post("/admin/belonningar/9999/godkann").status_code == 404
+    assert client.post(f"/admin/belonningar/{qid}/godkann").status_code == 303   # redan hanterad: flash, ingen krasch
+    assert conn.execute("SELECT times_given FROM rewards WHERE title='Godis'").fetchone()[0] == 0
+    conn.close()
+
+
+def test_admin_approve_with_too_few_points_is_refused_in_the_ui(client):
+    conn, uid, rid = _req_routes(client)
+    client.post(f"/framsteg/belonning/{rid['Godis']}/be-om", data={"quantity": "2"})
+    conn.execute("INSERT INTO rewards(user_id, title, cost, times_given) VALUES (?, 'Extra', 90, 1)", (uid,))
+    conn.commit()                                                              # admin har redan delat ut 90 (kvar: 40)
+    client.post("/logout")
+    login(client, "admin", "adminpass1")
+    page = client.get("/admin").text
+    assert "inte tillräckligt med poäng längre" in page and "disabled" in page
+    qid = conn.execute("SELECT id FROM reward_requests").fetchone()["id"]
+    client.post(f"/admin/belonningar/{qid}/godkann", data={"back": "/admin"})
+    assert conn.execute("SELECT status FROM reward_requests").fetchone()[0] == "pending"
+    conn.close()
+
+
+def test_admin_student_page_shows_pending_request_and_reserved_points(client):
+    conn, uid, rid = _req_routes(client)
+    client.post(f"/framsteg/belonning/{rid['Godis']}/be-om", data={"quantity": "2"})
+    client.post("/logout")
+    login(client, "admin", "adminpass1")
+    page = client.get(f"/admin/student/{uid}").text
+    assert "har bett om 2 st" in page and "(100 poäng)" in page
+    assert "100</strong> reserverade" in page
+    qid = conn.execute("SELECT id FROM reward_requests").fetchone()["id"]
+    assert f'/admin/belonningar/{qid}/godkann' in page and f"/admin/student/{uid}#motivation" in page
+    r = client.post(f"/admin/belonningar/{qid}/godkann", data={"back": f"/admin/student/{uid}#motivation"})
+    assert r.headers["location"] == f"/admin/student/{uid}#motivation"
+    conn.close()
+
+
+def test_home_page_shows_available_points_and_request_link(client):
+    conn, uid, rid = _req_routes(client)
+    page = client.get("/home").text
+    assert "/framsteg#belonningar" in page                                     # "Be om den"
+    client.post(f"/framsteg/belonning/{rid['Godis']}/be-om", data={"quantity": "2"})
+    page = client.get("/home").text
+    assert "Du har bett om" in page and "Väntar på admin" in page
+    conn.close()
+
+
+def test_reward_requests_table_is_created_on_an_old_database(client):
+    conn = _conn()
+    conn.execute("DROP TABLE reward_requests")
+    conn.commit()
+    conn.close()
+    from app import db as database
+    database.init_db()                                                         # körs vid varje uppstart
+    c = database.connect()
+    assert c.execute("SELECT COUNT(*) FROM reward_requests").fetchone()[0] == 0
+    assert c.execute("SELECT COUNT(*) FROM rewards").fetchone()[0] == 0        # befintlig data orörd
+    c.close()

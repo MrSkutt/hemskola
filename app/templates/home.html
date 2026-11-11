@@ -24,11 +24,12 @@
     {% if prog.points %}
     <div class="pitem">
       <div class="plabel">⭐ Poäng</div>
-      <div class="pbig">{{ prog.points.balance }}</div>
+      <div class="pbig">{{ prog.points.available }}</div>
       {% if prog.next %}
         <div class="bar"><i style="width:{{ prog.next.pct }}%"></i></div>
         <div class="muted psmall">
-          {% if prog.next.ready %}🎁 Du kan få <strong>{{ prog.next.title }}</strong>! Säg till.
+          {% if prog.next.pending %}⏳ Du har bett om <strong>{{ prog.next.title }}</strong>. Väntar på admin.
+          {% elif prog.next.can_request %}🎁 Du kan be om <strong>{{ prog.next.title }}</strong>! <a href="/framsteg#belonningar">Be om den →</a>
           {% else %}{{ prog.next.missing }} poäng kvar till {{ prog.next.title }}{% endif %}
         </div>
       {% else %}<div class="muted psmall">Svara rätt när du övar så samlar du poäng.</div>{% endif %}

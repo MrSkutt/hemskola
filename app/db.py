@@ -138,6 +138,18 @@ CREATE TABLE IF NOT EXISTS rewards (
     times_given INTEGER NOT NULL DEFAULT 0,     -- antal utdelningar (för en engångsbelöning 0 eller 1); poängen dras per utdelning
     retired INTEGER NOT NULL DEFAULT 0          -- 1 = borttagen men utdelad, så använda poäng räknas fortfarande
 );
+-- Förfrågningar där eleven ber om en belöning (för en som kan tas ut flera gånger: ett antal). Poängen reserveras medan
+-- förfrågan väntar och dras på riktigt först när admin godkänner (då ökar rewards.times_given).
+CREATE TABLE IF NOT EXISTS reward_requests (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    reward_id INTEGER NOT NULL REFERENCES rewards(id) ON DELETE CASCADE,
+    user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    quantity INTEGER NOT NULL DEFAULT 1 CHECK (quantity >= 1),
+    status TEXT NOT NULL DEFAULT 'pending' CHECK (status IN ('pending', 'approved', 'declined')),
+    created_at TEXT NOT NULL DEFAULT (datetime('now')),
+    handled_at TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_rreq_user ON reward_requests(user_id, status);
 -- Uppgifter som admin skapar (fritext, valfri bild, poäng vid godkänt). active=0 betyder arkiverad (kan inte ges till fler).
 CREATE TABLE IF NOT EXISTS tasks (
     id INTEGER PRIMARY KEY AUTOINCREMENT,

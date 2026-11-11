@@ -19,8 +19,9 @@
 {% if prog.points %}
 <div class="card">
   <h2 class="ptitle">⭐ Poäng</h2>
-  <div class="pbig">{{ prog.points.balance }} <span class="muted psmall">poäng att använda</span></div>
-  <p class="muted" style="margin:.2rem 0 .8rem">Hittills tjänat: {{ prog.points.total }}{% if prog.points.spent %} · Använt på belöningar: {{ prog.points.spent }}{% endif %}</p>
+  <div class="pbig">{{ prog.points.available }} <span class="muted psmall">poäng att använda</span></div>
+  <p class="muted" style="margin:.2rem 0 .8rem">Hittills tjänat: {{ prog.points.total }}{% if prog.points.spent %} · Använt på belöningar: {{ prog.points.spent }}{% endif %}
+    {% if prog.points.reserved %}<br>🙋 {{ prog.points.reserved }} poäng är reserverade för belöningar du har bett om. De dras när admin godkänner.{% endif %}</p>
   <table class="plain">
     <tr><th>Så får du poäng</th><th></th></tr>
     {% for what, why in rules %}<tr><td><strong>{{ what }}</strong></td><td>{{ why }}</td></tr>{% endfor %}
@@ -28,17 +29,28 @@
   <p class="muted psmall" style="margin-bottom:0">Du får poäng för övning bara i skolämnen, inte för prov och inte för K-pop. Av dina poäng kommer {{ prog.points.answers }} från svar, {{ prog.points.goal + prog.points.week }} från dagsmål, {{ prog.points.levels }} från nivåer och {{ prog.points.tasks }} från uppgifter.</p>
 </div>
 
-<div class="card">
+<div class="card" id="belonningar">
   <h2 class="ptitle">🎁 Belöningar</h2>
   {% if prog.rewards %}
     {% for r in prog.rewards %}
     <div class="reward {{ 'given' if r.given }}">
       <div class="rtop"><strong>{{ r.title }}</strong> <span class="muted">{{ r.cost }} poäng</span>
-        {% if r.given %}<span class="pill">✔ Utdelad</span>{% elif r.ready %}<span class="pill">🎁 Du kan få den!</span>{% endif %}
+        {% if r.given %}<span class="pill">✔ Utdelad</span>{% elif r.can_request %}<span class="pill">🎁 Du kan be om den!</span>{% endif %}
         {% if r.repeatable %}<span class="muted psmall">🔁 går att få flera gånger{% if r.times_given %} · du har fått den {{ r.times_given }} {{ 'gång' if r.times_given == 1 else 'gånger' }}{% endif %}</span>{% endif %}</div>
       {% if not r.given %}
         <div class="bar"><i style="width:{{ r.pct }}%"></i></div>
-        <div class="muted psmall">{% if r.ready %}Säg till så får du den.{% else %}{{ r.missing }} poäng kvar{% endif %}</div>
+        <div class="muted psmall">{% if r.can_request %}Du har poäng nog. Tryck på knappen så får admin veta.{% elif r.ready %}Du har poäng nog till fler, men du har redan bett om den.{% elif r.pending and not r.repeatable %}Väntar på admin.{% else %}{{ r.missing }} poäng kvar{% endif %}</div>
+      {% endif %}
+      {% if r.pending %}
+      <div class="notebox wait" style="margin:.5rem 0 0">⏳ Du har bett om {{ (r.pending ~ ' st') if r.repeatable and r.pending > 1 else 'den' }}. Admin tittar på det, och poängen dras när hon eller han godkänner.
+        <form class="inline" method="post" action="/framsteg/forfragan/{{ r.request_id }}/ta-tillbaka"><button class="small ghost">Ta tillbaka</button></form></div>
+      {% endif %}
+      {% if r.can_request %}
+      <form method="post" action="/framsteg/belonning/{{ r.id }}/be-om" class="row" style="margin-top:.5rem">
+        {% if r.max_qty > 1 %}<div><label style="margin:0" for="q{{ r.id }}">Hur många?</label>
+          <input id="q{{ r.id }}" type="number" name="quantity" min="1" max="{{ r.max_qty }}" value="1" style="width:5.5rem"></div>{% endif %}
+        <button>🎁 Jag vill ha {{ 'den' if r.max_qty == 1 else 'dem' }}</button>
+      </form>
       {% endif %}
     </div>
     {% endfor %}

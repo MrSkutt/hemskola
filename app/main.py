@@ -129,6 +129,7 @@ def current_user(request: Request, db=Depends(database.get_db)):
         raise LoginRequired()
     request.state.user = row
     request.state.task_badge = tasks.badge_count(db, row)
+    request.state.reward_badge = motivation.pending_count(db) if row["role"] == "admin" else 0
     return row
 
 
@@ -218,7 +219,7 @@ def _progress(db, user_id: int, prefs: dict) -> dict:
         out["goal"] = logic.goal_status(db, user_id, prefs)
     if prefs["points_on"]:
         out["points"] = motivation.points(db, user_id, prefs)
-        out["rewards"] = motivation.reward_list(db, user_id, out["points"]["balance"])
+        out["rewards"] = motivation.reward_list(db, user_id, out["points"]["available"])
         out["next"] = motivation.next_reward(out["rewards"])
     if prefs["badges_on"]:
         out["badges"] = motivation.badges(db, user_id)
@@ -416,7 +417,7 @@ def admin_home(request: Request, user=Depends(admin_user), db=Depends(database.g
             "u": s, "streak": streak, "today": count_today, "groups": groups,
             "off": [sub for sub in logic.ordered_subjects(subjects) if not settings[sub]["enabled"]],
         })
-    return render(request, "admin_home.html", students=students)
+    return render(request, "admin_home.html", students=students, reward_requests=motivation.pending_requests(db))
 
 
 @app.get("/admin/student/{student_id}")
@@ -504,6 +505,57 @@ def admin_set_prefs(request: Request, student_id: int, daily_goal: str = Form("0
     db.commit()
     flash(request, "Inställningarna är sparade.")
     return go(f"/admin/student/{student_id}#motivation")
+
+
+@app.post("/framsteg/belonning/{reward_id}/be-om")
+def student_request_reward(request: Request, reward_id: int, quantity: str = Form("1"),
+                           user=Depends(student_user), db=Depends(database.get_db)):
+    if not logic.get_prefs(db, user["id"])["points_on"]:
+        raise HTTPException(403, "Poäng och belöningar är avstängda")
+    error = motivation.request_reward(db, user["id"], reward_id, quantity)
+    if error:
+        flash(request, error, "warn")
+    else:
+        db.commit()
+        flash(request, "Din förfrågan är skickad! När admin godkänt den dras poängen.")
+    return go("/framsteg#belonningar")
+
+
+@app.post("/framsteg/forfragan/{request_id}/ta-tillbaka")
+def student_cancel_request(request: Request, request_id: int, user=Depends(student_user),
+                           db=Depends(database.get_db)):
+    error = motivation.cancel_request(db, user["id"], request_id)
+    if error:
+        flash(request, error, "warn")
+    else:
+        db.commit()
+        flash(request, "Du tog tillbaka förfrågan. Poängen är dina igen.")
+    return go("/framsteg#belonningar")
+
+
+@app.post("/admin/belonningar/{request_id}/{action}")
+def admin_handle_reward_request(request: Request, request_id: int, action: str, back: str = Form(""),
+                                user=Depends(admin_user), db=Depends(database.get_db)):
+    if action not in ("godkann", "avsla"):
+        raise HTTPException(404)
+    q = db.execute(
+        "SELECT q.quantity, r.title, r.cost, u.display_name FROM reward_requests q JOIN rewards r ON r.id=q.reward_id "
+        "JOIN users u ON u.id=q.user_id WHERE q.id=?", (request_id,)).fetchone()
+    if not q:
+        raise HTTPException(404, "Förfrågan finns inte")
+    if action == "godkann":
+        error = motivation.approve_request(db, request_id)
+        done = (f"Godkänt. {q['display_name']} fick {q['quantity']} × {q['title']} och {q['cost'] * q['quantity']} poäng drogs."
+                if q["quantity"] > 1 else f"Godkänt. {q['display_name']} fick {q['title']} och {q['cost']} poäng drogs.")
+    else:
+        error = motivation.decline_request(db, request_id)
+        done = f"Avslagen. {q['display_name']} fick inte {q['title']} den här gången. Poängen är tillgängliga igen."
+    if error:
+        flash(request, error, "warn")
+    else:
+        db.commit()
+        flash(request, done)
+    return go(_back(back, "/admin", prefix="/admin"))
 
 
 @app.post("/admin/student/{student_id}/rewards")
@@ -909,8 +961,9 @@ async def _image_from_form(upload, url: str, existing: str = "") -> tuple:
     return "", ""
 
 
-def _back(back: str, default: str) -> str:
-    return back if back.startswith("/admin/uppgifter") and "//" not in back and "\\" not in back else default
+def _back(back: str, default: str, prefix: str = "/admin/uppgifter") -> str:
+    """En återvändsadress från ett formulär, bara om den pekar inom admindelen (aldrig till en annan webbplats)."""
+    return back if back.startswith(prefix) and "//" not in back and "\\" not in back else default
 
 
 def _tasks_page(request: Request, db, form=None, status_code: int = 200):

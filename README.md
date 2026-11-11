@@ -199,12 +199,15 @@ Bara skolämnen räknas, alltså inte fritidsämnen som K-pop.
 * **Belöningar:** du lägger in belöningar med ett poängpris (t.ex. *Bio-kväll, 500 poäng*). Eleven ser hur långt hon har kvar. När poängen
   räcker markerar du belöningen som *utdelad* och dess poäng dras av. *Ångra* ger tillbaka poängen. Kryssar du i **Kan tas ut flera gånger**
   (t.ex. *Godis, 50 poäng*) kan den delas ut om och om igen, och poängen dras varje gång. Den ligger kvar tills du tar bort den, och
-  admin och elev ser hur många gånger den delats ut. *Ångra* ångrar den senaste utdelningen. En belöning som redan delats ut och sedan tas bort
+  admin och elev ser hur många gånger den delats ut. **Eleven kan själv be om en belöning** (och för en som kan tas ut flera gånger välja hur många, så länge poängen räcker)
+  med knappen *Jag vill ha den* under Framsteg. Poängen reserveras då (eleven kan inte be om mer än hon har), men dras först när du godkänner. Förfrågningarna
+  visas högst upp på Elever-sidan (och som en siffra i fliken *Elever*) samt vid belöningen på elevens sida, där du godkänner eller avslår. Avslår du, eller
+  eleven tar tillbaka förfrågan, blir poängen tillgängliga igen. *Ångra* ångrar den senaste utdelningen. En belöning som redan delats ut och sedan tas bort
   döljs i stället för att raderas, så att poängen som använts på den fortsätter dras av och inte betalas tillbaka.
 * **Märken:** 19 märken (första svaret, 100/500/1000 svar, dagar i rad, dagsmål, 5 och 10 rätt i rad, nivåer, prov med mera) som visas
   på sidan **Framsteg**. De räknas ut från svaren och listan finns i `app/motivation.py`.
 
-Nya tabeller (`user_prefs`, `goal_days`, `level_ups`, `rewards`) läggs till automatiskt vid uppgradering och ingen befintlig data ändras.
+Nya tabeller (`user_prefs`, `goal_days`, `level_ups`, `rewards`, `reward_requests`) läggs till automatiskt vid uppgradering och ingen befintlig data ändras.
 Nya elever och befintliga elever får standardvärdena (område på, dagsmål 15, poäng och märken på).
 
 ## Uppgifter
