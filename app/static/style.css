@@ -78,11 +78,19 @@ th { color: var(--muted); font-weight: 600; }
 .diagram .d-num { paint-order: stroke; stroke: var(--card); stroke-width: 4px; stroke-linejoin: round; }
 
 /* ämnesgrupper och ämnesval */
-.grouphead { font-size: 1.05rem; color: var(--muted); font-weight: 600; margin: 1.6rem 0 .6rem; padding-bottom: .3rem; border-bottom: 1px solid var(--line); }
+.grouphead { font-size: 1.1rem; font-weight: 700; color: var(--text); background: var(--okbg); border-left: 5px solid var(--accent);
+  border-radius: 0 10px 10px 0; padding: .55rem .9rem; margin: 1.8rem 0 .8rem; }
+.groupbody { margin-left: .9rem; padding-left: 1rem; border-left: 3px solid var(--okbg); }
 .subjecthead { font-size: 1.2rem; margin: 0 0 .5rem; }
-h2 + .card > .subjecthead, .grid .card > .subjecthead { margin-top: 0; }
-.grouprow td, td.grouprow { background: var(--bg); color: var(--muted); font-weight: 600; font-size: .85rem; letter-spacing: .02em; }
+.grid .card > .subjecthead { margin-top: 0; }
+h3.subjecthead { margin-top: 1rem; }
+.card.compact { padding: .6rem 1rem; }
+.grouprow td, td.grouprow { background: var(--okbg); color: var(--text); font-weight: 700; font-size: .95rem; border-bottom: 0; }
+tr.grouprow td:first-child, td.grouprow { border-left: 5px solid var(--accent); }
+.subrow td:first-child { padding-left: 1.6rem; }
+.subrow td { border-bottom-color: var(--line); }
 .check { display: inline-flex; align-items: center; gap: .35rem; margin: .15rem .9rem .15rem 0; font-weight: 400; }
 .check input { margin: 0; }
 .checks { padding-left: 1.4rem; }
 details > summary { cursor: pointer; }
+@media (max-width: 600px) { .groupbody { margin-left: .2rem; padding-left: .6rem; } }

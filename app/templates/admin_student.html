@@ -40,8 +40,8 @@
       <td><input type="checkbox" data-toggle="p-{{ g.key }}" data-col="report" aria-label="Alla i {{ g.title }}" {{ 'checked' if g.all_report }}></td>
     </tr>
     {% for x in g.subjects %}
-    <tr>
-      <td style="padding-left:1.2rem">{{ label(x) }}</td>
+    <tr class="subrow">
+      <td>{{ label(x) }}</td>
       <td><input type="checkbox" name="enabled" value="{{ x }}" data-group="e-{{ g.key }}" {{ 'checked' if settings[x].enabled }}></td>
       <td><input type="checkbox" name="report" value="{{ x }}" data-group="p-{{ g.key }}" {{ 'checked' if settings[x].in_report }}></td>
     </tr>
@@ -74,8 +74,22 @@ document.querySelectorAll('input[data-toggle]').forEach(function (t) {
 
 {% for g in groups %}
 <h2 class="grouphead">{{ g.title }}</h2>
+<div class="groupbody">
 {% for x in g.subjects %}
 {% set b = bmap[x] %}
+{% if not b.summary.level and not b.tests and not b.topics %}
+<div class="card compact">
+  <div class="row" style="justify-content:space-between;align-items:center">
+    <div><strong>{{ label(b.subject) }}</strong> {% if not settings[b.subject].enabled %} <span class="pill off">avstängt för eleven</span>{% endif %}{% if not settings[b.subject].in_report %} <span class="pill off">inte i rapporten</span>{% endif %} <span class="muted">· inte påbörjad, eleven gör ett inledande test först</span></div>
+    <form method="post" action="/admin/student/{{ s.id }}/level" class="row" style="align-items:center">
+      <input type="hidden" name="subject" value="{{ b.subject }}">
+      <span class="muted">Sätt nivå</span>
+      <select name="level" aria-label="Sätt nivå i {{ label(b.subject) }}">{% for l in range(1, 6) %}<option value="{{ l }}">{{ l }} – {{ LEVEL_HINTS[l] }}</option>{% endfor %}</select>
+      <button class="small">Spara</button>
+    </form>
+  </div>
+</div>
+{% else %}
 <h3 class="subjecthead">{{ label(b.subject) }}{% if not settings[b.subject].enabled %} <span class="pill off">avstängt för eleven</span>{% endif %}{% if not settings[b.subject].in_report %} <span class="pill off">inte i rapporten</span>{% endif %}</h3>
 <div class="card">
   <div class="row" style="justify-content:space-between">
@@ -115,7 +129,9 @@ document.querySelectorAll('input[data-toggle]').forEach(function (t) {
   </table>
   {% endif %}
 </div>
+{% endif %}
 {% endfor %}
+</div>
 {% endfor %}
 
 <h2>Senaste svaren</h2>

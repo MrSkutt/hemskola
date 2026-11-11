@@ -15,7 +15,7 @@
     {% for g in st.groups %}
     <tr><td colspan="4" class="grouprow">{{ g.title }}</td></tr>
     {% for s in g.rows %}
-    <tr>
+    <tr class="subrow">
       <td>{{ label(s.subject) }}</td>
       <td>{% if s.level %}<strong>{{ s.level }}</strong> <span class="muted">({{ LEVEL_HINTS[s.level] }})</span>{% else %}<span class="muted">inte testad</span>{% endif %}</td>
       <td>{% if s.n7 %}{{ s.n7 }} svar, {{ s.acc7 }} % rätt{% else %}<span class="muted">–</span>{% endif %}</td>

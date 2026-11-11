@@ -16,7 +16,7 @@
 
 {% for g in groups %}
 <h2 class="grouphead">{{ g.title }}</h2>
-<div class="grid">
+<div class="groupbody"><div class="grid">
 {% for s in g["items"] %}
   <div class="card">
     <h3 class="subjecthead">{{ label(s.key) }}</h3>
@@ -34,7 +34,7 @@
     {% endif %}
   </div>
 {% endfor %}
-</div>
+</div></div>
 {% else %}
 <div class="card">Det finns inga ämnen att öva i just nu. Be admin lägga in övningar eller slå på ämnen.</div>
 {% endfor %}
