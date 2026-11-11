@@ -6,13 +6,58 @@
 <h1>{{ s.display_name }} <span class="muted" style="font-size:1rem">({{ s.username }})</span></h1>
 <p class="muted">Idag: {{ today }} svar · 🔥 {{ streak }} {{ 'dag' if streak == 1 else 'dagar' }} i rad</p>
 
-<form method="get" action="/admin/student/{{ s.id }}/report.pdf" class="card row" target="_blank">
-  <div><strong>Rapport att visa skolan</strong><div class="muted">PDF med nivåer, prov och vad som behöver övas.</div></div>
-  <div><label style="margin:0">Period</label>
-    <select name="days"><option value="30">Senaste 30 dagarna</option><option value="7">Senaste 7 dagarna</option>
-      <option value="90">Senaste 90 dagarna</option><option value="0">Hela tiden</option></select></div>
-  <button class="small">Öppna PDF</button>
+<form method="get" action="/admin/student/{{ s.id }}/report.pdf" class="card" target="_blank">
+  <div class="row">
+    <div><strong>Rapport att visa skolan</strong><div class="muted">PDF med nivåer, prov och vad som behöver övas.</div></div>
+    <div><label style="margin:0">Period</label>
+      <select name="days"><option value="30">Senaste 30 dagarna</option><option value="7">Senaste 7 dagarna</option>
+        <option value="90">Senaste 90 dagarna</option><option value="0">Hela tiden</option></select></div>
+    <button class="small">Öppna PDF</button>
+  </div>
+  <details style="margin-top:.7rem">
+    <summary class="muted">Ämnen i rapporten (utgår från elevens inställning nedan, ändra bara för den här rapporten)</summary>
+    {% for g in groups %}
+    <div style="margin:.5rem 0 0">
+      <label class="check"><input type="checkbox" data-toggle="r-{{ g.key }}" data-col="subjects" {{ 'checked' if g.all_report }}> <strong>{{ g.title }}</strong></label>
+      <div class="checks">
+        {% for x in g.subjects %}<label class="check"><input type="checkbox" name="subjects" value="{{ x }}" data-group="r-{{ g.key }}" {{ 'checked' if settings[x].in_report }}> {{ label(x) }}</label>{% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </details>
 </form>
+
+<form method="post" action="/admin/student/{{ s.id }}/subjects" class="card">
+  <strong>Ämnen för {{ s.display_name }}</strong>
+  <div class="muted">Välj vilka ämnen eleven ser och kan öva i, och vilka som tas med i skolrapporten. Allt som redan gjorts sparas även om ett ämne stängs av.
+    Fritidsämnen som K-pop tas som standard inte med i rapporten.</div>
+  <table style="margin-top:.5rem">
+    <tr><th>Ämne</th><th style="width:9rem">Visas för eleven</th><th style="width:9rem">Med i rapporten</th></tr>
+    {% for g in groups %}
+    <tr class="grouprow">
+      <td>{{ g.title }}</td>
+      <td><input type="checkbox" data-toggle="e-{{ g.key }}" data-col="enabled" aria-label="Alla i {{ g.title }}" {{ 'checked' if g.all_enabled }}></td>
+      <td><input type="checkbox" data-toggle="p-{{ g.key }}" data-col="report" aria-label="Alla i {{ g.title }}" {{ 'checked' if g.all_report }}></td>
+    </tr>
+    {% for x in g.subjects %}
+    <tr>
+      <td style="padding-left:1.2rem">{{ label(x) }}</td>
+      <td><input type="checkbox" name="enabled" value="{{ x }}" data-group="e-{{ g.key }}" {{ 'checked' if settings[x].enabled }}></td>
+      <td><input type="checkbox" name="report" value="{{ x }}" data-group="p-{{ g.key }}" {{ 'checked' if settings[x].in_report }}></td>
+    </tr>
+    {% endfor %}
+    {% endfor %}
+  </table>
+  <p style="margin-bottom:0"><button class="small">Spara ämnesval</button></p>
+</form>
+<script>
+document.querySelectorAll('input[data-toggle]').forEach(function (t) {
+  t.addEventListener('change', function () {
+    document.querySelectorAll('input[name="' + t.dataset.col + '"][data-group="' + t.dataset.toggle + '"]')
+      .forEach(function (c) { c.checked = t.checked; });
+  });
+});
+</script>
 
 <div class="card">
   <strong>Svar per dag, senaste 14 dagarna</strong> <span class="muted">(grönt = rätt, rött = fel)</span>
@@ -27,8 +72,11 @@
   <div class="chartlabels">{% for c in chart %}<span>{{ c.date.day }}</span>{% endfor %}</div>
 </div>
 
-{% for b in blocks %}
-<h2>{{ label(b.subject) }}</h2>
+{% for g in groups %}
+<h2 class="grouphead">{{ g.title }}</h2>
+{% for x in g.subjects %}
+{% set b = bmap[x] %}
+<h3 class="subjecthead">{{ label(b.subject) }}{% if not settings[b.subject].enabled %} <span class="pill off">avstängt för eleven</span>{% endif %}{% if not settings[b.subject].in_report %} <span class="pill off">inte i rapporten</span>{% endif %}</h3>
 <div class="card">
   <div class="row" style="justify-content:space-between">
     <div>
@@ -67,6 +115,7 @@
   </table>
   {% endif %}
 </div>
+{% endfor %}
 {% endfor %}
 
 <h2>Senaste svaren</h2>

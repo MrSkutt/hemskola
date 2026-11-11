@@ -42,16 +42,21 @@ def _since(days: int) -> str:
     return (datetime.now(timezone.utc) - timedelta(days=days)).strftime("%Y-%m-%d %H:%M:%S")
 
 
-def collect(db, student, days: int) -> dict:
+def collect(db, student, days: int, subject_filter=None) -> dict:
+    """Samlar rapportens data. `subject_filter` är de ämnen som ska med (standard: elevens sparade rapportval)."""
     uid = student["id"]
     since = _since(days)
+    if subject_filter is None:
+        subject_filter = logic.report_subjects(db, uid)
+    subject_filter = list(subject_filter)
     rows = db.execute(
         """SELECT a.created_at, a.correct, a.given, e.subject, e.topic, e.level, a.test_id,
                   COALESCE(g.question, e.question) AS question, COALESCE(g.answers, e.answers) AS answers
            FROM attempts a JOIN exercises e ON e.id=a.exercise_id LEFT JOIN generated g ON g.id=a.generated_id
            WHERE a.user_id=? AND a.created_at>=? ORDER BY a.id""", (uid, since)).fetchall()
+    rows = [r for r in rows if r["subject"] in subject_filter]
     subjects = []
-    for sub in logic.active_subjects(db):
+    for sub in logic.ordered_subjects(x for x in logic.active_subjects(db) if x in subject_filter):
         mine = [r for r in rows if r["subject"] == sub]
         level = logic.get_level(db, uid, sub)
         if not mine and not level:
@@ -71,10 +76,10 @@ def collect(db, student, days: int) -> dict:
             "subject": sub, "level": level, "n": len(mine), "correct": sum(r["correct"] for r in mine),
             "topics": topic_list, "missed": missed, "tests": tests,
         })
-    streak, _ = logic.streak_and_today(db, uid)
+    streak, _ = logic.streak_and_today(db, uid, subject_filter)
     day_set = {logic.parse_ts(r["created_at"]).date() for r in rows}
     return {"rows": rows, "subjects": subjects, "streak": streak, "active_days": len(day_set), "days": days,
-            "first_day": min(day_set) if day_set else None}
+            "first_day": min(day_set) if day_set else None, "included": subject_filter}
 
 
 def _activity_chart(rows, days, width, height=90):
@@ -124,8 +129,8 @@ def _activity_chart(rows, days, width, height=90):
     return caption, d
 
 
-def build_pdf(db, student, days: int = 30) -> bytes:
-    data = collect(db, student, days)
+def build_pdf(db, student, days: int = 30, subject_filter=None) -> bytes:
+    data = collect(db, student, days, subject_filter)
     st = _styles()
     buf = io.BytesIO()
     doc = SimpleDocTemplate(buf, pagesize=A4, leftMargin=18 * mm, rightMargin=18 * mm, topMargin=16 * mm,
@@ -133,8 +138,10 @@ def build_pdf(db, student, days: int = 30) -> bytes:
                             author="Hemskola")
     width = A4[0] - 36 * mm
     story = [_p("Hemskola – rapport", st["title"]),
-             _p(f"{student['display_name']} · {PERIODS[days]} · skapad {logic.today().isoformat()}", st["p"]),
-             Spacer(1, 6)]
+             _p(f"{student['display_name']} · {PERIODS[days]} · skapad {logic.today().isoformat()}", st["p"])]
+    included = logic.ordered_subjects(data["included"])
+    story.append(_p("Ämnen i rapporten: " + (", ".join(logic.label(x) for x in included) or "inga"), st["small"]))
+    story.append(Spacer(1, 6))
 
     rows = data["rows"]
     total = len(rows)

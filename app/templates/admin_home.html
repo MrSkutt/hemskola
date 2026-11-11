@@ -12,7 +12,9 @@
   </div>
   <table>
     <tr><th>Ämne</th><th>Nivå</th><th>Senaste 7 dagarna</th><th>Senast aktiv</th></tr>
-    {% for s in st.subjects %}
+    {% for g in st.groups %}
+    <tr><td colspan="4" class="grouprow">{{ g.title }}</td></tr>
+    {% for s in g.rows %}
     <tr>
       <td>{{ label(s.subject) }}</td>
       <td>{% if s.level %}<strong>{{ s.level }}</strong> <span class="muted">({{ LEVEL_HINTS[s.level] }})</span>{% else %}<span class="muted">inte testad</span>{% endif %}</td>
@@ -20,7 +22,9 @@
       <td>{{ s.last|dt }}</td>
     </tr>
     {% endfor %}
+    {% endfor %}
   </table>
+  {% if st.off %}<p class="muted" style="margin:.6rem 0 0">Avstängda för eleven: {% for x in st.off %}{{ label(x) }}{{ ', ' if not loop.last }}{% endfor %}. <a href="/admin/student/{{ st.u.id }}">Ändra ämnesval</a></p>{% endif %}
 </div>
 {% else %}
 <div class="card">Inga elever än. <a href="/admin/users">Skapa en elev</a>.</div>

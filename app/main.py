@@ -8,7 +8,7 @@ import time
 from contextlib import asynccontextmanager
 from pathlib import Path
 
-from fastapi import Depends, FastAPI, File, Form, HTTPException, Request, UploadFile
+from fastapi import Depends, FastAPI, File, Form, HTTPException, Query, Request, UploadFile
 from fastapi.responses import FileResponse, JSONResponse, RedirectResponse, Response
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -189,24 +189,27 @@ def index(user=Depends(current_user)):
 
 @app.get("/home")
 def home(request: Request, user=Depends(student_user), db=Depends(database.get_db)):
-    subjects = []
-    for s in logic.active_subjects(db):
-        level = logic.get_level(db, user["id"], s)
-        subjects.append({
-            "key": s, "level": level,
-            "dots": logic.window_results(db, user["id"], s),
-        })
+    shown = [s for s in logic.enabled_subjects(db, user["id"]) if s in logic.active_subjects(db)]
+    groups = logic.group_subjects(shown)
+    for g in groups:
+        g["items"] = [{"key": s, "level": logic.get_level(db, user["id"], s),
+                       "dots": logic.window_results(db, user["id"], s)} for s in g["subjects"]]
     streak, count_today = logic.streak_and_today(db, user["id"])
-    open_test = db.execute(
-        "SELECT id, subject FROM tests WHERE user_id=? AND finished_at IS NULL ORDER BY id DESC LIMIT 1",
-        (user["id"],),
-    ).fetchone()
-    return render(request, "home.html", subjects=subjects, streak=streak, count_today=count_today,
+    open_test = None
+    for t in db.execute(
+            "SELECT id, subject FROM tests WHERE user_id=? AND finished_at IS NULL ORDER BY id DESC", (user["id"],)):
+        if logic.subject_enabled(db, user["id"], t["subject"]):   # prov i avstängda ämnen visas inte
+            open_test = t
+            break
+    return render(request, "home.html", groups=groups, streak=streak, count_today=count_today,
                   open_test=open_test)
 
 
 @app.get("/practice/{subject}")
 def practice(request: Request, subject: str, user=Depends(student_user), db=Depends(database.get_db)):
+    if not logic.subject_enabled(db, user["id"], subject):
+        flash(request, "Det här ämnet är inte på just nu.", "warn")
+        return go("/home")
     level = logic.get_level(db, user["id"], subject)
     if level is None:
         return go("/home")
@@ -229,6 +232,8 @@ def _shuffled(item):
 @app.post("/practice/{subject}")
 def practice_answer(subject: str, exercise_id: int = Form(...), generated_id: str = Form(""), given: str = Form(""),
                     user=Depends(student_user), db=Depends(database.get_db)):
+    if not logic.subject_enabled(db, user["id"], subject):
+        return go("/home")
     item = logic.resolve_item(db, user["id"], exercise_id, int(generated_id) if generated_id.isdigit() else None)
     if not item or item["subject"] != subject or not given.strip():
         return go(f"/practice/{subject}")
@@ -255,6 +260,9 @@ def answer_page(request: Request, attempt_id: int, change: str = "", user=Depend
 
 @app.post("/test/start/{subject}")
 def test_start(request: Request, subject: str, user=Depends(student_user), db=Depends(database.get_db)):
+    if not logic.subject_enabled(db, user["id"], subject):
+        flash(request, "Det här ämnet är inte på just nu.", "warn")
+        return go("/home")
     open_test = db.execute(
         "SELECT id FROM tests WHERE user_id=? AND subject=? AND finished_at IS NULL",
         (user["id"], subject),
@@ -319,9 +327,13 @@ def admin_home(request: Request, user=Depends(admin_user), db=Depends(database.g
     students = []
     for s in db.execute("SELECT * FROM users WHERE role='student' ORDER BY active DESC, display_name"):
         streak, count_today = logic.streak_and_today(db, s["id"])
+        settings = logic.subject_settings(db, s["id"], subjects)
+        groups = logic.group_subjects(sub for sub in subjects if settings[sub]["enabled"])
+        for g in groups:
+            g["rows"] = [logic.subject_summary(db, s["id"], sub) for sub in g["subjects"]]
         students.append({
-            "u": s, "streak": streak, "today": count_today,
-            "subjects": [logic.subject_summary(db, s["id"], sub) for sub in subjects],
+            "u": s, "streak": streak, "today": count_today, "groups": groups,
+            "off": [sub for sub in logic.ordered_subjects(subjects) if not settings[sub]["enabled"]],
         })
     return render(request, "admin_home.html", students=students)
 
@@ -331,7 +343,12 @@ def admin_student(request: Request, student_id: int, user=Depends(admin_user), d
     s = db.execute("SELECT * FROM users WHERE id=? AND role='student'", (student_id,)).fetchone()
     if not s:
         raise HTTPException(404)
-    subjects = logic.active_subjects(db)
+    subjects = logic.ordered_subjects(logic.active_subjects(db))
+    settings = logic.subject_settings(db, student_id, subjects)
+    groups = logic.group_subjects(subjects)
+    for g in groups:
+        g["all_enabled"] = all(settings[x]["enabled"] for x in g["subjects"])
+        g["all_report"] = all(settings[x]["in_report"] for x in g["subjects"])
     blocks = []
     for sub in subjects:
         tests = db.execute(
@@ -352,21 +369,39 @@ def admin_student(request: Request, student_id: int, user=Depends(admin_user), d
     streak, count_today = logic.streak_and_today(db, student_id)
     return render(request, "admin_student.html", s=s, blocks=blocks, recent=recent, chart=chart,
                   chart_max=max([c["total"] for c in chart] + [1]), streak=streak, today=count_today,
-                  json=json)
+                  json=json, groups=groups, settings=settings, bmap={b["subject"]: b for b in blocks})
 
 
 @app.get("/admin/student/{student_id}/report.pdf")
-def admin_student_report(student_id: int, days: int = 30, user=Depends(admin_user), db=Depends(database.get_db)):
+def admin_student_report(student_id: int, days: int = 30, subjects: list[str] = Query(default=None),
+                         user=Depends(admin_user), db=Depends(database.get_db)):
     s = db.execute("SELECT * FROM users WHERE id=? AND role='student'", (student_id,)).fetchone()
     if not s:
         raise HTTPException(404)
     if days not in report.PERIODS:
         days = 30
-    pdf = report.build_pdf(db, s, days)
+    chosen = None   # utan val i formuläret gäller elevens sparade rapportval
+    if subjects:
+        known = set(logic.active_subjects(db))
+        chosen = logic.ordered_subjects(x for x in set(subjects) if x in known) or None
+    pdf = report.build_pdf(db, s, days, chosen)
     name = re.sub(r"[^A-Za-z0-9_-]+", "_", s["username"]) or "elev"
     return Response(pdf, media_type="application/pdf", headers={
         "Content-Disposition": f'inline; filename="rapport_{name}_{logic.today().isoformat()}.pdf"',
         "Cache-Control": "no-store", "X-Content-Type-Options": "nosniff"})
+
+
+@app.post("/admin/student/{student_id}/subjects")
+def admin_set_subjects(request: Request, student_id: int, enabled: list[str] = Form(default=[]),
+                       report_in: list[str] = Form(default=[], alias="report"),
+                       user=Depends(admin_user), db=Depends(database.get_db)):
+    if not db.execute("SELECT 1 FROM users WHERE id=? AND role='student'", (student_id,)).fetchone():
+        raise HTTPException(404)
+    subjects = logic.active_subjects(db)
+    logic.save_subject_settings(db, student_id, enabled, report_in, subjects)
+    db.commit()
+    flash(request, "Ämnesvalen är sparade.")
+    return go(f"/admin/student/{student_id}")
 
 
 @app.post("/admin/student/{student_id}/level")

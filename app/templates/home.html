@@ -14,10 +14,12 @@
 </div>
 {% endif %}
 
+{% for g in groups %}
+<h2 class="grouphead">{{ g.title }}</h2>
 <div class="grid">
-{% for s in subjects %}
+{% for s in g["items"] %}
   <div class="card">
-    <h2 style="margin-top:0">{{ label(s.key) }}</h2>
+    <h3 class="subjecthead">{{ label(s.key) }}</h3>
     {% if s.level %}
       <div class="level">Nivå {{ s.level }} <span class="muted" style="font-size:1rem;font-weight:400">av 5</span></div>
       <div class="bar" style="margin:.5rem 0"><i style="width:{{ s.level * 20 }}%"></i></div>
@@ -31,8 +33,9 @@
       <form method="post" action="/test/start/{{ s.key }}"><button>Starta inledande test</button></form>
     {% endif %}
   </div>
-{% else %}
-  <div class="card">Det finns inga övningar än. Be admin lägga in några.</div>
 {% endfor %}
 </div>
+{% else %}
+<div class="card">Det finns inga ämnen att öva i just nu. Be admin lägga in övningar eller slå på ämnen.</div>
+{% endfor %}
 {% endblock %}

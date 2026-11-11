@@ -34,6 +34,17 @@ SUBJECT_LABELS = {
     "kpop": "K-pop",
 }
 
+# Ämnesgrupper på startsidan och i adminvyerna. Okända ämnen (som admin själv skapat) hamnar i "Övrigt".
+SUBJECT_GROUPS = [
+    ("grund", "Grundämnen", ("matte", "svenska", "engelska")),
+    ("no", "Naturorienterande ämnen (NO)", ("biologi", "fysik", "kemi", "teknik")),
+    ("so", "Samhällsorienterande ämnen (SO)", ("geografi", "historia", "religionskunskap", "samhallskunskap")),
+    ("fritid", "Fritid och skoj", ("kpop",)),
+]
+OTHER_GROUP = ("ovrigt", "Övrigt")
+# Fritidsämnen tas som standard inte med i rapporten till skolan (admin kan slå på dem per elev).
+LEISURE_SUBJECTS = frozenset(s for key, _, members in SUBJECT_GROUPS if key == "fritid" for s in members)
+
 LEVEL_HINTS = {  # visas bara för admin
     1: "ungefär åk 4–5",
     2: "ungefär åk 6",
@@ -429,16 +440,27 @@ def test_review(db, test_id: int) -> list:
 
 # ---------------------------------------------------------------- statistik
 
-def attempt_days(db, user_id: int, days: int = 60) -> list:
+def attempt_days(db, user_id: int, days: int = 60, subjects=None) -> list:
+    """Svar per dag. Med `subjects` räknas bara svar i de ämnena (t.ex. för skolrapporten)."""
     since = (datetime.now(timezone.utc) - timedelta(days=days + 1)).strftime("%Y-%m-%d %H:%M:%S")
-    rows = db.execute(
-        "SELECT created_at, correct FROM attempts WHERE user_id=? AND created_at>=?", (user_id, since)
-    ).fetchall()
+    if subjects is None:
+        rows = db.execute(
+            "SELECT created_at, correct FROM attempts WHERE user_id=? AND created_at>=?", (user_id, since)
+        ).fetchall()
+    else:
+        subs = list(subjects)
+        if not subs:
+            return []
+        marks = ",".join("?" * len(subs))
+        rows = db.execute(
+            f"""SELECT a.created_at, a.correct FROM attempts a JOIN exercises e ON e.id=a.exercise_id
+                WHERE a.user_id=? AND a.created_at>=? AND e.subject IN ({marks})""", (user_id, since, *subs)
+        ).fetchall()
     return [(parse_ts(r["created_at"]).date(), r["correct"]) for r in rows]
 
 
-def streak_and_today(db, user_id: int):
-    items = attempt_days(db, user_id)
+def streak_and_today(db, user_id: int, subjects=None):
+    items = attempt_days(db, user_id, subjects=subjects)
     days = {d for d, _ in items}
     t = today()
     count_today = sum(1 for d, _ in items if d == t)
@@ -495,6 +517,65 @@ def topic_stats(db, user_id: int, subject: str) -> list:
 def active_subjects(db) -> list:
     return [r["subject"] for r in db.execute(
         "SELECT DISTINCT subject FROM exercises WHERE active=1 ORDER BY subject")]
+
+
+# ---------------------------------------------------------------- ämnesgrupper och ämnesval per elev
+
+def group_subjects(subjects) -> list:
+    """Delar in ämnen i grupper (i fast ordning). Varje grupp: {"key", "title", "subjects"}."""
+    present = list(subjects)
+    groups, used = [], set()
+    for key, title, members in SUBJECT_GROUPS:
+        got = [s for s in members if s in present]
+        if got:
+            groups.append({"key": key, "title": title, "subjects": got})
+            used.update(got)
+    rest = sorted(s for s in present if s not in used)
+    if rest:
+        groups.append({"key": OTHER_GROUP[0], "title": OTHER_GROUP[1], "subjects": rest})
+    return groups
+
+
+def ordered_subjects(subjects) -> list:
+    return [s for g in group_subjects(subjects) for s in g["subjects"]]
+
+
+def subject_settings(db, user_id: int, subjects=None) -> dict:
+    """Ämne -> {"enabled", "in_report"} för en elev. Saknas en sparad rad gäller standardvärdet."""
+    subs = list(subjects) if subjects is not None else active_subjects(db)
+    stored = {r["subject"]: r for r in db.execute(
+        "SELECT subject, enabled, in_report FROM user_subjects WHERE user_id=?", (user_id,))}
+    out = {}
+    for s in subs:
+        r = stored.get(s)
+        out[s] = {"enabled": bool(r["enabled"]) if r else True,
+                  "in_report": bool(r["in_report"]) if r else s not in LEISURE_SUBJECTS}
+    return out
+
+
+def subject_enabled(db, user_id: int, subject: str) -> bool:
+    r = db.execute("SELECT enabled FROM user_subjects WHERE user_id=? AND subject=?", (user_id, subject)).fetchone()
+    return bool(r["enabled"]) if r else True
+
+
+def enabled_subjects(db, user_id: int) -> list:
+    """De ämnen eleven får se och öva i, i gruppordning."""
+    settings = subject_settings(db, user_id)
+    return ordered_subjects(s for s, v in settings.items() if v["enabled"])
+
+
+def report_subjects(db, user_id: int) -> list:
+    """De ämnen som tas med i elevens rapport som standard."""
+    settings = subject_settings(db, user_id)
+    return ordered_subjects(s for s, v in settings.items() if v["in_report"])
+
+
+def save_subject_settings(db, user_id: int, enabled, in_report, subjects) -> None:
+    """Sparar ämnesval för alla `subjects`: de som finns i `enabled`/`in_report` slås på, övriga av."""
+    enabled, in_report = set(enabled), set(in_report)
+    for s in subjects:
+        db.execute("INSERT OR REPLACE INTO user_subjects (user_id, subject, enabled, in_report) VALUES (?,?,?,?)",
+                   (user_id, s, int(s in enabled), int(s in in_report)))
 
 
 # ---------------------------------------------------------------- import

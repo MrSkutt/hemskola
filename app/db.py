@@ -94,6 +94,14 @@ CREATE TABLE IF NOT EXISTS attempts (
     created_at TEXT NOT NULL DEFAULT (datetime('now')),
     generated_id INTEGER REFERENCES generated(id)
 );
+-- Ämnesval per elev: saknas en rad gäller standard (ämnet visas, och tas med i rapporten utom fritidsämnen).
+CREATE TABLE IF NOT EXISTS user_subjects (
+    user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    subject TEXT NOT NULL,
+    enabled INTEGER NOT NULL DEFAULT 1,
+    in_report INTEGER NOT NULL DEFAULT 1,
+    PRIMARY KEY (user_id, subject)
+);
 CREATE INDEX IF NOT EXISTS idx_attempts_user ON attempts(user_id, id);
 CREATE INDEX IF NOT EXISTS idx_exercises_pick ON exercises(subject, level, active);
 """

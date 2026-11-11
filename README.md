@@ -129,6 +129,22 @@ Filer som heter `<ämne>_2.json` är de utökade frågeuppsättningarna. NO/SO-�
 formler, densitet och Ohms lag, binära tal, huvudstäder, årtal, moms, ränta och mycket annat, där svaret räknas ut i kod.
 Nya ämnen skapas automatiskt: importera övningar med t.ex. `"subject": "engelska"`. Egna visningsnamn läggs i `SUBJECT_LABELS` i `app/logic.py`.
 
+### Ämnesgrupper och ämnesval per elev
+
+Startsidan och adminvyerna delar in ämnena i grupper: *Grundämnen* (matte, svenska, engelska), *Naturorienterande ämnen (NO)*,
+*Samhällsorienterande ämnen (SO)* och *Fritid och skoj* (K-pop). Ämnen du skapat själv hamnar under *Övrigt*. Grupperna ligger i
+`SUBJECT_GROUPS` i `app/logic.py`.
+
+Under **Elever → en elev** finns rutan **Ämnen för eleven** med två val per ämne:
+
+* **Visas för eleven**: avstängda ämnen syns inte på elevens startsida och kan inte övas eller provas. Redan gjorda svar och nivåer sparas.
+* **Med i rapporten**: styr vilka ämnen som tas med i PDF-rapporten (även antal svar, andel rätt och dagar i rad räknas bara på dessa).
+  Fritidsämnen som K-pop är som standard *inte* med i rapporten. Vill du ändra rapporten bara en gång kan du bocka i eller ur ämnen under
+  *Ämnen i rapporten* i rapportrutan, utan att ändra elevens inställning.
+
+Rutorna vid gruppnamnen slår på eller av hela gruppen. Nya elever och nya ämnen får standardvalen (allt visas, allt utom fritidsämnen
+är med i rapporten). Valen sparas i tabellen `user_subjects`, som läggs till automatiskt vid uppgradering.
+
 ## K-pop
 
 Ämnet **K-pop** (`"subject": "kpop"`) har ett par hundra frågor om grupper, fans, historia, koreanska och hangul, plus matteuppgifter med konserter, streams och biljetter.
