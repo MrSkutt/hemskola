@@ -27,4 +27,5 @@
   </form>
 </div>
 {% if mode == 'test' %}<p class="muted">Du får se rätt svar när provet är klart.</p>{% endif %}
+{% if facts_subject %}<p class="factlink"><a href="/fakta/{{ facts_subject }}" target="_blank" rel="noopener">📖 Fakta om {{ label(facts_subject)|lower }} (öppnas i ny flik)</a></p>{% endif %}
 {% endblock %}

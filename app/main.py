@@ -15,7 +15,7 @@ from fastapi.templating import Jinja2Templates
 from starlette.middleware.sessions import SessionMiddleware
 
 from . import db as database
-from . import logic, report
+from . import facts, logic, report
 from . import words as wordlist
 from .security import hash_password, verify_password
 
@@ -88,6 +88,7 @@ app.add_middleware(
 app.mount("/static", StaticFiles(directory=BASE / "static"), name="static")
 templates = Jinja2Templates(directory=BASE / "templates")
 templates.env.globals.update(label=logic.label, LEVEL_HINTS=logic.LEVEL_HINTS, WINDOW=logic.WINDOW)
+templates.env.filters["fmt"] = facts.fmt
 templates.env.filters["dt"] = lambda v: v.strftime("%Y-%m-%d %H:%M") if v else "–"
 templates.env.filters["day"] = lambda v: v.strftime("%Y-%m-%d") if v else "–"
 templates.env.filters["ts"] = lambda s: logic.parse_ts(s).strftime("%Y-%m-%d %H:%M") if s else "–"
@@ -202,7 +203,7 @@ def home(request: Request, user=Depends(student_user), db=Depends(database.get_d
             open_test = t
             break
     return render(request, "home.html", groups=groups, streak=streak, count_today=count_today,
-                  open_test=open_test)
+                  open_test=open_test, has_facts=facts.available())
 
 
 @app.get("/practice/{subject}")
@@ -218,7 +219,8 @@ def practice(request: Request, subject: str, user=Depends(student_user), db=Depe
         flash(request, "Det finns inga övningar i det här ämnet än.", "warn")
         return go("/home")
     return render(request, "question.html", ex=item, options=_shuffled(item), action=f"/practice/{subject}",
-                  mode="practice", level=level, window=logic.window_results(db, user["id"], subject))
+                  mode="practice", level=level, window=logic.window_results(db, user["id"], subject),
+                  facts_subject=subject if facts.exists(subject) else None)
 
 
 def _shuffled(item):
@@ -254,6 +256,34 @@ def answer_page(request: Request, attempt_id: int, change: str = "", user=Depend
     return render(request, "answer.html", a=a, ex=item, answers=item["answers"],
                   change=change if change in ("up", "down") else "", level=level,
                   window=logic.window_results(db, user["id"], item["subject"]))
+
+
+# ---------------------------------------------------------------- fakta
+
+def _fact_subjects(db, user) -> list:
+    """Ämnen med faktasida som användaren får se (elever: bara de ämnen som är påslagna för dem)."""
+    have = facts.available()
+    if user["role"] == "student":
+        return [s for s in logic.enabled_subjects(db, user["id"]) if s in have]
+    return logic.ordered_subjects(have)
+
+
+@app.get("/fakta")
+def facts_index(request: Request, user=Depends(current_user), db=Depends(database.get_db)):
+    groups = logic.group_subjects(_fact_subjects(db, user))
+    for g in groups:
+        g["items"] = []
+        for s in g["subjects"]:
+            page = facts.load(s)
+            g["items"].append({"key": s, "intro": page["intro"], "sections": page["sections"]})
+    return render(request, "facts_index.html", groups=groups)
+
+
+@app.get("/fakta/{subject}")
+def facts_page(request: Request, subject: str, user=Depends(current_user), db=Depends(database.get_db)):
+    if subject not in _fact_subjects(db, user):
+        raise HTTPException(404)
+    return render(request, "facts_page.html", subject=subject, page=facts.load(subject))
 
 
 # ---------------------------------------------------------------- prov

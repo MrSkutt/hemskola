@@ -241,7 +241,7 @@ def test_old_database_is_upgraded_without_losing_data(tmp_path, monkeypatch):
 def test_example_images_and_subjects_are_installed(client):
     login(client, "admin", "adminpass1")
     for name in ("scene.svg", "vattnets_kretslopp.svg", "solsystemet.svg", "vaxtens_delar.svg", "lightstick.svg", "scen.svg", "hangul_block.svg", "taegukgi.svg",
-                 "cell.svg", "atom.svg", "krets.svg", "narings_kedja.svg", "periodiska.svg"):
+                 "cell.svg", "atom.svg", "krets.svg", "narings_kedja.svg", "periodiska.svg", "periodiska_hela.svg"):
         r = client.get(f"/media/{name}")
         assert r.status_code == 200 and r.headers["content-type"] == "image/svg+xml"
     conn = _conn()
@@ -343,5 +343,5 @@ def test_seed_content_integrity():
             if e.get("image"):
                 assert os.path.exists(os.path.join(seed_dir, "media", e["image"])), where
             if e.get("diagram"):
-                diagrams.validate(e["diagram"])
+                assert diagrams.validate(e["diagram"]) is None, e["diagram"]
     assert total > 1000

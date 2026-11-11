@@ -11,15 +11,18 @@
   <a class="brand" href="/">📚 Hemskola</a>
   {% if user %}
   <nav>
+    {% set path = request.url.path %}
     {% if user.role == 'admin' %}
       <a href="/admin">Elever</a>
+      <a href="/fakta" {{ 'class=active' if path.startswith('/fakta') }}>Fakta</a>
       <a href="/admin/exercises">Övningar</a>
       <a href="/admin/words">Ord</a>
       <a href="/admin/media">Bilder</a>
       <a href="/admin/import">Importera</a>
       <a href="/admin/users">Användare</a>
     {% else %}
-      <a href="/home">Hem</a>
+      <a href="/home" {{ 'class=active' if not path.startswith('/fakta') }}>Övningar</a>
+      <a href="/fakta" {{ 'class=active' if path.startswith('/fakta') }}>Fakta</a>
     {% endif %}
   </nav>
   <form method="post" action="/logout"><span class="muted">{{ user.display_name }}</span> <button class="ghost small">Logga ut</button></form>

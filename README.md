@@ -36,6 +36,7 @@ pytest
 | Övning | Mestadels frågor på nuvarande nivå, ibland repetition av tidigare missade frågor och nivån under. Direkt återkoppling med förklaring. |
 | Nivåbyte | Av de senaste 6 svaren på nivån: **5 rätt eller fler → upp**, **2 rätt eller färre → ner**. Därefter börjar ett nytt fönster. |
 | Statusprov | Samma upplägg som det inledande testet. Rätt svar visas först efteråt. Kan höja nivån men sänker den aldrig. Resultaten sparas så att utvecklingen syns. |
+| Fakta | Fliken **Fakta** har en faktasida per ämne med grunder, formler, tabeller och bilder (se nedan). Fliken med övningar heter **Övningar**. |
 | Admin | Översikt över alla elever, detaljvy med utveckling per dag, svaga områden, prov och senaste svar. Du kan sätta nivå manuellt. |
 
 Eleven ser bara "Nivå 1–5". Kopplingen till ungefärlig årskurs visas bara för admin.
@@ -144,6 +145,41 @@ Under **Elever → en elev** finns rutan **Ämnen för eleven** med två val per
 
 Rutorna vid gruppnamnen slår på eller av hela gruppen. Nya elever och nya ämnen får standardvalen (allt visas, allt utom fritidsämnen
 är med i rapporten). Valen sparas i tabellen `user_subjects`, som läggs till automatiskt vid uppgradering.
+
+## Fakta
+
+Fliken **Fakta** bredvid **Övningar** har en sida per ämne: grunder och sedan lite mer som är bra att kunna. Matte har räkneordning, bråk,
+procent, geometri, formler och grafer. Kemi har atomen och hela periodiska systemet med alla 118 grundämnen (bilden `periodiska_hela.svg`),
+tabeller över vanliga grundämnen och formler, syror och baser, reaktionsformler och mol. Fysik, biologi, teknik, geografi, historia,
+religionskunskap, samhällskunskap, svenska, engelska och K-pop/BTS (med hangul och glosor) har också egna sidor.
+
+* Varje ämneskort på **Övningar** har en länk *📖 Fakta om …*, och under pågående övning finns samma länk (öppnas i ny flik).
+  Länken finns **inte** i inledande test och statusprov, så provet mäter vad eleven kan utan hjälp.
+* Eleven ser faktasidorna för de ämnen som är påslagna för henne (*Visas för eleven*, se ovan). Admin ser alla.
+* Sidorna går att skriva ut (**Skriv ut**-knappen), och bilder öppnas i full storlek när man klickar på dem.
+* Innehållet är skrivet med utgångspunkt i åk 4–9, men fakta ändras med tiden (årtal, folkmängder, vem som styr). Läs gärna igenom sidorna ibland.
+
+**Så ändrar du innehållet:** varje sida är en textfil i `app/facts/<ämne>.md` (t.ex. `matte.md`). Vill du ändra utan att bygga om containern
+lägger du en fil med samma namn i mappen `facts` bredvid databasen, alltså `data/facts/matte.md`. Den används då i stället för den
+inbyggda och läses om automatiskt när filen ändras. En ny fil, t.ex. `data/facts/ritkonst.md`, ger en ny faktasida för ett ämne med det namnet.
+Ämnesnamnet får bara innehålla `a-z`, `0-9` och `_`.
+
+Filformatet är en liten delmängd av markdown:
+
+```markdown
+# Rubrik för sidan
+Första stycket är ingressen som visas på översiktssidan.
+
+## Ett avsnitt                      (### ger en underrubrik)
+Vanlig text med **fet**, *kursiv* och `kod`.
+- punktlista            1. numrerad lista
+| Kolumn 1 | Kolumn 2 |            (första raden är rubriker, raden |---|---| ignoreras)
+| a | b |
+= A = b · h | Rektangelns area      (formelruta, flera rader efter varandra grupperas)
+![solsystemet.svg](Bildtext)        (bild från mediamappen, se Bilder i admin)
+@diagram {"type": "angle", "degrees": 60}   (diagram, samma format som i övningarna)
+> Tips eller extra viktig information
+```
 
 ## K-pop
 

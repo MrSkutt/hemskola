@@ -94,3 +94,37 @@ tr.grouprow td:first-child, td.grouprow { border-left: 5px solid var(--accent); 
 .checks { padding-left: 1.4rem; }
 details > summary { cursor: pointer; }
 @media (max-width: 600px) { .groupbody { margin-left: .2rem; padding-left: .6rem; } }
+
+/* fakta */
+header.top nav a.active { font-weight: 700; text-decoration: none; border-bottom: 2px solid var(--accent); }
+.factlink { margin: .9rem 0 0; font-size: .95rem; }
+.factcard { display: block; text-decoration: none; color: var(--text); margin-bottom: 0; }
+.factcard:hover { border-color: var(--accent); }
+.factsections span { display: inline-block; font-size: .8rem; background: var(--okbg); color: var(--accent-d); border-radius: 99px; padding: .1rem .6rem; margin: 0 .3rem .3rem 0; }
+.lead { font-size: 1.1rem; color: var(--muted); margin: 0 0 1rem; }
+.toc { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 0 1.2rem; }
+.toc a { font-size: .9rem; text-decoration: none; background: var(--card); border: 1px solid var(--line); border-radius: 99px; padding: .2rem .8rem; }
+.toc a:hover { border-color: var(--accent); }
+.factsec { scroll-margin-top: 1rem; }
+.factsec h2 { margin: 0 0 .6rem; font-size: 1.3rem; }
+.factsec p, .factsec li { line-height: 1.55; }
+.factsec ul, .factsec ol { padding-left: 1.4rem; margin: .4rem 0 .8rem; }
+.formulas { display: grid; gap: .5rem; margin: .5rem 0 1rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.formula { background: var(--okbg); border-left: 4px solid var(--accent); border-radius: 0 10px 10px 0; padding: .55rem .8rem; display: flex; flex-direction: column; gap: .15rem; }
+.formula .f { font-weight: 700; font-size: 1.05rem; }
+.formula .t { font-size: .95rem; }
+.factsec h3 { margin: 1.1rem 0 .4rem; font-size: 1.05rem; }
+.note { background: var(--warnbg); border-left: 4px solid var(--warn); border-radius: 0 10px 10px 0; padding: .6rem .9rem; margin: .6rem 0 1rem; }
+.tablewrap { overflow-x: auto; margin: .5rem 0 1rem; }
+.facttable th { background: var(--bg); white-space: nowrap; }
+.facttable td, .facttable th { padding: .4rem .6rem; }
+.factimg { margin: .6rem 0 1rem; text-align: center; }
+.factimg img { max-width: 100%; height: auto; background: #fff; border-radius: 10px; }
+.factimg figcaption { color: var(--muted); font-size: .9rem; margin-top: .3rem; }
+.factdiagram { margin: .4rem 0 1rem; } .factdiagram .diagram { margin: 0 auto; }
+code { background: var(--bg); border: 1px solid var(--line); border-radius: 5px; padding: 0 .3rem; font-size: .92em; }
+@media print {
+  header.top, .noprint { display: none !important; }
+  body { background: #fff; color: #000; }
+  .card { border: 0; padding: .3rem 0; break-inside: avoid-page; }
+}

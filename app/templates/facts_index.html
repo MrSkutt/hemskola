@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Fakta – Hemskola{% endblock %}
+{% block content %}
+<h1>Fakta</h1>
+<p class="muted">Korta sammanfattningar med grunder, formler och tabeller. Bra att ha bredvid när du övar.</p>
+{% for g in groups %}
+<h2 class="grouphead">{{ g.title }}</h2>
+<div class="groupbody"><div class="grid">
+{% for s in g["items"] %}
+  <a class="card factcard" href="/fakta/{{ s.key }}">
+    <h3 class="subjecthead">{{ label(s.key) }}</h3>
+    <p class="muted" style="margin:.2rem 0 .6rem">{{ s.intro }}</p>
+    <p style="margin:0" class="factsections">{% for sec in s.sections %}<span>{{ sec.title }}</span>{% endfor %}</p>
+  </a>
+{% endfor %}
+</div></div>
+{% else %}
+<div class="card">Det finns inga faktasidor att visa just nu.</div>
+{% endfor %}
+{% endblock %}

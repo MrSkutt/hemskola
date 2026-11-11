@@ -1,0 +1,406 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 760 472' width='760' height='472' role='img' aria-label='Periodiska systemet med alla 118 grundämnen'>
+<rect width='760' height='472' fill='#fff'/>
+<text x='53.0' y='20' font-family='sans-serif' font-size='11' fill='#555' text-anchor='middle'>1</text>
+<text x='93.0' y='20' font-family='sans-serif' font-size='11' fill='#555' text-anchor='middle'>2</text>
+<text x='133.0' y='20' font-family='sans-serif' font-size='11' fill='#555' text-anchor='middle'>3</text>
+<text x='173.0' y='20' font-family='sans-serif' font-size='11' fill='#555' text-anchor='middle'>4</text>
+<text x='213.0' y='20' font-family='sans-serif' font-size='11' fill='#555' text-anchor='middle'>5</text>
+<text x='253.0' y='20' font-family='sans-serif' font-size='11' fill='#555' text-anchor='middle'>6</text>
+<text x='293.0' y='20' font-family='sans-serif' font-size='11' fill='#555' text-anchor='middle'>7</text>
+<text x='333.0' y='20' font-family='sans-serif' font-size='11' fill='#555' text-anchor='middle'>8</text>
+<text x='373.0' y='20' font-family='sans-serif' font-size='11' fill='#555' text-anchor='middle'>9</text>
+<text x='413.0' y='20' font-family='sans-serif' font-size='11' fill='#555' text-anchor='middle'>10</text>
+<text x='453.0' y='20' font-family='sans-serif' font-size='11' fill='#555' text-anchor='middle'>11</text>
+<text x='493.0' y='20' font-family='sans-serif' font-size='11' fill='#555' text-anchor='middle'>12</text>
+<text x='533.0' y='20' font-family='sans-serif' font-size='11' fill='#555' text-anchor='middle'>13</text>
+<text x='573.0' y='20' font-family='sans-serif' font-size='11' fill='#555' text-anchor='middle'>14</text>
+<text x='613.0' y='20' font-family='sans-serif' font-size='11' fill='#555' text-anchor='middle'>15</text>
+<text x='653.0' y='20' font-family='sans-serif' font-size='11' fill='#555' text-anchor='middle'>16</text>
+<text x='693.0' y='20' font-family='sans-serif' font-size='11' fill='#555' text-anchor='middle'>17</text>
+<text x='733.0' y='20' font-family='sans-serif' font-size='11' fill='#555' text-anchor='middle'>18</text>
+<text x='26' y='55' font-family='sans-serif' font-size='11' fill='#555' text-anchor='end'>1</text>
+<text x='26' y='101' font-family='sans-serif' font-size='11' fill='#555' text-anchor='end'>2</text>
+<text x='26' y='147' font-family='sans-serif' font-size='11' fill='#555' text-anchor='end'>3</text>
+<text x='26' y='193' font-family='sans-serif' font-size='11' fill='#555' text-anchor='end'>4</text>
+<text x='26' y='239' font-family='sans-serif' font-size='11' fill='#555' text-anchor='end'>5</text>
+<text x='26' y='285' font-family='sans-serif' font-size='11' fill='#555' text-anchor='end'>6</text>
+<text x='26' y='331' font-family='sans-serif' font-size='11' fill='#555' text-anchor='end'>7</text>
+<rect x='34' y='28' width='38' height='44' rx='4' fill='#9fd3ff' stroke='#6b7280' stroke-width='1'/>
+<text x='37' y='39' font-family='sans-serif' font-size='9' fill='#374151'>1</text>
+<text x='53.0' y='61' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>H</text>
+<rect x='714' y='28' width='38' height='44' rx='4' fill='#c9b8ff' stroke='#6b7280' stroke-width='1'/>
+<text x='717' y='39' font-family='sans-serif' font-size='9' fill='#374151'>2</text>
+<text x='733.0' y='61' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>He</text>
+<rect x='34' y='74' width='38' height='44' rx='4' fill='#ff8a8a' stroke='#6b7280' stroke-width='1'/>
+<text x='37' y='85' font-family='sans-serif' font-size='9' fill='#374151'>3</text>
+<text x='53.0' y='107' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Li</text>
+<rect x='74' y='74' width='38' height='44' rx='4' fill='#ffc58a' stroke='#6b7280' stroke-width='1'/>
+<text x='77' y='85' font-family='sans-serif' font-size='9' fill='#374151'>4</text>
+<text x='93.0' y='107' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Be</text>
+<rect x='514' y='74' width='38' height='44' rx='4' fill='#a8e6cf' stroke='#6b7280' stroke-width='1'/>
+<text x='517' y='85' font-family='sans-serif' font-size='9' fill='#374151'>5</text>
+<text x='533.0' y='107' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>B</text>
+<rect x='554' y='74' width='38' height='44' rx='4' fill='#9fd3ff' stroke='#6b7280' stroke-width='1'/>
+<text x='557' y='85' font-family='sans-serif' font-size='9' fill='#374151'>6</text>
+<text x='573.0' y='107' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>C</text>
+<rect x='594' y='74' width='38' height='44' rx='4' fill='#9fd3ff' stroke='#6b7280' stroke-width='1'/>
+<text x='597' y='85' font-family='sans-serif' font-size='9' fill='#374151'>7</text>
+<text x='613.0' y='107' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>N</text>
+<rect x='634' y='74' width='38' height='44' rx='4' fill='#9fd3ff' stroke='#6b7280' stroke-width='1'/>
+<text x='637' y='85' font-family='sans-serif' font-size='9' fill='#374151'>8</text>
+<text x='653.0' y='107' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>O</text>
+<rect x='674' y='74' width='38' height='44' rx='4' fill='#f7c6e4' stroke='#6b7280' stroke-width='1'/>
+<text x='677' y='85' font-family='sans-serif' font-size='9' fill='#374151'>9</text>
+<text x='693.0' y='107' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>F</text>
+<rect x='714' y='74' width='38' height='44' rx='4' fill='#c9b8ff' stroke='#6b7280' stroke-width='1'/>
+<text x='717' y='85' font-family='sans-serif' font-size='9' fill='#374151'>10</text>
+<text x='733.0' y='107' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Ne</text>
+<rect x='34' y='120' width='38' height='44' rx='4' fill='#ff8a8a' stroke='#6b7280' stroke-width='1'/>
+<text x='37' y='131' font-family='sans-serif' font-size='9' fill='#374151'>11</text>
+<text x='53.0' y='153' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Na</text>
+<rect x='74' y='120' width='38' height='44' rx='4' fill='#ffc58a' stroke='#6b7280' stroke-width='1'/>
+<text x='77' y='131' font-family='sans-serif' font-size='9' fill='#374151'>12</text>
+<text x='93.0' y='153' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Mg</text>
+<rect x='514' y='120' width='38' height='44' rx='4' fill='#d0d4da' stroke='#6b7280' stroke-width='1'/>
+<text x='517' y='131' font-family='sans-serif' font-size='9' fill='#374151'>13</text>
+<text x='533.0' y='153' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Al</text>
+<rect x='554' y='120' width='38' height='44' rx='4' fill='#a8e6cf' stroke='#6b7280' stroke-width='1'/>
+<text x='557' y='131' font-family='sans-serif' font-size='9' fill='#374151'>14</text>
+<text x='573.0' y='153' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Si</text>
+<rect x='594' y='120' width='38' height='44' rx='4' fill='#9fd3ff' stroke='#6b7280' stroke-width='1'/>
+<text x='597' y='131' font-family='sans-serif' font-size='9' fill='#374151'>15</text>
+<text x='613.0' y='153' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>P</text>
+<rect x='634' y='120' width='38' height='44' rx='4' fill='#9fd3ff' stroke='#6b7280' stroke-width='1'/>
+<text x='637' y='131' font-family='sans-serif' font-size='9' fill='#374151'>16</text>
+<text x='653.0' y='153' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>S</text>
+<rect x='674' y='120' width='38' height='44' rx='4' fill='#f7c6e4' stroke='#6b7280' stroke-width='1'/>
+<text x='677' y='131' font-family='sans-serif' font-size='9' fill='#374151'>17</text>
+<text x='693.0' y='153' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Cl</text>
+<rect x='714' y='120' width='38' height='44' rx='4' fill='#c9b8ff' stroke='#6b7280' stroke-width='1'/>
+<text x='717' y='131' font-family='sans-serif' font-size='9' fill='#374151'>18</text>
+<text x='733.0' y='153' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Ar</text>
+<rect x='34' y='166' width='38' height='44' rx='4' fill='#ff8a8a' stroke='#6b7280' stroke-width='1'/>
+<text x='37' y='177' font-family='sans-serif' font-size='9' fill='#374151'>19</text>
+<text x='53.0' y='199' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>K</text>
+<rect x='74' y='166' width='38' height='44' rx='4' fill='#ffc58a' stroke='#6b7280' stroke-width='1'/>
+<text x='77' y='177' font-family='sans-serif' font-size='9' fill='#374151'>20</text>
+<text x='93.0' y='199' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Ca</text>
+<rect x='114' y='166' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='117' y='177' font-family='sans-serif' font-size='9' fill='#374151'>21</text>
+<text x='133.0' y='199' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Sc</text>
+<rect x='154' y='166' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='157' y='177' font-family='sans-serif' font-size='9' fill='#374151'>22</text>
+<text x='173.0' y='199' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Ti</text>
+<rect x='194' y='166' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='197' y='177' font-family='sans-serif' font-size='9' fill='#374151'>23</text>
+<text x='213.0' y='199' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>V</text>
+<rect x='234' y='166' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='237' y='177' font-family='sans-serif' font-size='9' fill='#374151'>24</text>
+<text x='253.0' y='199' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Cr</text>
+<rect x='274' y='166' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='277' y='177' font-family='sans-serif' font-size='9' fill='#374151'>25</text>
+<text x='293.0' y='199' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Mn</text>
+<rect x='314' y='166' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='317' y='177' font-family='sans-serif' font-size='9' fill='#374151'>26</text>
+<text x='333.0' y='199' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Fe</text>
+<rect x='354' y='166' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='357' y='177' font-family='sans-serif' font-size='9' fill='#374151'>27</text>
+<text x='373.0' y='199' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Co</text>
+<rect x='394' y='166' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='397' y='177' font-family='sans-serif' font-size='9' fill='#374151'>28</text>
+<text x='413.0' y='199' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Ni</text>
+<rect x='434' y='166' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='437' y='177' font-family='sans-serif' font-size='9' fill='#374151'>29</text>
+<text x='453.0' y='199' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Cu</text>
+<rect x='474' y='166' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='477' y='177' font-family='sans-serif' font-size='9' fill='#374151'>30</text>
+<text x='493.0' y='199' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Zn</text>
+<rect x='514' y='166' width='38' height='44' rx='4' fill='#d0d4da' stroke='#6b7280' stroke-width='1'/>
+<text x='517' y='177' font-family='sans-serif' font-size='9' fill='#374151'>31</text>
+<text x='533.0' y='199' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Ga</text>
+<rect x='554' y='166' width='38' height='44' rx='4' fill='#a8e6cf' stroke='#6b7280' stroke-width='1'/>
+<text x='557' y='177' font-family='sans-serif' font-size='9' fill='#374151'>32</text>
+<text x='573.0' y='199' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Ge</text>
+<rect x='594' y='166' width='38' height='44' rx='4' fill='#a8e6cf' stroke='#6b7280' stroke-width='1'/>
+<text x='597' y='177' font-family='sans-serif' font-size='9' fill='#374151'>33</text>
+<text x='613.0' y='199' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>As</text>
+<rect x='634' y='166' width='38' height='44' rx='4' fill='#9fd3ff' stroke='#6b7280' stroke-width='1'/>
+<text x='637' y='177' font-family='sans-serif' font-size='9' fill='#374151'>34</text>
+<text x='653.0' y='199' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Se</text>
+<rect x='674' y='166' width='38' height='44' rx='4' fill='#f7c6e4' stroke='#6b7280' stroke-width='1'/>
+<text x='677' y='177' font-family='sans-serif' font-size='9' fill='#374151'>35</text>
+<text x='693.0' y='199' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Br</text>
+<rect x='714' y='166' width='38' height='44' rx='4' fill='#c9b8ff' stroke='#6b7280' stroke-width='1'/>
+<text x='717' y='177' font-family='sans-serif' font-size='9' fill='#374151'>36</text>
+<text x='733.0' y='199' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Kr</text>
+<rect x='34' y='212' width='38' height='44' rx='4' fill='#ff8a8a' stroke='#6b7280' stroke-width='1'/>
+<text x='37' y='223' font-family='sans-serif' font-size='9' fill='#374151'>37</text>
+<text x='53.0' y='245' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Rb</text>
+<rect x='74' y='212' width='38' height='44' rx='4' fill='#ffc58a' stroke='#6b7280' stroke-width='1'/>
+<text x='77' y='223' font-family='sans-serif' font-size='9' fill='#374151'>38</text>
+<text x='93.0' y='245' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Sr</text>
+<rect x='114' y='212' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='117' y='223' font-family='sans-serif' font-size='9' fill='#374151'>39</text>
+<text x='133.0' y='245' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Y</text>
+<rect x='154' y='212' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='157' y='223' font-family='sans-serif' font-size='9' fill='#374151'>40</text>
+<text x='173.0' y='245' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Zr</text>
+<rect x='194' y='212' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='197' y='223' font-family='sans-serif' font-size='9' fill='#374151'>41</text>
+<text x='213.0' y='245' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Nb</text>
+<rect x='234' y='212' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='237' y='223' font-family='sans-serif' font-size='9' fill='#374151'>42</text>
+<text x='253.0' y='245' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Mo</text>
+<rect x='274' y='212' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='277' y='223' font-family='sans-serif' font-size='9' fill='#374151'>43</text>
+<text x='293.0' y='245' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Tc</text>
+<rect x='314' y='212' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='317' y='223' font-family='sans-serif' font-size='9' fill='#374151'>44</text>
+<text x='333.0' y='245' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Ru</text>
+<rect x='354' y='212' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='357' y='223' font-family='sans-serif' font-size='9' fill='#374151'>45</text>
+<text x='373.0' y='245' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Rh</text>
+<rect x='394' y='212' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='397' y='223' font-family='sans-serif' font-size='9' fill='#374151'>46</text>
+<text x='413.0' y='245' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Pd</text>
+<rect x='434' y='212' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='437' y='223' font-family='sans-serif' font-size='9' fill='#374151'>47</text>
+<text x='453.0' y='245' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Ag</text>
+<rect x='474' y='212' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='477' y='223' font-family='sans-serif' font-size='9' fill='#374151'>48</text>
+<text x='493.0' y='245' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Cd</text>
+<rect x='514' y='212' width='38' height='44' rx='4' fill='#d0d4da' stroke='#6b7280' stroke-width='1'/>
+<text x='517' y='223' font-family='sans-serif' font-size='9' fill='#374151'>49</text>
+<text x='533.0' y='245' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>In</text>
+<rect x='554' y='212' width='38' height='44' rx='4' fill='#d0d4da' stroke='#6b7280' stroke-width='1'/>
+<text x='557' y='223' font-family='sans-serif' font-size='9' fill='#374151'>50</text>
+<text x='573.0' y='245' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Sn</text>
+<rect x='594' y='212' width='38' height='44' rx='4' fill='#a8e6cf' stroke='#6b7280' stroke-width='1'/>
+<text x='597' y='223' font-family='sans-serif' font-size='9' fill='#374151'>51</text>
+<text x='613.0' y='245' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Sb</text>
+<rect x='634' y='212' width='38' height='44' rx='4' fill='#a8e6cf' stroke='#6b7280' stroke-width='1'/>
+<text x='637' y='223' font-family='sans-serif' font-size='9' fill='#374151'>52</text>
+<text x='653.0' y='245' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Te</text>
+<rect x='674' y='212' width='38' height='44' rx='4' fill='#f7c6e4' stroke='#6b7280' stroke-width='1'/>
+<text x='677' y='223' font-family='sans-serif' font-size='9' fill='#374151'>53</text>
+<text x='693.0' y='245' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>I</text>
+<rect x='714' y='212' width='38' height='44' rx='4' fill='#c9b8ff' stroke='#6b7280' stroke-width='1'/>
+<text x='717' y='223' font-family='sans-serif' font-size='9' fill='#374151'>54</text>
+<text x='733.0' y='245' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Xe</text>
+<rect x='34' y='258' width='38' height='44' rx='4' fill='#ff8a8a' stroke='#6b7280' stroke-width='1'/>
+<text x='37' y='269' font-family='sans-serif' font-size='9' fill='#374151'>55</text>
+<text x='53.0' y='291' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Cs</text>
+<rect x='74' y='258' width='38' height='44' rx='4' fill='#ffc58a' stroke='#6b7280' stroke-width='1'/>
+<text x='77' y='269' font-family='sans-serif' font-size='9' fill='#374151'>56</text>
+<text x='93.0' y='291' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Ba</text>
+<rect x='154' y='258' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='157' y='269' font-family='sans-serif' font-size='9' fill='#374151'>72</text>
+<text x='173.0' y='291' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Hf</text>
+<rect x='194' y='258' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='197' y='269' font-family='sans-serif' font-size='9' fill='#374151'>73</text>
+<text x='213.0' y='291' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Ta</text>
+<rect x='234' y='258' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='237' y='269' font-family='sans-serif' font-size='9' fill='#374151'>74</text>
+<text x='253.0' y='291' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>W</text>
+<rect x='274' y='258' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='277' y='269' font-family='sans-serif' font-size='9' fill='#374151'>75</text>
+<text x='293.0' y='291' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Re</text>
+<rect x='314' y='258' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='317' y='269' font-family='sans-serif' font-size='9' fill='#374151'>76</text>
+<text x='333.0' y='291' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Os</text>
+<rect x='354' y='258' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='357' y='269' font-family='sans-serif' font-size='9' fill='#374151'>77</text>
+<text x='373.0' y='291' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Ir</text>
+<rect x='394' y='258' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='397' y='269' font-family='sans-serif' font-size='9' fill='#374151'>78</text>
+<text x='413.0' y='291' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Pt</text>
+<rect x='434' y='258' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='437' y='269' font-family='sans-serif' font-size='9' fill='#374151'>79</text>
+<text x='453.0' y='291' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Au</text>
+<rect x='474' y='258' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='477' y='269' font-family='sans-serif' font-size='9' fill='#374151'>80</text>
+<text x='493.0' y='291' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Hg</text>
+<rect x='514' y='258' width='38' height='44' rx='4' fill='#d0d4da' stroke='#6b7280' stroke-width='1'/>
+<text x='517' y='269' font-family='sans-serif' font-size='9' fill='#374151'>81</text>
+<text x='533.0' y='291' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Tl</text>
+<rect x='554' y='258' width='38' height='44' rx='4' fill='#d0d4da' stroke='#6b7280' stroke-width='1'/>
+<text x='557' y='269' font-family='sans-serif' font-size='9' fill='#374151'>82</text>
+<text x='573.0' y='291' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Pb</text>
+<rect x='594' y='258' width='38' height='44' rx='4' fill='#d0d4da' stroke='#6b7280' stroke-width='1'/>
+<text x='597' y='269' font-family='sans-serif' font-size='9' fill='#374151'>83</text>
+<text x='613.0' y='291' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Bi</text>
+<rect x='634' y='258' width='38' height='44' rx='4' fill='#d0d4da' stroke='#6b7280' stroke-width='1'/>
+<text x='637' y='269' font-family='sans-serif' font-size='9' fill='#374151'>84</text>
+<text x='653.0' y='291' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Po</text>
+<rect x='674' y='258' width='38' height='44' rx='4' fill='#f7c6e4' stroke='#6b7280' stroke-width='1'/>
+<text x='677' y='269' font-family='sans-serif' font-size='9' fill='#374151'>85</text>
+<text x='693.0' y='291' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>At</text>
+<rect x='714' y='258' width='38' height='44' rx='4' fill='#c9b8ff' stroke='#6b7280' stroke-width='1'/>
+<text x='717' y='269' font-family='sans-serif' font-size='9' fill='#374151'>86</text>
+<text x='733.0' y='291' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Rn</text>
+<rect x='34' y='304' width='38' height='44' rx='4' fill='#ff8a8a' stroke='#6b7280' stroke-width='1'/>
+<text x='37' y='315' font-family='sans-serif' font-size='9' fill='#374151'>87</text>
+<text x='53.0' y='337' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Fr</text>
+<rect x='74' y='304' width='38' height='44' rx='4' fill='#ffc58a' stroke='#6b7280' stroke-width='1'/>
+<text x='77' y='315' font-family='sans-serif' font-size='9' fill='#374151'>88</text>
+<text x='93.0' y='337' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Ra</text>
+<rect x='154' y='304' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='157' y='315' font-family='sans-serif' font-size='9' fill='#374151'>104</text>
+<text x='173.0' y='337' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Rf</text>
+<rect x='194' y='304' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='197' y='315' font-family='sans-serif' font-size='9' fill='#374151'>105</text>
+<text x='213.0' y='337' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Db</text>
+<rect x='234' y='304' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='237' y='315' font-family='sans-serif' font-size='9' fill='#374151'>106</text>
+<text x='253.0' y='337' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Sg</text>
+<rect x='274' y='304' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='277' y='315' font-family='sans-serif' font-size='9' fill='#374151'>107</text>
+<text x='293.0' y='337' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Bh</text>
+<rect x='314' y='304' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='317' y='315' font-family='sans-serif' font-size='9' fill='#374151'>108</text>
+<text x='333.0' y='337' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Hs</text>
+<rect x='354' y='304' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='357' y='315' font-family='sans-serif' font-size='9' fill='#374151'>109</text>
+<text x='373.0' y='337' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Mt</text>
+<rect x='394' y='304' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='397' y='315' font-family='sans-serif' font-size='9' fill='#374151'>110</text>
+<text x='413.0' y='337' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Ds</text>
+<rect x='434' y='304' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='437' y='315' font-family='sans-serif' font-size='9' fill='#374151'>111</text>
+<text x='453.0' y='337' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Rg</text>
+<rect x='474' y='304' width='38' height='44' rx='4' fill='#ffe58a' stroke='#6b7280' stroke-width='1'/>
+<text x='477' y='315' font-family='sans-serif' font-size='9' fill='#374151'>112</text>
+<text x='493.0' y='337' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Cn</text>
+<rect x='514' y='304' width='38' height='44' rx='4' fill='#d0d4da' stroke='#6b7280' stroke-width='1'/>
+<text x='517' y='315' font-family='sans-serif' font-size='9' fill='#374151'>113</text>
+<text x='533.0' y='337' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Nh</text>
+<rect x='554' y='304' width='38' height='44' rx='4' fill='#d0d4da' stroke='#6b7280' stroke-width='1'/>
+<text x='557' y='315' font-family='sans-serif' font-size='9' fill='#374151'>114</text>
+<text x='573.0' y='337' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Fl</text>
+<rect x='594' y='304' width='38' height='44' rx='4' fill='#d0d4da' stroke='#6b7280' stroke-width='1'/>
+<text x='597' y='315' font-family='sans-serif' font-size='9' fill='#374151'>115</text>
+<text x='613.0' y='337' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Mc</text>
+<rect x='634' y='304' width='38' height='44' rx='4' fill='#d0d4da' stroke='#6b7280' stroke-width='1'/>
+<text x='637' y='315' font-family='sans-serif' font-size='9' fill='#374151'>116</text>
+<text x='653.0' y='337' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Lv</text>
+<rect x='674' y='304' width='38' height='44' rx='4' fill='#f7c6e4' stroke='#6b7280' stroke-width='1'/>
+<text x='677' y='315' font-family='sans-serif' font-size='9' fill='#374151'>117</text>
+<text x='693.0' y='337' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Ts</text>
+<rect x='714' y='304' width='38' height='44' rx='4' fill='#c9b8ff' stroke='#6b7280' stroke-width='1'/>
+<text x='717' y='315' font-family='sans-serif' font-size='9' fill='#374151'>118</text>
+<text x='733.0' y='337' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Og</text>
+<rect x='114' y='258' width='38' height='44' rx='4' fill='#e6d0a8' stroke='#6b7280' stroke-width='1' stroke-dasharray='3 2'/>
+<text x='133.0' y='284' font-family='sans-serif' font-size='10' fill='#111827' text-anchor='middle'>57–71</text>
+<rect x='114' y='304' width='38' height='44' rx='4' fill='#e6d0a8' stroke='#6b7280' stroke-width='1' stroke-dasharray='3 2'/>
+<text x='133.0' y='330' font-family='sans-serif' font-size='10' fill='#111827' text-anchor='middle'>89–103</text>
+<rect x='114' y='366' width='38' height='44' rx='4' fill='#e6d0a8' stroke='#6b7280' stroke-width='1'/>
+<text x='117' y='377' font-family='sans-serif' font-size='9' fill='#374151'>57</text>
+<text x='133.0' y='399' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>La</text>
+<rect x='154' y='366' width='38' height='44' rx='4' fill='#e6d0a8' stroke='#6b7280' stroke-width='1'/>
+<text x='157' y='377' font-family='sans-serif' font-size='9' fill='#374151'>58</text>
+<text x='173.0' y='399' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Ce</text>
+<rect x='194' y='366' width='38' height='44' rx='4' fill='#e6d0a8' stroke='#6b7280' stroke-width='1'/>
+<text x='197' y='377' font-family='sans-serif' font-size='9' fill='#374151'>59</text>
+<text x='213.0' y='399' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Pr</text>
+<rect x='234' y='366' width='38' height='44' rx='4' fill='#e6d0a8' stroke='#6b7280' stroke-width='1'/>
+<text x='237' y='377' font-family='sans-serif' font-size='9' fill='#374151'>60</text>
+<text x='253.0' y='399' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Nd</text>
+<rect x='274' y='366' width='38' height='44' rx='4' fill='#e6d0a8' stroke='#6b7280' stroke-width='1'/>
+<text x='277' y='377' font-family='sans-serif' font-size='9' fill='#374151'>61</text>
+<text x='293.0' y='399' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Pm</text>
+<rect x='314' y='366' width='38' height='44' rx='4' fill='#e6d0a8' stroke='#6b7280' stroke-width='1'/>
+<text x='317' y='377' font-family='sans-serif' font-size='9' fill='#374151'>62</text>
+<text x='333.0' y='399' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Sm</text>
+<rect x='354' y='366' width='38' height='44' rx='4' fill='#e6d0a8' stroke='#6b7280' stroke-width='1'/>
+<text x='357' y='377' font-family='sans-serif' font-size='9' fill='#374151'>63</text>
+<text x='373.0' y='399' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Eu</text>
+<rect x='394' y='366' width='38' height='44' rx='4' fill='#e6d0a8' stroke='#6b7280' stroke-width='1'/>
+<text x='397' y='377' font-family='sans-serif' font-size='9' fill='#374151'>64</text>
+<text x='413.0' y='399' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Gd</text>
+<rect x='434' y='366' width='38' height='44' rx='4' fill='#e6d0a8' stroke='#6b7280' stroke-width='1'/>
+<text x='437' y='377' font-family='sans-serif' font-size='9' fill='#374151'>65</text>
+<text x='453.0' y='399' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Tb</text>
+<rect x='474' y='366' width='38' height='44' rx='4' fill='#e6d0a8' stroke='#6b7280' stroke-width='1'/>
+<text x='477' y='377' font-family='sans-serif' font-size='9' fill='#374151'>66</text>
+<text x='493.0' y='399' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Dy</text>
+<rect x='514' y='366' width='38' height='44' rx='4' fill='#e6d0a8' stroke='#6b7280' stroke-width='1'/>
+<text x='517' y='377' font-family='sans-serif' font-size='9' fill='#374151'>67</text>
+<text x='533.0' y='399' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Ho</text>
+<rect x='554' y='366' width='38' height='44' rx='4' fill='#e6d0a8' stroke='#6b7280' stroke-width='1'/>
+<text x='557' y='377' font-family='sans-serif' font-size='9' fill='#374151'>68</text>
+<text x='573.0' y='399' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Er</text>
+<rect x='594' y='366' width='38' height='44' rx='4' fill='#e6d0a8' stroke='#6b7280' stroke-width='1'/>
+<text x='597' y='377' font-family='sans-serif' font-size='9' fill='#374151'>69</text>
+<text x='613.0' y='399' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Tm</text>
+<rect x='634' y='366' width='38' height='44' rx='4' fill='#e6d0a8' stroke='#6b7280' stroke-width='1'/>
+<text x='637' y='377' font-family='sans-serif' font-size='9' fill='#374151'>70</text>
+<text x='653.0' y='399' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Yb</text>
+<rect x='674' y='366' width='38' height='44' rx='4' fill='#e6d0a8' stroke='#6b7280' stroke-width='1'/>
+<text x='677' y='377' font-family='sans-serif' font-size='9' fill='#374151'>71</text>
+<text x='693.0' y='399' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Lu</text>
+<rect x='114' y='412' width='38' height='44' rx='4' fill='#e6d0a8' stroke='#6b7280' stroke-width='1'/>
+<text x='117' y='423' font-family='sans-serif' font-size='9' fill='#374151'>89</text>
+<text x='133.0' y='445' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Ac</text>
+<rect x='154' y='412' width='38' height='44' rx='4' fill='#e6d0a8' stroke='#6b7280' stroke-width='1'/>
+<text x='157' y='423' font-family='sans-serif' font-size='9' fill='#374151'>90</text>
+<text x='173.0' y='445' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Th</text>
+<rect x='194' y='412' width='38' height='44' rx='4' fill='#e6d0a8' stroke='#6b7280' stroke-width='1'/>
+<text x='197' y='423' font-family='sans-serif' font-size='9' fill='#374151'>91</text>
+<text x='213.0' y='445' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Pa</text>
+<rect x='234' y='412' width='38' height='44' rx='4' fill='#e6d0a8' stroke='#6b7280' stroke-width='1'/>
+<text x='237' y='423' font-family='sans-serif' font-size='9' fill='#374151'>92</text>
+<text x='253.0' y='445' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>U</text>
+<rect x='274' y='412' width='38' height='44' rx='4' fill='#e6d0a8' stroke='#6b7280' stroke-width='1'/>
+<text x='277' y='423' font-family='sans-serif' font-size='9' fill='#374151'>93</text>
+<text x='293.0' y='445' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Np</text>
+<rect x='314' y='412' width='38' height='44' rx='4' fill='#e6d0a8' stroke='#6b7280' stroke-width='1'/>
+<text x='317' y='423' font-family='sans-serif' font-size='9' fill='#374151'>94</text>
+<text x='333.0' y='445' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Pu</text>
+<rect x='354' y='412' width='38' height='44' rx='4' fill='#e6d0a8' stroke='#6b7280' stroke-width='1'/>
+<text x='357' y='423' font-family='sans-serif' font-size='9' fill='#374151'>95</text>
+<text x='373.0' y='445' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Am</text>
+<rect x='394' y='412' width='38' height='44' rx='4' fill='#e6d0a8' stroke='#6b7280' stroke-width='1'/>
+<text x='397' y='423' font-family='sans-serif' font-size='9' fill='#374151'>96</text>
+<text x='413.0' y='445' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Cm</text>
+<rect x='434' y='412' width='38' height='44' rx='4' fill='#e6d0a8' stroke='#6b7280' stroke-width='1'/>
+<text x='437' y='423' font-family='sans-serif' font-size='9' fill='#374151'>97</text>
+<text x='453.0' y='445' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Bk</text>
+<rect x='474' y='412' width='38' height='44' rx='4' fill='#e6d0a8' stroke='#6b7280' stroke-width='1'/>
+<text x='477' y='423' font-family='sans-serif' font-size='9' fill='#374151'>98</text>
+<text x='493.0' y='445' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Cf</text>
+<rect x='514' y='412' width='38' height='44' rx='4' fill='#e6d0a8' stroke='#6b7280' stroke-width='1'/>
+<text x='517' y='423' font-family='sans-serif' font-size='9' fill='#374151'>99</text>
+<text x='533.0' y='445' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Es</text>
+<rect x='554' y='412' width='38' height='44' rx='4' fill='#e6d0a8' stroke='#6b7280' stroke-width='1'/>
+<text x='557' y='423' font-family='sans-serif' font-size='9' fill='#374151'>100</text>
+<text x='573.0' y='445' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Fm</text>
+<rect x='594' y='412' width='38' height='44' rx='4' fill='#e6d0a8' stroke='#6b7280' stroke-width='1'/>
+<text x='597' y='423' font-family='sans-serif' font-size='9' fill='#374151'>101</text>
+<text x='613.0' y='445' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Md</text>
+<rect x='634' y='412' width='38' height='44' rx='4' fill='#e6d0a8' stroke='#6b7280' stroke-width='1'/>
+<text x='637' y='423' font-family='sans-serif' font-size='9' fill='#374151'>102</text>
+<text x='653.0' y='445' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>No</text>
+<rect x='674' y='412' width='38' height='44' rx='4' fill='#e6d0a8' stroke='#6b7280' stroke-width='1'/>
+<text x='677' y='423' font-family='sans-serif' font-size='9' fill='#374151'>103</text>
+<text x='693.0' y='445' font-family='sans-serif' font-size='15' font-weight='bold' fill='#111827' text-anchor='middle'>Lr</text>
+<rect x='138.0' y='32' width='16' height='14' rx='3' fill='#ff8a8a' stroke='#6b7280'/>
+<text x='160.0' y='44' font-family='sans-serif' font-size='12' fill='#111827'>Alkalimetaller</text>
+<rect x='138.0' y='52' width='16' height='14' rx='3' fill='#ffc58a' stroke='#6b7280'/>
+<text x='160.0' y='64' font-family='sans-serif' font-size='12' fill='#111827'>Jordalkalimetaller</text>
+<rect x='138.0' y='72' width='16' height='14' rx='3' fill='#ffe58a' stroke='#6b7280'/>
+<text x='160.0' y='84' font-family='sans-serif' font-size='12' fill='#111827'>Övergångsmetaller</text>
+<rect x='138.0' y='92' width='16' height='14' rx='3' fill='#e6d0a8' stroke='#6b7280'/>
+<text x='160.0' y='104' font-family='sans-serif' font-size='12' fill='#111827'>Lantanoider och aktinoider</text>
+<rect x='138.0' y='112' width='16' height='14' rx='3' fill='#d0d4da' stroke='#6b7280'/>
+<text x='160.0' y='124' font-family='sans-serif' font-size='12' fill='#111827'>Andra metaller</text>
+<rect x='338.0' y='32' width='16' height='14' rx='3' fill='#a8e6cf' stroke='#6b7280'/>
+<text x='360.0' y='44' font-family='sans-serif' font-size='12' fill='#111827'>Halvmetaller</text>
+<rect x='338.0' y='52' width='16' height='14' rx='3' fill='#9fd3ff' stroke='#6b7280'/>
+<text x='360.0' y='64' font-family='sans-serif' font-size='12' fill='#111827'>Icke-metaller</text>
+<rect x='338.0' y='72' width='16' height='14' rx='3' fill='#f7c6e4' stroke='#6b7280'/>
+<text x='360.0' y='84' font-family='sans-serif' font-size='12' fill='#111827'>Halogener</text>
+<rect x='338.0' y='92' width='16' height='14' rx='3' fill='#c9b8ff' stroke='#6b7280'/>
+<text x='360.0' y='104' font-family='sans-serif' font-size='12' fill='#111827'>Ädelgaser</text>
+<text x='138.0' y='142' font-family='sans-serif' font-size='10.5' fill='#555'>Överst i rutan: atomnummer.</text>
+<text x='138.0' y='156' font-family='sans-serif' font-size='10.5' fill='#555'>Kolumner = grupper (1–18), rader = perioder (1–7).</text>
+</svg>

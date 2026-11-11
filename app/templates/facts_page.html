@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title or label(subject) }} – Fakta{% endblock %}
+{% block content %}
+<p class="noprint"><a href="/fakta">← Alla ämnen</a></p>
+<h1>{{ page.title or label(subject) }}</h1>
+{% if page.intro %}<p class="lead">{{ page.intro|fmt }}</p>{% endif %}
+
+<nav class="toc noprint" aria-label="Innehåll">
+  {% for sec in page.sections %}<a href="#{{ sec.id }}">{{ sec.title }}</a>{% endfor %}
+</nav>
+
+{% for sec in page.sections %}
+<section class="card factsec" id="{{ sec.id }}">
+  <h2>{{ sec.title }}</h2>
+  {% for b in sec.blocks %}
+    {% if b.type == 'p' %}<p>{{ b.text|fmt }}</p>
+    {% elif b.type == 'h3' %}<h3>{{ b.text|fmt }}</h3>
+    {% elif b.type == 'ul' %}<ul>{% for i in b["items"] %}<li>{{ i|fmt }}</li>{% endfor %}</ul>
+    {% elif b.type == 'ol' %}<ol>{% for i in b["items"] %}<li>{{ i|fmt }}</li>{% endfor %}</ol>
+    {% elif b.type == 'formulas' %}
+      <div class="formulas">{% for f in b["items"] %}<div class="formula"><span class="f">{{ f.formula }}</span>{% if f.text %}<span class="t">{{ f.text|fmt }}</span>{% endif %}</div>{% endfor %}</div>
+    {% elif b.type == 'table' %}
+      <div class="tablewrap"><table class="facttable"><tr>{% for h in b.head %}<th>{{ h|fmt }}</th>{% endfor %}</tr>
+      {% for r in b.rows %}<tr>{% for c in r %}<td>{{ c|fmt }}</td>{% endfor %}</tr>{% endfor %}</table></div>
+    {% elif b.type == 'image' %}
+      <figure class="factimg"><a href="/media/{{ b.name }}" target="_blank" rel="noopener"><img src="/media/{{ b.name }}" alt="{{ b.caption }}"></a>{% if b.caption %}<figcaption>{{ b.caption }}</figcaption>{% endif %}</figure>
+    {% elif b.type == 'diagram' %}<div class="factdiagram">{{ b.svg|safe }}</div>
+    {% elif b.type == 'note' %}<div class="note">{{ b.text|fmt }}</div>
+    {% endif %}
+  {% endfor %}
+</section>
+{% endfor %}
+
+<p class="noprint" style="display:flex;gap:.6rem;flex-wrap:wrap">
+  {% if user.role == 'student' %}<a class="btn" href="/home">Till övningarna</a>{% endif %}
+  <button type="button" class="ghost" onclick="window.print()">Skriv ut</button>
+</p>
+{% endblock %}
