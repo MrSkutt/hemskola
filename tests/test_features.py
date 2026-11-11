@@ -316,6 +316,61 @@ def test_legacy_no_so_are_moved_to_new_subjects(client):
     conn.close()
 
 
+def _no_block(client) -> str:
+    """Den del av elevens startsida som hör till ämnet "NO (natur)"."""
+    return client.get("/home").text.split("NO (natur)")[1].split("</div>")[0]
+
+
+def test_legacy_no_level_survives_restart_while_old_subject_has_exercises(client):
+    """Regression: kvarvarande gamla no-övningar (som inte matchar något startmaterial) gör att "NO (natur)"
+    fortfarande visas. Då får elevens nivå inte raderas vid varje omstart – annars kommer det inledande
+    provet upp igen efter varje uppdatering."""
+    from app import main
+    _make_student(client)
+    conn = _conn()
+    for lvl in (1, 2, 3):
+        conn.execute("INSERT INTO exercises(subject, topic, level, type, question, answers) VALUES ('no','Eget',?,'text',?,'[\"x\"]')",
+                     (lvl, f"Egen NO-fråga {lvl}?"))
+    conn.commit()
+    uid = conn.execute("SELECT id FROM users WHERE username='mia'").fetchone()["id"]
+    assert "no" in logic.active_subjects(conn)
+
+    login(client, "mia", "hemligt1")
+    tid = int(client.post("/test/start/no").headers["location"].rsplit("/", 1)[1])
+    for _ in range(10):
+        page = client.get(f"/test/{tid}")
+        if page.status_code == 303:
+            break
+        ex = re.search(r'name="exercise_id" value="(\d+)"', page.text)
+        if not ex:
+            break
+        client.post(f"/test/{tid}", data={"exercise_id": ex.group(1), "generated_id": "", "given": "x"})
+    conn = _conn()
+    assert logic.get_level(conn, uid, "no") is not None          # provet är klart, nivån är satt
+    assert "Starta inledande test" not in _no_block(client)
+
+    main.bootstrap()                                              # omstart/uppdatering av appen
+    conn = _conn()
+    assert logic.get_level(conn, uid, "no") is not None          # nivån får inte försvinna
+    assert logic.get_level(conn, uid, "biologi") is None         # och sätts inte tyst i de nya ämnena
+    assert "Starta inledande test" not in _no_block(client)
+    conn.close()
+
+
+def test_legacy_levels_are_removed_once_old_subject_is_empty(client):
+    """När inga aktiva no/so-övningar finns kvar tas de gamla nivåraderna bort (efter att ha kopierats)."""
+    _make_student(client)
+    conn = _conn()
+    uid = conn.execute("SELECT id FROM users WHERE username='mia'").fetchone()["id"]
+    conn.execute("INSERT INTO user_levels(user_id, subject, level) VALUES (?, 'no', 3)", (uid,))
+    conn.commit()
+    logic.migrate_legacy_levels(conn)
+    conn.commit()
+    assert logic.get_level(conn, uid, "no") is None
+    assert logic.get_level(conn, uid, "fysik") == 3
+    conn.close()
+
+
 def test_seed_content_integrity():
     """Alla fasta övningar i seed-filerna ska vara hela: rätt svar bland alternativen, giltiga bilder och diagram."""
     import glob

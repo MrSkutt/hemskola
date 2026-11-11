@@ -715,14 +715,22 @@ def adopt_legacy_exercises(db, data) -> int:
 
 
 def migrate_legacy_levels(db) -> None:
-    """Elevens nivå i no/so kopieras till de nya ämnena och de gamla raderas."""
+    """Elevens nivå i no/so kopieras till de nya ämnena (befintliga nivåer rörs inte) och de gamla raderas.
+
+    Görs först när det gamla ämnet inte längre har några aktiva övningar. Finns det kvar egna övningar i
+    no/so visas ämnet fortfarande för eleven, och då ska nivån ligga kvar orörd – annars börjar eleven om med
+    det inledande provet efter varje omstart av appen, och ett prov i det gamla ämnet skulle dessutom tyst
+    sätta nivå i alla nya ämnen."""
     for old, news in LEGACY_SUBJECTS.items():
+        if db.execute("SELECT 1 FROM exercises WHERE subject=? AND active=1 LIMIT 1", (old,)).fetchone():
+            continue
         for r in db.execute("SELECT user_id, level FROM user_levels WHERE subject=?", (old,)).fetchall():
             for sub in news:
                 db.execute("INSERT OR IGNORE INTO user_levels(user_id, subject, level, since_attempt_id) "
                            "SELECT ?, ?, ?, COALESCE(MAX(id), 0) FROM attempts WHERE user_id=?",
                            (r["user_id"], sub, r["level"], r["user_id"]))
         db.execute("DELETE FROM user_levels WHERE subject=?", (old,))
+
 
 MEDIA_NAME = re.compile(r"^[A-Za-z0-9._-]{1,100}$")
 
