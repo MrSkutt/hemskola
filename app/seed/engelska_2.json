@@ -1,0 +1,1244 @@
+[
+ {
+  "subject": "engelska",
+  "topic": "Colours",
+  "level": 1,
+  "type": "mc",
+  "question": "Look at the picture. What colour is the car?",
+  "options": [
+   "blue",
+   "red",
+   "green",
+   "yellow"
+  ],
+  "answer": "blue",
+  "explanation": "Bilen är blå.",
+  "image": "scene.svg"
+ },
+ {
+  "subject": "engelska",
+  "topic": "Picture",
+  "level": 1,
+  "type": "mc",
+  "question": "Look at the picture. Which of these is NOT in the picture?",
+  "options": [
+   "a dog",
+   "a house",
+   "a car",
+   "a sun"
+  ],
+  "answer": "a dog",
+  "explanation": "Bilden visar ett hus, två träd, en bil och en sol.",
+  "image": "scene.svg"
+ },
+ {
+  "subject": "engelska",
+  "topic": "Picture",
+  "level": 1,
+  "type": "text",
+  "question": "Look at the picture. How many cars are there? Write a number.\nSvara endast med talet.",
+  "answer": [
+   "1",
+   "one"
+  ],
+  "explanation": "Det finns en bil.",
+  "image": "scene.svg"
+ },
+ {
+  "subject": "engelska",
+  "topic": "Numbers",
+  "level": 1,
+  "type": "mc",
+  "question": "What number comes after nine?",
+  "options": [
+   "ten",
+   "eight",
+   "eleven",
+   "twelve"
+  ],
+  "answer": "ten",
+  "explanation": "Nine, ten, eleven."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Numbers",
+  "level": 1,
+  "type": "mc",
+  "question": "How do you write 15 in words?",
+  "options": [
+   "fifteen",
+   "fifty",
+   "five",
+   "fourteen"
+  ],
+  "answer": "fifteen",
+  "explanation": "Fifteen är 15, fifty är 50."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Animals",
+  "level": 1,
+  "type": "mc",
+  "question": "What is a baby dog called?",
+  "options": [
+   "puppy",
+   "kitten",
+   "cub",
+   "chick"
+  ],
+  "answer": "puppy",
+  "explanation": "Puppy är hundvalp."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Animals",
+  "level": 1,
+  "type": "mc",
+  "question": "Which animal says \"meow\"?",
+  "options": [
+   "cat",
+   "dog",
+   "cow",
+   "sheep"
+  ],
+  "answer": "cat",
+  "explanation": "Cat är katt."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Family",
+  "level": 1,
+  "type": "mc",
+  "question": "Your mother's sister is your ...",
+  "options": [
+   "aunt",
+   "uncle",
+   "cousin",
+   "grandmother"
+  ],
+  "answer": "aunt",
+  "explanation": "Aunt är faster/moster."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Family",
+  "level": 1,
+  "type": "mc",
+  "question": "Your father's father is your ...",
+  "options": [
+   "grandfather",
+   "uncle",
+   "brother",
+   "cousin"
+  ],
+  "answer": "grandfather",
+  "explanation": "Grandfather är farfar/morfar."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Days",
+  "level": 1,
+  "type": "mc",
+  "question": "What day comes after Monday?",
+  "options": [
+   "Tuesday",
+   "Sunday",
+   "Wednesday",
+   "Friday"
+  ],
+  "answer": "Tuesday",
+  "explanation": "Tuesday är tisdag."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Days",
+  "level": 1,
+  "type": "mc",
+  "question": "Which day is part of the weekend?",
+  "options": [
+   "Saturday",
+   "Monday",
+   "Wednesday",
+   "Thursday"
+  ],
+  "answer": "Saturday",
+  "explanation": "Saturday och Sunday är helgen."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Greetings",
+  "level": 1,
+  "type": "mc",
+  "question": "What do you say when you meet someone for the first time?",
+  "options": [
+   "Nice to meet you",
+   "See you tomorrow",
+   "Good night",
+   "Goodbye"
+  ],
+  "answer": "Nice to meet you",
+  "explanation": "Nice to meet you betyder trevligt att träffas."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Greetings",
+  "level": 1,
+  "type": "mc",
+  "question": "What do you say before you go to bed?",
+  "options": [
+   "Good night",
+   "Good morning",
+   "Good afternoon",
+   "Hello"
+  ],
+  "answer": "Good night",
+  "explanation": "Good night säger man vid läggdags."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 1,
+  "type": "mc",
+  "question": "They ___ my friends.",
+  "options": [
+   "are",
+   "is",
+   "am",
+   "be"
+  ],
+  "answer": "are",
+  "explanation": "Med they använder man are."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 1,
+  "type": "mc",
+  "question": "This is ___ apple.",
+  "options": [
+   "an",
+   "a",
+   "the",
+   "some"
+  ],
+  "answer": "an",
+  "explanation": "An används före vokalljud."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 1,
+  "type": "mc",
+  "question": "We ___ happy.",
+  "options": [
+   "are",
+   "is",
+   "am",
+   "be"
+  ],
+  "answer": "are",
+  "explanation": "We are = vi är."
+ },
+ {
+  "subject": "engelska",
+  "topic": "K-pop",
+  "level": 1,
+  "type": "mc",
+  "question": "BTS is a ___ band from Korea.",
+  "options": [
+   "boy",
+   "girl",
+   "old",
+   "green"
+  ],
+  "answer": "boy",
+  "explanation": "BTS är en pojkgrupp från Sydkorea."
+ },
+ {
+  "subject": "engelska",
+  "topic": "K-pop",
+  "level": 1,
+  "type": "mc",
+  "question": "Complete: BTS has ___ members.",
+  "options": [
+   "seven",
+   "five",
+   "six",
+   "ten"
+  ],
+  "answer": "seven",
+  "explanation": "BTS har sju medlemmar."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 2,
+  "type": "mc",
+  "question": "She ___ to school every day.",
+  "options": [
+   "goes",
+   "go",
+   "going",
+   "gone"
+  ],
+  "answer": "goes",
+  "explanation": "Med she/he/it läggs -s eller -es på verbet."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 2,
+  "type": "mc",
+  "question": "He ___ like coffee.",
+  "options": [
+   "doesn't",
+   "don't",
+   "isn't",
+   "aren't"
+  ],
+  "answer": "doesn't",
+  "explanation": "Doesn't används med he/she/it."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 2,
+  "type": "mc",
+  "question": "There ___ three books on the table.",
+  "options": [
+   "are",
+   "is",
+   "am",
+   "be"
+  ],
+  "answer": "are",
+  "explanation": "Three books är plural."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 2,
+  "type": "mc",
+  "question": "Choose the correct sentence with the word can.",
+  "options": [
+   "I can swim.",
+   "I can to swim.",
+   "I cans swim.",
+   "I can swimming."
+  ],
+  "answer": "I can swim.",
+  "explanation": "Efter can kommer verbet i grundform utan to."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 2,
+  "type": "mc",
+  "question": "___ is your name?",
+  "options": [
+   "What",
+   "Where",
+   "When",
+   "Who"
+  ],
+  "answer": "What",
+  "explanation": "What is your name? = Vad heter du?"
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 2,
+  "type": "mc",
+  "question": "___ do you live?",
+  "options": [
+   "Where",
+   "Who",
+   "When",
+   "Why"
+  ],
+  "answer": "Where",
+  "explanation": "Where frågar efter plats."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 2,
+  "type": "mc",
+  "question": "This is ___ book. (it belongs to me)",
+  "options": [
+   "my",
+   "me",
+   "mine",
+   "I"
+  ],
+  "answer": "my",
+  "explanation": "My är ett possessivt pronomen."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Plural",
+  "level": 2,
+  "type": "mc",
+  "question": "One box, two ___.",
+  "options": [
+   "boxes",
+   "boxs",
+   "boxen",
+   "boxies"
+  ],
+  "answer": "boxes",
+  "explanation": "Ord som slutar på x får -es."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Plural",
+  "level": 2,
+  "type": "mc",
+  "question": "One man, two ___.",
+  "options": [
+   "men",
+   "mans",
+   "mens",
+   "mannen"
+  ],
+  "answer": "men",
+  "explanation": "Man har oregelbunden plural: men."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Prepositions",
+  "level": 2,
+  "type": "mc",
+  "question": "The cat is ___ the table. (below it)",
+  "options": [
+   "under",
+   "on",
+   "in",
+   "over"
+  ],
+  "answer": "under",
+  "explanation": "Under betyder under."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Prepositions",
+  "level": 2,
+  "type": "mc",
+  "question": "The book is ___ the bag. (inside it)",
+  "options": [
+   "in",
+   "on",
+   "at",
+   "under"
+  ],
+  "answer": "in",
+  "explanation": "In betyder i."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Time",
+  "level": 2,
+  "type": "mc",
+  "question": "What time does the clock show?",
+  "options": [
+   "ten past two",
+   "ten to two",
+   "two past ten",
+   "twenty past two"
+  ],
+  "answer": "ten past two",
+  "explanation": "Klockan är 2:10.",
+  "diagram": {
+   "type": "clock",
+   "time": "2:10"
+  }
+ },
+ {
+  "subject": "engelska",
+  "topic": "Time",
+  "level": 2,
+  "type": "mc",
+  "question": "What time does this clock show?",
+  "options": [
+   "quarter past six",
+   "quarter to six",
+   "half past six",
+   "six o'clock"
+  ],
+  "answer": "quarter past six",
+  "explanation": "Klockan är 6:15.",
+  "diagram": {
+   "type": "clock",
+   "time": "6:15"
+  }
+ },
+ {
+  "subject": "engelska",
+  "topic": "Vocabulary",
+  "level": 2,
+  "type": "mc",
+  "question": "Which word means the opposite of \"big\"?",
+  "options": [
+   "small",
+   "tall",
+   "long",
+   "wide"
+  ],
+  "answer": "small",
+  "explanation": "Small är liten."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Vocabulary",
+  "level": 2,
+  "type": "mc",
+  "question": "What is the English word for \"fisk\"?",
+  "options": [
+   "fish",
+   "meat",
+   "bread",
+   "milk"
+  ],
+  "answer": "fish",
+  "explanation": "Fisk heter fish på engelska."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Vocabulary",
+  "level": 2,
+  "type": "mc",
+  "question": "Which of these is a fruit?",
+  "options": [
+   "banana",
+   "carrot",
+   "potato",
+   "onion"
+  ],
+  "answer": "banana",
+  "explanation": "Banana är banan."
+ },
+ {
+  "subject": "engelska",
+  "topic": "K-pop",
+  "level": 2,
+  "type": "mc",
+  "question": "ARMY is the name of BTS ___.",
+  "options": [
+   "fans",
+   "members",
+   "songs",
+   "albums"
+  ],
+  "answer": "fans",
+  "explanation": "ARMY är BTS fans."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 3,
+  "type": "mc",
+  "question": "Yesterday we ___ a movie.",
+  "options": [
+   "watched",
+   "watch",
+   "watches",
+   "watching"
+  ],
+  "answer": "watched",
+  "explanation": "Regelbunden dåtid slutar på -ed."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 3,
+  "type": "mc",
+  "question": "She ___ breakfast when I called. (in progress)",
+  "options": [
+   "was eating",
+   "ate",
+   "eats",
+   "has eaten"
+  ],
+  "answer": "was eating",
+  "explanation": "Past continuous beskriver något pågående."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 3,
+  "type": "mc",
+  "question": "I ___ visit my grandmother next week. (a plan)",
+  "options": [
+   "am going to",
+   "did",
+   "have",
+   "was"
+  ],
+  "answer": "am going to",
+  "explanation": "Be going to används för planer."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 3,
+  "type": "mc",
+  "question": "How ___ water do you drink every day?",
+  "options": [
+   "much",
+   "many",
+   "few",
+   "some"
+  ],
+  "answer": "much",
+  "explanation": "Water är oräknebart, därför much."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 3,
+  "type": "mc",
+  "question": "How ___ friends do you have?",
+  "options": [
+   "many",
+   "much",
+   "a little",
+   "lot"
+  ],
+  "answer": "many",
+  "explanation": "Friends är räkningsbart."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 3,
+  "type": "mc",
+  "question": "She is the ___ student in the class.",
+  "options": [
+   "smartest",
+   "smarter",
+   "most smart",
+   "smartly"
+  ],
+  "answer": "smartest",
+  "explanation": "Superlativ av smart är smartest."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 3,
+  "type": "mc",
+  "question": "This is ___ than that one.",
+  "options": [
+   "more expensive",
+   "expensiver",
+   "most expensive",
+   "expensiver than"
+  ],
+  "answer": "more expensive",
+  "explanation": "Längre adjektiv får more."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 3,
+  "type": "mc",
+  "question": "You ___ wear a helmet when you ride a bike.",
+  "options": [
+   "should",
+   "shall",
+   "would",
+   "could"
+  ],
+  "answer": "should",
+  "explanation": "Should uttrycker en rekommendation."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Vocabulary",
+  "level": 3,
+  "type": "mc",
+  "question": "What is the past tense of \"go\"?",
+  "options": [
+   "went",
+   "goed",
+   "gone",
+   "going"
+  ],
+  "answer": "went",
+  "explanation": "Go är oregelbunden: go – went – gone."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Vocabulary",
+  "level": 3,
+  "type": "mc",
+  "question": "What is the past tense of \"see\"?",
+  "options": [
+   "saw",
+   "seen",
+   "seed",
+   "sawed"
+  ],
+  "answer": "saw",
+  "explanation": "See – saw – seen."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Reading",
+  "level": 3,
+  "type": "mc",
+  "question": "Read: \"Mia has a dog called Max. They walk in the park every morning.\" What does Mia do every morning?",
+  "options": [
+   "She walks her dog.",
+   "She feeds her cat",
+   "She goes swimming",
+   "She plays football"
+  ],
+  "answer": "She walks her dog.",
+  "explanation": "Texten säger att de går i parken."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Reading",
+  "level": 3,
+  "type": "mc",
+  "question": "Read: \"BTS debuted in 2013. They sing in Korean and English.\" Which languages do they sing in?",
+  "options": [
+   "Korean and English",
+   "Only Korean",
+   "French and German",
+   "Japanese and Spanish"
+  ],
+  "answer": "Korean and English",
+  "explanation": "Texten nämner koreanska och engelska."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Reading",
+  "level": 3,
+  "type": "mc",
+  "question": "Read: \"Tom plays football on Mondays and swims on Thursdays.\" On which day does Tom swim?",
+  "options": [
+   "Thursday",
+   "Monday",
+   "Tuesday",
+   "Friday"
+  ],
+  "answer": "Thursday",
+  "explanation": "Tom swims on Thursdays."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Time",
+  "level": 3,
+  "type": "mc",
+  "question": "Which time does the clock show?",
+  "options": [
+   "twenty to five",
+   "twenty past five",
+   "quarter to five",
+   "five o'clock"
+  ],
+  "answer": "twenty to five",
+  "explanation": "Klockan är 4:40.",
+  "diagram": {
+   "type": "clock",
+   "time": "4:40"
+  }
+ },
+ {
+  "subject": "engelska",
+  "topic": "K-pop",
+  "level": 3,
+  "type": "mc",
+  "question": "Which of these is the correct sentence?",
+  "options": [
+   "BTS has performed all over the world.",
+   "BTS have perform all over the world.",
+   "BTS has perform all over the world.",
+   "BTS performs all over world has."
+  ],
+  "answer": "BTS has performed all over the world.",
+  "explanation": "Present perfect: has + particip."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 4,
+  "type": "mc",
+  "question": "I have never ___ sushi.",
+  "options": [
+   "eaten",
+   "ate",
+   "eat",
+   "eating"
+  ],
+  "answer": "eaten",
+  "explanation": "Present perfect: have + particip (eaten)."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 4,
+  "type": "mc",
+  "question": "She has lived here ___ 2015.",
+  "options": [
+   "since",
+   "for",
+   "during",
+   "ago"
+  ],
+  "answer": "since",
+  "explanation": "Since används med startpunkt i tiden."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 4,
+  "type": "mc",
+  "question": "We have known each other ___ ten years.",
+  "options": [
+   "for",
+   "since",
+   "during",
+   "ago"
+  ],
+  "answer": "for",
+  "explanation": "For används med tidsperiod."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 4,
+  "type": "mc",
+  "question": "The book ___ by thousands of people.",
+  "options": [
+   "was read",
+   "read",
+   "has read",
+   "reading"
+  ],
+  "answer": "was read",
+  "explanation": "Passiv: was + particip."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 4,
+  "type": "mc",
+  "question": "If I ___ rich, I would travel the world.",
+  "options": [
+   "were",
+   "am",
+   "will be",
+   "was being"
+  ],
+  "answer": "were",
+  "explanation": "Andra konditionalis: if + were/past."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 4,
+  "type": "mc",
+  "question": "If it rains, I ___ stay at home.",
+  "options": [
+   "will",
+   "would",
+   "had",
+   "shall have"
+  ],
+  "answer": "will",
+  "explanation": "Första konditionalis: if + presens, will + verb."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 4,
+  "type": "mc",
+  "question": "The girl ___ lives next door is my friend.",
+  "options": [
+   "who",
+   "which",
+   "whose",
+   "what"
+  ],
+  "answer": "who",
+  "explanation": "Who används för personer."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 4,
+  "type": "mc",
+  "question": "He said that he ___ tired.",
+  "options": [
+   "was",
+   "is",
+   "be",
+   "were"
+  ],
+  "answer": "was",
+  "explanation": "Indirekt tal flyttar tillbaka i tiden."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 4,
+  "type": "mc",
+  "question": "I look forward ___ you.",
+  "options": [
+   "to seeing",
+   "to see",
+   "for see",
+   "at seeing"
+  ],
+  "answer": "to seeing",
+  "explanation": "Look forward to + ing-form."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Phrasal verbs",
+  "level": 4,
+  "type": "mc",
+  "question": "What does \"give up\" mean?",
+  "options": [
+   "stop trying",
+   "start again",
+   "win",
+   "buy something"
+  ],
+  "answer": "stop trying",
+  "explanation": "Give up är att ge upp."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Phrasal verbs",
+  "level": 4,
+  "type": "mc",
+  "question": "What does \"look after\" mean?",
+  "options": [
+   "take care of",
+   "search for",
+   "look at",
+   "look like"
+  ],
+  "answer": "take care of",
+  "explanation": "Look after = ta hand om."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Vocabulary",
+  "level": 4,
+  "type": "mc",
+  "question": "Which word means \"very small\"?",
+  "options": [
+   "tiny",
+   "huge",
+   "giant",
+   "heavy"
+  ],
+  "answer": "tiny",
+  "explanation": "Tiny är pytteliten."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Vocabulary",
+  "level": 4,
+  "type": "mc",
+  "question": "A person who writes songs is called a ...",
+  "options": [
+   "songwriter",
+   "singer",
+   "dancer",
+   "actor"
+  ],
+  "answer": "songwriter",
+  "explanation": "Songwriter skriver låtar."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Reading",
+  "level": 4,
+  "type": "mc",
+  "question": "Read: \"Hana wanted to be a singer. She practised every day after school and joined a talent show.\" What did Hana want?",
+  "options": [
+   "to be a singer",
+   "to be a doctor",
+   "to be a teacher",
+   "to be an athlete"
+  ],
+  "answer": "to be a singer",
+  "explanation": "Texten säger att hon ville bli sångerska."
+ },
+ {
+  "subject": "engelska",
+  "topic": "K-pop",
+  "level": 4,
+  "type": "mc",
+  "question": "\"Fans around the world learn Korean to understand their favourite songs.\" What does this sentence mean?",
+  "options": [
+   "Many fans study Korean",
+   "Korean is easy",
+   "Songs are in English",
+   "Fans live only in Korea"
+  ],
+  "answer": "Many fans study Korean",
+  "explanation": "Fans lär sig koreanska."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 5,
+  "type": "mc",
+  "question": "Not only ___ late, but he also forgot his book.",
+  "options": [
+   "was he",
+   "he was",
+   "is he",
+   "he is"
+  ],
+  "answer": "was he",
+  "explanation": "Efter \"not only\" kommer inversion."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 5,
+  "type": "mc",
+  "question": "Had I known, I ___ come earlier.",
+  "options": [
+   "would have",
+   "will have",
+   "would",
+   "had"
+  ],
+  "answer": "would have",
+  "explanation": "Tredje konditionalis utan if."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 5,
+  "type": "mc",
+  "question": "She insisted that he ___ on time.",
+  "options": [
+   "be",
+   "is",
+   "was",
+   "being"
+  ],
+  "answer": "be",
+  "explanation": "Konjunktiv efter insist."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 5,
+  "type": "mc",
+  "question": "It is high time we ___ home.",
+  "options": [
+   "went",
+   "go",
+   "will go",
+   "going"
+  ],
+  "answer": "went",
+  "explanation": "After it's high time används preteritum."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 5,
+  "type": "mc",
+  "question": "By next year, I ___ here for ten years.",
+  "options": [
+   "will have lived",
+   "will live",
+   "lived",
+   "have lived"
+  ],
+  "answer": "will have lived",
+  "explanation": "Future perfect."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 5,
+  "type": "mc",
+  "question": "She is used to ___ early.",
+  "options": [
+   "getting up",
+   "get up",
+   "got up",
+   "gets up"
+  ],
+  "answer": "getting up",
+  "explanation": "Be used to + ing."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Grammar",
+  "level": 5,
+  "type": "mc",
+  "question": "\"I'd rather you ___ here.\" Which verb fits?",
+  "options": [
+   "stayed",
+   "stay",
+   "will stay",
+   "staying"
+  ],
+  "answer": "stayed",
+  "explanation": "Would rather + subjekt + dåtidsform."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Idioms",
+  "level": 5,
+  "type": "mc",
+  "question": "What does \"break the ice\" mean?",
+  "options": [
+   "start a conversation in a friendly way",
+   "break something",
+   "feel cold",
+   "win a game"
+  ],
+  "answer": "start a conversation in a friendly way",
+  "explanation": "Break the ice = bryta isen."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Idioms",
+  "level": 5,
+  "type": "mc",
+  "question": "What does \"piece of cake\" mean?",
+  "options": [
+   "very easy",
+   "delicious",
+   "expensive",
+   "very small"
+  ],
+  "answer": "very easy",
+  "explanation": "Piece of cake betyder lätt som en plätt."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Idioms",
+  "level": 5,
+  "type": "mc",
+  "question": "What does \"once in a blue moon\" mean?",
+  "options": [
+   "very rarely",
+   "every night",
+   "every month",
+   "never"
+  ],
+  "answer": "very rarely",
+  "explanation": "Once in a blue moon = högst sällan."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Idioms",
+  "level": 5,
+  "type": "mc",
+  "question": "What does \"under the weather\" mean?",
+  "options": [
+   "feeling ill",
+   "very cold",
+   "wet",
+   "angry"
+  ],
+  "answer": "feeling ill",
+  "explanation": "Under the weather = lite dålig."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Vocabulary",
+  "level": 5,
+  "type": "mc",
+  "question": "\"Reliable\" means ...",
+  "options": [
+   "able to be trusted",
+   "very fast",
+   "expensive",
+   "friendly"
+  ],
+  "answer": "able to be trusted",
+  "explanation": "Reliable = pålitlig."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Vocabulary",
+  "level": 5,
+  "type": "mc",
+  "question": "Which word is a synonym of \"enormous\"?",
+  "options": [
+   "gigantic",
+   "tiny",
+   "narrow",
+   "fragile"
+  ],
+  "answer": "gigantic",
+  "explanation": "Enormous betyder jättestor."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Vocabulary",
+  "level": 5,
+  "type": "mc",
+  "question": "Which word is an antonym of \"generous\"?",
+  "options": [
+   "selfish",
+   "kind",
+   "friendly",
+   "polite"
+  ],
+  "answer": "selfish",
+  "explanation": "Selfish = själviskt, generous = generöst."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Reading",
+  "level": 5,
+  "type": "mc",
+  "question": "Read: \"Although the band's early songs were not popular, they kept working hard and eventually found success.\" What does this tell us about the band?",
+  "options": [
+   "They did not give up",
+   "They quit early",
+   "They never practised",
+   "They were popular from the start"
+  ],
+  "answer": "They did not give up",
+  "explanation": "Although signalerar kontrast."
+ },
+ {
+  "subject": "engelska",
+  "topic": "Reading",
+  "level": 5,
+  "type": "mc",
+  "question": "In the sentence \"The project, which took months, finally ended\", what does \"which took months\" do?",
+  "options": [
+   "Adds extra information",
+   "Asks a question",
+   "Gives an order",
+   "Shows a place"
+  ],
+  "answer": "Adds extra information",
+  "explanation": "Det är en bisats som ger extra information."
+ },
+ {
+  "subject": "engelska",
+  "topic": "K-pop",
+  "level": 5,
+  "type": "mc",
+  "question": "\"The group's music has transcended language barriers.\" What does \"transcended\" mean?",
+  "options": [
+   "gone beyond",
+   "stopped",
+   "copied",
+   "hidden"
+  ],
+  "answer": "gone beyond",
+  "explanation": "Transcend = gå bortom."
+ }
+]

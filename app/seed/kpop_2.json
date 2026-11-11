@@ -1,0 +1,883 @@
+[
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 1,
+  "type": "mc",
+  "question": "Hur många medlemmar har BTS?",
+  "options": [
+   "7",
+   "4",
+   "5",
+   "9"
+  ],
+  "answer": "7",
+  "explanation": "BTS har sju medlemmar: RM, Jin, Suga, J-Hope, Jimin, V och Jungkook."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket av dessa namn är en BTS-medlem?",
+  "options": [
+   "Jungkook",
+   "Jisoo",
+   "Lisa",
+   "Felix"
+  ],
+  "answer": "Jungkook",
+  "explanation": "Jisoo och Lisa är med i BLACKPINK, Felix i Stray Kids."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas BTS fans (de som älskar BTS)?",
+  "options": [
+   "ARMY",
+   "BLINK",
+   "ONCE",
+   "STAY"
+  ],
+  "answer": "ARMY",
+  "explanation": "ARMY är BTS fandom."
+ },
+ {
+  "subject": "kpop",
+  "topic": "K-pop",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas den yngsta medlemmen i en K-pop-grupp?",
+  "options": [
+   "Maknae",
+   "Hyung",
+   "Sunbae",
+   "Leader"
+  ],
+  "answer": "Maknae",
+  "explanation": "Maknae betyder yngst."
+ },
+ {
+  "subject": "kpop",
+  "topic": "K-pop",
+  "level": 1,
+  "type": "mc",
+  "question": "Hur många medlemmar har BLACKPINK?",
+  "options": [
+   "4",
+   "3",
+   "5",
+   "7"
+  ],
+  "answer": "4",
+  "explanation": "Jisoo, Jennie, Rosé och Lisa."
+ },
+ {
+  "subject": "kpop",
+  "topic": "Scen",
+  "level": 1,
+  "type": "mc",
+  "question": "Titta på bilden. Hur många dansare står på scenen?",
+  "options": [
+   "5",
+   "3",
+   "4",
+   "7"
+  ],
+  "answer": "5",
+  "explanation": "Det är fem dansare.",
+  "image": "scen.svg"
+ },
+ {
+  "subject": "kpop",
+  "topic": "Scen",
+  "level": 1,
+  "type": "mc",
+  "question": "Titta på bilden. Hur många strålkastare lyser på scenen?",
+  "options": [
+   "4",
+   "2",
+   "3",
+   "5"
+  ],
+  "answer": "4",
+  "explanation": "Det är fyra strålkastare.",
+  "image": "scen.svg"
+ },
+ {
+  "subject": "kpop",
+  "topic": "K-pop",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas den handhållna lysande pinnen fans har på konserter?",
+  "options": [
+   "Lightstick",
+   "Mikrofon",
+   "Gitarr",
+   "Trumpinne"
+  ],
+  "answer": "Lightstick",
+  "explanation": "BTS lightstick kallas ARMY Bomb."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad heter BTS fullständiga namn på koreanska, som betyder 'Bulletproof Boy Scouts'?",
+  "options": [
+   "Bangtan Sonyeondan",
+   "Daebak Sonyeondan",
+   "Hallyu Sonyeondan",
+   "Kimchi Sonyeondan"
+  ],
+  "answer": "Bangtan Sonyeondan",
+  "explanation": "Namnet betyder ungefär \"kula-säkra scouter\"."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 2,
+  "type": "mc",
+  "question": "Vem brukar kallas BTS ledare?",
+  "options": [
+   "RM",
+   "Jin",
+   "Suga",
+   "V"
+  ],
+  "answer": "RM",
+  "explanation": "RM leder gruppen och talar ofta engelska."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken BTS-medlem är känd som 'Golden maknae'?",
+  "options": [
+   "Jungkook",
+   "Jin",
+   "J-Hope",
+   "Suga"
+  ],
+  "answer": "Jungkook",
+  "explanation": "Jungkook är yngst och är duktig på mycket."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken BTS-medlem kallas 'Worldwide Handsome'?",
+  "options": [
+   "Jin",
+   "RM",
+   "Suga",
+   "V"
+  ],
+  "answer": "Jin",
+  "explanation": "Jin är äldst i gruppen."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken av medlemmarna rappar under artistnamnet Agust D?",
+  "options": [
+   "Suga",
+   "RM",
+   "Jin",
+   "Jimin"
+  ],
+  "answer": "Suga",
+  "explanation": "Agust D är Sugas soloalias."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken BTS-medlem har soloprojektet \"Jack in the Box\" från 2022?",
+  "options": [
+   "J-Hope",
+   "Jin",
+   "Jimin",
+   "RM"
+  ],
+  "answer": "J-Hope",
+  "explanation": "J-Hope släppte albumet 2022."
+ },
+ {
+  "subject": "kpop",
+  "topic": "K-pop",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad betyder 'Annyeonghaseyo' på svenska?",
+  "options": [
+   "Hej",
+   "Tack",
+   "Förlåt",
+   "Hejdå"
+  ],
+  "answer": "Hej",
+  "explanation": "Det är det vanligaste hälsningsfrasen på koreanska."
+ },
+ {
+  "subject": "kpop",
+  "topic": "K-pop",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad betyder 'Saranghae' på svenska?",
+  "options": [
+   "Jag älskar dig",
+   "Jag är trött",
+   "Jag är hungrig",
+   "Tack"
+  ],
+  "answer": "Jag älskar dig",
+  "explanation": "Ofta används det i låttexter och till fans."
+ },
+ {
+  "subject": "kpop",
+  "topic": "K-pop",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken K-pop-grupp har 9 medlemmar och debuterade 2015?",
+  "options": [
+   "TWICE",
+   "BLACKPINK",
+   "BTS",
+   "Stray Kids"
+  ],
+  "answer": "TWICE",
+  "explanation": "TWICE:s fans heter ONCE."
+ },
+ {
+  "subject": "kpop",
+  "topic": "K-pop",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas den period då en grupp släpper ny musik efter en paus?",
+  "options": [
+   "Comeback",
+   "Debut",
+   "Audition",
+   "Konsert"
+  ],
+  "answer": "Comeback",
+  "explanation": "Man säger att en grupp har ett comeback."
+ },
+ {
+  "subject": "kpop",
+  "topic": "K-pop",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas den favoritmedlem en fan gillar mest i en grupp?",
+  "options": [
+   "Bias",
+   "Maknae",
+   "Leader",
+   "Center"
+  ],
+  "answer": "Bias",
+  "explanation": "Min bias är min favorit."
+ },
+ {
+  "subject": "kpop",
+  "topic": "K-pop",
+  "level": 2,
+  "type": "mc",
+  "question": "Titta på diagrammet. Vilken grupp har flest medlemmar?",
+  "options": [
+   "SEVENTEEN",
+   "BTS",
+   "BLACKPINK",
+   "TWICE"
+  ],
+  "answer": "SEVENTEEN",
+  "explanation": "SEVENTEEN har 13 medlemmar.",
+  "diagram": {
+   "type": "bar_chart",
+   "title": "Antal medlemmar",
+   "labels": [
+    "BTS",
+    "BLACKPINK",
+    "TWICE",
+    "SEVENTEEN"
+   ],
+   "values": [
+    7,
+    4,
+    9,
+    13
+   ],
+   "show_values": true
+  }
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket av BTS album är först i serien Love Yourself?",
+  "options": [
+   "Love Yourself: Her",
+   "Map of the Soul: 7",
+   "BE",
+   "Proof"
+  ],
+  "answer": "Love Yourself: Her",
+  "explanation": "Love Yourself-serien släpptes 2017–2018."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken BTS-singel från 2020, helt på engelska, blev deras första etta på Billboard Hot 100?",
+  "options": [
+   "Dynamite",
+   "Spring Day",
+   "Fake Love",
+   "Mic Drop"
+  ],
+  "answer": "Dynamite",
+  "explanation": "Dynamite toppade listan i september 2020."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken BTS-låt från 2021 också helt på engelska toppade Billboard Hot 100?",
+  "options": [
+   "Butter",
+   "Blood Sweat & Tears",
+   "DNA",
+   "Boy With Luv"
+  ],
+  "answer": "Butter",
+  "explanation": "Butter släpptes i maj 2021."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken artist sjunger med BTS på \"Boy With Luv\"?",
+  "options": [
+   "Halsey",
+   "Ed Sheeran",
+   "Ariana Grande",
+   "Coldplay"
+  ],
+  "answer": "Halsey",
+  "explanation": "Låten släpptes 2019."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken BTS-medlem släppte låten \"Seven\" tillsammans med Latto 2023?",
+  "options": [
+   "Jungkook",
+   "Jin",
+   "V",
+   "Suga"
+  ],
+  "answer": "Jungkook",
+  "explanation": "Seven blev Jungkooks första soloprojekt med stor internationell framgång."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken BTS-medlem släppte albumet \"Face\" 2023?",
+  "options": [
+   "Jimin",
+   "V",
+   "Jin",
+   "RM"
+  ],
+  "answer": "Jimin",
+  "explanation": "Jimin släppte det i mars 2023."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken BTS-medlem släppte albumet \"Layover\" 2023?",
+  "options": [
+   "V",
+   "Jimin",
+   "Jin",
+   "J-Hope"
+  ],
+  "answer": "V",
+  "explanation": "Layover släpptes i september 2023."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken BTS-medlem släppte albumet \"Indigo\" 2022?",
+  "options": [
+   "RM",
+   "Jin",
+   "Suga",
+   "J-Hope"
+  ],
+  "answer": "RM",
+  "explanation": "Indigo släpptes i december 2022."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken BTS-medlem släppte låten \"The Astronaut\" 2022?",
+  "options": [
+   "Jin",
+   "RM",
+   "Suga",
+   "V"
+  ],
+  "answer": "Jin",
+  "explanation": "Låten är skriven tillsammans med Coldplay."
+ },
+ {
+  "subject": "kpop",
+  "topic": "K-pop",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken K-pop-låt från 2012 av Psy blev först med en miljard visningar på YouTube?",
+  "options": [
+   "Gangnam Style",
+   "Dynamite",
+   "Fantastic Baby",
+   "Gee"
+  ],
+  "answer": "Gangnam Style",
+  "explanation": "Videon slog rekord i december 2012."
+ },
+ {
+  "subject": "kpop",
+  "topic": "K-pop",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket K-pop-företag grundade BTS under namnet Big Hit?",
+  "options": [
+   "HYBE",
+   "SM Entertainment",
+   "YG Entertainment",
+   "JYP Entertainment"
+  ],
+  "answer": "HYBE",
+  "explanation": "Big Hit blev del av HYBE."
+ },
+ {
+  "subject": "kpop",
+  "topic": "K-pop",
+  "level": 3,
+  "type": "mc",
+  "question": "Hur många medlemmar har SEVENTEEN?",
+  "options": [
+   "13",
+   "7",
+   "9",
+   "17"
+  ],
+  "answer": "13",
+  "explanation": "Namnet betyder inte att de är 17."
+ },
+ {
+  "subject": "kpop",
+  "topic": "K-pop",
+  "level": 3,
+  "type": "mc",
+  "question": "Titta på tidslinjen över debutår. Vilken av grupperna debuterade först?",
+  "options": [
+   "BTS",
+   "BLACKPINK",
+   "Stray Kids",
+   "Ingen av dem"
+  ],
+  "answer": "BTS",
+  "explanation": "BTS debuterade 2013, BLACKPINK 2016 och Stray Kids 2018.",
+  "diagram": {
+   "type": "number_line",
+   "min": 2012,
+   "max": 2019,
+   "step": 1,
+   "label_step": 1,
+   "marks": [
+    {
+     "value": 2013,
+     "label": "BTS"
+    },
+    {
+     "value": 2016,
+     "label": "BLACKPINK"
+    },
+    {
+     "value": 2018,
+     "label": "Stray Kids"
+    }
+   ]
+  }
+ },
+ {
+  "subject": "kpop",
+  "topic": "K-pop",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas en K-pop-grupps fans gemensamt?",
+  "options": [
+   "Fandom",
+   "Rutin",
+   "Band",
+   "Ensemble"
+  ],
+  "answer": "Fandom",
+  "explanation": "Fandom är en grupp hängivna fans."
+ },
+ {
+  "subject": "kpop",
+  "topic": "K-pop",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad betyder 'oppa'?",
+  "options": [
+   "Äldre bror (som tjej säger till pojke)",
+   "Lillasyster",
+   "Lärare",
+   "Vän"
+  ],
+  "answer": "Äldre bror (som tjej säger till pojke)",
+  "explanation": "Används av flickor till äldre män de är nära."
+ },
+ {
+  "subject": "kpop",
+  "topic": "K-pop",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad betyder 'hyung'?",
+  "options": [
+   "Äldre bror (som kille säger till äldre kille)",
+   "Lillebror",
+   "Chef",
+   "Moster"
+  ],
+  "answer": "Äldre bror (som kille säger till äldre kille)",
+  "explanation": "Används av killar till äldre män."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket år höll BTS-medlemmen RM tal i FN, där han uppmanade unga att \"älska sig själva\"?",
+  "options": [
+   "2018",
+   "2014",
+   "2016",
+   "2020"
+  ],
+  "answer": "2018",
+  "explanation": "Han talade vid FN:s generalförsamling."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken stor arena i London spelade BTS på 2019, som en av deras största konserter?",
+  "options": [
+   "Wembley",
+   "Royal Albert Hall",
+   "The O2",
+   "Hyde Park"
+  ],
+  "answer": "Wembley",
+  "explanation": "De spelade två kvällar på Wembley."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket album från 2022 var en antologi som sammanfattade BTS första nio år?",
+  "options": [
+   "Proof",
+   "BE",
+   "Wings",
+   "Love Yourself: Her"
+  ],
+  "answer": "Proof",
+  "explanation": "Proof släpptes i juni 2022."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken BTS-medlem gjorde militärtjänst först?",
+  "options": [
+   "Jin",
+   "Jimin",
+   "RM",
+   "V"
+  ],
+  "answer": "Jin",
+  "explanation": "Jin gick in i december 2022."
+ },
+ {
+  "subject": "kpop",
+  "topic": "K-pop",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas den period som en blivande idol tillbringar i ett bolag innan debuten?",
+  "options": [
+   "Trainee",
+   "Maknae",
+   "Fandom",
+   "Comeback"
+  ],
+  "answer": "Trainee",
+  "explanation": "Många tränar i flera år."
+ },
+ {
+  "subject": "kpop",
+  "topic": "K-pop",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad heter den fiktiva K-pop-gruppen som är hjältar i filmen \"KPop Demon Hunters\"?",
+  "options": [
+   "HUNTR/X",
+   "BLACKPINK",
+   "Saja Boys",
+   "NewJeans"
+  ],
+  "answer": "HUNTR/X",
+  "explanation": "Gruppen jagar demoner i hemlighet."
+ },
+ {
+  "subject": "kpop",
+  "topic": "K-pop",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilka är de fiktiva antagonisterna i \"KPop Demon Hunters\"?",
+  "options": [
+   "Saja Boys",
+   "HUNTR/X",
+   "Twice",
+   "BTS"
+  ],
+  "answer": "Saja Boys",
+  "explanation": "Saja Boys är en pojkgrupp som egentligen är demoner."
+ },
+ {
+  "subject": "kpop",
+  "topic": "K-pop",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken BLACKPINK-medlem släppte en duett med Bruno Mars med titeln \"APT.\"?",
+  "options": [
+   "Rosé",
+   "Jennie",
+   "Lisa",
+   "Jisoo"
+  ],
+  "answer": "Rosé",
+  "explanation": "APT. släpptes i oktober 2024."
+ },
+ {
+  "subject": "kpop",
+  "topic": "K-pop",
+  "level": 4,
+  "type": "mc",
+  "question": "Titta på bilden. Vad heter Sydkoreas flagga?",
+  "options": [
+   "Taegukgi",
+   "Hinomaru",
+   "Union Jack",
+   "Tricolore"
+  ],
+  "answer": "Taegukgi",
+  "explanation": "Taegukgi har en vit bakgrund med röd och blå cirkel och fyra trigram.",
+  "image": "taegukgi.svg"
+ },
+ {
+  "subject": "kpop",
+  "topic": "K-pop",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad är 'hanbok'?",
+  "options": [
+   "Traditionell koreansk klädsel",
+   "Traditionell koreansk mat",
+   "En typ av dans",
+   "Ett skrivsätt"
+  ],
+  "answer": "Traditionell koreansk klädsel",
+  "explanation": "Många idoler bär hanbok under högtider."
+ },
+ {
+  "subject": "kpop",
+  "topic": "K-pop",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas den koreanska skrivstilen skapad av kung Sejong?",
+  "options": [
+   "Hangul",
+   "Kanji",
+   "Hanja",
+   "Romaji"
+  ],
+  "answer": "Hangul",
+  "explanation": "Hangul är ett alfabet med 24 grundbokstäver."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilket BTS-album blev 2018 deras första etta på Billboard 200?",
+  "options": [
+   "Love Yourself: Tear",
+   "Wings",
+   "Map of the Soul: 7",
+   "Proof"
+  ],
+  "answer": "Love Yourself: Tear",
+  "explanation": "Albumet släpptes i maj 2018."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken BTS-låt från 2017 handlar om saknad och har en årstid i titeln?",
+  "options": [
+   "Spring Day",
+   "Dynamite",
+   "Fire",
+   "Butter"
+  ],
+  "answer": "Spring Day",
+  "explanation": "Spring Day är en av BTS mest älskade låtar."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken av dessa BTS-låtar släpptes 2016 på albumet Wings?",
+  "options": [
+   "Blood Sweat & Tears",
+   "Spring Day",
+   "DNA",
+   "Fake Love"
+  ],
+  "answer": "Blood Sweat & Tears",
+  "explanation": "Spring Day och DNA släpptes 2017, Fake Love 2018."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 5,
+  "type": "mc",
+  "question": "BTS fick en Grammy-nominering 2021 för vilken låt?",
+  "options": [
+   "Dynamite",
+   "Butter",
+   "Spring Day",
+   "Fake Love"
+  ],
+  "answer": "Dynamite",
+  "explanation": "Dynamite nominerades i kategorin Best Pop Duo/Group Performance."
+ },
+ {
+  "subject": "kpop",
+  "topic": "K-pop",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad menas med 'hallyu' och varför är det viktigt för Sydkoreas ekonomi?",
+  "options": [
+   "Den koreanska vågen av kultur som ökar export och turism",
+   "En typ av skatt",
+   "En sorts mat",
+   "Ett politiskt parti"
+  ],
+  "answer": "Den koreanska vågen av kultur som ökar export och turism",
+  "explanation": "Kulturen ger inkomster och inflytande."
+ },
+ {
+  "subject": "kpop",
+  "topic": "K-pop",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad är 'soft power'?",
+  "options": [
+   "Ett lands inflytande genom kultur och attraktionskraft",
+   "Militär styrka",
+   "Ekonomiska sanktioner",
+   "Hårda lagar"
+  ],
+  "answer": "Ett lands inflytande genom kultur och attraktionskraft",
+  "explanation": "K-pop och dramer ökar Sydkoreas soft power."
+ },
+ {
+  "subject": "kpop",
+  "topic": "K-pop",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilket år blev Psy:s \"Gangnam Style\" först med en miljard visningar på YouTube?",
+  "options": [
+   "2012",
+   "2009",
+   "2014",
+   "2017"
+  ],
+  "answer": "2012",
+  "explanation": "Det skedde i december 2012."
+ },
+ {
+  "subject": "kpop",
+  "topic": "K-pop",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken grupp debuterade 2007 och kallas ofta \"nationens flickgrupp\"?",
+  "options": [
+   "Girls' Generation (SNSD)",
+   "BLACKPINK",
+   "Red Velvet",
+   "ITZY"
+  ],
+  "answer": "Girls' Generation (SNSD)",
+  "explanation": "Girls' Generation hade nio medlemmar."
+ },
+ {
+  "subject": "kpop",
+  "topic": "K-pop",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad är 'idol' inom K-pop?",
+  "options": [
+   "En artist som tränas för att sjunga, dansa och uppträda",
+   "Bara en rappare",
+   "Bara en producent",
+   "En journalist"
+  ],
+  "answer": "En artist som tränas för att sjunga, dansa och uppträda",
+  "explanation": "Idoler tränar ofta flera år."
+ }
+]

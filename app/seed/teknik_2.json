@@ -1,0 +1,1327 @@
+[
+ {
+  "subject": "teknik",
+  "topic": "Verktyg",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket verktyg använder man för att slå i en spik?",
+  "options": [
+   "Hammare",
+   "Skruvmejsel",
+   "Såg",
+   "Tång"
+  ],
+  "answer": "Hammare",
+  "explanation": "Hammaren används för att slå."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Verktyg",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket verktyg använder man för att skruva i en skruv?",
+  "options": [
+   "Skruvmejsel",
+   "Hammare",
+   "Såg",
+   "Linjal"
+  ],
+  "answer": "Skruvmejsel",
+  "explanation": "Skruvmejseln vrider skruven."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Verktyg",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket verktyg använder man för att mäta en längd?",
+  "options": [
+   "Måttband",
+   "Hammare",
+   "Såg",
+   "Penslar"
+  ],
+  "answer": "Måttband",
+  "explanation": "Måttband och linjal mäter längd."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Verktyg",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket verktyg använder man för att dela en planka?",
+  "options": [
+   "Såg",
+   "Hammare",
+   "Skruvmejsel",
+   "Linjal"
+  ],
+  "answer": "Såg",
+  "explanation": "Man sågar i trä."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Material",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket material kommer från träd?",
+  "options": [
+   "Trä",
+   "Glas",
+   "Plast",
+   "Betong"
+  ],
+  "answer": "Trä",
+  "explanation": "Trä är ett naturmaterial."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Material",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket material är glas huvudsakligen gjort av?",
+  "options": [
+   "Sand",
+   "Trä",
+   "Järn",
+   "Papper"
+  ],
+  "answer": "Sand",
+  "explanation": "Sand smälts till glas vid hög temperatur."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Material",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket material är bäst på att leda värme?",
+  "options": [
+   "Metall",
+   "Trä",
+   "Plast",
+   "Gummi"
+  ],
+  "answer": "Metall",
+  "explanation": "Kastruller är ofta av metall."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Material",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket av dessa material är en isolator, alltså leder inte el?",
+  "options": [
+   "Plast",
+   "Koppar",
+   "Aluminium",
+   "Järn"
+  ],
+  "answer": "Plast",
+  "explanation": "Elsladdar har plast runt metalltrådarna."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Datorer",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken del av datorn använder du för att skriva text?",
+  "options": [
+   "Tangentbord",
+   "Skärm",
+   "Högtalare",
+   "Kamera"
+  ],
+  "answer": "Tangentbord",
+  "explanation": "Tangentbordet är en inenhet."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Datorer",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken del av datorn visar bilder?",
+  "options": [
+   "Skärmen",
+   "Tangentbordet",
+   "Musen",
+   "Högtalaren"
+  ],
+  "answer": "Skärmen",
+  "explanation": "Skärmen visar bilden."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Datorer",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket program använder man för att surfa på webben?",
+  "options": [
+   "Webbläsare",
+   "Kalkylprogram",
+   "Ritprogram",
+   "Antivirus"
+  ],
+  "answer": "Webbläsare",
+  "explanation": "Chrome, Firefox och Safari är webbläsare."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Energi",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken energikälla använder solceller?",
+  "options": [
+   "Solljus",
+   "Vind",
+   "Vatten",
+   "Kol"
+  ],
+  "answer": "Solljus",
+  "explanation": "Solceller gör solljus till el."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Energi",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken av dessa är en förnybar energikälla?",
+  "options": [
+   "Vindkraft",
+   "Kol",
+   "Olja",
+   "Naturgas"
+  ],
+  "answer": "Vindkraft",
+  "explanation": "Vinden tar aldrig slut."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Säkerhet",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad skyddar en cykelhjälm?",
+  "options": [
+   "Huvudet",
+   "Fötterna",
+   "Händerna",
+   "Magen"
+  ],
+  "answer": "Huvudet",
+  "explanation": "Hjälm minskar risken för huvudskador."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Säkerhet",
+  "level": 1,
+  "type": "mc",
+  "question": "Varför har cyklar reflexer?",
+  "options": [
+   "För att synas i mörker",
+   "För att låta bättre",
+   "För att gå fortare",
+   "För att bli lättare"
+  ],
+  "answer": "För att synas i mörker",
+  "explanation": "Reflexer kastar tillbaka ljus från bilar."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Ritningar",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas en ritning som visar hur något ska se ut eller byggas?",
+  "options": [
+   "Ritning",
+   "Gissning",
+   "Recept",
+   "Kalkyl"
+  ],
+  "answer": "Ritning",
+  "explanation": "Ritningar används vid konstruktion."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Datorer",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas en liten, bärbar telefon med många funktioner?",
+  "options": [
+   "Smartphone",
+   "Radio",
+   "Faxmaskin",
+   "Skrivmaskin"
+  ],
+  "answer": "Smartphone",
+  "explanation": "Med en smartphone kan man ringa, fota och surfa."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Enkla maskiner",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken enkel maskin är en gungbräda?",
+  "options": [
+   "Hävstång",
+   "Trissa",
+   "Kugghjul",
+   "Lutande plan"
+  ],
+  "answer": "Hävstång",
+  "explanation": "Gungbrädan vrids runt en vridpunkt."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Enkla maskiner",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken enkel maskin är en ramp?",
+  "options": [
+   "Lutande plan",
+   "Hävstång",
+   "Trissa",
+   "Skruv"
+  ],
+  "answer": "Lutande plan",
+  "explanation": "Det är lättare att dra något uppför en ramp än att lyfta rakt upp."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Enkla maskiner",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad är en skruv egentligen, sett som enkel maskin?",
+  "options": [
+   "Ett lutande plan som är lindat runt en axel",
+   "En hävstång",
+   "En trissa",
+   "Ett kugghjul"
+  ],
+  "answer": "Ett lutande plan som är lindat runt en axel",
+  "explanation": "Gängorna är ett lutande plan."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Enkla maskiner",
+  "level": 2,
+  "type": "mc",
+  "question": "Två kugghjul greppar in i varandra. Det ena snurrar medsols. Åt vilket håll snurrar det andra?",
+  "options": [
+   "Motsols",
+   "Medsols",
+   "Det står still",
+   "Båda hållen"
+  ],
+  "answer": "Motsols",
+  "explanation": "Kugghjul som greppar in i varandra vänder rörelsen."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Enkla maskiner",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad gör en fast trissa med ett rep?",
+  "options": [
+   "Ändrar kraftens riktning",
+   "Gör tyngden mindre",
+   "Gör repet längre",
+   "Skapar el"
+  ],
+  "answer": "Ändrar kraftens riktning",
+  "explanation": "Man kan dra neråt för att lyfta något uppåt."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Datorer",
+  "level": 2,
+  "type": "mc",
+  "question": "Hur många bitar är en byte?",
+  "options": [
+   "8",
+   "2",
+   "4",
+   "16"
+  ],
+  "answer": "8",
+  "explanation": "1 byte = 8 bitar."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Datorer",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken enhet används för datamängd?",
+  "options": [
+   "Byte",
+   "Watt",
+   "Newton",
+   "Meter"
+  ],
+  "answer": "Byte",
+  "explanation": "kB, MB, GB är multipler av byte."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Datorer",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad är ett lösenords uppgift?",
+  "options": [
+   "Att skydda ett konto",
+   "Att göra datorn snabbare",
+   "Att rensa filer",
+   "Att ladda batteriet"
+  ],
+  "answer": "Att skydda ett konto",
+  "explanation": "Bara den som kan lösenordet ska komma in."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Datorer",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket av dessa är ett programmeringsspråk?",
+  "options": [
+   "Python",
+   "Chrome",
+   "Word",
+   "Windows"
+  ],
+  "answer": "Python",
+  "explanation": "Python används i skolor och i industrin."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Datorer",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas en steg-för-steg-beskrivning av hur man löser ett problem?",
+  "options": [
+   "Algoritm",
+   "Pixel",
+   "Router",
+   "Fil"
+  ],
+  "answer": "Algoritm",
+  "explanation": "Recept är också algoritmer."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Miljö",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad ska du göra med en tom PET-flaska som har pant?",
+  "options": [
+   "Panta den",
+   "Slänga den i skogen",
+   "Elda upp den",
+   "Gräva ner den"
+  ],
+  "answer": "Panta den",
+  "explanation": "Pantsystemet gör att materialet kan återvinnas."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Miljö",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket av dessa material kan återvinnas många gånger?",
+  "options": [
+   "Glas",
+   "Frigolit",
+   "Blöjor",
+   "Kattsand"
+  ],
+  "answer": "Glas",
+  "explanation": "Glas återvinns utan att tappa kvalitet."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Datorer",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad är en \"app\" på en telefon?",
+  "options": [
+   "Ett program",
+   "En sladd",
+   "Ett batteri",
+   "En skärm"
+  ],
+  "answer": "Ett program",
+  "explanation": "App är kort för applikation."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Energi",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad omvandlar en elmotor elektrisk energi till?",
+  "options": [
+   "Rörelse",
+   "Mat",
+   "Vatten",
+   "Stenar"
+  ],
+  "answer": "Rörelse",
+  "explanation": "Elmotorer finns i fläktar och elcyklar."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Datorer",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad betyder förkortningen USB?",
+  "options": [
+   "Universal Serial Bus",
+   "Ultra Speed Battery",
+   "United System Base",
+   "Unit Storage Box"
+  ],
+  "answer": "Universal Serial Bus",
+  "explanation": "USB används för att koppla ihop saker."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Datorer",
+  "level": 2,
+  "type": "text",
+  "question": "Du har 8 bitar i en byte. Hur många bitar är 2 byte?\nSvara endast med talet.",
+  "answer": "16",
+  "explanation": "2 · 8 = 16."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Elektronik",
+  "level": 3,
+  "type": "mc",
+  "question": "Titta på kretsen. Vilken komponent är batteriet?",
+  "options": [
+   "A",
+   "B",
+   "C",
+   "D"
+  ],
+  "answer": "A",
+  "explanation": "Batteriet har en lång och en kort linje.",
+  "image": "krets.svg"
+ },
+ {
+  "subject": "teknik",
+  "topic": "Elektronik",
+  "level": 3,
+  "type": "mc",
+  "question": "Titta på kretsen. Vilken komponent är ett motstånd?",
+  "options": [
+   "C",
+   "A",
+   "B",
+   "D"
+  ],
+  "answer": "C",
+  "explanation": "Motstånd ritas som en rektangel.",
+  "image": "krets.svg"
+ },
+ {
+  "subject": "teknik",
+  "topic": "Elektronik",
+  "level": 3,
+  "type": "mc",
+  "question": "Titta på kretsen. Vad är det för komponent D?",
+  "options": [
+   "Lampa",
+   "Batteri",
+   "Motstånd",
+   "Strömbrytare"
+  ],
+  "answer": "Lampa",
+  "explanation": "Lampan ritas som en cirkel med ett kryss.",
+  "image": "krets.svg"
+ },
+ {
+  "subject": "teknik",
+  "topic": "Elektronik",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad är en LED?",
+  "options": [
+   "En lysdiod",
+   "En typ av batteri",
+   "Ett slags motstånd",
+   "En högtalare"
+  ],
+  "answer": "En lysdiod",
+  "explanation": "LED lyser med lite energi."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Elektronik",
+  "level": 3,
+  "type": "mc",
+  "question": "Varför är LED-lampor bättre än glödlampor?",
+  "options": [
+   "De använder mindre el",
+   "De blir hetare",
+   "De väger mer",
+   "De går sönder snabbare"
+  ],
+  "answer": "De använder mindre el",
+  "explanation": "LED omvandlar mer el till ljus och mindre till värme."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Datorer",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad är en CPU?",
+  "options": [
+   "Datorns processor, som utför beräkningar",
+   "Datorns skärm",
+   "Datorns högtalare",
+   "Datorns tangentbord"
+  ],
+  "answer": "Datorns processor, som utför beräkningar",
+  "explanation": "CPU kallas ofta datorns hjärna."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Datorer",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad är RAM?",
+  "options": [
+   "Datorns arbetsminne",
+   "En skärm",
+   "En sladd",
+   "Ett program"
+  ],
+  "answer": "Datorns arbetsminne",
+  "explanation": "RAM är snabbt men tappar innehållet utan ström."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Datorer",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad är en hårddisk eller SSD till för?",
+  "options": [
+   "Att lagra filer permanent",
+   "Att kyla datorn",
+   "Att visa bilder",
+   "Att ladda batteriet"
+  ],
+  "answer": "Att lagra filer permanent",
+  "explanation": "Filer sparas på disken även när datorn är avstängd."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Datorer",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad gör en router?",
+  "options": [
+   "Kopplar ihop enheter i ett nätverk och med internet",
+   "Skriver ut papper",
+   "Förstärker ljud",
+   "Laddar telefonen"
+  ],
+  "answer": "Kopplar ihop enheter i ett nätverk och med internet",
+  "explanation": "Hemma delar routern ut wifi."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Datorer",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad är en IP-adress?",
+  "options": [
+   "Ett nummer som identifierar en enhet i ett nätverk",
+   "Ett lösenord",
+   "Ett mejlprogram",
+   "Ett batteri"
+  ],
+  "answer": "Ett nummer som identifierar en enhet i ett nätverk",
+  "explanation": "IP-adressen visar var datat ska skickas."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Säkerhet",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas det när någon skickar falska meddelanden för att lura dig på lösenord?",
+  "options": [
+   "Nätfiske (phishing)",
+   "Streaming",
+   "Surfning",
+   "Backup"
+  ],
+  "answer": "Nätfiske (phishing)",
+  "explanation": "Klicka aldrig på misstänkta länkar."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Säkerhet",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket av dessa lösenord är starkast?",
+  "options": [
+   "rT9#vL2!qKm8",
+   "123456",
+   "lösenord",
+   "mittnamn"
+  ],
+  "answer": "rT9#vL2!qKm8",
+  "explanation": "Långa lösenord med blandade tecken är svårast att gissa."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Programmering",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas en kodsats som upprepar något flera gånger?",
+  "options": [
+   "Loop",
+   "Variabel",
+   "Funktion",
+   "Kommentar"
+  ],
+  "answer": "Loop",
+  "explanation": "for- och while-loopar upprepar kod."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Programmering",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas en kodsats som väljer väg beroende på ett villkor?",
+  "options": [
+   "Villkor (if-sats)",
+   "Loop",
+   "Variabel",
+   "Kompilering"
+  ],
+  "answer": "Villkor (if-sats)",
+  "explanation": "if betyder \"om\"."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Programmering",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad är en variabel i programmering?",
+  "options": [
+   "En namngiven plats där ett värde lagras",
+   "En typ av sladd",
+   "Ett felmeddelande",
+   "En skärm"
+  ],
+  "answer": "En namngiven plats där ett värde lagras",
+  "explanation": "Exempel: poäng = 10."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Binärt",
+  "level": 3,
+  "type": "text",
+  "question": "Vad är det binära talet 101 i vårt vanliga talsystem?\nSvara endast med talet.",
+  "answer": "5",
+  "explanation": "1·4 + 0·2 + 1·1 = 5."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Binärt",
+  "level": 3,
+  "type": "text",
+  "question": "Vad är det binära talet 1010 i vårt vanliga talsystem?\nSvara endast med talet.",
+  "answer": "10",
+  "explanation": "8 + 2 = 10."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Räkna",
+  "level": 3,
+  "type": "text",
+  "question": "Du har en spellista med 50 BTS-låtar. Varje låt är ungefär 4 MB. Hur många MB blir det totalt?\nSvara endast med talet.",
+  "answer": "200",
+  "explanation": "50 · 4 = 200 MB."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Räkna",
+  "level": 3,
+  "type": "text",
+  "question": "Ett kugghjul med 10 kuggar driver ett kugghjul med 20 kuggar. Hur många varv hinner det stora hjulet varva medan det lilla går 4 varv?\nSvara endast med talet.",
+  "answer": "2",
+  "explanation": "Det lilla går dubbelt så fort som det stora: 4 / 2 = 2 varv."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Material",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket material används ofta för att armera betong?",
+  "options": [
+   "Stål",
+   "Trä",
+   "Glas",
+   "Plast"
+  ],
+  "answer": "Stål",
+  "explanation": "Betong klarar tryck men stål klarar drag."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Konstruktion",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken form är starkast i konstruktioner som broar och master?",
+  "options": [
+   "Triangeln",
+   "Cirkeln",
+   "Fyrkanten med ledade hörn",
+   "Sexhörningen"
+  ],
+  "answer": "Triangeln",
+  "explanation": "Triangeln kan inte skeva sig utan att sidorna ändras."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Mekanik",
+  "level": 4,
+  "type": "mc",
+  "question": "Hur stort blir vridmomentet om en kraft på 50 N verkar 2 m från en vridpunkt? (M = F · l)",
+  "options": [
+   "100 Nm",
+   "25 Nm",
+   "52 Nm",
+   "200 Nm"
+  ],
+  "answer": "100 Nm",
+  "explanation": "50 · 2 = 100 Nm."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Mekanik",
+  "level": 4,
+  "type": "mc",
+  "question": "Du trycker med 100 N på en hävstång 3 m från vridpunkten. Lasten sitter 1 m från vridpunkten på andra sidan. Hur stor kraft får lasten?",
+  "options": [
+   "300 N",
+   "33 N",
+   "100 N",
+   "400 N"
+  ],
+  "answer": "300 N",
+  "explanation": "Momentet är 100 · 3 = 300 Nm, och lasten får 300 / 1 = 300 N."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Mekanik",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas en maskin som bygger föremål lager för lager, ofta av smält plast?",
+  "options": [
+   "3D-skrivare",
+   "Laserskrivare",
+   "Skanner",
+   "Plotter"
+  ],
+  "answer": "3D-skrivare",
+  "explanation": "3D-skrivare använder additiv tillverkning."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Mekanik",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad innebär förkortningen CAD?",
+  "options": [
+   "Datorstödd konstruktion",
+   "Central Antenna Device",
+   "Cool Audio Design",
+   "Cable And Display"
+  ],
+  "answer": "Datorstödd konstruktion",
+  "explanation": "CAD används för att rita i 3D."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Datorer",
+  "level": 4,
+  "type": "mc",
+  "question": "Hur många olika värden kan 8 bitar representera?",
+  "options": [
+   "256",
+   "64",
+   "128",
+   "512"
+  ],
+  "answer": "256",
+  "explanation": "2⁸ = 256."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Datorer",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad är HTML?",
+  "options": [
+   "Ett språk som beskriver strukturen på webbsidor",
+   "Ett slags virus",
+   "En sorts dator",
+   "Ett batteri"
+  ],
+  "answer": "Ett språk som beskriver strukturen på webbsidor",
+  "explanation": "Webbläsaren läser HTML och visar sidan."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Datorer",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad betyder det att anslutningen är HTTPS?",
+  "options": [
+   "Trafiken är krypterad",
+   "Sidan är gratis",
+   "Sidan är snabbare",
+   "Sidan har inga reklamer"
+  ],
+  "answer": "Trafiken är krypterad",
+  "explanation": "Hänglåset i webbläsaren visar HTTPS."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Datorer",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad menas med molnet (cloud)?",
+  "options": [
+   "Datorer på internet som lagrar eller kör saker åt oss",
+   "Riktiga moln",
+   "Ett batteri",
+   "En skärmsläckare"
+  ],
+  "answer": "Datorer på internet som lagrar eller kör saker åt oss",
+  "explanation": "Du kan spara filer i molnet."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Datorer",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas en komponent som mäter något, till exempel temperaturen?",
+  "options": [
+   "Sensor",
+   "Aktuator",
+   "Router",
+   "Skrivare"
+  ],
+  "answer": "Sensor",
+  "explanation": "Sensorer ger information till styrsystem."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Datorer",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas en komponent som utför en rörelse, till exempel en motor eller ventil?",
+  "options": [
+   "Aktuator",
+   "Sensor",
+   "Kabel",
+   "Skärm"
+  ],
+  "answer": "Aktuator",
+  "explanation": "Aktuatorn utför det systemet bestämt."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Styrteknik",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad gör en termostat?",
+  "options": [
+   "Håller temperaturen på en inställd nivå",
+   "Mäter tid",
+   "Mäter ljud",
+   "Mäter hastighet"
+  ],
+  "answer": "Håller temperaturen på en inställd nivå",
+  "explanation": "När det blir för varmt stängs värmen av."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Elektronik",
+  "level": 4,
+  "type": "mc",
+  "question": "Titta på diagrammet över effekt för några apparater. Vilken apparat använder mest effekt?",
+  "options": [
+   "Dammsugare",
+   "LED-lampa",
+   "Telefonladdare",
+   "Kylskåp"
+  ],
+  "answer": "Dammsugare",
+  "explanation": "Dammsugaren har högst effekt i diagrammet.",
+  "diagram": {
+   "type": "bar_chart",
+   "title": "Effekt (W), ungefärliga värden",
+   "labels": [
+    "LED-lampa",
+    "Laddare",
+    "Kylskåp",
+    "Dammsugare"
+   ],
+   "values": [
+    8,
+    10,
+    150,
+    1200
+   ],
+   "show_values": true
+  }
+ },
+ {
+  "subject": "teknik",
+  "topic": "Datorer",
+  "level": 4,
+  "type": "mc",
+  "question": "Titta på diagrammet. Hur många gånger mer lagringsplats har hårddisken än USB-minnet?",
+  "options": [
+   "16",
+   "4",
+   "8",
+   "32"
+  ],
+  "answer": "16",
+  "explanation": "1000 / 64 ≈ 16.",
+  "diagram": {
+   "type": "bar_chart",
+   "title": "Lagring (GB)",
+   "labels": [
+    "USB-minne",
+    "Mobil",
+    "Hårddisk"
+   ],
+   "values": [
+    64,
+    256,
+    1000
+   ],
+   "show_values": true
+  }
+ },
+ {
+  "subject": "teknik",
+  "topic": "Räkna",
+  "level": 4,
+  "type": "text",
+  "question": "Ett album med 12 låtar är 36 MB. Hur många MB är varje låt i genomsnitt?\nSvara endast med talet.",
+  "answer": "3",
+  "explanation": "36 / 12 = 3 MB."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Binärt",
+  "level": 4,
+  "type": "text",
+  "question": "Vad är det binära talet 1111 i vårt vanliga talsystem?\nSvara endast med talet.",
+  "answer": "15",
+  "explanation": "8 + 4 + 2 + 1 = 15."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Logik",
+  "level": 4,
+  "type": "mc",
+  "question": "En OCH-grind (AND) ger 1 bara om…",
+  "options": [
+   "Båda ingångarna är 1",
+   "Minst en ingång är 1",
+   "Ingen ingång är 1",
+   "Ingångarna är olika"
+  ],
+  "answer": "Båda ingångarna är 1",
+  "explanation": "A OCH B kräver båda."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Logik",
+  "level": 4,
+  "type": "mc",
+  "question": "En ELLER-grind (OR) ger 1 om…",
+  "options": [
+   "Minst en ingång är 1",
+   "Båda ingångarna är 0",
+   "Båda är olika",
+   "Ingen ingång är 1"
+  ],
+  "answer": "Minst en ingång är 1",
+  "explanation": "A ELLER B räcker med en."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Energi",
+  "level": 4,
+  "type": "mc",
+  "question": "Hur stor del av tillförd energi blir nyttig energi i en maskin med verkningsgraden 40 %?",
+  "options": [
+   "40 %",
+   "4 %",
+   "60 %",
+   "140 %"
+  ],
+  "answer": "40 %",
+  "explanation": "Verkningsgrad = nyttig energi / tillförd energi."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Energi",
+  "level": 4,
+  "type": "text",
+  "question": "En maskin får 200 J tillförd energi och ger 150 J nyttig energi. Vilken verkningsgrad har den i procent?\nSvara endast med talet.",
+  "answer": "75",
+  "explanation": "150 / 200 = 0,75 = 75 %."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Programmering",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad är maskininlärning?",
+  "options": [
+   "Att datorer lär sig mönster från data",
+   "Att människor lär sig skriva",
+   "Att datorer lär sig laga mat",
+   "Att man installerar ett program"
+  ],
+  "answer": "Att datorer lär sig mönster från data",
+  "explanation": "AI-system tränas på stora mängder data."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Programmering",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad är ett API?",
+  "options": [
+   "Ett gränssnitt som låter program prata med varandra",
+   "En typ av mikrochip",
+   "En sorts bildskärm",
+   "Ett tangentbord"
+  ],
+  "answer": "Ett gränssnitt som låter program prata med varandra",
+  "explanation": "API står för Application Programming Interface."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Programmering",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad är en databas?",
+  "options": [
+   "En strukturerad samling av data",
+   "En sorts dator",
+   "En sladd",
+   "Ett virus"
+  ],
+  "answer": "En strukturerad samling av data",
+  "explanation": "Exempel: en elevlista."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Programmering",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad är skillnaden mellan hårdvara och mjukvara?",
+  "options": [
+   "Hårdvara är fysisk, mjukvara är program",
+   "Hårdvara är program, mjukvara är fysisk",
+   "Det är samma sak",
+   "Hårdvara är gratis"
+  ],
+  "answer": "Hårdvara är fysisk, mjukvara är program",
+  "explanation": "Tangentbordet är hårdvara, Word är mjukvara."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Programmering",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas ett fel i ett program?",
+  "options": [
+   "Bugg",
+   "Virus",
+   "Router",
+   "Pixel"
+  ],
+  "answer": "Bugg",
+  "explanation": "Buggar rättas i en process som kallas felsökning."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Binärt",
+  "level": 5,
+  "type": "text",
+  "question": "Vad är 11111111 i binärt i vårt vanliga talsystem?\nSvara endast med talet.",
+  "answer": "255",
+  "explanation": "2⁸ − 1 = 255."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Binärt",
+  "level": 5,
+  "type": "text",
+  "question": "Hur många olika värden kan 10 bitar representera?\nSvara endast med talet.",
+  "answer": "1024",
+  "explanation": "2¹⁰ = 1024."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Elektronik",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilket material används främst som halvledare i datorchips?",
+  "options": [
+   "Kisel",
+   "Koppar",
+   "Järn",
+   "Guld"
+  ],
+  "answer": "Kisel",
+  "explanation": "Kisel används i nästan alla chip."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Elektronik",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad gör en solcell?",
+  "options": [
+   "Omvandlar ljus till elektrisk energi",
+   "Omvandlar el till ljus",
+   "Lagrar värme",
+   "Kyler luft"
+  ],
+  "answer": "Omvandlar ljus till elektrisk energi",
+  "explanation": "Solpaneler består av många solceller."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Konstruktion",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken typ av bro bärs upp av kablar som hänger från höga torn?",
+  "options": [
+   "Hängbro",
+   "Balkbro",
+   "Valvbro",
+   "Pontonbro"
+  ],
+  "answer": "Hängbro",
+  "explanation": "Öresundsbron är en snedkabelbro, Golden Gate en hängbro."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Konstruktion",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken typ av bro är huvudspannet på Öresundsbron?",
+  "options": [
+   "Snedkabelbro",
+   "Valvbro",
+   "Balkbro",
+   "Pontonbro"
+  ],
+  "answer": "Snedkabelbro",
+  "explanation": "Kablarna går snett från pylonerna ned till bron."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Navigering",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad står GPS för?",
+  "options": [
+   "Global Positioning System",
+   "Great Phone Service",
+   "General Power Supply",
+   "Global Phone Signal"
+  ],
+  "answer": "Global Positioning System",
+  "explanation": "GPS använder satelliter för att räkna ut var du är."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Teknikhistoria",
+  "level": 5,
+  "type": "mc",
+  "question": "Vem uppfann dynamiten?",
+  "options": [
+   "Alfred Nobel",
+   "Isaac Newton",
+   "Thomas Edison",
+   "Nikola Tesla"
+  ],
+  "answer": "Alfred Nobel",
+  "explanation": "Nobel patenterade dynamiten 1867."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Teknikhistoria",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilket musikföretag grundades i Sverige 2006 och är en av världens största streamingtjänster?",
+  "options": [
+   "Spotify",
+   "Netflix",
+   "YouTube",
+   "TikTok"
+  ],
+  "answer": "Spotify",
+  "explanation": "Spotify grundades av Daniel Ek och Martin Lorentzon."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Mobilnät",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas den femte generationens mobilnät?",
+  "options": [
+   "5G",
+   "LTE",
+   "3G",
+   "GPS"
+  ],
+  "answer": "5G",
+  "explanation": "5G ger högre hastighet och lägre svarstid."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Energi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas den energi som frigörs när atomkärnor klyvs i ett kärnkraftverk?",
+  "options": [
+   "Kärnenergi",
+   "Vindenergi",
+   "Solenergi",
+   "Vattenenergi"
+  ],
+  "answer": "Kärnenergi",
+  "explanation": "Kärnkraft ger el utan koldioxidutsläpp vid drift."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Programmering",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas den text som en programmerare skriver för att skapa ett program?",
+  "options": [
+   "Källkod",
+   "Serienummer",
+   "Lösenord",
+   "Skärmbild"
+  ],
+  "answer": "Källkod",
+  "explanation": "Källkod kompileras eller tolkas till körbar kod."
+ }
+]

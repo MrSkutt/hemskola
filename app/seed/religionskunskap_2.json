@@ -1,0 +1,1676 @@
+[
+ {
+  "subject": "religionskunskap",
+  "topic": "Världsreligionerna",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken religion följer de flesta människor i Indien?",
+  "options": [
+   "Hinduismen",
+   "Buddhismen",
+   "Kristendomen",
+   "Islam"
+  ],
+  "answer": "Hinduismen",
+  "explanation": "Hinduismen är Indiens största religion."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Världsreligionerna",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken religion grundades av Jesus följeslagare och bygger på hans liv och lära?",
+  "options": [
+   "Kristendomen",
+   "Islam",
+   "Hinduismen",
+   "Judendomen"
+  ],
+  "answer": "Kristendomen",
+  "explanation": "Kristna tror att Jesus är Guds son."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Världsreligionerna",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas den som tror på islam?",
+  "options": [
+   "Muslim",
+   "Kristen",
+   "Hindu",
+   "Buddhist"
+  ],
+  "answer": "Muslim",
+  "explanation": "Muslimer tror på en enda Gud, Allah."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Världsreligionerna",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas den som tror på judendomen?",
+  "options": [
+   "Jude",
+   "Muslim",
+   "Hindu",
+   "Buddhist"
+  ],
+  "answer": "Jude",
+  "explanation": "Judendomen är en av de äldsta religionerna."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Symboler",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken symbol använder kristna ofta?",
+  "options": [
+   "Korset",
+   "Davidsstjärnan",
+   "Månskäran",
+   "Dharmahjulet"
+  ],
+  "answer": "Korset",
+  "explanation": "Korset påminner om Jesus död."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Symboler",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken symbol använder judar ofta?",
+  "options": [
+   "Davidsstjärnan",
+   "Korset",
+   "Dharmahjulet",
+   "Om-tecknet"
+  ],
+  "answer": "Davidsstjärnan",
+  "explanation": "Davidsstjärnan har sex hörn."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Symboler",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken symbol förknippas ofta med islam?",
+  "options": [
+   "Månskäran och stjärnan",
+   "Korset",
+   "Davidsstjärnan",
+   "Om-tecknet"
+  ],
+  "answer": "Månskäran och stjärnan",
+  "explanation": "Månskäran används på många moskéer."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Högtider",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken högtid firar kristna för att minnas att Jesus föddes?",
+  "options": [
+   "Jul",
+   "Påsk",
+   "Pingst",
+   "Midsommar"
+  ],
+  "answer": "Jul",
+  "explanation": "På julafton firar många i Sverige jul."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Högtider",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken högtid firar hinduer med ljus, lyktor och godis?",
+  "options": [
+   "Diwali",
+   "Ramadan",
+   "Chanukka",
+   "Påsk"
+  ],
+  "answer": "Diwali",
+  "explanation": "Diwali är ljusets högtid."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Gudshus",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas hinduernas gudshus?",
+  "options": [
+   "Tempel",
+   "Kyrka",
+   "Moské",
+   "Synagoga"
+  ],
+  "answer": "Tempel",
+  "explanation": "Hinduer ber till sina gudar i templet."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Gudshus",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas kristnas gudshus?",
+  "options": [
+   "Kyrka",
+   "Synagoga",
+   "Moské",
+   "Tempel"
+  ],
+  "answer": "Kyrka",
+  "explanation": "I kyrkan firar kristna gudstjänst."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Gudshus",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas buddhisternas gudshus ofta i Asien?",
+  "options": [
+   "Tempel eller pagod",
+   "Kyrka",
+   "Moské",
+   "Synagoga"
+  ],
+  "answer": "Tempel eller pagod",
+  "explanation": "Många buddhistiska tempel har gyllene Buddhastatyer."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Ledare",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas en kristen präst?",
+  "options": [
+   "Präst",
+   "Imam",
+   "Rabbin",
+   "Munk"
+  ],
+  "answer": "Präst",
+  "explanation": "Prästen leder gudstjänsten."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Ledare",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas en judisk lärare och ledare?",
+  "options": [
+   "Rabbin",
+   "Imam",
+   "Präst",
+   "Guru"
+  ],
+  "answer": "Rabbin",
+  "explanation": "Rabbinen undervisar i den judiska traditionen."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Ledare",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas den som leder bönen i en moské?",
+  "options": [
+   "Imam",
+   "Rabbin",
+   "Präst",
+   "Munk"
+  ],
+  "answer": "Imam",
+  "explanation": "Imamen leder den gemensamma bönen."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Etik",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken regel kallas ofta den gyllene regeln?",
+  "options": [
+   "Behandla andra som du själv vill bli behandlad",
+   "Den som sist skrattar skrattar bäst",
+   "Ögon för öga",
+   "Ju förr desto bättre"
+  ],
+  "answer": "Behandla andra som du själv vill bli behandlad",
+  "explanation": "Många religioner har en variant av den gyllene regeln."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Etik",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad menas med att man ska vara ärlig?",
+  "options": [
+   "Att man talar sanning",
+   "Att man alltid vinner",
+   "Att man är snabb",
+   "Att man är rik"
+  ],
+  "answer": "Att man talar sanning",
+  "explanation": "Ärlighet är en viktig värdering i många religioner."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Sverige",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken kyrka var Sveriges statskyrka fram till år 2000?",
+  "options": [
+   "Svenska kyrkan",
+   "Katolska kyrkan",
+   "Pingstkyrkan",
+   "Ortodoxa kyrkan"
+  ],
+  "answer": "Svenska kyrkan",
+  "explanation": "Svenska kyrkan skildes från staten år 2000."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Sverige",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken religiös byggnad är en klassisk del av svenska städer och byar?",
+  "options": [
+   "Kyrka",
+   "Pagod",
+   "Tempel",
+   "Stupa"
+  ],
+  "answer": "Kyrka",
+  "explanation": "Det finns tusentals kyrkor i Sverige."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Tro",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas det när man ber till Gud?",
+  "options": [
+   "Bön",
+   "Resa",
+   "Dans",
+   "Läsa"
+  ],
+  "answer": "Bön",
+  "explanation": "Bön är ett sätt att tala med Gud."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Tro",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas den som inte tror på någon gud?",
+  "options": [
+   "Ateist",
+   "Muslim",
+   "Kristen",
+   "Hindu"
+  ],
+  "answer": "Ateist",
+  "explanation": "Ateister tror inte att gud finns."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Räkna",
+  "level": 1,
+  "type": "text",
+  "question": "Hur många dagar är det mellan julafton den 24 december och nyårsafton den 31 december?\nSvara endast med talet.",
+  "answer": "7",
+  "explanation": "31 − 24 = 7."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Kristendom",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas den kristna trosbekännelsen som många läser i gudstjänsten?",
+  "options": [
+   "Den apostoliska trosbekännelsen",
+   "De tio budorden",
+   "Sju dödssynder",
+   "De fem pelarna"
+  ],
+  "answer": "Den apostoliska trosbekännelsen",
+  "explanation": "Trosbekännelsen sammanfattar kristen tro."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Kristendom",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad heter den bön som Jesus lärde sina lärjungar?",
+  "options": [
+   "Fader vår",
+   "Credo",
+   "Halleluja",
+   "Amen"
+  ],
+  "answer": "Fader vår",
+  "explanation": "Fader vår kallas även Herrens bön."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Kristendom",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas den första delen av Bibeln?",
+  "options": [
+   "Gamla testamentet",
+   "Nya testamentet",
+   "Koranen",
+   "Toran"
+  ],
+  "answer": "Gamla testamentet",
+  "explanation": "Nya testamentet kom senare."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Kristendom",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas den tredje stora högtiden i kyrkoåret efter jul och påsk?",
+  "options": [
+   "Pingst",
+   "Allhelgona",
+   "Advent",
+   "Lucia"
+  ],
+  "answer": "Pingst",
+  "explanation": "Pingsten firas 50 dagar efter påsk."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Kristendom",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas den ceremoni när ett barn tas emot i den kristna kyrkan?",
+  "options": [
+   "Dop",
+   "Konfirmation",
+   "Bröllop",
+   "Begravning"
+  ],
+  "answer": "Dop",
+  "explanation": "Vid dopet använder man vatten."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Kristendom",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas den kristna högtiden som börjar fyra söndagar före jul?",
+  "options": [
+   "Advent",
+   "Fastlagen",
+   "Påsk",
+   "Pingst"
+  ],
+  "answer": "Advent",
+  "explanation": "Adventstiden är väntan på jul."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Islam",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad heter islams grundare, som muslimer ser som Guds sista profet?",
+  "options": [
+   "Muhammed",
+   "Jesus",
+   "Moses",
+   "Buddha"
+  ],
+  "answer": "Muhammed",
+  "explanation": "Muhammed föddes i Mecka."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Islam",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas muslimernas månad av fasta?",
+  "options": [
+   "Ramadan",
+   "Diwali",
+   "Chanukka",
+   "Påsk"
+  ],
+  "answer": "Ramadan",
+  "explanation": "Under ramadan fastar muslimer från gryning till solnedgång."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Islam",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad heter staden som är heligast för muslimer och dit många pilgrimsfärdas?",
+  "options": [
+   "Mecka",
+   "Jerusalem",
+   "Rom",
+   "Varanasi"
+  ],
+  "answer": "Mecka",
+  "explanation": "Pilgrimsfärden till Mecka kallas hajj."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Islam",
+  "level": 2,
+  "type": "mc",
+  "question": "Hur många gånger om dagen ber en troende muslim traditionellt?",
+  "options": [
+   "Fem",
+   "Två",
+   "Tre",
+   "Sju"
+  ],
+  "answer": "Fem",
+  "explanation": "De fem dagliga bönerna är en av islams pelare."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Islam",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket språk är Koranen ursprungligen skriven på?",
+  "options": [
+   "Arabiska",
+   "Hebreiska",
+   "Latin",
+   "Grekiska"
+  ],
+  "answer": "Arabiska",
+  "explanation": "Koranen reciteras på arabiska av muslimer i hela världen."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Judendom",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas judarnas heliga skrift, som består av fem Moseböcker?",
+  "options": [
+   "Toran",
+   "Koranen",
+   "Bibeln",
+   "Vedaböckerna"
+  ],
+  "answer": "Toran",
+  "explanation": "Toran läses i synagogan."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Judendom",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas judarnas högtid som minner om uttåget ur Egypten?",
+  "options": [
+   "Pesach (påsk)",
+   "Chanukka",
+   "Yom Kippur",
+   "Purim"
+  ],
+  "answer": "Pesach (påsk)",
+  "explanation": "Pesach firas med en särskild måltid."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Judendom",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas den judiska högtiden med åtta dagars ljus?",
+  "options": [
+   "Chanukka",
+   "Pesach",
+   "Ramadan",
+   "Diwali"
+  ],
+  "answer": "Chanukka",
+  "explanation": "Man tänder ljus i en ljusstake."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Hinduism",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas hinduernas heliga flod?",
+  "options": [
+   "Ganges",
+   "Nilen",
+   "Mississippi",
+   "Donau"
+  ],
+  "answer": "Ganges",
+  "explanation": "Många hinduer badar i Ganges."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Hinduism",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas tron att själen föds på nytt i ett nytt liv?",
+  "options": [
+   "Reinkarnation",
+   "Fotosyntes",
+   "Evolution",
+   "Karma"
+  ],
+  "answer": "Reinkarnation",
+  "explanation": "Reinkarnation finns i hinduism och buddhism."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Hinduism",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken av dessa är en hinduisk gud?",
+  "options": [
+   "Ganesha",
+   "Allah",
+   "Jahve",
+   "Buddha"
+  ],
+  "answer": "Ganesha",
+  "explanation": "Ganesha har ett elefanthuvud."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Buddhism",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad heter den buddhistiska läran om hur man kan nå frihet från lidande?",
+  "options": [
+   "Den ädla åttafaldiga vägen",
+   "De tio budorden",
+   "De fem pelarna",
+   "Bergspredikan"
+  ],
+  "answer": "Den ädla åttafaldiga vägen",
+  "explanation": "Vägen innehåller rätt syn, rätt tanke, rätt tal med mera."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Buddhism",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas buddhisters strävan efter ett tillstånd utan lidande?",
+  "options": [
+   "Nirvana",
+   "Karma",
+   "Hajj",
+   "Sabbat"
+  ],
+  "answer": "Nirvana",
+  "explanation": "Nirvana är målet i buddhismen."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Buddhism",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas det hjul som är en symbol för buddhismen?",
+  "options": [
+   "Dharmahjulet",
+   "Davidsstjärnan",
+   "Korset",
+   "Månskäran"
+  ],
+  "answer": "Dharmahjulet",
+  "explanation": "Dharmahjulets ekrar kan betyda den åttafaldiga vägen."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Livsfrågor",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas tankar om vad som är rätt och fel?",
+  "options": [
+   "Etik",
+   "Kemi",
+   "Geometri",
+   "Zoologi"
+  ],
+  "answer": "Etik",
+  "explanation": "Etik handlar om moral."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Livsfrågor",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas människors tankar om varför vi finns och vad livet betyder?",
+  "options": [
+   "Existentiella frågor",
+   "Matematiska frågor",
+   "Tekniska frågor",
+   "Geografiska frågor"
+  ],
+  "answer": "Existentiella frågor",
+  "explanation": "Religioner ger olika svar på existentiella frågor."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Kristendom",
+  "level": 3,
+  "type": "mc",
+  "question": "Hur många bud finns det i de tio budorden?",
+  "options": [
+   "10",
+   "7",
+   "12",
+   "5"
+  ],
+  "answer": "10",
+  "explanation": "Budorden finns i Gamla testamentet."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Kristendom",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas Jesu undervisning på ett berg där han bland annat sa att man ska älska sina fiender?",
+  "options": [
+   "Bergspredikan",
+   "Trosbekännelsen",
+   "Uppenbarelseboken",
+   "Psaltaren"
+  ],
+  "answer": "Bergspredikan",
+  "explanation": "Bergspredikan finns i Matteusevangeliet."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Kristendom",
+  "level": 3,
+  "type": "mc",
+  "question": "Hur många evangelier finns i Nya testamentet?",
+  "options": [
+   "4",
+   "2",
+   "7",
+   "12"
+  ],
+  "answer": "4",
+  "explanation": "Matteus, Markus, Lukas och Johannes."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Kristendom",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas den största kristna kyrkan i världen?",
+  "options": [
+   "Katolska kyrkan",
+   "Svenska kyrkan",
+   "Pingstkyrkan",
+   "Anglikanska kyrkan"
+  ],
+  "answer": "Katolska kyrkan",
+  "explanation": "Påven är katolikernas ledare."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Kristendom",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas den kristna högtiden på långfredagen?",
+  "options": [
+   "Minnet av Jesu korsfästelse",
+   "Jesu födelse",
+   "Jesu uppståndelse",
+   "Den heliga andens utgjutande"
+  ],
+  "answer": "Minnet av Jesu korsfästelse",
+  "explanation": "Påsken börjar med skärtorsdagen och långfredagen."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Kristendom",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas den som översatte Bibeln till tyska och startade reformationen 1517?",
+  "options": [
+   "Martin Luther",
+   "Gustav Vasa",
+   "Johannes Calvin",
+   "Paulus"
+  ],
+  "answer": "Martin Luther",
+  "explanation": "Luther startade den protestantiska kyrkan."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Islam",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken är islams första pelare?",
+  "options": [
+   "Trosbekännelsen",
+   "Fastan",
+   "Pilgrimsfärden",
+   "Allmosor"
+  ],
+  "answer": "Trosbekännelsen",
+  "explanation": "Muslimer bekänner att Gud är en och att Muhammed är hans profet."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Islam",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas muslimernas pilgrimsfärd till Mecka?",
+  "options": [
+   "Hajj",
+   "Ramadan",
+   "Zakat",
+   "Salat"
+  ],
+  "answer": "Hajj",
+  "explanation": "Hajj ska göras minst en gång i livet om man kan."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Islam",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas den islamiska tideräkningen, som börjar med Muhammeds flytt till Medina?",
+  "options": [
+   "Hijri-kalendern",
+   "Gregorianska kalendern",
+   "Julianska kalendern",
+   "Hebreiska kalendern"
+  ],
+  "answer": "Hijri-kalendern",
+  "explanation": "Kalendern följer månens faser."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Islam",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilka två huvudinriktningar finns inom islam?",
+  "options": [
+   "Sunni och shia",
+   "Ortodox och katolsk",
+   "Mahayana och theravada",
+   "Reformert och lutheransk"
+  ],
+  "answer": "Sunni och shia",
+  "explanation": "Skillnaden uppstod efter Muhammeds död."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Islam",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas tjejers och kvinnors huvudduk i många muslimska traditioner?",
+  "options": [
+   "Hijab",
+   "Kippa",
+   "Turban",
+   "Sari"
+  ],
+  "answer": "Hijab",
+  "explanation": "Hur man klär sig skiljer sig mellan kulturer och tolkningar."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Judendom",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas den mössa som judiska män ofta bär?",
+  "options": [
+   "Kippa",
+   "Hijab",
+   "Turban",
+   "Barett"
+  ],
+  "answer": "Kippa",
+  "explanation": "Kippan visar respekt för Gud."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Judendom",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas den judiska högtid då man fastar för att ångra sina synder?",
+  "options": [
+   "Yom Kippur",
+   "Chanukka",
+   "Purim",
+   "Pesach"
+  ],
+  "answer": "Yom Kippur",
+  "explanation": "Yom Kippur är den heligaste dagen."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Judendom",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas den ceremoni där en judisk pojke eller flicka räknas som vuxen i religionen vid 12–13 år?",
+  "options": [
+   "Bar mitzva eller bat mitzva",
+   "Dop",
+   "Konfirmation",
+   "Hajj"
+  ],
+  "answer": "Bar mitzva eller bat mitzva",
+  "explanation": "Ungdomen får läsa ur Toran."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Judendom",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad heter judarnas sjuarmade ljusstake?",
+  "options": [
+   "Menora",
+   "Kippa",
+   "Torarulle",
+   "Mezuza"
+  ],
+  "answer": "Menora",
+  "explanation": "Menoran är en gammal judisk symbol."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Hinduism",
+  "level": 3,
+  "type": "mc",
+  "question": "Hur många huvudgudar ser hinduer ofta som en treenighet (trimurti)?",
+  "options": [
+   "Tre",
+   "Två",
+   "Fem",
+   "Sju"
+  ],
+  "answer": "Tre",
+  "explanation": "Brahma, Vishnu och Shiva."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Hinduism",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas hinduernas gamla heliga texter?",
+  "options": [
+   "Vedaböckerna",
+   "Koranen",
+   "Tripitaka",
+   "Toran"
+  ],
+  "answer": "Vedaböckerna",
+  "explanation": "Vedaböckerna är mycket gamla."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Hinduism",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas ett indiskt samhällssystem där människor delas in efter börd?",
+  "options": [
+   "Kastsystemet",
+   "Demokrati",
+   "Feodalism",
+   "Parlamentarism"
+  ],
+  "answer": "Kastsystemet",
+  "explanation": "Kastsystemet är förbjudet i lagen i Indien men finns kvar i vissa sammanhang."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Hinduism",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas lagen om orsak och verkan som påverkar nästa liv?",
+  "options": [
+   "Karma",
+   "Nirvana",
+   "Hajj",
+   "Zakat"
+  ],
+  "answer": "Karma",
+  "explanation": "Goda handlingar ger god karma."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Buddhism",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad betyder ordet buddha?",
+  "options": [
+   "Den upplyste",
+   "Den vise",
+   "Profeten",
+   "Mästaren"
+  ],
+  "answer": "Den upplyste",
+  "explanation": "Prinsen Siddhartha Gautama blev Buddha."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Buddhism",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad heter de viktigaste sanningarna i buddhismen?",
+  "options": [
+   "De fyra ädla sanningarna",
+   "De tio budorden",
+   "De fem pelarna",
+   "De sju sakramenten"
+  ],
+  "answer": "De fyra ädla sanningarna",
+  "explanation": "De handlar om lidande och hur man kan sluta lida."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Buddhism",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken är en vanlig buddhistisk tradition som innebär att man tränar sinnet att vara lugnt och närvarande?",
+  "options": [
+   "Meditation",
+   "Fasta",
+   "Pilgrimsfärd",
+   "Dop"
+  ],
+  "answer": "Meditation",
+  "explanation": "Meditation är en viktig del av buddhismen."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Buddhism",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas en man som lever i kloster i buddhismen?",
+  "options": [
+   "Munk",
+   "Präst",
+   "Imam",
+   "Rabbin"
+  ],
+  "answer": "Munk",
+  "explanation": "Munkar bär ofta orange eller röda dräkter."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Korea",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken sorts tempel finns på många berg i Korea?",
+  "options": [
+   "Buddhistiska tempel",
+   "Moskéer",
+   "Synagogor",
+   "Hinduiska tempel"
+  ],
+  "answer": "Buddhistiska tempel",
+  "explanation": "Buddhismen kom till Korea för över 1 600 år sedan."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Sverige",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken religion hade vikingarna i Norden?",
+  "options": [
+   "Fornnordisk tro",
+   "Islam",
+   "Kristendomen",
+   "Buddhism"
+  ],
+  "answer": "Fornnordisk tro",
+  "explanation": "Vikingarna trodde på bland annat Oden och Tor."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Sverige",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad hette den fornnordiska guden för åska, och vad kallas hans hammare?",
+  "options": [
+   "Tor och Mjölner",
+   "Oden och Gungner",
+   "Frej och Gullinbursti",
+   "Loke och Hel"
+  ],
+  "answer": "Tor och Mjölner",
+  "explanation": "Tor skyddade gudarnas boning."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Sverige",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket år blev Sverige officiellt lutherskt genom Uppsala möte?",
+  "options": [
+   "1593",
+   "1523",
+   "1809",
+   "1905"
+  ],
+  "answer": "1593",
+  "explanation": "Sverige blev lutherskt under 1500-talet."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Filosofi",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas hållningen att man inte kan veta om det finns någon gud?",
+  "options": [
+   "Agnosticism",
+   "Ateism",
+   "Teism",
+   "Polyteism"
+  ],
+  "answer": "Agnosticism",
+  "explanation": "En agnostiker är osäker, en ateist tror att gud inte finns."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Världsreligionerna",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken av dessa religioner har sitt ursprung på Arabiska halvön på 600-talet?",
+  "options": [
+   "Islam",
+   "Buddhismen",
+   "Hinduismen",
+   "Sikhismen"
+  ],
+  "answer": "Islam",
+  "explanation": "Islam grundades av Muhammed."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Världsreligionerna",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilka två religioner har flest anhängare i världen?",
+  "options": [
+   "Kristendomen och islam",
+   "Hinduism och buddhism",
+   "Judendom och islam",
+   "Kristendom och judendom"
+  ],
+  "answer": "Kristendomen och islam",
+  "explanation": "Tillsammans har de över hälften av jordens befolkning."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Världsreligionerna",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas den religion som grundades i Indien av Guru Nanak?",
+  "options": [
+   "Sikhism",
+   "Jainism",
+   "Shinto",
+   "Daoism"
+  ],
+  "answer": "Sikhism",
+  "explanation": "Sikher bär ofta turban."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Världsreligionerna",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken religion härstammar från Japan och dyrkar naturens andar, kami?",
+  "options": [
+   "Shinto",
+   "Daoism",
+   "Hinduism",
+   "Sikhism"
+  ],
+  "answer": "Shinto",
+  "explanation": "Shintoistiska helgedomar har ofta en röd portal, torii."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Kristendom",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas kristendomens delning mellan västkyrkan och östkyrkan år 1054?",
+  "options": [
+   "Det stora schismat",
+   "Reformationen",
+   "Korstågen",
+   "Upplysningen"
+  ],
+  "answer": "Det stora schismat",
+  "explanation": "Efter delningen blev det katolska och ortodoxa kyrkor."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Kristendom",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas den kristna grundsatsen att Gud är Fadern, Sonen och Anden?",
+  "options": [
+   "Treenigheten",
+   "Reinkarnationen",
+   "Pilgrimsfärden",
+   "Mässan"
+  ],
+  "answer": "Treenigheten",
+  "explanation": "Treenigheten är en grundläggande kristen lära."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Kristendom",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas den kristna måltiden där man minns Jesu sista måltid?",
+  "options": [
+   "Nattvarden",
+   "Dopet",
+   "Konfirmationen",
+   "Bönen"
+  ],
+  "answer": "Nattvarden",
+  "explanation": "Nattvarden firas med bröd och vin."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Kristendom",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket år var den svenska reformationen i gång, då Gustav Vasa tog ledningen över kyrkan?",
+  "options": [
+   "1527",
+   "1397",
+   "1632",
+   "1809"
+  ],
+  "answer": "1527",
+  "explanation": "Västerås riksdag 1527 gav kungen kontroll över kyrkan."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Islam",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas den sista månaden i den islamiska kalendern då man gör pilgrimsfärd?",
+  "options": [
+   "Dhu al-hijja",
+   "Ramadan",
+   "Muharram",
+   "Safar"
+  ],
+  "answer": "Dhu al-hijja",
+  "explanation": "Hajj sker i denna månad."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Islam",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas den muslimska högtiden som firas efter ramadan?",
+  "options": [
+   "Eid al-fitr",
+   "Eid al-adha",
+   "Diwali",
+   "Pesach"
+  ],
+  "answer": "Eid al-fitr",
+  "explanation": "Då firar man med familj, bön och mat."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Islam",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas den muslimska skatten på tillgångar som ska ges till behövande?",
+  "options": [
+   "Zakat",
+   "Hajj",
+   "Salat",
+   "Shahada"
+  ],
+  "answer": "Zakat",
+  "explanation": "Zakat är en av islams fem pelare."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Judendom",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas judarnas vilodag, som börjar vid solnedgången på fredagen?",
+  "options": [
+   "Sabbaten",
+   "Pesach",
+   "Chanukka",
+   "Purim"
+  ],
+  "answer": "Sabbaten",
+  "explanation": "På sabbaten vilar man från arbete."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Judendom",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas den förföljelse av judar under andra världskriget, där miljoner mördades?",
+  "options": [
+   "Förintelsen",
+   "Reformationen",
+   "Korstågen",
+   "Inkvisitionen"
+  ],
+  "answer": "Förintelsen",
+  "explanation": "Förintelsen skedde 1941–1945 i nazistiskt styrda Europa."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Buddhism",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken av dessa riktningar finns i buddhismen?",
+  "options": [
+   "Theravada",
+   "Sunni",
+   "Lutherska",
+   "Hasidism"
+  ],
+  "answer": "Theravada",
+  "explanation": "Theravada och mahayana är de största."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Buddhism",
+  "level": 4,
+  "type": "mc",
+  "question": "Vem är den tibetanska buddhismens kända andliga ledare?",
+  "options": [
+   "Dalai lama",
+   "Påven",
+   "Imamen",
+   "Rabbinen"
+  ],
+  "answer": "Dalai lama",
+  "explanation": "Dalai lama bor i exil i Indien."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Etik",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas rätten att få tro eller inte tro på vad man vill?",
+  "options": [
+   "Religionsfrihet",
+   "Yttrandefrihet",
+   "Skolplikt",
+   "Rösträtt"
+  ],
+  "answer": "Religionsfrihet",
+  "explanation": "Religionsfrihet finns i Sveriges grundlag."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Etik",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken mänsklig rättighet handlar om att alla människor är lika mycket värda?",
+  "options": [
+   "Likaberättigande (lika värde)",
+   "Skatteplikt",
+   "Rösträtt",
+   "Äganderätt"
+  ],
+  "answer": "Likaberättigande (lika värde)",
+  "explanation": "Det finns i FN:s deklaration om mänskliga rättigheter."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Samhälle",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas det när en person eller grupp tar avstånd från eller behandlar människor sämre på grund av deras religion?",
+  "options": [
+   "Diskriminering",
+   "Missionering",
+   "Integration",
+   "Pilgrimsfärd"
+  ],
+  "answer": "Diskriminering",
+  "explanation": "Diskriminering är förbjudet i Sverige."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Filosofi",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken filosof skrev att upplysningens motto är 'Våga tänka själv'?",
+  "options": [
+   "Immanuel Kant",
+   "Platon",
+   "Konfucius",
+   "Buddha"
+  ],
+  "answer": "Immanuel Kant",
+  "explanation": "Kant levde på 1700-talet."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Korea",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken filosofi eller livsåskådning, grundad på läror av Konfucius, har påverkat det koreanska samhället starkt?",
+  "options": [
+   "Konfucianismen",
+   "Hinduismen",
+   "Judendomen",
+   "Shinto"
+  ],
+  "answer": "Konfucianismen",
+  "explanation": "Konfucianismen betonar respekt för äldre och familj."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Världsreligionerna",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas tron på att allt är genomsyrat av det gudomliga?",
+  "options": [
+   "Panteism",
+   "Ateism",
+   "Monoteism",
+   "Polyteism"
+  ],
+  "answer": "Panteism",
+  "explanation": "Panteister ser Gud i naturen."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Världsreligionerna",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas en religiös tolkning som följer de grundläggande texterna mycket bokstavligt?",
+  "options": [
+   "Fundamentalism",
+   "Ekumenik",
+   "Sekularisering",
+   "Humanism"
+  ],
+  "answer": "Fundamentalism",
+  "explanation": "Fundamentalism finns inom flera religioner."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Världsreligionerna",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas den process där religionens betydelse i samhället minskar?",
+  "options": [
+   "Sekularisering",
+   "Missionering",
+   "Reformation",
+   "Pilgrimsfärd"
+  ],
+  "answer": "Sekularisering",
+  "explanation": "Sverige beskrivs ofta som ett sekulariserat land."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Världsreligionerna",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas samarbete mellan olika kristna kyrkor?",
+  "options": [
+   "Ekumenik",
+   "Mission",
+   "Fundamentalism",
+   "Sekularisering"
+  ],
+  "answer": "Ekumenik",
+  "explanation": "Svenska kyrkan är med i Kyrkornas världsråd."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Kristendom",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilka tre olika grenar brukar man dela in kristendomen i?",
+  "options": [
+   "Katolicism, ortodoxi och protestantism",
+   "Sunni, shia och sufism",
+   "Theravada, mahayana och zen",
+   "Orthodoxi, hinduism och islam"
+  ],
+  "answer": "Katolicism, ortodoxi och protestantism",
+  "explanation": "Reformationen skapade protestantismen."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Kristendom",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilka två sakrament firar Svenska kyrkan?",
+  "options": [
+   "Dop och nattvard",
+   "Dop och konfirmation",
+   "Nattvard och vigsel",
+   "Bön och fasta"
+  ],
+  "answer": "Dop och nattvard",
+  "explanation": "Sakrament är heliga handlingar som Jesus instiftade, enligt kyrkan."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Islam",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilka heter islams fem pelare på arabiska?",
+  "options": [
+   "Shahada, salat, zakat, sawm och hajj",
+   "Torah, talmud, mitzva, kosher och sabbat",
+   "Dharma, karma, moksha, ahimsa och yoga",
+   "Credo, dop, mässa, bön och faste"
+  ],
+  "answer": "Shahada, salat, zakat, sawm och hajj",
+  "explanation": "De är trosbekännelse, bön, allmosa, fasta och pilgrimsfärd."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Islam",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken stad är heligast för judar, kristna och muslimer gemensamt?",
+  "options": [
+   "Jerusalem",
+   "Mecka",
+   "Rom",
+   "Varanasi"
+  ],
+  "answer": "Jerusalem",
+  "explanation": "Jerusalem har heliga platser för alla tre."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Judendom",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas den judiska lagsamlingen som även innehåller tolkningar av Toran?",
+  "options": [
+   "Talmud",
+   "Koranen",
+   "Vedaböckerna",
+   "Evangelierna"
+  ],
+  "answer": "Talmud",
+  "explanation": "Talmud studeras i yeshivor."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Judendom",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas den judiska matregeln för vad man får äta?",
+  "options": [
+   "Kosher",
+   "Halal",
+   "Haram",
+   "Dharma"
+  ],
+  "answer": "Kosher",
+  "explanation": "Kosher innebär bland annat att man inte blandar kött och mjölk."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Islam",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas den islamiska matregeln för tillåten mat?",
+  "options": [
+   "Halal",
+   "Kosher",
+   "Haram",
+   "Zakat"
+  ],
+  "answer": "Halal",
+  "explanation": "Haram är det som är förbjudet."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Hinduism",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas frigörelsen från återfödelsens kretslopp i hinduismen?",
+  "options": [
+   "Moksha",
+   "Nirvana",
+   "Karma",
+   "Dharma"
+  ],
+  "answer": "Moksha",
+  "explanation": "Moksha innebär att själen blir fri."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Hinduism",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas hinduismens heliga ordspråk eller ljud som ofta uttalas vid meditation?",
+  "options": [
+   "Om",
+   "Amen",
+   "Allahu akbar",
+   "Shalom"
+  ],
+  "answer": "Om",
+  "explanation": "Om är ett heligt ljud."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Hinduism",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas hinduernas moraliska och religiösa plikt?",
+  "options": [
+   "Dharma",
+   "Karma",
+   "Moksha",
+   "Samsara"
+  ],
+  "answer": "Dharma",
+  "explanation": "Dharma betyder ordning och plikt."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Buddhism",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilket av dessa är ett centralt begrepp i buddhismen som betyder återfödelsens kretslopp?",
+  "options": [
+   "Samsara",
+   "Moksha",
+   "Zakat",
+   "Sabbat"
+  ],
+  "answer": "Samsara",
+  "explanation": "Målet är att lämna samsara."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Buddhism",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas den form av buddhism som är vanlig i Korea och Japan och betonar meditation?",
+  "options": [
+   "Zen (seon i Korea)",
+   "Sunni",
+   "Theravada",
+   "Shinto"
+  ],
+  "answer": "Zen (seon i Korea)",
+  "explanation": "Zen heter seon i Korea."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Filosofi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken filosof sa \"Jag tänker, alltså finns jag\"?",
+  "options": [
+   "René Descartes",
+   "Immanuel Kant",
+   "Platon",
+   "Aristoteles"
+  ],
+  "answer": "René Descartes",
+  "explanation": "Descartes levde på 1600-talet."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Filosofi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas den etiska teorin som mäter handlingars värde efter deras konsekvenser?",
+  "options": [
+   "Utilitarism",
+   "Pliktetik",
+   "Relativism",
+   "Nihilism"
+  ],
+  "answer": "Utilitarism",
+  "explanation": "Utilitarismen vill skapa mest lycka för flest människor."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Filosofi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas den etiska synen att man bör följa regler och plikter oavsett konsekvenser?",
+  "options": [
+   "Pliktetik",
+   "Utilitarism",
+   "Egoism",
+   "Relativism"
+  ],
+  "answer": "Pliktetik",
+  "explanation": "Immanuel Kant är känd för pliktetik."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Samhälle",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas en grupp med religiösa åsikter som avviker från de stora religionerna, ofta med stark ledare?",
+  "options": [
+   "Sekt",
+   "Kyrka",
+   "Moské",
+   "Kloster"
+  ],
+  "answer": "Sekt",
+  "explanation": "Ordet sekt används ofta om grupper med kontroll över medlemmarna."
+ }
+]

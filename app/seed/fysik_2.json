@@ -1,0 +1,1474 @@
+[
+ {
+  "subject": "fysik",
+  "topic": "Ljus och ljud",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken är vår närmaste stjärna?",
+  "options": [
+   "Solen",
+   "Månen",
+   "Mars",
+   "Polstjärnan"
+  ],
+  "answer": "Solen",
+  "explanation": "Solen ger oss ljus och värme."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Ljus och ljud",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad behöver ljud för att färdas?",
+  "options": [
+   "Ett ämne, till exempel luft",
+   "Ett vakuum",
+   "Elektricitet",
+   "Magnetism"
+  ],
+  "answer": "Ett ämne, till exempel luft",
+  "explanation": "Ljud är vibrationer i ett ämne."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Ljus och ljud",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas en spegelbild eller när ljus studsar mot en yta?",
+  "options": [
+   "Reflektion",
+   "Brytning",
+   "Absorption",
+   "Fusion"
+  ],
+  "answer": "Reflektion",
+  "explanation": "Reflektion får oss att se oss själva i spegeln."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Ljus och ljud",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken färg består vitt ljus av?",
+  "options": [
+   "Alla regnbågens färger",
+   "Bara gult",
+   "Bara blått",
+   "Ingen färg"
+  ],
+  "answer": "Alla regnbågens färger",
+  "explanation": "En prisma delar upp ljuset i färger."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Krafter",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken kraft drar föremål mot jorden?",
+  "options": [
+   "Tyngdkraften",
+   "Magnetkraften",
+   "Friktionen",
+   "Lyftkraften"
+  ],
+  "answer": "Tyngdkraften",
+  "explanation": "Tyngdkraften gör att saker faller."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Krafter",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken kraft bromsar något som glider över en yta?",
+  "options": [
+   "Friktion",
+   "Tyngdkraft",
+   "Magnetkraft",
+   "Lyftkraft"
+  ],
+  "answer": "Friktion",
+  "explanation": "Friktion mellan skon och marken hindrar dig från att halka."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Krafter",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket material dras till en magnet?",
+  "options": [
+   "Järn",
+   "Trä",
+   "Glas",
+   "Plast"
+  ],
+  "answer": "Järn",
+  "explanation": "Magneter attraherar järn, nickel och kobolt."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Krafter",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas en magnets två poler?",
+  "options": [
+   "Nordpol och sydpol",
+   "Plus och minus",
+   "Varm och kall",
+   "Ljus och mörk"
+  ],
+  "answer": "Nordpol och sydpol",
+  "explanation": "Olika poler dras mot varandra."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Energi",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken energikälla kommer från solen och förnyas ständigt?",
+  "options": [
+   "Solenergi",
+   "Kol",
+   "Olja",
+   "Naturgas"
+  ],
+  "answer": "Solenergi",
+  "explanation": "Solenergi är förnybar."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Energi",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas den energi som finns i en rörlig cykel?",
+  "options": [
+   "Rörelseenergi",
+   "Värmeenergi",
+   "Ljudenergi",
+   "Kärnenergi"
+  ],
+  "answer": "Rörelseenergi",
+  "explanation": "Fartens energi är rörelseenergi."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Elektricitet",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad behövs för att en lampa ska lysa?",
+  "options": [
+   "En sluten krets med batteri",
+   "Bara en sladd",
+   "En magnet",
+   "Enbart en lampa"
+  ],
+  "answer": "En sluten krets med batteri",
+  "explanation": "Strömmen måste kunna gå runt."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Elektricitet",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket av dessa material leder ström?",
+  "options": [
+   "Koppar",
+   "Trä",
+   "Plast",
+   "Gummi"
+  ],
+  "answer": "Koppar",
+  "explanation": "Koppar används i elkablar."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Temperatur",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken enhet använder vi i Sverige för temperatur?",
+  "options": [
+   "Grader Celsius",
+   "Kilogram",
+   "Meter",
+   "Volt"
+  ],
+  "answer": "Grader Celsius",
+  "explanation": "Vatten fryser vid 0 °C och kokar vid 100 °C."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Temperatur",
+  "level": 1,
+  "type": "mc",
+  "question": "Vid vilken temperatur kokar vatten (vid normalt lufttryck)?",
+  "options": [
+   "100 °C",
+   "0 °C",
+   "50 °C",
+   "212 °C"
+  ],
+  "answer": "100 °C",
+  "explanation": "Vattnet blir till ånga vid 100 °C."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Rymden",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken planet är jorden?",
+  "options": [
+   "Den tredje från solen",
+   "Den första från solen",
+   "Den femte från solen",
+   "Den sista"
+  ],
+  "answer": "Den tredje från solen",
+  "explanation": "Ordningen är Merkurius, Venus, Jorden, Mars..."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Rymden",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken himlakropp lyser på natthimlen genom att reflektera solljus?",
+  "options": [
+   "Månen",
+   "Solen",
+   "Mars",
+   "Jupiter"
+  ],
+  "answer": "Månen",
+  "explanation": "Månen lyser inte själv."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Krafter",
+  "level": 2,
+  "type": "mc",
+  "question": "I vilken enhet mäter man kraft?",
+  "options": [
+   "Newton",
+   "Joule",
+   "Watt",
+   "Volt"
+  ],
+  "answer": "Newton",
+  "explanation": "Enheten är uppkallad efter Isaac Newton."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Krafter",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas den kraft som drar föremål mot varandra på grund av massa?",
+  "options": [
+   "Gravitation",
+   "Magnetism",
+   "Elektricitet",
+   "Friktion"
+  ],
+  "answer": "Gravitation",
+  "explanation": "Jordens gravitation håller oss kvar på marken."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Krafter",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad händer med ett föremåls hastighet om ingen kraft påverkar det?",
+  "options": [
+   "Den ändras inte",
+   "Den ökar hela tiden",
+   "Den minskar hela tiden",
+   "Det stannar direkt"
+  ],
+  "answer": "Den ändras inte",
+  "explanation": "Det är Newtons första lag."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Rörelse",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken av dessa enheter kan användas för hastighet?",
+  "options": [
+   "m/s",
+   "kg",
+   "N",
+   "V"
+  ],
+  "answer": "m/s",
+  "explanation": "Hastighet är sträcka per tid, till exempel meter per sekund."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Rörelse",
+  "level": 2,
+  "type": "mc",
+  "question": "En cyklist kör 10 km på 1 timme. Vilken är hennes medelhastighet?",
+  "options": [
+   "10 km/h",
+   "1 km/h",
+   "100 km/h",
+   "20 km/h"
+  ],
+  "answer": "10 km/h",
+  "explanation": "Hastighet = sträcka / tid."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Energi",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket av dessa är en energiomvandling?",
+  "options": [
+   "Elektrisk energi till ljus i en lampa",
+   "Is som smälter",
+   "Sten som ligger still",
+   "En bok i en hylla"
+  ],
+  "answer": "Elektrisk energi till ljus i en lampa",
+  "explanation": "Lampan omvandlar el till ljus och värme."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Energi",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas energin som ett föremål har på grund av sin höjd?",
+  "options": [
+   "Lägesenergi",
+   "Rörelseenergi",
+   "Kärnenergi",
+   "Ljudenergi"
+  ],
+  "answer": "Lägesenergi",
+  "explanation": "En boll högt upp har lägesenergi."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Energi",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken av dessa är en förnybar energikälla?",
+  "options": [
+   "Vindkraft",
+   "Kol",
+   "Olja",
+   "Uran"
+  ],
+  "answer": "Vindkraft",
+  "explanation": "Vinden tar aldrig slut."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Energi",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken av dessa är en icke förnybar energikälla?",
+  "options": [
+   "Olja",
+   "Solenergi",
+   "Vindkraft",
+   "Vattenkraft"
+  ],
+  "answer": "Olja",
+  "explanation": "Oljan bildas under miljontals år."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Ljud",
+  "level": 2,
+  "type": "mc",
+  "question": "I vilken enhet mäter man ljudstyrka?",
+  "options": [
+   "Decibel",
+   "Hertz",
+   "Newton",
+   "Watt"
+  ],
+  "answer": "Decibel",
+  "explanation": "60 dB är ett normalt samtal."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Ljud",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad bestämmer hur hög eller låg en ton är?",
+  "options": [
+   "Frekvensen",
+   "Amplituden",
+   "Farten",
+   "Volymen"
+  ],
+  "answer": "Frekvensen",
+  "explanation": "Hög frekvens ger hög ton."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Ljud",
+  "level": 2,
+  "type": "mc",
+  "question": "Hur snabbt rör sig ljud ungefär i luft?",
+  "options": [
+   "Ungefär 340 meter per sekund",
+   "Ungefär 340 000 meter per sekund",
+   "Ungefär 34 meter per sekund",
+   "Ungefär 3 400 meter per sekund"
+  ],
+  "answer": "Ungefär 340 meter per sekund",
+  "explanation": "Ljud är långsammare än ljus."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Ljus",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad är det som skapar en regnbåge?",
+  "options": [
+   "Regndroppar som bryter och delar upp solljuset",
+   "Moln som lyser själva",
+   "Månens ljus mot solen",
+   "Vind som blåser färgat damm"
+  ],
+  "answer": "Regndroppar som bryter och delar upp solljuset",
+  "explanation": "Regndroppar delar upp vitt ljus i färger."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Ljus",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas det när ljus ändrar riktning då det går från luft till vatten?",
+  "options": [
+   "Brytning",
+   "Reflektion",
+   "Absorption",
+   "Fusion"
+  ],
+  "answer": "Brytning",
+  "explanation": "Ett sugrör i ett glas ser ut att vara brutet."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Rymden",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas den tid det tar för jorden att gå ett varv runt solen?",
+  "options": [
+   "Ett år",
+   "En dag",
+   "En månad",
+   "Ett dygn"
+  ],
+  "answer": "Ett år",
+  "explanation": "Jorden går ett varv på cirka 365 dygn."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Rymden",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken planet är störst i solsystemet?",
+  "options": [
+   "Jupiter",
+   "Saturnus",
+   "Neptunus",
+   "Jorden"
+  ],
+  "answer": "Jupiter",
+  "explanation": "Jupiter är en gasjätte."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Rymden",
+  "level": 2,
+  "type": "mc",
+  "question": "Hur lång tid tar det för jorden att rotera ett varv runt sin egen axel?",
+  "options": [
+   "Ungefär ett dygn",
+   "Ungefär en månad",
+   "Ungefär ett år",
+   "Ungefär en timme"
+  ],
+  "answer": "Ungefär ett dygn",
+  "explanation": "Det ger oss dag och natt."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Temperatur",
+  "level": 2,
+  "type": "mc",
+  "question": "Temperaturen sjunker från 4 °C till −6 °C. Hur många grader sjönk den?",
+  "options": [
+   "10",
+   "2",
+   "6",
+   "8"
+  ],
+  "answer": "10",
+  "explanation": "4 − (−6) = 10 grader."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Rörelse",
+  "level": 3,
+  "type": "mc",
+  "question": "Hur beräknas medelhastighet?",
+  "options": [
+   "Sträcka dividerat med tid",
+   "Tid dividerat med sträcka",
+   "Sträcka gånger tid",
+   "Massa dividerat med volym"
+  ],
+  "answer": "Sträcka dividerat med tid",
+  "explanation": "v = s / t"
+ },
+ {
+  "subject": "fysik",
+  "topic": "Rörelse",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas ökningen av hastighet per sekund?",
+  "options": [
+   "Acceleration",
+   "Densitet",
+   "Effekt",
+   "Spänning"
+  ],
+  "answer": "Acceleration",
+  "explanation": "Enheten är m/s²."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Krafter",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas den kraft som balanserar tyngdkraften när något ligger på ett bord?",
+  "options": [
+   "Normalkraft",
+   "Friktion",
+   "Lyftkraft",
+   "Magnetkraft"
+  ],
+  "answer": "Normalkraft",
+  "explanation": "Bordet trycker upp med lika stor kraft."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Krafter",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas kraft per ytenhet?",
+  "options": [
+   "Tryck",
+   "Densitet",
+   "Effekt",
+   "Energi"
+  ],
+  "answer": "Tryck",
+  "explanation": "Tryck mäts i pascal."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Krafter",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken lag säger att kraft = massa · acceleration?",
+  "options": [
+   "Newtons andra lag",
+   "Newtons första lag",
+   "Newtons tredje lag",
+   "Arkimedes princip"
+  ],
+  "answer": "Newtons andra lag",
+  "explanation": "F = m · a."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Krafter",
+  "level": 3,
+  "type": "mc",
+  "question": "Newtons tredje lag säger att varje kraft har en motkraft. Vilket exempel visar det?",
+  "options": [
+   "Raketer som skjuter ut gas och åker framåt",
+   "Ett äpple som faller",
+   "En bok som ligger still",
+   "En kall dryck"
+  ],
+  "answer": "Raketer som skjuter ut gas och åker framåt",
+  "explanation": "Gasen trycks bakåt och raketen framåt."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Elektricitet",
+  "level": 3,
+  "type": "mc",
+  "question": "I vilken enhet mäts elektrisk ström?",
+  "options": [
+   "Ampere",
+   "Volt",
+   "Ohm",
+   "Watt"
+  ],
+  "answer": "Ampere",
+  "explanation": "Ström mäts i ampere (A)."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Elektricitet",
+  "level": 3,
+  "type": "mc",
+  "question": "I vilken enhet mäts spänning?",
+  "options": [
+   "Volt",
+   "Ampere",
+   "Ohm",
+   "Joule"
+  ],
+  "answer": "Volt",
+  "explanation": "Ett vanligt AA-batteri har 1,5 V."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Elektricitet",
+  "level": 3,
+  "type": "mc",
+  "question": "I vilken enhet mäts resistans?",
+  "options": [
+   "Ohm",
+   "Volt",
+   "Ampere",
+   "Watt"
+  ],
+  "answer": "Ohm",
+  "explanation": "Resistans mäts i ohm (Ω)."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Elektricitet",
+  "level": 3,
+  "type": "mc",
+  "question": "Titta på kretsen. Vad föreställer komponent A?",
+  "options": [
+   "Ett batteri",
+   "En lampa",
+   "En strömbrytare",
+   "Ett motstånd"
+  ],
+  "answer": "Ett batteri",
+  "explanation": "Symbolen med en lång och en kort linje är ett batteri.",
+  "image": "krets.svg"
+ },
+ {
+  "subject": "fysik",
+  "topic": "Elektricitet",
+  "level": 3,
+  "type": "mc",
+  "question": "Titta på kretsen. Vad föreställer komponent D?",
+  "options": [
+   "En lampa",
+   "Ett batteri",
+   "En strömbrytare",
+   "Ett motstånd"
+  ],
+  "answer": "En lampa",
+  "explanation": "En cirkel med ett kryss är en lampa.",
+  "image": "krets.svg"
+ },
+ {
+  "subject": "fysik",
+  "topic": "Elektricitet",
+  "level": 3,
+  "type": "mc",
+  "question": "Titta på kretsen. Vad föreställer komponent C?",
+  "options": [
+   "Ett motstånd (resistor)",
+   "Ett batteri",
+   "En lampa",
+   "En strömbrytare"
+  ],
+  "answer": "Ett motstånd (resistor)",
+  "explanation": "En rektangel är symbolen för ett motstånd.",
+  "image": "krets.svg"
+ },
+ {
+  "subject": "fysik",
+  "topic": "Elektricitet",
+  "level": 3,
+  "type": "mc",
+  "question": "Titta på kretsen. Strömbrytare B är öppen i bilden. Lyser lampan D?",
+  "options": [
+   "Nej, kretsen är inte sluten",
+   "Ja, den lyser starkt",
+   "Ja, men svagt",
+   "Bara om batteriet vänds"
+  ],
+  "answer": "Nej, kretsen är inte sluten",
+  "explanation": "Strömmen kan inte gå runt när brytaren är öppen.",
+  "image": "krets.svg"
+ },
+ {
+  "subject": "fysik",
+  "topic": "Elektricitet",
+  "level": 3,
+  "type": "mc",
+  "question": "Titta på kretsen. Vad måste man göra för att lampan D ska tändas?",
+  "options": [
+   "Stänga strömbrytare B",
+   "Ta bort batteriet A",
+   "Öppna strömbrytare B mer",
+   "Byta ut motstånd C mot en magnet"
+  ],
+  "answer": "Stänga strömbrytare B",
+  "explanation": "En sluten krets behövs för att strömmen ska gå.",
+  "image": "krets.svg"
+ },
+ {
+  "subject": "fysik",
+  "topic": "Elektricitet",
+  "level": 3,
+  "type": "mc",
+  "question": "Titta på kretsen. Hur är komponenterna kopplade till varandra?",
+  "options": [
+   "I serie, i en enda slinga",
+   "Parallellt med flera grenar",
+   "Inte alls kopplade",
+   "I en stjärnform"
+  ],
+  "answer": "I serie, i en enda slinga",
+  "explanation": "Strömmen har bara en väg att gå.",
+  "image": "krets.svg"
+ },
+ {
+  "subject": "fysik",
+  "topic": "Energi",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad säger energiprincipen?",
+  "options": [
+   "Energi kan inte skapas eller förstöras, bara omvandlas",
+   "Energi kan skapas ur ingenting",
+   "Energi försvinner med tiden",
+   "Värme är den enda energin"
+  ],
+  "answer": "Energi kan inte skapas eller förstöras, bara omvandlas",
+  "explanation": "Total mängd energi är konstant."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Energi",
+  "level": 3,
+  "type": "mc",
+  "question": "I vilken enhet mäts energi?",
+  "options": [
+   "Joule",
+   "Newton",
+   "Watt",
+   "Volt"
+  ],
+  "answer": "Joule",
+  "explanation": "1 J är en liten mängd energi."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Energi",
+  "level": 3,
+  "type": "mc",
+  "question": "I vilken enhet mäts effekt?",
+  "options": [
+   "Watt",
+   "Joule",
+   "Newton",
+   "Pascal"
+  ],
+  "answer": "Watt",
+  "explanation": "1 W = 1 J/s."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Värme",
+  "level": 3,
+  "type": "mc",
+  "question": "Hur når värmen från solen oss genom det tomma rymden?",
+  "options": [
+   "Genom strålning",
+   "Genom ledning",
+   "Genom strömning",
+   "Genom friktion"
+  ],
+  "answer": "Genom strålning",
+  "explanation": "Värmestrålning behöver inget ämne."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Värme",
+  "level": 3,
+  "type": "mc",
+  "question": "Hur sprids värme genom en metallsked i en het kopp?",
+  "options": [
+   "Genom ledning",
+   "Genom strålning",
+   "Genom strömning",
+   "Genom tryck"
+  ],
+  "answer": "Genom ledning",
+  "explanation": "Partiklarna överför energin."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Värme",
+  "level": 3,
+  "type": "mc",
+  "question": "Hur sprids värme i en kastrull med kokande vatten?",
+  "options": [
+   "Genom strömning (konvektion)",
+   "Genom strålning",
+   "Genom ledning",
+   "Genom reflektion"
+  ],
+  "answer": "Genom strömning (konvektion)",
+  "explanation": "Varmt vatten stiger och kallt sjunker."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Rymden",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas ett system med en stjärna och planeter som kretsar runt den?",
+  "options": [
+   "Solsystem",
+   "Galax",
+   "Nebulosa",
+   "Universum"
+  ],
+  "answer": "Solsystem",
+  "explanation": "Vårt solsystem har åtta planeter."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Rymden",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad heter vår galax?",
+  "options": [
+   "Vintergatan",
+   "Andromeda",
+   "Orion",
+   "Pleiaderna"
+  ],
+  "answer": "Vintergatan",
+  "explanation": "Solsystemet ligger i Vintergatan."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Rymden",
+  "level": 3,
+  "type": "mc",
+  "question": "Titta på bilden av solsystemet. Vilket nummer har Jupiter?",
+  "options": [
+   "5",
+   "3",
+   "4",
+   "6"
+  ],
+  "answer": "5",
+  "explanation": "Jupiter är den femte planeten och störst.",
+  "image": "solsystemet.svg"
+ },
+ {
+  "subject": "fysik",
+  "topic": "Rymden",
+  "level": 3,
+  "type": "mc",
+  "question": "Titta på bilden. Vilket nummer har Mars?",
+  "options": [
+   "4",
+   "2",
+   "3",
+   "5"
+  ],
+  "answer": "4",
+  "explanation": "Mars är nummer fyra från solen.",
+  "image": "solsystemet.svg"
+ },
+ {
+  "subject": "fysik",
+  "topic": "Rymden",
+  "level": 3,
+  "type": "mc",
+  "question": "Titta på bilden. Vilken planet har ringar (nummer 6)?",
+  "options": [
+   "Saturnus",
+   "Jupiter",
+   "Uranus",
+   "Neptunus"
+  ],
+  "answer": "Saturnus",
+  "explanation": "Saturnus är känd för sina ringar.",
+  "image": "solsystemet.svg"
+ },
+ {
+  "subject": "fysik",
+  "topic": "Krafter",
+  "level": 4,
+  "type": "mc",
+  "question": "Ett föremål har massan 5 kg på jorden. Vilken massa har det på månen?",
+  "options": [
+   "5 kg",
+   "Cirka 1 kg",
+   "50 kg",
+   "Ingen massa alls"
+  ],
+  "answer": "5 kg",
+  "explanation": "Massan är densamma överallt, men tyngden ändras med gravitationen."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Krafter",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas skillnaden mellan massa och tyngd?",
+  "options": [
+   "Tyngd är en kraft, massa är mängden materia",
+   "De är samma sak",
+   "Massa är en kraft",
+   "Tyngd mäts i kilogram"
+  ],
+  "answer": "Tyngd är en kraft, massa är mängden materia",
+  "explanation": "Tyngd mäts i newton och massa i kilogram."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Krafter",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken storhet får man genom att multiplicera kraft med sträcka (i kraftens riktning)?",
+  "options": [
+   "Arbete",
+   "Effekt",
+   "Tryck",
+   "Densitet"
+  ],
+  "answer": "Arbete",
+  "explanation": "W = F · s."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Krafter",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken princip förklarar varför ett skepp kan flyta?",
+  "options": [
+   "Arkimedes princip",
+   "Newtons tredje lag",
+   "Ohms lag",
+   "Boyles lag"
+  ],
+  "answer": "Arkimedes princip",
+  "explanation": "Uppdriften är lika stor som vattnet föremålet trycker undan."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Rörelse",
+  "level": 4,
+  "type": "mc",
+  "question": "Titta på diagrammet. Vilken bil kör snabbast?",
+  "options": [
+   "Bil C",
+   "Bil A",
+   "Bil B",
+   "Bil D"
+  ],
+  "answer": "Bil C",
+  "explanation": "Bil C har högst hastighet i diagrammet.",
+  "diagram": {
+   "type": "bar_chart",
+   "title": "Hastighet (km/h)",
+   "labels": [
+    "Bil A",
+    "Bil B",
+    "Bil C",
+    "Bil D"
+   ],
+   "values": [
+    70,
+    90,
+    110,
+    80
+   ],
+   "show_values": true
+  }
+ },
+ {
+  "subject": "fysik",
+  "topic": "Rörelse",
+  "level": 4,
+  "type": "text",
+  "question": "En bil kör 240 km på 3 timmar. Vilken medelhastighet har den i km/h?\nSvara endast med talet.",
+  "answer": "80",
+  "explanation": "240 / 3 = 80."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Ljud",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas ljud med högre frekvens än människan kan höra?",
+  "options": [
+   "Ultraljud",
+   "Infraljud",
+   "Bas",
+   "Eko"
+  ],
+  "answer": "Ultraljud",
+  "explanation": "Ultraljud används av fladdermöss och i sjukvården."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Ljud",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas det när ljud studsar tillbaka från en yta?",
+  "options": [
+   "Eko",
+   "Brytning",
+   "Resonans",
+   "Förstärkning"
+  ],
+  "answer": "Eko",
+  "explanation": "Ekot hörs i berg och stora tomma rum."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Ljus",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken färg har längst våglängd i det synliga ljuset?",
+  "options": [
+   "Rött",
+   "Blått",
+   "Grönt",
+   "Violett"
+  ],
+  "answer": "Rött",
+  "explanation": "Violett har kortast våglängd."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Ljus",
+  "level": 4,
+  "type": "mc",
+  "question": "Hur snabbt rör sig ljus ungefär i vakuum?",
+  "options": [
+   "300 000 km/s",
+   "340 m/s",
+   "30 000 km/s",
+   "3 000 km/s"
+  ],
+  "answer": "300 000 km/s",
+  "explanation": "Ljus är det snabbaste som finns."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Ljus",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas ljus som människan inte kan se och som ger solbränna?",
+  "options": [
+   "UV-strålning",
+   "Infraröd strålning",
+   "Radiovågor",
+   "Mikrovågor"
+  ],
+  "answer": "UV-strålning",
+  "explanation": "Solkräm skyddar mot UV."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Ljus",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas ljus med längre våglängd än rött, som känns som värme?",
+  "options": [
+   "Infraröd strålning",
+   "UV-strålning",
+   "Röntgenstrålning",
+   "Gammastrålning"
+  ],
+  "answer": "Infraröd strålning",
+  "explanation": "Värmekameror ser infrarött."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Elektricitet",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas det när lampor kopplas efter varandra i en enda slinga?",
+  "options": [
+   "Seriekoppling",
+   "Parallellkoppling",
+   "Kortslutning",
+   "Jordning"
+  ],
+  "answer": "Seriekoppling",
+  "explanation": "I seriekoppling går strömmen i en enda väg."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Elektricitet",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad händer i en parallellkoppling om en lampa går sönder?",
+  "options": [
+   "De andra lamporna lyser fortfarande",
+   "Alla slocknar",
+   "Alla lyser starkare",
+   "Batteriet exploderar"
+  ],
+  "answer": "De andra lamporna lyser fortfarande",
+  "explanation": "Strömmen går också andra vägar."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Elektricitet",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken uppgift har en säkring?",
+  "options": [
+   "Bryter strömmen vid för hög ström",
+   "Ökar spänningen",
+   "Lagrar energi",
+   "Gör lampan ljusare"
+  ],
+  "answer": "Bryter strömmen vid för hög ström",
+  "explanation": "Säkringen skyddar mot brand."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Värme",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken enhet används för temperatur i vetenskapen?",
+  "options": [
+   "Kelvin",
+   "Celsius",
+   "Fahrenheit",
+   "Watt"
+  ],
+  "answer": "Kelvin",
+  "explanation": "0 K är den lägsta möjliga temperaturen."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Värme",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas den energi som krävs för att värma 1 kg av ett ämne 1 grad?",
+  "options": [
+   "Specifik värmekapacitet",
+   "Densitet",
+   "Tryck",
+   "Hastighet"
+  ],
+  "answer": "Specifik värmekapacitet",
+  "explanation": "Vatten har hög värmekapacitet."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Rymden",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas en tät samling av stjärnor, gas och damm, till exempel Vintergatan?",
+  "options": [
+   "Galax",
+   "Planet",
+   "Asteroid",
+   "Komet"
+  ],
+  "answer": "Galax",
+  "explanation": "Galaxer kan ha miljarder stjärnor."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Rymden",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas sträckan som ljuset färdas på ett år?",
+  "options": [
+   "Ett ljusår",
+   "Ett ljusdygn",
+   "Ett jordår",
+   "En parsek"
+  ],
+  "answer": "Ett ljusår",
+  "explanation": "Ett ljusår är ungefär 9,5 biljoner km."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Rymden",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken planet ligger närmast solen?",
+  "options": [
+   "Merkurius",
+   "Venus",
+   "Mars",
+   "Jorden"
+  ],
+  "answer": "Merkurius",
+  "explanation": "Merkurius är också minst."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Rörelse",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad är rörelsemängd?",
+  "options": [
+   "Massa gånger hastighet",
+   "Kraft gånger tid",
+   "Effekt gånger tid",
+   "Massa gånger acceleration"
+  ],
+  "answer": "Massa gånger hastighet",
+  "explanation": "p = m · v."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Rörelse",
+  "level": 5,
+  "type": "mc",
+  "question": "Hur stor är en kropps rörelseenergi om massan är 2 kg och hastigheten 3 m/s? (E = ½ · m · v²)",
+  "options": [
+   "9 J",
+   "6 J",
+   "12 J",
+   "18 J"
+  ],
+  "answer": "9 J",
+  "explanation": "½ · 2 · 9 = 9 J."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Rörelse",
+  "level": 5,
+  "type": "text",
+  "question": "Hur stor blir lägesenergin för 2 kg på 10 m höjd? Räkna med g = 10 N/kg och formeln E = m · g · h (svara i J)\nSvara endast med talet.",
+  "answer": "200",
+  "explanation": "2 · 10 · 10 = 200 J."
+ },
+ {
+  "subject": "fysik",
+  "topic": "El",
+  "level": 5,
+  "type": "text",
+  "question": "En apparat har effekten 1 000 W och är påslagen 3 timmar. Hur många kWh förbrukar den?\nSvara endast med talet.",
+  "answer": "3",
+  "explanation": "1 kW · 3 h = 3 kWh."
+ },
+ {
+  "subject": "fysik",
+  "topic": "El",
+  "level": 5,
+  "type": "mc",
+  "question": "Ström 2 A går genom ett motstånd på 5 Ω. Vilken spänning ligger över motståndet? (U = R · I)",
+  "options": [
+   "10 V",
+   "2,5 V",
+   "7 V",
+   "0,4 V"
+  ],
+  "answer": "10 V",
+  "explanation": "U = 5 · 2 = 10 V."
+ },
+ {
+  "subject": "fysik",
+  "topic": "El",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas en komponent som endast släpper igenom ström åt ett håll?",
+  "options": [
+   "Diod",
+   "Transistor",
+   "Resistor",
+   "Kondensator"
+  ],
+  "answer": "Diod",
+  "explanation": "LED är en lysdiod."
+ },
+ {
+  "subject": "fysik",
+  "topic": "El",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad omvandlar en transformator?",
+  "options": [
+   "Spänning",
+   "Massa",
+   "Temperatur",
+   "Tid"
+  ],
+  "answer": "Spänning",
+  "explanation": "Transformatorer ändrar växelspänning."
+ },
+ {
+  "subject": "fysik",
+  "topic": "El",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken typ av ström levereras i vanliga vägguttag?",
+  "options": [
+   "Växelström",
+   "Likström",
+   "Statisk ström",
+   "Gammaström"
+  ],
+  "answer": "Växelström",
+  "explanation": "Frekvensen är 50 Hz i Sverige."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Atomfysik",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas den process där en tung atomkärna delas i två?",
+  "options": [
+   "Fission",
+   "Fusion",
+   "Elektrolys",
+   "Förbränning"
+  ],
+  "answer": "Fission",
+  "explanation": "Kärnkraftverk använder fission."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Atomfysik",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas den process där två lätta atomkärnor slås ihop och frigör energi?",
+  "options": [
+   "Fusion",
+   "Fission",
+   "Förbränning",
+   "Elektrolys"
+  ],
+  "answer": "Fusion",
+  "explanation": "Fusion sker i solen."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Atomfysik",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas strålning från instabila atomkärnor?",
+  "options": [
+   "Radioaktiv strålning",
+   "Synligt ljus",
+   "Radiovågor",
+   "Ljud"
+  ],
+  "answer": "Radioaktiv strålning",
+  "explanation": "De kan vara alfa-, beta- eller gammastrålning."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Atomfysik",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken typ av radioaktiv strålning är mest genomträngande?",
+  "options": [
+   "Gammastrålning",
+   "Alfastrålning",
+   "Betastrålning",
+   "Ljus"
+  ],
+  "answer": "Gammastrålning",
+  "explanation": "Det krävs tjocka skydd av bly eller betong."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Atomfysik",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas den tid det tar för hälften av en radioaktiv substans att sönderfalla?",
+  "options": [
+   "Halveringstid",
+   "Livstid",
+   "Reaktionstid",
+   "Dos"
+  ],
+  "answer": "Halveringstid",
+  "explanation": "Efter två halveringstider återstår en fjärdedel."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Räkna",
+  "level": 5,
+  "type": "text",
+  "question": "Ett ämne har halveringstiden 10 år. Hur många procent återstår efter 20 år?\nSvara endast med talet.",
+  "answer": "25",
+  "explanation": "Efter 10 år 50 %, efter 20 år 25 %."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Rymden",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas ett område i rymden där gravitationen är så stark att inte ens ljus slipper ut?",
+  "options": [
+   "Svart hål",
+   "Komet",
+   "Pulsar",
+   "Asteroidbälte"
+  ],
+  "answer": "Svart hål",
+  "explanation": "Svarta hål kan bildas när en mycket massiv stjärna kollapsar."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Rymden",
+  "level": 5,
+  "type": "mc",
+  "question": "Vem formulerade relativitetsteorin?",
+  "options": [
+   "Albert Einstein",
+   "Isaac Newton",
+   "Galileo Galilei",
+   "Niels Bohr"
+  ],
+  "answer": "Albert Einstein",
+  "explanation": "Einstein publicerade den speciella relativitetsteorin 1905."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Atomfysik",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilket grundämne är uppkallat efter fysikern Lise Meitner, som bidrog till förklaringen av kärnklyvning?",
+  "options": [
+   "Meitnerium",
+   "Curium",
+   "Einsteinium",
+   "Nobelium"
+  ],
+  "answer": "Meitnerium",
+  "explanation": "Meitnerium har atomnummer 109."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Rymden",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken sorts himlakropp är en komet?",
+  "options": [
+   "En kropp av is och damm",
+   "En gasplanet",
+   "En liten stjärna",
+   "En månsten"
+  ],
+  "answer": "En kropp av is och damm",
+  "explanation": "Kometens svans bildas när isen förångas nära solen."
+ }
+]

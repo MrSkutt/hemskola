@@ -717,7 +717,7 @@ def m5_sqrt(rng, bank):
 
 def load_all():
     """Registrerar även de svenska generatorerna."""
-    from . import generators_en, generators_kpop, generators_sv  # noqa: F401
+    from . import generators_en, generators_kpop, generators_no, generators_sv  # noqa: F401
 
 
 def generate(ex_row, bank=None, rng=None):

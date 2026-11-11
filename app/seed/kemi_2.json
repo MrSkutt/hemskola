@@ -1,0 +1,1199 @@
+[
+ {
+  "subject": "kemi",
+  "topic": "Materia",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas det när vatten blir till vattenånga?",
+  "options": [
+   "Förångning",
+   "Smältning",
+   "Stelning",
+   "Kondensation"
+  ],
+  "answer": "Förångning",
+  "explanation": "Vattnet värms upp och blir till gas."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Materia",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas det när is blir till vatten?",
+  "options": [
+   "Smältning",
+   "Förångning",
+   "Kondensation",
+   "Stelning"
+  ],
+  "answer": "Smältning",
+  "explanation": "Is smälter vid 0 °C."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Materia",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas det när vattenånga blir till vattendroppar, till exempel på en kall spegel?",
+  "options": [
+   "Kondensation",
+   "Smältning",
+   "Förångning",
+   "Stelning"
+  ],
+  "answer": "Kondensation",
+  "explanation": "Ångan kyls ned och blir flytande."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Materia",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas det när vatten blir till is?",
+  "options": [
+   "Stelning",
+   "Smältning",
+   "Kondensation",
+   "Förångning"
+  ],
+  "answer": "Stelning",
+  "explanation": "Vatten stelnar vid 0 °C."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Materia",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket av dessa ämnen är en gas vid rumstemperatur?",
+  "options": [
+   "Syre",
+   "Järn",
+   "Vatten",
+   "Socker"
+  ],
+  "answer": "Syre",
+  "explanation": "Syre finns i luften."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Materia",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket av dessa ämnen är flytande vid rumstemperatur?",
+  "options": [
+   "Vatten",
+   "Järn",
+   "Syre",
+   "Salt"
+  ],
+  "answer": "Vatten",
+  "explanation": "Vatten är flytande mellan 0 och 100 °C."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Materia",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket av dessa ämnen är fast vid rumstemperatur?",
+  "options": [
+   "Järn",
+   "Syre",
+   "Vatten",
+   "Vattenånga"
+  ],
+  "answer": "Järn",
+  "explanation": "Järn är en fast metall."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Blandningar",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket av dessa är en blandning?",
+  "options": [
+   "Saltvatten",
+   "Rent vatten",
+   "Syre",
+   "Guld"
+  ],
+  "answer": "Saltvatten",
+  "explanation": "Saltvatten är salt blandat med vatten."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Blandningar",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad händer med socker som du rör ned i varmt te?",
+  "options": [
+   "Det löser sig",
+   "Det blir till gas",
+   "Det blir till metall",
+   "Det försvinner för alltid"
+  ],
+  "answer": "Det löser sig",
+  "explanation": "Sockret blandas med vattnet i en lösning."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Luft",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad är den vanligaste gasen i luften?",
+  "options": [
+   "Kväve",
+   "Syre",
+   "Koldioxid",
+   "Väte"
+  ],
+  "answer": "Kväve",
+  "explanation": "Luften är nästan 78 % kväve."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Luft",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken gas andas vi ut, som växter använder?",
+  "options": [
+   "Koldioxid",
+   "Syre",
+   "Kväve",
+   "Helium"
+  ],
+  "answer": "Koldioxid",
+  "explanation": "Vi andas in syre och ut koldioxid."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Eld",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilka tre saker behövs för att något ska brinna?",
+  "options": [
+   "Bränsle, syre och värme",
+   "Vatten, jord och luft",
+   "Sol, regn och vind",
+   "Ljus, ljud och färg"
+  ],
+  "answer": "Bränsle, syre och värme",
+  "explanation": "Tar man bort en av dem slocknar elden."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Eld",
+  "level": 1,
+  "type": "mc",
+  "question": "Varför ska man täcka ett brinnande fett i en panna med lock?",
+  "options": [
+   "Elden får inget syre",
+   "Elden får mer syre",
+   "Fettet blir kallare",
+   "Locket är gjort av vatten"
+  ],
+  "answer": "Elden får inget syre",
+  "explanation": "Utan syre slocknar elden."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Material",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket material rostar när det är utomhus i fukt?",
+  "options": [
+   "Järn",
+   "Guld",
+   "Plast",
+   "Glas"
+  ],
+  "answer": "Järn",
+  "explanation": "Järn reagerar med syre och vatten och blir rost."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Diagram",
+  "level": 1,
+  "type": "mc",
+  "question": "Diagrammet visar vid vilken temperatur olika ämnen smälter (ungefärliga värden). Vilket ämne smälter vid lägst temperatur?",
+  "options": [
+   "Smör",
+   "Choklad",
+   "Vax",
+   "Tenn"
+  ],
+  "answer": "Smör",
+  "explanation": "Smör smälter vid lägst temperatur i diagrammet, det vill säga där stapeln är lägst.",
+  "diagram": {
+   "type": "bar_chart",
+   "title": "Smältpunkt (°C)",
+   "labels": [
+    "Smör",
+    "Choklad",
+    "Vax",
+    "Tenn"
+   ],
+   "values": [
+    30,
+    34,
+    60,
+    232
+   ],
+   "show_values": true
+  }
+ },
+ {
+  "subject": "kemi",
+  "topic": "Atomer",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas de minsta byggstenarna i alla ämnen?",
+  "options": [
+   "Atomer",
+   "Celler",
+   "Planeter",
+   "Kristaller"
+  ],
+  "answer": "Atomer",
+  "explanation": "Allt är uppbyggt av atomer."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Blandningar",
+  "level": 2,
+  "type": "mc",
+  "question": "Hur kan man skilja sand från vatten?",
+  "options": [
+   "Genom filtrering",
+   "Genom att frysa",
+   "Genom att hälla i salt",
+   "Genom att värma sanden"
+  ],
+  "answer": "Genom filtrering",
+  "explanation": "Sanden fastnar i filtret."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Blandningar",
+  "level": 2,
+  "type": "mc",
+  "question": "Hur kan man få tillbaka saltet ur saltvatten?",
+  "options": [
+   "Genom att koka bort vattnet",
+   "Genom att filtrera",
+   "Genom att frysa det",
+   "Genom att skaka"
+  ],
+  "answer": "Genom att koka bort vattnet",
+  "explanation": "Vattnet förångas och saltet blir kvar."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Blandningar",
+  "level": 2,
+  "type": "mc",
+  "question": "Hur kallas metoden att skilja ämnen med olika kokpunkter genom att koka och kyla ångan?",
+  "options": [
+   "Destillation",
+   "Filtrering",
+   "Sedimentering",
+   "Magnetism"
+  ],
+  "answer": "Destillation",
+  "explanation": "Ångan kondenseras till ren vätska."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Syror och baser",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket av dessa är surt?",
+  "options": [
+   "Citronsaft",
+   "Tvål",
+   "Rent vatten",
+   "Natron"
+  ],
+  "answer": "Citronsaft",
+  "explanation": "Citron innehåller citronsyra."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Syror och baser",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket av dessa är basiskt (alkaliskt)?",
+  "options": [
+   "Tvål",
+   "Citronsaft",
+   "Ättika",
+   "Läsk"
+  ],
+  "answer": "Tvål",
+  "explanation": "Tvål och natron är basiska."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Reaktioner",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken gas bildas när man blandar bakpulver (natron) med ättika?",
+  "options": [
+   "Koldioxid",
+   "Syre",
+   "Väte",
+   "Kväve"
+  ],
+  "answer": "Koldioxid",
+  "explanation": "Koldioxiden gör att det bubblar."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Reaktioner",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas en reaktion där ett ämne reagerar med syre och ger värme och ljus?",
+  "options": [
+   "Förbränning",
+   "Smältning",
+   "Stelning",
+   "Filtrering"
+  ],
+  "answer": "Förbränning",
+  "explanation": "Ved som brinner är förbränning."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Reaktioner",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket av dessa är en kemisk förändring?",
+  "options": [
+   "Ett ljus brinner",
+   "Isen smälter",
+   "Sockret löses",
+   "Vattnet kokar"
+  ],
+  "answer": "Ett ljus brinner",
+  "explanation": "Vid en kemisk förändring bildas nya ämnen."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Reaktioner",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket av dessa är en fysikalisk förändring?",
+  "options": [
+   "Isen smälter",
+   "Järn rostar",
+   "Ved brinner",
+   "Mjölk surnar"
+  ],
+  "answer": "Isen smälter",
+  "explanation": "Ämnet är samma, bara formen ändras."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Material",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket av dessa material leder värme bäst?",
+  "options": [
+   "Koppar",
+   "Trä",
+   "Plast",
+   "Gummi"
+  ],
+  "answer": "Koppar",
+  "explanation": "Därför är kastruller ofta av metall."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Material",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket av dessa materialen leder inte ström?",
+  "options": [
+   "Plast",
+   "Koppar",
+   "Järn",
+   "Silver"
+  ],
+  "answer": "Plast",
+  "explanation": "Plast är en isolator."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Periodiska systemet",
+  "level": 2,
+  "type": "mc",
+  "question": "Titta på tabellen. Vad är symbolen för grundämnet med atomnummer 11?",
+  "options": [
+   "Na",
+   "N",
+   "Ne",
+   "Mg"
+  ],
+  "answer": "Na",
+  "explanation": "Atomnummer 11 är natrium, Na.",
+  "image": "periodiska.svg"
+ },
+ {
+  "subject": "kemi",
+  "topic": "Periodiska systemet",
+  "level": 2,
+  "type": "mc",
+  "question": "Titta på tabellen. Vilket grundämne har atomnummer 6?",
+  "options": [
+   "Kol",
+   "Kväve",
+   "Syre",
+   "Bor"
+  ],
+  "answer": "Kol",
+  "explanation": "Atomnummer 6 är kol, C.",
+  "image": "periodiska.svg"
+ },
+ {
+  "subject": "kemi",
+  "topic": "Periodiska systemet",
+  "level": 2,
+  "type": "mc",
+  "question": "Titta på tabellen. Vilket grundämne finns längst upp till vänster?",
+  "options": [
+   "Väte",
+   "Helium",
+   "Litium",
+   "Syre"
+  ],
+  "answer": "Väte",
+  "explanation": "Väte har atomnummer 1.",
+  "image": "periodiska.svg"
+ },
+ {
+  "subject": "kemi",
+  "topic": "Periodiska systemet",
+  "level": 2,
+  "type": "mc",
+  "question": "Titta på tabellen. Vilken symbol har syre?",
+  "options": [
+   "O",
+   "S",
+   "Sy",
+   "Ox"
+  ],
+  "answer": "O",
+  "explanation": "Syre är nummer 8.",
+  "image": "periodiska.svg"
+ },
+ {
+  "subject": "kemi",
+  "topic": "Atomer",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken partikel i atomen har negativ laddning?",
+  "options": [
+   "Elektron",
+   "Proton",
+   "Neutron",
+   "Kärna"
+  ],
+  "answer": "Elektron",
+  "explanation": "Elektronerna rör sig runt kärnan."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Atomer",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken partikel i atomen har positiv laddning?",
+  "options": [
+   "Proton",
+   "Elektron",
+   "Neutron",
+   "Foton"
+  ],
+  "answer": "Proton",
+  "explanation": "Protoner finns i atomkärnan."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Atomer",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken partikel i atomen har ingen laddning?",
+  "options": [
+   "Neutron",
+   "Proton",
+   "Elektron",
+   "Jon"
+  ],
+  "answer": "Neutron",
+  "explanation": "Neutroner finns i kärnan."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Atomer",
+  "level": 3,
+  "type": "mc",
+  "question": "Var finns protonerna och neutronerna?",
+  "options": [
+   "I atomkärnan",
+   "I elektronskalen",
+   "Utanför atomen",
+   "I luften"
+  ],
+  "answer": "I atomkärnan",
+  "explanation": "Kärnan är atomens mitt."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Atomer",
+  "level": 3,
+  "type": "mc",
+  "question": "Titta på atommodellen. Hur många protoner har atomen?",
+  "options": [
+   "6",
+   "2",
+   "4",
+   "12"
+  ],
+  "answer": "6",
+  "explanation": "De röda kulorna är protoner: det är sex stycken.",
+  "image": "atom.svg"
+ },
+ {
+  "subject": "kemi",
+  "topic": "Atomer",
+  "level": 3,
+  "type": "mc",
+  "question": "Titta på atommodellen. Vilket grundämne är det?",
+  "options": [
+   "Kol",
+   "Kväve",
+   "Syre",
+   "Helium"
+  ],
+  "answer": "Kol",
+  "explanation": "Sex protoner betyder atomnummer 6, alltså kol.",
+  "image": "atom.svg"
+ },
+ {
+  "subject": "kemi",
+  "topic": "Atomer",
+  "level": 3,
+  "type": "mc",
+  "question": "Titta på atommodellen. Hur många elektroner finns i det yttersta skalet?",
+  "options": [
+   "4",
+   "2",
+   "6",
+   "8"
+  ],
+  "answer": "4",
+  "explanation": "I det yttersta skalet sitter fyra elektroner.",
+  "image": "atom.svg"
+ },
+ {
+  "subject": "kemi",
+  "topic": "Periodiska systemet",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas kolumnerna (lodräta raderna) i periodiska systemet?",
+  "options": [
+   "Grupper",
+   "Perioder",
+   "Serier",
+   "Skal"
+  ],
+  "answer": "Grupper",
+  "explanation": "Ämnen i samma grupp liknar varandra."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Periodiska systemet",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas de vågräta raderna i periodiska systemet?",
+  "options": [
+   "Perioder",
+   "Grupper",
+   "Serier",
+   "Kolumner"
+  ],
+  "answer": "Perioder",
+  "explanation": "Perioden anger antalet elektronskal."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Periodiska systemet",
+  "level": 3,
+  "type": "mc",
+  "question": "Titta på tabellen. I vilken grupp (kolumn) står ädelgaserna?",
+  "options": [
+   "18",
+   "1",
+   "2",
+   "17"
+  ],
+  "answer": "18",
+  "explanation": "Ädelgaserna He, Ne och Ar står i grupp 18.",
+  "image": "periodiska.svg"
+ },
+ {
+  "subject": "kemi",
+  "topic": "Periodiska systemet",
+  "level": 3,
+  "type": "mc",
+  "question": "Titta på tabellen. Vilket av dessa grundämnen är en alkalimetall?",
+  "options": [
+   "Natrium",
+   "Neon",
+   "Klor",
+   "Kisel"
+  ],
+  "answer": "Natrium",
+  "explanation": "Natrium är i grupp 1.",
+  "image": "periodiska.svg"
+ },
+ {
+  "subject": "kemi",
+  "topic": "Periodiska systemet",
+  "level": 3,
+  "type": "mc",
+  "question": "Titta på tabellen. Vilket av dessa ämnen är en halogen?",
+  "options": [
+   "Klor",
+   "Natrium",
+   "Argon",
+   "Magnesium"
+  ],
+  "answer": "Klor",
+  "explanation": "Halogenerna står i grupp 17.",
+  "image": "periodiska.svg"
+ },
+ {
+  "subject": "kemi",
+  "topic": "Syror och baser",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad har en lösning med pH 2?",
+  "options": [
+   "Den är starkt sur",
+   "Den är starkt basisk",
+   "Den är neutral",
+   "Den är kall"
+  ],
+  "answer": "Den är starkt sur",
+  "explanation": "pH under 7 är surt."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Syror och baser",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket av dessa ämnen är en bas?",
+  "options": [
+   "Natriumhydroxid",
+   "Saltsyra",
+   "Ättika",
+   "Citronsyra"
+  ],
+  "answer": "Natriumhydroxid",
+  "explanation": "Natriumhydroxid (NaOH) är en stark bas."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Syror och baser",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas ämnen som ändrar färg beroende på pH?",
+  "options": [
+   "Indikatorer",
+   "Katalysatorer",
+   "Lösningsmedel",
+   "Isolatorer"
+  ],
+  "answer": "Indikatorer",
+  "explanation": "Rödkålssaft är en naturlig indikator."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Reaktioner",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad bildas när natrium reagerar med klor?",
+  "options": [
+   "Natriumklorid (bordssalt)",
+   "Natriumhydroxid",
+   "Saltsyra",
+   "Vatten"
+  ],
+  "answer": "Natriumklorid (bordssalt)",
+  "explanation": "Salt består av natrium- och kloridjoner."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Reaktioner",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas en reaktion som avger värme?",
+  "options": [
+   "Exoterm",
+   "Endoterm",
+   "Neutral",
+   "Passiv"
+  ],
+  "answer": "Exoterm",
+  "explanation": "Förbränning är exoterm."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Material",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket av dessa grundämnen är en metall?",
+  "options": [
+   "Zink",
+   "Svavel",
+   "Kol",
+   "Syre"
+  ],
+  "answer": "Zink",
+  "explanation": "Zink används till exempel i galvaniserat stål."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Jonbildning",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas en atom som har fått en elektrisk laddning?",
+  "options": [
+   "Jon",
+   "Isotop",
+   "Molekyl",
+   "Proton"
+  ],
+  "answer": "Jon",
+  "explanation": "En jon har förlorat eller tagit upp elektroner."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Jonbildning",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken jon bildar natrium vanligtvis?",
+  "options": [
+   "Na⁺",
+   "Na⁻",
+   "Na²⁺",
+   "Na²⁻"
+  ],
+  "answer": "Na⁺",
+  "explanation": "Natrium avger en elektron och blir positiv."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Jonbildning",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken laddning har kloridjonen?",
+  "options": [
+   "−1",
+   "+1",
+   "+2",
+   "0"
+  ],
+  "answer": "−1",
+  "explanation": "Klor tar upp en elektron."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Bindningar",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas den bindning som bildas mellan positiva och negativa joner?",
+  "options": [
+   "Jonbindning",
+   "Kovalent bindning",
+   "Metallbindning",
+   "Vätebindning"
+  ],
+  "answer": "Jonbindning",
+  "explanation": "Salt är uppbyggt med jonbindningar."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Atomer",
+  "level": 4,
+  "type": "mc",
+  "question": "Ungefär hur många elektroner finns i det yttersta skalet hos de flesta ädelgaser (till exempel neon och argon)?",
+  "options": [
+   "8",
+   "2",
+   "4",
+   "6"
+  ],
+  "answer": "8",
+  "explanation": "De har fullt yttersta skal och reagerar sällan."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Atomer",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas atomer av samma grundämne som har olika antal neutroner?",
+  "options": [
+   "Isotoper",
+   "Joner",
+   "Molekyler",
+   "Allotroper"
+  ],
+  "answer": "Isotoper",
+  "explanation": "Kol-12 och kol-14 är isotoper."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Reaktioner",
+  "level": 4,
+  "type": "mc",
+  "question": "Hur balanserar man reaktionen 2 H₂ + O₂ → _ H₂O? Hur stor ska koefficienten framför H₂O vara?",
+  "options": [
+   "2",
+   "1",
+   "3",
+   "4"
+  ],
+  "answer": "2",
+  "explanation": "Det blir 4 väteatomer och 2 syreatomer på båda sidor."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Räkna",
+  "level": 4,
+  "type": "text",
+  "question": "En lösning blandas på 5 g salt per 100 g vatten. Hur många gram salt behövs för 400 g vatten?\nSvara endast med talet.",
+  "answer": "20",
+  "explanation": "5 · 4 = 20 g."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Miljö",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket ämne bildas vid förbränning av fossila bränslen och förstärker växthuseffekten?",
+  "options": [
+   "Koldioxid",
+   "Syre",
+   "Kväve",
+   "Helium"
+  ],
+  "answer": "Koldioxid",
+  "explanation": "Koldioxid släpps ut vid bensinförbränning."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Miljö",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilka är fossila bränslen?",
+  "options": [
+   "Kol, olja och naturgas",
+   "Vind, sol och vatten",
+   "Ved, halm och flis",
+   "Uran och väte"
+  ],
+  "answer": "Kol, olja och naturgas",
+  "explanation": "De bildades av döda organismer för miljoner år sedan."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Miljö",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad orsakar surt regn?",
+  "options": [
+   "Utsläpp av svaveldioxid och kväveoxider",
+   "Utsläpp av helium",
+   "För mycket syre",
+   "Kalla vindar"
+  ],
+  "answer": "Utsläpp av svaveldioxid och kväveoxider",
+  "explanation": "Ämnena reagerar med vatten i luften och bildar syror."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Material",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas en blandning av metaller, till exempel brons?",
+  "options": [
+   "Legering",
+   "Lösning",
+   "Emulsion",
+   "Polymer"
+  ],
+  "answer": "Legering",
+  "explanation": "Brons är en blandning av koppar och tenn."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Material",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket grundämne är huvudbeståndsdelen i alla organiska föreningar?",
+  "options": [
+   "Kol",
+   "Kisel",
+   "Järn",
+   "Neon"
+  ],
+  "answer": "Kol",
+  "explanation": "Kolatomer kan bilda långa kedjor."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Organisk kemi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas det enklaste kolvätet, med formeln CH₄?",
+  "options": [
+   "Metan",
+   "Etan",
+   "Propan",
+   "Eten"
+  ],
+  "answer": "Metan",
+  "explanation": "Metan är huvudkomponenten i naturgas."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Organisk kemi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas kolväten med bara enkelbindningar?",
+  "options": [
+   "Alkaner",
+   "Alkener",
+   "Alkyner",
+   "Alkoholer"
+  ],
+  "answer": "Alkaner",
+  "explanation": "Metan, etan och propan är alkaner."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Organisk kemi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas de små molekyler som bygger upp plast, till exempel eten?",
+  "options": [
+   "Monomerer",
+   "Polymerer",
+   "Isotoper",
+   "Joner"
+  ],
+  "answer": "Monomerer",
+  "explanation": "Många monomerer bildar en polymer."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Organisk kemi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas den metod som delar upp råolja i olika produkter efter kokpunkt?",
+  "options": [
+   "Fraktionerad destillation",
+   "Elektrolys",
+   "Filtrering",
+   "Neutralisation"
+  ],
+  "answer": "Fraktionerad destillation",
+  "explanation": "Bensin och diesel är fraktioner av råolja."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Reaktioner",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad innebär oxidation?",
+  "options": [
+   "Att ett ämne avger elektroner",
+   "Att ett ämne tar upp elektroner",
+   "Att ett ämne smälter",
+   "Att ett ämne blir surt"
+  ],
+  "answer": "Att ett ämne avger elektroner",
+  "explanation": "Reduktion är motsatsen."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Reaktioner",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas en reaktion som tar upp värme från omgivningen?",
+  "options": [
+   "Endoterm",
+   "Exoterm",
+   "Neutral",
+   "Reversibel"
+  ],
+  "answer": "Endoterm",
+  "explanation": "Is som smälter tar upp värme."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Reaktioner",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad gör en katalysator?",
+  "options": [
+   "Gör en reaktion snabbare utan att förbrukas",
+   "Gör en reaktion långsammare",
+   "Förbrukas helt",
+   "Gör reaktionen kall"
+  ],
+  "answer": "Gör en reaktion snabbare utan att förbrukas",
+  "explanation": "Katalysatorn finns kvar efter reaktionen."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Reaktioner",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilka faktorer ökar vanligtvis reaktionshastigheten?",
+  "options": [
+   "Högre temperatur och högre koncentration",
+   "Lägre temperatur",
+   "Lägre koncentration",
+   "Mindre kontaktyta"
+  ],
+  "answer": "Högre temperatur och högre koncentration",
+  "explanation": "Fler och hårdare kollisioner mellan partiklar ger snabbare reaktion."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Syror och baser",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilket pH har en lösning där koncentrationen av oxoniumjoner är 0,001 mol/dm³ (10⁻³)?",
+  "options": [
+   "3",
+   "1",
+   "7",
+   "11"
+  ],
+  "answer": "3",
+  "explanation": "pH = −log[H₃O⁺] = 3."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Räkna",
+  "level": 5,
+  "type": "text",
+  "question": "Hur många gram väger 0,5 mol natriumklorid, NaCl, om molmassan är 58,5 g/mol?\nSvara endast med talet.",
+  "answer": [
+   "29,25",
+   "29.25"
+  ],
+  "explanation": "0,5 · 58,5 = 29,25 g."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Räkna",
+  "level": 5,
+  "type": "text",
+  "question": "Hur många gram väger 2 mol vatten om molmassan är 18 g/mol?\nSvara endast med talet.",
+  "answer": "36",
+  "explanation": "2 · 18 = 36 g."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Elektrokemi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas processen där man använder elektrisk ström för att åstadkomma en kemisk reaktion?",
+  "options": [
+   "Elektrolys",
+   "Destillation",
+   "Fotosyntes",
+   "Filtrering"
+  ],
+  "answer": "Elektrolys",
+  "explanation": "Vatten kan delas i väte och syre med elektrolys."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Elektrokemi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas det som används för att lagra och avge elektrisk energi genom kemiska reaktioner?",
+  "options": [
+   "Batteri",
+   "Kondensator",
+   "Transformator",
+   "Dynamo"
+  ],
+  "answer": "Batteri",
+  "explanation": "Ett batteri omvandlar kemisk energi till elektrisk energi."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Atomer",
+  "level": 5,
+  "type": "mc",
+  "question": "Vem föreslog den första atommodellen med en tung kärna och elektroner runt omkring?",
+  "options": [
+   "Ernest Rutherford",
+   "Isaac Newton",
+   "Marie Curie",
+   "Albert Einstein"
+  ],
+  "answer": "Ernest Rutherford",
+  "explanation": "Rutherford visade att atomen har en kärna."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Atomer",
+  "level": 5,
+  "type": "mc",
+  "question": "Vem upptäckte radium och polonium, och fick två Nobelpris?",
+  "options": [
+   "Marie Curie",
+   "Rosalind Franklin",
+   "Ada Lovelace",
+   "Lise Meitner"
+  ],
+  "answer": "Marie Curie",
+  "explanation": "Hon fick Nobelpriset i fysik 1903 och kemi 1911."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Atomer",
+  "level": 5,
+  "type": "mc",
+  "question": "Vem skapade det första periodiska systemet (1869)?",
+  "options": [
+   "Dmitrij Mendelejev",
+   "Niels Bohr",
+   "Alfred Nobel",
+   "Jöns Jacob Berzelius"
+  ],
+  "answer": "Dmitrij Mendelejev",
+  "explanation": "Mendelejev ordnade ämnena efter atommassa."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Atomer",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken svensk kemist introducerade dagens kemiska symboler (till exempel Fe för järn) i början av 1800-talet?",
+  "options": [
+   "Jöns Jacob Berzelius",
+   "Alfred Nobel",
+   "Carl von Linné",
+   "Anders Celsius"
+  ],
+  "answer": "Jöns Jacob Berzelius",
+  "explanation": "Berzelius införde bokstavssymbolerna."
+ }
+]

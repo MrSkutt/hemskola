@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 260" width="440" height="260" role="img" aria-label="En elektrisk krets med fyra markerade komponenter A, B, C och D">
+<rect width="440" height="260" fill="#fff"/>
+<g stroke="#222" stroke-width="3" fill="none"><path d="M60 130 V60 H150"/><path d="M190 60 H250"/><path d="M290 60 H380 V130"/><path d="M380 130 V200 H60 V130"/></g>
+<g stroke="#222" stroke-width="3"><line x1="40" y1="118" x2="80" y2="118"/><line x1="50" y1="142" x2="70" y2="142" stroke-width="6"/></g>
+<g stroke="#222" stroke-width="3" fill="none"><line x1="150" y1="60" x2="182" y2="42"/><circle cx="190" cy="60" r="3" fill="#222"/><circle cx="150" cy="60" r="3" fill="#222"/></g>
+<rect x="250" y="46" width="40" height="28" fill="#fff" stroke="#222" stroke-width="3"/>
+<g stroke="#222" stroke-width="3" fill="#fffbe0"><circle cx="380" cy="165" r="18"/><line x1="368" y1="153" x2="392" y2="177"/><line x1="392" y1="153" x2="368" y2="177"/></g>
+<circle cx="150" cy="60" r="0"/>
+<circle cx='20' cy='130' r='14' fill='#fff' stroke='#1c4e80' stroke-width='2'/><text x='20' y='136' font-family='sans-serif' font-size='17' font-weight='bold' text-anchor='middle' fill='#1c4e80'>A</text><circle cx='170' cy='28' r='14' fill='#fff' stroke='#1c4e80' stroke-width='2'/><text x='170' y='34' font-family='sans-serif' font-size='17' font-weight='bold' text-anchor='middle' fill='#1c4e80'>B</text><circle cx='270' cy='100' r='14' fill='#fff' stroke='#1c4e80' stroke-width='2'/><text x='270' y='106' font-family='sans-serif' font-size='17' font-weight='bold' text-anchor='middle' fill='#1c4e80'>C</text><circle cx='415' cy='165' r='14' fill='#fff' stroke='#1c4e80' stroke-width='2'/><text x='415' y='171' font-family='sans-serif' font-size='17' font-weight='bold' text-anchor='middle' fill='#1c4e80'>D</text>
+<text x="12" y="250" font-family='sans-serif' font-size="11" fill="#555">Schematisk ritning (förenklad)</text></svg>

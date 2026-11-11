@@ -1,0 +1,1541 @@
+[
+ {
+  "subject": "geografi",
+  "topic": "Jorden",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket är världens största hav?",
+  "options": [
+   "Stilla havet",
+   "Atlanten",
+   "Indiska oceanen",
+   "Norra ishavet"
+  ],
+  "answer": "Stilla havet",
+  "explanation": "Stilla havet täcker mer än en tredjedel av jordens yta."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Jorden",
+  "level": 1,
+  "type": "mc",
+  "question": "Hur många oceaner brukar man räkna med idag?",
+  "options": [
+   "Fem",
+   "Två",
+   "Tre",
+   "Sju"
+  ],
+  "answer": "Fem",
+  "explanation": "Stilla havet, Atlanten, Indiska oceanen, Södra ishavet och Norra ishavet."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Jorden",
+  "level": 1,
+  "type": "mc",
+  "question": "Titta på diagrammet över jordens yta. Ungefär hur stor del av jorden täcks av vatten?",
+  "options": [
+   "Ungefär 70 %",
+   "Ungefär 30 %",
+   "Ungefär 50 %",
+   "Ungefär 10 %"
+  ],
+  "answer": "Ungefär 70 %",
+  "explanation": "Haven täcker ungefär sju tiondelar av jorden.",
+  "diagram": {
+   "type": "pie_chart",
+   "labels": [
+    "Vatten",
+    "Land"
+   ],
+   "values": [
+    71,
+    29
+   ],
+   "show_percent": true
+  }
+ },
+ {
+  "subject": "geografi",
+  "topic": "Jorden",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas ett landområde som är omgivet av vatten på alla sidor?",
+  "options": [
+   "Ö",
+   "Halvö",
+   "Sund",
+   "Udde"
+  ],
+  "answer": "Ö",
+  "explanation": "Gotland är Sveriges största ö."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Jorden",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas ett landområde som är omgivet av vatten på tre sidor?",
+  "options": [
+   "Halvö",
+   "Ö",
+   "Sjö",
+   "Dal"
+  ],
+  "answer": "Halvö",
+  "explanation": "Sverige ligger på Skandinaviska halvön tillsammans med Norge."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Jorden",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket är världens högsta berg över havet?",
+  "options": [
+   "Mount Everest",
+   "Kebnekaise",
+   "Mont Blanc",
+   "Kilimanjaro"
+  ],
+  "answer": "Mount Everest",
+  "explanation": "Mount Everest är cirka 8 850 meter högt."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Jorden",
+  "level": 1,
+  "type": "mc",
+  "question": "I vilken världsdel ligger Sahara, världens största varma öken?",
+  "options": [
+   "Afrika",
+   "Asien",
+   "Sydamerika",
+   "Australien"
+  ],
+  "answer": "Afrika",
+  "explanation": "Sahara täcker en stor del av norra Afrika."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Jorden",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken världsdel är störst till ytan?",
+  "options": [
+   "Asien",
+   "Afrika",
+   "Europa",
+   "Nordamerika"
+  ],
+  "answer": "Asien",
+  "explanation": "Asien är störst både till yta och folkmängd."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Sverige",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken är Sveriges största sjö?",
+  "options": [
+   "Vänern",
+   "Vättern",
+   "Mälaren",
+   "Hjälmaren"
+  ],
+  "answer": "Vänern",
+  "explanation": "Vänern är störst, följd av Vättern och Mälaren."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Sverige",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken är Sveriges största ö?",
+  "options": [
+   "Gotland",
+   "Öland",
+   "Orust",
+   "Tjörn"
+  ],
+  "answer": "Gotland",
+  "explanation": "Gotland ligger i Östersjön."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Sverige",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilka tre delar brukar man dela in Sverige i?",
+  "options": [
+   "Götaland, Svealand och Norrland",
+   "Östra, västra och mellersta",
+   "Skåne, Småland och Dalarna",
+   "Norr, söder och väster"
+  ],
+  "answer": "Götaland, Svealand och Norrland",
+  "explanation": "Norrland är störst, Götaland är i söder."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Sverige",
+  "level": 1,
+  "type": "mc",
+  "question": "I vilket väderstreck ligger Norrland jämfört med Götaland?",
+  "options": [
+   "Norr",
+   "Söder",
+   "Väster",
+   "Öster"
+  ],
+  "answer": "Norr",
+  "explanation": "Norrland ligger längst upp i landet."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Sverige",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket land ligger väster om Sverige på Skandinaviska halvön?",
+  "options": [
+   "Norge",
+   "Finland",
+   "Danmark",
+   "Estland"
+  ],
+  "answer": "Norge",
+  "explanation": "Norge och Sverige delar halvön."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Sverige",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket hav ligger öster om Sverige?",
+  "options": [
+   "Östersjön",
+   "Nordsjön",
+   "Medelhavet",
+   "Atlanten"
+  ],
+  "answer": "Östersjön",
+  "explanation": "Östersjön är ett innanhav."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Kartor",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas den lista på en karta som förklarar vad symbolerna betyder?",
+  "options": [
+   "Teckenförklaring",
+   "Skala",
+   "Rutnät",
+   "Titel"
+  ],
+  "answer": "Teckenförklaring",
+  "explanation": "Där står vad olika färger och tecken betyder."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Kartor",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket instrument visar väderstrecken?",
+  "options": [
+   "Kompass",
+   "Termometer",
+   "Barometer",
+   "Klocka"
+  ],
+  "answer": "Kompass",
+  "explanation": "Nålen pekar mot norr."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Korea",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken är Sydkoreas huvudstad?",
+  "options": [
+   "Seoul",
+   "Busan",
+   "Incheon",
+   "Daegu"
+  ],
+  "answer": "Seoul",
+  "explanation": "Seoul är landets största stad."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Jorden",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas den tänkta linjen som går runt jordens mitt på 0° latitud?",
+  "options": [
+   "Ekvatorn",
+   "Polcirkeln",
+   "Nollmeridianen",
+   "Vändkretsen"
+  ],
+  "answer": "Ekvatorn",
+  "explanation": "Ekvatorn delar jorden i norra och södra halvklotet."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Jorden",
+  "level": 2,
+  "type": "mc",
+  "question": "Titta på talraden över breddgrader. Vilken bokstav visar ekvatorn (0°)?",
+  "options": [
+   "C",
+   "A",
+   "B",
+   "D"
+  ],
+  "answer": "C",
+  "explanation": "Ekvatorn har breddgraden 0°.",
+  "diagram": {
+   "type": "number_line",
+   "min": -90,
+   "max": 90,
+   "step": 30,
+   "label_step": 30,
+   "marks": [
+    {
+     "value": -90,
+     "label": "A"
+    },
+    {
+     "value": -45,
+     "label": "B"
+    },
+    {
+     "value": 0,
+     "label": "C"
+    },
+    {
+     "value": 60,
+     "label": "D"
+    }
+   ]
+  }
+ },
+ {
+  "subject": "geografi",
+  "topic": "Jorden",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad orsakar att vi har dag och natt?",
+  "options": [
+   "Jordens rotation runt sin egen axel",
+   "Jordens färd runt solen",
+   "Månens skugga",
+   "Molnens rörelse"
+  ],
+  "answer": "Jordens rotation runt sin egen axel",
+  "explanation": "Jorden roterar ett varv på ungefär ett dygn."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Jorden",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad orsakar årstiderna?",
+  "options": [
+   "Att jordaxeln lutar när jorden går runt solen",
+   "Att jorden är närmare solen på sommaren",
+   "Att månen blockerar solen",
+   "Att vinden ändrar riktning"
+  ],
+  "answer": "Att jordaxeln lutar när jorden går runt solen",
+  "explanation": "Lutningen gör att solljuset träffar olika på olika delar av året."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Jorden",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas det när solen inte går ned på sommaren långt norrut?",
+  "options": [
+   "Midnattssol",
+   "Polarnatt",
+   "Norrsken",
+   "Solstorm"
+  ],
+  "answer": "Midnattssol",
+  "explanation": "Det sker norr om polcirkeln."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Jorden",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas det när solen inte går upp på vintern långt norrut?",
+  "options": [
+   "Polarnatt",
+   "Midnattssol",
+   "Dimma",
+   "Skymning"
+  ],
+  "answer": "Polarnatt",
+  "explanation": "Polarnatten är mörk i flera veckor."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Jorden",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket klimat har områden nära ekvatorn?",
+  "options": [
+   "Tropiskt",
+   "Polärt",
+   "Torrt",
+   "Kallt"
+  ],
+  "answer": "Tropiskt",
+  "explanation": "Där är det varmt hela året."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Jorden",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket slag av skog finns främst i norra Sverige?",
+  "options": [
+   "Barrskog",
+   "Regnskog",
+   "Savann",
+   "Lövskog"
+  ],
+  "answer": "Barrskog",
+  "explanation": "Gran och tall dominerar."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Jorden",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken flod rinner genom Egypten?",
+  "options": [
+   "Nilen",
+   "Amazonfloden",
+   "Mississippi",
+   "Donau"
+  ],
+  "answer": "Nilen",
+  "explanation": "Nilen mynnar i Medelhavet."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Jorden",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken stor regnskog ligger i Sydamerika?",
+  "options": [
+   "Amazonas",
+   "Sahara",
+   "Himalaya",
+   "Gobi"
+  ],
+  "answer": "Amazonas",
+  "explanation": "Amazonas är världens största regnskog."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Sverige",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket sund skiljer Sverige från Danmark?",
+  "options": [
+   "Öresund",
+   "Bosporen",
+   "Gibraltar",
+   "Kanalen"
+  ],
+  "answer": "Öresund",
+  "explanation": "Öresundsbron går över sundet."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Sverige",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket är Sveriges högsta berg?",
+  "options": [
+   "Kebnekaise",
+   "Åreskutan",
+   "Sylarna",
+   "Hallandsåsen"
+  ],
+  "answer": "Kebnekaise",
+  "explanation": "Kebnekaise ligger i Lappland."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Sverige",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken sjö är Sveriges näst största?",
+  "options": [
+   "Vättern",
+   "Vänern",
+   "Mälaren",
+   "Siljan"
+  ],
+  "answer": "Vättern",
+  "explanation": "Vättern ligger mellan Östergötland och Småland."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Sverige",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken bergskedja går längs gränsen mellan Sverige och Norge?",
+  "options": [
+   "Skanderna (Kölen)",
+   "Alperna",
+   "Anderna",
+   "Uralbergen"
+  ],
+  "answer": "Skanderna (Kölen)",
+  "explanation": "Skanderna är fjäll med snö långt in på sommaren."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Sverige",
+  "level": 2,
+  "type": "mc",
+  "question": "Titta på diagrammet över Nordens länder. Vilket land har flest invånare?",
+  "options": [
+   "Sverige",
+   "Norge",
+   "Danmark",
+   "Finland"
+  ],
+  "answer": "Sverige",
+  "explanation": "Sverige har cirka 10,5 miljoner invånare.",
+  "diagram": {
+   "type": "bar_chart",
+   "title": "Invånare (miljoner, ungefär)",
+   "labels": [
+    "Sverige",
+    "Norge",
+    "Danmark",
+    "Finland"
+   ],
+   "values": [
+    10.5,
+    5.6,
+    6,
+    5.6
+   ],
+   "show_values": true
+  }
+ },
+ {
+  "subject": "geografi",
+  "topic": "Sverige",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket av dessa länder hör till Norden?",
+  "options": [
+   "Island",
+   "Polen",
+   "Estland",
+   "Tyskland"
+  ],
+  "answer": "Island",
+  "explanation": "Norden är Sverige, Norge, Danmark, Finland och Island."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Korea",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken stor ö i södra Korea är känd för vulkanen Hallasan?",
+  "options": [
+   "Jeju",
+   "Ulleungdo",
+   "Ganghwa",
+   "Geoje"
+  ],
+  "answer": "Jeju",
+  "explanation": "Jeju är en populär turistö."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Korea",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken flod rinner genom Seoul?",
+  "options": [
+   "Han-floden",
+   "Nilen",
+   "Donau",
+   "Yangtze"
+  ],
+  "answer": "Han-floden",
+  "explanation": "Han-floden delar Seoul i en norra och en södra del."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Jorden",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas vatten som faller från himlen som regn eller snö?",
+  "options": [
+   "Nederbörd",
+   "Kondensation",
+   "Avdunstning",
+   "Frysning"
+  ],
+  "answer": "Nederbörd",
+  "explanation": "Nederbörd är en del av vattnets kretslopp."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Jorden",
+  "level": 2,
+  "type": "mc",
+  "question": "Titta på bilden av vattnets kretslopp. Vad händer i steg C?",
+  "options": [
+   "Nederbörd, vattnet faller mot marken",
+   "Vatten avdunstar",
+   "Moln bildas",
+   "Vattnet fryser till is"
+  ],
+  "answer": "Nederbörd, vattnet faller mot marken",
+  "explanation": "C visar regn eller snö som faller.",
+  "image": "vattnets_kretslopp.svg"
+ },
+ {
+  "subject": "geografi",
+  "topic": "Kartor",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad betyder skalan 1:100 000 på en karta?",
+  "options": [
+   "1 cm på kartan är 1 km i verkligheten",
+   "1 cm på kartan är 100 m i verkligheten",
+   "1 cm på kartan är 10 km i verkligheten",
+   "Kartan är 100 000 km bred"
+  ],
+  "answer": "1 cm på kartan är 1 km i verkligheten",
+  "explanation": "100 000 cm = 1 km."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Kartor",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken linje delar jorden i en östlig och en västlig del och går genom Greenwich i London?",
+  "options": [
+   "Nollmeridianen",
+   "Ekvatorn",
+   "Polcirkeln",
+   "Datumgränsen"
+  ],
+  "answer": "Nollmeridianen",
+  "explanation": "Nollmeridianen har longituden 0°."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Kartor",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad mäter breddgrader?",
+  "options": [
+   "Avstånd norr eller söder om ekvatorn",
+   "Avstånd öster eller väster om Greenwich",
+   "Höjd över havet",
+   "Djup under ytan"
+  ],
+  "answer": "Avstånd norr eller söder om ekvatorn",
+  "explanation": "Breddgraderna går från 0° till 90° norr eller söder."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Kartor",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad är Nordpolens latitud?",
+  "options": [
+   "90° nord",
+   "0°",
+   "45° nord",
+   "66,5° nord"
+  ],
+  "answer": "90° nord",
+  "explanation": "Nordpolen är längst norrut."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Kartor",
+  "level": 3,
+  "type": "text",
+  "question": "Jorden är indelad i 24 tidszoner. Hur många grader longitud är det ungefär mellan varje tidszon?\nSvara endast med talet.",
+  "answer": "15",
+  "explanation": "360 / 24 = 15."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Natur",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad formade mycket av Sveriges landskap med sjöar och dalar?",
+  "options": [
+   "Inlandsisen under istiderna",
+   "Vulkaner",
+   "Jordbävningar",
+   "Havsströmmar"
+  ],
+  "answer": "Inlandsisen under istiderna",
+  "explanation": "Isen slipade berget och lämnade moräner."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Natur",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas det att land i Sverige långsamt höjer sig efter istiden?",
+  "options": [
+   "Landhöjning",
+   "Landsänkning",
+   "Erosion",
+   "Isskred"
+  ],
+  "answer": "Landhöjning",
+  "explanation": "Landhöjningen är störst vid Höga kusten."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Natur",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad bildas när lava svalnar?",
+  "options": [
+   "Bergart",
+   "Moln",
+   "Sand",
+   "Regn"
+  ],
+  "answer": "Bergart",
+  "explanation": "Magma som svalnat blir magmatiska bergarter."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Natur",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas smält berg under jordskorpan?",
+  "options": [
+   "Magma",
+   "Lava",
+   "Sediment",
+   "Granit"
+  ],
+  "answer": "Magma",
+  "explanation": "När magman når ytan kallas den lava."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Natur",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket av dessa är ett exempel på en vulkan?",
+  "options": [
+   "Fuji i Japan",
+   "Kebnekaise i Sverige",
+   "Alperna i Europa",
+   "Lofoten"
+  ],
+  "answer": "Fuji i Japan",
+  "explanation": "Fujiberget är en aktiv vulkan."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Natur",
+  "level": 3,
+  "type": "mc",
+  "question": "Hur många kontinentalplattor ligger Island på gränsen mellan?",
+  "options": [
+   "Två",
+   "En",
+   "Tre",
+   "Fyra"
+  ],
+  "answer": "Två",
+  "explanation": "Island ligger vid gränsen mellan Nordamerikanska och Eurasiska plattan."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Natur",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket klimat har Sverige huvudsakligen?",
+  "options": [
+   "Tempererat",
+   "Tropiskt",
+   "Polärt",
+   "Ökenklimat"
+  ],
+  "answer": "Tempererat",
+  "explanation": "Mellan det kalla och det varma."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Natur",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas den trädlösa, kalla och karga vegetationen längst i norr?",
+  "options": [
+   "Tundra",
+   "Savann",
+   "Regnskog",
+   "Taiga"
+  ],
+  "answer": "Tundra",
+  "explanation": "Tundran har permafrost."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Natur",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas det stora barrskogsbältet som sträcker sig över Norden och Ryssland?",
+  "options": [
+   "Taiga",
+   "Tundra",
+   "Savann",
+   "Stäpp"
+  ],
+  "answer": "Taiga",
+  "explanation": "Taigan är världens största skogsområde."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Natur",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas ett gräsbevuxet landskap i Afrika med enstaka träd?",
+  "options": [
+   "Savann",
+   "Tundra",
+   "Taiga",
+   "Regnskog"
+  ],
+  "answer": "Savann",
+  "explanation": "Där lever lejon och elefanter."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Sverige",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken stad ligger vid Göta älvs mynning?",
+  "options": [
+   "Göteborg",
+   "Malmö",
+   "Karlstad",
+   "Uppsala"
+  ],
+  "answer": "Göteborg",
+  "explanation": "Göteborg är Sveriges andra största stad."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Sverige",
+  "level": 3,
+  "type": "mc",
+  "question": "Titta på diagrammet. Vilken stad har flest invånare?",
+  "options": [
+   "Stockholm",
+   "Göteborg",
+   "Malmö",
+   "Uppsala"
+  ],
+  "answer": "Stockholm",
+  "explanation": "Stockholm är störst i Sverige.",
+  "diagram": {
+   "type": "bar_chart",
+   "title": "Invånare i kommunen (tusental, ungefär)",
+   "labels": [
+    "Stockholm",
+    "Göteborg",
+    "Malmö"
+   ],
+   "values": [
+    980,
+    600,
+    360
+   ],
+   "show_values": true
+  }
+ },
+ {
+  "subject": "geografi",
+  "topic": "Sverige",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken storstad ligger längst söderut?",
+  "options": [
+   "Malmö",
+   "Göteborg",
+   "Stockholm",
+   "Uppsala"
+  ],
+  "answer": "Malmö",
+  "explanation": "Malmö ligger i Skåne."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Befolkning",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas det när fler och fler flyttar från landsbygd till städer?",
+  "options": [
+   "Urbanisering",
+   "Emigration",
+   "Pensionering",
+   "Industrialisering"
+  ],
+  "answer": "Urbanisering",
+  "explanation": "Städerna växer."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Befolkning",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas det när människor flyttar in till ett land för att bo där?",
+  "options": [
+   "Immigration",
+   "Emigration",
+   "Turism",
+   "Export"
+  ],
+  "answer": "Immigration",
+  "explanation": "Immigration är inflyttning, emigration är utflyttning."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Korea",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken stad kommer BTS-medlemmen J-Hope från?",
+  "options": [
+   "Gwangju",
+   "Seoul",
+   "Busan",
+   "Incheon"
+  ],
+  "answer": "Gwangju",
+  "explanation": "Gwangju ligger i sydvästra Sydkorea."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Korea",
+  "level": 3,
+  "type": "mc",
+  "question": "Från vilken stad kommer BTS-medlemmen Suga?",
+  "options": [
+   "Daegu",
+   "Seoul",
+   "Gwangju",
+   "Busan"
+  ],
+  "answer": "Daegu",
+  "explanation": "Daegu ligger i sydöstra Sydkorea."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Korea",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket land ligger öster om Koreahalvön, bortom havet?",
+  "options": [
+   "Japan",
+   "Kina",
+   "Mongoliet",
+   "Vietnam"
+  ],
+  "answer": "Japan",
+  "explanation": "Japan är ett örike."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Korea",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket stort land ligger norr om Nordkorea?",
+  "options": [
+   "Kina",
+   "Japan",
+   "Mongoliet",
+   "Thailand"
+  ],
+  "answer": "Kina",
+  "explanation": "De delar också gräns med Ryssland längst i nordost."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Natur",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken varm havsström gör Sveriges klimat mildare än vad breddgraden annars skulle ge?",
+  "options": [
+   "Golfströmmen",
+   "Humboldtströmmen",
+   "Kuroshio",
+   "Benguelaströmmen"
+  ],
+  "answer": "Golfströmmen",
+  "explanation": "Golfströmmen för med sig varmt vatten från Mexikanska golfen."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Natur",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas de årstidsvindar i södra Asien som ger kraftigt regn på sommaren?",
+  "options": [
+   "Monsun",
+   "Passad",
+   "Orkan",
+   "Tornado"
+  ],
+  "answer": "Monsun",
+  "explanation": "Monsunregnet är viktigt för jordbruket."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Natur",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas en stor våg som orsakas av en jordbävning under havet?",
+  "options": [
+   "Tsunami",
+   "Flod",
+   "Tidvatten",
+   "Storm"
+  ],
+  "answer": "Tsunami",
+  "explanation": "Tsunamin kan nå långt in på land."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Natur",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas den zon runt Stilla havet med många vulkaner och jordbävningar?",
+  "options": [
+   "Eldringen",
+   "Isringen",
+   "Vattenringen",
+   "Rosten"
+  ],
+  "answer": "Eldringen",
+  "explanation": "Eldringen följer plattgränserna."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Natur",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas det när en tektonisk platta pressas ner under en annan?",
+  "options": [
+   "Subduktion",
+   "Erosion",
+   "Sedimentation",
+   "Vittring"
+  ],
+  "answer": "Subduktion",
+  "explanation": "Då kan vulkaner och jordbävningar uppstå."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Natur",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken bergart är granit?",
+  "options": [
+   "Magmatisk bergart",
+   "Sedimentär bergart",
+   "Metamorf bergart",
+   "Kalksten"
+  ],
+  "answer": "Magmatisk bergart",
+  "explanation": "Granit bildas av magma som svalnar långsamt."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Natur",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas det område där en flod delar sig i flera armar innan den når havet?",
+  "options": [
+   "Delta",
+   "Meander",
+   "Källa",
+   "Dal"
+  ],
+  "answer": "Delta",
+  "explanation": "Nilens delta är ett känt exempel."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Natur",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas en lång, böjd flodsträcka?",
+  "options": [
+   "Meander",
+   "Delta",
+   "Källa",
+   "Fors"
+  ],
+  "answer": "Meander",
+  "explanation": "Floden svänger fram och tillbaka."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Natur",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas områden som sprids och blir öken?",
+  "options": [
+   "Ökenspridning",
+   "Avskogning",
+   "Erosion",
+   "Irrigation"
+  ],
+  "answer": "Ökenspridning",
+  "explanation": "Torka och dåligt jordbruk kan orsaka ökenspridning."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Natur",
+  "level": 4,
+  "type": "mc",
+  "question": "Titta på klimatdiagrammet för staden Z. Vilken månad är nederbördsrikast?",
+  "options": [
+   "Juli",
+   "Januari",
+   "April",
+   "Oktober"
+  ],
+  "answer": "Juli",
+  "explanation": "Staplarna visar nederbörden i mm.",
+  "diagram": {
+   "type": "bar_chart",
+   "title": "Nederbörd i staden Z (mm, fiktivt)",
+   "labels": [
+    "Jan",
+    "Apr",
+    "Jul",
+    "Okt"
+   ],
+   "values": [
+    30,
+    60,
+    180,
+    90
+   ],
+   "show_values": true
+  }
+ },
+ {
+  "subject": "geografi",
+  "topic": "Miljö",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken gas bidrar mest till växthuseffekten från människans utsläpp?",
+  "options": [
+   "Koldioxid",
+   "Syre",
+   "Kväve",
+   "Helium"
+  ],
+  "answer": "Koldioxid",
+  "explanation": "Koldioxid släpps ut vid förbränning av fossila bränslen."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Miljö",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas det att man huggar ner stora skogsområden?",
+  "options": [
+   "Avskogning",
+   "Beskogning",
+   "Plantering",
+   "Gallring"
+  ],
+  "answer": "Avskogning",
+  "explanation": "Regnskogar minskar på grund av avskogning."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Miljö",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad innebär hållbar utveckling?",
+  "options": [
+   "Att tillgodose dagens behov utan att äventyra framtida generationers",
+   "Att bara tänka på pengar",
+   "Att bygga så mycket som möjligt",
+   "Att stänga alla fabriker"
+  ],
+  "answer": "Att tillgodose dagens behov utan att äventyra framtida generationers",
+  "explanation": "Begreppet kommer från Brundtlandrapporten."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Miljö",
+  "level": 4,
+  "type": "mc",
+  "question": "Hur många globala mål finns i Agenda 2030?",
+  "options": [
+   "17",
+   "8",
+   "10",
+   "21"
+  ],
+  "answer": "17",
+  "explanation": "FN:s globala mål för hållbar utveckling."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Miljö",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilka är exempel på fossila bränslen?",
+  "options": [
+   "Kol, olja och naturgas",
+   "Sol, vind och vatten",
+   "Trä och halm",
+   "Uran och torium"
+  ],
+  "answer": "Kol, olja och naturgas",
+  "explanation": "De bildades av gamla växter och djur."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Befolkning",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas en stad med över tio miljoner invånare?",
+  "options": [
+   "Megastad",
+   "Småstad",
+   "Landsby",
+   "Kommun"
+  ],
+  "answer": "Megastad",
+  "explanation": "Tokyo är ett exempel på en megastad."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Befolkning",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas en graf som visar hur ett lands befolkning fördelas på åldrar?",
+  "options": [
+   "Befolkningspyramid",
+   "Klimatdiagram",
+   "Cirkeldiagram",
+   "Linjediagram"
+  ],
+  "answer": "Befolkningspyramid",
+  "explanation": "Pyramiden visar åldrar och kön."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Korea",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken är Sydkoreas näst största stad?",
+  "options": [
+   "Busan",
+   "Daegu",
+   "Incheon",
+   "Gwangju"
+  ],
+  "answer": "Busan",
+  "explanation": "Busan är en stor hamnstad i sydost."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Korea",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken bergskedja löper längs Koreahalvöns östra kust?",
+  "options": [
+   "Taebaekbergen",
+   "Alperna",
+   "Anderna",
+   "Himalaya"
+  ],
+  "answer": "Taebaekbergen",
+  "explanation": "Taebaekbergen är Koreas viktigaste bergskedja."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Natur",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas linjen i Stilla havet där datumet byter dag, ungefär vid 180° longitud?",
+  "options": [
+   "Datumgränsen",
+   "Nollmeridianen",
+   "Ekvatorn",
+   "Polcirkeln"
+  ],
+  "answer": "Datumgränsen",
+  "explanation": "Man får en dag extra eller mindre när man korsar den."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Natur",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken kanal förbinder Medelhavet med Röda havet?",
+  "options": [
+   "Suezkanalen",
+   "Panamakanalen",
+   "Kielkanalen",
+   "Göta kanal"
+  ],
+  "answer": "Suezkanalen",
+  "explanation": "Suezkanalen förkortar sjövägen mellan Europa och Asien."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Natur",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken kanal förbinder Atlanten med Stilla havet i Centralamerika?",
+  "options": [
+   "Panamakanalen",
+   "Suezkanalen",
+   "Kielkanalen",
+   "Kanalen vid Bosporen"
+  ],
+  "answer": "Panamakanalen",
+  "explanation": "Fartyg slipper åka runt Sydamerika."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Natur",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilket sund skiljer Europa och Afrika vid Medelhavets västra ände?",
+  "options": [
+   "Gibraltar sund",
+   "Bosporen",
+   "Öresund",
+   "Dardanellerna"
+  ],
+  "answer": "Gibraltar sund",
+  "explanation": "Sundet är bara cirka 14 km brett som smalast."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Natur",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilket biom har störst artrikedom (flest olika arter)?",
+  "options": [
+   "Tropisk regnskog",
+   "Tundra",
+   "Öken",
+   "Barrskog"
+  ],
+  "answer": "Tropisk regnskog",
+  "explanation": "Varmt och fuktigt klimat gynnar liv."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Natur",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken bergskedja ligger mellan Europa och Asien i Ryssland?",
+  "options": [
+   "Uralbergen",
+   "Alperna",
+   "Anderna",
+   "Klippiga bergen"
+  ],
+  "answer": "Uralbergen",
+  "explanation": "Uralbergen är en traditionell kontinentgräns."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Natur",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad är Antarktis?",
+  "options": [
+   "En kontinent täckt av is utan permanent befolkning",
+   "Ett land",
+   "En ö i Atlanten",
+   "Ett hav"
+  ],
+  "answer": "En kontinent täckt av is utan permanent befolkning",
+  "explanation": "Forskare vistas där tillfälligt."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Natur",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken inlandsis täcker det mesta av Grönland?",
+  "options": [
+   "Grönlandsisen",
+   "Antarktisisen",
+   "Svalbardisen",
+   "Alpisen"
+  ],
+  "answer": "Grönlandsisen",
+  "explanation": "Om den smälter höjs havsnivån."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Miljö",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken konsekvens har stigande havsnivåer?",
+  "options": [
+   "Låglänta kustområden riskerar översvämning",
+   "Fler vulkaner",
+   "Mer regn överallt",
+   "Färre stormar"
+  ],
+  "answer": "Låglänta kustområden riskerar översvämning",
+  "explanation": "Många megastäder ligger vid kusten."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Miljö",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad innebär global uppvärmning?",
+  "options": [
+   "Att jordens medeltemperatur stiger",
+   "Att jorden blir större",
+   "Att solen blir hetare",
+   "Att havet försvinner"
+  ],
+  "answer": "Att jordens medeltemperatur stiger",
+  "explanation": "Det beror främst på ökade växthusgaser."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Miljö",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken årlig klimatkonferens hålls av FN?",
+  "options": [
+   "COP",
+   "OS",
+   "EM",
+   "Nobelfesten"
+  ],
+  "answer": "COP",
+  "explanation": "COP står för Conference of the Parties."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Ekonomi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad mäter BNP?",
+  "options": [
+   "Värdet av alla varor och tjänster som produceras i ett land under ett år",
+   "Antal invånare",
+   "Antal turister",
+   "Landets yta"
+  ],
+  "answer": "Värdet av alla varor och tjänster som produceras i ett land under ett år",
+  "explanation": "BNP står för bruttonationalprodukt."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Ekonomi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad mäter HDI (Human Development Index)?",
+  "options": [
+   "Ett lands utveckling utifrån hälsa, utbildning och inkomst",
+   "Ett lands naturresurser",
+   "Ett lands militär",
+   "Ett lands klimat"
+  ],
+  "answer": "Ett lands utveckling utifrån hälsa, utbildning och inkomst",
+  "explanation": "Index 0 till 1 – högre är bättre."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Ekonomi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas det att världens länder blir alltmer sammanflätade ekonomiskt och kulturellt?",
+  "options": [
+   "Globalisering",
+   "Urbanisering",
+   "Segregation",
+   "Isolering"
+  ],
+  "answer": "Globalisering",
+  "explanation": "Handel och internet har påskyndat globaliseringen."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Ekonomi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas den koreanska vågen, där K-pop och koreanska dramer sprids över världen?",
+  "options": [
+   "Hallyu",
+   "Hanbok",
+   "Kimchi",
+   "Hangul"
+  ],
+  "answer": "Hallyu",
+  "explanation": "Hallyu betyder ungefär \"den koreanska vågen\"."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Ekonomi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas länder med låga inkomster och lite industri ofta?",
+  "options": [
+   "Utvecklingsländer",
+   "Industriländer",
+   "Stormakter",
+   "Kolonier"
+  ],
+  "answer": "Utvecklingsländer",
+  "explanation": "Begreppet beskriver ett lands ekonomiska situation."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Räkna",
+  "level": 5,
+  "type": "text",
+  "question": "Ett land har 20 miljoner invånare och ytan 400 000 km². Hur många invånare per km²?\nSvara endast med talet.",
+  "answer": "50",
+  "explanation": "20 000 000 / 400 000 = 50."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Räkna",
+  "level": 5,
+  "type": "text",
+  "question": "På en karta med skalan 1:50 000 är avståndet mellan två platser 6 cm. Hur långt är det i verkligheten, i kilometer?\nSvara endast med talet.",
+  "answer": "3",
+  "explanation": "6 · 50 000 = 300 000 cm = 3 km."
+ }
+]

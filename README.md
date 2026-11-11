@@ -3,7 +3,7 @@
 Ett litet webbaserat övningssystem för hemmabruk: eleven gör ett inledande test, övar i sin egen takt
 på en nivå som anpassar sig, och gör statusprov då och då. Admin ser resultat och lägger in nya övningar.
 
-* Ämnen från start: **matematik** och **svenska** (50 övningar vardera, nivå 1–5, ungefär åk 4–9)
+* 12 ämnen från start (matte, svenska, engelska, K-pop och åtta NO/SO-ämnen), nivå 1–5, ungefär åk 4–9: drygt 1 200 färdiga frågor plus generatorer som skapar nya
 * Backend: Python / FastAPI, databas: SQLite, webbserver: nginx, allt i Docker
 * Inloggning med rollerna **admin** och **elev** (flera elever går bra)
 
@@ -15,7 +15,7 @@ docker compose up -d --build
 ```
 
 Öppna `http://servern:8080`, logga in som admin och skapa elever under **Användare**.
-Databasen ligger i `./data/hemskola.db`. De 100 startövningarna läggs in automatiskt första gången.
+Databasen ligger i `./data/hemskola.db`. Startövningarna läggs in automatiskt första gången, och nya läggs till vid uppgradering utan att befintlig data påverkas.
 
 Om du inte sätter `ADMIN_PASSWORD` skapas ett slumpmässigt lösenord som skrivs i loggen
 (`docker compose logs app`).
@@ -124,11 +124,14 @@ Det finns 12 ämnen: matte, svenska, engelska, K-pop, de naturorienterande **bio
 `religionskunskap`, `samhallskunskap`). Äldre installationer hade samlingsämnena `no` och `so`: vid uppgradering flyttas deras övningar, svar och
 nivåer automatiskt till de nya ämnena. Startövningar finns i `app/seed/*.json`, bland annat med diagram och med de medföljande
 exempelbilderna i `app/seed/media/` (de kopieras till `data/media` vid start, och befintliga filer skrivs aldrig över).
+Varje ämne har ungefär 20–35 färdiga frågor per nivå, och en del av dem använder bilder eller diagram (stapel, cirkel, tidslinje, klocka).
+Filer som heter `<ämne>_2.json` är de utökade frågeuppsättningarna. NO/SO-ämnena har även generatorer (`app/generators_no.py`): grundämnen och
+formler, densitet och Ohms lag, binära tal, huvudstäder, årtal, moms, ränta och mycket annat, där svaret räknas ut i kod.
 Nya ämnen skapas automatiskt: importera övningar med t.ex. `"subject": "engelska"`. Egna visningsnamn läggs i `SUBJECT_LABELS` i `app/logic.py`.
 
 ## K-pop
 
-Ämnet **K-pop** (`"subject": "kpop"`) har 59 frågor om grupper, fans, historia, koreanska och hangul, plus matteuppgifter med konserter, streams och biljetter.
+Ämnet **K-pop** (`"subject": "kpop"`) har ett par hundra frågor om grupper, fans, historia, koreanska och hangul, plus matteuppgifter med konserter, streams och biljetter.
 Det finns även generatorer för koreanska glosor (ordklass `koreanska`, se `app/seed/words_kpop.json`): koreanska → svenska, svenska → koreanska
 och att läsa hangul. Bilderna (lightstick, scen, hangul, flagga) är egenritade SVG-filer i `app/seed/media/`. Inga fotografier av artister används.
 Fakta om grupper ändras med tiden, så granska gärna frågorna ibland. Lägg till ord så här:
@@ -154,7 +157,7 @@ och exempel på senaste felsvar. Nivåerna är en uppskattning från övningspro
 
 ## Idéer framåt
 
-* Fler övningar per nivå i de nya ämnena, och generatorer för NO/SO
+* Fler generatorer för biologi och religionskunskap, och fler frågor per nivå
 * Eget val av område att öva på, mål per dag, och belöningar/poäng
 * Fler generatorer och fler ord i ordlistan, t.ex. engelska glosor
 * Påminnelser/veckorapport till admin

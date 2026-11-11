@@ -1,0 +1,1487 @@
+[
+ {
+  "subject": "samhallskunskap",
+  "topic": "Demokrati",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas det när medborgarna röstar och majoriteten bestämmer?",
+  "options": [
+   "Demokrati",
+   "Diktatur",
+   "Monarki",
+   "Anarki"
+  ],
+  "answer": "Demokrati",
+  "explanation": "Demokrati betyder folkstyre."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Demokrati",
+  "level": 1,
+  "type": "mc",
+  "question": "Hur många röster behöver man för att ha majoritet i en omröstning med 21 röstande?",
+  "options": [
+   "11",
+   "10",
+   "7",
+   "15"
+  ],
+  "answer": "11",
+  "explanation": "Majoritet är mer än hälften."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Lagar",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas en regel som gäller i hela landet och som alla måste följa?",
+  "options": [
+   "Lag",
+   "Önskan",
+   "Tradition",
+   "Gissning"
+  ],
+  "answer": "Lag",
+  "explanation": "Lagar stiftas av riksdagen."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Lagar",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket nummer ringer du vid en nödsituation i Sverige?",
+  "options": [
+   "112",
+   "110",
+   "123",
+   "911"
+  ],
+  "answer": "112",
+  "explanation": "112 är det gemensamma nödnumret."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Lagar",
+  "level": 1,
+  "type": "mc",
+  "question": "Vem ska du kontakta först om du ser ett pågående brott och någon är i fara?",
+  "options": [
+   "Polisen på 112",
+   "Din granne",
+   "Skolsyster",
+   "Bibliotekarien"
+  ],
+  "answer": "Polisen på 112",
+  "explanation": "Polis, ambulans och räddningstjänst nås på 112."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Rättigheter",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken rättighet har alla barn enligt barnkonventionen?",
+  "options": [
+   "Rätt till utbildning",
+   "Rätt att köra bil",
+   "Rätt att rösta",
+   "Rätt att inte gå i skolan"
+  ],
+  "answer": "Rätt till utbildning",
+  "explanation": "Alla barn ska få gå i skolan."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Rättigheter",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad betyder det att alla människor har lika värde?",
+  "options": [
+   "Alla är lika viktiga oavsett vem man är",
+   "Rika är viktigare",
+   "Äldre är viktigare",
+   "Starka är viktigare"
+  ],
+  "answer": "Alla är lika viktiga oavsett vem man är",
+  "explanation": "Det är grunden för mänskliga rättigheter."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Skolan",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas den skola som är obligatorisk för alla barn i Sverige?",
+  "options": [
+   "Grundskolan",
+   "Gymnasiet",
+   "Universitetet",
+   "Förskolan"
+  ],
+  "answer": "Grundskolan",
+  "explanation": "Skolplikten gäller grundskolan."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Mobbning",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas det när någon om och om igen trakasserar eller utesluter en annan person?",
+  "options": [
+   "Mobbning",
+   "Skämt",
+   "Vänskap",
+   "Samarbete"
+  ],
+  "answer": "Mobbning",
+  "explanation": "Mobbning är aldrig okej."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Mobbning",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad ska du göra om du ser att någon mobbas på nätet?",
+  "options": [
+   "Berätta för en vuxen och stötta den som drabbas",
+   "Dela inlägget vidare",
+   "Skratta med",
+   "Låtsas som inget"
+  ],
+  "answer": "Berätta för en vuxen och stötta den som drabbas",
+  "explanation": "Våga ta hjälp av en vuxen."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Mobbning",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kan du göra om du får hotfulla meddelanden online?",
+  "options": [
+   "Spara bevis och berätta för en vuxen",
+   "Svara med hot",
+   "Radera allt",
+   "Ignorera helt"
+  ],
+  "answer": "Spara bevis och berätta för en vuxen",
+  "explanation": "Skärmdumpar kan behövas senare."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas de pengar man får för att man arbetar?",
+  "options": [
+   "Lön",
+   "Skatt",
+   "Lån",
+   "Rabatt"
+  ],
+  "answer": "Lön",
+  "explanation": "Lönen betalas av arbetsgivaren."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas det att lägga undan pengar för senare?",
+  "options": [
+   "Sparande",
+   "Låna",
+   "Skatta",
+   "Handla"
+  ],
+  "answer": "Sparande",
+  "explanation": "Pengarna kan då användas till något större."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas den som köper en vara eller tjänst?",
+  "options": [
+   "Konsument",
+   "Producent",
+   "Säljare",
+   "Importör"
+  ],
+  "answer": "Konsument",
+  "explanation": "Konsumenten använder varan."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas den som tillverkar varor eller tjänster?",
+  "options": [
+   "Producent",
+   "Konsument",
+   "Köpare",
+   "Kund"
+  ],
+  "answer": "Producent",
+  "explanation": "En producent kan vara ett företag."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 1,
+  "type": "mc",
+  "question": "Du har 1 000 kr och köper en BTS-tröja för 400 kr. Hur mycket har du kvar?",
+  "options": [
+   "600 kr",
+   "400 kr",
+   "500 kr",
+   "700 kr"
+  ],
+  "answer": "600 kr",
+  "explanation": "1 000 − 400 = 600 kr."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Gemenskap",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas BTS fans?",
+  "options": [
+   "ARMY",
+   "FANZ",
+   "BLINKS",
+   "ONCE"
+  ],
+  "answer": "ARMY",
+  "explanation": "ARMY står för Adorable Representative M.C. for Youth."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Riksdagen",
+  "level": 2,
+  "type": "mc",
+  "question": "Hur många ledamöter har Sveriges riksdag?",
+  "options": [
+   "349",
+   "249",
+   "300",
+   "450"
+  ],
+  "answer": "349",
+  "explanation": "Ledamöterna väljs vart fjärde år."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Riksdagen",
+  "level": 2,
+  "type": "mc",
+  "question": "Vem leder riksdagens arbete?",
+  "options": [
+   "Talmannen",
+   "Statsministern",
+   "Kungen",
+   "Domaren"
+  ],
+  "answer": "Talmannen",
+  "explanation": "Talmannen väljs av riksdagen."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Riksdagen",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken myndighet stiftar lagarna i Sverige?",
+  "options": [
+   "Riksdagen",
+   "Regeringen",
+   "Domstolarna",
+   "Polisen"
+  ],
+  "answer": "Riksdagen",
+  "explanation": "Riksdagen är landets högsta beslutande organ."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Riksdagen",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad gör regeringen?",
+  "options": [
+   "Styr landet och genomför riksdagens beslut",
+   "Dömer i domstol",
+   "Skriver lagar ensam",
+   "Bestämmer vädret"
+  ],
+  "answer": "Styr landet och genomför riksdagens beslut",
+  "explanation": "Regeringen leds av statsministern."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Riksdagen",
+  "level": 2,
+  "type": "mc",
+  "question": "Vem har den ceremoniella rollen som statschef i Sverige?",
+  "options": [
+   "Kungen",
+   "Statsministern",
+   "Talmannen",
+   "Presidenten"
+  ],
+  "answer": "Kungen",
+  "explanation": "Kungen har inte politisk makt."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Styre",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad ansvarar kommunen för?",
+  "options": [
+   "Skola, äldreomsorg och sophämtning",
+   "Sjukvård och kollektivtrafik",
+   "Försvaret",
+   "Utrikespolitiken"
+  ],
+  "answer": "Skola, äldreomsorg och sophämtning",
+  "explanation": "Kommunen sköter lokal service."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Styre",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad ansvarar regionen främst för?",
+  "options": [
+   "Sjukvård och kollektivtrafik",
+   "Grundskolan",
+   "Äldreomsorgen",
+   "Polisen"
+  ],
+  "answer": "Sjukvård och kollektivtrafik",
+  "explanation": "Regionerna hette tidigare landsting."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Styre",
+  "level": 2,
+  "type": "mc",
+  "question": "Hur många kommuner finns det i Sverige (ungefär)?",
+  "options": [
+   "290",
+   "29",
+   "100",
+   "500"
+  ],
+  "answer": "290",
+  "explanation": "Sverige har 290 kommuner."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Rättigheter",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas rättigheter som alla människor har, oavsett vem de är?",
+  "options": [
+   "Mänskliga rättigheter",
+   "Valfria rättigheter",
+   "Företagsrättigheter",
+   "Lokala rättigheter"
+  ],
+  "answer": "Mänskliga rättigheter",
+  "explanation": "De är grundläggande."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Rättigheter",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad innebär att alla människor ska behandlas lika oavsett kön?",
+  "options": [
+   "Jämställdhet",
+   "Likgiltighet",
+   "Rättvisa",
+   "Rädsla"
+  ],
+  "answer": "Jämställdhet",
+  "explanation": "Jämställdhet är en grundläggande princip."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Media",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilka tre är exempel på public service i Sverige?",
+  "options": [
+   "SVT, SR och UR",
+   "Netflix, Spotify och YouTube",
+   "Aftonbladet, Expressen och DN",
+   "TikTok, Instagram och Snapchat"
+  ],
+  "answer": "SVT, SR och UR",
+  "explanation": "Public service finansieras av skattemedel."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Media",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad innebär det att vara källkritisk?",
+  "options": [
+   "Att fundera på om en källa är trovärdig",
+   "Att tro på allt man läser",
+   "Att bara läsa rubriker",
+   "Att alltid dela vidare"
+  ],
+  "answer": "Att fundera på om en källa är trovärdig",
+  "explanation": "Fråga vem som skrivit och varför."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Media",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad är desinformation?",
+  "options": [
+   "Medvetet falsk information",
+   "Sann information",
+   "Skämt mellan vänner",
+   "Reklam"
+  ],
+  "answer": "Medvetet falsk information",
+  "explanation": "Den sprids för att vilseleda."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad är bruttolön?",
+  "options": [
+   "Lönen före skatt",
+   "Lönen efter skatt",
+   "Semesterersättning",
+   "Bonus"
+  ],
+  "answer": "Lönen före skatt",
+  "explanation": "Det är lönen innan skatt dras."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad är nettolön?",
+  "options": [
+   "Lönen efter skatt",
+   "Lönen före skatt",
+   "Lånet",
+   "Rabatten"
+  ],
+  "answer": "Lönen efter skatt",
+  "explanation": "Det är det du får på kontot."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas pengar man betalar till stat och kommun för gemensam service?",
+  "options": [
+   "Skatt",
+   "Lön",
+   "Ränta",
+   "Pant"
+  ],
+  "answer": "Skatt",
+  "explanation": "Skatten betalar skolor, vård och vägar."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad är en budget?",
+  "options": [
+   "En plan över inkomster och utgifter",
+   "En sorts skatt",
+   "Ett lån",
+   "Ett kvitto"
+  ],
+  "answer": "En plan över inkomster och utgifter",
+  "explanation": "Den hjälper dig att hålla koll på pengarna."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 2,
+  "type": "mc",
+  "question": "Titta på diagrammet över ett hushålls månadsbudget. Vad kostar mest?",
+  "options": [
+   "Boende",
+   "Mat",
+   "Nöje",
+   "Sparande"
+  ],
+  "answer": "Boende",
+  "explanation": "Boendet är den största posten.",
+  "diagram": {
+   "type": "pie_chart",
+   "labels": [
+    "Boende",
+    "Mat",
+    "Nöje",
+    "Sparat"
+   ],
+   "values": [
+    40,
+    25,
+    15,
+    20
+   ],
+   "show_percent": true
+  }
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Nätet",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas spåren du lämnar efter dig när du använder internet?",
+  "options": [
+   "Digitalt fotavtryck",
+   "Webbhistorik",
+   "Cookies",
+   "Kontakter"
+  ],
+  "answer": "Digitalt fotavtryck",
+  "explanation": "Det som läggs ut kan ligga kvar länge."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Nätet",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket av dessa är ett säkert lösenordsbeteende?",
+  "options": [
+   "Använda olika lösenord på olika sidor",
+   "Använda samma överallt",
+   "Dela med kompisar",
+   "Skriva det på mobilens baksida"
+  ],
+  "answer": "Använda olika lösenord på olika sidor",
+  "explanation": "Olika lösenord gör att ett läckage inte sprids."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Val",
+  "level": 3,
+  "type": "mc",
+  "question": "När är det riksdagsval i Sverige?",
+  "options": [
+   "Andra söndagen i september vart fjärde år",
+   "Första måndagen i januari varje år",
+   "Varje vår",
+   "Varannan november"
+  ],
+  "answer": "Andra söndagen i september vart fjärde år",
+  "explanation": "Valdagen är en söndag."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Val",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken spärr gäller för ett parti att komma in i riksdagen?",
+  "options": [
+   "4 procent av rösterna",
+   "1 procent",
+   "10 procent",
+   "50 procent"
+  ],
+  "answer": "4 procent av rösterna",
+  "explanation": "Spärren hindrar många små partier."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Val",
+  "level": 3,
+  "type": "mc",
+  "question": "Titta på valresultatet i en klass. Kan parti A bilda egen majoritet?",
+  "options": [
+   "Nej, de har under 50 %",
+   "Ja, de har över 50 %",
+   "Ja, de har exakt 50 %",
+   "Det går inte att avgöra"
+  ],
+  "answer": "Nej, de har under 50 %",
+  "explanation": "För majoritet behövs mer än hälften.",
+  "diagram": {
+   "type": "pie_chart",
+   "labels": [
+    "Parti A",
+    "Parti B",
+    "Parti C"
+   ],
+   "values": [
+    45,
+    30,
+    25
+   ],
+   "show_percent": true
+  }
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Val",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas partier som inte sitter i regeringen?",
+  "options": [
+   "Opposition",
+   "Koalition",
+   "Minoritet",
+   "Allians"
+  ],
+  "answer": "Opposition",
+  "explanation": "Oppositionen granskar regeringen."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Val",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas en regering där flera partier samarbetar?",
+  "options": [
+   "Koalitionsregering",
+   "Diktatur",
+   "Enpartistyre",
+   "Oppositionsregering"
+  ],
+  "answer": "Koalitionsregering",
+  "explanation": "Man behöver ofta flera partier för att få majoritet."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Val",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas det när mandaten fördelas efter hur många röster varje parti får?",
+  "options": [
+   "Proportionellt valsystem",
+   "Majoritetsval",
+   "Lotterival",
+   "Handuppräckning"
+  ],
+  "answer": "Proportionellt valsystem",
+  "explanation": "Sverige använder proportionellt valsystem."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Lag",
+  "level": 3,
+  "type": "mc",
+  "question": "Från vilken ålder är man straffmyndig i Sverige?",
+  "options": [
+   "15 år",
+   "10 år",
+   "13 år",
+   "18 år"
+  ],
+  "answer": "15 år",
+  "explanation": "Under 15 år kan man inte dömas till straff."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Lag",
+  "level": 3,
+  "type": "mc",
+  "question": "Vid vilken ålder blir man myndig i Sverige?",
+  "options": [
+   "18 år",
+   "15 år",
+   "16 år",
+   "21 år"
+  ],
+  "answer": "18 år",
+  "explanation": "Då kan man bland annat rösta och bestämma över sina pengar."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Lag",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilka fyra är Sveriges grundlagar?",
+  "options": [
+   "Regeringsformen, Successionsordningen, Tryckfrihetsförordningen och Yttrandefrihetsgrundlagen",
+   "Brottsbalken, Skollagen, Miljöbalken och Trafikförordningen",
+   "Regeringsformen, Brottsbalken, Skatteverket och Riksdagen",
+   "Skollagen, Plan- och bygglagen, Konsumentköplagen och Patentlagen"
+  ],
+  "answer": "Regeringsformen, Successionsordningen, Tryckfrihetsförordningen och Yttrandefrihetsgrundlagen",
+  "explanation": "Grundlagarna är svårast att ändra."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Lag",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad innebär offentlighetsprincipen?",
+  "options": [
+   "Allmänheten har rätt att ta del av myndigheters handlingar",
+   "Alla får veta allt om alla",
+   "Myndigheter får ta pengar",
+   "Tidningar får skriva vad de vill"
+  ],
+  "answer": "Allmänheten har rätt att ta del av myndigheters handlingar",
+  "explanation": "Principen ger öppenhet."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Lag",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad innebär allemansrätten?",
+  "options": [
+   "Rätt att vistas i naturen och plocka bär och blommor",
+   "Rätt att bygga var man vill",
+   "Rätt att ta andras saker",
+   "Rätt att jaga överallt"
+  ],
+  "answer": "Rätt att vistas i naturen och plocka bär och blommor",
+  "explanation": "Man ska inte störa eller förstöra."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Rättigheter",
+  "level": 3,
+  "type": "mc",
+  "question": "Hur många diskrimineringsgrunder finns det i svensk lag?",
+  "options": [
+   "7",
+   "3",
+   "5",
+   "10"
+  ],
+  "answer": "7",
+  "explanation": "Kön, könsöverskridande identitet, etnisk tillhörighet, religion, funktionsnedsättning, sexuell läggning och ålder."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 3,
+  "type": "mc",
+  "question": "Konsertbiljetter till en populär artist tar slut på några minuter. Vad säger det om efterfrågan jämfört med utbudet?",
+  "options": [
+   "Efterfrågan är större än utbudet",
+   "Utbudet är större än efterfrågan",
+   "De är lika",
+   "Biljetterna är för billiga att sälja"
+  ],
+  "answer": "Efterfrågan är större än utbudet",
+  "explanation": "När efterfrågan är större stiger ofta priset."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad händer vanligtvis med priset när efterfrågan ökar och utbudet är oförändrat?",
+  "options": [
+   "Priset stiger",
+   "Priset sjunker",
+   "Priset blir noll",
+   "Inget alls"
+  ],
+  "answer": "Priset stiger",
+  "explanation": "Det är lagen om utbud och efterfrågan."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad innebär ångerrätt vid nätköp?",
+  "options": [
+   "Du kan ångra köpet inom 14 dagar",
+   "Du kan alltid byta varan när som helst",
+   "Du får pengarna tillbaka efter ett år",
+   "Du får behålla varan gratis"
+  ],
+  "answer": "Du kan ångra köpet inom 14 dagar",
+  "explanation": "Det gäller distansköp."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas det när man klagar på en vara som är felaktig?",
+  "options": [
+   "Reklamation",
+   "Retur",
+   "Prisjämförelse",
+   "Pant"
+  ],
+  "answer": "Reklamation",
+  "explanation": "Du har rätt att reklamera."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad är ränta?",
+  "options": [
+   "Priset för att låna pengar",
+   "Ett slags skatt",
+   "En avgift för att spara",
+   "En typ av lön"
+  ],
+  "answer": "Priset för att låna pengar",
+  "explanation": "Räntan är kostnaden för lånet."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad betyder det att en vara har 25 % moms?",
+  "options": [
+   "25 % av priset är skatt som går till staten",
+   "Priset är 25 kr",
+   "Du får 25 % rabatt",
+   "Varan är rabatterad"
+  ],
+  "answer": "25 % av priset är skatt som går till staten",
+  "explanation": "Moms är en skatt på varor och tjänster."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Nätet",
+  "level": 3,
+  "type": "mc",
+  "question": "Du lägger BTS-musik som bakgrund i en offentlig YouTube-film. Vad kan det vara problem med?",
+  "options": [
+   "Upphovsrätten",
+   "Skatten",
+   "Källkritiken",
+   "Valhemligheten"
+  ],
+  "answer": "Upphovsrätten",
+  "explanation": "Musik är skyddad av upphovsrätt."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Nätet",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad är nätmobbning?",
+  "options": [
+   "Att trakassera någon via internet eller mobil",
+   "Att ha många vänner online",
+   "Att spela spel",
+   "Att posta bilder"
+  ],
+  "answer": "Att trakassera någon via internet eller mobil",
+  "explanation": "Det kan göra lika ont som mobbning ansikte mot ansikte."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Arbete",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas en organisation som företräder arbetstagare?",
+  "options": [
+   "Fackförening",
+   "Arbetsgivarorganisation",
+   "Skattemyndighet",
+   "Bank"
+  ],
+  "answer": "Fackförening",
+  "explanation": "Facket förhandlar om löner och villkor."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Arbete",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas ett avtal mellan fack och arbetsgivare om löner och villkor?",
+  "options": [
+   "Kollektivavtal",
+   "Hyresavtal",
+   "Låneavtal",
+   "Köpeavtal"
+  ],
+  "answer": "Kollektivavtal",
+  "explanation": "Det gäller för hela branscher."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Statskunskap",
+  "level": 4,
+  "type": "mc",
+  "question": "Hur många ledamöter måste rösta för ett misstroendevotum mot en statsminister (av 349)?",
+  "options": [
+   "Minst 175",
+   "Minst 100",
+   "Minst 200",
+   "Minst 349"
+  ],
+  "answer": "Minst 175",
+  "explanation": "Mer än hälften, alltså 175."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Statskunskap",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad innebär maktdelning?",
+  "options": [
+   "Att makten delas mellan olika statsmakter",
+   "Att all makt ligger hos kungen",
+   "Att makten delas mellan alla medborgare lika",
+   "Att militären bestämmer"
+  ],
+  "answer": "Att makten delas mellan olika statsmakter",
+  "explanation": "Lagstiftande, verkställande och dömande makt."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Statskunskap",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken av statsmakterna företräds av domstolarna?",
+  "options": [
+   "Den dömande makten",
+   "Den lagstiftande makten",
+   "Den verkställande makten",
+   "Den fjärde statsmakten"
+  ],
+  "answer": "Den dömande makten",
+  "explanation": "Domstolarna ska vara oberoende."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Statskunskap",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas ofta medierna i förhållande till politiken, eftersom de granskar makten?",
+  "options": [
+   "Den fjärde statsmakten",
+   "Den första statsmakten",
+   "Den femte statsmakten",
+   "Den dömande makten"
+  ],
+  "answer": "Den fjärde statsmakten",
+  "explanation": "De bevakar och granskar."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Statskunskap",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad menas med ansvarig utgivare?",
+  "options": [
+   "Den som ansvarar för innehållet i en tidning",
+   "Den som skriver artikeln",
+   "Den som bestämmer priset",
+   "Den som trycker tidningen"
+  ],
+  "answer": "Den som ansvarar för innehållet i en tidning",
+  "explanation": "Ansvaret ligger på utgivaren."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "EU",
+  "level": 4,
+  "type": "mc",
+  "question": "Hur många medlemsländer har EU idag?",
+  "options": [
+   "27",
+   "15",
+   "25",
+   "28"
+  ],
+  "answer": "27",
+  "explanation": "Storbritannien lämnade EU 2020."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "EU",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken stad är EU:s centrum för många institutioner?",
+  "options": [
+   "Bryssel",
+   "Paris",
+   "Berlin",
+   "Rom"
+  ],
+  "answer": "Bryssel",
+  "explanation": "Kommissionen sitter i Bryssel."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "EU",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken valuta har Sverige?",
+  "options": [
+   "Svenska kronor",
+   "Euro",
+   "Dollar",
+   "Pund"
+  ],
+  "answer": "Svenska kronor",
+  "explanation": "Sverige har inte infört euron."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "FN",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket av dessa länder är permanent medlem i FN:s säkerhetsråd?",
+  "options": [
+   "Frankrike",
+   "Tyskland",
+   "Indien",
+   "Brasilien"
+  ],
+  "answer": "Frankrike",
+  "explanation": "De fem är USA, Ryssland, Kina, Frankrike och Storbritannien."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "FN",
+  "level": 4,
+  "type": "mc",
+  "question": "Hur många medlemsländer har FN?",
+  "options": [
+   "193",
+   "51",
+   "100",
+   "250"
+  ],
+  "answer": "193",
+  "explanation": "FN bildades 1945 med 51 medlemmar."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "FN",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket år blev barnkonventionen svensk lag?",
+  "options": [
+   "2020",
+   "1989",
+   "1995",
+   "2005"
+  ],
+  "answer": "2020",
+  "explanation": "FN antog barnkonventionen 1989."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad är Riksbanken?",
+  "options": [
+   "Sveriges centralbank",
+   "En vanlig affärsbank",
+   "En skattemyndighet",
+   "En fackförening"
+  ],
+  "answer": "Sveriges centralbank",
+  "explanation": "Riksbanken sköter penningpolitiken."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket inflationsmål har Riksbanken?",
+  "options": [
+   "2 procent",
+   "0 procent",
+   "5 procent",
+   "10 procent"
+  ],
+  "answer": "2 procent",
+  "explanation": "Riksbanken vill ha stabil prisökning."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad innebär en marknadsekonomi?",
+  "options": [
+   "Priserna bestäms av utbud och efterfrågan",
+   "Staten bestämmer alla priser",
+   "Alla har samma lön",
+   "Det finns inga företag"
+  ],
+  "answer": "Priserna bestäms av utbud och efterfrågan",
+  "explanation": "Företagen konkurrerar om kunder."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad är en aktie?",
+  "options": [
+   "En andel i ett företag",
+   "Ett lån",
+   "En skatt",
+   "Ett kvitto"
+  ],
+  "answer": "En andel i ett företag",
+  "explanation": "Ägare kan få del av vinsten."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad är A-kassa?",
+  "options": [
+   "En försäkring som ger ersättning vid arbetslöshet",
+   "En lånetjänst",
+   "En fackförening",
+   "En typ av pension"
+  ],
+  "answer": "En försäkring som ger ersättning vid arbetslöshet",
+  "explanation": "Man betalar avgift till kassan."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad är en strejk?",
+  "options": [
+   "Att arbetstagare slutar arbeta för att få bättre villkor",
+   "Att man blir sjuk",
+   "Att man får semester",
+   "Att man byter jobb"
+  ],
+  "answer": "Att arbetstagare slutar arbeta för att få bättre villkor",
+  "explanation": "Strejker kan hota produktionen."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 4,
+  "type": "mc",
+  "question": "Hur länge har man rätt att reklamera en felaktig vara enligt konsumentköplagen?",
+  "options": [
+   "Tre år",
+   "Sex månader",
+   "Ett år",
+   "Tio år"
+  ],
+  "answer": "Tre år",
+  "explanation": "Konsumenten har lång reklamationstid."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 4,
+  "type": "mc",
+  "question": "Du köper 3 BTS-album för 200 kr per styck. Hur mycket betalar du?",
+  "options": [
+   "600 kr",
+   "200 kr",
+   "400 kr",
+   "800 kr"
+  ],
+  "answer": "600 kr",
+  "explanation": "3 · 200 = 600."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 4,
+  "type": "mc",
+  "question": "Du har 1 000 kr i månaden och sparar 20 %. Hur mycket sparar du?",
+  "options": [
+   "200 kr",
+   "20 kr",
+   "100 kr",
+   "500 kr"
+  ],
+  "answer": "200 kr",
+  "explanation": "20 % av 1 000 = 200."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Nätet",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas det när en algoritm visar mest sånt du redan gillar och därmed kan stänga in dig?",
+  "options": [
+   "Filterbubbla",
+   "Brandvägg",
+   "Virus",
+   "Nätfiske"
+  ],
+  "answer": "Filterbubbla",
+  "explanation": "Du ser mindre av andra åsikter."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Nätet",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad är GDPR?",
+  "options": [
+   "EU:s lag om skydd för personuppgifter",
+   "En typ av virusskydd",
+   "En sorts sociala medier",
+   "Ett lösenord"
+  ],
+  "answer": "EU:s lag om skydd för personuppgifter",
+  "explanation": "Du har rätt att veta vilka uppgifter som sparas."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Statskunskap",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad innebär ett oberoende domstolsväsende?",
+  "options": [
+   "Domstolarna ska inte styras av politiker",
+   "Domstolarna styrs av regeringen",
+   "Domstolarna styrs av partier",
+   "Domstolarna styrs av tidningarna"
+  ],
+  "answer": "Domstolarna ska inte styras av politiker",
+  "explanation": "Det skyddar rättssäkerheten."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Statskunskap",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad innebär oskuldspresumtionen?",
+  "options": [
+   "Att man är oskyldig tills motsatsen bevisats",
+   "Att man alltid är skyldig",
+   "Att man bevisar sin oskuld själv",
+   "Att åklagaren bestämmer"
+  ],
+  "answer": "Att man är oskyldig tills motsatsen bevisats",
+  "explanation": "Det är en rättssäkerhetsprincip."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Statskunskap",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kännetecknar en diktatur?",
+  "options": [
+   "Makten är samlad och fria val saknas",
+   "Alla röstar fritt",
+   "Medierna är fria",
+   "Maktdelning finns"
+  ],
+  "answer": "Makten är samlad och fria val saknas",
+  "explanation": "Åsiktsfrihet är begränsad."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Statskunskap",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad är en rättsstat?",
+  "options": [
+   "Ett land där lagen gäller lika för alla, även makthavare",
+   "Ett land utan lagar",
+   "Ett land där kungen dömer",
+   "Ett land där bara polisen får bestämma"
+  ],
+  "answer": "Ett land där lagen gäller lika för alla, även makthavare",
+  "explanation": "Rättssäkerhet och likhet inför lagen."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Statskunskap",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas EU:s direkt valda församling?",
+  "options": [
+   "Europaparlamentet",
+   "Kommissionen",
+   "Ministerrådet",
+   "Domstolen"
+  ],
+  "answer": "Europaparlamentet",
+  "explanation": "Det är val vart femte år."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad innebär progressiv skatt?",
+  "options": [
+   "Högre inkomst ger högre skatteprocent",
+   "Alla betalar samma belopp",
+   "Lägre inkomst ger högre procent",
+   "Skatten är noll"
+  ],
+  "answer": "Högre inkomst ger högre skatteprocent",
+  "explanation": "Sveriges inkomstskatt är progressiv."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad är skillnaden mellan direkt och indirekt skatt?",
+  "options": [
+   "Direkt skatt tas på inkomst, indirekt på varor och tjänster",
+   "Direkt skatt är lägre",
+   "Indirekt skatt är bara för företag",
+   "Det finns ingen skillnad"
+  ],
+  "answer": "Direkt skatt tas på inkomst, indirekt på varor och tjänster",
+  "explanation": "Moms är indirekt skatt."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad innebär en recession?",
+  "options": [
+   "En period med fallande ekonomisk aktivitet",
+   "En period med hög tillväxt",
+   "En ny valuta",
+   "En ny skatt"
+  ],
+  "answer": "En period med fallande ekonomisk aktivitet",
+  "explanation": "BNP minskar under en längre tid."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad är konjunktur?",
+  "options": [
+   "Upp- och nedgångar i ekonomin över tid",
+   "Ett slags skatt",
+   "En typ av försäkring",
+   "En fackförening"
+  ],
+  "answer": "Upp- och nedgångar i ekonomin över tid",
+  "explanation": "Högkonjunktur och lågkonjunktur."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad menas med välfärdsstat?",
+  "options": [
+   "Staten finansierar vård, skola och omsorg via skatter",
+   "Staten äger alla företag",
+   "Ingen betalar skatt",
+   "Staten styr allt som får köpas"
+  ],
+  "answer": "Staten finansierar vård, skola och omsorg via skatter",
+  "explanation": "Sverige har en stor offentlig sektor."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas statens utgifter som överstiger dess inkomster under ett år?",
+  "options": [
+   "Budgetunderskott",
+   "Överskott",
+   "Skatteuttag",
+   "Reserv"
+  ],
+  "answer": "Budgetunderskott",
+  "explanation": "Underskottet måste finansieras genom lån."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas det när ett land använder sin kultur, till exempel K-pop, för att öka sitt inflytande?",
+  "options": [
+   "Mjuk makt (soft power)",
+   "Hård makt",
+   "Embargo",
+   "Tullpolitik"
+  ],
+  "answer": "Mjuk makt (soft power)",
+  "explanation": "Kultur kan påverka hur andra uppfattar landet."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas den del av samhället som drivs av staten och kommunerna?",
+  "options": [
+   "Offentlig sektor",
+   "Privat sektor",
+   "Ideell sektor",
+   "Svart sektor"
+  ],
+  "answer": "Offentlig sektor",
+  "explanation": "Skolan och sjukvården är ofta offentliga."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Medier",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad är en deepfake?",
+  "options": [
+   "En manipulerad video eller bild som skapats med AI",
+   "En sorts reklam",
+   "En ny sociala medier-app",
+   "Ett virus"
+  ],
+  "answer": "En manipulerad video eller bild som skapats med AI",
+  "explanation": "Den kan användas för att sprida lögner."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Medier",
+  "level": 5,
+  "type": "mc",
+  "question": "Varför är det viktigt med fria medier i en demokrati?",
+  "options": [
+   "De granskar makten och ger medborgarna information",
+   "De skriver lagarna",
+   "De räknar rösterna",
+   "De bestämmer vem som blir kung"
+  ],
+  "answer": "De granskar makten och ger medborgarna information",
+  "explanation": "Granskningen skyddar mot maktmissbruk."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Rättigheter",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilket dokument från 1948 slår fast alla människors lika värde och rättigheter?",
+  "options": [
+   "FN:s allmänna förklaring om de mänskliga rättigheterna",
+   "Magna Carta",
+   "Regeringsformen",
+   "Barnkonventionen"
+  ],
+  "answer": "FN:s allmänna förklaring om de mänskliga rättigheterna",
+  "explanation": "Den antogs av FN efter andra världskriget."
+ }
+]

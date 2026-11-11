@@ -1,0 +1,1541 @@
+[
+ {
+  "subject": "historia",
+  "topic": "Forntiden",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas människor som levde som jägare och samlare på stenåldern?",
+  "options": [
+   "Stenåldersmänniskor",
+   "Riddare",
+   "Vikingar",
+   "Romare"
+  ],
+  "answer": "Stenåldersmänniskor",
+  "explanation": "De jagade, fiskade och samlade bär."
+ },
+ {
+  "subject": "historia",
+  "topic": "Forntiden",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket material använde man till verktyg på stenåldern?",
+  "options": [
+   "Sten, till exempel flinta",
+   "Plast",
+   "Stål",
+   "Glas"
+  ],
+  "answer": "Sten, till exempel flinta",
+  "explanation": "Flinta kunde slås till vassa eggar."
+ },
+ {
+  "subject": "historia",
+  "topic": "Forntiden",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas de forskare som gräver fram gamla saker ur jorden?",
+  "options": [
+   "Arkeologer",
+   "Meteorologer",
+   "Biologer",
+   "Geologer"
+  ],
+  "answer": "Arkeologer",
+  "explanation": "Arkeologer undersöker rester från förr."
+ },
+ {
+  "subject": "historia",
+  "topic": "Forntiden",
+  "level": 1,
+  "type": "mc",
+  "question": "Levde dinosaurierna samtidigt som stenålderns människor?",
+  "options": [
+   "Nej, dinosaurierna dog ut långt före människorna",
+   "Ja, hela tiden",
+   "Ja, men bara i Sverige",
+   "Ja, på bronsåldern"
+  ],
+  "answer": "Nej, dinosaurierna dog ut långt före människorna",
+  "explanation": "Dinosaurierna dog ut för ungefär 66 miljoner år sedan."
+ },
+ {
+  "subject": "historia",
+  "topic": "Forntiden",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken metall började man göra verktyg och smycken av på bronsåldern?",
+  "options": [
+   "Brons",
+   "Aluminium",
+   "Guld",
+   "Plast"
+  ],
+  "answer": "Brons",
+  "explanation": "Brons är en blandning av koppar och tenn."
+ },
+ {
+  "subject": "historia",
+  "topic": "Egypten",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallades Egyptens härskare?",
+  "options": [
+   "Farao",
+   "Kejsare",
+   "Sultan",
+   "Riddare"
+  ],
+  "answer": "Farao",
+  "explanation": "Faraonerna ansågs vara guda- eller gudalika."
+ },
+ {
+  "subject": "historia",
+  "topic": "Egypten",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas en kropp som har balsamerats och lindats i tyg i det gamla Egypten?",
+  "options": [
+   "Mumie",
+   "Skelett",
+   "Staty",
+   "Sarkofag"
+  ],
+  "answer": "Mumie",
+  "explanation": "Mumier förvarades i gravar."
+ },
+ {
+  "subject": "historia",
+  "topic": "Egypten",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas den bildskrift som användes i det gamla Egypten?",
+  "options": [
+   "Hieroglyfer",
+   "Runor",
+   "Hangul",
+   "Latin"
+  ],
+  "answer": "Hieroglyfer",
+  "explanation": "Hieroglyferna ristades på väggar och papyrus."
+ },
+ {
+  "subject": "historia",
+  "topic": "Vikingar",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken av dessa var en nordisk gud?",
+  "options": [
+   "Tor",
+   "Zeus",
+   "Jupiter",
+   "Apollon"
+  ],
+  "answer": "Tor",
+  "explanation": "Tor var åskguden och hade hammaren Mjölner."
+ },
+ {
+  "subject": "historia",
+  "topic": "Vikingar",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket skriftsystem använde man i Norden på vikingatiden?",
+  "options": [
+   "Runor",
+   "Hieroglyfer",
+   "Hangul",
+   "Arabiska"
+  ],
+  "answer": "Runor",
+  "explanation": "Runor ristades i sten och trä."
+ },
+ {
+  "subject": "historia",
+  "topic": "Medeltiden",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallades de beväpnade män i rustning som kämpade till häst på medeltiden?",
+  "options": [
+   "Riddare",
+   "Vikingar",
+   "Faraoner",
+   "Gladiatorer"
+  ],
+  "answer": "Riddare",
+  "explanation": "Riddare bodde ofta på borgar."
+ },
+ {
+  "subject": "historia",
+  "topic": "Medeltiden",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas en befäst byggnad som riddare och kungar bodde i?",
+  "options": [
+   "Borg",
+   "Pyramid",
+   "Stuga",
+   "Tempel"
+  ],
+  "answer": "Borg",
+  "explanation": "Borgarna hade murar och torn."
+ },
+ {
+  "subject": "historia",
+  "topic": "Tid",
+  "level": 1,
+  "type": "mc",
+  "question": "Hur många år är ett århundrade?",
+  "options": [
+   "100",
+   "10",
+   "50",
+   "1 000"
+  ],
+  "answer": "100",
+  "explanation": "Ett århundrade är 100 år."
+ },
+ {
+  "subject": "historia",
+  "topic": "Tid",
+  "level": 1,
+  "type": "mc",
+  "question": "Hur många år är ett årtusende?",
+  "options": [
+   "1 000",
+   "10",
+   "100",
+   "10 000"
+  ],
+  "answer": "1 000",
+  "explanation": "Tusen år."
+ },
+ {
+  "subject": "historia",
+  "topic": "Tid",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad betyder förkortningen f.Kr.?",
+  "options": [
+   "Före Kristi födelse",
+   "Efter Kristi födelse",
+   "Före kungarnas tid",
+   "Före krigets början"
+  ],
+  "answer": "Före Kristi födelse",
+  "explanation": "Året 100 f.Kr. är före år 1."
+ },
+ {
+  "subject": "historia",
+  "topic": "Antiken",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilka bodde i Grekland för mer än 2 000 år sedan och byggde Akropolis?",
+  "options": [
+   "Grekerna",
+   "Vikingarna",
+   "Mayafolket",
+   "Romarna"
+  ],
+  "answer": "Grekerna",
+  "explanation": "Akropolis ligger i Aten."
+ },
+ {
+  "subject": "historia",
+  "topic": "Antiken",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket folk uppfann demokratin i staden Aten?",
+  "options": [
+   "Grekerna",
+   "Egyptierna",
+   "Romarna",
+   "Persierna"
+  ],
+  "answer": "Grekerna",
+  "explanation": "Demokrati betyder folkstyre."
+ },
+ {
+  "subject": "historia",
+  "topic": "Antiken",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken stad var huvudstad i Romarriket?",
+  "options": [
+   "Rom",
+   "Aten",
+   "Paris",
+   "Kairo"
+  ],
+  "answer": "Rom",
+  "explanation": "Alla vägar leder till Rom."
+ },
+ {
+  "subject": "historia",
+  "topic": "Antiken",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket land hölls de första olympiska spelen i?",
+  "options": [
+   "Grekland",
+   "Italien",
+   "Egypten",
+   "Turkiet"
+  ],
+  "answer": "Grekland",
+  "explanation": "De hölls vid Olympia."
+ },
+ {
+  "subject": "historia",
+  "topic": "Antiken",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallades de som kämpade mot varandra i arenor i Romarriket?",
+  "options": [
+   "Gladiatorer",
+   "Riddare",
+   "Vikingar",
+   "Hövdingar"
+  ],
+  "answer": "Gladiatorer",
+  "explanation": "Colosseum i Rom användes för spel."
+ },
+ {
+  "subject": "historia",
+  "topic": "Vikingar",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken stad i Mälaren var en viktig handelsstad på vikingatiden?",
+  "options": [
+   "Birka",
+   "Malmö",
+   "Visby",
+   "Lund"
+  ],
+  "answer": "Birka",
+  "explanation": "Birka låg på Björkö."
+ },
+ {
+  "subject": "historia",
+  "topic": "Vikingar",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallades de nordiska gudarnas hem?",
+  "options": [
+   "Asgård",
+   "Midgård",
+   "Hel",
+   "Valhalla"
+  ],
+  "answer": "Asgård",
+  "explanation": "Asgård var åsagudarnas boning."
+ },
+ {
+  "subject": "historia",
+  "topic": "Vikingar",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket fartyg använde vikingarna för att segla över haven?",
+  "options": [
+   "Långskepp",
+   "Galär",
+   "Ångfartyg",
+   "Kanot"
+  ],
+  "answer": "Långskepp",
+  "explanation": "Långskeppen var smala och snabba."
+ },
+ {
+  "subject": "historia",
+  "topic": "Medeltiden",
+  "level": 2,
+  "type": "mc",
+  "question": "Ungefär vilka år räknas medeltiden i Europa?",
+  "options": [
+   "Ungefär 500 till 1500",
+   "Ungefär 1 till 500",
+   "Ungefär 1500 till 1900",
+   "Ungefär 1900 till 2000"
+  ],
+  "answer": "Ungefär 500 till 1500",
+  "explanation": "Den kommer efter antiken."
+ },
+ {
+  "subject": "historia",
+  "topic": "Medeltiden",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken religion kom till Sverige under medeltiden och blev dominerande?",
+  "options": [
+   "Kristendomen",
+   "Islam",
+   "Buddhismen",
+   "Hinduismen"
+  ],
+  "answer": "Kristendomen",
+  "explanation": "Kristendomen ersatte successivt den nordiska religionen."
+ },
+ {
+  "subject": "historia",
+  "topic": "Medeltiden",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken sjukdom drabbade Europa på 1300-talet och dödade många?",
+  "options": [
+   "Digerdöden (pesten)",
+   "Ebola",
+   "Polio",
+   "Influensa"
+  ],
+  "answer": "Digerdöden (pesten)",
+  "explanation": "Digerdöden kom till Sverige 1350."
+ },
+ {
+  "subject": "historia",
+  "topic": "Medeltiden",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket helgon grundade Vadstena kloster?",
+  "options": [
+   "Birgitta",
+   "Anna",
+   "Lucia",
+   "Kristina"
+  ],
+  "answer": "Birgitta",
+  "explanation": "Heliga Birgitta är Sveriges nationalhelgon."
+ },
+ {
+  "subject": "historia",
+  "topic": "Medeltiden",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken uppfinning av Johannes Gutenberg på 1400-talet gjorde det möjligt att trycka böcker i stor mängd?",
+  "options": [
+   "Boktryckarkonsten",
+   "Ångmaskinen",
+   "Telefonen",
+   "Kompassen"
+  ],
+  "answer": "Boktryckarkonsten",
+  "explanation": "Gutenbergbibeln trycktes omkring 1450."
+ },
+ {
+  "subject": "historia",
+  "topic": "Upptäckter",
+  "level": 2,
+  "type": "mc",
+  "question": "Vem seglade 1492 över Atlanten och nådde Amerika?",
+  "options": [
+   "Christofer Columbus",
+   "Magellan",
+   "Vasco da Gama",
+   "Marco Polo"
+  ],
+  "answer": "Christofer Columbus",
+  "explanation": "Columbus trodde att han nått Indien."
+ },
+ {
+  "subject": "historia",
+  "topic": "Egypten",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad användes pyramiderna i Egypten som?",
+  "options": [
+   "Gravar för faraonerna",
+   "Slott",
+   "Marknader",
+   "Fyrar"
+  ],
+  "answer": "Gravar för faraonerna",
+  "explanation": "Faraonerna begravdes med skatter."
+ },
+ {
+  "subject": "historia",
+  "topic": "Sverige",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken kung ledde Sverige ut ur Kalmarunionen och blev kung 1523?",
+  "options": [
+   "Gustav Vasa",
+   "Karl XII",
+   "Gustav III",
+   "Oscar I"
+  ],
+  "answer": "Gustav Vasa",
+  "explanation": "Han kallas Sveriges befriare."
+ },
+ {
+  "subject": "historia",
+  "topic": "Tid",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken händelse räknas som början på vår tideräkning?",
+  "options": [
+   "Kristi födelse",
+   "Kolumbus resa",
+   "Romarrikets fall",
+   "Gutenbergs bibel"
+  ],
+  "answer": "Kristi födelse",
+  "explanation": "Före detta är f.Kr., efter e.Kr."
+ },
+ {
+  "subject": "historia",
+  "topic": "Antiken",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket år mördades Julius Caesar?",
+  "options": [
+   "44 f.Kr.",
+   "44 e.Kr.",
+   "476 e.Kr.",
+   "1492"
+  ],
+  "answer": "44 f.Kr.",
+  "explanation": "Han mördades på idus martiae."
+ },
+ {
+  "subject": "historia",
+  "topic": "Antiken",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket år föll Västromerska riket, vilket brukar räknas som antikens slut?",
+  "options": [
+   "476 e.Kr.",
+   "44 f.Kr.",
+   "1066",
+   "1492"
+  ],
+  "answer": "476 e.Kr.",
+  "explanation": "Efter det följde medeltiden."
+ },
+ {
+  "subject": "historia",
+  "topic": "Medeltiden",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilka tre länder ingick i Kalmarunionen från 1397?",
+  "options": [
+   "Sverige, Norge och Danmark",
+   "Sverige, Finland och Norge",
+   "Danmark, Tyskland och Polen",
+   "Sverige, Danmark och Island"
+  ],
+  "answer": "Sverige, Norge och Danmark",
+  "explanation": "Unionen slogs ihop under en gemensam monark."
+ },
+ {
+  "subject": "historia",
+  "topic": "Medeltiden",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad hette den stora handelsorganisationen av tyska städer vid Östersjön på medeltiden?",
+  "options": [
+   "Hansan",
+   "Vasan",
+   "Unionen",
+   "Gillet"
+  ],
+  "answer": "Hansan",
+  "explanation": "Hansan dominerade handeln i Östersjön."
+ },
+ {
+  "subject": "historia",
+  "topic": "Sverige",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad hände i Stockholms blodbad 1520?",
+  "options": [
+   "Danske kungen lät avrätta många svenska ledare",
+   "Sverige vann ett stort slag",
+   "En pest bröt ut",
+   "Svenskarna upptäckte Amerika"
+  ],
+  "answer": "Danske kungen lät avrätta många svenska ledare",
+  "explanation": "Händelsen ledde till Gustav Vasas uppror."
+ },
+ {
+  "subject": "historia",
+  "topic": "Sverige",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken religiös omvälvning skedde i Sverige på 1520-talet?",
+  "options": [
+   "Reformationen, Sverige blev protestantiskt",
+   "Kristnandet",
+   "Digerdöden",
+   "Kalmarunionen"
+  ],
+  "answer": "Reformationen, Sverige blev protestantiskt",
+  "explanation": "Luthers idéer fick fotfäste."
+ },
+ {
+  "subject": "historia",
+  "topic": "Sverige",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken kung dog i slaget vid Lützen 1632?",
+  "options": [
+   "Gustav II Adolf",
+   "Karl XII",
+   "Gustav Vasa",
+   "Gustav III"
+  ],
+  "answer": "Gustav II Adolf",
+  "explanation": "Sverige var stormakt under 1600-talet."
+ },
+ {
+  "subject": "historia",
+  "topic": "Sverige",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken kung dog 1718 när han belägrade Fredriksten?",
+  "options": [
+   "Karl XII",
+   "Gustav II Adolf",
+   "Karl X Gustav",
+   "Gustav III"
+  ],
+  "answer": "Karl XII",
+  "explanation": "Hans död markerar stormaktstidens slut."
+ },
+ {
+  "subject": "historia",
+  "topic": "Sverige",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallades tiden 1718–1772 då riksdagen hade mest makt?",
+  "options": [
+   "Frihetstiden",
+   "Stormaktstiden",
+   "Vasatiden",
+   "Gustavianska tiden"
+  ],
+  "answer": "Frihetstiden",
+  "explanation": "Kungen hade mindre makt."
+ },
+ {
+  "subject": "historia",
+  "topic": "Sverige",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken kung mördades 1792 på en maskeradbal?",
+  "options": [
+   "Gustav III",
+   "Karl XII",
+   "Gustav II Adolf",
+   "Oscar II"
+  ],
+  "answer": "Gustav III",
+  "explanation": "Gustav III gillade teater och opera."
+ },
+ {
+  "subject": "historia",
+  "topic": "Sverige",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket land förlorade Sverige till Ryssland 1809?",
+  "options": [
+   "Finland",
+   "Norge",
+   "Estland",
+   "Skåne"
+  ],
+  "answer": "Finland",
+  "explanation": "Finland hade varit en del av Sverige i ca 600 år."
+ },
+ {
+  "subject": "historia",
+  "topic": "Sverige",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas tiden då maskiner och fabriker började ersätta handarbete?",
+  "options": [
+   "Industrialiseringen",
+   "Reformationen",
+   "Frihetstiden",
+   "Medeltiden"
+  ],
+  "answer": "Industrialiseringen",
+  "explanation": "Den började i Storbritannien på 1700-talet."
+ },
+ {
+  "subject": "historia",
+  "topic": "Världen",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad hände i Frankrike 1789?",
+  "options": [
+   "Franska revolutionen",
+   "Napoleons död",
+   "Pestens ankomst",
+   "Bastiljens uppförande"
+  ],
+  "answer": "Franska revolutionen",
+  "explanation": "Folket gjorde uppror mot kungen och adeln."
+ },
+ {
+  "subject": "historia",
+  "topic": "Världen",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket år förklarade USA sig självständigt från Storbritannien?",
+  "options": [
+   "1776",
+   "1492",
+   "1812",
+   "1865"
+  ],
+  "answer": "1776",
+  "explanation": "Självständighetsförklaringen skrevs 1776."
+ },
+ {
+  "subject": "historia",
+  "topic": "Världen",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket år landade människor första gången på månen?",
+  "options": [
+   "1969",
+   "1957",
+   "1961",
+   "1975"
+  ],
+  "answer": "1969",
+  "explanation": "Neil Armstrong och Buzz Aldrin landade med Apollo 11."
+ },
+ {
+  "subject": "historia",
+  "topic": "Världen",
+  "level": 3,
+  "type": "mc",
+  "question": "Vem var den första människan på månen?",
+  "options": [
+   "Neil Armstrong",
+   "Yuri Gagarin",
+   "Buzz Aldrin",
+   "John Glenn"
+  ],
+  "answer": "Neil Armstrong",
+  "explanation": "Armstrong sa: \"Ett litet steg för en människa.\""
+ },
+ {
+  "subject": "historia",
+  "topic": "Världen",
+  "level": 3,
+  "type": "mc",
+  "question": "Vem var den första människan i rymden 1961?",
+  "options": [
+   "Jurij Gagarin",
+   "Neil Armstrong",
+   "John Glenn",
+   "Alan Shepard"
+  ],
+  "answer": "Jurij Gagarin",
+  "explanation": "Gagarin var sovjetisk kosmonaut."
+ },
+ {
+  "subject": "historia",
+  "topic": "Världen",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket år slutade andra världskriget i Europa?",
+  "options": [
+   "1945",
+   "1944",
+   "1946",
+   "1950"
+  ],
+  "answer": "1945",
+  "explanation": "Tyskland kapitulerade 8 maj 1945."
+ },
+ {
+  "subject": "historia",
+  "topic": "Sverige",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken omfattande rörelse flyttade omkring 1,3 miljoner svenskar till Nordamerika 1850–1930?",
+  "options": [
+   "Utvandringen",
+   "Industrialiseringen",
+   "Urbaniseringen",
+   "Frihetstiden"
+  ],
+  "answer": "Utvandringen",
+  "explanation": "Fattigdom och missväxt drev många att lämna landet."
+ },
+ {
+  "subject": "historia",
+  "topic": "Sverige",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket år infördes den första folkskolestadgan i Sverige?",
+  "options": [
+   "1842",
+   "1642",
+   "1742",
+   "1942"
+  ],
+  "answer": "1842",
+  "explanation": "Alla barn skulle få grundläggande utbildning."
+ },
+ {
+  "subject": "historia",
+  "topic": "Sverige",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket år fick kvinnor i Sverige rösta i riksdagsval för första gången?",
+  "options": [
+   "1921",
+   "1909",
+   "1919",
+   "1945"
+  ],
+  "answer": "1921",
+  "explanation": "Beslutet fattades 1919 och tillämpades första gången 1921."
+ },
+ {
+  "subject": "historia",
+  "topic": "Sverige",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket år delades Nobelpriset ut första gången?",
+  "options": [
+   "1901",
+   "1895",
+   "1920",
+   "1945"
+  ],
+  "answer": "1901",
+  "explanation": "Alfred Nobel dog 1896."
+ },
+ {
+  "subject": "historia",
+  "topic": "Sverige",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket år blev Sverige medlem i FN?",
+  "options": [
+   "1946",
+   "1939",
+   "1945",
+   "1952"
+  ],
+  "answer": "1946",
+  "explanation": "Sverige var neutralt under kriget."
+ },
+ {
+  "subject": "historia",
+  "topic": "Sverige",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket år anslöt sig Sverige till Nato?",
+  "options": [
+   "2024",
+   "1995",
+   "2004",
+   "2014"
+  ],
+  "answer": "2024",
+  "explanation": "Sverige blev medlem 7 mars 2024."
+ },
+ {
+  "subject": "historia",
+  "topic": "Världen",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken händelse utlöste första världskriget 1914?",
+  "options": [
+   "Mordet på ärkehertig Franz Ferdinand i Sarajevo",
+   "Attacken mot Pearl Harbor",
+   "Berlinmurens fall",
+   "Ryska revolutionen"
+  ],
+  "answer": "Mordet på ärkehertig Franz Ferdinand i Sarajevo",
+  "explanation": "Kejsarfamiljen i Österrike-Ungern drabbades."
+ },
+ {
+  "subject": "historia",
+  "topic": "Världen",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket år föll Bastiljen under franska revolutionen?",
+  "options": [
+   "1789",
+   "1689",
+   "1815",
+   "1848"
+  ],
+  "answer": "1789",
+  "explanation": "Fransmännen firar den 14 juli."
+ },
+ {
+  "subject": "historia",
+  "topic": "Världen",
+  "level": 4,
+  "type": "mc",
+  "question": "Vem blev kejsare i Frankrike 1804?",
+  "options": [
+   "Napoleon Bonaparte",
+   "Ludvig XIV",
+   "Charles de Gaulle",
+   "Robespierre"
+  ],
+  "answer": "Napoleon Bonaparte",
+  "explanation": "Napoleon förlorade slutligen vid Waterloo 1815."
+ },
+ {
+  "subject": "historia",
+  "topic": "Världen",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallades den politiska gränsen mellan öst och väst i Europa under kalla kriget?",
+  "options": [
+   "Järnridån",
+   "Murridån",
+   "Isridån",
+   "Stålridån"
+  ],
+  "answer": "Järnridån",
+  "explanation": "Uttrycket gjordes känt av Winston Churchill."
+ },
+ {
+  "subject": "historia",
+  "topic": "Världen",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket år byggdes Berlinmuren?",
+  "options": [
+   "1961",
+   "1945",
+   "1953",
+   "1989"
+  ],
+  "answer": "1961",
+  "explanation": "Muren delade Berlin i två delar."
+ },
+ {
+  "subject": "historia",
+  "topic": "Världen",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket år föll Berlinmuren?",
+  "options": [
+   "1989",
+   "1961",
+   "1975",
+   "1991"
+  ],
+  "answer": "1989",
+  "explanation": "Tyskland återförenades 1990."
+ },
+ {
+  "subject": "historia",
+  "topic": "Världen",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket år upplöstes Sovjetunionen?",
+  "options": [
+   "1991",
+   "1979",
+   "1985",
+   "1999"
+  ],
+  "answer": "1991",
+  "explanation": "Då bildades Ryssland och andra självständiga stater."
+ },
+ {
+  "subject": "historia",
+  "topic": "Världen",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket år attackerades World Trade Center i New York av terrorister?",
+  "options": [
+   "2001",
+   "1991",
+   "1999",
+   "2005"
+  ],
+  "answer": "2001",
+  "explanation": "Händelsen kallas 11 september."
+ },
+ {
+  "subject": "historia",
+  "topic": "Världen",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken ledare förde Nazityskland under andra världskriget?",
+  "options": [
+   "Adolf Hitler",
+   "Josef Stalin",
+   "Benito Mussolini",
+   "Winston Churchill"
+  ],
+  "answer": "Adolf Hitler",
+  "explanation": "Han tog makten 1933."
+ },
+ {
+  "subject": "historia",
+  "topic": "Världen",
+  "level": 4,
+  "type": "mc",
+  "question": "Hur många judar mördades ungefär i Förintelsen?",
+  "options": [
+   "Omkring sex miljoner",
+   "Omkring 60 000",
+   "Omkring en miljon",
+   "Omkring 600 000"
+  ],
+  "answer": "Omkring sex miljoner",
+  "explanation": "Förintelsen var en systematisk folkmordskampanj."
+ },
+ {
+  "subject": "historia",
+  "topic": "Världen",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken svensk diplomat räddade tiotusentals judar i Budapest 1944?",
+  "options": [
+   "Raoul Wallenberg",
+   "Dag Hammarskjöld",
+   "Folke Bernadotte",
+   "Olof Palme"
+  ],
+  "answer": "Raoul Wallenberg",
+  "explanation": "Wallenberg delade ut skyddspass."
+ },
+ {
+  "subject": "historia",
+  "topic": "Världen",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket år fälldes en atombomb över Hiroshima?",
+  "options": [
+   "1945",
+   "1939",
+   "1941",
+   "1950"
+  ],
+  "answer": "1945",
+  "explanation": "Det skedde den 6 augusti 1945."
+ },
+ {
+  "subject": "historia",
+  "topic": "Korea",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken kung skapade det koreanska alfabetet hangul på 1400-talet?",
+  "options": [
+   "Sejong den store",
+   "Taejo",
+   "Gojong",
+   "Yongjo"
+  ],
+  "answer": "Sejong den store",
+  "explanation": "Hangul presenterades 1443 och kungjordes 1446."
+ },
+ {
+  "subject": "historia",
+  "topic": "Korea",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket år delades Korea i en norra och en södra del?",
+  "options": [
+   "1945",
+   "1910",
+   "1950",
+   "1953"
+  ],
+  "answer": "1945",
+  "explanation": "Delningen följde 38:e breddgraden."
+ },
+ {
+  "subject": "historia",
+  "topic": "Korea",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken stad var värd för de olympiska sommarspelen 1988?",
+  "options": [
+   "Seoul",
+   "Tokyo",
+   "Busan",
+   "Peking"
+  ],
+  "answer": "Seoul",
+  "explanation": "Det var Sydkoreas första OS."
+ },
+ {
+  "subject": "historia",
+  "topic": "Korea",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken stad i Sydkorea var värd för de olympiska vinterspelen 2018?",
+  "options": [
+   "Pyeongchang",
+   "Seoul",
+   "Busan",
+   "Daegu"
+  ],
+  "answer": "Pyeongchang",
+  "explanation": "Det skedde i Gangwon-provinsen."
+ },
+ {
+  "subject": "historia",
+  "topic": "Korea",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket år debuterade BTS?",
+  "options": [
+   "2013",
+   "2009",
+   "2011",
+   "2015"
+  ],
+  "answer": "2013",
+  "explanation": "BTS debuterade 13 juni 2013 med \"No More Dream\"."
+ },
+ {
+  "subject": "historia",
+  "topic": "Tid",
+  "level": 4,
+  "type": "mc",
+  "question": "Tidslinjen visar fyra händelser: Gustav Vasa blir kung, skeppet Vasa sjunker, Karl XII dör och Finland förloras. Vilken händelse inträffade sist?",
+  "options": [
+   "Finland förloras",
+   "Vasa kung",
+   "Vasaskeppet",
+   "Karl XII dör"
+  ],
+  "answer": "Finland förloras",
+  "explanation": "Tidslinjen går från vänster till höger.",
+  "diagram": {
+   "type": "number_line",
+   "min": 1500,
+   "max": 1850,
+   "step": 50,
+   "label_step": 50,
+   "marks": [
+    {
+     "value": 1523,
+     "label": "Vasa"
+    },
+    {
+     "value": 1628,
+     "label": "Skeppet"
+    },
+    {
+     "value": 1718,
+     "label": "Karl XII"
+    },
+    {
+     "value": 1809,
+     "label": "Finland"
+    }
+   ]
+  }
+ },
+ {
+  "subject": "historia",
+  "topic": "Tid",
+  "level": 4,
+  "type": "mc",
+  "question": "Tidslinjen visar fyra händelser: Gustav Vasa blir kung, skeppet Vasa sjunker, Karl XII dör och Finland förloras. Vilken händelse inträffade först?",
+  "options": [
+   "Vasa blev kung",
+   "Vasaskeppet sjönk",
+   "Karl XII dog",
+   "Finland förlorades"
+  ],
+  "answer": "Vasa blev kung",
+  "explanation": "Vasa blev kung 1523.",
+  "diagram": {
+   "type": "number_line",
+   "min": 1500,
+   "max": 1850,
+   "step": 50,
+   "label_step": 50,
+   "marks": [
+    {
+     "value": 1523,
+     "label": "Vasa"
+    },
+    {
+     "value": 1628,
+     "label": "Skeppet"
+    },
+    {
+     "value": 1718,
+     "label": "Karl XII"
+    },
+    {
+     "value": 1809,
+     "label": "Finland"
+    }
+   ]
+  }
+ },
+ {
+  "subject": "historia",
+  "topic": "Tid",
+  "level": 4,
+  "type": "mc",
+  "question": "Titta på diagrammet över EU:s medlemsländer. Vilket år hade EU flest medlemsländer?",
+  "options": [
+   "2013",
+   "1995",
+   "2004",
+   "2020"
+  ],
+  "answer": "2013",
+  "explanation": "Kroatien blev medlem 2013, efter Brexit 2020 minskade antalet.",
+  "diagram": {
+   "type": "bar_chart",
+   "title": "EU:s medlemsländer (antal)",
+   "labels": [
+    "1995",
+    "2004",
+    "2007",
+    "2013",
+    "2020"
+   ],
+   "values": [
+    15,
+    25,
+    27,
+    28,
+    27
+   ],
+   "show_values": true
+  }
+ },
+ {
+  "subject": "historia",
+  "topic": "Källkritik",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas en källa som är skapad under den tid man undersöker, till exempel ett brev från 1800-talet?",
+  "options": [
+   "Primärkälla",
+   "Sekundärkälla",
+   "Bisträckning",
+   "Tendens"
+  ],
+  "answer": "Primärkälla",
+  "explanation": "Primärkällor ger förstahandsinformation."
+ },
+ {
+  "subject": "historia",
+  "topic": "Källkritik",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas en text som är skriven i efterhand om en händelse, till exempel en lärobok?",
+  "options": [
+   "Sekundärkälla",
+   "Primärkälla",
+   "Original",
+   "Vittnesmål"
+  ],
+  "answer": "Sekundärkälla",
+  "explanation": "Sekundärkällor bygger på andra källor."
+ },
+ {
+  "subject": "historia",
+  "topic": "Källkritik",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad prövar man när man frågar om en källa är äkta?",
+  "options": [
+   "Äkthet",
+   "Beroende",
+   "Tendens",
+   "Tid"
+  ],
+  "answer": "Äkthet",
+  "explanation": "Är källan falsk eller autentisk?"
+ },
+ {
+  "subject": "historia",
+  "topic": "Källkritik",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilket källkritiskt kriterium handlar om att avstånd i tid till händelsen påverkar tillförlitligheten?",
+  "options": [
+   "Tid",
+   "Äkthet",
+   "Tendens",
+   "Beroende"
+  ],
+  "answer": "Tid",
+  "explanation": "Ju närmare i tiden, desto bättre."
+ },
+ {
+  "subject": "historia",
+  "topic": "Källkritik",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad menas med tendens hos en källa?",
+  "options": [
+   "Att författaren vill påverka åsikter",
+   "Att källan är gammal",
+   "Att källan är en bild",
+   "Att källan är kopierad"
+  ],
+  "answer": "Att författaren vill påverka åsikter",
+  "explanation": "Tendens kan göra att fakta vinklas."
+ },
+ {
+  "subject": "historia",
+  "topic": "Världen",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilka makter bildade de allierade i andra världskriget?",
+  "options": [
+   "USA, Storbritannien och Sovjetunionen med flera",
+   "Tyskland, Japan och Italien",
+   "Frankrike, Spanien och Portugal",
+   "Kina och Mongoliet ensamma"
+  ],
+  "answer": "USA, Storbritannien och Sovjetunionen med flera",
+  "explanation": "Axelmakterna var Tyskland, Italien och Japan."
+ },
+ {
+  "subject": "historia",
+  "topic": "Världen",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilka länder bildade axelmakterna?",
+  "options": [
+   "Tyskland, Italien och Japan",
+   "USA, Storbritannien och Frankrike",
+   "Sverige, Norge och Finland",
+   "Kina, Indien och Ryssland"
+  ],
+  "answer": "Tyskland, Italien och Japan",
+  "explanation": "De kämpade mot de allierade."
+ },
+ {
+  "subject": "historia",
+  "topic": "Världen",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad var D-dagen 6 juni 1944?",
+  "options": [
+   "De allierades landstigning i Normandie",
+   "Atombombningen av Hiroshima",
+   "Tysklands kapitulation",
+   "Attacken mot Pearl Harbor"
+  ],
+  "answer": "De allierades landstigning i Normandie",
+  "explanation": "Den inledde befrielsen av Västeuropa."
+ },
+ {
+  "subject": "historia",
+  "topic": "Världen",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallades hjälpprogrammet 1948 där USA gav ekonomiskt stöd till återuppbyggnad i Europa?",
+  "options": [
+   "Marshallplanen",
+   "Versaillesfreden",
+   "Truman-planen",
+   "Schumanplanen"
+  ],
+  "answer": "Marshallplanen",
+  "explanation": "Planen byggde upp ekonomin i Västeuropa."
+ },
+ {
+  "subject": "historia",
+  "topic": "Världen",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilket år beslutade FN:s generalförsamling om Allmänna förklaringen om de mänskliga rättigheterna?",
+  "options": [
+   "1948",
+   "1919",
+   "1945",
+   "1989"
+  ],
+  "answer": "1948",
+  "explanation": "Den antogs i Paris."
+ },
+ {
+  "subject": "historia",
+  "topic": "Världen",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken kris 1962 förde världen nära ett kärnvapenkrig mellan USA och Sovjetunionen?",
+  "options": [
+   "Kubakrisen",
+   "Berlinkrisen",
+   "Suezkrisen",
+   "Koreakrisen"
+  ],
+  "answer": "Kubakrisen",
+  "explanation": "Sovjet placerade missiler på Kuba."
+ },
+ {
+  "subject": "historia",
+  "topic": "Världen",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken revolution ledde Lenin 1917?",
+  "options": [
+   "Ryska revolutionen",
+   "Franska revolutionen",
+   "Industriella revolutionen",
+   "Kulturrevolutionen"
+  ],
+  "answer": "Ryska revolutionen",
+  "explanation": "Den ledde till bildandet av Sovjetunionen."
+ },
+ {
+  "subject": "historia",
+  "topic": "Världen",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilket år utropades Folkrepubliken Kina av Mao Zedong?",
+  "options": [
+   "1949",
+   "1911",
+   "1937",
+   "1976"
+  ],
+  "answer": "1949",
+  "explanation": "Kommunistpartiet vann inbördeskriget."
+ },
+ {
+  "subject": "historia",
+  "topic": "Världen",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken ledare var den första svarta presidenten i Sydafrika 1994 efter apartheid?",
+  "options": [
+   "Nelson Mandela",
+   "Desmond Tutu",
+   "Martin Luther King",
+   "Barack Obama"
+  ],
+  "answer": "Nelson Mandela",
+  "explanation": "Mandela satt över 27 år i fängelse."
+ },
+ {
+  "subject": "historia",
+  "topic": "Världen",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad var apartheid?",
+  "options": [
+   "Ett system med rasåtskillnad i Sydafrika",
+   "En religiös rörelse",
+   "En ekonomisk reform",
+   "Ett krig"
+  ],
+  "answer": "Ett system med rasåtskillnad i Sydafrika",
+  "explanation": "Systemet avskaffades i början av 1990-talet."
+ },
+ {
+  "subject": "historia",
+  "topic": "Världen",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken amerikansk medborgarrättsledare höll talet \"I have a dream\" 1963?",
+  "options": [
+   "Martin Luther King Jr.",
+   "Malcolm X",
+   "Rosa Parks",
+   "Barack Obama"
+  ],
+  "answer": "Martin Luther King Jr.",
+  "explanation": "Talet hölls vid Lincolnmonumentet."
+ },
+ {
+  "subject": "historia",
+  "topic": "Världen",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilket år blev Indien självständigt från Storbritannien?",
+  "options": [
+   "1947",
+   "1919",
+   "1939",
+   "1965"
+  ],
+  "answer": "1947",
+  "explanation": "Mahatma Gandhi ledde fredliga protester."
+ },
+ {
+  "subject": "historia",
+  "topic": "Världen",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas den maktkamp mellan USA och Sovjetunionen efter andra världskriget utan direkt krig mellan dem?",
+  "options": [
+   "Kalla kriget",
+   "Trettioåriga kriget",
+   "Hundraårskriget",
+   "Sjuårskriget"
+  ],
+  "answer": "Kalla kriget",
+  "explanation": "Det varade ungefär 1947–1991."
+ },
+ {
+  "subject": "historia",
+  "topic": "Världen",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilket av dessa var en bakomliggande orsak till första världskriget?",
+  "options": [
+   "Allianssystem mellan stormakterna",
+   "Uppfinningen av internet",
+   "Digerdöden",
+   "Reformationen"
+  ],
+  "answer": "Allianssystem mellan stormakterna",
+  "explanation": "Militarism, allianser, imperialism och nationalism brukar nämnas."
+ },
+ {
+  "subject": "historia",
+  "topic": "Korea",
+  "level": 5,
+  "type": "mc",
+  "question": "Hur slutade Koreakriget formellt?",
+  "options": [
+   "Med vapenvila 1953, ingen fredsöverenskommelse",
+   "Med ett fredsavtal 1953",
+   "Med att Sydkorea erövrade Nordkorea",
+   "Med att Kina tog över hela halvön"
+  ],
+  "answer": "Med vapenvila 1953, ingen fredsöverenskommelse",
+  "explanation": "Länderna är fortfarande formellt i krig."
+ },
+ {
+  "subject": "historia",
+  "topic": "Korea",
+  "level": 5,
+  "type": "mc",
+  "question": "Under vilka år var Korea under japansk ockupation?",
+  "options": [
+   "1910–1945",
+   "1850–1900",
+   "1945–1950",
+   "1953–1988"
+  ],
+  "answer": "1910–1945",
+  "explanation": "Korea blev fritt när Japan kapitulerade 1945."
+ },
+ {
+  "subject": "historia",
+  "topic": "Korea",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad är Hallyu?",
+  "options": [
+   "Den koreanska vågen av popkultur som spridit sig globalt",
+   "En sorts mat",
+   "En historisk dynasti",
+   "Ett alfabet"
+  ],
+  "answer": "Den koreanska vågen av popkultur som spridit sig globalt",
+  "explanation": "Det omfattar K-pop, dramer och film."
+ }
+]

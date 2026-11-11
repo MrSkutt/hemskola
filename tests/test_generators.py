@@ -18,6 +18,7 @@ BANK = WordBank(json.loads((SEED / "words.json").read_text(encoding="utf-8"))["w
 MATH = {n: g for n, g in generators.REGISTRY.items() if g.subject == "matte"}
 SV = {n: g for n, g in generators.REGISTRY.items() if g.subject == "svenska"}
 # Dessa har inget talsvar att räkna om med ett uttryck (klocka, bråkfigur, avläsning ur diagram)
+SUBJECTS_WITH_GENERATORS = ("matte", "svenska", "engelska", "kpop", "kemi", "fysik", "teknik", "biologi", "geografi", "historia", "samhallskunskap")
 NO_CALC = {"m1_clock", "m1_fraction", "m1_bar_read", "m1_bar_max", "m2_number_line", "m3_coord_read"}
 NS = {"math": math, "Fraction": Fraction, "Decimal": Decimal, "ROUND_HALF_UP": ROUND_HALF_UP}
 
@@ -71,7 +72,7 @@ def test_bar_read_matches_the_chart():
 
 def test_all_generators_have_unique_names_and_valid_levels():
     for n, g in generators.REGISTRY.items():
-        assert g.name == n and 1 <= g.level <= 5 and g.subject in ("matte", "svenska", "engelska", "kpop")
+        assert g.name == n and 1 <= g.level <= 5 and g.subject in SUBJECTS_WITH_GENERATORS
 
 
 # ------------------------------------------------------------------ svenska / ordlista
@@ -242,3 +243,64 @@ def test_korean_generators(name):
         else:
             hangul = q.question.split("ordet ", 1)[1].rstrip("?")
             assert by_ro[q.answers[0]]["hangul"] == hangul
+
+
+# ------------------------------------------------------------------ NO/SO-generatorer
+
+NOSO = {n: g for n, g in generators.REGISTRY.items()
+        if g.subject in ("kemi", "fysik", "teknik", "biologi", "geografi", "historia", "samhallskunskap")}
+NOSO_NO_CALC = {n for n, g in NOSO.items() if n.split("_", 1)[1] in (
+    "elem_symbol", "elem_name", "atomic_number", "formula", "capital", "continent", "country", "year", "first",
+    "century", "timeline", "bin_to_dec_x", "dec_to_bin", "logic_x", "punnett_x", "dna")}
+
+
+@pytest.mark.parametrize("name", sorted(NOSO))
+def test_noso_generators(name):
+    rng = random.Random(zlib.crc32(name.encode()))
+    for _ in range(300):
+        q = NOSO[name].fn(rng, None)
+        assert q.question.strip() and q.answers and all(isinstance(a, str) and a for a in q.answers)
+        assert "{" not in q.question and "}" not in q.question
+        assert logic.is_correct(q.answers[0], q.answers) and not logic.is_correct("wrong-answer", q.answers)
+        if q.options:
+            assert q.answers[0] in q.options and len(set(q.options)) == len(q.options) >= 2
+        if q.diagram:
+            assert diagrams.validate(q.diagram) is None, q.diagram
+        if q.calc and name not in NOSO_NO_CALC:
+            expected = eval(q.calc, NS)
+            got = logic._num(q.answers[0])
+            assert got is not None and abs(got - float(expected)) < 1e-9, (q.question, q.answers, expected)
+
+
+def test_noso_levels_and_subjects():
+    for subject in ("kemi", "fysik", "teknik", "geografi", "historia", "samhallskunskap", "biologi"):
+        got = {g.level for g in NOSO.values() if g.subject == subject}
+        assert len(got) >= 3, (subject, got)
+
+
+def test_capital_and_year_facts_are_consistent():
+    from app import generators_no as gn
+    assert len({c[0] for c in gn.COUNTRIES}) == len(gn.COUNTRIES)
+    assert len({c[1] for c in gn.COUNTRIES}) == len(gn.COUNTRIES)
+    assert len({e[0] for e in gn.ELEMENTS}) == len(gn.ELEMENTS) == len({e[1] for e in gn.ELEMENTS}) == len({e[2] for e in gn.ELEMENTS})
+    assert len({(e[1]) for e in gn.EVENTS}) == len(gn.EVENTS)
+    for sym, name, z, lvl in gn.ELEMENTS:
+        assert 1 <= lvl <= 3 and 1 <= z <= 118
+
+
+def test_dna_complement_is_correct():
+    rng = random.Random(3)
+    for _ in range(100):
+        q = NOSO["b5_dna"].fn(rng, None)
+        s = re.search(r"basordningen ([ACGT]+)", q.question).group(1)
+        assert q.answers == ["".join({"A": "T", "T": "A", "C": "G", "G": "C"}[c] for c in s)]
+
+
+def test_timeline_answer_is_the_latest_event():
+    rng = random.Random(4)
+    from app import generators_no as gn
+    years = {e[1]: e[0] for e in gn.EVENTS}
+    for _ in range(100):
+        q = NOSO["h3_timeline"].fn(rng, None)
+        marks = {m["label"]: m["value"] for m in q.diagram["marks"]}
+        assert marks[q.answers[0]] == max(marks.values())

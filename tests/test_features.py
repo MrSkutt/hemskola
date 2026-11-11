@@ -240,7 +240,8 @@ def test_old_database_is_upgraded_without_losing_data(tmp_path, monkeypatch):
 
 def test_example_images_and_subjects_are_installed(client):
     login(client, "admin", "adminpass1")
-    for name in ("scene.svg", "vattnets_kretslopp.svg", "solsystemet.svg", "vaxtens_delar.svg", "lightstick.svg", "scen.svg", "hangul_block.svg", "taegukgi.svg"):
+    for name in ("scene.svg", "vattnets_kretslopp.svg", "solsystemet.svg", "vaxtens_delar.svg", "lightstick.svg", "scen.svg", "hangul_block.svg", "taegukgi.svg",
+                 "cell.svg", "atom.svg", "krets.svg", "narings_kedja.svg", "periodiska.svg"):
         r = client.get(f"/media/{name}")
         assert r.status_code == 200 and r.headers["content-type"] == "image/svg+xml"
     conn = _conn()
@@ -313,3 +314,34 @@ def test_legacy_no_so_are_moved_to_new_subjects(client):
     assert logic.get_level(conn, uid, "no") is None and logic.get_level(conn, uid, "so") is None
     assert conn.execute("SELECT COUNT(*) FROM attempts WHERE exercise_id=?", (ex,)).fetchone()[0] == 1
     conn.close()
+
+
+def test_seed_content_integrity():
+    """Alla fasta övningar i seed-filerna ska vara hela: rätt svar bland alternativen, giltiga bilder och diagram."""
+    import glob
+    import json
+    import os
+    from app import diagrams
+    from app.logic import SUBJECT_LABELS
+
+    seed_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "app", "seed")
+    total = 0
+    for path in sorted(glob.glob(os.path.join(seed_dir, "*.json"))):
+        data = json.load(open(path, encoding="utf-8"))
+        items = data.get("exercises", []) if isinstance(data, dict) else data
+        for e in items:
+            total += 1
+            where = f"{os.path.basename(path)}: {e['question'][:50]}"
+            assert e["subject"] in SUBJECT_LABELS, where
+            assert 1 <= e["level"] <= 5, where
+            answers = e["answer"] if isinstance(e["answer"], list) else [e["answer"]]
+            assert answers and all(str(a).strip() for a in answers), where
+            if e["type"] == "mc":
+                opts = e["options"]
+                assert len(opts) >= 2 and len(set(opts)) == len(opts), where
+                assert e["answer"] in opts, where
+            if e.get("image"):
+                assert os.path.exists(os.path.join(seed_dir, "media", e["image"])), where
+            if e.get("diagram"):
+                diagrams.validate(e["diagram"])
+    assert total > 1000

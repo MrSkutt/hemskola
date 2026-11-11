@@ -1,0 +1,1591 @@
+[
+ {
+  "subject": "biologi",
+  "topic": "Kroppen",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket organ använder du för att tänka?",
+  "options": [
+   "Hjärnan",
+   "Hjärtat",
+   "Magen",
+   "Lungorna"
+  ],
+  "answer": "Hjärnan",
+  "explanation": "Hjärnan styr kroppen och används när vi tänker."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Kroppen",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket sinne använder du när du känner doften av en blomma?",
+  "options": [
+   "Lukt",
+   "Syn",
+   "Hörsel",
+   "Smak"
+  ],
+  "answer": "Lukt",
+  "explanation": "Luktsinnet sitter i näsan."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Kroppen",
+  "level": 1,
+  "type": "mc",
+  "question": "Hur många sinnen räknar man vanligtvis med (syn, hörsel, lukt, smak och känsel)?",
+  "options": [
+   "5",
+   "3",
+   "7",
+   "10"
+  ],
+  "answer": "5",
+  "explanation": "De fem sinnena är syn, hörsel, lukt, smak och känsel."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Kroppen",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken del av kroppen skyddar hjärnan?",
+  "options": [
+   "Skallen",
+   "Revbenen",
+   "Ryggraden",
+   "Bäckenet"
+  ],
+  "answer": "Skallen",
+  "explanation": "Skallen är ett hårt skydd runt hjärnan."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Kroppen",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad behöver kroppen dricka varje dag för att må bra?",
+  "options": [
+   "Vatten",
+   "Läsk",
+   "Saft",
+   "Kaffe"
+  ],
+  "answer": "Vatten",
+  "explanation": "Vatten är det viktigaste vi dricker, eftersom kroppen till stor del består av vatten."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Djur",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas djur som har ryggrad?",
+  "options": [
+   "Ryggradsdjur",
+   "Ryggradslösa djur",
+   "Insekter",
+   "Svampdjur"
+  ],
+  "answer": "Ryggradsdjur",
+  "explanation": "Fiskar, groddjur, kräldjur, fåglar och däggdjur är ryggradsdjur."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Djur",
+  "level": 1,
+  "type": "mc",
+  "question": "Är en spindel en insekt?",
+  "options": [
+   "Nej, den har åtta ben",
+   "Ja, alla små djur är insekter",
+   "Ja, den har sex ben",
+   "Ja, den har vingar"
+  ],
+  "answer": "Nej, den har åtta ben",
+  "explanation": "Insekter har sex ben, spindlar har åtta och räknas som spindeldjur."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Djur",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas ett djur som bara äter växter?",
+  "options": [
+   "Växtätare",
+   "Köttätare",
+   "Allätare",
+   "Nedbrytare"
+  ],
+  "answer": "Växtätare",
+  "explanation": "Kor och harar är växtätare."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Djur",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas ett djur som bara äter kött?",
+  "options": [
+   "Köttätare",
+   "Växtätare",
+   "Allätare",
+   "Nedbrytare"
+  ],
+  "answer": "Köttätare",
+  "explanation": "Lejon och vargar är köttätare."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Djur",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket av dessa djur är ett däggdjur?",
+  "options": [
+   "Hund",
+   "Haj",
+   "Padda",
+   "Mås"
+  ],
+  "answer": "Hund",
+  "explanation": "Däggdjur föder levande ungar och ger dem mjölk."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Djur",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket av dessa djur är en fisk?",
+  "options": [
+   "Lax",
+   "Delfin",
+   "Val",
+   "Sjölejon"
+  ],
+  "answer": "Lax",
+  "explanation": "Delfiner, valar och sjölejon är däggdjur."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Djur",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas grodans ungar?",
+  "options": [
+   "Grodyngel",
+   "Larver",
+   "Kycklingar",
+   "Valpar"
+  ],
+  "answer": "Grodyngel",
+  "explanation": "Grodyngel simmar i vattnet och blir sedan till grodor."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Djur",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket djur fäller träd och bygger dammar?",
+  "options": [
+   "Bävern",
+   "Älgen",
+   "Haren",
+   "Ekorren"
+  ],
+  "answer": "Bävern",
+  "explanation": "Bävern gnager ned träd med sina tänder."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Växter",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken del av växten tar upp vatten ur jorden?",
+  "options": [
+   "Roten",
+   "Bladet",
+   "Blomman",
+   "Frukten"
+  ],
+  "answer": "Roten",
+  "explanation": "Rötterna suger upp vatten och näring."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Växter",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken del av växten bildar frön?",
+  "options": [
+   "Blomman",
+   "Roten",
+   "Stjälken",
+   "Bladet"
+  ],
+  "answer": "Blomman",
+  "explanation": "Efter pollinering utvecklas fröna i blomman."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Växter",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad behöver en växt för att kunna växa?",
+  "options": [
+   "Ljus och vatten",
+   "Bara mörker",
+   "Plast",
+   "Choklad"
+  ],
+  "answer": "Ljus och vatten",
+  "explanation": "Växter använder ljus, vatten och koldioxid."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Växter",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket av dessa är ett lövträd?",
+  "options": [
+   "Björk",
+   "Gran",
+   "Tall",
+   "En"
+  ],
+  "answer": "Björk",
+  "explanation": "Lövträd har blad och fäller dem på hösten."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Växter",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas en skog med mest granar och tallar?",
+  "options": [
+   "Barrskog",
+   "Lövskog",
+   "Regnskog",
+   "Savann"
+  ],
+  "answer": "Barrskog",
+  "explanation": "Gran och tall har barr."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Årstider",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken årstid fäller lövträden sina löv?",
+  "options": [
+   "Hösten",
+   "Våren",
+   "Sommaren",
+   "Vintern"
+  ],
+  "answer": "Hösten",
+  "explanation": "Löven blir gula och röda och faller av på hösten."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Diagram",
+  "level": 1,
+  "type": "mc",
+  "question": "Diagrammet visar hur många fåglar en elev såg i trädgården (fiktivt). Vilken fågel såg hon flest av?",
+  "options": [
+   "Talgoxe",
+   "Blåmes",
+   "Koltrast",
+   "Gråsparv"
+  ],
+  "answer": "Talgoxe",
+  "explanation": "Talgoxe har den högsta stapeln.",
+  "diagram": {
+   "type": "bar_chart",
+   "title": "Fåglar i trädgården",
+   "labels": [
+    "Talgoxe",
+    "Blåmes",
+    "Koltrast",
+    "Gråsparv"
+   ],
+   "values": [
+    9,
+    5,
+    3,
+    6
+   ]
+  }
+ },
+ {
+  "subject": "biologi",
+  "topic": "Diagram",
+  "level": 1,
+  "type": "text",
+  "question": "Hur många fåglar såg hon sammanlagt av alla fyra sorter (fiktivt diagram)?\nSvara endast med talet.",
+  "answer": "23",
+  "explanation": "9 + 5 + 3 + 6 = 23.",
+  "diagram": {
+   "type": "bar_chart",
+   "title": "Fåglar i trädgården",
+   "labels": [
+    "Talgoxe",
+    "Blåmes",
+    "Koltrast",
+    "Gråsparv"
+   ],
+   "values": [
+    9,
+    5,
+    3,
+    6
+   ]
+  }
+ },
+ {
+  "subject": "biologi",
+  "topic": "Kroppen",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket organ bryter ned maten med hjälp av magsaft?",
+  "options": [
+   "Magsäcken",
+   "Lungorna",
+   "Hjärtat",
+   "Levern"
+  ],
+  "answer": "Magsäcken",
+  "explanation": "I magsäcken blandas maten med magsaft."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Kroppen",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas rören som för blod bort från hjärtat?",
+  "options": [
+   "Artärer",
+   "Vener",
+   "Luftrör",
+   "Matstrupen"
+  ],
+  "answer": "Artärer",
+  "explanation": "Artärerna för blodet från hjärtat, venerna för det tillbaka."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Kroppen",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken del av kroppen rensar blodet och bildar urin?",
+  "options": [
+   "Njurarna",
+   "Levern",
+   "Lungorna",
+   "Magen"
+  ],
+  "answer": "Njurarna",
+  "explanation": "Njurarna filtrerar blodet."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Kroppen",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket ämne i maten bygger upp och reparerar muskler?",
+  "options": [
+   "Protein",
+   "Fett",
+   "Vatten",
+   "Fibrer"
+  ],
+  "answer": "Protein",
+  "explanation": "Protein finns i kött, fisk, ägg och bönor."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Kroppen",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken mineral behöver kroppen för att bygga starka ben och tänder?",
+  "options": [
+   "Kalcium",
+   "Järn",
+   "Jod",
+   "Natrium"
+  ],
+  "answer": "Kalcium",
+  "explanation": "Kalcium finns till exempel i mjölk."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Kroppen",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas den hårda delen som skyddar tänderna?",
+  "options": [
+   "Emalj",
+   "Tandkött",
+   "Tandkräm",
+   "Tandben"
+  ],
+  "answer": "Emalj",
+  "explanation": "Emaljen är kroppens hårdaste vävnad."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Djur",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken grupp djur kan både leva i vatten och på land?",
+  "options": [
+   "Groddjur",
+   "Fåglar",
+   "Fiskar",
+   "Däggdjur"
+  ],
+  "answer": "Groddjur",
+  "explanation": "Groddjur som grodor och salamandrar lever en del av livet i vatten."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Djur",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas den gradvisa förvandlingen från larv till vuxen insekt?",
+  "options": [
+   "Metamorfos",
+   "Fotosyntes",
+   "Evolution",
+   "Migration"
+  ],
+  "answer": "Metamorfos",
+  "explanation": "Fjärilen går från ägg till larv, puppa och fjäril."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Djur",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket djur är ett kräldjur?",
+  "options": [
+   "Orm",
+   "Groda",
+   "Fisk",
+   "Fladdermus"
+  ],
+  "answer": "Orm",
+  "explanation": "Kräldjur har torr, fjällig hud."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Djur",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas det när djur går i dvala eller vilar under vintern?",
+  "options": [
+   "Vintervila",
+   "Flyttning",
+   "Parning",
+   "Fäll"
+  ],
+  "answer": "Vintervila",
+  "explanation": "Björnen sover i vinteride, ekorren vilar och går ibland upp och äter."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Växter",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas det när insekter för pollen från en blomma till en annan?",
+  "options": [
+   "Pollinering",
+   "Fotosyntes",
+   "Förbränning",
+   "Spridning"
+  ],
+  "answer": "Pollinering",
+  "explanation": "Pollineringen gör att blomman kan bilda frön."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Växter",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken gas avger växter när de gör fotosyntes?",
+  "options": [
+   "Syre",
+   "Koldioxid",
+   "Kväve",
+   "Metan"
+  ],
+  "answer": "Syre",
+  "explanation": "Växter tar upp koldioxid och ger ifrån sig syre."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Växter",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad är klorofyll?",
+  "options": [
+   "Det gröna ämnet i bladen som fångar solljus",
+   "Ett frö",
+   "En sorts jord",
+   "Ett gift"
+  ],
+  "answer": "Det gröna ämnet i bladen som fångar solljus",
+  "explanation": "Klorofyllet gör att växten kan använda solens energi."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Ekologi",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas en växt som tillverkar sin egen näring med hjälp av solljus?",
+  "options": [
+   "Producent",
+   "Konsument",
+   "Nedbrytare",
+   "Rovdjur"
+  ],
+  "answer": "Producent",
+  "explanation": "Producenter är början i en näringskedja."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Ekologi",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas ett djur som äter producenter?",
+  "options": [
+   "Konsument",
+   "Producent",
+   "Nedbrytare",
+   "Växt"
+  ],
+  "answer": "Konsument",
+  "explanation": "Konsumenter får sin energi genom att äta andra levande varelser."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Ekologi",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad gör nedbrytare, som svampar och bakterier?",
+  "options": [
+   "Bryter ned döda växter och djur",
+   "Jagar andra djur",
+   "Gör fotosyntes",
+   "Pollinerar blommor"
+  ],
+  "answer": "Bryter ned döda växter och djur",
+  "explanation": "Nedbrytarna ger tillbaka näring till jorden."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Ekologi",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas den plats där ett djur eller en växt lever?",
+  "options": [
+   "Livsmiljö",
+   "Näringskedja",
+   "Population",
+   "Art"
+  ],
+  "answer": "Livsmiljö",
+  "explanation": "Skogen är livsmiljö för älgar."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Årstider",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas det när djur och växter anpassar sig till kallt klimat?",
+  "options": [
+   "Anpassning",
+   "Förvandling",
+   "Pollinering",
+   "Förbränning"
+  ],
+  "answer": "Anpassning",
+  "explanation": "Isbjörnens tjocka päls är en anpassning till kylan."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Diagram",
+  "level": 2,
+  "type": "mc",
+  "question": "Diagrammet visar hur länge fyra djur sover per dygn (fiktiva siffror). Vilket djur sover längst?",
+  "options": [
+   "Koala",
+   "Giraff",
+   "Häst",
+   "Människa"
+  ],
+  "answer": "Koala",
+  "explanation": "Koala har högsta stapeln.",
+  "diagram": {
+   "type": "bar_chart",
+   "title": "Sömn (timmar per dygn)",
+   "labels": [
+    "Koala",
+    "Giraff",
+    "Häst",
+    "Människa"
+   ],
+   "values": [
+    20,
+    2,
+    3,
+    8
+   ],
+   "show_values": true
+  }
+ },
+ {
+  "subject": "biologi",
+  "topic": "Celler",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas kroppens minsta byggstenar?",
+  "options": [
+   "Celler",
+   "Organ",
+   "Vävnader",
+   "Molekyler"
+  ],
+  "answer": "Celler",
+  "explanation": "Alla levande varelser är byggda av celler."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Celler",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken del av cellen styr vad cellen gör?",
+  "options": [
+   "Cellkärnan",
+   "Cellväggen",
+   "Kloroplasten",
+   "Vakuolen"
+  ],
+  "answer": "Cellkärnan",
+  "explanation": "Cellkärnan innehåller arvsmassan."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Celler",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken cellorganell finns bara i växtceller och gör fotosyntes?",
+  "options": [
+   "Kloroplast",
+   "Mitokondrie",
+   "Cellkärna",
+   "Ribosom"
+  ],
+  "answer": "Kloroplast",
+  "explanation": "Kloroplasten innehåller klorofyll."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Celler",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken del finns i växtceller men inte i djurceller?",
+  "options": [
+   "Cellvägg",
+   "Cellmembran",
+   "Cellkärna",
+   "Cytoplasma"
+  ],
+  "answer": "Cellvägg",
+  "explanation": "Cellväggen ger växten stadga."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Celler",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad brukar mitokondrien kallas?",
+  "options": [
+   "Cellens kraftverk",
+   "Cellens skal",
+   "Cellens hjärna",
+   "Cellens förråd"
+  ],
+  "answer": "Cellens kraftverk",
+  "explanation": "I mitokondrierna frigörs energi."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Celler",
+  "level": 3,
+  "type": "mc",
+  "question": "Titta på cellen. Vad föreställer det som har bokstaven A?",
+  "options": [
+   "Cellkärna",
+   "Cellmembran",
+   "Mitokondrie",
+   "Cytoplasma"
+  ],
+  "answer": "Cellkärna",
+  "explanation": "A pekar på cellkärnan.",
+  "image": "cell.svg"
+ },
+ {
+  "subject": "biologi",
+  "topic": "Celler",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad föreställer bokstaven C i bilden av en cell?",
+  "options": [
+   "Mitokondrie",
+   "Cellkärna",
+   "Cellmembran",
+   "Cytoplasma"
+  ],
+  "answer": "Mitokondrie",
+  "explanation": "C pekar på en mitokondrie.",
+  "image": "cell.svg"
+ },
+ {
+  "subject": "biologi",
+  "topic": "Celler",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad föreställer bokstaven B i bilden av en cell?",
+  "options": [
+   "Cellmembran",
+   "Cellkärna",
+   "Mitokondrie",
+   "Cellvägg"
+  ],
+  "answer": "Cellmembran",
+  "explanation": "B pekar på cellens yttre gräns, cellmembranet.",
+  "image": "cell.svg"
+ },
+ {
+  "subject": "biologi",
+  "topic": "Kroppen",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas ämnet som bär syre i röda blodkroppar?",
+  "options": [
+   "Hemoglobin",
+   "Insulin",
+   "Klorofyll",
+   "Kalcium"
+  ],
+  "answer": "Hemoglobin",
+  "explanation": "Hemoglobin är ett protein som binder syre."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Kroppen",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket organ tillverkar insulin?",
+  "options": [
+   "Bukspottkörteln",
+   "Levern",
+   "Njurarna",
+   "Magen"
+  ],
+  "answer": "Bukspottkörteln",
+  "explanation": "Insulin reglerar blodsockret."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Kroppen",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas kroppens försvar mot sjukdomar?",
+  "options": [
+   "Immunförsvaret",
+   "Nervsystemet",
+   "Matsmältningen",
+   "Skelettet"
+  ],
+  "answer": "Immunförsvaret",
+  "explanation": "Vita blodkroppar är en viktig del av immunförsvaret."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Kroppen",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken del av nervsystemet utgörs av hjärnan och ryggmärgen?",
+  "options": [
+   "Centrala nervsystemet",
+   "Perifera nervsystemet",
+   "Hormonsystemet",
+   "Blodomloppet"
+  ],
+  "answer": "Centrala nervsystemet",
+  "explanation": "Hjärnan och ryggmärgen styr kroppen."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Kroppen",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas den vätska som blodkropparna simmar i?",
+  "options": [
+   "Blodplasma",
+   "Lymfa",
+   "Galla",
+   "Saliv"
+  ],
+  "answer": "Blodplasma",
+  "explanation": "Plasma består mest av vatten."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Kroppen",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket organ producerar galla?",
+  "options": [
+   "Levern",
+   "Njurarna",
+   "Bukspottkörteln",
+   "Mjälten"
+  ],
+  "answer": "Levern",
+  "explanation": "Gallan hjälper till att bryta ned fett."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Ekologi",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas alla individer av samma art som lever i samma område?",
+  "options": [
+   "Population",
+   "Ekosystem",
+   "Näringskedja",
+   "Biotop"
+  ],
+  "answer": "Population",
+  "explanation": "En population kan vara alla rådjur i en skog."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Ekologi",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas allt levande och icke levande i ett område tillsammans?",
+  "options": [
+   "Ekosystem",
+   "Population",
+   "Art",
+   "Näringskedja"
+  ],
+  "answer": "Ekosystem",
+  "explanation": "En sjö är ett ekosystem."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Ekologi",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken sorts förhållande har en varg och en hjort?",
+  "options": [
+   "Rovdjur och bytesdjur",
+   "Symbios",
+   "Konkurrens",
+   "Parasitism"
+  ],
+  "answer": "Rovdjur och bytesdjur",
+  "explanation": "Vargen jagar hjorten."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Ekologi",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas ett djur som lever på eller i ett annat djur och skadar det?",
+  "options": [
+   "Parasit",
+   "Nedbrytare",
+   "Producent",
+   "Pollinatör"
+  ],
+  "answer": "Parasit",
+  "explanation": "Fästingen är en parasit."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Ekologi",
+  "level": 3,
+  "type": "mc",
+  "question": "I vilken ordning står dessa i en näringskedja? Gräs, ko, människa.",
+  "options": [
+   "Gräs, ko, människa",
+   "Människa, ko, gräs",
+   "Ko, gräs, människa",
+   "Gräs, människa, ko"
+  ],
+  "answer": "Gräs, ko, människa",
+  "explanation": "Energin går från producenten gräs via kon till människan."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Näringskedjan",
+  "level": 3,
+  "type": "mc",
+  "question": "Titta på näringskedjan. Vilket djur är toppkonsument?",
+  "options": [
+   "Hök",
+   "Gräshoppa",
+   "Groda",
+   "Orm"
+  ],
+  "answer": "Hök",
+  "explanation": "Höken står sist i kedjan och äts inte av något av de andra.",
+  "image": "narings_kedja.svg"
+ },
+ {
+  "subject": "biologi",
+  "topic": "Näringskedjan",
+  "level": 3,
+  "type": "mc",
+  "question": "Titta på näringskedjan. Vilken är producent?",
+  "options": [
+   "Gräs",
+   "Gräshoppa",
+   "Groda",
+   "Hök"
+  ],
+  "answer": "Gräs",
+  "explanation": "Gräs gör fotosyntes och tillverkar näring.",
+  "image": "narings_kedja.svg"
+ },
+ {
+  "subject": "biologi",
+  "topic": "Näringskedjan",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad äter groda i den här kedjan?",
+  "options": [
+   "Gräshoppa",
+   "Gräs",
+   "Orm",
+   "Hök"
+  ],
+  "answer": "Gräshoppa",
+  "explanation": "Pilen går från gräshoppa till groda.",
+  "image": "narings_kedja.svg"
+ },
+ {
+  "subject": "biologi",
+  "topic": "Celler",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas den process när en cell delar sig i två likadana celler?",
+  "options": [
+   "Mitos",
+   "Meios",
+   "Fotosyntes",
+   "Osmos"
+  ],
+  "answer": "Mitos",
+  "explanation": "Mitos ger två celler med samma arvsmassa."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Celler",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas den process som bildar könsceller (ägg och spermier)?",
+  "options": [
+   "Meios",
+   "Mitos",
+   "Osmos",
+   "Förbränning"
+  ],
+  "answer": "Meios",
+  "explanation": "Könsceller har hälften så många kromosomer, alltså 23."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Genetik",
+  "level": 4,
+  "type": "text",
+  "question": "Hur många kromosomer finns i en människas äggcell?\nSvara endast med talet.",
+  "answer": "23",
+  "explanation": "Könsceller har hälften av 46, alltså 23."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Genetik",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas olika varianter av samma gen?",
+  "options": [
+   "Alleler",
+   "Kromosomer",
+   "Proteiner",
+   "Celler"
+  ],
+  "answer": "Alleler",
+  "explanation": "En allel för ögonfärg kan vara blå eller brun."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Genetik",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilka kromosomer har en kvinna?",
+  "options": [
+   "XX",
+   "XY",
+   "YY",
+   "XZ"
+  ],
+  "answer": "XX",
+  "explanation": "Kvinnor har två X-kromosomer och män har X och Y."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Genetik",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas den uppsättning gener en individ har?",
+  "options": [
+   "Genotyp",
+   "Fenotyp",
+   "Population",
+   "Art"
+  ],
+  "answer": "Genotyp",
+  "explanation": "Fenotypen är det man ser, till exempel ögonfärg."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Evolution",
+  "level": 4,
+  "type": "mc",
+  "question": "Vem lade fram teorin om evolution genom naturligt urval?",
+  "options": [
+   "Charles Darwin",
+   "Isaac Newton",
+   "Carl von Linné",
+   "Albert Einstein"
+  ],
+  "answer": "Charles Darwin",
+  "explanation": "Darwin publicerade Om arternas uppkomst 1859."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Evolution",
+  "level": 4,
+  "type": "mc",
+  "question": "Vem skapade systemet för att namnge och dela in växter och djur?",
+  "options": [
+   "Carl von Linné",
+   "Charles Darwin",
+   "Gregor Mendel",
+   "Louis Pasteur"
+  ],
+  "answer": "Carl von Linné",
+  "explanation": "Linné införde det tvådelade artnamnet, som Homo sapiens."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Kroppen",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket hormon gör att blodsockret sjunker?",
+  "options": [
+   "Insulin",
+   "Adrenalin",
+   "Östrogen",
+   "Testosteron"
+  ],
+  "answer": "Insulin",
+  "explanation": "Insulin hjälper cellerna att ta upp socker."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Kroppen",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket hormon ger snabb energi och pigga sinnen vid fara eller spänning?",
+  "options": [
+   "Adrenalin",
+   "Insulin",
+   "Melatonin",
+   "Östrogen"
+  ],
+  "answer": "Adrenalin",
+  "explanation": "Adrenalin förbereder kroppen för kamp eller flykt."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Kroppen",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket hormon styr sömnrytmen och bildas mest när det är mörkt?",
+  "options": [
+   "Melatonin",
+   "Insulin",
+   "Adrenalin",
+   "Östrogen"
+  ],
+  "answer": "Melatonin",
+  "explanation": "Melatonin gör att vi blir sömniga."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Kroppen",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket organ i örat känner av balansen?",
+  "options": [
+   "Balansorganet",
+   "Trumhinnan",
+   "Hörselsnäckan",
+   "Örontrumpeten"
+  ],
+  "answer": "Balansorganet",
+  "explanation": "Balansorganet sitter i innerörat."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Kroppen",
+  "level": 4,
+  "type": "mc",
+  "question": "Hur lång tid tar det ungefär för blodet att göra ett varv i kroppen?",
+  "options": [
+   "Ungefär en minut",
+   "Ungefär en timme",
+   "Ungefär en dag",
+   "Några sekunder"
+  ],
+  "answer": "Ungefär en minut",
+  "explanation": "Blodet går ett varv på ungefär en minut."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Ekologi",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas utsläpp av ämnen som skadar naturen?",
+  "options": [
+   "Förorening",
+   "Pollinering",
+   "Nedbrytning",
+   "Fotosyntes"
+  ],
+  "answer": "Förorening",
+  "explanation": "Föroreningar kan skada sjöar och skogar."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Ekologi",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas det när växthusgaser i atmosfären gör att jorden blir varmare?",
+  "options": [
+   "Växthuseffekten",
+   "Ozonlagret",
+   "Fotosyntesen",
+   "Fruktbarheten"
+  ],
+  "answer": "Växthuseffekten",
+  "explanation": "Växthusgaser som koldioxid håller kvar värme."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Ekologi",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas en art som riskerar att dö ut?",
+  "options": [
+   "Hotad art",
+   "Främmande art",
+   "Nedbrytare",
+   "Producent"
+  ],
+  "answer": "Hotad art",
+  "explanation": "Att skydda livsmiljöer hjälper hotade arter."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Ekologi",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas variationen av arter, gener och miljöer i naturen?",
+  "options": [
+   "Biologisk mångfald",
+   "Befolkningstäthet",
+   "Växthuseffekt",
+   "Fotosyntes"
+  ],
+  "answer": "Biologisk mångfald",
+  "explanation": "Biologisk mångfald är viktig för naturens balans."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Mikrober",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken mikroorganism orsakar vanligtvis influensa?",
+  "options": [
+   "Virus",
+   "Bakterie",
+   "Svamp",
+   "Alg"
+  ],
+  "answer": "Virus",
+  "explanation": "Antibiotika hjälper inte mot virus."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Mikrober",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad används antibiotika mot?",
+  "options": [
+   "Bakterieinfektioner",
+   "Virusinfektioner",
+   "Allergier",
+   "Brutna ben"
+  ],
+  "answer": "Bakterieinfektioner",
+  "explanation": "Antibiotika dödar bakterier men inte virus."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Diagram",
+  "level": 4,
+  "type": "mc",
+  "question": "Diagrammet visar blodtryck vid olika aktiviteter (fiktiva värden). Vid vilken aktivitet var värdet högst?",
+  "options": [
+   "Löpning",
+   "Vila",
+   "Läsning",
+   "Promenad"
+  ],
+  "answer": "Löpning",
+  "explanation": "Löpning har högsta stapeln.",
+  "diagram": {
+   "type": "bar_chart",
+   "title": "Puls (slag/min)",
+   "labels": [
+    "Vila",
+    "Läsning",
+    "Promenad",
+    "Löpning"
+   ],
+   "values": [
+    65,
+    70,
+    95,
+    160
+   ],
+   "show_values": true
+  }
+ },
+ {
+  "subject": "biologi",
+  "topic": "Diagram",
+  "level": 4,
+  "type": "text",
+  "question": "Hur många slag per minut högre är pulsen vid löpning än vid vila?\nSvara endast med talet.",
+  "answer": "95",
+  "explanation": "160 − 65 = 95.",
+  "diagram": {
+   "type": "bar_chart",
+   "title": "Puls (slag/min)",
+   "labels": [
+    "Vila",
+    "Läsning",
+    "Promenad",
+    "Löpning"
+   ],
+   "values": [
+    65,
+    70,
+    95,
+    160
+   ],
+   "show_values": true
+  }
+ },
+ {
+  "subject": "biologi",
+  "topic": "Genetik",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas den form av en gen som bara märks om båda allelerna är likadana?",
+  "options": [
+   "Recessiv",
+   "Dominant",
+   "Muterad",
+   "Haploid"
+  ],
+  "answer": "Recessiv",
+  "explanation": "Den recessiva allelen syns bara hos aa."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Genetik",
+  "level": 5,
+  "type": "mc",
+  "question": "Vem kallas genetikens fader efter sina försök med ärtor?",
+  "options": [
+   "Gregor Mendel",
+   "Charles Darwin",
+   "Louis Pasteur",
+   "Alexander Fleming"
+  ],
+  "answer": "Gregor Mendel",
+  "explanation": "Mendel upptäckte hur egenskaper ärvs."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Genetik",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas en förändring i DNA-sekvensen?",
+  "options": [
+   "Mutation",
+   "Mitos",
+   "Fotosyntes",
+   "Replikation"
+  ],
+  "answer": "Mutation",
+  "explanation": "Mutationer kan vara skadliga, neutrala eller nyttiga."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Genetik",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilka fyra baser finns i DNA?",
+  "options": [
+   "A, T, C och G",
+   "A, U, C och G",
+   "A, B, C och D",
+   "X, Y, Z och W"
+  ],
+  "answer": "A, T, C och G",
+  "explanation": "I RNA ersätts T av U."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Genetik",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas den process där DNA kopieras innan celldelning?",
+  "options": [
+   "Replikation",
+   "Transkription",
+   "Translation",
+   "Förbränning"
+  ],
+  "answer": "Replikation",
+  "explanation": "Replikationen ger två kopior av DNA."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Genetik",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken sorts molekyl bygger kroppens enzymer?",
+  "options": [
+   "Proteiner",
+   "Fetter",
+   "Sockerarter",
+   "Vitaminer"
+  ],
+  "answer": "Proteiner",
+  "explanation": "Enzymer är proteiner som påskyndar kemiska reaktioner."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Evolution",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken process gör att individer med fördelaktiga egenskaper överlever och får fler ungar?",
+  "options": [
+   "Naturligt urval",
+   "Mutation",
+   "Inavel",
+   "Pollinering"
+  ],
+  "answer": "Naturligt urval",
+  "explanation": "Naturligt urval är en grundidé i evolutionsteorin."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Evolution",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas det när arter som inte är släkt utvecklar liknande egenskaper i liknande miljöer?",
+  "options": [
+   "Konvergent evolution",
+   "Mutation",
+   "Mitos",
+   "Parasitism"
+  ],
+  "answer": "Konvergent evolution",
+  "explanation": "Haj och delfin är exempel med liknande kroppsform."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Kroppen",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas den process där kroppen håller en jämn inre miljö, till exempel kroppstemperatur?",
+  "options": [
+   "Homeostas",
+   "Metamorfos",
+   "Mitos",
+   "Fotosyntes"
+  ],
+  "answer": "Homeostas",
+  "explanation": "Vi svettas när det är varmt för att hålla temperaturen."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Kroppen",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken typ av celler tillverkar antikroppar?",
+  "options": [
+   "B-lymfocyter (vita blodkroppar)",
+   "Röda blodkroppar",
+   "Blodplättar",
+   "Nervceller"
+  ],
+  "answer": "B-lymfocyter (vita blodkroppar)",
+  "explanation": "Antikroppar känner igen och fastnar på främmande ämnen."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Kroppen",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad är ett vaccin?",
+  "options": [
+   "En ofarlig version av ett smittämne som tränar immunförsvaret",
+   "Ett läkemedel som dödar bakterier",
+   "En vitamintablett",
+   "En sorts hormon"
+  ],
+  "answer": "En ofarlig version av ett smittämne som tränar immunförsvaret",
+  "explanation": "Efter vaccinet kan kroppen snabbare bekämpa smittan."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Kroppen",
+  "level": 5,
+  "type": "mc",
+  "question": "Hur kallas skillnaden mellan hur mycket energi man tar in och hur mycket man förbrukar?",
+  "options": [
+   "Energibalans",
+   "Immunförsvar",
+   "Homeostas",
+   "Respiration"
+  ],
+  "answer": "Energibalans",
+  "explanation": "Förbrukar man mindre än man tar in, lagras överskottet."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Ekologi",
+  "level": 5,
+  "type": "mc",
+  "question": "Ungefär hur stor del av energin förs vidare till nästa led i en näringskedja?",
+  "options": [
+   "Ungefär 10 %",
+   "Ungefär 90 %",
+   "Ungefär 50 %",
+   "Ungefär 1 %"
+  ],
+  "answer": "Ungefär 10 %",
+  "explanation": "Resten används av organismen eller försvinner som värme."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Ekologi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas det när näringsämnen som kväve och fosfor gör att en sjö växer igen med alger?",
+  "options": [
+   "Övergödning",
+   "Försurning",
+   "Pollinering",
+   "Fotosyntes"
+  ],
+  "answer": "Övergödning",
+  "explanation": "Gödsel och avlopp ger övergödning."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Ekologi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas det när en sjö eller skog blir surare på grund av utsläpp?",
+  "options": [
+   "Försurning",
+   "Övergödning",
+   "Pollinering",
+   "Fotosyntes"
+  ],
+  "answer": "Försurning",
+  "explanation": "Svaveldioxid och kväveoxider ger surt regn."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Ekologi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilket ämne bryter ned ozonlagret?",
+  "options": [
+   "Freoner (CFC)",
+   "Koldioxid",
+   "Syre",
+   "Kväve"
+  ],
+  "answer": "Freoner (CFC)",
+  "explanation": "Ozonlagret skyddar mot skadlig UV-strålning."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Ekologi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken gas är mest ansvarig för den förstärkta växthuseffekten?",
+  "options": [
+   "Koldioxid",
+   "Syre",
+   "Kväve",
+   "Argon"
+  ],
+  "answer": "Koldioxid",
+  "explanation": "Koldioxid släpps ut när fossila bränslen eldas."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Räkna",
+  "level": 5,
+  "type": "text",
+  "question": "Ett DNA-stycke har 20 baser av typen A och lika många av typen T. Hur många baser av typen G finns om C och G tillsammans är 60 stycken och är lika många?\nSvara endast med talet.",
+  "answer": "30",
+  "explanation": "C och G är lika många, alltså 60 / 2 = 30 vardera."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Räkna",
+  "level": 5,
+  "type": "text",
+  "question": "En bakterie delar sig var 20:e minut. Hur många bakterier finns efter en timme om man börjar med en?\nSvara endast med talet.",
+  "answer": "8",
+  "explanation": "3 delningar på en timme ger 2 · 2 · 2 = 8."
+ }
+]
