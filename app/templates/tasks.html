@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% from "_task_macros.html" import status_pill %}
+{% block title %}Uppgifter – Hemskola{% endblock %}
+{% macro card(a) %}
+<a class="taskcard" href="/uppgifter/{{ a.id }}">
+  <div class="ttop"><strong>{{ a.title }}</strong> {% if a.status != 'todo' %}{{ status_pill(a.status, labels) }}{% endif %}
+    {% if show_points %}<span class="muted">⭐ {{ a.points_awarded if a.status == 'approved' else a.points }} poäng</span>{% endif %}</div>
+  {% if a.status == 'rejected' and a.admin_comment %}<div class="muted psmall" style="margin-top:.2rem">Kommentar: {{ a.admin_comment }}</div>{% endif %}
+</a>
+{% endmacro %}
+{% block content %}
+<h1>Uppgifter</h1>
+{% if not (groups.open or groups.waiting or groups.approved) %}
+<div class="card">Du har inga uppgifter just nu. När du får en ny uppgift dyker den upp här.</div>
+{% endif %}
+
+{% if groups.open %}
+<h2>Att göra</h2>
+{% for a in groups.open %}{{ card(a) }}{% endfor %}
+{% endif %}
+
+{% if groups.waiting %}
+<h2>Väntar på att admin tittar på dem</h2>
+{% for a in groups.waiting %}{{ card(a) }}{% endfor %}
+{% endif %}
+
+{% if groups.approved %}
+<h2>Klara</h2>
+{% for a in groups.approved %}{{ card(a) }}{% endfor %}
+{% endif %}
+{% endblock %}

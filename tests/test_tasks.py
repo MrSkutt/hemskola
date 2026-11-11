@@ -1,0 +1,549 @@
+"""Tester för fliken Uppgifter: skapa, ge till elever, markera utförd, godkänn/avslå och poäng."""
+import http.server
+import re
+import threading
+from pathlib import Path
+
+import pytest
+
+from app import logic, motivation, tasks
+from app import db as database
+
+from .conftest import login
+from .test_features import PNG, _make_student
+
+
+def _conn():
+    """Testets egen anslutning. Autocommit, så att en öppen transaktion här aldrig håller låset mot appen."""
+    c = database.connect()
+    c.isolation_level = None
+    return c
+
+
+def _uid(conn, name="mia"):
+    return conn.execute("SELECT id FROM users WHERE username=?", (name,)).fetchone()["id"]
+
+
+def _admin(client):
+    client.post("/logout")
+    login(client, "admin", "adminpass1")
+
+
+def _student(client, name="mia"):
+    client.post("/logout")
+    login(client, name, "hemligt1")
+
+
+def _new_task(client, title="Städa rummet", body="Plocka upp allt från golvet.", points="50"):
+    """Skapar en uppgift som admin och returnerar dess id."""
+    _admin(client)
+    r = client.post("/admin/uppgifter/ny", data={"title": title, "body": body, "points": points})
+    assert r.status_code == 303, r.text
+    return int(r.headers["location"].rsplit("/", 1)[1])
+
+
+def _give(client, task_id, *names):
+    _admin(client)
+    ids = [_uid(_conn(), n) for n in names]
+    assert client.post(f"/admin/uppgifter/{task_id}/tilldela", data={"students": ids}).status_code == 303
+
+
+def _aid(task_id, name="mia"):
+    c = _conn()
+    return c.execute("SELECT id FROM task_assignments WHERE task_id=? AND user_id=? ORDER BY id DESC",
+                     (task_id, _uid(c, name))).fetchone()["id"]
+
+
+def _done(client, task_id, name="mia", note=""):
+    _student(client, name)
+    aid = _aid(task_id, name)
+    assert client.post(f"/uppgifter/{aid}/klar", data={"note": note}).status_code == 303
+    return aid
+
+
+def _review(client, aid, decision, comment="", back=""):
+    _admin(client)
+    return client.post(f"/admin/uppgifter/tilldelning/{aid}/granska",
+                       data={"decision": decision, "comment": comment, "back": back})
+
+
+def _points(name="mia"):
+    c = _conn()
+    return motivation.points(c, _uid(c, name))
+
+
+# ---------------------------------------------------------------- skapa och ändra
+
+def test_admin_creates_task_and_it_is_listed(client):
+    _make_student(client)
+    tid = _new_task(client)
+    page = client.get("/admin/uppgifter").text
+    assert "Städa rummet" in page and "ingen än" in page
+    detail = client.get(f"/admin/uppgifter/{tid}").text
+    assert "Plocka upp allt från golvet." in detail and 'value="50"' in detail
+    row = _conn().execute("SELECT * FROM tasks WHERE id=?", (tid,)).fetchone()
+    assert (row["points"], row["active"], row["image"]) == (50, 1, None)
+
+
+def test_task_validation_keeps_what_was_typed(client):
+    login(client, "admin", "adminpass1")
+    for data, text in (({"title": "  ", "body": "x", "points": "5"}, "Skriv en rubrik"),
+                       ({"title": "A", "body": "Min långa text", "points": "abc"}, "heltal"),
+                       ({"title": "A", "body": "Min långa text", "points": "-3"}, "mellan 0 och"),
+                       ({"title": "A", "body": "Min långa text", "points": "999999999"}, "mellan 0 och")):
+        r = client.post("/admin/uppgifter/ny", data=data)
+        assert r.status_code == 400 and text in r.text
+        assert data["body"] in r.text                      # texten som skrevs finns kvar i formuläret
+    assert _conn().execute("SELECT COUNT(*) FROM tasks").fetchone()[0] == 0
+
+
+def test_task_can_be_edited_and_text_is_escaped(client):
+    tid = _new_task(client, title="<b>Fet</b>", body="<script>alert(1)</script>")
+    page = client.get(f"/admin/uppgifter/{tid}").text
+    assert "<script>alert(1)</script>" not in page and "&lt;script&gt;" in page
+    r = client.post(f"/admin/uppgifter/{tid}", data={"title": "Ny rubrik", "body": "Ny text", "points": "70"})
+    assert r.status_code == 303
+    row = _conn().execute("SELECT * FROM tasks WHERE id=?", (tid,)).fetchone()
+    assert (row["title"], row["body"], row["points"]) == ("Ny rubrik", "Ny text", 70)
+    assert client.post(f"/admin/uppgifter/{tid}", data={"title": "", "points": "1"}).status_code == 400
+    assert client.get("/admin/uppgifter/9999").status_code == 404
+
+
+def test_only_admin_can_use_admin_task_routes_and_only_students_the_student_ones(client):
+    _make_student(client)
+    tid = _new_task(client)
+    _give(client, tid, "mia")
+    aid = _aid(tid)
+    _student(client)
+    for method, url, data in (("get", "/admin/uppgifter", None), ("get", f"/admin/uppgifter/{tid}", None),
+                              ("post", "/admin/uppgifter/ny", {"title": "x"}),
+                              ("post", f"/admin/uppgifter/{tid}/tilldela", {"students": [1]}),
+                              ("post", f"/admin/uppgifter/tilldelning/{aid}/granska", {"decision": "approve"}),
+                              ("post", f"/admin/uppgifter/{tid}/ta-bort", None)):
+        assert getattr(client, method)(url, **({"data": data} if data is not None else {})).status_code == 403, url
+    _admin(client)
+    assert client.get("/uppgifter").status_code == 403
+    client.post("/logout")
+    assert client.get("/uppgifter").status_code == 303        # inloggning krävs
+
+
+# ---------------------------------------------------------------- bild
+
+def test_task_image_upload_replace_remove_and_cleanup(client):
+    _make_student(client)
+    _admin(client)
+    r = client.post("/admin/uppgifter/ny", data={"title": "Rita", "body": "", "points": "10"},
+                    files={"image": ("hund.png", PNG, "image/png")})
+    tid = int(r.headers["location"].rsplit("/", 1)[1])
+    img = _conn().execute("SELECT image FROM tasks WHERE id=?", (tid,)).fetchone()["image"]
+    assert re.fullmatch(r"uppgift-[0-9a-f]{10}\.png", img)
+    from app import main
+    path = main.media_dir() / img
+    assert path.is_file() and client.get(f"/media/{img}").status_code == 200
+    assert f"/media/{img}" in client.get(f"/admin/uppgifter/{tid}").text
+
+    # byte av bild raderar den gamla filen
+    client.post(f"/admin/uppgifter/{tid}", data={"title": "Rita", "points": "10"},
+                files={"image": ("katt.png", PNG, "image/png")})
+    img2 = _conn().execute("SELECT image FROM tasks WHERE id=?", (tid,)).fetchone()["image"]
+    assert img2 != img and not path.exists() and (main.media_dir() / img2).is_file()
+
+    # ta bort bilden
+    client.post(f"/admin/uppgifter/{tid}", data={"title": "Rita", "points": "10", "remove_image": "1"})
+    assert _conn().execute("SELECT image FROM tasks WHERE id=?", (tid,)).fetchone()["image"] is None
+    assert not (main.media_dir() / img2).exists()
+
+    # radera uppgiften raderar bilden
+    r = client.post("/admin/uppgifter/ny", data={"title": "Två", "points": "1"},
+                    files={"image": ("a.png", PNG, "image/png")})
+    t2 = int(r.headers["location"].rsplit("/", 1)[1])
+    img3 = _conn().execute("SELECT image FROM tasks WHERE id=?", (t2,)).fetchone()["image"]
+    assert (main.media_dir() / img3).is_file()
+    client.post(f"/admin/uppgifter/{t2}/ta-bort")
+    assert not (main.media_dir() / img3).exists()
+
+
+def test_form_with_empty_file_field_like_a_browser_sends_it(client):
+    """En webbläsare skickar med ett tomt filfält när ingen bild valts. Det ska fungera som "ingen bild"."""
+    _admin(client)
+    r = client.post("/admin/uppgifter/ny", data={"title": "Utan bild", "body": "x", "points": "5", "image_url": ""},
+                    files={"image": ("", b"", "application/octet-stream")})
+    assert r.status_code == 303
+    tid = int(r.headers["location"].rsplit("/", 1)[1])
+    assert _conn().execute("SELECT image FROM tasks WHERE id=?", (tid,)).fetchone()["image"] is None
+    r = client.post(f"/admin/uppgifter/{tid}", data={"title": "Utan bild 2", "body": "x", "points": "6"},
+                    files={"image": ("", b"", "application/octet-stream")})
+    assert r.status_code == 303
+    assert _conn().execute("SELECT title, points FROM tasks WHERE id=?", (tid,)).fetchone()[:] == ("Utan bild 2", 6)
+
+
+def test_task_image_does_not_delete_other_media_files(client):
+    """Bara filer som heter uppgift-* tas bort, aldrig övningsbilder eller startmaterial."""
+    from app import main
+    _admin(client)
+    seed = next(f for f in main.media_dir().iterdir() if f.is_file())
+    _conn().execute("INSERT INTO tasks(title, image) VALUES ('X', ?)", (seed.name,)).connection.commit()
+    tid = _conn().execute("SELECT id FROM tasks").fetchone()["id"]
+    client.post(f"/admin/uppgifter/{tid}", data={"title": "X", "points": "1", "remove_image": "1"})
+    assert seed.is_file()
+
+
+def test_task_image_rejects_bad_uploads_and_keeps_form(client):
+    _admin(client)
+    for name, data, text in (("x.exe", b"MZ....", "filtyp"), ("x.png", b"not a png", "ser inte ut som"),
+                             ("x.png", PNG + b"0" * 3_100_000, "större än 3 MB")):
+        r = client.post("/admin/uppgifter/ny", data={"title": "Min rubrik", "points": "5"},
+                        files={"image": (name, data, "application/octet-stream")})
+        assert r.status_code == 400 and text in r.text and "Min rubrik" in r.text, text
+    assert _conn().execute("SELECT COUNT(*) FROM tasks").fetchone()[0] == 0
+
+
+def test_task_image_from_url_uses_fetch_and_reports_errors(client, monkeypatch):
+    _admin(client)
+    seen = []
+    monkeypatch.setattr(tasks, "fetch_image", lambda url: seen.append(url) or (".png", PNG))
+    r = client.post("/admin/uppgifter/ny", data={"title": "Webbild", "points": "5", "image_url": " https://exempel.se/a.png "})
+    assert r.status_code == 303 and seen == [" https://exempel.se/a.png "]
+    img = _conn().execute("SELECT image FROM tasks").fetchone()["image"]
+    from app import main
+    assert re.fullmatch(r"uppgift-[0-9a-f]{10}\.png", img) and (main.media_dir() / img).read_bytes() == PNG
+
+    def boom(url):
+        raise ValueError("Webbadressen pekar på en intern adress och kan inte användas.")
+    monkeypatch.setattr(tasks, "fetch_image", boom)
+    r = client.post("/admin/uppgifter/ny", data={"title": "Dålig", "points": "5", "image_url": "http://10.0.0.1/x.png"})
+    assert r.status_code == 400 and "intern adress" in r.text and "http://10.0.0.1/x.png" in r.text
+    assert _conn().execute("SELECT COUNT(*) FROM tasks").fetchone()[0] == 1
+
+
+# ---------------------------------------------------------------- hämta bild från webbadress
+
+class _Handler(http.server.BaseHTTPRequestHandler):
+    def log_message(self, *a):
+        pass
+
+    def do_GET(self):
+        routes = {"/img.png": (200, "image/png", PNG), "/text": (200, "text/plain", b"hej"),
+                  "/big": (200, "image/png", PNG + b"0" * 3_100_000), "/missing": (404, "text/plain", b"nej")}
+        if self.path == "/redir":
+            self.send_response(302); self.send_header("Location", "/img.png"); self.end_headers(); return
+        if self.path == "/redir-private":
+            self.send_response(302); self.send_header("Location", "http://10.0.0.5/secret.png"); self.end_headers(); return
+        status, ctype, body = routes.get(self.path, (404, "text/plain", b""))
+        self.send_response(status); self.send_header("Content-Type", ctype)
+        self.send_header("Content-Length", str(len(body))); self.end_headers(); self.wfile.write(body)
+
+
+@pytest.fixture()
+def web(monkeypatch):
+    """En lokal webbserver som får gälla som 'publik' i testet (och som får använda sin slumpmässiga port)."""
+    server = http.server.ThreadingHTTPServer(("127.0.0.1", 0), _Handler)
+    threading.Thread(target=server.serve_forever, daemon=True).start()
+    port = server.server_address[1]
+    real = tasks._public_ip
+    monkeypatch.setattr(tasks, "_public_ip", lambda host, p: "127.0.0.1" if host == "bilder.test" else real(host, p))
+    monkeypatch.setattr(tasks, "ALLOWED_PORTS", {80, 443, port})
+    yield f"http://bilder.test:{port}"
+    server.shutdown()
+
+
+def test_fetch_image_downloads_follows_redirects_and_sniffs(web):
+    assert tasks.fetch_image(web + "/img.png") == (".png", PNG)
+    assert tasks.fetch_image(web + "/redir") == (".png", PNG)
+
+
+def test_fetch_image_rejects_non_images_errors_and_big_files(web):
+    for path, text in (("/text", "ingen bild"), ("/missing", r"fel \(404\)"), ("/big", "större än 3 MB")):
+        with pytest.raises(ValueError, match=text):
+            tasks.fetch_image(web + path)
+
+
+def test_fetch_image_does_not_follow_redirects_to_private_addresses(web):
+    with pytest.raises(ValueError, match="intern adress"):
+        tasks.fetch_image(web + "/redir-private")
+
+
+@pytest.mark.parametrize("url,text", [
+    ("", "börjar med http"), ("ftp://exempel.se/a.png", "börjar med http"), ("javascript:alert(1)", "börjar med http"),
+    ("file:///etc/passwd", "börjar med http"), ("http://", "börjar med http"),
+    ("http://127.0.0.1/a.png", "intern adress"), ("http://localhost/a.png", "intern adress"),
+    ("http://10.1.2.3/a.png", "intern adress"), ("http://192.168.1.1/a.png", "intern adress"),
+    ("http://172.16.0.9/a.png", "intern adress"), ("http://169.254.169.254/latest/meta-data", "intern adress"),
+    ("http://[::1]/a.png", "intern adress"), ("http://[::ffff:127.0.0.1]/a.png", "intern adress"),
+    ("http://0.0.0.0/a.png", "intern adress"),
+    ("http://exempel.se:22/a.png", "vanliga webbportar"), ("http://exempel.se:99999/a.png", "giltig"),
+])
+def test_fetch_image_blocks_unsafe_urls(url, text):
+    with pytest.raises(ValueError, match=text):
+        tasks.fetch_image(url)
+
+
+# ---------------------------------------------------------------- ge till elever
+
+def test_assign_to_several_students_skips_duplicates_and_inactive(client):
+    _make_student(client, "mia")
+    _make_student(client, "ben")
+    _make_student(client, "cia")
+    c = _conn()
+    c.execute("UPDATE users SET active=0 WHERE username='cia'")
+    c.commit()
+    tid = _new_task(client)
+    ids = [_uid(_conn(), n) for n in ("mia", "ben", "cia")]
+    admin_id = _uid(_conn(), "admin")
+    r = client.post(f"/admin/uppgifter/{tid}/tilldela", data={"students": ids + [admin_id, 9999]})
+    assert r.status_code == 303
+    assert [row["user_id"] for row in _conn().execute("SELECT user_id FROM task_assignments ORDER BY user_id")] == sorted(ids[:2])
+    # ger man den igen hoppas de över
+    r = client.post(f"/admin/uppgifter/{tid}/tilldela", data={"students": ids[:2]})
+    assert "Hoppade över" in client.get(r.headers["location"]).text
+    assert _conn().execute("SELECT COUNT(*) FROM task_assignments").fetchone()[0] == 2
+    page = client.get(f"/admin/uppgifter/{tid}").text
+    assert page.count("(har den redan)") == 2
+    assert client.post(f"/admin/uppgifter/{tid}/tilldela", data={}).status_code == 303
+    assert _conn().execute("SELECT COUNT(*) FROM task_assignments").fetchone()[0] == 2
+
+
+def test_archived_task_cannot_be_given_and_delete_needs_no_assignments(client):
+    _make_student(client)
+    tid = _new_task(client)
+    client.post(f"/admin/uppgifter/{tid}/arkiv")
+    assert _conn().execute("SELECT active FROM tasks WHERE id=?", (tid,)).fetchone()[0] == 0
+    client.post(f"/admin/uppgifter/{tid}/tilldela", data={"students": [_uid(_conn())]})
+    assert _conn().execute("SELECT COUNT(*) FROM task_assignments").fetchone()[0] == 0
+    client.post(f"/admin/uppgifter/{tid}/arkiv")
+    _give(client, tid, "mia")
+    client.post(f"/admin/uppgifter/{tid}/ta-bort")                       # har tilldelningar → ska inte gå
+    assert _conn().execute("SELECT COUNT(*) FROM tasks").fetchone()[0] == 1
+    client.post(f"/admin/uppgifter/tilldelning/{_aid(tid)}/ta-bort")
+    client.post(f"/admin/uppgifter/{tid}/ta-bort")
+    assert _conn().execute("SELECT COUNT(*) FROM tasks").fetchone()[0] == 0
+
+
+# ---------------------------------------------------------------- elevens sida
+
+def test_student_sees_only_own_tasks_and_a_badge_in_the_tab(client):
+    _make_student(client, "mia")
+    _make_student(client, "ben")
+    tid = _new_task(client, title="Läs en bok")
+    _give(client, tid, "mia")
+    _student(client, "ben")
+    page = client.get("/uppgifter").text
+    assert "Läs en bok" not in page and "inga uppgifter just nu" in page
+    assert client.get(f"/uppgifter/{_aid(tid)}").status_code == 404      # någon annans uppgift
+    assert client.post(f"/uppgifter/{_aid(tid)}/klar").status_code == 303
+    assert _conn().execute("SELECT status FROM task_assignments").fetchone()[0] == "todo"   # bens försök gjorde inget
+    _student(client, "mia")
+    page = client.get("/uppgifter").text
+    assert "Läs en bok" in page and "Att göra" in page and "50 poäng" in page
+    assert re.search(r'href="/uppgifter"[^>]*>Uppgifter <span class="pill wait"[^>]*>1</span>', page)
+    detail = client.get(f"/uppgifter/{_aid(tid)}").text
+    assert "Plocka upp allt från golvet." in detail and "Jag har gjort uppgiften" in detail
+    assert client.get("/uppgifter/9999").status_code == 404
+
+
+def test_task_image_is_shown_to_the_student(client):
+    _make_student(client)
+    _admin(client)
+    r = client.post("/admin/uppgifter/ny", data={"title": "Titta", "points": "5"}, files={"image": ("a.png", PNG, "image/png")})
+    tid = int(r.headers["location"].rsplit("/", 1)[1])
+    img = _conn().execute("SELECT image FROM tasks").fetchone()["image"]
+    _give(client, tid, "mia")
+    _student(client)
+    assert f'src="/media/{img}"' in client.get(f"/uppgifter/{_aid(tid)}").text
+    assert client.get(f"/media/{img}").status_code == 200
+
+
+def test_student_marks_done_once_with_optional_note(client):
+    _make_student(client)
+    tid = _new_task(client)
+    _give(client, tid, "mia")
+    aid = _done(client, tid, note="Det gick bra, tog 10 minuter.")
+    row = _conn().execute("SELECT * FROM task_assignments WHERE id=?", (aid,)).fetchone()
+    assert row["status"] == "done" and row["done_at"] and row["student_note"] == "Det gick bra, tog 10 minuter."
+    page = client.get(f"/uppgifter/{aid}").text
+    assert "nu tittar admin" in page and "Det gick bra" in page and "Jag har gjort uppgiften" not in page
+    assert "Väntar på att admin" in client.get("/uppgifter").text
+    # en andra gång ändrar ingenting
+    client.post(f"/uppgifter/{aid}/klar", data={"note": "ändrad"})
+    assert _conn().execute("SELECT student_note FROM task_assignments WHERE id=?", (aid,)).fetchone()[0] == "Det gick bra, tog 10 minuter."
+    assert _points()["tasks"] == 0                                        # ingen poäng före godkännande
+
+
+# ---------------------------------------------------------------- granska och poäng
+
+def test_approve_gives_points_and_student_sees_the_result(client):
+    _make_student(client)
+    tid = _new_task(client, points="80")
+    _give(client, tid, "mia")
+    aid = _done(client, tid, note="Klart!")
+    _admin(client)
+    page = client.get("/admin/uppgifter").text
+    assert "Att granska" in page and "Klart!" in page and re.search(r'href="/admin/uppgifter"[^>]*>Uppgifter <span class="pill wait"[^>]*>1</span>', page)
+    r = _review(client, aid, "approve", "Fint jobbat!", back="/admin/uppgifter")
+    assert r.status_code == 303 and r.headers["location"] == "/admin/uppgifter"
+    row = _conn().execute("SELECT * FROM task_assignments WHERE id=?", (aid,)).fetchone()
+    assert (row["status"], row["points_awarded"], row["admin_comment"]) == ("approved", 80, "Fint jobbat!")
+    assert "Att granska" not in client.get("/admin/uppgifter").text
+    p = _points()
+    assert p["tasks"] == 80 and p["total"] == 80 and p["balance"] == 80
+    _student(client)
+    page = client.get(f"/uppgifter/{aid}").text
+    assert "Godkänd" in page and "Du fick 80 poäng" in page and "Fint jobbat!" in page
+    assert "Klara" in client.get("/uppgifter").text
+    assert "80" in client.get("/framsteg").text and "från uppgifter" in client.get("/framsteg").text
+
+
+def test_reject_needs_comment_then_student_redoes_and_gets_points(client):
+    _make_student(client)
+    tid = _new_task(client, points="30")
+    _give(client, tid, "mia")
+    aid = _done(client, tid)
+    assert _review(client, aid, "reject", "   ").status_code == 303
+    assert _conn().execute("SELECT status FROM task_assignments").fetchone()[0] == "done"   # kräver kommentar
+    assert "Skriv en kommentar" in client.get(f"/admin/uppgifter/{tid}").text
+    _review(client, aid, "reject", "Du glömde under sängen.")
+    assert _conn().execute("SELECT status FROM task_assignments").fetchone()[0] == "rejected"
+    assert _points()["tasks"] == 0
+    _student(client)
+    page = client.get(f"/uppgifter/{aid}").text
+    assert "Gör om uppgiften" in page and "Du glömde under sängen." in page and "Jag har gjort uppgiften" in page
+    assert "Du glömde under sängen." in client.get("/uppgifter").text
+    assert re.search(r'Uppgifter <span class="pill wait"[^>]*>1</span>', client.get("/uppgifter").text)   # räknas som "att göra"
+    _done(client, tid, note="Nu med under sängen")
+    _review(client, aid, "approve")
+    assert _points()["tasks"] == 30
+
+
+def test_decision_can_be_changed_and_points_follow(client):
+    _make_student(client)
+    tid = _new_task(client, points="40")
+    _give(client, tid, "mia")
+    aid = _done(client, tid)
+    _review(client, aid, "approve")
+    assert _points()["total"] == 40
+    _review(client, aid, "reject", "Det blev fel ändå.")
+    assert _points()["total"] == 0
+    assert _conn().execute("SELECT points_awarded FROM task_assignments").fetchone()[0] == 0
+    _student(client)
+    assert client.post(f"/uppgifter/{aid}/klar").status_code == 303
+    _review(client, aid, "approve")
+    assert _points()["total"] == 40
+    _review(client, aid, "approve", "Ny kommentar")                      # godkänt igen ger inga extra poäng
+    assert _points()["total"] == 40
+
+
+def test_review_before_student_is_done_is_refused(client):
+    _make_student(client)
+    tid = _new_task(client)
+    _give(client, tid, "mia")
+    aid = _aid(tid)
+    _review(client, aid, "approve")
+    assert _conn().execute("SELECT status FROM task_assignments WHERE id=?", (aid,)).fetchone()[0] == "todo"
+    assert _review(client, aid, "kanske").status_code == 400
+    assert _review(client, 99999, "approve").status_code == 404
+
+
+def test_points_are_a_snapshot_and_count_toward_rewards(client):
+    _make_student(client)
+    tid = _new_task(client, points="100")
+    _give(client, tid, "mia")
+    aid = _done(client, tid)
+    _review(client, aid, "approve")
+    client.post(f"/admin/uppgifter/{tid}", data={"title": "Städa rummet", "points": "5"})    # ändrar poängen i efterhand
+    assert _points()["tasks"] == 100
+    sid = _uid(_conn())
+    assert client.post(f"/admin/student/{sid}/rewards", data={"title": "Glass", "cost": "90"}).status_code == 303
+    assert motivation.reward_list(_conn(), sid, _points()["balance"])[0]["ready"] is True
+    # en ny tilldelning efter godkännande går bra och använder de nya poängen
+    _give(client, tid, "mia")
+    aid2 = _done(client, tid)
+    _review(client, aid2, "approve")
+    assert _points()["tasks"] == 105
+
+
+def test_points_before_points_since_do_not_count(client):
+    _make_student(client)
+    tid = _new_task(client, points="60")
+    _give(client, tid, "mia")
+    aid = _done(client, tid)
+    _review(client, aid, "approve")
+    c = _conn()
+    logic.get_prefs(c, _uid(c))
+    c.execute("UPDATE user_prefs SET points_since=datetime('now', '+1 hour') WHERE user_id=?", (_uid(c),))
+    c.commit()
+    assert _points()["tasks"] == 0
+
+
+def test_task_points_hidden_for_student_with_points_off(client):
+    _make_student(client)
+    tid = _new_task(client, points="77")
+    _give(client, tid, "mia")
+    aid = _aid(tid)
+    c = _conn()
+    logic.get_prefs(c, _uid(c))
+    c.execute("UPDATE user_prefs SET points_on=0 WHERE user_id=?", (_uid(c),))
+    c.commit()
+    _student(client)
+    assert "77" not in client.get("/uppgifter").text and "77" not in client.get(f"/uppgifter/{aid}").text
+    c.execute("UPDATE user_prefs SET points_on=1 WHERE user_id=?", (_uid(c),))
+    c.commit()
+    assert "77 poäng" in client.get("/uppgifter").text
+
+
+def test_remove_assignment_rules(client):
+    _make_student(client)
+    tid = _new_task(client)
+    _give(client, tid, "mia")
+    aid = _done(client, tid)
+    _review(client, aid, "approve")
+    client.post(f"/admin/uppgifter/tilldelning/{aid}/ta-bort")           # godkänd går inte att ta bort
+    assert _conn().execute("SELECT COUNT(*) FROM task_assignments").fetchone()[0] == 1
+    _give(client, tid, "mia")                                            # ny tilldelning efter godkännande
+    new = _aid(tid)
+    assert new != aid
+    client.post(f"/admin/uppgifter/tilldelning/{new}/ta-bort", data={"back": "/admin/uppgifter/" + str(tid)})
+    assert _conn().execute("SELECT COUNT(*) FROM task_assignments").fetchone()[0] == 1
+    assert client.post("/admin/uppgifter/tilldelning/9999/ta-bort").status_code == 404
+
+
+def test_back_parameter_cannot_redirect_elsewhere(client):
+    _make_student(client)
+    tid = _new_task(client)
+    _give(client, tid, "mia")
+    aid = _done(client, tid)
+    for evil in ("https://evil.example", "//evil.example", "/admin/uppgifter//evil.example", "/home", "/admin/uppgifter\\x"):
+        r = _review(client, aid, "reject", "Nej", back=evil)
+        assert r.headers["location"] == f"/admin/uppgifter/{tid}", evil
+    r = _review(client, aid, "reject", "Nej", back="/admin/uppgifter")
+    assert r.headers["location"] == "/admin/uppgifter"
+
+
+def test_task_counts_in_the_admin_list(client):
+    _make_student(client, "mia")
+    _make_student(client, "ben")
+    tid = _new_task(client)
+    _give(client, tid, "mia", "ben")
+    _done(client, tid, "mia")
+    _admin(client)
+    page = client.get("/admin/uppgifter").text
+    assert "1 att göra · 1 väntar på granskning" in page
+    _review(client, _aid(tid, "mia"), "approve")
+    assert "1 att göra · 1 godkänd" in client.get("/admin/uppgifter").text
+
+
+def test_tables_are_added_to_an_old_database(tmp_path, monkeypatch):
+    """En databas från före uppgifterna får tabellerna när appen startar, utan att data försvinner."""
+    import sqlite3
+    path = tmp_path / "old.db"
+    old = sqlite3.connect(path)
+    old.executescript("CREATE TABLE users (id INTEGER PRIMARY KEY, username TEXT, display_name TEXT, password_hash TEXT, "
+                      "role TEXT, active INTEGER DEFAULT 1, created_at TEXT DEFAULT (datetime('now')));"
+                      "INSERT INTO users(username, display_name, password_hash, role) VALUES ('a','A','x','admin');")
+    old.commit()
+    old.close()
+    monkeypatch.setattr(database, "DB_PATH", str(path))
+    database.init_db()
+    conn = database.connect()
+    assert {"tasks", "task_assignments"} <= {r[0] for r in conn.execute("SELECT name FROM sqlite_master WHERE type='table'")}
+    assert conn.execute("SELECT COUNT(*) FROM users").fetchone()[0] == 1
+    conn.close()

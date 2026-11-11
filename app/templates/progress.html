@@ -25,7 +25,7 @@
     <tr><th>Så får du poäng</th><th></th></tr>
     {% for what, why in rules %}<tr><td><strong>{{ what }}</strong></td><td>{{ why }}</td></tr>{% endfor %}
   </table>
-  <p class="muted psmall" style="margin-bottom:0">Du får poäng bara för övning i skolämnen, inte för prov och inte för K-pop. Av dina poäng kommer {{ prog.points.answers }} från svar, {{ prog.points.goal + prog.points.week }} från dagsmål och {{ prog.points.levels }} från nivåer.</p>
+  <p class="muted psmall" style="margin-bottom:0">Du får poäng för övning bara i skolämnen, inte för prov och inte för K-pop. Av dina poäng kommer {{ prog.points.answers }} från svar, {{ prog.points.goal + prog.points.week }} från dagsmål, {{ prog.points.levels }} från nivåer och {{ prog.points.tasks }} från uppgifter.</p>
 </div>
 
 <div class="card">

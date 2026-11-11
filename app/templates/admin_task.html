@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% from "_task_macros.html" import review_form, status_pill %}
+{% block title %}{{ task.title }} – Uppgifter{% endblock %}
+{% block content %}
+{% set here = '/admin/uppgifter/' ~ task.id %}
+<p><a href="/admin/uppgifter">← Alla uppgifter</a></p>
+<h1>{{ task.title }} {% if not task.active %}<span class="pill off">arkiverad</span>{% endif %}</h1>
+
+<div class="card">
+  <h2 style="margin-top:0">Ge till elever</h2>
+  {% if not task.active %}
+    <p class="muted" style="margin:0">Uppgiften är arkiverad. Visa den igen längre ner om du vill ge den till fler.</p>
+  {% elif students %}
+  <form method="post" action="{{ here }}/tilldela">
+    <div class="checks">
+      {% for s in students %}
+      <label><input type="checkbox" name="students" value="{{ s.id }}" {{ 'disabled' if s.id in busy }}> {{ s.display_name }}{% if s.id in busy %} <span class="muted">(har den redan)</span>{% endif %}</label>
+      {% endfor %}
+    </div>
+    <button>Ge uppgiften till de valda</button>
+  </form>
+  {% else %}<p class="muted" style="margin:0">Det finns inga elever att ge uppgiften till.</p>{% endif %}
+</div>
+
+<div class="card">
+  <h2 style="margin-top:0">Givet till</h2>
+  {% if rows %}
+  {% for a in rows %}
+  <div class="reward">
+    <div class="rtop"><strong>{{ a.student }}</strong> {{ status_pill(a.status, labels) }}
+      <span class="muted">{% if a.status == 'approved' %}{{ a.points_awarded }} poäng · {{ a.reviewed_at|ts }}{% elif a.done_at %}klar {{ a.done_at|ts }}{% else %}given {{ a.created_at|ts }}{% endif %}</span></div>
+    {% if a.student_note %}<div class="notebox wait"><strong>{{ a.student }} skriver:</strong> {{ a.student_note }}</div>{% endif %}
+    {% if a.admin_comment and a.status != 'done' %}<div class="notebox {{ 'good' if a.status == 'approved' else 'redo' }}"><strong>Din kommentar:</strong> {{ a.admin_comment }}</div>{% endif %}
+    {% if a.status == 'done' %}
+      {{ review_form(a, here) }}
+    {% elif a.status in ('approved', 'rejected') %}
+      <details><summary class="muted">Ändra beslut</summary>{{ review_form(a, here) }}</details>
+    {% endif %}
+    {% if a.status != 'approved' %}
+    <form class="inline" method="post" action="/admin/uppgifter/tilldelning/{{ a.id }}/ta-bort" style="display:inline-block;margin-top:.4rem">
+      <input type="hidden" name="back" value="{{ here }}"><button class="small ghost">Ta bort från {{ a.student }}</button></form>
+    {% endif %}
+  </div>
+  {% endfor %}
+  {% else %}<p class="muted" style="margin:0">Ingen har fått den här uppgiften än.</p>{% endif %}
+</div>
+
+<div class="card">
+  <h2 style="margin-top:0">Ändra uppgiften</h2>
+  <form method="post" action="{{ here }}" enctype="multipart/form-data">
+    <label>Rubrik</label>
+    <input name="title" required maxlength="100" style="width:100%" value="{{ form.title if form else task.title }}">
+    <label>Vad ska eleven göra?</label>
+    <textarea class="tasktext" name="body" maxlength="4000">{{ form.body if form else task.body }}</textarea>
+    <div class="row" style="margin-top:.6rem">
+      <div><label>Poäng vid godkänt</label><input type="number" name="points" min="0" max="100000" value="{{ form.points if form else task.points }}" style="width:9rem"></div>
+      <div><label>{{ 'Byt bild – ladda upp' if task.image else 'Bild (valfri) – ladda upp' }}</label><input type="file" name="image" accept="image/png,image/jpeg,image/gif,image/webp,image/svg+xml"></div>
+      <div style="flex:1;min-width:14rem"><label>… eller hämta från webbadress</label><input name="image_url" placeholder="https://…" style="width:100%" value="{{ form.image_url if form }}"></div>
+    </div>
+    {% if task.image %}
+    <div class="taskimg"><img src="/media/{{ task.image }}" alt="Bild till uppgiften"></div>
+    <label style="display:flex;gap:.4rem;align-items:center"><input type="checkbox" name="remove_image" value="1"> Ta bort bilden</label>
+    {% endif %}
+    <p class="muted psmall" style="margin:.4rem 0 .8rem">Ändrade poäng gäller nästa gång en uppgift godkänns. Elever som redan fått poäng behåller dem.</p>
+    <button>Spara</button>
+  </form>
+  <hr style="border:0;border-top:1px solid var(--line);margin:1rem 0">
+  <form class="inline" method="post" action="{{ here }}/arkiv"><button class="small ghost">{{ 'Arkivera uppgiften' if task.active else 'Visa uppgiften igen' }}</button></form>
+  {% if not rows %}
+  <form class="inline" method="post" action="{{ here }}/ta-bort" onsubmit="return confirm('Ta bort uppgiften?')"><button class="small danger">Ta bort</button></form>
+  {% endif %}
+</div>
+{% endblock %}

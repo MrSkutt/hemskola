@@ -160,3 +160,26 @@ summary.studenthead::before { content: "▸"; color: var(--muted); font-size: 1.
 details[open] > summary.studenthead::before { content: "▾"; }
 summary.studenthead .sname { font-size: 1.15rem; }
 summary.studenthead .sopen { margin-left: auto; }
+
+/* ---- uppgifter ---- */
+.pill.wait { background: var(--warnbg); color: var(--warn); }
+.pill.redo { background: var(--badbg); color: var(--bad); }
+header.top nav a .pill { padding: 0 .5rem; font-size: .8rem; margin-left: .15rem; }
+textarea.tasktext { min-height: 120px; font-family: inherit; font-size: 1rem; }
+textarea.tasktext.short { min-height: 64px; }
+.taskbody { white-space: pre-line; font-size: 1.05rem; }
+.taskimg { margin: .8rem 0; }
+.taskimg img { max-width: 100%; max-height: 420px; height: auto; border-radius: 10px; background: #fff; }
+.taskcard { display: block; text-decoration: none; color: inherit; padding: .8rem 1rem; border: 1px solid var(--line); border-radius: 12px; margin-bottom: .6rem; background: var(--card); }
+.taskcard:hover { border-color: var(--accent); }
+.taskcard .ttop { display: flex; gap: .6rem; align-items: baseline; flex-wrap: wrap; }
+.taskcard .ttop strong { font-size: 1.05rem; }
+.notebox { padding: .7rem 1rem; border-radius: 10px; margin: .8rem 0; white-space: pre-line; }
+.notebox.good { background: var(--okbg); color: var(--ok); }
+.notebox.redo { background: var(--badbg); color: var(--bad); }
+.notebox.wait { background: var(--warnbg); color: var(--warn); }
+form.review { margin: .4rem 0 0; }
+form.review textarea { margin-bottom: .4rem; }
+.checks { display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; margin: .4rem 0 .8rem; }
+.checks label { display: flex; align-items: center; gap: .4rem; margin: 0; }
+details.newtask > summary { cursor: pointer; font-weight: 700; font-size: 1.1rem; }

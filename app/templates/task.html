@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% from "_task_macros.html" import status_pill %}
+{% block title %}{{ a.title }} – Uppgifter{% endblock %}
+{% block content %}
+<p><a href="/uppgifter">← Uppgifter</a></p>
+<div class="card">
+  <h1 style="margin-top:0">{{ a.title }}</h1>
+  <p style="margin:.2rem 0 1rem">{{ status_pill(a.status, labels) }}
+    {% if show_points %}<span class="muted">⭐ {{ a.points_awarded if a.status == 'approved' else a.points }} poäng när uppgiften är godkänd</span>{% endif %}</p>
+  {% if a.body %}<div class="taskbody">{{ a.body }}</div>{% endif %}
+  {% if a.image %}<div class="taskimg"><a href="/media/{{ a.image }}"><img src="/media/{{ a.image }}" alt="Bild till uppgiften"></a></div>{% endif %}
+</div>
+
+{% if a.status == 'approved' %}
+<div class="notebox good"><strong>✅ Godkänd!</strong>{% if show_points and a.points_awarded %} Du fick {{ a.points_awarded }} poäng.{% endif %}{% if a.admin_comment %}
+Admin skriver: {{ a.admin_comment }}{% endif %}</div>
+{% elif a.status == 'done' %}
+<div class="notebox wait"><strong>⏳ Klar – nu tittar admin på den.</strong>{% if a.student_note %}
+Du skrev: {{ a.student_note }}{% endif %}</div>
+{% else %}
+  {% if a.status == 'rejected' %}
+  <div class="notebox redo"><strong>🔁 Gör om uppgiften</strong>{% if a.admin_comment %}
+Admin skriver: {{ a.admin_comment }}{% endif %}</div>
+  {% endif %}
+<div class="card">
+  <h2 style="margin-top:0">Har du gjort uppgiften?</h2>
+  <form method="post" action="/uppgifter/{{ a.id }}/klar">
+    <label>Vill du berätta något om hur det gick? (valfritt)</label>
+    <textarea class="tasktext short" name="note" maxlength="{{ note_max }}"></textarea>
+    <p style="margin:.6rem 0 0"><button>✅ Jag har gjort uppgiften</button></p>
+  </form>
+</div>
+{% endif %}
+{% endblock %}

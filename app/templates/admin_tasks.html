@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% from "_task_macros.html" import review_form %}
+{% block title %}Uppgifter – Hemskola{% endblock %}
+{% block content %}
+<h1>Uppgifter</h1>
+
+{% if queue %}
+<div class="card">
+  <h2 style="margin-top:0">Att granska <span class="pill wait">{{ queue|length }}</span></h2>
+  {% for a in queue %}
+  <div class="reward">
+    <div class="rtop"><strong>{{ a.title }}</strong> <span class="muted">{{ a.student }} · klar {{ a.done_at|ts }} · {{ a.points }} poäng</span></div>
+    {% if a.student_note %}<div class="notebox wait"><strong>{{ a.student }} skriver:</strong> {{ a.student_note }}</div>{% endif %}
+    <p class="muted" style="margin:.2rem 0"><a href="/admin/uppgifter/{{ a.task_id }}">Visa uppgiften</a></p>
+    {{ review_form(a, '/admin/uppgifter') }}
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+<div class="card">
+  <details class="newtask" {{ 'open' if form or not task_list }}>
+    <summary>➕ Ny uppgift</summary>
+    <form method="post" action="/admin/uppgifter/ny" enctype="multipart/form-data" style="margin-top:.8rem">
+      <label>Rubrik</label>
+      <input name="title" required maxlength="100" style="width:100%" value="{{ form.title if form }}">
+      <label>Vad ska eleven göra?</label>
+      <textarea class="tasktext" name="body" maxlength="4000" placeholder="Skriv fritt. Radbrytningar behålls.">{{ form.body if form }}</textarea>
+      <div class="row" style="margin-top:.6rem">
+        <div><label>Poäng vid godkänt</label><input type="number" name="points" min="0" max="100000" value="{{ form.points if form else 50 }}" style="width:9rem"></div>
+        <div><label>Bild (valfri) – ladda upp</label><input type="file" name="image" accept="image/png,image/jpeg,image/gif,image/webp,image/svg+xml"></div>
+        <div style="flex:1;min-width:14rem"><label>… eller hämta från webbadress</label><input name="image_url" placeholder="https://…" style="width:100%" value="{{ form.image_url if form }}"></div>
+      </div>
+      <p class="muted psmall" style="margin:.4rem 0 .8rem">Bilden sparas på servern. Png, jpg, gif, webp (och svg vid uppladdning), högst 3 MB. Eleven får uppgiften först när du ger den till henne eller honom på nästa sida.</p>
+      <button>Skapa uppgift</button>
+    </form>
+  </details>
+</div>
+
+<div class="card">
+  <h2 style="margin-top:0">Alla uppgifter</h2>
+  {% if task_list %}
+  <table>
+    <tr><th>Uppgift</th><th style="width:5.5rem">Poäng</th><th>Elever</th><th></th></tr>
+    {% for t in task_list %}
+    <tr style="{{ 'opacity:.55' if not t.active }}">
+      <td><a href="/admin/uppgifter/{{ t.id }}"><strong>{{ t.title }}</strong></a>
+        {% if t.image %}<span class="pill off">bild</span>{% endif %}{% if not t.active %} <span class="pill off">arkiverad</span>{% endif %}</td>
+      <td>{{ t.points }}</td>
+      <td class="muted">{{ t.summary or "ingen än" }}</td>
+      <td><a class="btn small" href="/admin/uppgifter/{{ t.id }}">Öppna / ge till elever</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% else %}<p class="muted" style="margin:0">Inga uppgifter än. Skapa den första ovan.</p>{% endif %}
+</div>
+{% endblock %}

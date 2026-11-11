@@ -37,6 +37,7 @@ pytest
 | Nivåbyte | Av de senaste 6 svaren på nivån: **5 rätt eller fler → upp**, **2 rätt eller färre → ner**. Därefter börjar ett nytt fönster. |
 | Statusprov | Samma upplägg som det inledande testet. Rätt svar visas först efteråt. Kan höja nivån men sänker den aldrig. Resultaten sparas så att utvecklingen syns. |
 | Fakta | Fliken **Fakta** har en faktasida per ämne med grunder, formler, tabeller och bilder (se nedan). Fliken med övningar heter **Övningar**. |
+| Uppgifter | Fliken **Uppgifter**: admin skapar uppgifter (text, bild, poäng) och ger dem till elever. Eleven markerar dem som klara och admin godkänner eller avslår (se nedan). |
 | Admin | Översikt över alla elever, detaljvy med utveckling per dag, svaga områden, prov och senaste svar. Du kan sätta nivå manuellt. |
 
 Eleven ser bara "Nivå 1–5". Kopplingen till ungefärlig årskurs visas bara för admin.
@@ -193,7 +194,7 @@ Bara skolämnen räknas, alltså inte fritidsämnen som K-pop.
   större områden i `app/areas.py`. Nya områdesnamn från egna importer hamnar i *Övrigt* tills du lägger in dem där.
 * **Dagsmål:** admin sätter antal svar per dag (standard 15, 0 = inget mål). Svar i prov räknas också. Eleven ser en mätare på Övningar.
 * **Poäng:** 10 poäng per rätt svar i övning (högst 15 rätta per ämne och dag, så att man inte kan pumpa ett ämne), 20 poäng när dagsmålet nås,
-  50 extra för varje vecka i rad och 50 när eleven själv tar sig upp en nivå. Prov och K-pop ger inga poäng. Poäng räknas från den dag
+  50 extra för varje vecka i rad och 50 när eleven själv tar sig upp en nivå, plus poängen på godkända [uppgifter](#uppgifter). Prov och K-pop ger inga poäng. Poäng räknas från den dag
   funktionen först användes för eleven, medan märken räknas på allt som gjorts.
 * **Belöningar:** du lägger in belöningar med ett poängpris (t.ex. *Bio-kväll, 500 poäng*). Eleven ser hur långt hon har kvar. När poängen
   räcker markerar du belöningen som *utdelad* och dess poäng dras av. *Ångra* ger tillbaka poängen.
@@ -202,6 +203,37 @@ Bara skolämnen räknas, alltså inte fritidsämnen som K-pop.
 
 Nya tabeller (`user_prefs`, `goal_days`, `level_ups`, `rewards`) läggs till automatiskt vid uppgradering och ingen befintlig data ändras.
 Nya elever och befintliga elever får standardvärdena (område på, dagsmål 15, poäng och märken på).
+
+## Uppgifter
+
+Egna uppgifter som eleven ska göra utanför appen (städa rummet, läsa en bok, rita något) och som ger poäng när du godkänt dem.
+Fliken **Uppgifter** finns för både admin och elev, och en siffra i fliken visar hur många som väntar (för admin: uppgifter att
+granska, för eleven: uppgifter att göra).
+
+**Admin** (fliken *Uppgifter*):
+
+1. **Ny uppgift:** rubrik, fri text (radbrytningar behålls), poäng vid godkänt och en valfri bild. Bilden kan laddas upp (png, jpg, gif, webp
+   eller svg) eller hämtas från en webbadress (png, jpg, gif, webp). Högst 3 MB, och den sparas på servern som `uppgift-….<ändelse>`.
+2. **Ge till elever:** öppna uppgiften och kryssa i en eller flera elever. Samma uppgift kan ges till flera, och till samma elev igen
+   när hon fått den godkänd. En elev som redan har den pågående hoppas över.
+3. **Granska:** när eleven markerat en uppgift som klar dyker den upp överst under *Att granska* (och under uppgiften). Du kan **godkänna**
+   (eleven får uppgiftens poäng) eller **avslå**. Avslag kräver en kommentar, och eleven kan då göra om uppgiften. Du kan ändra ett beslut
+   i efterhand, och poängen följer med.
+4. **Arkivera** en uppgift för att dölja den för nya tilldelningar. Den kan bara tas bort helt om den aldrig getts till någon, så att
+   utdelade poäng inte försvinner.
+
+**Eleven** ser sina uppgifter under *Att göra*, *Väntar på att admin tittar på dem* och *Klara*. Hon öppnar en uppgift, läser texten och
+bilden, och trycker **Jag har gjort uppgiften** (med en valfri kommentar). Efter granskningen ser hon admins kommentar och poängen.
+
+Poängen läggs till elevens poäng (se ovan) och kan användas till belöningar. De sparas när uppgiften godkänns, så att en senare ändring
+av uppgiftens poäng inte påverkar redan utdelade poäng. Elever som har poäng avstängda ser inte poängen på uppgifterna.
+
+**Bild från webbadress:** servern hämtar bilden, och därför är det bara publika `http`/`https`-adresser på vanliga portar som fungerar.
+Adresser som pekar på hemnätet, servern själv eller liknande (t.ex. `localhost`, `192.168.x.x`) avvisas, även efter omdirigeringar. Containern
+behöver komma ut på internet för att funktionen ska fungera. Annars går det bra att ladda upp bilden i stället.
+
+Nya tabeller (`tasks`, `task_assignments`) läggs till automatiskt vid uppgradering. nginx tillåter nu uppladdningar upp till 4 MB, så
+nginx-containern behöver startas om en gång efter uppdateringen för att den nya gränsen ska gälla.
 
 ## K-pop
 

@@ -1,7 +1,7 @@
 """Poäng, märken och belöningar. Poäng och märken räknas ut från elevens svar, bara belöningarna lagras."""
 from collections import Counter
 
-from . import logic
+from . import logic, tasks
 
 POINTS_PER_CORRECT = 10    # per rätt svar i övning (inte i prov) i ett skolämne
 CAP_PER_SUBJECT_DAY = 15   # så många rätta svar per ämne och dag ger poäng, så att man inte kan "pumpa" ett ämne
@@ -14,6 +14,7 @@ RULES = [
     (f"{GOAL_BONUS} poäng", "bonus varje dag du når dagsmålet"),
     (f"{WEEK_BONUS} poäng", "bonus för varje vecka (7 dagar i rad) med nått dagsmål"),
     (f"{LEVEL_BONUS} poäng", "bonus varje gång du tar dig upp en nivå"),
+    ("Uppgifter", "poängen står på uppgiften och du får dem när admin har godkänt den"),
 ]
 
 
@@ -41,11 +42,12 @@ def points(db, user_id: int, prefs=None) -> dict:
     week_pts = sum(run // 7 for run in logic.day_runs(days)) * WEEK_BONUS
     level_pts = db.execute("SELECT COUNT(*) AS c FROM level_ups WHERE user_id=? AND created_at>=?",
                            (user_id, since)).fetchone()["c"] * LEVEL_BONUS
-    total = answer_pts + goal_pts + week_pts + level_pts
+    task_pts = tasks.task_points(db, user_id, since)
+    total = answer_pts + goal_pts + week_pts + level_pts + task_pts
     spent = db.execute("SELECT COALESCE(SUM(cost), 0) AS s FROM rewards WHERE user_id=? AND given_at IS NOT NULL",
                        (user_id,)).fetchone()["s"]
     return {"answers": answer_pts, "goal": goal_pts, "week": week_pts, "levels": level_pts,
-            "total": total, "spent": spent, "balance": max(0, total - spent)}
+            "tasks": task_pts, "total": total, "spent": spent, "balance": max(0, total - spent)}
 
 
 # ---------------------------------------------------------------- belöningar

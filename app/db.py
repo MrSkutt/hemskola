@@ -135,6 +135,33 @@ CREATE TABLE IF NOT EXISTS rewards (
     created_at TEXT NOT NULL DEFAULT (datetime('now')),
     given_at TEXT
 );
+-- Uppgifter som admin skapar (fritext, valfri bild, poäng vid godkänt). active=0 betyder arkiverad (kan inte ges till fler).
+CREATE TABLE IF NOT EXISTS tasks (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    body TEXT NOT NULL DEFAULT '',
+    image TEXT,
+    points INTEGER NOT NULL DEFAULT 0 CHECK (points >= 0),
+    active INTEGER NOT NULL DEFAULT 1,
+    created_at TEXT NOT NULL DEFAULT (datetime('now'))
+);
+-- En uppgift given till en elev. status: todo (ska göras), done (eleven är klar, väntar på admin),
+-- approved (godkänd, poängen är utdelade), rejected (avslagen, eleven får göra om den).
+-- points_awarded sparas vid godkännande så att senare ändring av uppgiftens poäng inte ändrar historiken.
+CREATE TABLE IF NOT EXISTS task_assignments (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    task_id INTEGER NOT NULL REFERENCES tasks(id) ON DELETE CASCADE,
+    user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    status TEXT NOT NULL DEFAULT 'todo' CHECK (status IN ('todo', 'done', 'approved', 'rejected')),
+    student_note TEXT NOT NULL DEFAULT '',
+    admin_comment TEXT NOT NULL DEFAULT '',
+    points_awarded INTEGER NOT NULL DEFAULT 0,
+    created_at TEXT NOT NULL DEFAULT (datetime('now')),
+    done_at TEXT,
+    reviewed_at TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_assign_user ON task_assignments(user_id, status);
+CREATE INDEX IF NOT EXISTS idx_assign_task ON task_assignments(task_id);
 CREATE INDEX IF NOT EXISTS idx_attempts_user ON attempts(user_id, id);
 CREATE INDEX IF NOT EXISTS idx_exercises_pick ON exercises(subject, level, active);
 """

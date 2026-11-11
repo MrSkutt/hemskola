@@ -1,0 +1,14 @@
+{% macro review_form(a, back) %}
+<form class="review" method="post" action="/admin/uppgifter/tilldelning/{{ a.id }}/granska">
+  <input type="hidden" name="back" value="{{ back }}">
+  <textarea class="tasktext short" name="comment" maxlength="500" placeholder="Kommentar till eleven (krävs om du avslår)">{{ a.admin_comment if a.status != 'done' }}</textarea>
+  <div class="row">
+    <button name="decision" value="approve">✔ Godkänn{% if a.status == 'done' %} (+{{ a.points }} poäng){% endif %}</button>
+    <button name="decision" value="reject" class="danger">✖ Avslå</button>
+  </div>
+</form>
+{% endmacro %}
+
+{% macro status_pill(status, labels) %}
+<span class="pill {{ {'todo': 'off', 'done': 'wait', 'approved': '', 'rejected': 'redo'}[status] }}">{{ labels[status] }}</span>
+{% endmacro %}

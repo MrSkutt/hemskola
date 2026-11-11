@@ -13,10 +13,11 @@ from fastapi import Depends, FastAPI, File, Form, HTTPException, Query, Request,
 from fastapi.responses import FileResponse, JSONResponse, RedirectResponse, Response
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from starlette.concurrency import run_in_threadpool
 from starlette.middleware.sessions import SessionMiddleware
 
 from . import db as database
-from . import facts, logic, motivation, report
+from . import facts, logic, motivation, report, tasks
 from . import words as wordlist
 from .security import hash_password, verify_password
 
@@ -127,6 +128,7 @@ def current_user(request: Request, db=Depends(database.get_db)):
         request.session.clear()
         raise LoginRequired()
     request.state.user = row
+    request.state.task_badge = tasks.badge_count(db, row)
     return row
 
 
@@ -808,3 +810,226 @@ def admin_media_delete(request: Request, name: str, user=Depends(admin_user), db
         path.unlink()
         flash(request, f"{name} borttagen." + (f" Obs: {used} övningar hänvisade till bilden." if used else ""))
     return go("/admin/media")
+
+
+# ---------------------------------------------------------------- uppgifter
+
+def _store_task_image(ext: str, data: bytes) -> str:
+    name = f"uppgift-{secrets.token_hex(5)}{ext}"
+    (media_dir() / name).write_bytes(data)
+    return name
+
+
+def _drop_task_image(db, name) -> None:
+    """Tar bort en uppladdad uppgiftsbild från disk när ingen uppgift använder den längre."""
+    if not name or not name.startswith("uppgift-") or not logic.MEDIA_NAME.match(name):
+        return
+    if db.execute("SELECT 1 FROM tasks WHERE image=?", (name,)).fetchone():
+        return
+    path = media_dir() / name
+    if path.is_file() and path.resolve().parent == media_dir().resolve():
+        path.unlink()
+
+
+async def _image_from_form(upload, url: str) -> tuple:
+    """(filnamn, fel). Filnamnet är '' om ingen bild angavs. En uppladdad fil går före en webbadress."""
+    if upload is not None and upload.filename:
+        ext = Path(upload.filename).suffix.lower()
+        data = await upload.read(MAX_UPLOAD + 1)
+        if ext not in MEDIA_TYPES:
+            return "", "Bildens filtyp stöds inte (png, jpg, gif, webp, svg)."
+        if len(data) > MAX_UPLOAD:
+            return "", "Bilden är större än 3 MB."
+        if not _looks_like(ext, data):
+            return "", f"Filen ser inte ut som en {ext[1:]}-bild."
+        return _store_task_image(ext, data), ""
+    if url.strip():
+        try:
+            ext, data = await run_in_threadpool(tasks.fetch_image, url)
+        except ValueError as e:
+            return "", str(e)
+        return _store_task_image(ext, data), ""
+    return "", ""
+
+
+def _back(back: str, default: str) -> str:
+    return back if back.startswith("/admin/uppgifter") and "//" not in back and "\\" not in back else default
+
+
+def _tasks_page(request: Request, db, form=None, status_code: int = 200):
+    return render(request, "admin_tasks.html", queue=tasks.to_review(db), task_list=tasks.list_tasks(db),
+                  form=form, status_code=status_code)
+
+
+def _task_page(request: Request, db, task_id: int, form=None, status_code: int = 200):
+    task = db.execute("SELECT * FROM tasks WHERE id=?", (task_id,)).fetchone()
+    if not task:
+        raise HTTPException(404, "Uppgiften finns inte")
+    rows = tasks.for_task(db, task_id)
+    students = db.execute("SELECT id, display_name FROM users WHERE role='student' AND active=1 "
+                          "ORDER BY display_name").fetchall()
+    busy = {r["user_id"] for r in rows if r["status"] != "approved"}
+    return render(request, "admin_task.html", task=task, rows=rows, students=students, busy=busy,
+                  labels=tasks.STATUS_LABELS, form=form, status_code=status_code)
+
+
+@app.get("/admin/uppgifter")
+def admin_tasks(request: Request, user=Depends(admin_user), db=Depends(database.get_db)):
+    return _tasks_page(request, db)
+
+
+@app.post("/admin/uppgifter/ny")
+async def admin_task_new(request: Request, title: str = Form(""), body: str = Form(""), points: str = Form("0"),
+                         image_url: str = Form(""), image: UploadFile | None = File(None),
+                         user=Depends(admin_user), db=Depends(database.get_db)):
+    form = {"title": title, "body": body, "points": points, "image_url": image_url}
+    error = tasks.parse_task(title, body, points)[3]
+    name = ""
+    if not error:
+        name, error = await _image_from_form(image, image_url)
+    if error:
+        flash(request, error, "warn")
+        return _tasks_page(request, db, form=form, status_code=400)
+    task_id, _ = tasks.create_task(db, title, body, points, image=name or None)
+    db.commit()
+    flash(request, "Uppgiften är skapad. Välj nedan vilka elever som ska få den.")
+    return go(f"/admin/uppgifter/{task_id}")
+
+
+@app.get("/admin/uppgifter/{task_id}")
+def admin_task(request: Request, task_id: int, user=Depends(admin_user), db=Depends(database.get_db)):
+    return _task_page(request, db, task_id)
+
+
+@app.post("/admin/uppgifter/{task_id}")
+async def admin_task_edit(request: Request, task_id: int, title: str = Form(""), body: str = Form(""),
+                          points: str = Form("0"), image_url: str = Form(""), remove_image: str = Form(""),
+                          image: UploadFile | None = File(None),
+                          user=Depends(admin_user), db=Depends(database.get_db)):
+    task = db.execute("SELECT * FROM tasks WHERE id=?", (task_id,)).fetchone()
+    if not task:
+        raise HTTPException(404, "Uppgiften finns inte")
+    form = {"title": title, "body": body, "points": points, "image_url": image_url}
+    error = tasks.parse_task(title, body, points)[3]
+    name = ""
+    if not error:
+        name, error = await _image_from_form(image, image_url)
+    if error:
+        flash(request, error, "warn")
+        return _task_page(request, db, task_id, form=form, status_code=400)
+    tasks.update_task(db, task_id, title, body, points)
+    old = task["image"]
+    if name:
+        db.execute("UPDATE tasks SET image=? WHERE id=?", (name, task_id))
+    elif remove_image:
+        db.execute("UPDATE tasks SET image=NULL WHERE id=?", (task_id,))
+    db.commit()
+    if old and (name or remove_image):
+        _drop_task_image(db, old)
+    flash(request, "Uppgiften är sparad. Redan givna uppgifter behåller de poäng de fick när de godkändes.")
+    return go(f"/admin/uppgifter/{task_id}")
+
+
+@app.post("/admin/uppgifter/{task_id}/tilldela")
+def admin_task_assign(request: Request, task_id: int, students: list[int] = Form(default=[]),
+                      user=Depends(admin_user), db=Depends(database.get_db)):
+    task = db.execute("SELECT * FROM tasks WHERE id=?", (task_id,)).fetchone()
+    if not task:
+        raise HTTPException(404, "Uppgiften finns inte")
+    if not task["active"]:
+        flash(request, "Uppgiften är arkiverad. Visa den igen om du vill ge den till fler.", "warn")
+    elif not students:
+        flash(request, "Välj minst en elev.", "warn")
+    else:
+        given, skipped = tasks.assign(db, task_id, students)
+        db.commit()
+        msg = ("Uppgiften gavs till " + ", ".join(given) + ". ") if given else ""
+        if skipped:
+            msg += "Hoppade över " + ", ".join(skipped) + " som redan har den."
+        flash(request, msg.strip() or "Ingen elev fick uppgiften.", "ok" if given else "warn")
+    return go(f"/admin/uppgifter/{task_id}")
+
+
+@app.post("/admin/uppgifter/{task_id}/arkiv")
+def admin_task_archive(task_id: int, user=Depends(admin_user), db=Depends(database.get_db)):
+    db.execute("UPDATE tasks SET active = 1 - active WHERE id=?", (task_id,))
+    db.commit()
+    return go(f"/admin/uppgifter/{task_id}")
+
+
+@app.post("/admin/uppgifter/{task_id}/ta-bort")
+def admin_task_delete(request: Request, task_id: int, user=Depends(admin_user), db=Depends(database.get_db)):
+    task = db.execute("SELECT * FROM tasks WHERE id=?", (task_id,)).fetchone()
+    if not task:
+        raise HTTPException(404, "Uppgiften finns inte")
+    if db.execute("SELECT 1 FROM task_assignments WHERE task_id=?", (task_id,)).fetchone():
+        flash(request, "Uppgiften har getts till elever och kan inte tas bort. Arkivera den i stället.", "warn")
+        return go(f"/admin/uppgifter/{task_id}")
+    db.execute("DELETE FROM tasks WHERE id=?", (task_id,))
+    db.commit()
+    _drop_task_image(db, task["image"])
+    flash(request, "Uppgiften är borttagen.")
+    return go("/admin/uppgifter")
+
+
+@app.post("/admin/uppgifter/tilldelning/{aid}/granska")
+def admin_task_review(request: Request, aid: int, decision: str = Form(""), comment: str = Form(""),
+                      back: str = Form(""), user=Depends(admin_user), db=Depends(database.get_db)):
+    a = tasks.assignment(db, aid)
+    if not a:
+        raise HTTPException(404, "Tilldelningen finns inte")
+    if decision not in ("approve", "reject"):
+        raise HTTPException(400, "Välj godkänn eller avslå")
+    error = tasks.review(db, aid, decision == "approve", comment)
+    if error:
+        flash(request, error, "warn")
+    else:
+        db.commit()
+        if decision == "approve":
+            flash(request, f"Godkänd. {a['student']} behåller sina poäng." if a["status"] == "approved"
+                  else f"Godkänd. {a['student']} fick {a['points']} poäng.")
+        else:
+            flash(request, f"Avslagen. {a['student']} ser din kommentar och kan göra om uppgiften.")
+    return go(_back(back, f"/admin/uppgifter/{a['task_id']}"))
+
+
+@app.post("/admin/uppgifter/tilldelning/{aid}/ta-bort")
+def admin_task_unassign(request: Request, aid: int, back: str = Form(""),
+                        user=Depends(admin_user), db=Depends(database.get_db)):
+    a = tasks.assignment(db, aid)
+    if not a:
+        raise HTTPException(404, "Tilldelningen finns inte")
+    error = tasks.remove_assignment(db, aid)
+    if error:
+        flash(request, error, "warn")
+    else:
+        db.commit()
+        flash(request, f"Uppgiften togs bort från {a['student']}.")
+    return go(_back(back, f"/admin/uppgifter/{a['task_id']}"))
+
+
+@app.get("/uppgifter")
+def student_tasks(request: Request, user=Depends(student_user), db=Depends(database.get_db)):
+    return render(request, "tasks.html", groups=tasks.for_student(db, user["id"]), labels=tasks.STATUS_LABELS,
+                  show_points=bool(logic.get_prefs(db, user["id"])["points_on"]))
+
+
+@app.get("/uppgifter/{aid}")
+def student_task(request: Request, aid: int, user=Depends(student_user), db=Depends(database.get_db)):
+    a = tasks.assignment(db, aid, user["id"])
+    if not a:
+        raise HTTPException(404, "Uppgiften finns inte")
+    return render(request, "task.html", a=a, labels=tasks.STATUS_LABELS, note_max=tasks.NOTE_MAX,
+                  show_points=bool(logic.get_prefs(db, user["id"])["points_on"]))
+
+
+@app.post("/uppgifter/{aid}/klar")
+def student_task_done(request: Request, aid: int, note: str = Form(""),
+                      user=Depends(student_user), db=Depends(database.get_db)):
+    error = tasks.mark_done(db, aid, user["id"], note)
+    if error:
+        flash(request, error, "warn")
+    else:
+        db.commit()
+        flash(request, "Bra jobbat! Din uppgift är markerad som klar. Nu tittar admin på den.")
+    return go(f"/uppgifter/{aid}")
