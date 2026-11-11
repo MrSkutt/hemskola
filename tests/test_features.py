@@ -263,3 +263,27 @@ def test_student_can_take_english_test_and_practice(client):
         client.post(url, data={"exercise_id": ex_id, "generated_id": gen_id, "given": "x"})
     assert client.get(client.get(url).headers["location"]).status_code == 200
     assert client.get("/practice/engelska").status_code == 200
+
+
+def test_pdf_report(client):
+    _make_student(client)
+    login(client, "mia", "hemligt1")
+    url = client.post("/test/start/matte").headers["location"]
+    for _ in range(10):
+        page = client.get(url)
+        ex_id = re.search(r'name="exercise_id" value="(\d+)"', page.text).group(1)
+        gen_id = re.search(r'name="generated_id" value="(\d*)"', page.text).group(1)
+        client.post(url, data={"exercise_id": ex_id, "generated_id": gen_id, "given": "fel"})
+    client.get(url)
+    assert client.get("/admin/student/2/report.pdf").status_code in (303, 403)     # elever får inte se rapporter
+    client.post("/logout")
+    login(client, "admin", "adminpass1")
+    sid = _conn().execute("SELECT id FROM users WHERE username='mia'").fetchone()["id"]
+    assert "report.pdf" in client.get(f"/admin/student/{sid}").text
+    for days in (7, 30, 90, 0, 999):
+        r = client.get(f"/admin/student/{sid}/report.pdf?days={days}")
+        assert r.status_code == 200 and r.content.startswith(b"%PDF") and r.headers["content-type"] == "application/pdf"
+    assert "rapport_mia" in r.headers["content-disposition"]
+    assert client.get("/admin/student/9999/report.pdf").status_code == 404
+    admin_id = _conn().execute("SELECT id FROM users WHERE username='admin'").fetchone()["id"]
+    assert client.get(f"/admin/student/{admin_id}/report.pdf").status_code == 404   # bara elever

@@ -9,13 +9,13 @@ from contextlib import asynccontextmanager
 from pathlib import Path
 
 from fastapi import Depends, FastAPI, File, Form, HTTPException, Request, UploadFile
-from fastapi.responses import FileResponse, JSONResponse, RedirectResponse
+from fastapi.responses import FileResponse, JSONResponse, RedirectResponse, Response
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from starlette.middleware.sessions import SessionMiddleware
 
 from . import db as database
-from . import logic
+from . import logic, report
 from . import words as wordlist
 from .security import hash_password, verify_password
 
@@ -348,6 +348,20 @@ def admin_student(request: Request, student_id: int, user=Depends(admin_user), d
     return render(request, "admin_student.html", s=s, blocks=blocks, recent=recent, chart=chart,
                   chart_max=max([c["total"] for c in chart] + [1]), streak=streak, today=count_today,
                   json=json)
+
+
+@app.get("/admin/student/{student_id}/report.pdf")
+def admin_student_report(student_id: int, days: int = 30, user=Depends(admin_user), db=Depends(database.get_db)):
+    s = db.execute("SELECT * FROM users WHERE id=? AND role='student'", (student_id,)).fetchone()
+    if not s:
+        raise HTTPException(404)
+    if days not in report.PERIODS:
+        days = 30
+    pdf = report.build_pdf(db, s, days)
+    name = re.sub(r"[^A-Za-z0-9_-]+", "_", s["username"]) or "elev"
+    return Response(pdf, media_type="application/pdf", headers={
+        "Content-Disposition": f'inline; filename="rapport_{name}_{logic.today().isoformat()}.pdf"',
+        "Cache-Control": "no-store", "X-Content-Type-Options": "nosniff"})
 
 
 @app.post("/admin/student/{student_id}/level")

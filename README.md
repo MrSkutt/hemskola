@@ -134,6 +134,12 @@ Fakta om grupper ändras med tiden, så granska gärna frågorna ibland. Lägg t
 {"words": [{"word": "jjang", "pos": "koreanska", "level": 4, "hangul": "짱", "sv": ["bäst, toppen"]}]}
 ```
 
+## Rapport till skolan
+
+På varje elevs sida i admin finns **Rapport att visa skolan**. Välj period (7, 30, 90 dagar eller hela tiden) och öppna en PDF med
+antal frågor, andel rätt, aktivitet per dag/vecka, nivå och prov per ämne, områden som behöver övas, områden som går bra
+och exempel på senaste felsvar. Nivåerna är en uppskattning från övningsprogrammet och inget betyg. PDF:en skapas med reportlab.
+
 ## Drift
 
 * **Backup:** `sqlite3 data/hemskola.db ".backup data/backup-$(date +%F).db"` (eller kopiera `data/` medan appen står still).

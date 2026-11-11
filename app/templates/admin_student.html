@@ -6,6 +6,14 @@
 <h1>{{ s.display_name }} <span class="muted" style="font-size:1rem">({{ s.username }})</span></h1>
 <p class="muted">Idag: {{ today }} svar · 🔥 {{ streak }} {{ 'dag' if streak == 1 else 'dagar' }} i rad</p>
 
+<form method="get" action="/admin/student/{{ s.id }}/report.pdf" class="card row" target="_blank">
+  <div><strong>Rapport att visa skolan</strong><div class="muted">PDF med nivåer, prov och vad som behöver övas.</div></div>
+  <div><label style="margin:0">Period</label>
+    <select name="days"><option value="30">Senaste 30 dagarna</option><option value="7">Senaste 7 dagarna</option>
+      <option value="90">Senaste 90 dagarna</option><option value="0">Hela tiden</option></select></div>
+  <button class="small">Öppna PDF</button>
+</form>
+
 <div class="card">
   <strong>Svar per dag, senaste 14 dagarna</strong> <span class="muted">(grönt = rätt, rött = fel)</span>
   <div class="chart" style="margin-top:.6rem">
