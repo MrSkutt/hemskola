@@ -347,12 +347,16 @@ def test_admin_reward_routes(client):
     assert "utdelad" in client.get(f"/admin/student/{uid}").text
     assert client.post(f"/admin/student/{uid}/rewards/{rid}", data={"action": "oops"}).status_code == 400
     assert client.post(f"/admin/student/{uid}/rewards/{rid}", data={"action": "delete"}).status_code == 303
-    assert conn.execute("SELECT COUNT(*) FROM rewards").fetchone()[0] == 0
+    # en utdelad belöning döljs i stället för att raderas, så att de använda poängen fortsätter dras av
+    assert conn.execute("SELECT COUNT(*) FROM rewards WHERE retired=0").fetchone()[0] == 0
+    assert motivation.points(conn, uid)["spent"] == 50
+    conn.commit()                                                       # släpp lånet så att appen kan skriva igen
+    assert f"/rewards/{rid}" not in client.get(f"/admin/student/{uid}").text   # syns inte längre i listan
     client.post("/logout")
     login(client, "mia", "hemligt1")
     r = client.post(f"/admin/student/{uid}/rewards", data={"title": "Egen", "cost": "1"})
     assert r.status_code in (302, 303, 401, 403)
-    assert conn.execute("SELECT COUNT(*) FROM rewards").fetchone()[0] == 0
+    assert conn.execute("SELECT COUNT(*) FROM rewards WHERE title='Egen'").fetchone()[0] == 0   # elever kan inte lägga till
     conn.close()
 
 
@@ -498,3 +502,148 @@ def test_admin_student_list_is_collapsed_by_default(client):
     assert 'href="/admin/student/' in page and "Mia" in page and "Olle" in page
     assert "Visa alla" in page and "Dölj alla" in page
     assert "Idag: 0 svar" in page and "Senaste 7 dagarna" in page          # ämnesöversikten finns inuti raden
+
+
+# ---------------------------------------------------------------- belöningar som kan tas ut flera gånger
+
+def test_repeatable_reward_can_be_given_again_until_points_run_out(client):
+    conn, uid = _student(client)
+    logic.get_prefs(conn, uid)
+    _ins(conn, uid, "matte", 13)                                        # 130 poäng
+    assert motivation.add_reward(conn, uid, "Godis", 50, repeatable=True) == ""
+    rid = conn.execute("SELECT id FROM rewards").fetchone()["id"]
+    r = motivation.reward_list(conn, uid, motivation.points(conn, uid)["balance"])[0]
+    assert r["repeatable"] and r["ready"] and not r["given"] and r["times_given"] == 0
+    assert motivation.give_reward(conn, uid, rid) == ""
+    assert motivation.give_reward(conn, uid, rid) == ""                 # går att dela ut igen
+    p = motivation.points(conn, uid)
+    assert (p["spent"], p["balance"]) == (100, 30)                      # poängen dras för varje utdelning
+    assert motivation.give_reward(conn, uid, rid) != ""                 # 30 räcker inte till 50
+    r = motivation.reward_list(conn, uid, p["balance"])[0]
+    assert (r["times_given"], r["given"], r["ready"], r["missing"], r["pct"]) == (2, False, False, 20, 60)
+    assert motivation.next_reward([r])["title"] == "Godis"              # den är fortfarande något att sikta mot
+    row = conn.execute("SELECT * FROM rewards").fetchone()
+    assert row["times_given"] == 2 and row["given_at"]
+
+    motivation.undo_reward(conn, uid, rid)                              # ångrar bara den senaste utdelningen
+    assert conn.execute("SELECT times_given FROM rewards").fetchone()[0] == 1
+    assert motivation.points(conn, uid)["balance"] == 80
+    assert conn.execute("SELECT given_at FROM rewards").fetchone()[0] is not None
+    motivation.undo_reward(conn, uid, rid)
+    assert conn.execute("SELECT times_given, given_at FROM rewards").fetchone()[:] == (0, None)
+    motivation.undo_reward(conn, uid, rid)                              # ingenting att ångra: aldrig negativt
+    assert conn.execute("SELECT times_given FROM rewards").fetchone()[0] == 0
+    assert motivation.points(conn, uid)["balance"] == 130
+    conn.close()
+
+
+def test_one_time_reward_is_still_one_time_and_sorted_last_when_given(client):
+    conn, uid = _student(client)
+    logic.get_prefs(conn, uid)
+    _ins(conn, uid, "matte", 15)                                        # 150 poäng (taket är 15 rätta per ämne och dag)
+    motivation.add_reward(conn, uid, "Bio", 60)
+    motivation.add_reward(conn, uid, "Godis", 30, repeatable=True)
+    motivation.add_reward(conn, uid, "Glass", 60)
+    rid = {r["title"]: r["id"] for r in conn.execute("SELECT id, title FROM rewards")}
+    assert motivation.give_reward(conn, uid, rid["Bio"]) == ""
+    assert motivation.give_reward(conn, uid, rid["Bio"]) == "Den är redan utdelad."
+    assert motivation.give_reward(conn, uid, rid["Godis"]) == "" and motivation.give_reward(conn, uid, rid["Godis"]) == ""
+    titles = [r["title"] for r in motivation.reward_list(conn, uid, motivation.points(conn, uid)["balance"])]
+    assert titles == ["Godis", "Glass", "Bio"]                          # engångsbelöningen som delats ut hamnar sist
+    assert motivation.points(conn, uid)["spent"] == 60 + 30 * 2
+    conn.close()
+
+
+def test_deleting_a_given_reward_hides_it_but_never_refunds_points(client):
+    conn, uid = _student(client)
+    logic.get_prefs(conn, uid)
+    _ins(conn, uid, "matte", 13)                                        # 130 poäng
+    motivation.add_reward(conn, uid, "Godis", 50, repeatable=True)
+    motivation.add_reward(conn, uid, "Aldrig", 10)
+    rid = {r["title"]: r["id"] for r in conn.execute("SELECT id, title FROM rewards")}
+    motivation.give_reward(conn, uid, rid["Godis"])
+    motivation.give_reward(conn, uid, rid["Godis"])
+    before = motivation.points(conn, uid)
+    assert motivation.delete_reward(conn, uid, rid["Godis"]) == 100     # så många poäng räknas fortfarande som använda
+    assert motivation.delete_reward(conn, uid, rid["Aldrig"]) == 0      # aldrig utdelad: raderas helt
+    assert conn.execute("SELECT COUNT(*) FROM rewards").fetchone()[0] == 1
+    after = motivation.points(conn, uid)
+    assert (after["spent"], after["balance"]) == (before["spent"], before["balance"]) == (100, 30)
+    assert motivation.reward_list(conn, uid, after["balance"]) == []
+    assert motivation.give_reward(conn, uid, rid["Godis"]) == "Belöningen finns inte."
+    motivation.undo_reward(conn, uid, rid["Godis"])                     # en borttagen belöning går inte att ångra
+    assert motivation.points(conn, uid)["spent"] == 100
+    assert motivation.delete_reward(conn, uid, rid["Godis"]) == 0       # och tas inte bort två gånger
+    conn.close()
+
+
+def test_admin_adds_repeatable_reward_and_gives_it_twice(client):
+    _make_student(client)
+    conn = _conn()
+    uid = _uid(conn)
+    logic.get_prefs(conn, uid)
+    _ins(conn, uid, "matte", 12)                                        # 120 poäng
+    login(client, "admin", "adminpass1")
+    client.post(f"/admin/student/{uid}/rewards", data={"title": "Godis", "cost": "50", "repeatable": "1"})
+    client.post(f"/admin/student/{uid}/rewards", data={"title": "Bio", "cost": "60"})
+    rows = {r["title"]: r for r in conn.execute("SELECT * FROM rewards")}
+    assert rows["Godis"]["repeatable"] == 1 and rows["Bio"]["repeatable"] == 0
+    page = client.get(f"/admin/student/{uid}").text
+    assert "flera gånger" in page and 'name="repeatable"' in page
+    rid = rows["Godis"]["id"]
+    for _ in range(2):
+        assert client.post(f"/admin/student/{uid}/rewards/{rid}", data={"action": "give"}).status_code == 303
+    page = client.get(f"/admin/student/{uid}").text
+    assert "Utdelad 2 gånger" in page
+    assert client.post(f"/admin/student/{uid}/rewards/{rid}", data={"action": "give"}).status_code == 303
+    assert "inte tillräckligt" in client.get(f"/admin/student/{uid}").text
+    assert conn.execute("SELECT times_given FROM rewards WHERE id=?", (rid,)).fetchone()[0] == 2
+    client.post(f"/admin/student/{uid}/rewards/{rid}", data={"action": "undo"})
+    assert "Utdelad 1 gång," in client.get(f"/admin/student/{uid}").text
+    client.post(f"/admin/student/{uid}/rewards/{rid}", data={"action": "delete"})
+    assert "De 50 poäng som redan använts" in client.get(f"/admin/student/{uid}").text
+    assert motivation.points(conn, uid)["spent"] == 50
+    conn.close()
+
+
+def test_student_sees_repeatable_reward_with_count(client):
+    conn, uid = _student(client)
+    logic.get_prefs(conn, uid)
+    _ins(conn, uid, "matte", 12)
+    motivation.add_reward(conn, uid, "Godis", 50, repeatable=True)
+    rid = conn.execute("SELECT id FROM rewards").fetchone()["id"]
+    motivation.give_reward(conn, uid, rid)
+    motivation.give_reward(conn, uid, rid)
+    conn.commit()
+    client.post("/logout")
+    login(client, "mia", "hemligt1")
+    page = client.get("/framsteg").text
+    assert "Godis" in page and "går att få flera gånger" in page and "du har fått den 2 gånger" in page
+    conn.close()
+
+
+def test_reward_columns_are_added_to_an_old_database_and_old_gifts_count_once(tmp_path, monkeypatch):
+    import sqlite3
+    from app import db as database
+    path = tmp_path / "rw.db"
+    old = sqlite3.connect(path)
+    old.executescript("""
+        CREATE TABLE users (id INTEGER PRIMARY KEY, username TEXT, display_name TEXT, password_hash TEXT, role TEXT,
+                            active INTEGER DEFAULT 1, created_at TEXT DEFAULT (datetime('now')));
+        INSERT INTO users(username, display_name, password_hash, role) VALUES ('mia','Mia','x','student');
+        CREATE TABLE rewards (id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER NOT NULL, title TEXT NOT NULL,
+            cost INTEGER NOT NULL, created_at TEXT DEFAULT (datetime('now')), given_at TEXT);
+        INSERT INTO rewards(user_id, title, cost, given_at) VALUES (1, 'Gammal utdelad', 80, datetime('now'));
+        INSERT INTO rewards(user_id, title, cost) VALUES (1, 'Gammal öppen', 30);
+    """)
+    old.commit()
+    old.close()
+    monkeypatch.setattr(database, "DB_PATH", str(path))
+    database.init_db()
+    database.init_db()                                                  # köras om utan att räkna dubbelt
+    conn = database.connect()
+    rows = {r["title"]: r for r in conn.execute("SELECT * FROM rewards")}
+    assert (rows["Gammal utdelad"]["times_given"], rows["Gammal utdelad"]["repeatable"], rows["Gammal utdelad"]["retired"]) == (1, 0, 0)
+    assert rows["Gammal öppen"]["times_given"] == 0
+    assert conn.execute("SELECT COALESCE(SUM(cost * times_given), 0) FROM rewards").fetchone()[0] == 80
+    conn.close()

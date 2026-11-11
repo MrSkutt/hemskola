@@ -77,19 +77,21 @@ document.querySelectorAll('input[data-toggle]').forEach(function (t) {
 
   <h3 style="margin-top:1.2rem">Belöningar</h3>
   <p class="muted" style="margin-top:0">Poäng just nu: <strong>{{ pts.balance }}</strong> (tjänat {{ pts.total }}{% if pts.spent %}, utdelat för {{ pts.spent }}{% endif %}).
-    När du markerar en belöning som utdelad dras dess poäng av.</p>
+    När du markerar en belöning som utdelad dras dess poäng av. En belöning som kan tas ut flera gånger dras av varje gång.</p>
   {% if rewards %}
   <table>
     <tr><th>Belöning</th><th style="width:6rem">Poäng</th><th>Status</th><th style="width:13rem"></th></tr>
     {% for r in rewards %}
     <tr>
-      <td>{{ r.title }}</td><td>{{ r.cost }}</td>
-      <td>{% if r.given %}<span class="pill">utdelad {{ r.given_at|ts }}</span>{% elif r.ready %}<span class="pill">uppnådd, kan delas ut</span>{% else %}<span class="muted">{{ r.missing }} poäng kvar</span>{% endif %}</td>
+      <td>{{ r.title }}{% if r.repeatable %} <span class="pill off" title="Kan tas ut flera gånger tills du tar bort den">🔁 flera gånger</span>{% endif %}</td><td>{{ r.cost }}</td>
+      <td>{% if r.given %}<span class="pill">utdelad {{ r.given_at|ts }}</span>
+        {% elif r.ready %}<span class="pill">uppnådd, kan delas ut</span>{% else %}<span class="muted">{{ r.missing }} poäng kvar</span>{% endif %}
+        {% if r.repeatable and r.times_given %}<div class="muted psmall">Utdelad {{ r.times_given }} {{ 'gång' if r.times_given == 1 else 'gånger' }}, senast {{ r.given_at|ts }}</div>{% endif %}</td>
       <td>
         <form method="post" action="/admin/student/{{ s.id }}/rewards/{{ r.id }}" class="inline">
-          {% if r.given %}<button class="small ghost" name="action" value="undo">Ångra</button>
-          {% elif r.ready %}<button class="small" name="action" value="give">Utdelad</button>{% endif %}
-          <button class="small danger" name="action" value="delete" onclick="return confirm('Ta bort belöningen?')">Ta bort</button>
+          {% if r.times_given %}<button class="small ghost" name="action" value="undo" title="Ångrar den senaste utdelningen">Ångra</button>{% endif %}
+          {% if r.ready %}<button class="small" name="action" value="give">Utdelad</button>{% endif %}
+          <button class="small danger" name="action" value="delete" onclick="return confirm('{{ 'Ta bort belöningen? Poängen som redan använts på den dras fortfarande av.' if r.times_given else 'Ta bort belöningen?' }}')">Ta bort</button>
         </form>
       </td>
     </tr>
@@ -101,6 +103,8 @@ document.querySelectorAll('input[data-toggle]').forEach(function (t) {
       <input id="rw_title" name="title" maxlength="80" required placeholder="t.ex. Bio-kväll" style="width:100%"></div>
     <div><label style="margin:0" for="rw_cost">Kostar (poäng)</label>
       <input id="rw_cost" name="cost" type="number" min="1" max="100000" required value="500" style="width:7rem"></div>
+    <label style="display:flex;gap:.4rem;align-items:center;margin:0 0 .35rem" title="Eleven kan få belöningen om och om igen, och poängen dras varje gång. Den ligger kvar tills du tar bort den.">
+      <input type="checkbox" name="repeatable" value="1"> Kan tas ut flera gånger</label>
     <button class="small">Lägg till</button>
   </form>
   <details style="margin-top:.8rem"><summary class="muted">Så får eleven poäng</summary>

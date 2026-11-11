@@ -42,20 +42,22 @@ def parse_task(title, body, points) -> tuple:
     return title, body, pts, ""
 
 
-def create_task(db, title, body, points, image=None) -> tuple:
-    """(id, fel)."""
+def create_task(db, title, body, points, image=None, in_report=False) -> tuple:
+    """(id, fel). `in_report`: uppgiften visas på rapporten när den är godkänd."""
     title, body, pts, error = parse_task(title, body, points)
     if error:
         return 0, error
-    cur = db.execute("INSERT INTO tasks(title, body, points, image) VALUES (?,?,?,?)", (title, body, pts, image))
+    cur = db.execute("INSERT INTO tasks(title, body, points, image, in_report) VALUES (?,?,?,?,?)",
+                     (title, body, pts, image, 1 if in_report else 0))
     return cur.lastrowid, ""
 
 
-def update_task(db, task_id: int, title, body, points) -> str:
+def update_task(db, task_id: int, title, body, points, in_report=False) -> str:
     title, body, pts, error = parse_task(title, body, points)
     if error:
         return error
-    db.execute("UPDATE tasks SET title=?, body=?, points=? WHERE id=?", (title, body, pts, task_id))
+    db.execute("UPDATE tasks SET title=?, body=?, points=?, in_report=? WHERE id=?",
+               (title, body, pts, 1 if in_report else 0, task_id))
     return ""
 
 

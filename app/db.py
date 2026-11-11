@@ -133,7 +133,10 @@ CREATE TABLE IF NOT EXISTS rewards (
     title TEXT NOT NULL,
     cost INTEGER NOT NULL CHECK (cost > 0),
     created_at TEXT NOT NULL DEFAULT (datetime('now')),
-    given_at TEXT
+    given_at TEXT,                              -- när belöningen senast delades ut
+    repeatable INTEGER NOT NULL DEFAULT 0,      -- 1 = kan tas ut flera gånger tills admin tar bort den
+    times_given INTEGER NOT NULL DEFAULT 0,     -- antal utdelningar (för en engångsbelöning 0 eller 1); poängen dras per utdelning
+    retired INTEGER NOT NULL DEFAULT 0          -- 1 = borttagen men utdelad, så använda poäng räknas fortfarande
 );
 -- Uppgifter som admin skapar (fritext, valfri bild, poäng vid godkänt). active=0 betyder arkiverad (kan inte ges till fler).
 CREATE TABLE IF NOT EXISTS tasks (
@@ -143,7 +146,8 @@ CREATE TABLE IF NOT EXISTS tasks (
     image TEXT,
     points INTEGER NOT NULL DEFAULT 0 CHECK (points >= 0),
     active INTEGER NOT NULL DEFAULT 1,
-    created_at TEXT NOT NULL DEFAULT (datetime('now'))
+    created_at TEXT NOT NULL DEFAULT (datetime('now')),
+    in_report INTEGER NOT NULL DEFAULT 0     -- 1 = visas på rapporten när uppgiften är godkänd
 );
 -- En uppgift given till en elev. status: todo (ska göras), done (eleven är klar, väntar på admin),
 -- approved (godkänd, poängen är utdelade), rejected (avslagen, eleven får göra om den).
@@ -173,6 +177,10 @@ ADDED_COLUMNS = [
     ("exercises", "diagram", "TEXT"),
     ("exercises", "generator", "TEXT"),
     ("task_assignments", "result_seen", "INTEGER NOT NULL DEFAULT 1"),
+    ("tasks", "in_report", "INTEGER NOT NULL DEFAULT 0"),
+    ("rewards", "repeatable", "INTEGER NOT NULL DEFAULT 0"),
+    ("rewards", "times_given", "INTEGER NOT NULL DEFAULT 0"),
+    ("rewards", "retired", "INTEGER NOT NULL DEFAULT 0"),
     ("attempts", "generated_id", "INTEGER REFERENCES generated(id)"),
     ("test_items", "generated_id", "INTEGER REFERENCES generated(id)"),
 ]
@@ -201,6 +209,8 @@ def migrate(conn) -> None:
     for table, col, ddl in ADDED_COLUMNS:
         if col not in _columns(conn, table):
             conn.execute(f"ALTER TABLE {table} ADD COLUMN {col} {ddl}")
+    # Belöningar som delats ut före räknaren fanns räknas som utdelade en gång (ofarligt att köra om)
+    conn.execute("UPDATE rewards SET times_given=1 WHERE given_at IS NOT NULL AND times_given=0")
     for stmt in LATE_INDEXES:
         conn.execute(stmt)
 

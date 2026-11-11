@@ -197,7 +197,10 @@ Bara skolämnen räknas, alltså inte fritidsämnen som K-pop.
   50 extra för varje vecka i rad och 50 när eleven själv tar sig upp en nivå, plus poängen på godkända [uppgifter](#uppgifter). Prov och K-pop ger inga poäng. Poäng räknas från den dag
   funktionen först användes för eleven, medan märken räknas på allt som gjorts.
 * **Belöningar:** du lägger in belöningar med ett poängpris (t.ex. *Bio-kväll, 500 poäng*). Eleven ser hur långt hon har kvar. När poängen
-  räcker markerar du belöningen som *utdelad* och dess poäng dras av. *Ångra* ger tillbaka poängen.
+  räcker markerar du belöningen som *utdelad* och dess poäng dras av. *Ångra* ger tillbaka poängen. Kryssar du i **Kan tas ut flera gånger**
+  (t.ex. *Godis, 50 poäng*) kan den delas ut om och om igen, och poängen dras varje gång. Den ligger kvar tills du tar bort den, och
+  admin och elev ser hur många gånger den delats ut. *Ångra* ångrar den senaste utdelningen. En belöning som redan delats ut och sedan tas bort
+  döljs i stället för att raderas, så att poängen som använts på den fortsätter dras av och inte betalas tillbaka.
 * **Märken:** 19 märken (första svaret, 100/500/1000 svar, dagar i rad, dagsmål, 5 och 10 rätt i rad, nivåer, prov med mera) som visas
   på sidan **Framsteg**. De räknas ut från svaren och listan finns i `app/motivation.py`.
 
@@ -213,7 +216,10 @@ granska, för eleven: uppgifter att göra och nya svar från admin, alltså godk
 **Admin** (fliken *Uppgifter*):
 
 1. **Ny uppgift:** rubrik, fri text (radbrytningar behålls), poäng vid godkänt och en valfri bild. Bilden kan laddas upp (png, jpg, gif, webp
-   eller svg) eller hämtas från en webbadress (png, jpg, gif, webp). Högst 3 MB, och den sparas på servern som `uppgift-….<ändelse>`.
+   eller svg), hämtas från en webbadress (png, jpg, gif, webp) eller väljas bland bilderna som redan finns i mediamappen (miniatyrer, ingen
+   kopia görs, så samma bild kan användas av flera uppgifter och övningar). Uppladdade och hämtade bilder är högst 3 MB och sparas som
+   `uppgift-….<ändelse>`. Städningen tar bara bort `uppgift-`-filer och bara när varken en uppgift eller en övning använder dem.
+   Du kan också kryssa i **Visa på rapporten när uppgiften är godkänd** (se nedan).
 2. **Ge till elever:** öppna uppgiften och kryssa i en eller flera elever. Samma uppgift kan ges till flera, och till samma elev igen
    när hon fått den godkänd. En elev som redan har den pågående hoppas över.
 3. **Granska:** när eleven markerat en uppgift som klar dyker den upp överst under *Att granska* (och under uppgiften). Du kan **godkänna**
@@ -225,6 +231,10 @@ granska, för eleven: uppgifter att göra och nya svar från admin, alltså godk
 **Eleven** ser sina uppgifter under *Att göra*, *Väntar på att admin tittar på dem* och *Klara*. Hon öppnar en uppgift, läser texten och
 bilden, och trycker **Jag har gjort uppgiften** (med en valfri kommentar). Efter granskningen ser hon admins kommentar och poängen.
 
+**På rapporten:** uppgifter där du kryssat i *Visa på rapporten* och som eleven fått godkända under rapportperioden visas i ett eget avsnitt
+*Uppgifter* i PDF-rapporten, med datum, rubrik och början av texten (högst 160 tecken). Poäng och dina kommentarer tas aldrig med. Det
+räknas ut när rapporten skapas, så avmarkerar du uppgiften eller ändrar beslutet försvinner den från rapporten.
+
 Poängen läggs till elevens poäng (se ovan) och kan användas till belöningar. De sparas när uppgiften godkänns, så att en senare ändring
 av uppgiftens poäng inte påverkar redan utdelade poäng. Elever som har poäng avstängda ser inte poängen på uppgifterna.
 
@@ -232,7 +242,8 @@ av uppgiftens poäng inte påverkar redan utdelade poäng. Elever som har poäng
 Adresser som pekar på hemnätet, servern själv eller liknande (t.ex. `localhost`, `192.168.x.x`) avvisas, även efter omdirigeringar. Containern
 behöver komma ut på internet för att funktionen ska fungera. Annars går det bra att ladda upp bilden i stället.
 
-Nya tabeller (`tasks`, `task_assignments`) läggs till automatiskt vid uppgradering. nginx tillåter nu uppladdningar upp till 4 MB, så
+Nya tabeller (`tasks`, `task_assignments`) och kolumner (`task_assignments.result_seen`, `tasks.in_report`, `rewards.repeatable`,
+`rewards.times_given`, `rewards.retired`) läggs till automatiskt vid uppgradering, och redan utdelade belöningar räknas som utdelade en gång. nginx tillåter nu uppladdningar upp till 4 MB, så
 nginx-containern behöver startas om en gång efter uppdateringen för att den nya gränsen ska gälla.
 
 ## K-pop

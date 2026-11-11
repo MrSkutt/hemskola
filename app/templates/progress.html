@@ -34,7 +34,8 @@
     {% for r in prog.rewards %}
     <div class="reward {{ 'given' if r.given }}">
       <div class="rtop"><strong>{{ r.title }}</strong> <span class="muted">{{ r.cost }} poäng</span>
-        {% if r.given %}<span class="pill">✔ Utdelad</span>{% elif r.ready %}<span class="pill">🎁 Du kan få den!</span>{% endif %}</div>
+        {% if r.given %}<span class="pill">✔ Utdelad</span>{% elif r.ready %}<span class="pill">🎁 Du kan få den!</span>{% endif %}
+        {% if r.repeatable %}<span class="muted psmall">🔁 går att få flera gånger{% if r.times_given %} · du har fått den {{ r.times_given }} {{ 'gång' if r.times_given == 1 else 'gånger' }}{% endif %}</span>{% endif %}</div>
       {% if not r.given %}
         <div class="bar"><i style="width:{{ r.pct }}%"></i></div>
         <div class="muted psmall">{% if r.ready %}Säg till så får du den.{% else %}{{ r.missing }} poäng kvar{% endif %}</div>

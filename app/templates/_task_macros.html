@@ -12,3 +12,16 @@
 {% macro status_pill(status, labels) %}
 <span class="pill {{ {'todo': 'off', 'done': 'wait', 'approved': '', 'rejected': 'redo'}[status] }}">{{ labels[status] }}</span>
 {% endmacro %}
+
+{% macro image_picker(media, current='') %}
+<details class="pickerbox">
+  <summary>🖼️ … eller välj en bild som redan finns ({{ media|length }})</summary>
+  <div class="picker">
+    <label class="none"><input type="radio" name="image_existing" value="" checked><span>{{ 'Behåll nuvarande' if current else 'Ingen bild' }}</span></label>
+    {% for name in media %}
+    <label title="{{ name }}"><input type="radio" name="image_existing" value="{{ name }}"><img src="/media/{{ name }}" alt="{{ name }}" loading="lazy"><span>{{ name }}{% if name == current %} (nuvarande){% endif %}</span></label>
+    {% endfor %}
+  </div>
+  <p class="muted psmall" style="margin:.4rem 0 0">Bilden delas, så det blir ingen kopia. Samma bild kan användas av flera uppgifter och övningar.</p>
+</details>
+{% endmacro %}

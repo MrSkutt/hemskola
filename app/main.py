@@ -508,9 +508,9 @@ def admin_set_prefs(request: Request, student_id: int, daily_goal: str = Form("0
 
 @app.post("/admin/student/{student_id}/rewards")
 def admin_add_reward(request: Request, student_id: int, title: str = Form(""), cost: str = Form(""),
-                     user=Depends(admin_user), db=Depends(database.get_db)):
+                     repeatable: str = Form(""), user=Depends(admin_user), db=Depends(database.get_db)):
     _require_student(db, student_id)
-    error = motivation.add_reward(db, student_id, title, cost)
+    error = motivation.add_reward(db, student_id, title, cost, repeatable=bool(repeatable))
     db.commit()
     flash(request, error or "Belöningen är tillagd.", "warn" if error else "ok")
     return go(f"/admin/student/{student_id}#motivation")
@@ -526,7 +526,11 @@ def admin_reward_action(request: Request, student_id: int, reward_id: int, actio
     elif action == "undo":
         motivation.undo_reward(db, student_id, reward_id)
     elif action == "delete":
-        motivation.delete_reward(db, student_id, reward_id)
+        kept = motivation.delete_reward(db, student_id, reward_id)
+        if kept:
+            flash(request, f"Belöningen är borttagen. De {kept} poäng som redan använts på den dras fortfarande av.")
+            db.commit()
+            return go(f"/admin/student/{student_id}#motivation")
     else:
         raise HTTPException(400)
     db.commit()
@@ -870,8 +874,15 @@ def _drop_task_image(db, name) -> None:
         path.unlink()
 
 
-async def _image_from_form(upload, url: str) -> tuple:
-    """(filnamn, fel). Filnamnet är '' om ingen bild angavs. En uppladdad fil går före en webbadress."""
+def _media_names() -> list:
+    """Alla bilder i mediamappen (filnamn), för bildväljaren."""
+    return sorted(f.name for f in media_dir().iterdir()
+                  if f.is_file() and f.suffix.lower() in MEDIA_TYPES and logic.MEDIA_NAME.match(f.name))
+
+
+async def _image_from_form(upload, url: str, existing: str = "") -> tuple:
+    """(filnamn, fel). Filnamnet är '' om ingen bild angavs. Prioritet: uppladdad fil, webbadress, befintlig bild.
+    En befintlig bild delas (ingen kopia görs), så den kan användas av flera uppgifter och övningar."""
     if upload is not None and upload.filename:
         ext = Path(upload.filename).suffix.lower()
         data = await upload.read(MAX_UPLOAD + 1)
@@ -888,6 +899,13 @@ async def _image_from_form(upload, url: str) -> tuple:
         except ValueError as e:
             return "", str(e)
         return _store_task_image(ext, data), ""
+    existing = existing.strip()
+    if existing:
+        path = media_dir() / existing
+        if not logic.MEDIA_NAME.match(existing) or path.suffix.lower() not in MEDIA_TYPES or not path.is_file() \
+                or path.resolve().parent != media_dir().resolve():
+            return "", "Den valda bilden finns inte längre."
+        return existing, ""
     return "", ""
 
 
@@ -897,7 +915,7 @@ def _back(back: str, default: str) -> str:
 
 def _tasks_page(request: Request, db, form=None, status_code: int = 200):
     return render(request, "admin_tasks.html", queue=tasks.to_review(db), task_list=tasks.list_tasks(db),
-                  form=form, status_code=status_code)
+                  form=form, media=_media_names(), status_code=status_code)
 
 
 def _task_page(request: Request, db, task_id: int, form=None, status_code: int = 200):
@@ -909,7 +927,7 @@ def _task_page(request: Request, db, task_id: int, form=None, status_code: int =
                           "ORDER BY display_name").fetchall()
     busy = {r["user_id"] for r in rows if r["status"] != "approved"}
     return render(request, "admin_task.html", task=task, rows=rows, students=students, busy=busy,
-                  labels=tasks.STATUS_LABELS, form=form, status_code=status_code)
+                  labels=tasks.STATUS_LABELS, form=form, media=_media_names(), status_code=status_code)
 
 
 @app.get("/admin/uppgifter")
@@ -919,17 +937,18 @@ def admin_tasks(request: Request, user=Depends(admin_user), db=Depends(database.
 
 @app.post("/admin/uppgifter/ny")
 async def admin_task_new(request: Request, title: str = Form(""), body: str = Form(""), points: str = Form("0"),
-                         image_url: str = Form(""), image: UploadFile | None = File(None),
+                         image_url: str = Form(""), image_existing: str = Form(""), in_report: str = Form(""),
+                         image: UploadFile | None = File(None),
                          user=Depends(admin_user), db=Depends(database.get_db)):
-    form = {"title": title, "body": body, "points": points, "image_url": image_url}
+    form = {"title": title, "body": body, "points": points, "image_url": image_url, "in_report": bool(in_report)}
     error = tasks.parse_task(title, body, points)[3]
     name = ""
     if not error:
-        name, error = await _image_from_form(image, image_url)
+        name, error = await _image_from_form(image, image_url, image_existing)
     if error:
         flash(request, error, "warn")
         return _tasks_page(request, db, form=form, status_code=400)
-    task_id, _ = tasks.create_task(db, title, body, points, image=name or None)
+    task_id, _ = tasks.create_task(db, title, body, points, image=name or None, in_report=bool(in_report))
     db.commit()
     flash(request, "Uppgiften är skapad. Välj nedan vilka elever som ska få den.")
     return go(f"/admin/uppgifter/{task_id}")
@@ -942,28 +961,29 @@ def admin_task(request: Request, task_id: int, user=Depends(admin_user), db=Depe
 
 @app.post("/admin/uppgifter/{task_id}")
 async def admin_task_edit(request: Request, task_id: int, title: str = Form(""), body: str = Form(""),
-                          points: str = Form("0"), image_url: str = Form(""), remove_image: str = Form(""),
+                          points: str = Form("0"), image_url: str = Form(""), image_existing: str = Form(""),
+                          remove_image: str = Form(""), in_report: str = Form(""),
                           image: UploadFile | None = File(None),
                           user=Depends(admin_user), db=Depends(database.get_db)):
     task = db.execute("SELECT * FROM tasks WHERE id=?", (task_id,)).fetchone()
     if not task:
         raise HTTPException(404, "Uppgiften finns inte")
-    form = {"title": title, "body": body, "points": points, "image_url": image_url}
+    form = {"title": title, "body": body, "points": points, "image_url": image_url, "in_report": bool(in_report)}
     error = tasks.parse_task(title, body, points)[3]
     name = ""
     if not error:
-        name, error = await _image_from_form(image, image_url)
+        name, error = await _image_from_form(image, image_url, image_existing)
     if error:
         flash(request, error, "warn")
         return _task_page(request, db, task_id, form=form, status_code=400)
-    tasks.update_task(db, task_id, title, body, points)
+    tasks.update_task(db, task_id, title, body, points, in_report=bool(in_report))
     old = task["image"]
     if name:
         db.execute("UPDATE tasks SET image=? WHERE id=?", (name, task_id))
     elif remove_image:
         db.execute("UPDATE tasks SET image=NULL WHERE id=?", (task_id,))
     db.commit()
-    if old and (name or remove_image):
+    if old and old != name and (name or remove_image):
         _drop_task_image(db, old)
     flash(request, "Uppgiften är sparad. Redan givna uppgifter behåller de poäng de fick när de godkändes.")
     return go(f"/admin/uppgifter/{task_id}")

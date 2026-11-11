@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "_task_macros.html" import review_form, status_pill %}
+{% from "_task_macros.html" import review_form, status_pill, image_picker %}
 {% block title %}{{ task.title }} – Uppgifter{% endblock %}
 {% block content %}
 {% set here = '/admin/uppgifter/' ~ task.id %}
@@ -57,10 +57,12 @@
       <div><label>{{ 'Byt bild – ladda upp' if task.image else 'Bild (valfri) – ladda upp' }}</label><input type="file" name="image" accept="image/png,image/jpeg,image/gif,image/webp,image/svg+xml"></div>
       <div style="flex:1;min-width:14rem"><label>… eller hämta från webbadress</label><input name="image_url" placeholder="https://…" style="width:100%" value="{{ form.image_url if form }}"></div>
     </div>
+    {{ image_picker(media, task.image) }}
     {% if task.image %}
     <div class="taskimg"><img src="/media/{{ task.image }}" alt="Bild till uppgiften"></div>
-    <label style="display:flex;gap:.4rem;align-items:center"><input type="checkbox" name="remove_image" value="1"> Ta bort bilden</label>
+    <label class="checkline"><input type="checkbox" name="remove_image" value="1"> Ta bort bilden</label>
     {% endif %}
+    <label class="checkline"><input type="checkbox" name="in_report" value="1" {{ 'checked' if (form.in_report if form else task.in_report) }}> Visa på rapporten när uppgiften är godkänd</label>
     <p class="muted psmall" style="margin:.4rem 0 .8rem">Ändrade poäng gäller nästa gång en uppgift godkänns. Elever som redan fått poäng behåller dem.</p>
     <button>Spara</button>
   </form>

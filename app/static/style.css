@@ -183,3 +183,11 @@ form.review textarea { margin-bottom: .4rem; }
 .checks { display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; margin: .4rem 0 .8rem; }
 .checks label { display: flex; align-items: center; gap: .4rem; margin: 0; }
 details.newtask > summary { cursor: pointer; font-weight: 700; font-size: 1.1rem; }
+.checkline { display: flex; gap: .4rem; align-items: center; margin: .5rem 0; }
+details.pickerbox { margin-top: .6rem; }
+details.pickerbox > summary { cursor: pointer; font-weight: 600; }
+.picker { display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: .5rem; max-height: 300px; overflow: auto; margin-top: .5rem; padding: .3rem; border: 1px solid var(--line); border-radius: 10px; }
+.picker label { display: flex; flex-direction: column; align-items: center; gap: .2rem; margin: 0; padding: .3rem; border: 2px solid transparent; border-radius: 8px; cursor: pointer; font-size: .72rem; text-align: center; word-break: break-all; color: var(--muted); }
+.picker label:has(input:checked) { border-color: var(--accent); color: var(--text); }
+.picker img { width: 88px; height: 62px; object-fit: contain; background: #fff; border-radius: 4px; }
+.picker label.none { justify-content: center; min-height: 80px; }

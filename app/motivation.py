@@ -44,8 +44,8 @@ def points(db, user_id: int, prefs=None) -> dict:
                            (user_id, since)).fetchone()["c"] * LEVEL_BONUS
     task_pts = tasks.task_points(db, user_id, since)
     total = answer_pts + goal_pts + week_pts + level_pts + task_pts
-    spent = db.execute("SELECT COALESCE(SUM(cost), 0) AS s FROM rewards WHERE user_id=? AND given_at IS NOT NULL",
-                       (user_id,)).fetchone()["s"]
+    spent = db.execute("SELECT COALESCE(SUM(cost * times_given), 0) AS s FROM rewards WHERE user_id=?",
+                       (user_id,)).fetchone()["s"]   # inklusive borttagna (retired) belöningar som redan delats ut
     return {"answers": answer_pts, "goal": goal_pts, "week": week_pts, "levels": level_pts,
             "tasks": task_pts, "total": total, "spent": spent, "balance": max(0, total - spent)}
 
@@ -53,12 +53,16 @@ def points(db, user_id: int, prefs=None) -> dict:
 # ---------------------------------------------------------------- belöningar
 
 def reward_list(db, user_id: int, balance: int) -> list:
+    """Elevens belöningar. En engångsbelöning är "given" när den delats ut. En belöning som kan tas ut flera gånger
+    är aldrig "given", utan kan delas ut igen så fort poängen räcker (times_given visar hur många gånger)."""
     out = []
     for r in db.execute(
-            "SELECT * FROM rewards WHERE user_id=? ORDER BY given_at IS NOT NULL, cost, id", (user_id,)):
-        given = r["given_at"] is not None
+            "SELECT * FROM rewards WHERE user_id=? AND retired=0 "
+            "ORDER BY (repeatable=0 AND times_given>0), cost, id", (user_id,)):
+        given = not r["repeatable"] and r["times_given"] > 0
         out.append({
             "id": r["id"], "title": r["title"], "cost": r["cost"], "given": given, "given_at": r["given_at"],
+            "repeatable": bool(r["repeatable"]), "times_given": r["times_given"],
             "ready": not given and balance >= r["cost"],
             "missing": 0 if given else max(0, r["cost"] - balance),
             "pct": 100 if given else min(100, round(100 * balance / r["cost"])),
@@ -67,12 +71,13 @@ def reward_list(db, user_id: int, balance: int) -> list:
 
 
 def next_reward(rewards: list):
-    """Närmaste belöning eleven inte fått än (den billigaste), eller None."""
+    """Närmaste belöning eleven inte fått än (den billigaste), eller None. Belöningar som kan tas ut flera gånger
+    räknas alltid som något eleven kan sikta mot."""
     open_ = [r for r in rewards if not r["given"]]
     return open_[0] if open_ else None
 
 
-def add_reward(db, user_id: int, title: str, cost) -> str:
+def add_reward(db, user_id: int, title: str, cost, repeatable=False) -> str:
     """Returnerar ett felmeddelande, eller '' om belöningen lades till."""
     title = " ".join(str(title).split())[:80]
     try:
@@ -83,28 +88,43 @@ def add_reward(db, user_id: int, title: str, cost) -> str:
         return "Skriv vad belöningen är."
     if not 1 <= cost <= 100000:
         return "Poängen ska vara mellan 1 och 100 000."
-    db.execute("INSERT INTO rewards(user_id, title, cost) VALUES (?,?,?)", (user_id, title, cost))
+    db.execute("INSERT INTO rewards(user_id, title, cost, repeatable) VALUES (?,?,?,?)",
+               (user_id, title, cost, 1 if repeatable else 0))
     return ""
 
 
 def give_reward(db, user_id: int, reward_id: int) -> str:
-    r = db.execute("SELECT * FROM rewards WHERE id=? AND user_id=?", (reward_id, user_id)).fetchone()
+    r = db.execute("SELECT * FROM rewards WHERE id=? AND user_id=? AND retired=0", (reward_id, user_id)).fetchone()
     if not r:
         return "Belöningen finns inte."
-    if r["given_at"]:
+    if not r["repeatable"] and r["times_given"] > 0:
         return "Den är redan utdelad."
     if points(db, user_id)["balance"] < r["cost"]:
         return "Eleven har inte tillräckligt med poäng än."
-    db.execute("UPDATE rewards SET given_at=datetime('now') WHERE id=?", (reward_id,))
+    db.execute("UPDATE rewards SET times_given = times_given + 1, given_at=datetime('now') WHERE id=?", (reward_id,))
     return ""
 
 
 def undo_reward(db, user_id: int, reward_id: int) -> None:
-    db.execute("UPDATE rewards SET given_at=NULL WHERE id=? AND user_id=?", (reward_id, user_id))
+    """Ångrar den senaste utdelningen (poängen för den ges tillbaka)."""
+    db.execute("UPDATE rewards SET times_given = times_given - 1, "
+               "given_at = CASE WHEN times_given - 1 <= 0 THEN NULL ELSE given_at END "
+               "WHERE id=? AND user_id=? AND times_given > 0 AND retired=0", (reward_id, user_id))
 
 
-def delete_reward(db, user_id: int, reward_id: int) -> None:
-    db.execute("DELETE FROM rewards WHERE id=? AND user_id=?", (reward_id, user_id))
+def delete_reward(db, user_id: int, reward_id: int) -> int:
+    """Tar bort en belöning. Har den delats ut döljs den i stället för att raderas, så att poängen som redan
+    använts på den fortsätter dras av (annars skulle borttagningen ge tillbaka poängen). Returnerar de poäng som
+    fortfarande räknas som använda på den, eller 0 om den raderades helt."""
+    r = db.execute("SELECT cost, times_given FROM rewards WHERE id=? AND user_id=? AND retired=0",
+                   (reward_id, user_id)).fetchone()
+    if not r:
+        return 0
+    if r["times_given"] > 0:
+        db.execute("UPDATE rewards SET retired=1 WHERE id=?", (reward_id,))
+        return r["cost"] * r["times_given"]
+    db.execute("DELETE FROM rewards WHERE id=?", (reward_id,))
+    return 0
 
 
 # ---------------------------------------------------------------- märken

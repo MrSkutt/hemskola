@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "_task_macros.html" import review_form %}
+{% from "_task_macros.html" import review_form, image_picker %}
 {% block title %}Uppgifter – Hemskola{% endblock %}
 {% block content %}
 <h1>Uppgifter</h1>
@@ -31,6 +31,8 @@
         <div><label>Bild (valfri) – ladda upp</label><input type="file" name="image" accept="image/png,image/jpeg,image/gif,image/webp,image/svg+xml"></div>
         <div style="flex:1;min-width:14rem"><label>… eller hämta från webbadress</label><input name="image_url" placeholder="https://…" style="width:100%" value="{{ form.image_url if form }}"></div>
       </div>
+      {{ image_picker(media) }}
+      <label class="checkline"><input type="checkbox" name="in_report" value="1" {{ 'checked' if form and form.in_report }}> Visa på rapporten när uppgiften är godkänd</label>
       <p class="muted psmall" style="margin:.4rem 0 .8rem">Bilden sparas på servern. Png, jpg, gif, webp (och svg vid uppladdning), högst 3 MB. Eleven får uppgiften först när du ger den till henne eller honom på nästa sida.</p>
       <button>Skapa uppgift</button>
     </form>
@@ -45,7 +47,7 @@
     {% for t in task_list %}
     <tr style="{{ 'opacity:.55' if not t.active }}">
       <td><a href="/admin/uppgifter/{{ t.id }}"><strong>{{ t.title }}</strong></a>
-        {% if t.image %}<span class="pill off">bild</span>{% endif %}{% if not t.active %} <span class="pill off">arkiverad</span>{% endif %}</td>
+        {% if t.image %}<span class="pill off">bild</span>{% endif %}{% if t.in_report %} <span class="pill off" title="Visas på rapporten när den är godkänd">på rapporten</span>{% endif %}{% if not t.active %} <span class="pill off">arkiverad</span>{% endif %}</td>
       <td>{{ t.points }}</td>
       <td class="muted">{{ t.summary or "ingen än" }}</td>
       <td><a class="btn small" href="/admin/uppgifter/{{ t.id }}">Öppna / ge till elever</a></td>

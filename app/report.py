@@ -18,6 +18,7 @@ GREY = colors.HexColor("#666666")
 LIGHT = colors.HexColor("#e9efe9")
 PERIODS = {7: "senaste 7 dagarna", 30: "senaste 30 dagarna", 90: "senaste 90 dagarna", 0: "hela tiden"}
 MIN_TOPIC_ANSWERS = 3
+TASK_TEXT_MAX = 160   # så många tecken av uppgiftens text visas på rapporten
 
 
 def _styles():
@@ -78,8 +79,13 @@ def collect(db, student, days: int, subject_filter=None) -> dict:
         })
     streak, _ = logic.streak_and_today(db, uid, subject_filter)
     day_set = {logic.parse_ts(r["created_at"]).date() for r in rows}
+    # godkända uppgifter som admin valt att visa på rapporten (bara rubrik, text och datum, aldrig poäng eller kommentarer)
+    done_tasks = db.execute(
+        """SELECT a.reviewed_at, t.title, t.body FROM task_assignments a JOIN tasks t ON t.id=a.task_id
+           WHERE a.user_id=? AND a.status='approved' AND t.in_report=1 AND a.reviewed_at>=?
+           ORDER BY a.reviewed_at, a.id""", (uid, since)).fetchall()
     return {"rows": rows, "subjects": subjects, "streak": streak, "active_days": len(day_set), "days": days,
-            "first_day": min(day_set) if day_set else None, "included": subject_filter}
+            "first_day": min(day_set) if day_set else None, "included": subject_filter, "tasks": done_tasks}
 
 
 def _activity_chart(rows, days, width, height=90):
@@ -208,6 +214,18 @@ def build_pdf(db, student, days: int = 30, subject_filter=None) -> bytes:
             block += [_p("Exempel på senaste felsvar", st["h3"])] + [_p("• " + i, st["cell"]) for i in items]
         story.append(KeepTogether(block[:3]))
         story += block[3:]
+
+    if data["tasks"]:
+        items = []
+        for t in data["tasks"]:
+            text = " ".join(str(t["body"]).split())
+            if len(text) > TASK_TEXT_MAX:
+                text = text[:TASK_TEXT_MAX].rstrip() + "…"
+            when = logic.parse_ts(t["reviewed_at"]).strftime("%Y-%m-%d")
+            items.append(_p(f"• {when}: {t['title']}" + (f" – {text}" if text else ""), st["cell"]))
+        story.append(KeepTogether([_p("Uppgifter", st["h2"]),
+                                   _p("Uppgifter eleven har gjort och fått godkända under perioden.", st["small"])] + items[:2]))
+        story += items[2:]
 
     def footer(canvas, doc_):
         canvas.saveState()

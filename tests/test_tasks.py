@@ -736,3 +736,224 @@ def test_reused_media_is_safe_for_tasks_and_exercises(client):
     assert _conn().execute("SELECT image FROM tasks WHERE id=?", (tid,)).fetchone()["image"] is None
     assert "bilden användes av 1 övning och 1 uppgift." in _media_flash(client)
     assert ex
+
+
+# ---------------------------------------------------------------- välja en befintlig bild
+
+def _media_file():
+    """En av de medföljande bilderna i mediamappen."""
+    from app import main
+    return sorted(f.name for f in main.media_dir().iterdir() if f.suffix == ".svg")[0]
+
+
+def test_task_form_lists_existing_images_to_pick_from(client):
+    _admin(client)
+    img = _media_file()
+    page = client.get("/admin/uppgifter").text
+    assert 'name="image_existing"' in page and f'value="{img}"' in page and f'src="/media/{img}"' in page
+    assert "välj en bild som redan finns" in page
+
+
+def test_task_can_use_an_existing_image_without_copying_it(client):
+    from app import main
+    _admin(client)
+    img = _media_file()
+    before = sorted(f.name for f in main.media_dir().iterdir())
+    r = client.post("/admin/uppgifter/ny", data={"title": "Med bild", "points": "5", "image_existing": img})
+    assert r.status_code == 303
+    tid = int(r.headers["location"].rsplit("/", 1)[1])
+    assert _conn().execute("SELECT image FROM tasks WHERE id=?", (tid,)).fetchone()["image"] == img
+    assert sorted(f.name for f in main.media_dir().iterdir()) == before            # ingen kopia
+    detail = client.get(f"/admin/uppgifter/{tid}").text
+    assert f"{img} (nuvarande)" in detail and "Behåll nuvarande" in detail
+    # eleven ser bilden
+    _make_student(client)
+    _give(client, tid, "mia")
+    _student(client)
+    assert f'src="/media/{img}"' in client.get(f"/uppgifter/{_aid(tid)}").text
+
+
+def test_picking_a_new_image_replaces_the_old_and_never_deletes_library_images(client):
+    from app import main
+    _admin(client)
+    lib = _media_file()
+    # uppgiften börjar med en egen uppladdad bild
+    r = client.post("/admin/uppgifter/ny", data={"title": "A", "points": "1"}, files={"image": ("a.png", PNG, "image/png")})
+    tid = int(r.headers["location"].rsplit("/", 1)[1])
+    own = _conn().execute("SELECT image FROM tasks WHERE id=?", (tid,)).fetchone()["image"]
+    assert (main.media_dir() / own).is_file()
+    # byte till en bild ur biblioteket: den egna bilden städas bort, biblioteksbilden finns kvar
+    client.post(f"/admin/uppgifter/{tid}", data={"title": "A", "points": "1", "image_existing": lib})
+    assert _conn().execute("SELECT image FROM tasks WHERE id=?", (tid,)).fetchone()["image"] == lib
+    assert not (main.media_dir() / own).exists() and (main.media_dir() / lib).is_file()
+    # ta bort bilden: biblioteksbilden ligger kvar
+    client.post(f"/admin/uppgifter/{tid}", data={"title": "A", "points": "1", "remove_image": "1"})
+    assert _conn().execute("SELECT image FROM tasks WHERE id=?", (tid,)).fetchone()["image"] is None
+    assert (main.media_dir() / lib).is_file()
+    # väljer man samma bild igen raderas ingenting
+    client.post(f"/admin/uppgifter/{tid}", data={"title": "A", "points": "1", "image_existing": lib})
+    client.post(f"/admin/uppgifter/{tid}", data={"title": "A", "points": "1", "image_existing": lib})
+    assert (main.media_dir() / lib).is_file()
+    # tom radioknapp ("Behåll nuvarande") ändrar ingenting
+    client.post(f"/admin/uppgifter/{tid}", data={"title": "A2", "points": "1", "image_existing": ""})
+    assert _conn().execute("SELECT image, title FROM tasks WHERE id=?", (tid,)).fetchone()[:] == (lib, "A2")
+
+
+def test_two_tasks_can_share_an_uploaded_image_and_it_goes_with_the_last(client):
+    from app import main
+    _admin(client)
+    r = client.post("/admin/uppgifter/ny", data={"title": "Först", "points": "1"}, files={"image": ("a.png", PNG, "image/png")})
+    t1 = int(r.headers["location"].rsplit("/", 1)[1])
+    shared = _conn().execute("SELECT image FROM tasks WHERE id=?", (t1,)).fetchone()["image"]
+    r = client.post("/admin/uppgifter/ny", data={"title": "Sedan", "points": "1", "image_existing": shared})
+    t2 = int(r.headers["location"].rsplit("/", 1)[1])
+    assert _conn().execute("SELECT image FROM tasks WHERE id=?", (t2,)).fetchone()["image"] == shared
+    assert "2 uppgifter" in client.get("/admin/media").text
+    client.post(f"/admin/uppgifter/{t1}/ta-bort")
+    assert (main.media_dir() / shared).is_file()                                  # den andra uppgiften använder den
+    client.post(f"/admin/uppgifter/{t2}/ta-bort")
+    assert not (main.media_dir() / shared).exists()
+
+
+def test_image_priority_and_bad_picks(client):
+    from app import main
+    _admin(client)
+    lib = _media_file()
+    # uppladdning går före vald bild
+    r = client.post("/admin/uppgifter/ny", data={"title": "Upp", "points": "1", "image_existing": lib},
+                    files={"image": ("a.png", PNG, "image/png")})
+    tid = int(r.headers["location"].rsplit("/", 1)[1])
+    assert _conn().execute("SELECT image FROM tasks WHERE id=?", (tid,)).fetchone()["image"].startswith("uppgift-")
+    n = _conn().execute("SELECT COUNT(*) FROM tasks").fetchone()[0]
+    for bad in ("finns-inte.png", "../x.png", "..%2Fx.png", "/etc/passwd", "a/b.png", "notes.txt", "app", "x" * 200 + ".png"):
+        r = client.post("/admin/uppgifter/ny", data={"title": "Min rubrik", "points": "1", "image_existing": bad})
+        assert r.status_code == 400 and "Den valda bilden finns inte längre" in r.text and "Min rubrik" in r.text, bad
+    (main.media_dir() / "anteckningar.txt").write_text("hej")
+    r = client.post("/admin/uppgifter/ny", data={"title": "T", "points": "1", "image_existing": "anteckningar.txt"})
+    assert r.status_code == 400                                                    # bara bilder går att välja
+    assert _conn().execute("SELECT COUNT(*) FROM tasks").fetchone()[0] == n
+
+
+# ---------------------------------------------------------------- uppgifter på rapporten
+
+def test_task_can_be_marked_for_the_report_when_created_and_edited(client):
+    _admin(client)
+    r = client.post("/admin/uppgifter/ny", data={"title": "Med", "points": "1", "in_report": "1"})
+    t1 = int(r.headers["location"].rsplit("/", 1)[1])
+    r = client.post("/admin/uppgifter/ny", data={"title": "Utan", "points": "1"})
+    t2 = int(r.headers["location"].rsplit("/", 1)[1])
+    flags = {r["id"]: r["in_report"] for r in _conn().execute("SELECT id, in_report FROM tasks")}
+    assert flags == {t1: 1, t2: 0}
+    assert re.search(r'name="in_report" value="1" checked', client.get(f"/admin/uppgifter/{t1}").text)
+    assert not re.search(r'name="in_report" value="1" checked', client.get(f"/admin/uppgifter/{t2}").text)
+    page = client.get("/admin/uppgifter").text
+    assert page.count(">på rapporten</span>") == 1                                # pillret i listan, en gång
+    client.post(f"/admin/uppgifter/{t1}", data={"title": "Med", "points": "1"})        # kryssrutan avmarkerad
+    client.post(f"/admin/uppgifter/{t2}", data={"title": "Utan", "points": "1", "in_report": "1"})
+    flags = {r["id"]: r["in_report"] for r in _conn().execute("SELECT id, in_report FROM tasks")}
+    assert flags == {t1: 0, t2: 1}
+    # ett fel i formuläret behåller kryssen
+    r = client.post(f"/admin/uppgifter/{t1}", data={"title": "", "points": "1", "in_report": "1"})
+    assert r.status_code == 400 and re.search(r'name="in_report" value="1" checked', r.text)
+
+
+def _student_row(name="mia"):
+    c = _conn()
+    return c.execute("SELECT * FROM users WHERE username=?", (name,)).fetchone()
+
+
+def _report_texts(monkeypatch, days=30, name="mia"):
+    """Bygger rapporten och returnerar all text som hamnade i den."""
+    from app import report
+    texts = []
+    real = report._p
+    monkeypatch.setattr(report, "_p", lambda text, style: texts.append(str(text)) or real(text, style))
+    pdf = report.build_pdf(_conn(), _student_row(name), days)
+    assert pdf.startswith(b"%PDF")
+    return "\n".join(texts)
+
+
+def test_report_lists_only_approved_tasks_marked_for_the_report(client, monkeypatch):
+    _make_student(client, "mia")
+    _make_student(client, "ben")
+    show = _new_task(client, title="Rita kretsloppet", body="Rita och skriv orden.\nMed   flera   mellanslag.", points="50")
+    hide = _new_task(client, title="Städa rummet", points="20")
+    client.post(f"/admin/uppgifter/{show}", data={"title": "Rita kretsloppet", "body": "Rita och skriv orden.\nMed   flera   mellanslag.", "points": "50", "in_report": "1"})
+    open_t = _new_task(client, title="Ej klar uppgift", points="5")
+    client.post(f"/admin/uppgifter/{open_t}", data={"title": "Ej klar uppgift", "points": "5", "in_report": "1"})
+    for tid in (show, hide, open_t):
+        _give(client, tid, "mia")
+    _give(client, show, "ben")
+    for tid in (show, hide):
+        _review(client, _done(client, tid), "approve", "Hemlig kommentar")
+    _done(client, show, "ben")                                                    # Ben är klar men inte godkänd
+    # open_t lämnas som "att göra"
+    from app import report
+    c = _conn()
+    data = report.collect(c, _student_row("mia"), 30)
+    assert [t["title"] for t in data["tasks"]] == ["Rita kretsloppet"]
+    text = _report_texts(monkeypatch)
+    assert "Uppgifter" in text and "Rita kretsloppet – Rita och skriv orden. Med flera mellanslag." in text
+    assert "Städa rummet" not in text and "Ej klar uppgift" not in text          # inte kryssad / inte godkänd
+    assert "Hemlig kommentar" not in text and "50" not in text.split("Rita kretsloppet")[1].split("\n")[0]   # varken kommentar eller poäng
+    assert "Rita kretsloppet" not in _report_texts(monkeypatch, name="ben")      # bara elevens egna, och bara godkända
+
+
+def test_report_task_section_respects_period_and_later_changes(client, monkeypatch):
+    _make_student(client)
+    tid = _new_task(client, title="Gammal uppgift")
+    client.post(f"/admin/uppgifter/{tid}", data={"title": "Gammal uppgift", "points": "50", "in_report": "1"})
+    _give(client, tid, "mia")
+    aid = _done(client, tid)
+    _review(client, aid, "approve")
+    c = _conn()
+    c.execute("UPDATE task_assignments SET reviewed_at=datetime('now', '-100 days') WHERE id=?", (aid,))
+    assert "Gammal uppgift" not in _report_texts(monkeypatch, 30)                # utanför 30 dagar
+    assert "Gammal uppgift" not in _report_texts(monkeypatch, 90)
+    assert "Gammal uppgift" in _report_texts(monkeypatch, 0)                     # hela tiden
+    c.execute("UPDATE task_assignments SET reviewed_at=datetime('now') WHERE id=?", (aid,))
+    assert "Gammal uppgift" in _report_texts(monkeypatch, 7)
+    _review(client, aid, "reject", "Nej, gör om.")                               # avslås i efterhand → försvinner
+    assert "Gammal uppgift" not in _report_texts(monkeypatch, 7)
+    _student(client)
+    client.post(f"/uppgifter/{aid}/klar")
+    _review(client, aid, "approve")
+    assert "Gammal uppgift" in _report_texts(monkeypatch, 7)
+    client.post(f"/admin/uppgifter/{tid}", data={"title": "Gammal uppgift", "points": "50"})   # kryssen tas bort
+    assert "Gammal uppgift" not in _report_texts(monkeypatch, 7)
+
+
+def test_report_with_many_and_long_tasks_still_builds_and_text_is_escaped(client, monkeypatch):
+    _make_student(client)
+    for i in range(30):
+        tid = _new_task(client, title=f"Uppgift {i} <b>&</b>", body="Lång text. " * 100)
+        client.post(f"/admin/uppgifter/{tid}", data={"title": f"Uppgift {i} <b>&</b>", "body": "Lång text. " * 100, "points": "50", "in_report": "1"})
+        _give(client, tid, "mia")
+        _review(client, _done(client, tid), "approve")
+    text = _report_texts(monkeypatch)
+    assert text.count("Uppgift ") >= 30 and "…" in text
+    assert all(len(line) < 260 for line in text.split("\n") if line.startswith("•"))
+    _admin(client)
+    sid = _uid(_conn())
+    r = client.get(f"/admin/student/{sid}/report.pdf?days=0")
+    assert r.status_code == 200 and r.content.startswith(b"%PDF")
+
+
+def test_report_column_is_added_to_a_database_with_tasks_but_no_flag(tmp_path, monkeypatch):
+    import sqlite3
+    path = tmp_path / "nf.db"
+    old = sqlite3.connect(path)
+    old.executescript("""
+        CREATE TABLE users (id INTEGER PRIMARY KEY, username TEXT, display_name TEXT, password_hash TEXT, role TEXT,
+                            active INTEGER DEFAULT 1, created_at TEXT DEFAULT (datetime('now')));
+        CREATE TABLE tasks (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT NOT NULL, body TEXT NOT NULL DEFAULT '', image TEXT,
+                            points INTEGER NOT NULL DEFAULT 0, active INTEGER NOT NULL DEFAULT 1, created_at TEXT DEFAULT (datetime('now')));
+        INSERT INTO tasks(title, points) VALUES ('Från förra versionen', 10);
+    """)
+    old.commit()
+    old.close()
+    monkeypatch.setattr(database, "DB_PATH", str(path))
+    database.init_db()
+    conn = database.connect()
+    assert conn.execute("SELECT in_report FROM tasks").fetchone()[0] == 0        # befintliga uppgifter visas inte på rapporten
+    conn.close()
