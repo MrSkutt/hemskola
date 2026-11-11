@@ -334,6 +334,24 @@
 "hangul": "생일"
 },
 {
+"word": "borahae",
+"pos": "koreanska",
+"level": 3,
+"sv": [
+"jag lila dig (jag älskar dig)"
+],
+"hangul": "보라해"
+},
+{
+"word": "bangtan",
+"pos": "koreanska",
+"level": 3,
+"sv": [
+"skottsäker"
+],
+"hangul": "방탄"
+},
+{
 "word": "noraebang",
 "pos": "koreanska",
 "level": 3,

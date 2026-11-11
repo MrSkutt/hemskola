@@ -1,0 +1,219 @@
+[
+ {
+  "subject": "kemi",
+  "topic": "Kemi",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken är den kemiska beteckningen för vatten?",
+  "options": [
+   "H2O",
+   "CO2",
+   "O2",
+   "NaCl"
+  ],
+  "answer": "H2O",
+  "explanation": "Vatten består av två väteatomer och en syreatom: H₂O."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Luft",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken gas utgör störst del av luften?",
+  "options": [
+   "Kväve",
+   "Syre",
+   "Koldioxid",
+   "Argon"
+  ],
+  "answer": "Kväve",
+  "explanation": "Luften består av ungefär 78 % kväve och 21 % syre.",
+  "diagram": {
+   "type": "pie_chart",
+   "title": "Luftens innehåll",
+   "labels": [
+    "Kväve",
+    "Syre",
+    "Övrigt"
+   ],
+   "values": [
+    78,
+    21,
+    1
+   ],
+   "show_percent": true
+  }
+ },
+ {
+  "subject": "kemi",
+  "topic": "Kemi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad är en katalysator?",
+  "options": [
+   "Ett ämne som påskyndar en kemisk reaktion utan att förbrukas",
+   "Ett ämne som bromsar alla reaktioner",
+   "En sorts syra",
+   "En blandning av två metaller"
+  ],
+  "answer": "Ett ämne som påskyndar en kemisk reaktion utan att förbrukas",
+  "explanation": "En katalysator gör att reaktionen går snabbare men finns kvar efteråt."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Atomer",
+  "level": 5,
+  "type": "text",
+  "question": "Hur många elektroner har en neutral kolatom? Svara endast med talet.",
+  "answer": [
+   "6"
+  ],
+  "explanation": "Kol har atomnummer 6, alltså 6 protoner och 6 elektroner i en neutral atom."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Materia",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilka tre former kan vatten ha?",
+  "options": [
+   "Fast, flytande och gas",
+   "Rött, blått och grönt",
+   "Varmt, ljumt och kallt",
+   "Salt, sött och surt"
+  ],
+  "answer": "Fast, flytande och gas",
+  "explanation": "Is är fast, vatten är flytande och vattenånga är gas."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Materia",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken gas behöver vi andas in för att leva?",
+  "options": [
+   "Syre",
+   "Kväve",
+   "Koldioxid",
+   "Helium"
+  ],
+  "answer": "Syre",
+  "explanation": "Vi tar upp syre från luften."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Grundämnen",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken är den kemiska beteckningen för syre?",
+  "options": [
+   "O",
+   "S",
+   "Sy",
+   "Ox"
+  ],
+  "answer": "O",
+  "explanation": "Syre har beteckningen O."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Materia",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas det när ett fast ämne blir flytande?",
+  "options": [
+   "Smältning",
+   "Kondensation",
+   "Avdunstning",
+   "Stelning"
+  ],
+  "answer": "Smältning",
+  "explanation": "Is som blir vatten smälter."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Grundämnen",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken kemisk beteckning har natrium?",
+  "options": [
+   "Na",
+   "N",
+   "Ne",
+   "Nm"
+  ],
+  "answer": "Na",
+  "explanation": "Natrium har beteckningen Na, från latinets natrium."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Molekyler",
+  "level": 3,
+  "type": "text",
+  "question": "Hur många väteatomer finns i en molekyl vatten (H2O)?\nSvara endast med talet.",
+  "answer": [
+   "2"
+  ],
+  "explanation": "H₂O har två väteatomer och en syreatom."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Syror och baser",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kan man säga om en lösning med pH 7?",
+  "options": [
+   "Den är neutral",
+   "Den är sur",
+   "Den är basisk",
+   "Den är het"
+  ],
+  "answer": "Den är neutral",
+  "explanation": "pH 7 är neutralt, lägre är surt och högre är basiskt."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Grundämnen",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas ett ämne som bara består av en sorts atomer?",
+  "options": [
+   "Grundämne",
+   "Kemisk förening",
+   "Blandning",
+   "Lösning"
+  ],
+  "answer": "Grundämne",
+  "explanation": "Syre (O) och järn (Fe) är grundämnen."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Syror och baser",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad bildas när en syra reagerar med en bas?",
+  "options": [
+   "Salt och vatten",
+   "Bara en gas",
+   "En metall",
+   "Socker"
+  ],
+  "answer": "Salt och vatten",
+  "explanation": "Det kallas neutralisation."
+ },
+ {
+  "subject": "kemi",
+  "topic": "Bindningar",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken sorts bindning bildas när atomer delar på elektroner?",
+  "options": [
+   "Kovalent bindning",
+   "Jonbindning",
+   "Metallbindning",
+   "Vätebindning"
+  ],
+  "answer": "Kovalent bindning",
+  "explanation": "I en kovalent bindning delar atomerna elektroner, som i vattenmolekyler."
+ }
+]

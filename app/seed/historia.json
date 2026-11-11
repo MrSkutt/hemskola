@@ -1,0 +1,182 @@
+[
+ {
+  "subject": "historia",
+  "topic": "Historia",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket år började andra världskriget i Europa?",
+  "options": [
+   "1939",
+   "1914",
+   "1945",
+   "1933"
+  ],
+  "answer": "1939",
+  "explanation": "Kriget började 1939 när Tyskland anföll Polen."
+ },
+ {
+  "subject": "historia",
+  "topic": "Historia",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken händelse 1989 blev en symbol för kalla krigets slut i Europa?",
+  "options": [
+   "Berlinmurens fall",
+   "Ryska revolutionen",
+   "Suezkrisen",
+   "Kubakrisen"
+  ],
+  "answer": "Berlinmurens fall",
+  "explanation": "Muren i Berlin öppnades i november 1989."
+ },
+ {
+  "subject": "historia",
+  "topic": "Forntiden",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilka byggde pyramiderna vid Nilen?",
+  "options": [
+   "Egyptierna",
+   "Romarna",
+   "Vikingarna",
+   "Grekerna"
+  ],
+  "answer": "Egyptierna",
+  "explanation": "Pyramiderna byggdes som gravar i forntida Egypten."
+ },
+ {
+  "subject": "historia",
+  "topic": "Forntiden",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas den tidiga period då människor levde som jägare och samlare?",
+  "options": [
+   "Stenåldern",
+   "Bronsåldern",
+   "Järnåldern",
+   "Medeltiden"
+  ],
+  "answer": "Stenåldern",
+  "explanation": "Under stenåldern gjordes verktyg av sten."
+ },
+ {
+  "subject": "historia",
+  "topic": "Sverige",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket skepp sjönk på sin jungfruresa i Stockholm 1628?",
+  "options": [
+   "Vasa",
+   "Titanic",
+   "Mary Rose",
+   "Kon-Tiki"
+  ],
+  "answer": "Vasa",
+  "explanation": "Regalskeppet Vasa kantrade och bärgades 1961."
+ },
+ {
+  "subject": "historia",
+  "topic": "Sverige",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket år valdes Gustav Vasa till kung av Sverige?",
+  "options": [
+   "1523",
+   "1397",
+   "1611",
+   "1809"
+  ],
+  "answer": "1523",
+  "explanation": "Gustav Vasa blev kung 1523."
+ },
+ {
+  "subject": "historia",
+  "topic": "Korea",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken dynasti styrde Korea i över 500 år, från 1392?",
+  "options": [
+   "Joseon",
+   "Ming",
+   "Edo",
+   "Qing"
+  ],
+  "answer": "Joseon",
+  "explanation": "Joseon-dynastin styrde Korea 1392–1897."
+ },
+ {
+  "subject": "historia",
+  "topic": "Världskrigen",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket år började första världskriget?",
+  "options": [
+   "1914",
+   "1905",
+   "1918",
+   "1939"
+  ],
+  "answer": "1914",
+  "explanation": "Första världskriget började 1914."
+ },
+ {
+  "subject": "historia",
+  "topic": "Korea",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket år började Koreakriget?",
+  "options": [
+   "1950",
+   "1939",
+   "1962",
+   "1945"
+  ],
+  "answer": "1950",
+  "explanation": "Koreakriget bröt ut 1950 mellan Nord och Syd."
+ },
+ {
+  "subject": "historia",
+  "topic": "Korea",
+  "level": 4,
+  "type": "mc",
+  "question": "Hur slutade Koreakriget 1953?",
+  "options": [
+   "Med en vapenvila",
+   "Med ett fredsavtal",
+   "Med seger för Syd",
+   "Med seger för Nord"
+  ],
+  "answer": "Med en vapenvila",
+  "explanation": "Det blev en vapenvila och inget fredsavtal."
+ },
+ {
+  "subject": "historia",
+  "topic": "Korea",
+  "level": 5,
+  "type": "mc",
+  "question": "Under vilka år stod Korea under japanskt styre?",
+  "options": [
+   "1910–1945",
+   "1850–1880",
+   "1950–1953",
+   "1988–1990"
+  ],
+  "answer": "1910–1945",
+  "explanation": "Korea var en japansk koloni 1910–1945."
+ },
+ {
+  "subject": "historia",
+  "topic": "Industrialiseringen",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken omvälvning, med början på 1700-talet, ledde till maskiner och fabriker?",
+  "options": [
+   "Den industriella revolutionen",
+   "Franska revolutionen",
+   "Renässansen",
+   "Reformationen"
+  ],
+  "answer": "Den industriella revolutionen",
+  "explanation": "Den började i England på 1700-talet."
+ }
+]

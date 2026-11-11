@@ -1,0 +1,204 @@
+[
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken färg förknippas BTS och ARMY med?",
+  "options": [
+   "Lila",
+   "Rosa",
+   "Grön",
+   "Orange"
+  ],
+  "answer": "Lila",
+  "explanation": "'Borahae' betyder 'jag lila dig', ett uttryck för 'jag älskar dig' mellan BTS och ARMY."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken av dessa är en BTS-medlem?",
+  "options": [
+   "Jimin",
+   "Lisa",
+   "Jennie",
+   "Rosé"
+  ],
+  "answer": "Jimin",
+  "explanation": "Lisa, Jennie och Rosé är medlemmar i BLACKPINK."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad heter BTS ledare?",
+  "options": [
+   "RM",
+   "Jin",
+   "Suga",
+   "V"
+  ],
+  "answer": "RM",
+  "explanation": "RM är gruppens ledare."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 2,
+  "type": "mc",
+  "question": "Vem är BTS äldsta medlem?",
+  "options": [
+   "Jin",
+   "Jimin",
+   "Jung Kook",
+   "V"
+  ],
+  "answer": "Jin",
+  "explanation": "Jin är född 1992 och äldst."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 2,
+  "type": "mc",
+  "question": "Vem är BTS yngsta medlem, 'maknae'?",
+  "options": [
+   "Jung Kook",
+   "Jin",
+   "RM",
+   "Suga"
+  ],
+  "answer": "Jung Kook",
+  "explanation": "Jung Kook är den yngsta i gruppen."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad menar BTS och ARMY med 'borahae'?",
+  "options": [
+   "Jag lila dig (jag älskar dig)",
+   "Tack",
+   "Hej",
+   "Förlåt"
+  ],
+  "answer": "Jag lila dig (jag älskar dig)",
+  "explanation": "Lila är gruppens färg, och 'borahae' är ett sätt att säga att man älskar varandra."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 2,
+  "type": "text",
+  "question": "Ett BTS-album innehåller 12 låtar som är 3 minuter var. Hur många minuter musik är det?\nSvara endast med talet.",
+  "answer": [
+   "36"
+  ],
+  "explanation": "12 · 3 = 36 minuter."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken av BTS låtar är helt på engelska och släpptes 2020?",
+  "options": [
+   "Dynamite",
+   "Spring Day",
+   "Fake Love",
+   "Blood Sweat & Tears"
+  ],
+  "answer": "Dynamite",
+  "explanation": "'Dynamite' var BTS första låt helt på engelska."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket år släpptes BTS-låten 'Butter'?",
+  "options": [
+   "2021",
+   "2017",
+   "2019",
+   "2023"
+  ],
+  "answer": "2021",
+  "explanation": "'Butter' släpptes i maj 2021."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken stor stadion i London spelade BTS på 2019?",
+  "options": [
+   "Wembley Stadium",
+   "Ullevi",
+   "Friends Arena",
+   "Madison Square Garden"
+  ],
+  "answer": "Wembley Stadium",
+  "explanation": "BTS spelade för tiotusentals fans på Wembley Stadium i juni 2019."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad betyder 'bangtan' (방탄) i gruppnamnet Bangtan Sonyeondan?",
+  "options": [
+   "Skottsäker",
+   "Lila",
+   "Stjärna",
+   "Ung"
+  ],
+  "answer": "Skottsäker",
+  "explanation": "Gruppnamnet betyder ungefär 'de skottsäkra pojkscouterna'."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket pris blev BTS 2021 som första koreanska artister nominerade till för 'Dynamite'?",
+  "options": [
+   "Grammy",
+   "Oscar",
+   "Nobelpriset",
+   "Guldbollen"
+  ],
+  "answer": "Grammy",
+  "explanation": "Grammy är ett amerikanskt musikpris."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 4,
+  "type": "mc",
+  "question": "Vem i BTS höll ett tal på FN:s huvudkontor i New York 2018?",
+  "options": [
+   "RM",
+   "Jin",
+   "Suga",
+   "J-Hope"
+  ],
+  "answer": "RM",
+  "explanation": "RM talade i FN:s generalförsamling om att älska sig själv."
+ },
+ {
+  "subject": "kpop",
+  "topic": "BTS",
+  "level": 4,
+  "type": "text",
+  "question": "Anta att 40 % av 50 000 personer på en BTS-konsert är under 20 år. Hur många är under 20 år?\nSvara endast med talet.",
+  "answer": [
+   "20000"
+  ],
+  "explanation": "0,4 · 50 000 = 20 000."
+ }
+]

@@ -1,0 +1,159 @@
+[
+ {
+  "subject": "teknik",
+  "topic": "Mekanik",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad används en hävstång till?",
+  "options": [
+   "Att lyfta tungt med mindre kraft",
+   "Att lagra el",
+   "Att mäta tid",
+   "Att skapa ljud"
+  ],
+  "answer": "Att lyfta tungt med mindre kraft",
+  "explanation": "En hävstång gör arbetet lättare, till exempel en kofot."
+ },
+ {
+  "subject": "teknik",
+  "topic": "El",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad står LED för, som lampan i en lightstick?",
+  "options": [
+   "Light Emitting Diode",
+   "Long Energy Device",
+   "Light Electric Display",
+   "Low Energy Dial"
+  ],
+  "answer": "Light Emitting Diode",
+  "explanation": "LED är en lysdiod som lyser med lite energi."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Datorer",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilka siffror använder datorer i binär kod?",
+  "options": [
+   "0 och 1",
+   "1 och 2",
+   "0 till 9",
+   "1 till 10"
+  ],
+  "answer": "0 och 1",
+  "explanation": "Allt i en dator lagras som nollor och ettor."
+ },
+ {
+  "subject": "teknik",
+  "topic": "El",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket av dessa material leder el bäst?",
+  "options": [
+   "Koppar",
+   "Gummi",
+   "Trä",
+   "Glas"
+  ],
+  "answer": "Koppar",
+  "explanation": "Koppar är en metall som leder ström väl."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Datorer",
+  "level": 3,
+  "type": "text",
+  "question": "Hur många bitar är en byte?\nSvara endast med talet.",
+  "answer": [
+   "8"
+  ],
+  "explanation": "En byte är 8 bitar."
+ },
+ {
+  "subject": "teknik",
+  "topic": "El",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad är en sluten krets?",
+  "options": [
+   "En väg där strömmen kan gå runt hela vägen",
+   "En trasig sladd",
+   "Ett sorts batteri",
+   "En säkring"
+  ],
+  "answer": "En väg där strömmen kan gå runt hela vägen",
+  "explanation": "Bara i en sluten krets kan det gå ström."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Datorer",
+  "level": 3,
+  "type": "text",
+  "question": "En musikvideo är en fil på 120 MB. Hur många kB är det? (1 MB = 1000 kB)\nSvara endast med talet.",
+  "answer": [
+   "120000"
+  ],
+  "explanation": "120 · 1000 = 120 000 kB."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Programmering",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad är en algoritm?",
+  "options": [
+   "En steg-för-steg-instruktion för att lösa ett problem",
+   "Ett datavirus",
+   "En sorts skärm",
+   "En internetleverantör"
+  ],
+  "answer": "En steg-för-steg-instruktion för att lösa ett problem",
+  "explanation": "Program består av algoritmer."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Nätverk",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken enhet används för hur snabbt data överförs i ett nätverk?",
+  "options": [
+   "Mbit/s",
+   "Hertz",
+   "Watt",
+   "Decibel"
+  ],
+  "answer": "Mbit/s",
+  "explanation": "Mbit/s är megabit per sekund."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Elektronik",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad gör en transistor i en dator?",
+  "options": [
+   "Fungerar som en liten strömbrytare",
+   "Lagrar musik för alltid",
+   "Ger ljus",
+   "Kyler processorn"
+  ],
+  "answer": "Fungerar som en liten strömbrytare",
+  "explanation": "Miljarder transistorer slår på och av och bygger upp datorns logik."
+ },
+ {
+  "subject": "teknik",
+  "topic": "Ljud",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas det när man gör om en ljudinspelning till siffror som en dator kan lagra?",
+  "options": [
+   "Digitalisering",
+   "Förstärkning",
+   "Filtrering",
+   "Modulering"
+  ],
+  "answer": "Digitalisering",
+  "explanation": "Ljudet mäts många gånger per sekund och lagras som tal."
+ }
+]

@@ -55,7 +55,12 @@ def bootstrap() -> None:
             conn.commit()
         if os.environ.get("SEED_ON_START", "1") == "1":
             # Idempotent: redan inlagda övningar och ord hoppas över, så nya startmaterial kommer med vid uppgradering.
-            for f in sorted((BASE / "seed").glob("*.json")):
+            seeds = sorted((BASE / "seed").glob("*.json"))
+            for f in seeds:
+                logic.adopt_legacy_exercises(conn, json.loads(f.read_text(encoding="utf-8")))
+            logic.migrate_legacy_levels(conn)
+            conn.commit()
+            for f in seeds:
                 result = logic.import_bundle(conn, json.loads(f.read_text(encoding="utf-8")))
                 if result["added"] or result["words_added"]:
                     print(f"Seed {f.name}: {result['added']} övningar, {result['words_added']} ord", flush=True)

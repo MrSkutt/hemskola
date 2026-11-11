@@ -1,0 +1,216 @@
+[
+ {
+  "subject": "fysik",
+  "topic": "Solsystemet",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken planet är markerad med siffran 3?",
+  "options": [
+   "Merkurius",
+   "Venus",
+   "Jorden",
+   "Mars"
+  ],
+  "answer": "Jorden",
+  "explanation": "Planeterna ligger i ordningen Merkurius, Venus, Jorden, Mars, Jupiter, Saturnus, Uranus, Neptunus. Nummer 3 är Jorden.",
+  "image": "solsystemet.svg"
+ },
+ {
+  "subject": "fysik",
+  "topic": "Vatten",
+  "level": 1,
+  "type": "mc",
+  "question": "Vid vilken temperatur fryser rent vatten?",
+  "options": [
+   "0 °C",
+   "10 °C",
+   "100 °C",
+   "−10 °C"
+  ],
+  "answer": "0 °C",
+  "explanation": "Vatten fryser till is vid 0 °C."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Solsystemet",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken siffra har den största planeten?",
+  "options": [
+   "3",
+   "5",
+   "6",
+   "8"
+  ],
+  "answer": "5",
+  "explanation": "Nummer 5 är Jupiter, som är solsystemets största planet.",
+  "image": "solsystemet.svg"
+ },
+ {
+  "subject": "fysik",
+  "topic": "Temperatur",
+  "level": 2,
+  "type": "text",
+  "question": "Vilken temperatur visar pricken? Svara endast med talet.",
+  "answer": [
+   "-4",
+   "−4"
+  ],
+  "explanation": "Pricken ligger fyra steg under noll: −4 °C.",
+  "diagram": {
+   "type": "number_line",
+   "min": -10,
+   "max": 10,
+   "step": 1,
+   "label_step": 5,
+   "marks": [
+    {
+     "value": -4,
+     "label": "?"
+    }
+   ]
+  }
+ },
+ {
+  "subject": "fysik",
+  "topic": "Energi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken princip säger att energi varken kan skapas eller förstöras, bara omvandlas?",
+  "options": [
+   "Energiprincipen",
+   "Newtons tredje lag",
+   "Ohms lag",
+   "Arkimedes princip"
+  ],
+  "answer": "Energiprincipen",
+  "explanation": "Energin i ett slutet system är konstant, den byter bara form."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Krafter",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken enhet mäts kraft i?",
+  "options": [
+   "Newton",
+   "Watt",
+   "Joule",
+   "Volt"
+  ],
+  "answer": "Newton",
+  "explanation": "Kraft mäts i newton (N)."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Energi",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken sorts energi har ett föremål som rör sig?",
+  "options": [
+   "Rörelseenergi",
+   "Lägesenergi",
+   "Värmeenergi",
+   "Kemisk energi"
+  ],
+  "answer": "Rörelseenergi",
+  "explanation": "Rörelseenergi hör ihop med hastighet och massa."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Ljud och ljus",
+  "level": 3,
+  "type": "mc",
+  "question": "På en konsert ser du blixten från scenen innan du hör smällen. Varför?",
+  "options": [
+   "Ljus färdas mycket snabbare än ljud",
+   "Ljud färdas snabbare än ljus",
+   "Smällen sker senare än blixten",
+   "Ögonen reagerar snabbare än öronen"
+  ],
+  "answer": "Ljus färdas mycket snabbare än ljud",
+  "explanation": "Ljuset går ungefär 300 000 km/s och ljudet i luft ungefär 340 m/s."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Ljud och ljus",
+  "level": 3,
+  "type": "mc",
+  "question": "Genom vilket av dessa kan ljud inte färdas?",
+  "options": [
+   "Ett vakuum (tomrum)",
+   "Vatten",
+   "Luft",
+   "Stål"
+  ],
+  "answer": "Ett vakuum (tomrum)",
+  "explanation": "Ljud behöver ett ämne att färdas i, så i rymden hörs inget."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Rörelse",
+  "level": 3,
+  "type": "text",
+  "question": "En bil kör 90 km på 1,5 timmar. Vilken medelhastighet har den i km/h?\nSvara endast med talet.",
+  "answer": [
+   "60"
+  ],
+  "explanation": "Hastighet = sträcka / tid = 90 / 1,5 = 60 km/h."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Ljud och ljus",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken enhet används för ljudets frekvens?",
+  "options": [
+   "Hertz",
+   "Decibel",
+   "Meter",
+   "Newton"
+  ],
+  "answer": "Hertz",
+  "explanation": "Frekvens mäts i hertz (Hz). Decibel mäter ljudstyrka."
+ },
+ {
+  "subject": "fysik",
+  "topic": "El",
+  "level": 4,
+  "type": "text",
+  "question": "Effekten räknas ut som spänning · ström (P = U · I). Hur många watt blir det med 230 volt och 2 ampere?\nSvara endast med talet.",
+  "answer": [
+   "460"
+  ],
+  "explanation": "230 · 2 = 460 W."
+ },
+ {
+  "subject": "fysik",
+  "topic": "Ljud och ljus",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad händer med ljudets tonhöjd när frekvensen ökar?",
+  "options": [
+   "Tonen blir högre",
+   "Tonen blir lägre",
+   "Ljudet blir svagare",
+   "Ingenting"
+  ],
+  "answer": "Tonen blir högre",
+  "explanation": "Hög frekvens ger hög ton."
+ },
+ {
+  "subject": "fysik",
+  "topic": "El",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken lag säger att spänning = resistans · ström?",
+  "options": [
+   "Ohms lag",
+   "Newtons första lag",
+   "Arkimedes princip",
+   "Boyles lag"
+  ],
+  "answer": "Ohms lag",
+  "explanation": "U = R · I är Ohms lag."
+ }
+]

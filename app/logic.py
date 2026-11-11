@@ -21,7 +21,15 @@ SUBJECT_LABELS = {
     "matte": "Matematik",
     "svenska": "Svenska",
     "engelska": "Engelska",
-    "no": "NO (natur)",
+    "biologi": "Biologi",
+    "fysik": "Fysik",
+    "kemi": "Kemi",
+    "teknik": "Teknik",
+    "geografi": "Geografi",
+    "historia": "Historia",
+    "religionskunskap": "Religionskunskap",
+    "samhallskunskap": "Samhällskunskap",
+    "no": "NO (natur)",      # gamla samlingsämnen, delades upp i enskilda ämnen
     "so": "SO (samhälle)",
     "kpop": "K-pop",
 }
@@ -490,6 +498,40 @@ def active_subjects(db) -> list:
 
 
 # ---------------------------------------------------------------- import
+
+LEGACY_SUBJECTS = {
+    "no": ("biologi", "fysik", "kemi", "teknik"),
+    "so": ("geografi", "historia", "religionskunskap", "samhallskunskap"),
+}
+
+
+def adopt_legacy_exercises(db, data) -> int:
+    """Flyttar gamla övningar i samlingsämnena no/so till rätt enskilt ämne (matchat på frågetexten),
+    så att historik och svar följer med. Anropas före import av startmaterialet."""
+    items = data if isinstance(data, list) else (data.get("exercises", []) if isinstance(data, dict) else [])
+    moved = 0
+    for d in items:
+        if not isinstance(d, dict) or not d.get("question"):
+            continue
+        new = d.get("subject")
+        if new not in [s for group in LEGACY_SUBJECTS.values() for s in group]:
+            continue
+        old = "no" if new in LEGACY_SUBJECTS["no"] else "so"
+        cur = db.execute("UPDATE exercises SET subject=?, topic=? WHERE subject=? AND question=?",
+                         (new, str(d.get("topic", ""))[:60] or "Övrigt", old, d["question"]))
+        moved += cur.rowcount
+    return moved
+
+
+def migrate_legacy_levels(db) -> None:
+    """Elevens nivå i no/so kopieras till de nya ämnena och de gamla raderas."""
+    for old, news in LEGACY_SUBJECTS.items():
+        for r in db.execute("SELECT user_id, level FROM user_levels WHERE subject=?", (old,)).fetchall():
+            for sub in news:
+                db.execute("INSERT OR IGNORE INTO user_levels(user_id, subject, level, since_attempt_id) "
+                           "SELECT ?, ?, ?, COALESCE(MAX(id), 0) FROM attempts WHERE user_id=?",
+                           (r["user_id"], sub, r["level"], r["user_id"]))
+        db.execute("DELETE FROM user_levels WHERE subject=?", (old,))
 
 MEDIA_NAME = re.compile(r"^[A-Za-z0-9._-]{1,100}$")
 

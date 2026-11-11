@@ -1,36 +1,6 @@
 [
  {
-  "subject": "so",
-  "topic": "Sverige",
-  "level": 1,
-  "type": "mc",
-  "question": "Vilken stad är Sveriges huvudstad?",
-  "options": [
-   "Stockholm",
-   "Göteborg",
-   "Malmö",
-   "Uppsala"
-  ],
-  "answer": "Stockholm",
-  "explanation": "Stockholm är Sveriges huvudstad."
- },
- {
-  "subject": "so",
-  "topic": "Sveriges grannar",
-  "level": 1,
-  "type": "mc",
-  "question": "Vilket av länderna gränsar till Sverige?",
-  "options": [
-   "Norge",
-   "Frankrike",
-   "Spanien",
-   "Polen"
-  ],
-  "answer": "Norge",
-  "explanation": "Sverige gränsar till Norge och Finland, och har sjögräns till bland annat Danmark."
- },
- {
-  "subject": "so",
+  "subject": "samhallskunskap",
   "topic": "Demokrati",
   "level": 1,
   "type": "mc",
@@ -59,18 +29,7 @@
   }
  },
  {
-  "subject": "so",
-  "topic": "Sverige",
-  "level": 2,
-  "type": "text",
-  "question": "Hur många landskap finns det i Sverige? Svara endast med talet.",
-  "answer": [
-   "25"
-  ],
-  "explanation": "Sverige har 25 landskap."
- },
- {
-  "subject": "so",
+  "subject": "samhallskunskap",
   "topic": "Demokrati",
   "level": 2,
   "type": "mc",
@@ -85,7 +44,7 @@
   "explanation": "I en demokrati har folket makten genom fria val."
  },
  {
-  "subject": "so",
+  "subject": "samhallskunskap",
   "topic": "Demokrati",
   "level": 2,
   "type": "mc",
@@ -100,7 +59,7 @@
   "explanation": "Det är riksdagsval vart fjärde år."
  },
  {
-  "subject": "so",
+  "subject": "samhallskunskap",
   "topic": "Diagram",
   "level": 2,
   "type": "text",
@@ -127,7 +86,7 @@
   }
  },
  {
-  "subject": "so",
+  "subject": "samhallskunskap",
   "topic": "Sverige i världen",
   "level": 3,
   "type": "mc",
@@ -142,7 +101,7 @@
   "explanation": "Sverige gick med i EU den 1 januari 1995."
  },
  {
-  "subject": "so",
+  "subject": "samhallskunskap",
   "topic": "Statsskick",
   "level": 3,
   "type": "mc",
@@ -157,7 +116,7 @@
   "explanation": "Sverige har en kung som statschef, men makten ligger hos riksdag och regering."
  },
  {
-  "subject": "so",
+  "subject": "samhallskunskap",
   "topic": "Demokrati",
   "level": 3,
   "type": "mc",
@@ -172,22 +131,7 @@
   "explanation": "I en folkomröstning röstar medborgarna direkt i en viss fråga."
  },
  {
-  "subject": "so",
-  "topic": "Historia",
-  "level": 4,
-  "type": "mc",
-  "question": "Vilket år började andra världskriget i Europa?",
-  "options": [
-   "1939",
-   "1914",
-   "1945",
-   "1933"
-  ],
-  "answer": "1939",
-  "explanation": "Kriget började 1939 när Tyskland anföll Polen."
- },
- {
-  "subject": "so",
+  "subject": "samhallskunskap",
   "topic": "Världen",
   "level": 4,
   "type": "mc",
@@ -202,22 +146,7 @@
   "explanation": "FN, Förenta nationerna, grundades 1945."
  },
  {
-  "subject": "so",
-  "topic": "Historia",
-  "level": 5,
-  "type": "mc",
-  "question": "Vilken händelse 1989 blev en symbol för kalla krigets slut i Europa?",
-  "options": [
-   "Berlinmurens fall",
-   "Ryska revolutionen",
-   "Suezkrisen",
-   "Kubakrisen"
-  ],
-  "answer": "Berlinmurens fall",
-  "explanation": "Muren i Berlin öppnades i november 1989."
- },
- {
-  "subject": "so",
+  "subject": "samhallskunskap",
   "topic": "Statsskick",
   "level": 5,
   "type": "mc",
@@ -230,5 +159,125 @@
   ],
   "answer": "Maktdelning",
   "explanation": "Maktdelning ska hindra att en enda part får all makt."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Demokrati",
+  "level": 1,
+  "type": "mc",
+  "question": "Hur gammal måste man vara för att få rösta i riksdagsvalet?",
+  "options": [
+   "18 år",
+   "16 år",
+   "21 år",
+   "15 år"
+  ],
+  "answer": "18 år",
+  "explanation": "Rösträtt i riksdagsval har man från 18 år."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas pengarna vi betalar till stat och kommun för gemensam service, som skola och vård?",
+  "options": [
+   "Skatt",
+   "Lån",
+   "Lön",
+   "Ränta"
+  ],
+  "answer": "Skatt",
+  "explanation": "Skatten betalar för gemensam välfärd."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Demokrati",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas Sveriges regeringschef?",
+  "options": [
+   "Statsminister",
+   "Talman",
+   "President",
+   "Landshövding"
+  ],
+  "answer": "Statsminister",
+  "explanation": "Statsministern leder regeringen."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Demokrati",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad innebär yttrandefrihet?",
+  "options": [
+   "Rätten att uttrycka sina åsikter",
+   "Rätten att ha ett jobb",
+   "Rätten att vara ensam",
+   "Rätten till gratis mat"
+  ],
+  "answer": "Rätten att uttrycka sina åsikter",
+  "explanation": "Yttrandefrihet är en grundlag i Sverige."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 3,
+  "type": "mc",
+  "question": "K-pop är en stor exportvara för Sydkorea. Vad kallas det när ett land säljer varor eller tjänster till andra länder?",
+  "options": [
+   "Export",
+   "Import",
+   "Skatt",
+   "Tull"
+  ],
+  "answer": "Export",
+  "explanation": "Export är försäljning till utlandet, import är inköp därifrån."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Mänskliga rättigheter",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad säger FN:s barnkonvention om vem som är barn?",
+  "options": [
+   "Alla under 18 år",
+   "Alla under 15 år",
+   "Alla under 12 år",
+   "Alla under 21 år"
+  ],
+  "answer": "Alla under 18 år",
+  "explanation": "Barnkonventionen gäller alla under 18."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "FN",
+  "level": 4,
+  "type": "mc",
+  "question": "I vilken stad ligger FN:s huvudkontor, där BTS-medlemmen RM höll tal 2018?",
+  "options": [
+   "New York",
+   "Genève",
+   "Paris",
+   "Bryssel"
+  ],
+  "answer": "New York",
+  "explanation": "FN:s huvudkontor ligger i New York."
+ },
+ {
+  "subject": "samhallskunskap",
+  "topic": "Ekonomi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad är inflation?",
+  "options": [
+   "Att priserna i samhället stiger över tid",
+   "Att priserna sjunker",
+   "Att staten sänker skatten",
+   "Att fler människor flyttar"
+  ],
+  "answer": "Att priserna i samhället stiger över tid",
+  "explanation": "Vid inflation räcker samma pengar till mindre."
  }
 ]

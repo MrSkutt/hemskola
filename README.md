@@ -109,7 +109,7 @@ Koppla en bild till en övning med `"image": "filnamn.png"` i importen.
 
 Uppgraderar du en befintlig installation läggs de nya tabellerna och kolumnerna till automatiskt, utan att data försvinner.
 
-## Ämnen: matte, svenska, engelska, NO och SO
+## Ämnen
 
 Matte och svenska har generatorer. **Engelska** har generatorer för glosor (engelska ↔ svenska, nivå 1–5) och oregelbundna verb,
 som hämtar ord ur ordlistan (ordklass `glosa`, se `app/seed/words_en.json`). Lägg till fler glosor så här:
@@ -119,7 +119,10 @@ som hämtar ord ur ordlistan (ordklass `glosa`, se `app/seed/words_en.json`). L�
            {"word": "wake", "pos": "glosa", "level": 3, "sv": ["vakna"], "forms": {"past": "woke", "pastpart": "woken"}}]}
 ```
 
-Startövningar för **engelska**, **NO** och **SO** finns i `app/seed/*.json`, bland annat med diagram och med de medföljande
+Det finns 12 ämnen: matte, svenska, engelska, K-pop, de naturorienterande **biologi, fysik, kemi och teknik** samt de samhällsorienterande
+**geografi, historia, religionskunskap och samhällskunskap** (ämnesnamn i importen: `biologi`, `fysik`, `kemi`, `teknik`, `geografi`, `historia`,
+`religionskunskap`, `samhallskunskap`). Äldre installationer hade samlingsämnena `no` och `so`: vid uppgradering flyttas deras övningar, svar och
+nivåer automatiskt till de nya ämnena. Startövningar finns i `app/seed/*.json`, bland annat med diagram och med de medföljande
 exempelbilderna i `app/seed/media/` (de kopieras till `data/media` vid start, och befintliga filer skrivs aldrig över).
 Nya ämnen skapas automatiskt: importera övningar med t.ex. `"subject": "engelska"`. Egna visningsnamn läggs i `SUBJECT_LABELS` i `app/logic.py`.
 
@@ -151,7 +154,7 @@ och exempel på senaste felsvar. Nivåerna är en uppskattning från övningspro
 
 ## Idéer framåt
 
-* Fler ämnen (engelska, NO, SO) och fler övningar per nivå
+* Fler övningar per nivå i de nya ämnena, och generatorer för NO/SO
 * Eget val av område att öva på, mål per dag, och belöningar/poäng
 * Fler generatorer och fler ord i ordlistan, t.ex. engelska glosor
 * Påminnelser/veckorapport till admin

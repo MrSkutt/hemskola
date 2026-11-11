@@ -1,0 +1,225 @@
+[
+ {
+  "subject": "biologi",
+  "topic": "Växter",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken del av växten har bokstaven D?",
+  "options": [
+   "Blomma",
+   "Blad",
+   "Stjälk",
+   "Rot"
+  ],
+  "answer": "Rot",
+  "explanation": "D pekar på växtens rötter. Rötterna tar upp vatten och håller fast växten.",
+  "image": "vaxtens_delar.svg"
+ },
+ {
+  "subject": "biologi",
+  "topic": "Växter",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken bokstav visar växtens blomma?",
+  "options": [
+   "A",
+   "B",
+   "C",
+   "D"
+  ],
+  "answer": "A",
+  "explanation": "A pekar på blomman. B är ett blad, C stjälken och D roten.",
+  "image": "vaxtens_delar.svg"
+ },
+ {
+  "subject": "biologi",
+  "topic": "Växter",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken gas tar växter upp från luften när de gör fotosyntes?",
+  "options": [
+   "Koldioxid",
+   "Syre",
+   "Kväve",
+   "Väte"
+  ],
+  "answer": "Koldioxid",
+  "explanation": "Växter tar upp koldioxid och vatten och bildar socker och syre."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Celler",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken del av cellen innehåller arvsmassan?",
+  "options": [
+   "Cellkärnan",
+   "Cellväggen",
+   "Mitokondrien",
+   "Cellmembranet"
+  ],
+  "answer": "Cellkärnan",
+  "explanation": "Arvsmassan (DNA) finns i cellkärnan."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Växter",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas processen där växter omvandlar ljus, vatten och koldioxid till socker och syre?",
+  "options": [
+   "Fotosyntes",
+   "Förbränning",
+   "Jäsning",
+   "Cellandning"
+  ],
+  "answer": "Fotosyntes",
+  "explanation": "Fotosyntesen sker i växtens gröna delar med hjälp av klorofyll."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Kroppen",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket organ pumpar runt blodet i kroppen?",
+  "options": [
+   "Hjärtat",
+   "Lungorna",
+   "Magen",
+   "Levern"
+  ],
+  "answer": "Hjärtat",
+  "explanation": "Hjärtat är en kraftfull muskel som pumpar blodet."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Kroppen",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket organ använder man för att andas?",
+  "options": [
+   "Lungorna",
+   "Njurarna",
+   "Hjärtat",
+   "Magen"
+  ],
+  "answer": "Lungorna",
+  "explanation": "I lungorna tas syre upp i blodet."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Djur",
+  "level": 2,
+  "type": "mc",
+  "question": "Hur många ben har en insekt?",
+  "options": [
+   "6",
+   "8",
+   "4",
+   "10"
+  ],
+  "answer": "6",
+  "explanation": "Insekter har sex ben. Spindlar har åtta och är inte insekter."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Kroppen",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken del av örat fångar först upp ljudvågorna och sätts i svängning?",
+  "options": [
+   "Trumhinnan",
+   "Hörselsnäckan",
+   "Balansorganet",
+   "Hörselnerven"
+  ],
+  "answer": "Trumhinnan",
+  "explanation": "Ljudvågorna får trumhinnan att vibrera. Vibrationen förs vidare till hörselsnäckan och sedan till hjärnan."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Djur",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad kallas djur som äter både växter och kött?",
+  "options": [
+   "Allätare",
+   "Växtätare",
+   "Köttätare",
+   "Nedbrytare"
+  ],
+  "answer": "Allätare",
+  "explanation": "Människan och björnen är allätare."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Kroppen",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilka blodkroppar transporterar syre i blodet?",
+  "options": [
+   "Röda blodkroppar",
+   "Vita blodkroppar",
+   "Blodplättar",
+   "Blodplasma"
+  ],
+  "answer": "Röda blodkroppar",
+  "explanation": "Hemoglobinet i de röda blodkropparna binder syre."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Celler",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas processen där kroppens celler använder syre för att få energi ur socker, till exempel när du dansar?",
+  "options": [
+   "Cellandning",
+   "Fotosyntes",
+   "Jäsning",
+   "Matsmältning"
+  ],
+  "answer": "Cellandning",
+  "explanation": "Vid cellandning förbränns socker med syre, och det bildas energi, koldioxid och vatten."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Genetik",
+  "level": 4,
+  "type": "text",
+  "question": "Hur många kromosomer finns i de flesta av en människas kroppsceller?\nSvara endast med talet.",
+  "answer": [
+   "46"
+  ],
+  "explanation": "En människa har 23 par kromosomer, alltså 46."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Genetik",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken molekyl innehåller den genetiska informationen i cellerna?",
+  "options": [
+   "DNA",
+   "ATP",
+   "Glukos",
+   "Fett"
+  ],
+  "answer": "DNA",
+  "explanation": "DNA bär koden för hur kroppen byggs upp."
+ },
+ {
+  "subject": "biologi",
+  "topic": "Ekologi",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas det när två olika arter har nytta av varandra?",
+  "options": [
+   "Symbios (samliv med ömsesidig nytta)",
+   "Parasitism",
+   "Konkurrens",
+   "Rovdjursjakt"
+  ],
+  "answer": "Symbios (samliv med ömsesidig nytta)",
+  "explanation": "Vid symbios gynnas båda arterna, till exempel bin och blommor."
+ }
+]

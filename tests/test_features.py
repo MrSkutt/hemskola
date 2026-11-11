@@ -245,7 +245,7 @@ def test_example_images_and_subjects_are_installed(client):
         assert r.status_code == 200 and r.headers["content-type"] == "image/svg+xml"
     conn = _conn()
     subjects = {r[0] for r in conn.execute("SELECT DISTINCT subject FROM exercises WHERE active=1")}
-    assert {"matte", "svenska", "engelska", "no", "so", "kpop"} <= subjects
+    assert {"matte", "svenska", "engelska", "biologi", "fysik", "kemi", "teknik", "geografi", "historia", "religionskunskap", "samhallskunskap", "kpop"} <= subjects
     refs = {r[0] for r in conn.execute("SELECT image FROM exercises WHERE image IS NOT NULL")}
     conn.close()
     assert refs and all(client.get(f"/media/{n}").status_code == 200 for n in refs)
@@ -287,3 +287,29 @@ def test_pdf_report(client):
     assert client.get("/admin/student/9999/report.pdf").status_code == 404
     admin_id = _conn().execute("SELECT id FROM users WHERE username='admin'").fetchone()["id"]
     assert client.get(f"/admin/student/{admin_id}/report.pdf").status_code == 404   # bara elever
+
+
+def test_legacy_no_so_are_moved_to_new_subjects(client):
+    """Gamla övningar och nivåer i no/so följer med till de nya ämnena."""
+    conn = _conn()
+    uid = conn.execute("INSERT INTO users(username, display_name, password_hash, role) VALUES ('old','Old','x','student')").lastrowid
+    q = "Vilken del av växten har bokstaven D?"
+    ex = conn.execute("SELECT id FROM exercises WHERE question=?", (q,)).fetchone()["id"]
+    conn.execute("UPDATE exercises SET subject='no' WHERE id=?", (ex,))        # som i en databas från före uppdelningen
+    conn.execute("INSERT INTO attempts(user_id, exercise_id, given, correct) VALUES (?,?,?,1)", (uid, ex, "Rot"))
+    conn.execute("INSERT INTO user_levels(user_id, subject, level) VALUES (?, 'no', 4)", (uid,))
+    conn.execute("INSERT INTO user_levels(user_id, subject, level) VALUES (?, 'so', 2)", (uid,))
+    conn.commit()
+    import json as _json
+    from app import main
+    seed = _json.loads((main.BASE / "seed" / "biologi.json").read_text(encoding="utf-8"))
+    assert logic.adopt_legacy_exercises(conn, seed) == 1
+    logic.migrate_legacy_levels(conn)
+    conn.commit()
+    assert conn.execute("SELECT subject FROM exercises WHERE id=?", (ex,)).fetchone()[0] == "biologi"
+    assert conn.execute("SELECT COUNT(*) FROM exercises WHERE question=?", (q,)).fetchone()[0] == 1
+    assert logic.get_level(conn, uid, "biologi") == 4 and logic.get_level(conn, uid, "kemi") == 4
+    assert logic.get_level(conn, uid, "historia") == 2
+    assert logic.get_level(conn, uid, "no") is None and logic.get_level(conn, uid, "so") is None
+    assert conn.execute("SELECT COUNT(*) FROM attempts WHERE exercise_id=?", (ex,)).fetchone()[0] == 1
+    conn.close()

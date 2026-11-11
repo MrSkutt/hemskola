@@ -1,0 +1,255 @@
+[
+ {
+  "subject": "geografi",
+  "topic": "Vattnets kretslopp",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas steget A, där vatten från havet blir till vattenånga?",
+  "options": [
+   "Avdunstning",
+   "Kondensation",
+   "Nederbörd",
+   "Frysning"
+  ],
+  "answer": "Avdunstning",
+  "explanation": "Solen värmer vattnet så att det avdunstar och stiger som vattenånga.",
+  "image": "vattnets_kretslopp.svg"
+ },
+ {
+  "subject": "geografi",
+  "topic": "Vattnets kretslopp",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad händer i steg B?",
+  "options": [
+   "Vattenångan kyls och blir små droppar",
+   "Vattnet fryser till is",
+   "Droppar faller mot marken",
+   "Vatten tas upp av rötter"
+  ],
+  "answer": "Vattenångan kyls och blir små droppar",
+  "explanation": "B är molnet. Där kyls vattenångan och blir till små vattendroppar, som kallas kondensation.",
+  "image": "vattnets_kretslopp.svg"
+ },
+ {
+  "subject": "geografi",
+  "topic": "Diagram",
+  "level": 3,
+  "type": "mc",
+  "question": "Staplarna visar medeltemperaturen en vecka i en fiktiv stad. Vilken dag var det varmast?",
+  "options": [
+   "Mån",
+   "Tis",
+   "Ons",
+   "Tor",
+   "Fre"
+  ],
+  "answer": "Tor",
+  "explanation": "Torsdag har den högsta stapeln.",
+  "diagram": {
+   "type": "bar_chart",
+   "title": "Temperatur (°C)",
+   "labels": [
+    "Mån",
+    "Tis",
+    "Ons",
+    "Tor",
+    "Fre"
+   ],
+   "values": [
+    12,
+    14,
+    13,
+    18,
+    15
+   ]
+  }
+ },
+ {
+  "subject": "geografi",
+  "topic": "Sverige",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken stad är Sveriges huvudstad?",
+  "options": [
+   "Stockholm",
+   "Göteborg",
+   "Malmö",
+   "Uppsala"
+  ],
+  "answer": "Stockholm",
+  "explanation": "Stockholm är Sveriges huvudstad."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Sveriges grannar",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket av länderna gränsar till Sverige?",
+  "options": [
+   "Norge",
+   "Frankrike",
+   "Spanien",
+   "Polen"
+  ],
+  "answer": "Norge",
+  "explanation": "Sverige gränsar till Norge och Finland, och har sjögräns till bland annat Danmark."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Sverige",
+  "level": 2,
+  "type": "text",
+  "question": "Hur många landskap finns det i Sverige? Svara endast med talet.",
+  "answer": [
+   "25"
+  ],
+  "explanation": "Sverige har 25 landskap."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Världen",
+  "level": 1,
+  "type": "mc",
+  "question": "Hur många kontinenter brukar man räkna med?",
+  "options": [
+   "7",
+   "5",
+   "9",
+   "12"
+  ],
+  "answer": "7",
+  "explanation": "De sju kontinenterna är Asien, Afrika, Nordamerika, Sydamerika, Antarktis, Europa och Oceanien."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Korea",
+  "level": 1,
+  "type": "mc",
+  "question": "På vilken kontinent ligger Sydkorea?",
+  "options": [
+   "Asien",
+   "Europa",
+   "Afrika",
+   "Sydamerika"
+  ],
+  "answer": "Asien",
+  "explanation": "Sydkorea ligger i Östasien."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Världen",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas den tänkta linjen runt jordens mitt?",
+  "options": [
+   "Ekvatorn",
+   "Meridianen",
+   "Polcirkeln",
+   "Vändkretsen"
+  ],
+  "answer": "Ekvatorn",
+  "explanation": "Ekvatorn delar jorden i norra och södra halvklotet."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Korea",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken av dessa städer ligger i Sydkorea?",
+  "options": [
+   "Busan",
+   "Osaka",
+   "Shanghai",
+   "Hanoi"
+  ],
+  "answer": "Busan",
+  "explanation": "Busan är en stor hamnstad i sydost."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Korea",
+  "level": 3,
+  "type": "mc",
+  "question": "Jimin och Jung Kook i BTS kommer från en stor hamnstad i sydöstra Korea. Vad heter Sydkoreas näst största stad?",
+  "options": [
+   "Busan",
+   "Daegu",
+   "Incheon",
+   "Gwangju"
+  ],
+  "answer": "Busan",
+  "explanation": "Busan är Sydkoreas näst största stad."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Kartor",
+  "level": 3,
+  "type": "text",
+  "question": "På en karta är skalan 1:100 000. Två platser är 4 cm från varandra på kartan. Hur många kilometer är det i verkligheten?\nSvara endast med talet.",
+  "answer": [
+   "4"
+  ],
+  "explanation": "4 cm · 100 000 = 400 000 cm = 4 km."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Världen",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket land är störst i världen till ytan?",
+  "options": [
+   "Ryssland",
+   "Kanada",
+   "Kina",
+   "USA"
+  ],
+  "answer": "Ryssland",
+  "explanation": "Ryssland är världens största land till ytan."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Korea",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad kallas det bevakade området mellan Nordkorea och Sydkorea?",
+  "options": [
+   "DMZ (demilitariserade zonen)",
+   "Suezkanalen",
+   "Panamakanalen",
+   "Berlinmuren"
+  ],
+  "answer": "DMZ (demilitariserade zonen)",
+  "explanation": "DMZ är en militärfri zon som sträcker sig tvärs över Koreahalvön."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Korea",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket hav ligger väster om Koreahalvön?",
+  "options": [
+   "Gula havet",
+   "Röda havet",
+   "Svarta havet",
+   "Vita havet"
+  ],
+  "answer": "Gula havet",
+  "explanation": "Gula havet ligger mellan Korea och Kina."
+ },
+ {
+  "subject": "geografi",
+  "topic": "Jorden",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad orsakar de flesta jordbävningar?",
+  "options": [
+   "Rörelser mellan jordskorpans plattor",
+   "Starka vindar",
+   "Tidvatten",
+   "Månens ljus"
+  ],
+  "answer": "Rörelser mellan jordskorpans plattor",
+  "explanation": "Plattorna rör sig mot, från och förbi varandra, och spänningen släpper som jordbävningar."
+ }
+]

@@ -1,0 +1,212 @@
+[
+ {
+  "subject": "religionskunskap",
+  "topic": "Världsreligionerna",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken religion har flest anhängare i världen?",
+  "options": [
+   "Kristendomen",
+   "Islam",
+   "Hinduismen",
+   "Buddhismen"
+  ],
+  "answer": "Kristendomen",
+  "explanation": "Kristendomen är störst, följd av islam."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Heliga skrifter",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad heter muslimernas heliga bok?",
+  "options": [
+   "Koranen",
+   "Bibeln",
+   "Toran",
+   "Vedaböckerna"
+  ],
+  "answer": "Koranen",
+  "explanation": "Koranen är islams heliga bok."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Heliga skrifter",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad heter kristnas heliga bok?",
+  "options": [
+   "Bibeln",
+   "Koranen",
+   "Toran",
+   "Tripitaka"
+  ],
+  "answer": "Bibeln",
+  "explanation": "Bibeln har Gamla och Nya testamentet."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Gudshus",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas judarnas gudshus?",
+  "options": [
+   "Synagoga",
+   "Moské",
+   "Kyrka",
+   "Tempel"
+  ],
+  "answer": "Synagoga",
+  "explanation": "Judar möts i synagogan."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Gudshus",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad kallas muslimernas gudshus?",
+  "options": [
+   "Moské",
+   "Synagoga",
+   "Kyrka",
+   "Pagod"
+  ],
+  "answer": "Moské",
+  "explanation": "Muslimer ber i moskén."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Buddhism",
+  "level": 2,
+  "type": "mc",
+  "question": "Vem grundade buddhismen?",
+  "options": [
+   "Siddhartha Gautama (Buddha)",
+   "Muhammed",
+   "Jesus",
+   "Moses"
+  ],
+  "answer": "Siddhartha Gautama (Buddha)",
+  "explanation": "Buddha betyder 'den upplyste'."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Högtider",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken högtid firar kristna för att minnas att Jesus uppstod?",
+  "options": [
+   "Påsk",
+   "Jul",
+   "Midsommar",
+   "Ramadan"
+  ],
+  "answer": "Påsk",
+  "explanation": "Påsken firas till minne av Jesu uppståndelse."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Islam",
+  "level": 3,
+  "type": "mc",
+  "question": "Hur många pelare har islam?",
+  "options": [
+   "5",
+   "3",
+   "7",
+   "10"
+  ],
+  "answer": "5",
+  "explanation": "De fem pelarna är trosbekännelse, bön, allmosor, fasta och pilgrimsfärd."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Judendom",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad heter judarnas vilodag?",
+  "options": [
+   "Sabbaten",
+   "Ramadan",
+   "Påsk",
+   "Diwali"
+  ],
+  "answer": "Sabbaten",
+  "explanation": "Sabbaten börjar vid solnedgången på fredagen."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Korea",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilka två religioner har flest anhängare i Sydkorea?",
+  "options": [
+   "Kristendom och buddhism",
+   "Islam och hinduism",
+   "Judendom och shinto",
+   "Shinto och taoism"
+  ],
+  "answer": "Kristendom och buddhism",
+  "explanation": "Många i Sydkorea är dock inte religiösa alls."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Korea",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad firar man under högtiden Chuseok i Korea?",
+  "options": [
+   "Skörden, tillsammans med familjen",
+   "Nyår",
+   "Jesu födelse",
+   "Barnens dag"
+  ],
+  "answer": "Skörden, tillsammans med familjen",
+  "explanation": "Chuseok är en tacksägelsefest på hösten där familjer samlas."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Världsreligionerna",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilka tre religioner kallas abrahamitiska?",
+  "options": [
+   "Judendom, kristendom och islam",
+   "Hinduism, buddhism och shinto",
+   "Buddhism, taoism och konfucianism",
+   "Islam, hinduism och sikhism"
+  ],
+  "answer": "Judendom, kristendom och islam",
+  "explanation": "De tre har Abraham som gemensam förfader i sina berättelser."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Livsåskådningar",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad innebär ateism?",
+  "options": [
+   "Att man inte tror att det finns någon gud",
+   "Att man är osäker på om gud finns",
+   "Att man tror på flera gudar",
+   "Att man tillber naturen"
+  ],
+  "answer": "Att man inte tror att det finns någon gud",
+  "explanation": "Den som är osäker kallas agnostiker."
+ },
+ {
+  "subject": "religionskunskap",
+  "topic": "Världsreligionerna",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad kallas tron på flera gudar?",
+  "options": [
+   "Polyteism",
+   "Monoteism",
+   "Ateism",
+   "Agnosticism"
+  ],
+  "answer": "Polyteism",
+  "explanation": "Hinduismen är ett exempel. Monoteism är tron på en gud."
+ }
+]
