@@ -7,6 +7,7 @@ import secrets
 import time
 from contextlib import asynccontextmanager
 from pathlib import Path
+from urllib.parse import quote
 
 from fastapi import Depends, FastAPI, File, Form, HTTPException, Query, Request, UploadFile
 from fastapi.responses import FileResponse, JSONResponse, RedirectResponse, Response
@@ -15,7 +16,7 @@ from fastapi.templating import Jinja2Templates
 from starlette.middleware.sessions import SessionMiddleware
 
 from . import db as database
-from . import facts, logic, report
+from . import facts, logic, motivation, report
 from . import words as wordlist
 from .security import hash_password, verify_password
 
@@ -192,9 +193,11 @@ def index(user=Depends(current_user)):
 def home(request: Request, user=Depends(student_user), db=Depends(database.get_db)):
     shown = [s for s in logic.enabled_subjects(db, user["id"]) if s in logic.active_subjects(db)]
     groups = logic.group_subjects(shown)
+    prefs = logic.get_prefs(db, user["id"])
     for g in groups:
         g["items"] = [{"key": s, "level": logic.get_level(db, user["id"], s),
-                       "dots": logic.window_results(db, user["id"], s)} for s in g["subjects"]]
+                       "dots": logic.window_results(db, user["id"], s),
+                       "areas": logic.subject_areas(db, s) if prefs["areas_on"] else []} for s in g["subjects"]]
     streak, count_today = logic.streak_and_today(db, user["id"])
     open_test = None
     for t in db.execute(
@@ -203,23 +206,60 @@ def home(request: Request, user=Depends(student_user), db=Depends(database.get_d
             open_test = t
             break
     return render(request, "home.html", groups=groups, streak=streak, count_today=count_today,
-                  open_test=open_test, has_facts=facts.available())
+                  open_test=open_test, has_facts=facts.available(), prog=_progress(db, user["id"], prefs))
+
+
+def _progress(db, user_id: int, prefs: dict) -> dict:
+    """Dagsmål, poäng, belöningar och märken som eleven ska se (det som är avstängt blir None)."""
+    out = {"goal": None, "points": None, "rewards": None, "next": None, "badges": None, "earned": 0}
+    if prefs["daily_goal"] > 0:
+        out["goal"] = logic.goal_status(db, user_id, prefs)
+    if prefs["points_on"]:
+        out["points"] = motivation.points(db, user_id, prefs)
+        out["rewards"] = motivation.reward_list(db, user_id, out["points"]["balance"])
+        out["next"] = motivation.next_reward(out["rewards"])
+    if prefs["badges_on"]:
+        out["badges"] = motivation.badges(db, user_id)
+        out["earned"] = sum(1 for b in out["badges"] if b["earned"])
+    out["any"] = bool(out["goal"] or out["points"] or out["badges"])
+    return out
+
+
+def _area_qs(area: str) -> str:
+    return f"?omrade={quote(area)}" if area else ""
+
+
+def _resolve_area(db, user_id: int, subject: str, wanted: str) -> str:
+    """Det område eleven valt, om valet är på och området finns. 'svagast' blir elevens svagaste område."""
+    if not wanted or not logic.get_prefs(db, user_id)["areas_on"]:
+        return ""
+    if wanted == "svagast":
+        return logic.weakest_area(db, user_id, subject) or ""
+    return wanted if wanted in {a["name"] for a in logic.subject_areas(db, subject)} else ""
 
 
 @app.get("/practice/{subject}")
-def practice(request: Request, subject: str, user=Depends(student_user), db=Depends(database.get_db)):
+def practice(request: Request, subject: str, omrade: str = "", user=Depends(student_user),
+             db=Depends(database.get_db)):
     if not logic.subject_enabled(db, user["id"], subject):
         flash(request, "Det här ämnet är inte på just nu.", "warn")
         return go("/home")
     level = logic.get_level(db, user["id"], subject)
     if level is None:
         return go("/home")
-    item = logic.next_item(db, user["id"], subject)
+    area = _resolve_area(db, user["id"], subject, omrade)
+    if omrade == "svagast" and not area:
+        flash(request, "Du har inte svarat på tillräckligt många frågor för att hitta ditt svagaste område än. Här är alla områden.")
+    item = logic.next_item(db, user["id"], subject, area or None)
+    if item is None and area:
+        flash(request, "Det finns inga frågor i det området än, så här är alla områden.", "warn")
+        return go(f"/practice/{subject}")
     if item is None:
         flash(request, "Det finns inga övningar i det här ämnet än.", "warn")
         return go("/home")
-    return render(request, "question.html", ex=item, options=_shuffled(item), action=f"/practice/{subject}",
-                  mode="practice", level=level, window=logic.window_results(db, user["id"], subject),
+    return render(request, "question.html", ex=item, options=_shuffled(item),
+                  action=f"/practice/{subject}{_area_qs(area)}", mode="practice", level=level, area=area,
+                  window=logic.window_results(db, user["id"], subject),
                   facts_subject=subject if facts.exists(subject) else None)
 
 
@@ -233,19 +273,20 @@ def _shuffled(item):
 
 @app.post("/practice/{subject}")
 def practice_answer(subject: str, exercise_id: int = Form(...), generated_id: str = Form(""), given: str = Form(""),
-                    user=Depends(student_user), db=Depends(database.get_db)):
+                    omrade: str = Query(""), user=Depends(student_user), db=Depends(database.get_db)):
     if not logic.subject_enabled(db, user["id"], subject):
         return go("/home")
     item = logic.resolve_item(db, user["id"], exercise_id, int(generated_id) if generated_id.isdigit() else None)
     if not item or item["subject"] != subject or not given.strip():
-        return go(f"/practice/{subject}")
+        return go(f"/practice/{subject}{_area_qs(omrade)}")
     attempt_id, _, change = logic.record_attempt(db, user["id"], item, given)
-    return go(f"/answer/{attempt_id}" + (f"?change={change}" if change else ""))
+    params = ([f"change={change}"] if change else []) + ([f"omrade={quote(omrade)}"] if omrade else [])
+    return go(f"/answer/{attempt_id}" + ("?" + "&".join(params) if params else ""))
 
 
 @app.get("/answer/{attempt_id}")
-def answer_page(request: Request, attempt_id: int, change: str = "", user=Depends(student_user),
-                db=Depends(database.get_db)):
+def answer_page(request: Request, attempt_id: int, change: str = "", omrade: str = "",
+                user=Depends(student_user), db=Depends(database.get_db)):
     a = db.execute("SELECT * FROM attempts WHERE id=? AND user_id=? AND test_id IS NULL",
                    (attempt_id, user["id"])).fetchone()
     if not a:
@@ -254,8 +295,16 @@ def answer_page(request: Request, attempt_id: int, change: str = "", user=Depend
             else logic.item_from_exercise(logic.exercise_row(db, a["exercise_id"])))
     level = logic.get_level(db, user["id"], item["subject"])
     return render(request, "answer.html", a=a, ex=item, answers=item["answers"],
-                  change=change if change in ("up", "down") else "", level=level,
+                  change=change if change in ("up", "down") else "", level=level, area=omrade[:80],
                   window=logic.window_results(db, user["id"], item["subject"]))
+
+
+@app.get("/framsteg")
+def progress_page(request: Request, user=Depends(student_user), db=Depends(database.get_db)):
+    prog = _progress(db, user["id"], logic.get_prefs(db, user["id"]))
+    if not prog["any"]:
+        return go("/home")
+    return render(request, "progress.html", prog=prog, rules=motivation.RULES)
 
 
 # ---------------------------------------------------------------- fakta
@@ -397,7 +446,11 @@ def admin_student(request: Request, student_id: int, user=Depends(admin_user), d
            WHERE a.user_id=? ORDER BY a.id DESC LIMIT 40""", (student_id,)).fetchall()
     chart = logic.daily_chart(db, student_id)
     streak, count_today = logic.streak_and_today(db, student_id)
+    prefs = logic.get_prefs(db, student_id)
+    pts = motivation.points(db, student_id, prefs)
+    rewards = motivation.reward_list(db, student_id, pts["balance"])
     return render(request, "admin_student.html", s=s, blocks=blocks, recent=recent, chart=chart,
+                  prefs=prefs, pts=pts, rewards=rewards,
                   chart_max=max([c["total"] for c in chart] + [1]), streak=streak, today=count_today,
                   json=json, groups=groups, settings=settings, bmap={b["subject"]: b for b in blocks})
 
@@ -432,6 +485,51 @@ def admin_set_subjects(request: Request, student_id: int, enabled: list[str] = F
     db.commit()
     flash(request, "Ämnesvalen är sparade.")
     return go(f"/admin/student/{student_id}")
+
+
+def _require_student(db, student_id: int) -> None:
+    if not db.execute("SELECT 1 FROM users WHERE id=? AND role='student'", (student_id,)).fetchone():
+        raise HTTPException(404)
+
+
+@app.post("/admin/student/{student_id}/prefs")
+def admin_set_prefs(request: Request, student_id: int, daily_goal: str = Form("0"), areas_on: str = Form(""),
+                    points_on: str = Form(""), badges_on: str = Form(""),
+                    user=Depends(admin_user), db=Depends(database.get_db)):
+    _require_student(db, student_id)
+    goal = int(daily_goal) if daily_goal.strip().isdigit() else 0
+    logic.save_prefs(db, student_id, bool(areas_on), goal, bool(points_on), bool(badges_on))
+    db.commit()
+    flash(request, "Inställningarna är sparade.")
+    return go(f"/admin/student/{student_id}#motivation")
+
+
+@app.post("/admin/student/{student_id}/rewards")
+def admin_add_reward(request: Request, student_id: int, title: str = Form(""), cost: str = Form(""),
+                     user=Depends(admin_user), db=Depends(database.get_db)):
+    _require_student(db, student_id)
+    error = motivation.add_reward(db, student_id, title, cost)
+    db.commit()
+    flash(request, error or "Belöningen är tillagd.", "warn" if error else "ok")
+    return go(f"/admin/student/{student_id}#motivation")
+
+
+@app.post("/admin/student/{student_id}/rewards/{reward_id}")
+def admin_reward_action(request: Request, student_id: int, reward_id: int, action: str = Form(...),
+                        user=Depends(admin_user), db=Depends(database.get_db)):
+    _require_student(db, student_id)
+    error = ""
+    if action == "give":
+        error = motivation.give_reward(db, student_id, reward_id)
+    elif action == "undo":
+        motivation.undo_reward(db, student_id, reward_id)
+    elif action == "delete":
+        motivation.delete_reward(db, student_id, reward_id)
+    else:
+        raise HTTPException(400)
+    db.commit()
+    flash(request, error or "Klart.", "warn" if error else "ok")
+    return go(f"/admin/student/{student_id}#motivation")
 
 
 @app.post("/admin/student/{student_id}/level")

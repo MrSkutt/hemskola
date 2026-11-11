@@ -59,6 +59,60 @@ document.querySelectorAll('input[data-toggle]').forEach(function (t) {
 });
 </script>
 
+<div class="card" id="motivation">
+  <strong>Dagsmål, poäng och belöningar för {{ s.display_name }}</strong>
+  <div class="muted">Här styr du vad {{ s.display_name }} ser på Övningar. Bara skolämnen räknas, inte K-pop. Poäng räknas från {{ prefs.points_since[:10] }}, märken räknas på allt som gjorts.</div>
+  <form method="post" action="/admin/student/{{ s.id }}/prefs">
+    <div class="row" style="margin-top:.6rem">
+      <div><label style="margin:0" for="daily_goal">Dagsmål (antal svar, 0 = inget)</label>
+        <input id="daily_goal" name="daily_goal" type="number" min="0" max="200" value="{{ prefs.daily_goal }}" style="width:7rem"></div>
+    </div>
+    <div class="checks" style="margin-top:.4rem">
+      <label class="check"><input type="checkbox" name="areas_on" value="1" {{ 'checked' if prefs.areas_on }}> Får välja område att öva på</label>
+      <label class="check"><input type="checkbox" name="points_on" value="1" {{ 'checked' if prefs.points_on }}> Poäng och belöningar</label>
+      <label class="check"><input type="checkbox" name="badges_on" value="1" {{ 'checked' if prefs.badges_on }}> Märken</label>
+    </div>
+    <p style="margin:.6rem 0 0"><button class="small">Spara</button></p>
+  </form>
+
+  <h3 style="margin-top:1.2rem">Belöningar</h3>
+  <p class="muted" style="margin-top:0">Poäng just nu: <strong>{{ pts.balance }}</strong> (tjänat {{ pts.total }}{% if pts.spent %}, utdelat för {{ pts.spent }}{% endif %}).
+    När du markerar en belöning som utdelad dras dess poäng av.</p>
+  {% if rewards %}
+  <table>
+    <tr><th>Belöning</th><th style="width:6rem">Poäng</th><th>Status</th><th style="width:13rem"></th></tr>
+    {% for r in rewards %}
+    <tr>
+      <td>{{ r.title }}</td><td>{{ r.cost }}</td>
+      <td>{% if r.given %}<span class="pill">utdelad {{ r.given_at|ts }}</span>{% elif r.ready %}<span class="pill">uppnådd, kan delas ut</span>{% else %}<span class="muted">{{ r.missing }} poäng kvar</span>{% endif %}</td>
+      <td>
+        <form method="post" action="/admin/student/{{ s.id }}/rewards/{{ r.id }}" class="inline">
+          {% if r.given %}<button class="small ghost" name="action" value="undo">Ångra</button>
+          {% elif r.ready %}<button class="small" name="action" value="give">Utdelad</button>{% endif %}
+          <button class="small danger" name="action" value="delete" onclick="return confirm('Ta bort belöningen?')">Ta bort</button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% else %}<p class="muted">Inga belöningar än. Lägg till något eleven vill ha, till exempel en bio-kväll, glass eller en timmes extra spel.</p>{% endif %}
+  <form method="post" action="/admin/student/{{ s.id }}/rewards" class="row" style="margin-top:.6rem">
+    <div style="flex:1;min-width:12rem"><label style="margin:0" for="rw_title">Ny belöning</label>
+      <input id="rw_title" name="title" maxlength="80" required placeholder="t.ex. Bio-kväll" style="width:100%"></div>
+    <div><label style="margin:0" for="rw_cost">Kostar (poäng)</label>
+      <input id="rw_cost" name="cost" type="number" min="1" max="100000" required value="500" style="width:7rem"></div>
+    <button class="small">Lägg till</button>
+  </form>
+  <details style="margin-top:.8rem"><summary class="muted">Så får eleven poäng</summary>
+    <ul class="muted" style="margin:.4rem 0 0">
+      <li>10 poäng per rätt svar i övning, högst 15 rätta per ämne och dag</li>
+      <li>20 poäng varje dag dagsmålet nås, och 50 poäng extra för varje 7 dagar i rad</li>
+      <li>50 poäng när eleven själv går upp en nivå</li>
+      <li>Prov och K-pop ger inga poäng, och bara rätta svar räknas</li>
+    </ul>
+  </details>
+</div>
+
 <div class="card">
   <strong>Svar per dag, senaste 14 dagarna</strong> <span class="muted">(grönt = rätt, rött = fel)</span>
   <div class="chart" style="margin-top:.6rem">

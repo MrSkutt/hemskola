@@ -102,6 +102,39 @@ CREATE TABLE IF NOT EXISTS user_subjects (
     in_report INTEGER NOT NULL DEFAULT 1,
     PRIMARY KEY (user_id, subject)
 );
+-- Motivation per elev: dagsmål, poäng, märken och val av område. Saknas raden gäller standardvärdena.
+-- points_since: poäng räknas från den här tidpunkten (UTC), märken räknas bakåt på all historik.
+CREATE TABLE IF NOT EXISTS user_prefs (
+    user_id INTEGER PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,
+    areas_on INTEGER NOT NULL DEFAULT 1,
+    daily_goal INTEGER NOT NULL DEFAULT 15,
+    points_on INTEGER NOT NULL DEFAULT 1,
+    badges_on INTEGER NOT NULL DEFAULT 1,
+    points_since TEXT NOT NULL DEFAULT (datetime('now'))
+);
+-- Dagar då dagsmålet nåddes (sparas när det händer, så att ett ändrat mål inte ändrar historiken).
+CREATE TABLE IF NOT EXISTS goal_days (
+    user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    day TEXT NOT NULL,
+    PRIMARY KEY (user_id, day)
+);
+-- Nivåer eleven själv tagit sig upp till (ger bonuspoäng en gång per ämne och nivå).
+CREATE TABLE IF NOT EXISTS level_ups (
+    user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    subject TEXT NOT NULL,
+    level INTEGER NOT NULL,
+    created_at TEXT NOT NULL DEFAULT (datetime('now')),
+    PRIMARY KEY (user_id, subject, level)
+);
+-- Belöningar som admin lägger in. Kostar poäng och markeras som utdelade av admin.
+CREATE TABLE IF NOT EXISTS rewards (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    title TEXT NOT NULL,
+    cost INTEGER NOT NULL CHECK (cost > 0),
+    created_at TEXT NOT NULL DEFAULT (datetime('now')),
+    given_at TEXT
+);
 CREATE INDEX IF NOT EXISTS idx_attempts_user ON attempts(user_id, id);
 CREATE INDEX IF NOT EXISTS idx_exercises_pick ON exercises(subject, level, active);
 """

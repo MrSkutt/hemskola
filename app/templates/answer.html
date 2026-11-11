@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Svar – Hemskola{% endblock %}
 {% block content %}
-<p class="muted">{{ label(ex.subject) }} · {{ ex.topic }}</p>
+<p class="muted">{{ label(ex.subject) }} · {{ ex.topic }}{% if area %} · Område: {{ area }}{% endif %}</p>
 <div class="card">
   <div class="question">{{ ex.question }}</div>
   {% if ex.image %}<img class="qimg" src="/media/{{ ex.image }}" alt="Bild till frågan">{% endif %}
@@ -14,7 +14,7 @@
   {% if ex.explanation %}<p>💡 {{ ex.explanation }}</p>{% endif %}
   {% if change == 'up' %}<div class="flash ok">🎉 Starkt jobbat! Du har gått upp till <strong>nivå {{ level }}</strong>.</div>
   {% elif change == 'down' %}<div class="flash warn">Vi tar det lite lugnare och går till <strong>nivå {{ level }}</strong> så blir det mer träning på grunderna. Ingen fara!</div>{% endif %}
-  <p><a class="btn" href="/practice/{{ ex.subject }}" autofocus>Nästa fråga →</a>
+  <p><a class="btn" href="/practice/{{ ex.subject }}{% if area %}?omrade={{ area|urlencode }}{% endif %}" autofocus>Nästa fråga →</a>
      <a class="btn ghost" href="/home">Avsluta</a></p>
 </div>
 {% endblock %}

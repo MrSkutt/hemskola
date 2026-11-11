@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}Framsteg – Hemskola{% endblock %}
+{% block content %}
+<p><a href="/home">← Övningar</a></p>
+<h1>Dina framsteg</h1>
+
+{% if prog.goal %}
+<div class="card">
+  <h2 class="ptitle">🎯 Dagsmål</h2>
+  <div class="pbig">{{ prog.goal.done }} <span class="muted psmall">av {{ prog.goal.goal }} svar idag</span></div>
+  <div class="bar" style="margin:.4rem 0"><i style="width:{{ prog.goal.pct }}%"></i></div>
+  <p class="muted" style="margin:0">
+    {% if prog.goal.reached %}✅ Klart för idag, bra jobbat!{% else %}{{ prog.goal.goal - prog.goal.done }} svar kvar.{% endif %}
+    Svar i prov räknas också. {% if prog.goal.streak > 0 %}🔥 {{ prog.goal.streak }} {{ 'dag' if prog.goal.streak == 1 else 'dagar' }} i rad med nått dagsmål.{% endif %}
+  </p>
+</div>
+{% endif %}
+
+{% if prog.points %}
+<div class="card">
+  <h2 class="ptitle">⭐ Poäng</h2>
+  <div class="pbig">{{ prog.points.balance }} <span class="muted psmall">poäng att använda</span></div>
+  <p class="muted" style="margin:.2rem 0 .8rem">Hittills tjänat: {{ prog.points.total }}{% if prog.points.spent %} · Använt på belöningar: {{ prog.points.spent }}{% endif %}</p>
+  <table class="plain">
+    <tr><th>Så får du poäng</th><th></th></tr>
+    {% for what, why in rules %}<tr><td><strong>{{ what }}</strong></td><td>{{ why }}</td></tr>{% endfor %}
+  </table>
+  <p class="muted psmall" style="margin-bottom:0">Du får poäng bara för övning i skolämnen, inte för prov och inte för K-pop. Av dina poäng kommer {{ prog.points.answers }} från svar, {{ prog.points.goal + prog.points.week }} från dagsmål och {{ prog.points.levels }} från nivåer.</p>
+</div>
+
+<div class="card">
+  <h2 class="ptitle">🎁 Belöningar</h2>
+  {% if prog.rewards %}
+    {% for r in prog.rewards %}
+    <div class="reward {{ 'given' if r.given }}">
+      <div class="rtop"><strong>{{ r.title }}</strong> <span class="muted">{{ r.cost }} poäng</span>
+        {% if r.given %}<span class="pill">✔ Utdelad</span>{% elif r.ready %}<span class="pill">🎁 Du kan få den!</span>{% endif %}</div>
+      {% if not r.given %}
+        <div class="bar"><i style="width:{{ r.pct }}%"></i></div>
+        <div class="muted psmall">{% if r.ready %}Säg till så får du den.{% else %}{{ r.missing }} poäng kvar{% endif %}</div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  {% else %}<p class="muted" style="margin:0">Det finns inga belöningar inlagda än.</p>{% endif %}
+</div>
+{% endif %}
+
+{% if prog.badges %}
+<div class="card">
+  <h2 class="ptitle">🏅 Märken <span class="muted psmall">{{ prog.earned }} av {{ prog.badges|length }}</span></h2>
+  <div class="badges">
+    {% for b in prog.badges %}
+    <div class="badge {{ '' if b.earned else 'locked' }}">
+      <div class="ic">{{ b.icon }}</div>
+      <div class="bt">{{ b.title }}</div>
+      <div class="bh">{{ b.hint }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+{% endblock %}

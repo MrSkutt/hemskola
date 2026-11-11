@@ -7,6 +7,45 @@
   {% if streak > 1 %}🔥 {{ streak }} dagar i rad!{% endif %}
 </p>
 
+{% if prog.any %}
+<div class="card progress">
+  <div class="pgrid">
+    {% if prog.goal %}
+    <div class="pitem">
+      <div class="plabel">🎯 Dagsmål</div>
+      <div class="pbig">{{ prog.goal.done }} <span class="muted psmall">av {{ prog.goal.goal }} svar</span></div>
+      <div class="bar"><i style="width:{{ prog.goal.pct }}%"></i></div>
+      <div class="muted psmall">
+        {% if prog.goal.reached %}✅ Klart för idag, bra jobbat!{% else %}{{ prog.goal.goal - prog.goal.done }} kvar till dagsmålet{% endif %}
+        {% if prog.goal.streak > 1 %} · 🔥 {{ prog.goal.streak }} dagar i rad{% endif %}
+      </div>
+    </div>
+    {% endif %}
+    {% if prog.points %}
+    <div class="pitem">
+      <div class="plabel">⭐ Poäng</div>
+      <div class="pbig">{{ prog.points.balance }}</div>
+      {% if prog.next %}
+        <div class="bar"><i style="width:{{ prog.next.pct }}%"></i></div>
+        <div class="muted psmall">
+          {% if prog.next.ready %}🎁 Du kan få <strong>{{ prog.next.title }}</strong>! Säg till.
+          {% else %}{{ prog.next.missing }} poäng kvar till {{ prog.next.title }}{% endif %}
+        </div>
+      {% else %}<div class="muted psmall">Svara rätt när du övar så samlar du poäng.</div>{% endif %}
+    </div>
+    {% endif %}
+    {% if prog.badges %}
+    <div class="pitem">
+      <div class="plabel">🏅 Märken</div>
+      <div class="pbig">{{ prog.earned }} <span class="muted psmall">av {{ prog.badges|length }}</span></div>
+      <div class="badgeicons">{% for b in prog.badges if b.earned %}<span title="{{ b.title }}">{{ b.icon }}</span>{% else %}<span class="muted psmall">Dina märken dyker upp här.</span>{% endfor %}</div>
+    </div>
+    {% endif %}
+  </div>
+  <p class="plink"><a href="/framsteg">Se alla framsteg →</a></p>
+</div>
+{% endif %}
+
 {% if open_test %}
 <div class="card">
   <strong>Du har ett påbörjat prov i {{ label(open_test.subject) }}.</strong>
@@ -26,7 +65,16 @@
       <p class="muted" style="margin:.2rem 0 .8rem">Senaste svaren på nivån:
         <span class="dots">{% for d in s.dots %}<span class="dot {{ 'y' if d else 'n' }}"></span>{% endfor %}{% for i in range(WINDOW - s.dots|length) %}<span class="dot"></span>{% endfor %}</span>
       </p>
-      <a class="btn" href="/practice/{{ s.key }}">Öva</a>
+      {% if s.areas %}
+      <form class="areapick" method="get" action="/practice/{{ s.key }}">
+        <select name="omrade" aria-label="Område i {{ label(s.key) }}">
+          <option value="">Alla områden</option>
+          {% for a in s.areas %}<option value="{{ a.name }}">{{ a.name }}</option>{% endfor %}
+          <option value="svagast">🎯 Mitt svagaste område</option>
+        </select>
+        <button>Öva</button>
+      </form>
+      {% else %}<a class="btn" href="/practice/{{ s.key }}">Öva</a>{% endif %}
       <form class="inline" method="post" action="/test/start/{{ s.key }}"><button class="ghost">Statusprov</button></form>
     {% else %}
       <p>Först ett kort test, så vet vi var vi ska börja. Det är inga betyg – svara bara så gott du kan. Gissa gärna, och hoppa inte över!</p>

@@ -181,6 +181,26 @@ Vanlig text med **fet**, *kursiv* och `kod`.
 > Tips eller extra viktig information
 ```
 
+## Områden, dagsmål, poäng, märken och belöningar
+
+Det här är till för motivationen. **Allt går att slå av per elev** under **Elever → en elev → Dagsmål, poäng och belöningar**.
+Bara skolämnen räknas, alltså inte fritidsämnen som K-pop.
+
+* **Välja område:** på varje ämneskort kan eleven välja ett område att öva på (till exempel *Geometri* eller *Bråk, decimaltal och procent*)
+  eller *Mitt svagaste område*. Svar i ett valt område räknas för nivån precis som vanligt. Frågornas många små områdesnamn grupperas i
+  större områden i `app/areas.py`. Nya områdesnamn från egna importer hamnar i *Övrigt* tills du lägger in dem där.
+* **Dagsmål:** admin sätter antal svar per dag (standard 15, 0 = inget mål). Svar i prov räknas också. Eleven ser en mätare på Övningar.
+* **Poäng:** 10 poäng per rätt svar i övning (högst 15 rätta per ämne och dag, så att man inte kan pumpa ett ämne), 20 poäng när dagsmålet nås,
+  50 extra för varje vecka i rad och 50 när eleven själv tar sig upp en nivå. Prov och K-pop ger inga poäng. Poäng räknas från den dag
+  funktionen först användes för eleven, medan märken räknas på allt som gjorts.
+* **Belöningar:** du lägger in belöningar med ett poängpris (t.ex. *Bio-kväll, 500 poäng*). Eleven ser hur långt hon har kvar. När poängen
+  räcker markerar du belöningen som *utdelad* och dess poäng dras av. *Ångra* ger tillbaka poängen.
+* **Märken:** 19 märken (första svaret, 100/500/1000 svar, dagar i rad, dagsmål, 5 och 10 rätt i rad, nivåer, prov med mera) som visas
+  på sidan **Framsteg**. De räknas ut från svaren och listan finns i `app/motivation.py`.
+
+Nya tabeller (`user_prefs`, `goal_days`, `level_ups`, `rewards`) läggs till automatiskt vid uppgradering och ingen befintlig data ändras.
+Nya elever och befintliga elever får standardvärdena (område på, dagsmål 15, poäng och märken på).
+
 ## K-pop
 
 Ämnet **K-pop** (`"subject": "kpop"`) har ett par hundra frågor om grupper, fans, historia, koreanska och hangul, plus matteuppgifter med konserter, streams och biljetter.
@@ -210,6 +230,5 @@ och exempel på senaste felsvar. Nivåerna är en uppskattning från övningspro
 ## Idéer framåt
 
 * Fler generatorer för biologi och religionskunskap, och fler frågor per nivå
-* Eget val av område att öva på, mål per dag, och belöningar/poäng
 * Fler generatorer och fler ord i ordlistan, t.ex. engelska glosor
 * Påminnelser/veckorapport till admin

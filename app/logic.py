@@ -4,9 +4,10 @@ import os
 import random
 import re
 from datetime import date, datetime, timedelta, timezone
+from datetime import time as dtime
 from zoneinfo import ZoneInfo
 
-from . import diagrams, generators
+from . import areas, diagrams, generators
 from .words import WordBank
 
 TZ = ZoneInfo(os.environ.get("TZ", "Europe/Stockholm"))
@@ -155,6 +156,8 @@ def adjust_level(db, user_id: int, subject: str, attempt_id: int):
         "UPDATE user_levels SET level=?, since_attempt_id=? WHERE user_id=? AND subject=?",
         (new, attempt_id, user_id, subject),
     )
+    if change == "up":
+        db.execute("INSERT OR IGNORE INTO level_ups(user_id, subject, level) VALUES (?,?,?)", (user_id, subject, new))
     return change
 
 
@@ -243,11 +246,13 @@ def ensure_generator_exercises(db) -> int:
 
 # ---------------------------------------------------------------- övningar
 
-def pick_exercise(db, user_id: int, subject: str, exclude=()):
-    """Väljer nästa övning: mest på nuvarande nivå, lite repetition av missade och av nivån under."""
+def pick_exercise(db, user_id: int, subject: str, exclude=(), area=None):
+    """Väljer nästa övning: mest på nuvarande nivå, lite repetition av missade och av nivån under.
+    Med `area` väljs bara frågor inom det området (nivåbyte och statistik fungerar som vanligt)."""
     level = get_level(db, user_id, subject) or 1
     rows = [r for r in db.execute(
-        "SELECT id, level, generator FROM exercises WHERE subject=? AND active=1", (subject,)) if r["id"] not in exclude]
+        "SELECT id, level, generator, topic FROM exercises WHERE subject=? AND active=1", (subject,))
+        if r["id"] not in exclude and (not area or areas.area_of(subject, r["topic"]) == area)]
     if not rows:
         return None
     by_level, level_of = {}, {}
@@ -281,10 +286,10 @@ def pick_exercise(db, user_id: int, subject: str, exclude=()):
     return random.choice(unseen or fresh or pool)
 
 
-def next_item(db, user_id: int, subject: str):
+def next_item(db, user_id: int, subject: str, area=None):
     bad = set()
     for _ in range(8):
-        ex_id = pick_exercise(db, user_id, subject, exclude=bad)
+        ex_id = pick_exercise(db, user_id, subject, exclude=bad, area=area)
         if ex_id is None:
             return None
         item = present(db, exercise_row(db, ex_id), user_id)
@@ -309,6 +314,7 @@ def resolve_item(db, user_id: int, exercise_id: int, generated_id=None):
 
 
 def record_attempt(db, user_id: int, item: dict, given: str, test_id=None):
+    get_prefs(db, user_id, commit=False)    # finns raden före första svaret räknas även det svaret in i poängen
     correct = 1 if is_correct(given, item["answers"]) else 0
     cur = db.execute(
         "INSERT INTO attempts(user_id, exercise_id, generated_id, test_id, given, correct) VALUES (?,?,?,?,?,?)",
@@ -318,6 +324,7 @@ def record_attempt(db, user_id: int, item: dict, given: str, test_id=None):
     change = None
     if test_id is None:
         change = adjust_level(db, user_id, item["subject"], attempt_id)
+    record_goal(db, user_id, item["subject"])
     db.commit()
     return attempt_id, bool(correct), change
 
@@ -419,6 +426,9 @@ def finish_test(db, test_id: int) -> int:
         set_level(db, test["user_id"], test["subject"], est)
     elif est > current:  # ett statusprov kan höja nivån men sänker den aldrig
         set_level(db, test["user_id"], test["subject"], est)
+        for lvl in range(current + 1, est + 1):
+            db.execute("INSERT OR IGNORE INTO level_ups(user_id, subject, level) VALUES (?,?,?)",
+                       (test["user_id"], test["subject"], lvl))
     db.commit()
     return est
 
@@ -470,6 +480,106 @@ def streak_and_today(db, user_id: int, subjects=None):
         streak += 1
         cursor -= timedelta(days=1)
     return streak, count_today
+
+
+# ---------------------------------------------------------------- områden att öva på
+
+MIN_AREA_QUESTIONS = 5   # ett område erbjuds om det har minst så många vanliga frågor (eller en generator)
+
+
+def subject_areas(db, subject: str) -> list:
+    """Områden eleven kan välja i ett ämne: [{"name", "n"}], i fast ordning."""
+    count, has_gen = {}, set()
+    for r in db.execute("SELECT topic, generator FROM exercises WHERE subject=? AND active=1", (subject,)):
+        a = areas.area_of(subject, r["topic"])
+        count[a] = count.get(a, 0) + 1
+        if r["generator"]:
+            has_gen.add(a)
+    return [{"name": a, "n": count[a]} for a in areas.order(subject)
+            if a in count and (count[a] >= MIN_AREA_QUESTIONS or a in has_gen)]
+
+
+def weakest_area(db, user_id: int, subject: str):
+    """Området där eleven har lägst andel rätt (minst 5 svar), eller None."""
+    offered = {a["name"] for a in subject_areas(db, subject)}
+    tot = {}
+    for r in db.execute(
+        """SELECT e.topic, COUNT(*) AS n, SUM(a.correct) AS c FROM attempts a JOIN exercises e ON e.id=a.exercise_id
+           WHERE a.user_id=? AND e.subject=? GROUP BY e.topic""", (user_id, subject)):
+        a = areas.area_of(subject, r["topic"])
+        n, c = tot.get(a, (0, 0))
+        tot[a] = (n + r["n"], c + r["c"])
+    ranked = sorted((c / n, n, a) for a, (n, c) in tot.items() if n >= 5 and a in offered)
+    return ranked[0][2] if ranked else None
+
+
+# ---------------------------------------------------------------- motivation: inställningar och dagsmål
+
+def school_subjects(db) -> list:
+    """Ämnen som räknas för dagsmål, poäng och märken: alla utom fritidsämnen som K-pop."""
+    return [s for s in active_subjects(db) if s not in LEISURE_SUBJECTS]
+
+
+def get_prefs(db, user_id: int, commit: bool = True) -> dict:
+    """Elevens val av område/dagsmål/poäng/märken. Raden skapas första gången (och poängräkningen börjar då)."""
+    if db.execute("INSERT OR IGNORE INTO user_prefs(user_id) VALUES (?)", (user_id,)).rowcount and commit:
+        db.commit()
+    r = db.execute("SELECT * FROM user_prefs WHERE user_id=?", (user_id,)).fetchone()
+    return {"areas_on": bool(r["areas_on"]), "daily_goal": r["daily_goal"], "points_on": bool(r["points_on"]),
+            "badges_on": bool(r["badges_on"]), "points_since": r["points_since"]}
+
+
+def save_prefs(db, user_id: int, areas_on: bool, daily_goal: int, points_on: bool, badges_on: bool) -> None:
+    get_prefs(db, user_id, commit=False)
+    db.execute("UPDATE user_prefs SET areas_on=?, daily_goal=?, points_on=?, badges_on=? WHERE user_id=?",
+               (1 if areas_on else 0, max(0, min(200, int(daily_goal))), 1 if points_on else 0,
+                1 if badges_on else 0, user_id))
+
+
+def answers_today(db, user_id: int, subjects) -> int:
+    subs = list(subjects)
+    if not subs:
+        return 0
+    start = datetime.combine(today(), dtime.min, TZ).astimezone(timezone.utc).strftime("%Y-%m-%d %H:%M:%S")
+    marks = ",".join("?" * len(subs))
+    return db.execute(
+        f"""SELECT COUNT(*) AS c FROM attempts a JOIN exercises e ON e.id=a.exercise_id
+            WHERE a.user_id=? AND a.created_at>=? AND e.subject IN ({marks})""", (user_id, start, *subs)).fetchone()["c"]
+
+
+def record_goal(db, user_id: int, subject: str) -> None:
+    """Sparar att dagens mål är nått (anropas efter varje svar, i skolämnen)."""
+    if subject in LEISURE_SUBJECTS:
+        return
+    goal = get_prefs(db, user_id, commit=False)["daily_goal"]
+    if goal > 0 and answers_today(db, user_id, school_subjects(db)) >= goal:
+        db.execute("INSERT OR IGNORE INTO goal_days(user_id, day) VALUES (?,?)", (user_id, today().isoformat()))
+
+
+def day_runs(days) -> list:
+    """Längder på sammanhängande dagar i en lista av 'ÅÅÅÅ-MM-DD' eller date."""
+    ds = sorted({date.fromisoformat(d) if isinstance(d, str) else d for d in days})
+    runs, run = [], 0
+    for i, d in enumerate(ds):
+        run = run + 1 if i and (d - ds[i - 1]).days == 1 else 1
+        if i + 1 == len(ds) or (ds[i + 1] - d).days != 1:
+            runs.append(run)
+    return runs
+
+
+def goal_status(db, user_id: int, prefs=None) -> dict:
+    prefs = prefs or get_prefs(db, user_id)
+    goal = prefs["daily_goal"]
+    done = answers_today(db, user_id, school_subjects(db))
+    days = {r["day"] for r in db.execute("SELECT day FROM goal_days WHERE user_id=?", (user_id,))}
+    t = today()
+    cursor = t if t.isoformat() in days else t - timedelta(days=1)
+    streak = 0
+    while cursor.isoformat() in days:
+        streak += 1
+        cursor -= timedelta(days=1)
+    return {"goal": goal, "done": done, "reached": goal > 0 and done >= goal, "streak": streak,
+            "pct": min(100, round(100 * done / goal)) if goal else 0}
 
 
 def daily_chart(db, user_id: int, days: int = 14) -> list:
