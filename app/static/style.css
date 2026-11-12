@@ -193,3 +193,14 @@ details.pickerbox > summary { cursor: pointer; font-weight: 600; }
 .picker label.none { justify-content: center; min-height: 80px; }
 
 button:disabled { opacity: .45; cursor: not-allowed; }
+
+/* övningsredigeraren */
+.optlist { margin: .5rem 0; }
+.optrow { display: flex; gap: .6rem; align-items: center; margin-bottom: .45rem; }
+.optrow input[name=option] { flex: 1; min-width: 0; }
+.optrow input[type=radio], .optrow input[type=checkbox] { flex: none; width: 1.15rem; height: 1.15rem; }
+.optrow.extra { display: none; }
+.choice.shown { cursor: default; } .choice.shown:hover { border-color: var(--line); background: var(--card); }
+.choice.right, .choice.right:hover { border-color: var(--ok); background: var(--okbg); }
+.pager { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin: .8rem 0; }
+[hidden] { display: none !important; }

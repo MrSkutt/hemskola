@@ -7,7 +7,7 @@ import secrets
 import time
 from contextlib import asynccontextmanager
 from pathlib import Path
-from urllib.parse import quote, unquote, urlsplit
+from urllib.parse import urlencode, quote, unquote, urlsplit
 
 from fastapi import Depends, FastAPI, File, Form, HTTPException, Query, Request, UploadFile
 from fastapi.responses import FileResponse, JSONResponse, RedirectResponse, Response
@@ -17,7 +17,8 @@ from starlette.concurrency import run_in_threadpool
 from starlette.middleware.sessions import SessionMiddleware
 
 from . import db as database
-from . import facts, logic, motivation, report, tasks
+from . import diagrams, facts, logic, motivation, report, tasks
+from . import exercise_editor as editor
 from . import words as wordlist
 from .security import hash_password, verify_password
 
@@ -657,20 +658,17 @@ def admin_user_active(request: Request, uid: int, user=Depends(admin_user), db=D
     return go("/admin/users")
 
 
+def _list_url(request: Request) -> str:
+    """Den här listsidan med sina filter, så att man kommer tillbaka till samma ställe efter en ändring."""
+    q = request.url.query
+    return request.url.path + ("?" + q if q else "")
+
+
 @app.get("/admin/exercises")
-def admin_exercises(request: Request, subject: str = "", level: int = 0, user=Depends(admin_user),
+def admin_exercises(request: Request, subject: str = "", level: int = 0, topic: str = "", kind: str = "",
+                    state: str = "", q: str = "", page: int = 1, user=Depends(admin_user),
                     db=Depends(database.get_db)):
-    sql = """SELECT e.*, COUNT(a.id) AS n, COALESCE(SUM(a.correct), 0) AS c
-             FROM exercises e LEFT JOIN attempts a ON a.exercise_id=e.id WHERE 1=1"""
-    params = []
-    if subject:
-        sql += " AND e.subject=?"
-        params.append(subject)
-    if level:
-        sql += " AND e.level=?"
-        params.append(level)
-    sql += " GROUP BY e.id ORDER BY e.subject, e.level, e.generator IS NOT NULL, e.topic, e.id"
-    rows = db.execute(sql, params).fetchall()
+    result = editor.search(db, q=q, subject=subject, level=level, topic=topic, kind=kind, state=state, page=page)
     counts = db.execute(
         """SELECT subject, level, generator IS NOT NULL AS gen, COUNT(*) AS n FROM exercises
            WHERE active=1 GROUP BY subject, level, gen""").fetchall()
@@ -678,15 +676,22 @@ def admin_exercises(request: Request, subject: str = "", level: int = 0, user=De
     for r in counts:
         cell = grid.setdefault(r["subject"], {}).setdefault(r["level"], {"static": 0, "gen": 0})
         cell["gen" if r["gen"] else "static"] = r["n"]
-    return render(request, "admin_exercises.html", rows=rows, grid=grid, subject=subject, level=level,
-                  subjects=logic.active_subjects(db), legacy=logic.LEGACY_SUBJECTS)
+    filters = {"q": q, "subject": subject, "level": level or "", "topic": topic if subject else "", "kind": kind,
+               "state": state}
+    base = urlencode({k: v for k, v in filters.items() if v})
+    topics = editor.topics_by_subject(db).get(subject, []) if subject else []
+    return render(request, "admin_exercises.html", result=result, grid=grid, subject=subject, level=level, q=q,
+                  topic=topic if subject else "", kind=kind, state=state, kinds=editor.KINDS, topics=topics,
+                  base=base, here=_list_url(request), subjects=[r["subject"] for r in db.execute(
+                      "SELECT DISTINCT subject FROM exercises ORDER BY subject")], legacy=logic.LEGACY_SUBJECTS)
 
 
 @app.post("/admin/exercises/{ex_id}/active")
-def admin_exercise_active(ex_id: int, user=Depends(admin_user), db=Depends(database.get_db)):
+def admin_exercise_active(ex_id: int, back: str = Form(""), user=Depends(admin_user),
+                          db=Depends(database.get_db)):
     db.execute("UPDATE exercises SET active = 1 - active WHERE id=?", (ex_id,))
     db.commit()
-    return go("/admin/exercises")
+    return go(_back(back, "/admin/exercises", prefix="/admin/exercises"))
 
 
 @app.post("/admin/exercises/{ex_id}/subject")
@@ -720,6 +725,128 @@ def admin_export(user=Depends(admin_user), db=Depends(database.get_db)):
             d["diagram"] = json.loads(r["diagram"])
         out.append(d)
     return JSONResponse(out, headers={"Content-Disposition": "attachment; filename=hemskola-ovningar.json"})
+
+
+# ---------------------------------------------------------------- övningsredigerare
+
+def _known_subjects(db) -> set:
+    return {r["subject"] for r in db.execute("SELECT DISTINCT subject FROM exercises")}
+
+
+def _exercise_page(request: Request, db, form: dict, ex=None, errors=None, dup=None, back: str = "",
+                   status_code: int = 200):
+    n = c = 0
+    if ex:
+        r = db.execute("SELECT COUNT(*) AS n, COALESCE(SUM(correct), 0) AS c FROM attempts WHERE exercise_id=?",
+                       (ex["id"],)).fetchone()
+        n, c = r["n"], r["c"]
+    subjects = sorted(_known_subjects(db) | ({form["subject"]} if form["subject"] not in ("", editor.NEW_SUBJECT) else set()))
+    return render(request, "admin_exercise.html", form=form, ex=ex, errors=errors or [], dup=dup, back=back,
+                  subjects=subjects, topics=editor.topics_by_subject(db), media=_media_names(),
+                  examples=diagrams.EXAMPLES, type_labels=diagrams.TYPE_LABELS, new_subject=editor.NEW_SUBJECT,
+                  answered=n, percent=round(100 * c / n) if n else 0, status_code=status_code)
+
+
+@app.get("/admin/exercises/new")
+def admin_exercise_new(request: Request, similar: int = 0, back: str = "", user=Depends(admin_user),
+                       db=Depends(database.get_db)):
+    form = editor.blank_form()
+    src = db.execute("SELECT subject, level, topic, type FROM exercises WHERE id=?", (similar,)).fetchone() if similar else None
+    if src:   # "Skapa en liknande": samma ämne, nivå, område och typ
+        form.update(subject=src["subject"], level=src["level"], topic=src["topic"], type=src["type"])
+    return _exercise_page(request, db, form, back=_back(back, "", prefix="/admin/exercises"))
+
+
+@app.get("/admin/exercises/{ex_id}/edit")
+def admin_exercise_edit(request: Request, ex_id: int, back: str = "", user=Depends(admin_user),
+                        db=Depends(database.get_db)):
+    ex = db.execute("SELECT * FROM exercises WHERE id=?", (ex_id,)).fetchone()
+    if not ex:
+        raise HTTPException(404, "Övningen finns inte")
+    if ex["generator"]:
+        flash(request, "Generatorer är kod och kan inte redigeras här. Du kan dölja dem.", "warn")
+        return go(_back(back, "/admin/exercises", prefix="/admin/exercises"))
+    return _exercise_page(request, db, editor.form_from_row(ex), ex=ex, back=_back(back, "", prefix="/admin/exercises"))
+
+
+async def _save_exercise(request: Request, db, ex=None):
+    data = await request.form()
+    form = editor.form_from_post(data)
+    back = _back(str(data.get("back", "")), "", prefix="/admin/exercises")
+    if data.get("remove_image"):
+        form["image"] = ""
+    upload = data.get("image_file")
+    current = ex["image"] or "" if ex else ""
+    # En bild som övningen redan har kontrolleras inte mot disken igen, så att övriga ändringar går att spara
+    # även om bildfilen har tagits bort ur bildmappen.
+    name, image_error = await _image_from_form(
+        upload if getattr(upload, "filename", "") else None, str(data.get("image_url") or ""),
+        "" if form["image"] == current else form["image"], prefix="ovning")
+    if name:
+        form["image"] = name
+    row, errors = editor.build(form, _known_subjects(db))
+    if image_error:
+        row, errors = None, [image_error] + errors
+    if errors:
+        return _exercise_page(request, db, form, ex=ex, errors=errors, back=back, status_code=400)
+    answered = editor.answer_count(db, ex["id"]) if ex else 0
+    if ex is None:
+        new_id, err, dup = editor.create_exercise(db, row, form["active"])
+        done = "Övningen är sparad."
+    elif data.get("replace") and answered:
+        new_id, err, dup = editor.replace_exercise(db, ex["id"], row)
+        done = "Den nya övningen är sparad och den gamla är dold."
+    else:
+        err, dup = editor.update_exercise(db, ex["id"], row, form["active"])
+        new_id, done = ex["id"], "Ändringarna är sparade."
+    if err:
+        db.rollback()
+        return _exercise_page(request, db, form, ex=ex, errors=[err], dup=dup, back=back, status_code=400)
+    db.commit()
+    if data.get("after") == "next":
+        flash(request, done + " Här är nästa, med samma ämne, nivå och område.")
+        return go(f"/admin/exercises/new?similar={new_id}" + (f"&back={quote(back)}" if back else ""))
+    flash(request, done)
+    return go(back or f"/admin/exercises?subject={quote(row['subject'])}&level={row['level']}")
+
+
+@app.post("/admin/exercises/new")
+async def admin_exercise_create(request: Request, user=Depends(admin_user), db=Depends(database.get_db)):
+    return await _save_exercise(request, db)
+
+
+@app.post("/admin/exercises/{ex_id}/edit")
+async def admin_exercise_update(request: Request, ex_id: int, user=Depends(admin_user), db=Depends(database.get_db)):
+    ex = db.execute("SELECT * FROM exercises WHERE id=?", (ex_id,)).fetchone()
+    if not ex:
+        raise HTTPException(404, "Övningen finns inte")
+    if ex["generator"]:
+        raise HTTPException(400, "Generatorer kan inte redigeras")
+    return await _save_exercise(request, db, ex)
+
+
+@app.post("/admin/exercises/{ex_id}/delete")
+def admin_exercise_delete(request: Request, ex_id: int, back: str = Form(""), user=Depends(admin_user),
+                          db=Depends(database.get_db)):
+    error = editor.delete_exercise(db, ex_id)
+    if error:
+        flash(request, error, "warn")
+    else:
+        db.commit()
+        flash(request, "Övningen är borttagen.")
+    return go(_back(back, "/admin/exercises", prefix="/admin/exercises"))
+
+
+@app.post("/admin/exercises/preview")
+async def admin_exercise_preview(request: Request, user=Depends(admin_user), db=Depends(database.get_db)):
+    """Övningen som eleven ser den, och eventuella fel. Svarar med en bit HTML som sidan lägger in (ingenting sparas)."""
+    data = await request.form()
+    form = editor.form_from_post(data)
+    upload = data.get("image_file")
+    row, errors = editor.build(form, _known_subjects(db))
+    return templates.TemplateResponse(request, "_exercise_preview.html", {
+        "item": editor.preview_item(row) if row else None, "errors": errors,
+        "new_image": bool(getattr(upload, "filename", "") or str(data.get("image_url") or "").strip())})
 
 
 @app.get("/admin/import")
@@ -908,8 +1035,8 @@ def admin_media_delete(request: Request, name: str, user=Depends(admin_user), db
 
 # ---------------------------------------------------------------- uppgifter
 
-def _store_task_image(ext: str, data: bytes) -> str:
-    name = f"uppgift-{secrets.token_hex(5)}{ext}"
+def _store_task_image(ext: str, data: bytes, prefix: str = "uppgift") -> str:
+    name = f"{prefix}-{secrets.token_hex(5)}{ext}"
     (media_dir() / name).write_bytes(data)
     return name
 
@@ -932,7 +1059,7 @@ def _media_names() -> list:
                   if f.is_file() and f.suffix.lower() in MEDIA_TYPES and logic.MEDIA_NAME.match(f.name))
 
 
-async def _image_from_form(upload, url: str, existing: str = "") -> tuple:
+async def _image_from_form(upload, url: str, existing: str = "", prefix: str = "uppgift") -> tuple:
     """(filnamn, fel). Filnamnet är '' om ingen bild angavs. Prioritet: uppladdad fil, webbadress, befintlig bild.
     En befintlig bild delas (ingen kopia görs), så den kan användas av flera uppgifter och övningar."""
     if upload is not None and upload.filename:
@@ -944,13 +1071,13 @@ async def _image_from_form(upload, url: str, existing: str = "") -> tuple:
             return "", "Bilden är större än 3 MB."
         if not _looks_like(ext, data):
             return "", f"Filen ser inte ut som en {ext[1:]}-bild."
-        return _store_task_image(ext, data), ""
+        return _store_task_image(ext, data, prefix), ""
     if url.strip():
         try:
             ext, data = await run_in_threadpool(tasks.fetch_image, url)
         except ValueError as e:
             return "", str(e)
-        return _store_task_image(ext, data), ""
+        return _store_task_image(ext, data, prefix), ""
     existing = existing.strip()
     if existing:
         path = media_dir() / existing

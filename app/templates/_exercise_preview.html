@@ -1,0 +1,19 @@
+{% if errors %}
+<div class="notebox redo"><strong>Det går inte att spara än:</strong>
+  <ul style="margin:.3rem 0 0 1.2rem;padding:0">{% for e in errors %}<li>{{ e }}</li>{% endfor %}</ul></div>
+{% endif %}
+{% if item %}
+<p class="muted" style="margin-top:0">{{ label(item.subject) }} · Nivå {{ item.level }} · {{ item.topic }}<br>
+  Område: <strong>{{ item.area }}</strong>{% if item.area_unknown %} (området finns inte i områdeslistan, så övningen visas under Övrigt){% endif %}</p>
+<div class="question">{{ item.question }}</div>
+{% if item.image %}<img class="qimg" src="/media/{{ item.image }}" alt="Bild till frågan">{% endif %}
+{% if new_image %}<p class="muted psmall">Den nya bilden du valt visas här när du sparat.</p>{% endif %}
+{% if item.svg %}{{ item.svg|safe }}{% endif %}
+{% if item.options %}
+  {% for o in item.options %}<div class="choice shown {{ 'right' if o in item.answers }}">{{ o }}{% if o in item.answers %} <strong>✔ rätt</strong>{% endif %}</div>{% endfor %}
+{% else %}
+  <div class="answerbox"><input disabled placeholder="Skriv ditt svar"><button disabled>Svara</button></div>
+  <p style="margin:.6rem 0 0"><strong>Godkända svar:</strong> {{ item.answers|join('  ·  ') }}</p>
+{% endif %}
+{% if item.explanation %}<div class="notebox good"><strong>Förklaring:</strong> {{ item.explanation }}</div>{% endif %}
+{% elif not errors %}<p class="muted">Fyll i formuläret och tryck på Förhandsgranska.</p>{% endif %}

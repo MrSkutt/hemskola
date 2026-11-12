@@ -3,8 +3,8 @@
 {% block mainclass %}wide{% endblock %}
 {% block content %}
 <h1>Övningar</h1>
-<div class="card">
-  <strong>Antal aktiva övningar per nivå</strong>
+<details class="card">
+  <summary><strong>Antal aktiva övningar per nivå</strong></summary>
   <table style="margin-top:.5rem">
     <tr><th>Ämne</th>{% for l in range(1, 6) %}<th>Nivå {{ l }}</th>{% endfor %}</tr>
     {% for s, levels in grid|dictsort %}
@@ -13,23 +13,43 @@
     {% endfor %}
   </table>
   <p class="muted">Siffran är vanliga övningar. <span class="pill">+ n ∞</span> är generatorer som skapar nya frågor med slumptal varje gång, så de tar aldrig slut.</p>
+</details>
+<div class="row" style="margin-bottom:.6rem">
+  <a class="btn" href="/admin/exercises/new?back={{ here|urlencode }}">＋ Ny övning</a>
+  <a class="btn ghost small" href="/admin/exercises/export.json">Exportera alla (JSON)</a>
+  <a class="btn ghost small" href="/admin/import">Importera fler</a>
 </div>
 <form method="get" class="row" style="margin-bottom:1rem">
-  <div><label style="margin:0">Ämne</label><select name="subject"><option value="">Alla</option>{% for s in subjects %}<option value="{{ s }}" {{ 'selected' if s == subject }}>{{ label(s) }}</option>{% endfor %}</select></div>
+  <div style="flex:1;min-width:12rem"><label style="margin:0" for="fq">Sök</label><input id="fq" type="search" name="q" value="{{ q }}" placeholder="ord i frågan, området eller svaret" style="width:100%"></div>
+  <div><label style="margin:0">Ämne</label><select name="subject" onchange="if (this.form.topic) this.form.topic.value=''; this.form.submit()"><option value="">Alla</option>{% for s in subjects %}<option value="{{ s }}" {{ 'selected' if s == subject }}>{{ label(s) }}</option>{% endfor %}</select></div>
+  {% if topics %}<div><label style="margin:0">Område</label><select name="topic"><option value="">Alla</option>{% for t in topics %}<option value="{{ t }}" {{ 'selected' if t == topic }}>{{ t }}</option>{% endfor %}</select></div>{% endif %}
   <div><label style="margin:0">Nivå</label><select name="level"><option value="0">Alla</option>{% for l in range(1, 6) %}<option value="{{ l }}" {{ 'selected' if l == level }}>{{ l }}</option>{% endfor %}</select></div>
+  <div><label style="margin:0">Typ</label><select name="kind"><option value="">Alla</option>{% for k, v in kinds.items() %}<option value="{{ k }}" {{ 'selected' if k == kind }}>{{ v }}</option>{% endfor %}</select></div>
+  <div><label style="margin:0">Visa</label><select name="state"><option value="">Alla</option><option value="on" {{ 'selected' if state == 'on' }}>Synliga</option><option value="off" {{ 'selected' if state == 'off' }}>Dolda</option></select></div>
   <button class="small">Filtrera</button>
-  <a class="btn ghost small" href="/admin/exercises/export.json">Exportera alla (JSON)</a>
-  <a class="btn small" href="/admin/import">Importera fler</a>
+  {% if base %}<a class="btn ghost small" href="/admin/exercises">Rensa</a>{% endif %}
 </form>
+{% macro pager() %}
+{% if result.pages > 1 %}
+<div class="pager">
+  {% if result.page > 1 %}<a href="/admin/exercises?{{ base ~ '&' if base }}page={{ result.page - 1 }}">← Föregående</a>{% endif %}
+  <span class="muted">Sida {{ result.page }} av {{ result.pages }}</span>
+  {% if result.page < result.pages %}<a href="/admin/exercises?{{ base ~ '&' if base }}page={{ result.page + 1 }}">Nästa →</a>{% endif %}
+</div>
+{% endif %}
+{% endmacro %}
+<p class="muted" style="margin:.2rem 0">{% if result.total %}Visar {{ result.first }}–{{ result.last }} av {{ result.total }} övningar{% else %}Inga övningar matchar.{% endif %}</p>
+{{ pager() }}
 <div class="card">
 <table>
   <tr><th>Ämne</th><th>Nivå</th><th>Område</th><th>Fråga</th><th>Svarat</th><th></th></tr>
-  {% for r in rows %}
+  {% for r in result.rows %}
   <tr style="{{ 'opacity:.5' if not r.active }}">
     <td>{{ label(r.subject) }}</td><td>{{ r.level }}</td><td>{{ r.topic }}</td>
-    <td style="white-space:pre-line">{% if r.generator %}<span class="pill">∞ generator</span> {{ r.topic }} <span class="muted">({{ r.generator }})</span>{% else %}{{ r.question }}{% if r.image or r.diagram %} <span class="pill">{{ 'bild' if r.image else 'diagram' }}</span>{% endif %}{% endif %}</td>
+    <td style="white-space:pre-line">{% if r.generator %}<span class="pill">∞ generator</span> {{ r.topic }} <span class="muted">({{ r.generator }})</span>{% else %}{{ r.question }}{% if r.image or r.diagram %} <span class="pill">{{ 'bild' if r.image else 'diagram' }}</span>{% endif %}{% if not r.active %} <span class="pill off">dold</span>{% endif %}{% endif %}</td>
     <td>{% if r.n %}{{ r.n }} ({{ (100 * r.c / r.n)|round|int }} % rätt){% else %}–{% endif %}</td>
-    <td><form class="inline" method="post" action="/admin/exercises/{{ r.id }}/active"><button class="small ghost">{{ 'Dölj' if r.active else 'Visa' }}</button></form>
+    <td style="white-space:nowrap">{% if not r.generator %}<a class="btn small ghost" href="/admin/exercises/{{ r.id }}/edit?back={{ here|urlencode }}">Redigera</a> {% endif %}
+      <form class="inline" method="post" action="/admin/exercises/{{ r.id }}/active"><input type="hidden" name="back" value="{{ here }}"><button class="small ghost">{{ 'Dölj' if r.active else 'Visa' }}</button></form>
       {% if r.subject in legacy %}
       <form method="post" action="/admin/exercises/{{ r.id }}/subject" style="display:flex;gap:.35rem;align-items:center;margin-top:.35rem">
         <select name="subject" aria-label="Flytta till ämne" style="width:auto;margin:0">
@@ -44,4 +64,5 @@
   {% endfor %}
 </table>
 </div>
+{{ pager() }}
 {% endblock %}

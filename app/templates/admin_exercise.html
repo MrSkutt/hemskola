@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% from "_task_macros.html" import image_picker %}
+{% block title %}{{ 'Redigera övning' if ex else 'Ny övning' }} – Hemskola{% endblock %}
+{% block content %}
+{% set list_url = back or '/admin/exercises' %}
+<p><a href="{{ list_url }}">← Alla övningar</a></p>
+<h1>{{ 'Redigera övning' if ex else 'Ny övning' }} {% if ex and not ex.active %}<span class="pill off">dold</span>{% endif %}</h1>
+
+{% if errors %}
+<div class="flash warn"><strong>Det gick inte att spara:</strong>
+  <ul style="margin:.3rem 0 0 1.2rem;padding:0">{% for e in errors %}<li>{{ e }}</li>{% endfor %}</ul>
+  {% if dup %}<a href="/admin/exercises/{{ dup }}/edit">Öppna övningen som redan finns →</a>{% endif %}</div>
+{% endif %}
+{% if ex and answered %}
+<div class="notebox wait">Elever har svarat {{ answered }} {{ 'gång' if answered == 1 else 'gånger' }} på den här övningen ({{ percent }} % rätt).
+  Gamla svar behåller sitt rätt eller fel, även om du ändrar facit. Gör du en stor ändring av frågan (inte bara en stavning) kan du
+  kryssa i <em>Spara som ny övning</em> längst ner, så hör statistiken fortfarande till den gamla frågan.</div>
+{% endif %}
+
+<form id="exform" method="post" enctype="multipart/form-data" action="{{ '/admin/exercises/' ~ ex.id ~ '/edit' if ex else '/admin/exercises/new' }}"
+      data-topics='{{ topics|tojson }}' data-examples='{{ examples|tojson }}'>
+  <input type="hidden" name="back" value="{{ back }}">
+  <input type="hidden" name="image_current" value="{{ form.image }}">
+
+  <div class="card">
+    <div class="row" style="align-items:start">
+      <div>
+        <label for="subject">Ämne</label>
+        <select id="subject" name="subject" required>
+          {% if not form.subject %}<option value="" selected disabled>Välj ämne…</option>{% endif %}
+          {% for s in subjects %}<option value="{{ s }}" {{ 'selected' if s == form.subject }}>{{ label(s) }}</option>{% endfor %}
+          <option value="{{ new_subject }}" {{ 'selected' if form.subject == new_subject }}>Nytt ämne…</option>
+        </select>
+      </div>
+      <div id="newsubjectbox" {{ 'hidden' if form.subject != new_subject }}>
+        <label for="new_subject">Namn på nya ämnet</label>
+        <input id="new_subject" name="new_subject" maxlength="30" placeholder="t.ex. franska" value="{{ form.new_subject }}">
+      </div>
+      <div style="flex:1;min-width:12rem">
+        <label for="topic">Område</label>
+        <input id="topic" name="topic" list="topiclist" maxlength="60" required placeholder="t.ex. Bråk" autocomplete="off" style="width:100%" value="{{ form.topic }}">
+        <datalist id="topiclist">{% for t in topics.get(form.subject, []) %}<option value="{{ t }}">{% endfor %}</datalist>
+      </div>
+      <div>
+        <label for="level">Nivå</label>
+        <select id="level" name="level">
+          {% for l in range(1, 6) %}<option value="{{ l }}" {{ 'selected' if l == form.level }}>{{ l }} – {{ LEVEL_HINTS[l] }}</option>{% endfor %}
+        </select>
+      </div>
+    </div>
+    <p class="muted psmall" style="margin:.3rem 0 .6rem">Området avgör under vilken rubrik övningen hamnar. Välj ett som redan finns när det går, så blir det ingen stavningsvariant.</p>
+    <div class="checks" role="radiogroup" aria-label="Typ av fråga">
+      <label><input type="radio" name="type" value="mc" {{ 'checked' if form.type == 'mc' }}> Flerval (eleven väljer ett alternativ)</label>
+      <label><input type="radio" name="type" value="text" {{ 'checked' if form.type == 'text' }}> Fritext (eleven skriver svaret)</label>
+    </div>
+    <label for="question">Fråga</label>
+    <textarea id="question" class="tasktext" name="question" required maxlength="1500">{{ form.question }}</textarea>
+  </div>
+
+  <div class="card" id="mcbox" {{ 'hidden' if form.type != 'mc' }}>
+    <strong>Alternativ</strong> <span class="muted">Skriv alternativen och markera det som är rätt.</span>
+    <div class="optlist">
+      {% for o in form.options %}
+      <div class="optrow {{ 'extra' if loop.index0 >= 4 and not o }}">
+        <input type="radio" name="correct" value="{{ loop.index0 }}" aria-label="Alternativ {{ loop.index }} är rätt" {{ 'checked' if loop.index0 in form.correct }}>
+        <input name="option" maxlength="200" placeholder="Alternativ {{ loop.index }}{{ ' (valfritt)' if loop.index > 2 }}" value="{{ o }}">
+      </div>
+      {% endfor %}
+    </div>
+    <button type="button" class="small ghost" id="moreopts" hidden>＋ Fler alternativ</button>
+  </div>
+
+  <div class="card" id="textbox" {{ 'hidden' if form.type != 'text' }}>
+    <label for="answers_text" style="margin-top:0"><strong>Godkända svar</strong> <span class="muted">Ett svar per rad. Flera rader betyder att alla godkänns, till exempel 20:15 och 20.15.</span></label>
+    <textarea id="answers_text" class="tasktext short" name="answers_text" maxlength="4000">{{ form.answers_text }}</textarea>
+    <p class="muted psmall" style="margin:.3rem 0 0">Stor eller liten bokstav spelar ingen roll. Tal jämförs som tal (4,25 är samma som 4.25), så du behöver bara skriva ett av dem.</p>
+  </div>
+
+  <div class="card">
+    <label for="explanation" style="margin-top:0"><strong>Förklaring</strong> <span class="muted">Visas för eleven när hon har svarat (valfri).</span></label>
+    <textarea id="explanation" class="tasktext short" name="explanation" maxlength="2000">{{ form.explanation }}</textarea>
+  </div>
+
+  <div class="card">
+    <strong>Bild</strong> <span class="muted">(valfri)</span>
+    {% if form.image %}
+    <div class="taskimg"><img src="/media/{{ form.image }}" alt="Nuvarande bild"> <span class="muted psmall">{{ form.image }}</span></div>
+    <label class="checkline"><input type="checkbox" name="remove_image" value="1"> Ta bort bilden</label>
+    {% endif %}
+    <div class="row" style="margin-top:.4rem">
+      <div><label>{{ 'Byt bild – ladda upp' if form.image else 'Ladda upp en bild' }}</label><input type="file" name="image_file" accept="image/png,image/jpeg,image/gif,image/webp,image/svg+xml"></div>
+      <div style="flex:1;min-width:14rem"><label>… eller hämta från webbadress</label><input name="image_url" placeholder="https://…" style="width:100%"></div>
+    </div>
+    {{ image_picker(media, form.image) }}
+  </div>
+
+  <div class="card">
+    <strong>Diagram</strong> <span class="muted">(valfritt) Ritas som en bild av frågan, utan bildfil.</span>
+    <div class="row" style="margin-top:.4rem">
+      <div>
+        <label for="diagram_type">Typ</label>
+        <select id="diagram_type" name="diagram_type">
+          <option value="">Inget diagram</option>
+          {% for k, v in type_labels.items() %}<option value="{{ k }}" {{ 'selected' if form.diagram_type == k }}>{{ v }}</option>{% endfor %}
+        </select>
+      </div>
+    </div>
+    <div id="diagrambox" {{ 'hidden' if not form.diagram and not form.diagram_type }}>
+      <label for="diagram">Inställningar <span class="muted">Ändra värdena i mallen. Förhandsgranskningen visar hur diagrammet ritas.</span></label>
+      <textarea id="diagram" name="diagram" spellcheck="false" style="min-height:9rem">{{ form.diagram }}</textarea>
+    </div>
+  </div>
+
+  <div class="card">
+    <label class="checkline" style="margin-top:0"><input type="checkbox" name="active" value="1" {{ 'checked' if form.active }}> Synlig för eleverna</label>
+    {% if ex and answered %}
+    <label class="checkline"><input type="checkbox" name="replace" value="1"> Spara som ny övning och dölj den gamla <span class="muted">(frågetexten måste då skilja sig från den gamla)</span></label>
+    {% endif %}
+    <div class="row" style="margin-top:.6rem">
+      <button>Spara</button>
+      <button name="after" value="next" class="ghost">Spara och skapa nästa</button>
+      <button type="button" class="ghost" id="previewbtn">👁 Förhandsgranska</button>
+    </div>
+  </div>
+</form>
+
+<div class="card" id="preview" aria-live="polite">
+  <strong>Så ser övningen ut för eleven</strong>
+  <div id="previewbody" style="margin-top:.6rem"><p class="muted">Tryck på <em>Förhandsgranska</em> när du fyllt i frågan.</p></div>
+</div>
+
+{% if ex %}
+<div class="card">
+  <div class="row">
+    <a class="btn ghost small" href="/admin/exercises/new?similar={{ ex.id }}{{ '&back=' ~ (back|urlencode) if back }}">＋ Skapa en liknande övning</a>
+    <form class="inline" method="post" action="/admin/exercises/{{ ex.id }}/delete" onsubmit="return confirm('Ta bort övningen? Det går inte att ångra.')">
+      <input type="hidden" name="back" value="{{ back }}"><button class="small danger" {{ 'disabled title="Elever har svarat på den. Dölj den i stället."' if answered }}>Ta bort övningen</button></form>
+  </div>
+  {% if answered %}<p class="muted psmall" style="margin:.5rem 0 0">Den går inte att ta bort eftersom elever har svarat på den. Ta bort kryssen vid <em>Synlig</em> för att dölja den.</p>{% endif %}
+</div>
+{% endif %}
+<script src="/static/editor.js" defer></script>
+{% endblock %}

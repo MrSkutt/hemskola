@@ -42,6 +42,27 @@ pytest
 
 Eleven ser bara "Nivå 1–5". Kopplingen till ungefärlig årskurs visas bara för admin.
 
+## Skapa och redigera övningar
+
+Under **Övningar** hittar du en enskild övning med sökrutan (söker i frågan, området, svaren och förklaringen, även med å, ä och ö) och filtren
+för ämne, område, nivå, typ och synliga/dolda. Listan visar 50 övningar per sida. Tabellen med antal övningar per nivå ligger hopfälld överst.
+
+* **＋ Ny övning** och **Redigera** (bredvid *Dölj*) öppnar samma formulär. Du väljer ämne, område (förslag från de som redan finns, så du slipper stavningsvarianter),
+  nivå och om frågan är **flerval** eller **fritext**.
+  * *Flerval:* skriv 2–8 alternativ och markera det rätta med en rundknapp.
+  * *Fritext:* skriv ett eller flera godkända svar, ett per rad.
+  * Frågan, en förklaring som eleven ser efter svaret, en **bild** (ladda upp, webbadress eller en som redan finns, samma som för uppgifter) och ett **diagram**
+    (välj typ så fylls en mall i som du ändrar) kan läggas till.
+  * **Ämne:** *Nytt ämne…* skapar ett nytt, och det syns hos eleverna så fort det har en synlig övning.
+* **Förhandsgranska** visar övningen som eleven ser den, med det rätta svaret markerat, bild och diagram, och listar eventuella fel. Det sparar ingenting.
+* **Spara och skapa nästa** sparar och öppnar ett nytt formulär med samma ämne, nivå, område och typ. Bra när du lägger in flera i rad.
+  **Skapa en liknande övning** gör samma sak från en befintlig övning.
+* Samma kontroller som vid import gäller, och en fråga kan bara finnas en gång per ämne. Finns den redan får du en länk till den.
+* **Har elever svarat** på övningen ser du hur många. Gamla svar behåller sitt rätt eller fel även om du ändrar facit. Gör du en stor ändring kan du kryssa i
+  *Spara som ny övning och dölj den gamla*, så hör elevernas statistik fortfarande till den gamla frågan (frågetexten måste då vara en annan).
+* **Ta bort** fungerar bara för övningar som ingen har svarat på och som inte ingår i något prov. Annars döljer du dem.
+* Generatorer (∞) är kod och kan inte redigeras, bara döljas. Bilder du laddar upp här sparas som `ovning-….` i bildmappen och tas aldrig bort automatiskt.
+
 ## Lägg in fler övningar
 
 Under **Importera** klistrar du in eller laddar upp JSON. Be Claude generera i det här formatet:

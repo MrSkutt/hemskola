@@ -374,3 +374,27 @@ def validate(spec):
     except (KeyError, ValueError, TypeError, AttributeError, ZeroDivisionError) as e:
         return f"diagrammet kunde inte ritas ({type(e).__name__}: {e})"
     return None
+
+
+# Mallar och namn som används av övningsredigeraren: välj en typ så fylls en fungerande spec i, som sedan ändras.
+TYPE_LABELS = {
+    "bar_chart": "Stapeldiagram", "pie_chart": "Cirkeldiagram", "clock": "Klocka", "fraction": "Bråk",
+    "rectangle": "Rektangel", "right_triangle": "Rätvinklig triangel", "number_line": "Tallinje",
+    "coordinate": "Koordinatsystem", "angle": "Vinkel",
+}
+EXAMPLES = {
+    "bar_chart": {"type": "bar_chart", "title": "Fåglar i trädgården", "labels": ["Talgoxe", "Blåmes", "Koltrast"],
+                  "values": [9, 5, 3]},
+    "pie_chart": {"type": "pie_chart", "title": "Favoritgrupp", "labels": ["Grupp A", "Grupp B", "Grupp C"],
+                  "values": [20, 50, 30], "show_percent": True},
+    "clock": {"type": "clock", "time": "2:10"},
+    "fraction": {"type": "fraction", "shape": "bar", "parts": 8, "shaded": 4},
+    "rectangle": {"type": "rectangle", "w": 8, "h": 5, "unit": "cm"},
+    "right_triangle": {"type": "right_triangle", "a": 3, "b": 4, "bottom_label": "3 cm", "left_label": "4 cm",
+                       "hyp_label": "?"},
+    "number_line": {"type": "number_line", "min": -10, "max": 10, "step": 1, "label_step": 5,
+                    "marks": [{"value": -4, "label": "?"}]},
+    "coordinate": {"type": "coordinate", "xmin": -5, "xmax": 5, "ymin": -5, "ymax": 5,
+                   "points": [{"x": 2, "y": 3, "label": "A"}]},
+    "angle": {"type": "angle", "degrees": 120},
+}
