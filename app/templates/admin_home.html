@@ -22,6 +22,31 @@
   {% endfor %}
 </div>
 {% endif %}
+{% if students|selectattr('week')|list %}
+<div class="card" id="vecka">
+  <h2 style="margin-top:0">📅 Veckan som gått</h2>
+  <p class="muted" style="margin-top:0">De senaste 7 dagarna, jämfört med veckan före.</p>
+  {% for st in students if st.week %}{% set w = st.week %}
+  <div class="weekrow">
+    <div class="rtop"><strong>{{ st.u.display_name }}</strong>
+      {% if w.n %}<span><strong>{{ w.n }}</strong> svar · <strong>{{ w.pct }} %</strong> rätt · <strong>{{ w.active_days }}</strong> av {{ w.days }} dagar</span>
+      <span class="muted">{% if w.trend > 0 %}↑ upp från {{ w.prev_n }}{% elif w.trend < 0 %}↓ ned från {{ w.prev_n }}{% else %}lika många som veckan före{% endif %}{% if w.prev_pct is not none %} ({{ w.prev_pct }} % rätt){% endif %}</span>
+      {% else %}<span class="muted">Inga svar de senaste {{ w.days }} dagarna{% if w.prev_n %} (veckan före: {{ w.prev_n }}){% endif %}.</span>{% endif %}
+    </div>
+    {% if w.n %}
+    <ul class="weeklist">
+      <li>Mest övat: {% for s in w.subjects[:4] %}{{ label(s.subject) }} {{ s.n }} ({{ s.pct }} %){{ ', ' if not loop.last }}{% endfor %}</li>
+      {% if w.level_ups %}<li>🎉 Högre nivå: {% for l in w.level_ups %}{{ label(l.subject) }} nivå {{ l.level }}{{ ', ' if not loop.last }}{% endfor %}</li>{% endif %}
+      {% if w.tests %}<li>Prov: {% for t in w.tests %}{{ label(t.subject) }} {{ t.score }}/{{ t.total }}{{ ', ' if not loop.last }}{% endfor %}</li>{% endif %}
+      {% if w.weak %}<li class="weak">Behöver mer träning: {% for x in w.weak %}{{ x.topic }} ({{ label(x.subject) }}, {{ x.pct }} % rätt av {{ x.n }}){{ '; ' if not loop.last }}{% endfor %}</li>{% endif %}
+      {% if w.goal_days is not none %}<li>Dagsmålet ({{ w.goal }} svar) nåddes {{ w.goal_days }} av {{ w.days }} dagar.</li>{% endif %}
+    </ul>
+    {% endif %}
+    {% if w.missed %}<div class="muted psmall">🔁 {{ w.missed }} {{ 'fråga' if w.missed == 1 else 'frågor' }} att repetera under "Öva på det jag missat".</div>{% endif %}
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
 {% if students|length > 1 %}
 <p><button type="button" class="small ghost" data-all="open">Visa alla</button> <button type="button" class="small ghost" data-all="close">Dölj alla</button></p>
 {% endif %}

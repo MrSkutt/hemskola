@@ -147,6 +147,12 @@ code { background: var(--bg); border: 1px solid var(--line); border-radius: 5px;
 .reward { padding: .6rem 0; border-bottom: 1px solid var(--line); }
 .reward:last-child { border-bottom: 0; }
 .reward.given { opacity: .65; }
+.weekrow { padding: .6rem 0; border-top: 1px solid var(--line); }
+.weekrow:first-of-type { border-top: 0; }
+.weekrow .rtop { display: flex; gap: .3rem 1rem; align-items: baseline; flex-wrap: wrap; }
+.weeklist { margin: .3rem 0 .2rem 1.2rem; padding: 0; }
+.weeklist li { margin: .15rem 0; }
+.weeklist li.weak { color: var(--warn); }
 .reward .rtop { display: flex; gap: .6rem; align-items: baseline; flex-wrap: wrap; }
 table.plain td, table.plain th { border-bottom: 0; padding: .2rem .5rem .2rem 0; }
 .areapick { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; margin: .2rem 0 .6rem; }

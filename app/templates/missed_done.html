@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Öva på det jag missat – Hemskola{% endblock %}
+{% block content %}
+<h1>🔁 Öva på det jag missat</h1>
+<div class="card">
+  {% if paused %}
+    <p><strong>Bra jobbat!</strong> Du har <strong>{{ remaining }}</strong> {{ 'fråga' if remaining == 1 else 'frågor' }} kvar att klara, men du har nyss svarat på {{ 'den' if remaining == 1 else 'dem' }}.</p>
+    <p class="muted">Ta en paus eller öva på något annat en stund. Då kommer {{ 'den' if remaining == 1 else 'de' }} tillbaka och blir lättare att få rätt.</p>
+  {% else %}
+    <p>🎉 <strong>Du har inget att repetera just nu.</strong></p>
+    <p class="muted">Allt du svarat fel på har du sedan svarat rätt på. Missar du något nytt dyker det upp här.</p>
+  {% endif %}
+  <p><a class="btn" href="/home" autofocus>Till startsidan</a>{% if paused %} <a class="btn ghost" href="/missat{% if amne %}?amne={{ amne|urlencode }}{% endif %}">Försök igen</a>{% endif %}</p>
+</div>
+{% endblock %}

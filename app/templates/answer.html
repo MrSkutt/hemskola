@@ -12,9 +12,19 @@
     <div class="result wrong">Inte riktigt. Du svarade <strong>{{ a.given }}</strong>.<br>Rätt svar: <strong>{{ answers[0] }}</strong></div>
   {% endif %}
   {% if ex.explanation %}<p>💡 {{ ex.explanation }}</p>{% endif %}
+  {% if from_missed %}
+    <p class="muted">{% if a.correct %}Den är avklarad. {% else %}Den kommer tillbaka lite senare. {% endif %}{% if remaining %}Kvar att klara: <strong>{{ remaining }}</strong>.{% else %}🎉 Du har klarat allt du missat!{% endif %}</p>
+  {% endif %}
   {% if change == 'up' %}<div class="flash ok">🎉 Starkt jobbat! Du har gått upp till <strong>nivå {{ level }}</strong>.</div>
   {% elif change == 'down' %}<div class="flash warn">Vi tar det lite lugnare och går till <strong>nivå {{ level }}</strong> så blir det mer träning på grunderna. Ingen fara!</div>{% endif %}
+  {% if from_missed %}
+  {% if remaining %}
+  <p><a class="btn" href="/missat{% if amne %}?amne={{ amne|urlencode }}{% endif %}" autofocus>Nästa fråga →</a>
+     <a class="btn ghost" href="/home">Avsluta</a></p>
+  {% else %}<p><a class="btn" href="/home" autofocus>Klart</a></p>{% endif %}
+  {% else %}
   <p><a class="btn" href="/practice/{{ ex.subject }}{% if area %}?omrade={{ area|urlencode }}{% endif %}" autofocus>Nästa fråga →</a>
      <a class="btn ghost" href="/home">Avsluta</a></p>
+  {% endif %}
 </div>
 {% endblock %}

@@ -94,4 +94,6 @@
     preview();
     $('preview').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   });
+  // En övning som redan finns visas direkt, så att man ser den som eleven gör (särskilt vid granskning)
+  if (form.elements.question && form.elements.question.value.trim()) preview();
 })();

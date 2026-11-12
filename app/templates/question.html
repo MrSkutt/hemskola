@@ -4,6 +4,9 @@
 <p class="muted">
   {% if mode == 'test' %}
     {{ 'Inledande test' if test.kind == 'placement' else 'Statusprov' }} i {{ label(ex.subject) }} · Fråga {{ pos }} av {{ test.total }}
+  {% elif mode == 'missed' %}
+    🔁 Öva på det jag missat · {{ label(ex.subject) }} · {{ ex.topic }}<br>
+    Kvar att klara: <strong>{{ remaining }}</strong> · <a href="/home">Avsluta</a>
   {% else %}
     {{ label(ex.subject) }} · Nivå {{ level }} · {{ ex.topic }}
     {% if area %}<br>Område: <strong>{{ area }}</strong> · <a href="/practice/{{ ex.subject }}">Byt till alla områden</a>{% endif %}

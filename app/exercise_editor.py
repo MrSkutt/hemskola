@@ -211,7 +211,8 @@ def update_exercise(db, ex_id: int, row: dict, active=True) -> tuple:
     db.execute(
         """UPDATE exercises SET subject=:subject, topic=:topic, level=:level, type=:type, question=:question,
                   options=:options, answers=:answers, explanation=:explanation, image=:image, diagram=:diagram,
-                  active=:a WHERE id=:id""", {**row, "a": 1 if active else 0, "id": ex_id})
+                  active=:a, review=CASE WHEN :a=1 THEN 0 ELSE review END
+           WHERE id=:id""", {**row, "a": 1 if active else 0, "id": ex_id})
     if old["subject"] != row["subject"] and old["subject"] in logic.LEGACY_SUBJECTS:
         logic.migrate_legacy_levels(db)
     return "", None
@@ -265,10 +266,12 @@ def topics_by_subject(db) -> dict:
     return out
 
 
-def search(db, q="", subject="", level=0, topic="", kind="", state="", page=1, stat="", sort="") -> dict:
+def search(db, q="", subject="", level=0, topic="", kind="", state="", page=1, stat="", sort="",
+           page_size=PAGE_SIZE) -> dict:
     """Övningar som matchar filtren, en sida i taget. `q` söker i fråga, område, svar och förklaring (utan hänsyn till
-    stor eller liten bokstav, även åäö). kind: mc, text eller gen. state: on (synliga) eller off (dolda).
-    stat: answered, hard eller unanswered (se STATS). sort: low (lägst andel rätt) eller many (flest svar)."""
+    stor eller liten bokstav, även åäö). kind: mc, text eller gen. state: on (synliga), off (dolda av admin) eller
+    review (importerade, väntar på godkännande). stat: answered, hard eller unanswered (se STATS). sort: low (lägst
+    andel rätt) eller many (flest svar)."""
     sql = """SELECT e.*, COUNT(a.id) AS n, COALESCE(SUM(a.correct), 0) AS c
              FROM exercises e LEFT JOIN attempts a ON a.exercise_id=e.id WHERE 1=1"""
     params = []
@@ -289,7 +292,9 @@ def search(db, q="", subject="", level=0, topic="", kind="", state="", page=1, s
     if state == "on":
         sql += " AND e.active=1"
     elif state == "off":
-        sql += " AND e.active=0"
+        sql += " AND e.active=0 AND e.review=0"
+    elif state == "review":
+        sql += " AND e.review=1"
     sql += " GROUP BY e.id"
     if stat == "answered":
         sql += " HAVING n > 0"
@@ -310,11 +315,35 @@ def search(db, q="", subject="", level=0, topic="", kind="", state="", page=1, s
         rows = [r for r in rows if needle in " ".join(
             [r["question"], r["topic"], r["answers"], r["explanation"] or ""]).casefold()]
     total = len(rows)
-    pages = max(1, -(-total // PAGE_SIZE))
+    pages = max(1, -(-total // page_size))
     page = min(max(1, page), pages)
-    start = (page - 1) * PAGE_SIZE
-    return {"rows": rows[start:start + PAGE_SIZE], "total": total, "page": page, "pages": pages,
-            "first": start + 1 if total else 0, "last": min(total, start + PAGE_SIZE)}
+    start = (page - 1) * page_size
+    return {"rows": rows[start:start + page_size], "total": total, "page": page, "pages": pages,
+            "first": start + 1 if total else 0, "last": min(total, start + page_size)}
+
+
+# ---------------------------------------------------------------- granskning av importerade övningar
+#
+# Importerade övningar kan läggas in som dolda och märkta med review=1. Eleverna ser dem först när admin har
+# godkänt dem (active=1, review=0). Märkningen försvinner också om övningen på annat sätt görs synlig.
+
+def review_count(db) -> int:
+    return db.execute("SELECT COUNT(*) AS n FROM exercises WHERE review=1").fetchone()["n"]
+
+
+def approve(db, ex_id: int) -> bool:
+    """Godkänner en övning som väntar på granskning. False om den inte väntar på något."""
+    cur = db.execute("UPDATE exercises SET active=1, review=0 WHERE id=? AND review=1", (ex_id,))
+    return cur.rowcount > 0
+
+
+def approve_matching(db, **filters) -> int:
+    """Godkänner alla övningar som väntar på granskning och matchar filtren (över alla sidor). Antal godkända."""
+    rows = search(db, **{**filters, "state": "review", "page": 1, "page_size": 10 ** 9})["rows"]
+    n = 0
+    for r in rows:
+        n += approve(db, r["id"])
+    return n
 
 
 # ---------------------------------------------------------------- förhandsvisning

@@ -188,6 +188,7 @@ ADDED_COLUMNS = [
     ("exercises", "image", "TEXT"),
     ("exercises", "diagram", "TEXT"),
     ("exercises", "generator", "TEXT"),
+    ("exercises", "review", "INTEGER NOT NULL DEFAULT 0"),
     ("task_assignments", "result_seen", "INTEGER NOT NULL DEFAULT 1"),
     ("tasks", "in_report", "INTEGER NOT NULL DEFAULT 0"),
     ("rewards", "repeatable", "INTEGER NOT NULL DEFAULT 0"),

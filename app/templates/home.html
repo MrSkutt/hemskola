@@ -54,6 +54,15 @@
 </div>
 {% endif %}
 
+{% if missed_total %}
+<div class="card">
+  <strong>🔁 Öva på det jag missat</strong>
+  <p class="muted" style="margin:.3rem 0 .6rem">Du har <strong>{{ missed_total }}</strong> {{ 'fråga' if missed_total == 1 else 'frågor' }} som du svarat fel på. Svarar du rätt på dem försvinner de från listan.</p>
+  <p style="margin:0"><a class="btn" href="/missat">Repetera dem</a>
+    {% if missed_by|length > 1 %}{% for s, n in missed_by %} <a class="btn ghost small" href="/missat?amne={{ s|urlencode }}">{{ label(s) }} ({{ n }})</a>{% endfor %}{% endif %}</p>
+</div>
+{% endif %}
+
 {% for g in groups %}
 <h2 class="grouphead">{{ g.title }}</h2>
 <div class="groupbody"><div class="grid">

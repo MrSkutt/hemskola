@@ -3,7 +3,8 @@
 {% block content %}
 <h1>Importera övningar</h1>
 {% if result %}
-<div class="flash ok">Klart: {{ result.added }} nya övningar ({{ result.skipped }} fanns redan){% if result.words_added or result.words_skipped %}, {{ result.words_added }} nya ord ({{ result.words_skipped }} fanns redan){% endif %}.</div>
+<div class="flash ok">Klart: {{ result.added }} nya övningar ({{ result.skipped }} fanns redan){% if result.words_added or result.words_skipped %}, {{ result.words_added }} nya ord ({{ result.words_skipped }} fanns redan){% endif %}.
+{% if result.review %}<br><strong>Övningarna är dolda för eleverna tills du godkänt dem.</strong> <a href="/admin/exercises?state=review">Granska och godkänn →</a>{% endif %}</div>
 {% if result.errors %}<div class="flash warn"><strong>{{ result.errors|length }} fel:</strong><br>{% for e in result.errors %}{{ e }}<br>{% endfor %}</div>{% endif %}
 {% endif %}
 <div class="card">
@@ -12,9 +13,18 @@
     <input id="up" type="file" name="upload" accept=".json,application/json">
     <label for="pasted">…eller klistra in JSON här</label>
     <textarea id="pasted" name="pasted" placeholder='[{"subject":"matte","topic":"Procent","level":3,"type":"text","question":"Hur mycket är 10 % av 350? Svara endast med talet.","answer":"35","explanation":"10 % är en tiondel."}]'></textarea>
+    <label class="checkline"><input type="checkbox" name="review" value="1" checked> Granska först: lägg in övningarna som dolda tills jag har godkänt dem <span class="muted">(gäller övningar, inte ord)</span></label>
     <p><button>Importera</button></p>
   </form>
 </div>
+<details class="card">
+  <summary><strong>Be Claude skriva nya övningar</strong></summary>
+  <p class="muted">Kopiera texten, ändra ämne, nivå och antal och skicka den till Claude. Klistra sedan in svaret här ovanför. Med <em>Granska först</em> ikryssad ser eleven inget förrän du godkänt.</p>
+  <textarea id="aiprompt" readonly spellcheck="false" style="min-height:11rem">Skriv 30 nya övningar i ämnet matte, nivå 3 (skala 1–5, för en 14-åring i årskurs 8), område: procent. Svara bara med JSON, en lista med objekt i det här formatet:
+{"subject": "matte", "topic": "Procent", "level": 3, "type": "text", "question": "Hur mycket är 10 % av 350? Svara endast med talet.", "answer": "35", "explanation": "10 % är en tiondel."}
+Regler: type är "mc" (då med "options": [...] där "answer" finns bland alternativen) eller "text" (då ska frågan säga hur man ska svara, t.ex. "Svara endast med talet", och "answer" får vara en lista med alla godkända sätt att svara). Blanda svårighet inom nivån, skriv på svenska, och ge varje övning en kort förklaring. Frågorna får inte upprepa varandra.</textarea>
+  <p><button type="button" class="small ghost" id="copyprompt">Kopiera texten</button> <span class="muted" id="copied" hidden>Kopierad ✔</span></p>
+</details>
 <div class="card">
   <h2 style="margin-top:0">Format</h2>
   <p>En lista av övningar. Fält:</p>
@@ -52,4 +62,5 @@
 {"word": "under", "pos": "preposition", "level": 2, "example": "Katten sitter under bordet."}</pre>
   <p class="muted">Dubbletter (samma ämne och fråga) hoppas över. Be Claude generera övningar i det här formatet och klistra in dem här.</p>
 </div>
+<script src="/static/import.js" defer></script>
 {% endblock %}

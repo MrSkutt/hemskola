@@ -69,7 +69,8 @@ för ämne, område, nivå, typ och synliga/dolda. Listan visar 50 övningar per
 
 ## Lägg in fler övningar
 
-Under **Importera** klistrar du in eller laddar upp JSON. Be Claude generera i det här formatet:
+Under **Importera** klistrar du in eller laddar upp JSON. Be Claude generera i det här formatet (under *Be Claude skriva nya övningar* på sidan
+finns en färdig text att kopiera, där du bara byter ämne, nivå och antal):
 
 ```json
 [
@@ -105,6 +106,18 @@ Exempel på prompt: *"Skapa 25 övningar i matte, nivå 3, området bråk, i det
 Tips: be om minst 20–30 övningar per nivå, så att samma frågor inte kommer för ofta. **Exportera** gärna
 befintliga övningar och klistra in som exempel, så att nya får samma stil. Granska gärna nya övningar
 innan eleven får dem, särskilt facit.
+
+### Granska innan eleven ser nya övningar
+
+Med rutan **Granska först** ikryssad (den är det som standard) läggs importerade övningar in *dolda* och märkta "väntar på godkännande".
+Eleverna ser dem inte förrän du godkänt dem. Orden i ordlistan berörs inte.
+
+* En siffra på **Övningar** i menyn och en ruta överst i övningslistan visar hur många som väntar. **Granska dem →** (eller *Visa → Väntar på godkännande*)
+  öppnar granskningslistan, där frågan, rätta svar, alternativ och förklaring syns på varje rad.
+* **Godkänn** gör övningen synlig. **Redigera** öppnar den (med förhandsgranskningen redan uppe) och där finns *Spara och godkänn*.
+  **Ta bort** tar bort en som inte duger. **Godkänn alla** godkänner allt som matchar listans filter, på alla sidor, så du kan till exempel granska ett ämne i taget.
+* Det du själv har dolt (*Dölj*) räknas inte som väntande och påverkas aldrig av *Godkänn*. Startmaterialet som följer med appen godkänns förstås direkt.
+* Nytt i databasen: kolumnen `exercises.review`, som läggs till automatiskt vid uppgradering (0 för alla befintliga övningar).
 
 ## Genererade övningar, ordlista, bilder och diagram
 
@@ -229,11 +242,22 @@ Bara skolämnen räknas, alltså inte fritidsämnen som K-pop.
   visas högst upp på Elever-sidan (och som en siffra i fliken *Elever*) samt vid belöningen på elevens sida, där du godkänner eller avslår. Avslår du, eller
   eleven tar tillbaka förfrågan, blir poängen tillgängliga igen. *Ångra* ångrar den senaste utdelningen. En belöning som redan delats ut och sedan tas bort
   döljs i stället för att raderas, så att poängen som använts på den fortsätter dras av och inte betalas tillbaka.
+* **Öva på det jag missat:** på startsidan finns ett kort när eleven har frågor hon svarat fel på (med knappar per ämne om det är fler än ett).
+  En fråga räknas som missad när det senaste svaret på den var fel, i övning eller prov, och den försvinner från listan när hon svarar rätt.
+  Svarar hon fel igen ligger den kvar. Samma fråga kommer inte direkt efter att den besvarats (minst tre andra emellan när det finns så många),
+  så den sista väntar tills hon gjort något annat. Svaren räknas som vanliga övningssvar för nivå, dagsmål och poäng. En missad generator
+  kommer tillbaka som en ny uppgift av samma sort.
 * **Märken:** 19 märken (första svaret, 100/500/1000 svar, dagar i rad, dagsmål, 5 och 10 rätt i rad, nivåer, prov med mera) som visas
   på sidan **Framsteg**. De räknas ut från svaren och listan finns i `app/motivation.py`.
 
 Nya tabeller (`user_prefs`, `goal_days`, `level_ups`, `rewards`, `reward_requests`) läggs till automatiskt vid uppgradering och ingen befintlig data ändras.
 Nya elever och befintliga elever får standardvärdena (område på, dagsmål 15, poäng och märken på).
+
+### Veckan som gått
+
+Överst på **Elever** (adminstartsidan) finns en sammanfattning per aktiv elev för de senaste sju dagarna jämfört med veckan före: antal svar och andel rätt,
+aktiva dagar, mest övade ämnen, nya nivåer, prov, dagsmålsdagar, områden som behöver mer träning (minst 4 svar och högst 60 % rätt, inte fritidsämnen)
+och hur många frågor som väntar under *Öva på det jag missat*. Allt räknas ut från svaren när sidan öppnas, så inget nytt sparas.
 
 ## Uppgifter
 
@@ -315,4 +339,4 @@ och exempel på senaste felsvar. Nivåerna är en uppskattning från övningspro
 
 * Fler generatorer för biologi och religionskunskap, och fler frågor per nivå
 * Fler generatorer och fler ord i ordlistan, t.ex. engelska glosor
-* Påminnelser/veckorapport till admin
+* Påminnelser till admin (veckosammanfattningen finns redan på startsidan, men skickas inte)

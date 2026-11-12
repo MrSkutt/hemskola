@@ -4,7 +4,10 @@
 {% block content %}
 {% set list_url = back or '/admin/exercises' %}
 <p><a href="{{ list_url }}">← Alla övningar</a></p>
-<h1>{{ 'Redigera övning' if ex else 'Ny övning' }} {% if ex and not ex.active %}<span class="pill off">dold</span>{% endif %}</h1>
+<h1>{{ 'Redigera övning' if ex else 'Ny övning' }} {% if ex and ex.review %}<span class="pill wait">väntar på godkännande</span>{% elif ex and not ex.active %}<span class="pill off">dold</span>{% endif %}</h1>
+{% if ex and ex.review %}
+<div class="notebox wait">Den här övningen är importerad och väntar på ditt godkännande. Eleverna ser den inte förrän du godkänner den. Kontrollera frågan, svaren och förklaringen i förhandsgranskningen längst ned.</div>
+{% endif %}
 
 {% if errors %}
 <div class="flash warn"><strong>Det gick inte att spara:</strong>
@@ -116,7 +119,8 @@
     <label class="checkline"><input type="checkbox" name="replace" value="1"> Spara som ny övning och dölj den gamla <span class="muted">(frågetexten måste då skilja sig från den gamla)</span></label>
     {% endif %}
     <div class="row" style="margin-top:.6rem">
-      <button>Spara</button>
+      {% if ex and ex.review %}<button name="approve" value="1">Spara och godkänn</button>{% endif %}
+      <button {{ 'class=ghost' if ex and ex.review }}>{{ 'Spara utan att godkänna' if ex and ex.review else 'Spara' }}</button>
       <button name="after" value="next" class="ghost">Spara och skapa nästa</button>
       <button type="button" class="ghost" id="previewbtn">👁 Förhandsgranska</button>
     </div>

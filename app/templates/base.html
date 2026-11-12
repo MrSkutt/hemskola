@@ -18,7 +18,8 @@
       <a href="/admin">Elever{% if rb %} <span class="pill wait" title="Belöningar att godkänna">{{ rb }}</span>{% endif %}</a>
       <a href="/fakta" {{ 'class=active' if path.startswith('/fakta') }}>Fakta</a>
       <a href="/admin/uppgifter" {{ 'class=active' if path.startswith('/admin/uppgifter') }}>Uppgifter{% if tb %} <span class="pill wait" title="Väntar på granskning">{{ tb }}</span>{% endif %}</a>
-      <a href="/admin/exercises">Övningar</a>
+      {% set eb = request.state.exercise_badge or 0 %}
+      <a href="/admin/exercises" {{ 'class=active' if path.startswith('/admin/exercises') }}>Övningar{% if eb %} <span class="pill wait" title="Importerade övningar som väntar på ditt godkännande">{{ eb }}</span>{% endif %}</a>
       <a href="/admin/words">Ord</a>
       <a href="/admin/media">Bilder</a>
       <a href="/admin/import">Importera</a>

@@ -807,21 +807,24 @@ def validate_exercise(d) -> tuple:
     }, None
 
 
-def import_bundle(db, data) -> dict:
-    """Importerar en lista med övningar, eller ett objekt med {"exercises": [...], "words": [...]}."""
+def import_bundle(db, data, review=False) -> dict:
+    """Importerar en lista med övningar, eller ett objekt med {"exercises": [...], "words": [...]}.
+    Med review=True läggs övningarna in dolda och väntar på att admin godkänner dem (orden berörs inte)."""
     from .words import import_words
     if isinstance(data, dict):
-        res = import_exercises(db, data.get("exercises", []))
+        res = import_exercises(db, data.get("exercises", []), review=review)
         w = import_words(db, data.get("words", []))
     else:
-        res = import_exercises(db, data)
+        res = import_exercises(db, data, review=review)
         w = {"added": 0, "skipped": 0, "errors": []}
     res["words_added"], res["words_skipped"] = w["added"], w["skipped"]
     res["errors"] = res["errors"] + w["errors"]
     return res
 
 
-def import_exercises(db, data) -> dict:
+def import_exercises(db, data, review=False) -> dict:
+    """Lägger in övningar (dubbletter hoppas över). Med review=True blir de dolda för eleverna och märkta som
+    "väntar på godkännande" tills admin godkänner dem."""
     if isinstance(data, dict):
         data = data.get("exercises", [])
     if not isinstance(data, list):
@@ -835,13 +838,14 @@ def import_exercises(db, data) -> dict:
             continue
         cur = db.execute(
             """INSERT OR IGNORE INTO exercises(subject, topic, level, type, question, options, answers, explanation,
-                                              image, diagram)
-               VALUES (:subject, :topic, :level, :type, :question, :options, :answers, :explanation, :image, :diagram)""",
-            row,
+                                              image, diagram, active, review)
+               VALUES (:subject, :topic, :level, :type, :question, :options, :answers, :explanation, :image, :diagram,
+                       :active, :review)""",
+            {**row, "active": 0 if review else 1, "review": 1 if review else 0},
         )
         if cur.rowcount:
             added += 1
         else:
             skipped += 1
     db.commit()
-    return {"added": added, "skipped": skipped, "errors": errors}
+    return {"added": added, "skipped": skipped, "errors": errors, "review": review and added > 0}

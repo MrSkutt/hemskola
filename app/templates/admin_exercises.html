@@ -3,6 +3,10 @@
 {% block mainclass %}wide{% endblock %}
 {% block content %}
 <h1>Övningar</h1>
+{% set rc = request.state.exercise_badge or 0 %}
+{% if rc and state != 'review' %}
+<div class="notebox wait">{{ rc }} importerade övningar väntar på ditt godkännande och syns inte för eleverna än. <a href="/admin/exercises?state=review"><strong>Granska dem →</strong></a></div>
+{% endif %}
 <details class="card">
   <summary><strong>Antal aktiva övningar per nivå</strong></summary>
   <table style="margin-top:.5rem">
@@ -27,7 +31,7 @@
   <div><label style="margin:0">Typ</label><select name="kind"><option value="">Alla</option>{% for k, v in kinds.items() %}<option value="{{ k }}" {{ 'selected' if k == kind }}>{{ v }}</option>{% endfor %}</select></div>
   <div><label style="margin:0">Svar</label><select name="stat"><option value="">Alla</option>{% for k, v in stats.items() %}<option value="{{ k }}" {{ 'selected' if k == stat }}>{{ v }}</option>{% endfor %}</select></div>
   <div><label style="margin:0">Sortera</label><select name="sort"><option value="">Ämne och nivå</option>{% for k, v in sorts.items() %}<option value="{{ k }}" {{ 'selected' if k == sort }}>{{ v }}</option>{% endfor %}</select></div>
-  <div><label style="margin:0">Visa</label><select name="state"><option value="">Alla</option><option value="on" {{ 'selected' if state == 'on' }}>Synliga</option><option value="off" {{ 'selected' if state == 'off' }}>Dolda</option></select></div>
+  <div><label style="margin:0">Visa</label><select name="state"><option value="">Alla</option><option value="on" {{ 'selected' if state == 'on' }}>Synliga</option><option value="off" {{ 'selected' if state == 'off' }}>Dolda</option><option value="review" {{ 'selected' if state == 'review' }}>Väntar på godkännande</option></select></div>
   <button class="small">Filtrera</button>
   {% if base %}<a class="btn ghost small" href="/admin/exercises">Rensa</a>{% endif %}
 </form>
@@ -40,18 +44,45 @@
 </div>
 {% endif %}
 {% endmacro %}
+{% if state == 'review' %}
+{% if result.total %}
+<div class="card">
+  <div class="row" style="align-items:center">
+    <div style="flex:1;min-width:14rem">Här är de importerade övningarna. Svar och förklaring syns på varje rad. <strong>Godkänn</strong> de som är bra, <strong>Redigera</strong> de som behöver rättas och <strong>Ta bort</strong> resten. Eleverna ser ingen av dem förrän du godkänt den.</div>
+    <form method="post" action="/admin/exercises/approve-all" onsubmit="return confirm('Godkänna alla {{ result.total }} övningar som matchar listan (på alla sidor)?')">
+      <input type="hidden" name="back" value="{{ here }}">
+      <input type="hidden" name="q" value="{{ q }}"><input type="hidden" name="subject" value="{{ subject }}"><input type="hidden" name="level" value="{{ level }}"><input type="hidden" name="topic" value="{{ topic }}"><input type="hidden" name="kind" value="{{ kind }}">
+      <button class="ghost">Godkänn alla {{ result.total }}</button>
+    </form>
+  </div>
+</div>
+{% else %}
+<div class="card"><p style="margin:0">Inget väntar på granskning just nu. <a href="/admin/exercises">Visa alla övningar</a></p></div>
+{% endif %}
+{% endif %}
 <p class="muted" style="margin:.2rem 0">{% if result.total %}Visar {{ result.first }}–{{ result.last }} av {{ result.total }} övningar{% else %}Inga övningar matchar.{% endif %}</p>
 {{ pager() }}
 <div class="card">
 <table>
   <tr><th>Ämne</th><th>Nivå</th><th>Område</th><th>Fråga</th><th>Svarat</th><th></th></tr>
   {% for r in result.rows %}
-  <tr style="{{ 'opacity:.5' if not r.active }}">
+  <tr style="{{ 'opacity:.5' if not r.active and not r.review }}">
     <td>{{ label(r.subject) }}</td><td>{{ r.level }}</td><td>{{ r.topic }}</td>
-    <td style="white-space:pre-line">{% if r.generator %}<span class="pill">∞ generator</span> {{ r.topic }} <span class="muted">({{ r.generator }})</span>{% else %}{{ r.question }}{% if r.image or r.diagram %} <span class="pill">{{ 'bild' if r.image else 'diagram' }}</span>{% endif %}{% if not r.active %} <span class="pill off">dold</span>{% endif %}{% endif %}</td>
+    <td style="white-space:pre-line">{% if r.generator %}<span class="pill">∞ generator</span> {{ r.topic }} <span class="muted">({{ r.generator }})</span>{% else %}{{ r.question }}{% if r.image or r.diagram %} <span class="pill">{{ 'bild' if r.image else 'diagram' }}</span>{% endif %}{% if r.review %} <span class="pill wait">väntar på godkännande</span>{% elif not r.active %} <span class="pill off">dold</span>{% endif %}{% endif %}
+      {%- if r.review and not r.generator %}{% set ans = r.answers|fromjson %}{% set opts = r.options|fromjson -%}
+      <div class="muted psmall" style="margin-top:.3rem;white-space:normal">
+        {%- if r.type == 'mc' %}Alternativ: {% for o in opts %}{% if o in ans %}<strong>✔ {{ o }}</strong>{% else %}{{ o }}{% endif %}{{ ' · ' if not loop.last }}{% endfor %}
+        {%- else %}Godkända svar: <strong>{{ ans|join(' / ') }}</strong>{% endif %}
+        {%- if r.explanation %}<br>Förklaring: {{ r.explanation }}{% endif -%}
+      </div>{% endif %}</td>
     <td>{% if r.n %}{{ r.n }} ({{ (100 * r.c / r.n)|round|int }} % rätt){% if is_hard(r.n, r.c) %} <span class="pill redo" title="Många har svarat fel. Kontrollera facit och frågan.">många fel</span>{% endif %}{% else %}–{% endif %}</td>
     <td style="white-space:nowrap">{% if not r.generator %}<a class="btn small ghost" href="/admin/exercises/{{ r.id }}/edit?back={{ here|urlencode }}">Redigera</a> {% endif %}
+      {% if r.review %}
+      <form class="inline" method="post" action="/admin/exercises/{{ r.id }}/approve"><input type="hidden" name="back" value="{{ here }}"><button class="small">Godkänn</button></form>
+      <form class="inline" method="post" action="/admin/exercises/{{ r.id }}/delete" onsubmit="return confirm('Ta bort övningen? Det går inte att ångra.')"><input type="hidden" name="back" value="{{ here }}"><button class="small danger">Ta bort</button></form>
+      {% else %}
       <form class="inline" method="post" action="/admin/exercises/{{ r.id }}/active"><input type="hidden" name="back" value="{{ here }}"><button class="small ghost">{{ 'Dölj' if r.active else 'Visa' }}</button></form>
+      {% endif %}
       {% if r.subject in legacy %}
       <form method="post" action="/admin/exercises/{{ r.id }}/subject" style="display:flex;gap:.35rem;align-items:center;margin-top:.35rem">
         <select name="subject" aria-label="Flytta till ämne" style="width:auto;margin:0">

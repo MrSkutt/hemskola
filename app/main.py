@@ -20,7 +20,7 @@ from starlette.concurrency import run_in_threadpool
 from starlette.middleware.sessions import SessionMiddleware
 
 from . import db as database
-from . import backup, diagrams, facts, logic, motivation, report, tasks, version
+from . import backup, diagrams, facts, logic, missed, motivation, report, tasks, version, weekly
 from . import exercise_editor as editor
 from . import words as wordlist
 from .security import hash_password, verify_password
@@ -100,6 +100,7 @@ templates = Jinja2Templates(directory=BASE / "templates")
 templates.env.globals.update(label=logic.label, LEVEL_HINTS=logic.LEVEL_HINTS, WINDOW=logic.WINDOW,
                              version=version.info())
 templates.env.filters["fmt"] = facts.fmt
+templates.env.filters["fromjson"] = lambda v: json.loads(v) if v else []
 templates.env.filters["dt"] = lambda v: v.strftime("%Y-%m-%d %H:%M") if v else "–"
 templates.env.filters["day"] = lambda v: v.strftime("%Y-%m-%d") if v else "–"
 templates.env.filters["ts"] = lambda s: logic.parse_ts(s).strftime("%Y-%m-%d %H:%M") if s else "–"
@@ -139,6 +140,7 @@ def current_user(request: Request, db=Depends(database.get_db)):
     request.state.user = row
     request.state.task_badge = tasks.badge_count(db, row)
     request.state.reward_badge = motivation.pending_count(db) if row["role"] == "admin" else 0
+    request.state.exercise_badge = editor.review_count(db) if row["role"] == "admin" else 0
     return row
 
 
@@ -218,8 +220,10 @@ def home(request: Request, user=Depends(student_user), db=Depends(database.get_d
         if logic.subject_enabled(db, user["id"], t["subject"]):   # prov i avstängda ämnen visas inte
             open_test = t
             break
+    left = missed.counts(db, user["id"])
     return render(request, "home.html", groups=groups, streak=streak, count_today=count_today,
-                  open_test=open_test, has_facts=facts.available(), prog=_progress(db, user["id"], prefs))
+                  open_test=open_test, has_facts=facts.available(), prog=_progress(db, user["id"], prefs),
+                  missed_total=sum(left.values()), missed_by=sorted(left.items()))
 
 
 def _progress(db, user_id: int, prefs: dict) -> dict:
@@ -297,9 +301,41 @@ def practice_answer(subject: str, exercise_id: int = Form(...), generated_id: st
     return go(f"/answer/{attempt_id}" + ("?" + "&".join(params) if params else ""))
 
 
+def _missed_subject(db, user_id: int, wanted: str) -> str:
+    """Ämnet eleven valt att repetera, men bara om hon har det påslaget (annars alla ämnen)."""
+    return wanted if wanted in logic.enabled_subjects(db, user_id) else ""
+
+
+@app.get("/missat")
+def missed_page(request: Request, amne: str = "", user=Depends(student_user), db=Depends(database.get_db)):
+    """Öva på det jag missat: en fråga i taget ur det eleven svarat fel på, tills hon klarat dem."""
+    amne = _missed_subject(db, user["id"], amne)
+    state = missed.next_missed(db, user["id"], amne)
+    item = state["item"]
+    if item is None:
+        return render(request, "missed_done.html", remaining=state["remaining"], paused=state["paused"], amne=amne)
+    return render(request, "question.html", ex=item, options=_shuffled(item), mode="missed",
+                  action="/missat" + (f"?amne={quote(amne)}" if amne else ""), level=logic.get_level(db, user["id"], item["subject"]),
+                  area="", remaining=state["remaining"], window=[],
+                  facts_subject=item["subject"] if facts.exists(item["subject"]) else None)
+
+
+@app.post("/missat")
+def missed_answer(exercise_id: int = Form(...), generated_id: str = Form(""), given: str = Form(""),
+                  amne: str = Query(""), user=Depends(student_user), db=Depends(database.get_db)):
+    amne = _missed_subject(db, user["id"], amne)
+    item = logic.resolve_item(db, user["id"], exercise_id, int(generated_id) if generated_id.isdigit() else None)
+    back = "/missat" + (f"?amne={quote(amne)}" if amne else "")
+    if not item or not logic.subject_enabled(db, user["id"], item["subject"]) or not given.strip():
+        return go(back)
+    attempt_id, _, change = logic.record_attempt(db, user["id"], item, given)
+    params = ([f"change={change}"] if change else []) + ["fran=missat"] + ([f"amne={quote(amne)}"] if amne else [])
+    return go(f"/answer/{attempt_id}?" + "&".join(params))
+
+
 @app.get("/answer/{attempt_id}")
-def answer_page(request: Request, attempt_id: int, change: str = "", omrade: str = "",
-                user=Depends(student_user), db=Depends(database.get_db)):
+def answer_page(request: Request, attempt_id: int, change: str = "", omrade: str = "", fran: str = "",
+                amne: str = "", user=Depends(student_user), db=Depends(database.get_db)):
     a = db.execute("SELECT * FROM attempts WHERE id=? AND user_id=? AND test_id IS NULL",
                    (attempt_id, user["id"])).fetchone()
     if not a:
@@ -307,9 +343,13 @@ def answer_page(request: Request, attempt_id: int, change: str = "", omrade: str
     item = (logic.item_from_generated(db, a["generated_id"]) if a["generated_id"]
             else logic.item_from_exercise(logic.exercise_row(db, a["exercise_id"])))
     level = logic.get_level(db, user["id"], item["subject"])
+    from_missed = fran == "missat"
+    amne = _missed_subject(db, user["id"], amne)
     return render(request, "answer.html", a=a, ex=item, answers=item["answers"],
                   change=change if change in ("up", "down") else "", level=level, area=omrade[:80],
-                  window=logic.window_results(db, user["id"], item["subject"]))
+                  window=logic.window_results(db, user["id"], item["subject"]),
+                  from_missed=from_missed, amne=amne,
+                  remaining=len(missed.missed_items(db, user["id"], amne)) if from_missed else 0)
 
 
 @app.get("/framsteg")
@@ -425,6 +465,7 @@ def admin_home(request: Request, user=Depends(admin_user), db=Depends(database.g
             g["rows"] = [logic.subject_summary(db, s["id"], sub) for sub in g["subjects"]]
         students.append({
             "u": s, "streak": streak, "today": count_today, "groups": groups,
+            "week": weekly.week_summary(db, s["id"]) if s["active"] else None,
             "off": [sub for sub in logic.ordered_subjects(subjects) if not settings[sub]["enabled"]],
         })
     return render(request, "admin_home.html", students=students, reward_requests=motivation.pending_requests(db),
@@ -701,9 +742,29 @@ def admin_exercises(request: Request, subject: str = "", level: int = 0, topic: 
 @app.post("/admin/exercises/{ex_id}/active")
 def admin_exercise_active(ex_id: int, back: str = Form(""), user=Depends(admin_user),
                           db=Depends(database.get_db)):
-    db.execute("UPDATE exercises SET active = 1 - active WHERE id=?", (ex_id,))
+    db.execute("UPDATE exercises SET active = 1 - active, review = 0 WHERE id=?", (ex_id,))
     db.commit()
     return go(_back(back, "/admin/exercises", prefix="/admin/exercises"))
+
+
+@app.post("/admin/exercises/{ex_id}/approve")
+def admin_exercise_approve(request: Request, ex_id: int, back: str = Form(""), user=Depends(admin_user),
+                           db=Depends(database.get_db)):
+    """Godkänner en importerad övning, så att eleverna kan få den."""
+    if editor.approve(db, ex_id):
+        db.commit()
+    return go(_back(back, "/admin/exercises?state=review", prefix="/admin/exercises"))
+
+
+@app.post("/admin/exercises/approve-all")
+def admin_exercises_approve_all(request: Request, back: str = Form(""), subject: str = Form(""),
+                                level: int = Form(0), topic: str = Form(""), kind: str = Form(""),
+                                q: str = Form(""), user=Depends(admin_user), db=Depends(database.get_db)):
+    """Godkänner alla övningar som väntar på granskning och matchar listans filter (alla sidor)."""
+    n = editor.approve_matching(db, q=q, subject=subject, level=level, topic=topic, kind=kind)
+    db.commit()
+    flash(request, f"{n} övningar är godkända och syns nu för eleverna." if n else "Inget att godkänna.")
+    return go(_back(back, "/admin/exercises?state=review", prefix="/admin/exercises"))
 
 
 @app.post("/admin/exercises/{ex_id}/subject")
@@ -831,6 +892,8 @@ async def _save_exercise(request: Request, db, ex=None):
     back = _back(str(data.get("back", "")), "", prefix="/admin/exercises")
     if data.get("remove_image"):
         form["image"] = ""
+    if data.get("approve"):          # "Spara och godkänn": övningen blir synlig för eleverna
+        form["active"] = True
     upload = data.get("image_file")
     current = ex["image"] or "" if ex else ""
     # En bild som övningen redan har kontrolleras inte mot disken igen, så att övriga ändringar går att spara
@@ -912,7 +975,7 @@ def admin_import_form(request: Request, user=Depends(admin_user)):
 
 @app.post("/admin/import")
 async def admin_import(request: Request, pasted: str = Form(""), upload: UploadFile = File(None),
-                       user=Depends(admin_user), db=Depends(database.get_db)):
+                       review: str = Form(""), user=Depends(admin_user), db=Depends(database.get_db)):
     text = pasted.strip()
     if upload and upload.filename:
         text = (await upload.read(2_000_000)).decode("utf-8", errors="replace")
@@ -920,10 +983,11 @@ async def admin_import(request: Request, pasted: str = Form(""), upload: UploadF
         flash(request, "Klistra in JSON eller välj en fil.", "warn")
         return go("/admin/import")
     try:
-        result = logic.import_bundle(db, json.loads(text))
+        result = logic.import_bundle(db, json.loads(text), review=bool(review))
     except (ValueError, json.JSONDecodeError) as e:
         flash(request, f"Kunde inte läsa JSON: {e}", "warn")
         return go("/admin/import")
+    request.state.exercise_badge = editor.review_count(db)   # siffran i menyn ska stämma redan på den här sidan
     return render(request, "admin_import.html", result=result)
 
 
