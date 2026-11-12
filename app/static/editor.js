@@ -65,6 +65,21 @@
     preview();
   });
 
+  // "Godkänn" vid ett felsvar: lägg till det som godkänt svar (om det är en fritextövning)
+  document.querySelectorAll('.addans').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var box = $('answers_text');
+      var lines = box.value.split('\n').map(function (l) { return l.trim(); });
+      if (lines.indexOf(btn.dataset.answer.trim()) === -1) {
+        box.value = (box.value.trim() ? box.value.replace(/\s+$/, '') + '\n' : '') + btn.dataset.answer.trim();
+      }
+      document.querySelectorAll('.addans').forEach(function (other) {   // samma svar kan stå på flera rader
+        if (other.dataset.answer.trim() === btn.dataset.answer.trim()) { other.textContent = 'Tillagt ✔'; other.disabled = true; }
+      });
+      box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
+
   // Förhandsvisning
   function preview() {
     var body = $('previewbody');

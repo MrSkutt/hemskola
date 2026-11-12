@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Säkerhetskopior – Hemskola{% endblock %}
+{% block content %}
+<h1>Säkerhetskopior</h1>
+{% if not enabled %}
+<div class="notebox redo">Automatiska säkerhetskopior är avstängda (<code>BACKUPS=0</code> i <code>.env</code>). Ta bort raden för att slå på dem igen.</div>
+{% elif stale %}
+<div class="notebox redo">⚠ Ingen säkerhetskopia har tagits de senaste 36 timmarna. Kontrollera att appen går, eller ta en kopia nu.</div>
+{% else %}
+<div class="notebox good">✔ Säkerhetskopior tas automatiskt varje natt efter kl {{ night_hour }}, och en gång innan varje uppdatering av appen.</div>
+{% endif %}
+
+<div class="card">
+  <div class="row">
+    <form method="post" action="/admin/backups/now" class="inline"><button>💾 Ta en kopia nu</button></form>
+    <a class="btn ghost" href="/admin/backups/helt.zip">⬇ Ladda ner allt (databas + {{ media_count }} bilder, zip)</a>
+  </div>
+  <p class="muted psmall" style="margin:.6rem 0 0">Zip-filen är det du behöver för att flytta systemet eller fylla en testmiljö. Den innehåller elevernas uppgifter och lösenordens kontrollsummor, så förvara den säkert.</p>
+</div>
+
+<div class="card">
+  <h2 style="margin-top:0">Sparade kopior</h2>
+  {% if items %}
+  <table>
+    <tr><th>Tagen</th><th>Slag</th><th>Storlek</th><th>Fil</th><th></th></tr>
+    {% for b in items %}
+    <tr><td>{{ b.time|dt }}</td><td>{{ b.kind_label }}</td><td>{{ (b.size / 1024)|round|int }} kB</td>
+      <td class="muted psmall">{{ b.name }}</td><td><a class="btn small ghost" href="/admin/backups/{{ b.name }}">Ladda ner</a></td></tr>
+    {% endfor %}
+  </table>
+  <p class="muted psmall" style="margin:.6rem 0 0">Sparas: de {{ keep.natt }} senaste nattliga, de {{ keep.fore }} senaste före uppdatering och de {{ keep.manuell }} senaste manuella. Äldre rensas bort automatiskt.
+    Kopiorna ligger på servern i <code>{{ folder }}</code>. Ladda gärna ner en då och då och spara den på en annan dator, så finns den kvar även om servern går sönder.</p>
+  {% else %}
+  <p class="muted">Inga kopior än.</p>
+  {% endif %}
+</div>
+
+<details class="card">
+  <summary><strong>Så här återställer du en kopia</strong></summary>
+  <ol>
+    <li>Stoppa stacken (<code>docker compose down</code>, eller stoppa den i Portainer).</li>
+    <li>I datamappen: ta bort <code>hemskola.db-wal</code> och <code>hemskola.db-shm</code> om de finns, och kopiera kopian över <code>hemskola.db</code>.</li>
+    <li>Kommer du från en zip-fil: packa upp den, lägg <code>hemskola.db</code> i datamappen och innehållet i <code>media/</code> i <code>data/media/</code>.</li>
+    <li>Starta stacken igen. Appen uppgraderar själv databasen om kopian kommer från en äldre version.</li>
+  </ol>
+  <p class="muted psmall">Elever som gjort något efter att kopian togs förlorar det. Därför är det bra att ta en kopia innan du återställer, så att inget går förlorat om du tar fel fil.</p>
+</details>
+{% endblock %}

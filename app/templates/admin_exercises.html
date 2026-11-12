@@ -25,6 +25,8 @@
   {% if topics %}<div><label style="margin:0">Område</label><select name="topic"><option value="">Alla</option>{% for t in topics %}<option value="{{ t }}" {{ 'selected' if t == topic }}>{{ t }}</option>{% endfor %}</select></div>{% endif %}
   <div><label style="margin:0">Nivå</label><select name="level"><option value="0">Alla</option>{% for l in range(1, 6) %}<option value="{{ l }}" {{ 'selected' if l == level }}>{{ l }}</option>{% endfor %}</select></div>
   <div><label style="margin:0">Typ</label><select name="kind"><option value="">Alla</option>{% for k, v in kinds.items() %}<option value="{{ k }}" {{ 'selected' if k == kind }}>{{ v }}</option>{% endfor %}</select></div>
+  <div><label style="margin:0">Svar</label><select name="stat"><option value="">Alla</option>{% for k, v in stats.items() %}<option value="{{ k }}" {{ 'selected' if k == stat }}>{{ v }}</option>{% endfor %}</select></div>
+  <div><label style="margin:0">Sortera</label><select name="sort"><option value="">Ämne och nivå</option>{% for k, v in sorts.items() %}<option value="{{ k }}" {{ 'selected' if k == sort }}>{{ v }}</option>{% endfor %}</select></div>
   <div><label style="margin:0">Visa</label><select name="state"><option value="">Alla</option><option value="on" {{ 'selected' if state == 'on' }}>Synliga</option><option value="off" {{ 'selected' if state == 'off' }}>Dolda</option></select></div>
   <button class="small">Filtrera</button>
   {% if base %}<a class="btn ghost small" href="/admin/exercises">Rensa</a>{% endif %}
@@ -47,7 +49,7 @@
   <tr style="{{ 'opacity:.5' if not r.active }}">
     <td>{{ label(r.subject) }}</td><td>{{ r.level }}</td><td>{{ r.topic }}</td>
     <td style="white-space:pre-line">{% if r.generator %}<span class="pill">∞ generator</span> {{ r.topic }} <span class="muted">({{ r.generator }})</span>{% else %}{{ r.question }}{% if r.image or r.diagram %} <span class="pill">{{ 'bild' if r.image else 'diagram' }}</span>{% endif %}{% if not r.active %} <span class="pill off">dold</span>{% endif %}{% endif %}</td>
-    <td>{% if r.n %}{{ r.n }} ({{ (100 * r.c / r.n)|round|int }} % rätt){% else %}–{% endif %}</td>
+    <td>{% if r.n %}{{ r.n }} ({{ (100 * r.c / r.n)|round|int }} % rätt){% if is_hard(r.n, r.c) %} <span class="pill redo" title="Många har svarat fel. Kontrollera facit och frågan.">många fel</span>{% endif %}{% else %}–{% endif %}</td>
     <td style="white-space:nowrap">{% if not r.generator %}<a class="btn small ghost" href="/admin/exercises/{{ r.id }}/edit?back={{ here|urlencode }}">Redigera</a> {% endif %}
       <form class="inline" method="post" action="/admin/exercises/{{ r.id }}/active"><input type="hidden" name="back" value="{{ here }}"><button class="small ghost">{{ 'Dölj' if r.active else 'Visa' }}</button></form>
       {% if r.subject in legacy %}

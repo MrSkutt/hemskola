@@ -13,8 +13,7 @@
 {% endif %}
 {% if ex and answered %}
 <div class="notebox wait">Elever har svarat {{ answered }} {{ 'gång' if answered == 1 else 'gånger' }} på den här övningen ({{ percent }} % rätt).
-  Gamla svar behåller sitt rätt eller fel, även om du ändrar facit. Gör du en stor ändring av frågan (inte bara en stavning) kan du
-  kryssa i <em>Spara som ny övning</em> längst ner, så hör statistiken fortfarande till den gamla frågan.</div>
+  Gamla svar behåller sitt rätt eller fel, även om du ändrar facit. Gör du en stor ändring av frågan (inte bara en stavning) kan du kryssa i <em>Spara som ny övning</em> längst ner, så hör statistiken fortfarande till den gamla frågan.</div>
 {% endif %}
 
 <form id="exform" method="post" enctype="multipart/form-data" action="{{ '/admin/exercises/' ~ ex.id ~ '/edit' if ex else '/admin/exercises/new' }}"
@@ -129,6 +128,19 @@
   <div id="previewbody" style="margin-top:.6rem"><p class="muted">Tryck på <em>Förhandsgranska</em> när du fyllt i frågan.</p></div>
 </div>
 
+{% if recent %}
+<div class="card">
+  <strong>Elevernas senaste svar</strong>
+  <p class="muted psmall" style="margin:.2rem 0 .5rem">Svarar flera samma sak och får fel kan facit vara fel{% if form.type == 'text' %}, eller så saknas svaret bland de godkända. Med <em>Godkänn</em> läggs svaret till i listan ovan (du måste fortfarande spara){% endif %}.</p>
+  <table>
+    <tr><th>När</th><th>Elev</th><th>Svar</th><th></th></tr>
+    {% for a in recent %}
+    <tr><td class="muted psmall">{{ a.created_at|ts }}</td><td>{{ a.display_name }}</td><td>{{ a.given }}</td>
+      <td>{% if a.correct %}✔ rätt{% else %}✖ fel{% if form.type == 'text' and a.given.strip() %} <button type="button" class="small ghost addans" data-answer="{{ a.given }}">Godkänn</button>{% endif %}{% endif %}</td></tr>
+    {% endfor %}
+  </table>
+</div>
+{% endif %}
 {% if ex %}
 <div class="card">
   <div class="row">

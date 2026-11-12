@@ -204,3 +204,5 @@ button:disabled { opacity: .45; cursor: not-allowed; }
 .choice.right, .choice.right:hover { border-color: var(--ok); background: var(--okbg); }
 .pager { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin: .8rem 0; }
 [hidden] { display: none !important; }
+
+.foot { text-align: center; font-size: .85rem; padding: 1.2rem 1rem 2rem; }

@@ -4,6 +4,8 @@ import os
 import random
 import re
 import secrets
+import shutil
+import tempfile
 import time
 from contextlib import asynccontextmanager
 from pathlib import Path
@@ -13,11 +15,12 @@ from fastapi import Depends, FastAPI, File, Form, HTTPException, Query, Request,
 from fastapi.responses import FileResponse, JSONResponse, RedirectResponse, Response
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from starlette.background import BackgroundTask
 from starlette.concurrency import run_in_threadpool
 from starlette.middleware.sessions import SessionMiddleware
 
 from . import db as database
-from . import diagrams, facts, logic, motivation, report, tasks
+from . import backup, diagrams, facts, logic, motivation, report, tasks, version
 from . import exercise_editor as editor
 from . import words as wordlist
 from .security import hash_password, verify_password
@@ -42,6 +45,8 @@ def _secret_key() -> str:
 
 
 def bootstrap() -> None:
+    if backup.enabled():   # innan databasen uppgraderas: en kopia av data som den nya koden inte har rört
+        backup.snapshot_before_update(version.info()["signature"])
     database.init_db()
     conn = database.connect()
     try:
@@ -77,7 +82,9 @@ def bootstrap() -> None:
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     bootstrap()
+    scheduler = backup.start_scheduler()
     yield
+    backup.stop_scheduler(scheduler)
 
 
 app = FastAPI(title="Hemskola", lifespan=lifespan, docs_url=None, redoc_url=None, openapi_url=None)
@@ -90,7 +97,8 @@ app.add_middleware(
 )
 app.mount("/static", StaticFiles(directory=BASE / "static"), name="static")
 templates = Jinja2Templates(directory=BASE / "templates")
-templates.env.globals.update(label=logic.label, LEVEL_HINTS=logic.LEVEL_HINTS, WINDOW=logic.WINDOW)
+templates.env.globals.update(label=logic.label, LEVEL_HINTS=logic.LEVEL_HINTS, WINDOW=logic.WINDOW,
+                             version=version.info())
 templates.env.filters["fmt"] = facts.fmt
 templates.env.filters["dt"] = lambda v: v.strftime("%Y-%m-%d %H:%M") if v else "–"
 templates.env.filters["day"] = lambda v: v.strftime("%Y-%m-%d") if v else "–"
@@ -157,7 +165,8 @@ def _too_many(ip: str) -> bool:
 
 @app.get("/healthz")
 def healthz():
-    return {"ok": True}
+    v = version.info()
+    return {"ok": True, "version": v["release"], "signature": v["signature"]}
 
 
 @app.get("/login")
@@ -418,7 +427,8 @@ def admin_home(request: Request, user=Depends(admin_user), db=Depends(database.g
             "u": s, "streak": streak, "today": count_today, "groups": groups,
             "off": [sub for sub in logic.ordered_subjects(subjects) if not settings[sub]["enabled"]],
         })
-    return render(request, "admin_home.html", students=students, reward_requests=motivation.pending_requests(db))
+    return render(request, "admin_home.html", students=students, reward_requests=motivation.pending_requests(db),
+                  backup_stale=backup.stale())
 
 
 @app.get("/admin/student/{student_id}")
@@ -666,9 +676,10 @@ def _list_url(request: Request) -> str:
 
 @app.get("/admin/exercises")
 def admin_exercises(request: Request, subject: str = "", level: int = 0, topic: str = "", kind: str = "",
-                    state: str = "", q: str = "", page: int = 1, user=Depends(admin_user),
-                    db=Depends(database.get_db)):
-    result = editor.search(db, q=q, subject=subject, level=level, topic=topic, kind=kind, state=state, page=page)
+                    state: str = "", q: str = "", stat: str = "", sort: str = "", page: int = 1,
+                    user=Depends(admin_user), db=Depends(database.get_db)):
+    result = editor.search(db, q=q, subject=subject, level=level, topic=topic, kind=kind, state=state, page=page,
+                           stat=stat, sort=sort)
     counts = db.execute(
         """SELECT subject, level, generator IS NOT NULL AS gen, COUNT(*) AS n FROM exercises
            WHERE active=1 GROUP BY subject, level, gen""").fetchall()
@@ -677,11 +688,12 @@ def admin_exercises(request: Request, subject: str = "", level: int = 0, topic: 
         cell = grid.setdefault(r["subject"], {}).setdefault(r["level"], {"static": 0, "gen": 0})
         cell["gen" if r["gen"] else "static"] = r["n"]
     filters = {"q": q, "subject": subject, "level": level or "", "topic": topic if subject else "", "kind": kind,
-               "state": state}
+               "state": state, "stat": stat, "sort": sort}
     base = urlencode({k: v for k, v in filters.items() if v})
     topics = editor.topics_by_subject(db).get(subject, []) if subject else []
     return render(request, "admin_exercises.html", result=result, grid=grid, subject=subject, level=level, q=q,
                   topic=topic if subject else "", kind=kind, state=state, kinds=editor.KINDS, topics=topics,
+                  stat=stat, sort=sort, stats=editor.STATS, sorts=editor.SORTS, is_hard=editor.is_hard,
                   base=base, here=_list_url(request), subjects=[r["subject"] for r in db.execute(
                       "SELECT DISTINCT subject FROM exercises ORDER BY subject")], legacy=logic.LEGACY_SUBJECTS)
 
@@ -727,6 +739,49 @@ def admin_export(user=Depends(admin_user), db=Depends(database.get_db)):
     return JSONResponse(out, headers={"Content-Disposition": "attachment; filename=hemskola-ovningar.json"})
 
 
+# ---------------------------------------------------------------- säkerhetskopior
+
+@app.get("/admin/backups")
+def admin_backups(request: Request, user=Depends(admin_user)):
+    items = backup.listing()
+    return render(request, "admin_backups.html", items=items, enabled=backup.enabled(), stale=backup.stale(),
+                  folder=str(backup.backup_dir()), keep=backup.KEEP, media_count=sum(1 for f in media_dir().iterdir() if f.is_file()),
+                  night_hour=backup.NIGHT_HOUR)
+
+
+@app.post("/admin/backups/now")
+async def admin_backup_now(request: Request, user=Depends(admin_user)):
+    try:
+        dest = await run_in_threadpool(backup.make, "manuell")
+    except Exception as e:
+        flash(request, f"Det gick inte att ta någon säkerhetskopia: {e}", "warn")
+    else:
+        flash(request, f"Säkerhetskopian {dest.name} är tagen.")
+    return go("/admin/backups")
+
+
+@app.get("/admin/backups/helt.zip")
+async def admin_backup_zip(user=Depends(admin_user)):
+    """Databas och bilder i en zip, till exempel för att flytta systemet eller fylla en testmiljö."""
+    tmp = Path(tempfile.mkdtemp())
+    path = tmp / "hemskola.zip"
+    try:
+        await run_in_threadpool(backup.full_zip, path, media_dir())
+    except Exception:
+        shutil.rmtree(tmp, ignore_errors=True)
+        raise
+    return FileResponse(path, media_type="application/zip", filename=f"hemskola-allt-{time.strftime('%Y-%m-%d')}.zip",
+                        background=BackgroundTask(shutil.rmtree, tmp, True))
+
+
+@app.get("/admin/backups/{name}")
+def admin_backup_download(name: str, user=Depends(admin_user)):
+    path = backup.backup_dir() / name
+    if not backup.NAME_RE.match(name) or not path.is_file():
+        raise HTTPException(404, "Säkerhetskopian finns inte")
+    return FileResponse(path, media_type="application/octet-stream", filename=name)
+
+
 # ---------------------------------------------------------------- övningsredigerare
 
 def _known_subjects(db) -> set:
@@ -744,7 +799,8 @@ def _exercise_page(request: Request, db, form: dict, ex=None, errors=None, dup=N
     return render(request, "admin_exercise.html", form=form, ex=ex, errors=errors or [], dup=dup, back=back,
                   subjects=subjects, topics=editor.topics_by_subject(db), media=_media_names(),
                   examples=diagrams.EXAMPLES, type_labels=diagrams.TYPE_LABELS, new_subject=editor.NEW_SUBJECT,
-                  answered=n, percent=round(100 * c / n) if n else 0, status_code=status_code)
+                  answered=n, percent=round(100 * c / n) if n else 0, status_code=status_code,
+                  recent=editor.recent_attempts(db, ex["id"]) if ex else [])
 
 
 @app.get("/admin/exercises/new")

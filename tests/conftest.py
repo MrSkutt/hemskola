@@ -8,6 +8,7 @@ def client(tmp_path, monkeypatch):
     monkeypatch.setenv("ADMIN_USER", "admin")
     monkeypatch.setenv("ADMIN_PASSWORD", "adminpass1")
     monkeypatch.setenv("SECRET_FILE", str(tmp_path / "secret.key"))
+    monkeypatch.setenv("BACKUPS", "0")      # ingen bakgrundstråd eller automatiska kopior i testerna
     from app import db
     monkeypatch.setattr(db, "DB_PATH", str(tmp_path / "test.db"))
     from app.main import app

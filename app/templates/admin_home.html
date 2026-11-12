@@ -3,6 +3,7 @@
 {% block mainclass %}wide{% endblock %}
 {% block content %}
 <h1>Elever</h1>
+{% if backup_stale %}<div class="notebox redo">⚠ Ingen säkerhetskopia har tagits de senaste 36 timmarna. <a href="/admin/backups">Öppna säkerhetskopior</a></div>{% endif %}
 {% if reward_requests %}
 <div class="card">
   <h2 style="margin-top:0">🎁 Belöningar att godkänna <span class="pill wait">{{ reward_requests|length }}</span></h2>

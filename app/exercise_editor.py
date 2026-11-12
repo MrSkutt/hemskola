@@ -15,6 +15,15 @@ NEW_SUBJECT = "__ny__"
 LIMITS = {"topic": 60, "question": 1500, "option": 200, "answer": 200, "explanation": 2000, "diagram": 4000}
 SUBJECT_RE = re.compile(r"^[a-zåäöé0-9][a-zåäöé0-9_-]{1,29}$")
 KINDS = {"mc": "Flerval", "text": "Fritext", "gen": "Generator (∞)"}
+# Svarsstatistik att filtrera och sortera på, för att hitta övningar som kan vara felaktiga eller otydliga.
+STATS = {"answered": "Besvarade", "hard": "Många fel", "unanswered": "Aldrig besvarade"}
+SORTS = {"low": "Lägst andel rätt", "many": "Flest svar"}
+HARD_MIN_ANSWERS = 3         # "många fel": minst så här många svar ...
+HARD_MAX_SHARE = 1 / 3       # ... och högst så stor andel rätt
+
+
+def is_hard(n: int, c: int) -> bool:
+    return n >= HARD_MIN_ANSWERS and c <= n * HARD_MAX_SHARE
 
 
 def clean_subject(raw) -> str:
@@ -256,9 +265,10 @@ def topics_by_subject(db) -> dict:
     return out
 
 
-def search(db, q="", subject="", level=0, topic="", kind="", state="", page=1) -> dict:
+def search(db, q="", subject="", level=0, topic="", kind="", state="", page=1, stat="", sort="") -> dict:
     """Övningar som matchar filtren, en sida i taget. `q` söker i fråga, område, svar och förklaring (utan hänsyn till
-    stor eller liten bokstav, även åäö). kind: mc, text eller gen. state: on (synliga) eller off (dolda)."""
+    stor eller liten bokstav, även åäö). kind: mc, text eller gen. state: on (synliga) eller off (dolda).
+    stat: answered, hard eller unanswered (se STATS). sort: low (lägst andel rätt) eller many (flest svar)."""
     sql = """SELECT e.*, COUNT(a.id) AS n, COALESCE(SUM(a.correct), 0) AS c
              FROM exercises e LEFT JOIN attempts a ON a.exercise_id=e.id WHERE 1=1"""
     params = []
@@ -280,7 +290,20 @@ def search(db, q="", subject="", level=0, topic="", kind="", state="", page=1) -
         sql += " AND e.active=1"
     elif state == "off":
         sql += " AND e.active=0"
-    sql += " GROUP BY e.id ORDER BY e.subject, e.level, e.generator IS NOT NULL, e.topic, e.id"
+    sql += " GROUP BY e.id"
+    if stat == "answered":
+        sql += " HAVING n > 0"
+    elif stat == "unanswered":
+        sql += " HAVING n = 0"
+    elif stat == "hard":
+        sql += f" HAVING n >= {HARD_MIN_ANSWERS} AND c * 3 <= n"
+    default = "e.subject, e.level, e.generator IS NOT NULL, e.topic, e.id"
+    if sort == "low":      # obesvarade sist, sedan lägst andel rätt och därefter flest svar
+        sql += f" ORDER BY n = 0, c * 1.0 / NULLIF(n, 0), n DESC, {default}"
+    elif sort == "many":
+        sql += f" ORDER BY n DESC, {default}"
+    else:
+        sql += f" ORDER BY {default}"
     rows = db.execute(sql, params).fetchall()
     needle = " ".join(q.split()).casefold()
     if needle:
@@ -295,6 +318,13 @@ def search(db, q="", subject="", level=0, topic="", kind="", state="", page=1) -
 
 
 # ---------------------------------------------------------------- förhandsvisning
+
+def recent_attempts(db, ex_id: int, limit: int = 15) -> list:
+    """Elevernas senaste svar på en övning, för att se om facit eller de godkända svaren behöver ändras."""
+    return db.execute(
+        """SELECT a.given, a.correct, a.created_at, u.display_name FROM attempts a JOIN users u ON u.id=a.user_id
+           WHERE a.exercise_id=? ORDER BY a.id DESC LIMIT ?""", (ex_id, limit)).fetchall()
+
 
 def preview_item(row: dict) -> dict:
     """En övning som den ser ut för eleven (svg ritad), för förhandsvisningen."""

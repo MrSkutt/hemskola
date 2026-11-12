@@ -732,3 +732,120 @@ def test_student_sees_a_new_exercise_but_not_a_hidden_one(client):
     login(client, "mia", "hemligt1")
     assert "Latin" not in client.get("/home").text
     conn.close()
+
+
+# ------------------------------------------------------------------ övningar som behöver ses över
+
+def _answers(conn, uid, ex_id, results):
+    for ok in results:
+        conn.execute("INSERT INTO attempts(user_id, exercise_id, given, correct) VALUES (?,?,?,?)",
+                     (uid, ex_id, "svar" if ok else "fel", ok))
+    conn.commit()
+
+
+def _review_set(client):
+    """Fem övningar i ett eget ämne: A 1 av 5 rätt, B 3 av 3, C 1 av 3, D 0 av 2, E obesvarad."""
+    _make_student(client)
+    conn = _conn()
+    uid = conn.execute("SELECT id FROM users WHERE username='mia'").fetchone()["id"]
+    ids = {k: _ex(conn, "granska", f"Fråga {k}?", topic="Granska") for k in "ABCDE"}
+    _answers(conn, uid, ids["A"], [1, 0, 0, 0, 0])
+    _answers(conn, uid, ids["B"], [1, 1, 1])
+    _answers(conn, uid, ids["C"], [0, 1, 0])
+    _answers(conn, uid, ids["D"], [0, 0])
+    return conn, uid, ids
+
+
+def test_is_hard_boundaries():
+    assert ed.is_hard(3, 0) and ed.is_hard(3, 1) and ed.is_hard(6, 2) and ed.is_hard(30, 10)
+    assert not ed.is_hard(3, 2) and not ed.is_hard(2, 0) and not ed.is_hard(0, 0) and not ed.is_hard(6, 3)
+
+
+def test_search_by_answer_statistics(client):
+    conn, uid, ids = _review_set(client)
+    names = lambda **kw: sorted(r["question"][-2] for r in ed.search(conn, subject="granska", **kw)["rows"])
+    assert names() == list("ABCDE")
+    assert names(stat="answered") == list("ABCD") and names(stat="unanswered") == ["E"]
+    assert names(stat="hard") == ["A", "C"]                                  # D har för få svar för att räknas
+    assert names(stat="nonsens") == list("ABCDE")                            # okänt värde ger inget filter
+
+
+def test_search_sorting_by_share_correct_and_number_of_answers(client):
+    conn, uid, ids = _review_set(client)
+    order = lambda sort, **kw: [r["question"][-2] for r in ed.search(conn, subject="granska", sort=sort, **kw)["rows"]]
+    assert order("low") == ["D", "A", "C", "B", "E"]                         # 0 %, 20 %, 33 %, 100 %, obesvarad sist
+    assert order("many") == ["A", "B", "C", "D", "E"]                        # 5, 3, 3, 2, 0 svar (lika: i vanlig ordning)
+    assert order("") == list("ABCDE")
+    assert order("low", stat="hard") == ["A", "C"]                           # filter och sortering går att kombinera
+
+
+def test_list_page_filters_sorts_and_flags_hard_exercises(client):
+    conn, uid, ids = _review_set(client)
+    _admin(client)
+    page = client.get("/admin/exercises?subject=granska&stat=hard&sort=low").text
+    assert "Visar 1–2 av 2" in page and "Fråga A?" in page and "Fråga C?" in page and "Fråga B?" not in page
+    assert page.index("Fråga A?") < page.index("Fråga C?")                  # 20 % före 33 %
+    assert page.count('class="pill redo"') == 2                              # varning på båda raderna
+    assert 'value="hard" selected' in page and 'value="low" selected' in page
+    full = client.get("/admin/exercises?subject=granska").text
+    assert full.count('class="pill redo"') == 2                              # A och C, inte B eller D
+    assert "20 % rätt" in full and "100 % rätt" in full
+    assert "Lägst andel rätt" in full and "Aldrig besvarade" in full and "Flest svar" in full
+
+
+def test_pager_keeps_the_statistics_filters(client):
+    conn = _conn()
+    _make_student(client)
+    uid = conn.execute("SELECT id FROM users WHERE username='mia'").fetchone()["id"]
+    for i in range(ed.PAGE_SIZE + 2):
+        _answers(conn, uid, _ex(conn, "granska", f"Många {i}?", topic="G"), [0, 0, 0])
+    _admin(client)
+    page = client.get("/admin/exercises?subject=granska&stat=hard&sort=low").text
+    assert "stat=hard" in page and "sort=low" in page and "page=2" in page
+    link = re.search(r'href="(/admin/exercises\?[^"]*page=2)"', page).group(1).replace("&amp;", "&")
+    assert "Visar 51–52 av 52" in client.get(link).text
+
+
+def test_edit_page_shows_recent_answers_and_a_button_to_approve_wrong_text_answers(client):
+    _make_student(client)
+    conn = _conn()
+    uid = conn.execute("SELECT id FROM users WHERE username='mia'").fetchone()["id"]
+    e = _ex(conn, "matte", "Hur mycket är 2+2?", typ="text", answers='["4"]')
+    for given, ok in (("fyra", 0), ("4", 1), ("  ", 0)):
+        conn.execute("INSERT INTO attempts(user_id, exercise_id, given, correct) VALUES (?,?,?,?)", (uid, e, given, ok))
+    conn.commit()
+    _admin(client)
+    page = client.get(f"/admin/exercises/{e}/edit").text
+    assert "Elevernas senaste svar" in page and "Mia" in page
+    assert page.count('class="small ghost addans"') == 1 and 'data-answer="fyra"' in page   # inte vid rätt eller tomt svar
+    assert page.index("✖ fel") < page.index("✔ rätt") < page.rindex("✖ fel")   # nyast först: fel (tomt), rätt (4), fel (fyra)
+    assert "Med <em>Godkänn</em>" in page
+
+
+def test_edit_page_for_multiple_choice_has_no_approve_buttons_and_no_history_when_unanswered(client):
+    _make_student(client)
+    conn = _conn()
+    uid = conn.execute("SELECT id FROM users WHERE username='mia'").fetchone()["id"]
+    mc = _ex(conn, "matte", "Färg?", typ="mc", options='["röd","grön"]', answers='["grön"]')
+    fresh = _ex(conn, "matte", "Ny?", typ="text")
+    conn.execute("INSERT INTO attempts(user_id, exercise_id, given, correct) VALUES (?,?,?,0)", (uid, mc, "röd"))
+    conn.commit()
+    _admin(client)
+    page = client.get(f"/admin/exercises/{mc}/edit").text
+    assert "Elevernas senaste svar" in page and "röd" in page and "addans" not in page.split("Elevernas senaste svar")[1].split("</table>")[0]
+    assert "Elevernas senaste svar" not in client.get(f"/admin/exercises/{fresh}/edit").text
+    assert "Elevernas senaste svar" not in client.get("/admin/exercises/new").text
+
+
+def test_recent_attempts_are_limited_and_newest_first(client):
+    _make_student(client)
+    conn = _conn()
+    uid = conn.execute("SELECT id FROM users WHERE username='mia'").fetchone()["id"]
+    e = _ex(conn, "matte", "Många svar?", typ="text")
+    for i in range(20):
+        conn.execute("INSERT INTO attempts(user_id, exercise_id, given, correct) VALUES (?,?,?,0)", (uid, e, f"svar{i}"))
+    conn.commit()
+    rows = ed.recent_attempts(conn, e)
+    assert len(rows) == 15 and rows[0]["given"] == "svar19" and rows[-1]["given"] == "svar5"
+    assert rows[0]["display_name"] == "Mia"
+    assert ed.recent_attempts(conn, e, limit=2)[1]["given"] == "svar18"

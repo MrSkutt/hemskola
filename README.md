@@ -47,6 +47,10 @@ Eleven ser bara "Nivå 1–5". Kopplingen till ungefärlig årskurs visas bara f
 Under **Övningar** hittar du en enskild övning med sökrutan (söker i frågan, området, svaren och förklaringen, även med å, ä och ö) och filtren
 för ämne, område, nivå, typ och synliga/dolda. Listan visar 50 övningar per sida. Tabellen med antal övningar per nivå ligger hopfälld överst.
 
+**Övningar som behöver ses över:** filtret *Svar* visar besvarade, aldrig besvarade eller **många fel** (minst 3 svar och högst en tredjedel rätt), och *Sortera* ordnar efter lägst andel rätt eller flest svar.
+Övningar med många fel är oftast fel facit eller otydliga frågor. Raden får märket *många fel*. På redigeringssidan visas **elevernas senaste svar**, och vid ett felaktigt svar på en fritextövning finns knappen
+**Godkänn** som lägger till svaret bland de godkända (du sparar sedan som vanligt). Det är så man rättar en övning där en riktig lösning, till exempel "fyra" i stället för "4", räknats som fel.
+
 * **＋ Ny övning** och **Redigera** (bredvid *Dölj*) öppnar samma formulär. Du väljer ämne, område (förslag från de som redan finns, så du slipper stavningsvarianter),
   nivå och om frågan är **flerval** eller **fritext**.
   * *Flerval:* skriv 2–8 alternativ och markera det rätta med en rundknapp.
@@ -289,7 +293,18 @@ och exempel på senaste felsvar. Nivåerna är en uppskattning från övningspro
 
 ## Drift
 
-* **Backup:** `sqlite3 data/hemskola.db ".backup data/backup-$(date +%F).db"` (eller kopiera `data/` medan appen står still).
+* **Säkerhetskopior:** tas automatiskt och ligger i `data/backups/`. Fliken **Säkerhetskopior** (länk i sidfoten) visar dem och låter dig ladda ner dem.
+  * *Nattlig* kopia en gång per dygn efter kl 03 (de 14 senaste sparas). Missas natten, till exempel för att datorn var avstängd, tas den så fort appen går igen.
+  * *Före uppdatering:* varje gång appen startar med ny kod tas en kopia **innan** databasen uppgraderas (de 5 senaste sparas). Går en uppdatering snett kan du alltså backa.
+  * *Manuell:* knappen **Ta en kopia nu** (de 10 senaste sparas).
+  * Kopiorna tas med SQLites backup-funktion och kontrolleras, så de är hela även medan appen används. Varje kopia är en enda fil.
+  * **Ladda ner allt (zip)** ger databasen och alla bilder i en fil, till exempel för att flytta systemet eller fylla en testmiljö.
+  * Sidan varnar om ingen kopia tagits på över 36 timmar. Kopior på samma dator räddar dig inte om datorn går sönder, så ladda då och då ner en och spara den någon annanstans.
+  * Av: `BACKUPS=0` i `.env`. Annan mapp: `BACKUP_DIR`.
+  * **Återställa:** stoppa stacken, ta bort `hemskola.db-wal` och `hemskola.db-shm` i datamappen, kopiera kopian över `hemskola.db` (bilderna ur en zip till `data/media/`) och starta igen. Appen uppgraderar själv en äldre databas.
+  * Manuellt, utan appen: `sqlite3 data/hemskola.db ".backup data/backup-$(date +%F).db"`.
+* **Version:** sidfoten (för admin) visar t.ex. `2026.11.12 (a7a86e5)`. Det första är utgåvan (datum, räknas upp vid varje ändring) och det andra en kontrollsumma över koden. Samma kontrollsumma betyder exakt samma kod,
+  så du ser direkt om testmiljön och den skarpa matchar. Samma uppgift finns på `/healthz`, så `curl http://adress:8080/healthz` räcker.
 * **Åtkomst utanför hemnätet:** lägg HTTPS framför (egen reverse proxy, Caddy/Traefik eller certbot) och sätt `COOKIE_SECURE=1` i `.env`.
   Utan HTTPS bör sidan bara nås i hemnätet eller via VPN.
 * **Port:** ändra `8080:80` i `docker-compose.yml`, eller ta bort `ports` om en annan proxy kopplas till nginx-containern.

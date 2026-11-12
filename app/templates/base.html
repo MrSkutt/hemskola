@@ -36,5 +36,8 @@
   {% if flash %}<div class="flash {{ flash.kind }}">{{ flash.text }}</div>{% endif %}
   {% block content %}{% endblock %}
 </main>
+{% if user and user.role == 'admin' %}
+<footer class="foot muted">Hemskola version {{ version.label }} · <a href="/admin/backups">Säkerhetskopior</a></footer>
+{% endif %}
 </body>
 </html>
