@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Utseende – Hemskola{% endblock %}
+{% block content %}
+<h1>🎨 Utseende</h1>
+<p class="muted">Välj det tema du tycker bäst om. Det gäller bara dig och följer med när du loggar in på en annan enhet.</p>
+<div class="themes">
+  {% for t in all_themes %}
+  <form method="post" action="/tema">
+    <button class="themecard {{ 'on' if t.key == current }}" name="theme" value="{{ t.key }}" {{ 'aria-pressed=true' if t.key == current else 'aria-pressed=false' }}>
+      <span class="swatch">
+        {% for c in t.preview %}
+        <span class="half" style="background:{{ c.bg }}">
+          <span class="chip" style="background:{{ c.card }};color:{{ c.text }}">Aa</span>
+          <span class="chipbtn" style="background:{{ c.accent }};color:{{ c.on_accent }}">Knapp</span>
+        </span>
+        {% endfor %}
+      </span>
+      <span class="tname">{{ t.emoji }} {{ t.name }}{% if t.key == current %} <span class="pill">✔ valt</span>{% endif %}</span>
+      <span class="tabout">{{ t.about }}</span>
+    </button>
+  </form>
+  {% endfor %}
+</div>
+<p><a class="btn ghost" href="/">Tillbaka</a></p>
+{% endblock %}

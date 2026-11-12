@@ -20,7 +20,7 @@ from starlette.concurrency import run_in_threadpool
 from starlette.middleware.sessions import SessionMiddleware
 
 from . import db as database
-from . import backup, diagrams, facts, logic, missed, motivation, report, tasks, version, weekly
+from . import backup, diagrams, facts, logic, missed, motivation, report, tasks, themes, version, weekly
 from . import exercise_editor as editor
 from . import words as wordlist
 from .security import hash_password, verify_password
@@ -106,9 +106,26 @@ templates.env.filters["day"] = lambda v: v.strftime("%Y-%m-%d") if v else "–"
 templates.env.filters["ts"] = lambda s: logic.parse_ts(s).strftime("%Y-%m-%d %H:%M") if s else "–"
 
 
+THEME_COOKIE = "hs_theme"
+
+
+def _theme_key(request: Request, user) -> str:
+    """Inloggad användares eget tema; annars det som senast valdes på den här enheten (så att inloggningssidan matchar)."""
+    if user is not None:
+        return themes.clean(user["theme"] if "theme" in user.keys() else None)
+    return themes.clean(request.cookies.get(THEME_COOKIE))
+
+
+def _remember_theme(resp, key: str):
+    resp.set_cookie(THEME_COOKIE, key, max_age=60 * 60 * 24 * 365, samesite="lax", httponly=True,
+                    secure=os.environ.get("COOKIE_SECURE", "0") == "1")
+    return resp
+
+
 def render(request: Request, name: str, status_code: int = 200, **ctx):
     ctx.setdefault("user", getattr(request.state, "user", None))
     ctx["flash"] = request.session.pop("flash", None)
+    ctx["theme"] = themes.get(_theme_key(request, ctx["user"]))
     return templates.TemplateResponse(request, name, ctx, status_code=status_code)
 
 
@@ -188,13 +205,29 @@ def login(request: Request, username: str = Form(...), password: str = Form(...)
         return render(request, "login.html", status_code=401, user=None, error="Fel användarnamn eller lösenord.")
     request.session.clear()
     request.session["uid"] = row["id"]
-    return go("/")
+    return _remember_theme(go("/"), _theme_key(request, row))
 
 
 @app.post("/logout")
 def logout(request: Request):
     request.session.clear()
     return go("/login")
+
+
+@app.get("/tema")
+def theme_page(request: Request, user=Depends(current_user)):
+    return render(request, "tema.html", all_themes=themes.THEMES, current=_theme_key(request, user))
+
+
+@app.post("/tema")
+def theme_save(request: Request, theme: str = Form(""), user=Depends(current_user), db=Depends(database.get_db)):
+    if theme not in themes.BY_KEY:
+        flash(request, "Det temat finns inte.", "warn")
+        return go("/tema")
+    db.execute("UPDATE users SET theme=? WHERE id=?", (theme, user["id"]))
+    db.commit()
+    flash(request, f"Utseendet är nu {themes.get(theme)['name']}.")
+    return _remember_theme(go("/tema"), theme)
 
 
 @app.get("/")

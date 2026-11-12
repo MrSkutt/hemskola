@@ -1,14 +1,15 @@
 <!doctype html>
-<html lang="sv">
+<html lang="sv"{% if theme and theme.key != 'auto' %} data-theme="{{ theme.key }}"{% endif %}>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}Hemskola{% endblock %}</title>
+  {% if theme and theme.key != 'auto' %}<meta name="theme-color" content="{{ theme.preview[0].card }}">{% endif %}
   <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 <header class="top">
-  <a class="brand" href="/">📚 Hemskola</a>
+  <a class="brand" href="/">{{ theme.emoji if theme else '📚' }} Hemskola</a>
   {% if user %}
   <nav>
     {% set path = request.url.path %}
@@ -30,7 +31,7 @@
       <a href="/uppgifter" {{ 'class=active' if path.startswith('/uppgifter') }}>Uppgifter{% if tb %} <span class="pill wait" title="Uppgifter att göra och nya svar från admin">{{ tb }}</span>{% endif %}</a>
     {% endif %}
   </nav>
-  <form method="post" action="/logout"><span class="muted">{{ user.display_name }}</span> <button class="ghost small">Logga ut</button></form>
+  <form method="post" action="/logout"><span class="muted">{{ user.display_name }}</span> <a class="btn ghost small" href="/tema" title="Byt utseende" aria-label="Byt utseende">🎨</a> <button class="ghost small">Logga ut</button></form>
   {% endif %}
 </header>
 <main class="{% block mainclass %}{% endblock %}">

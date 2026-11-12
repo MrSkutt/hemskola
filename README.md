@@ -149,6 +149,26 @@ Koppla en bild till en övning med `"image": "filnamn.png"` i importen.
 
 Uppgraderar du en befintlig installation läggs de nya tabellerna och kolumnerna till automatiskt, utan att data försvinner.
 
+## Teman (utseende)
+
+Knappen 🎨 i menyn öppnar **Utseende**, där var och en (elev eller admin) väljer sitt eget färgtema:
+
+| Tema | Utseende |
+|---|---|
+| **Standard** | Det ursprungliga gröna utseendet, som blir mörkt när enheten är inställd på mörkt läge. Alla börjar här. |
+| **Ljust** | Rent och vitt med blå knappar |
+| **Mörkt** | Mörkt med ljusblå knappar |
+| **Lila** / **Lila natt** | Ljust respektive mörkt med lila |
+| **Hav** | Ljust med havsblått |
+| **Solnedgång** | Varmt och ljust med orange |
+
+Valet sparas på användaren (kolumnen `users.theme`, läggs till automatiskt) och följer med mellan enheter. Enhetens senaste val finns också i en kaka
+så att inloggningssidan har rätt färger. Varje tema har även sin egen symbol vid *Hemskola* och en färgad linje under menyn. Utskrifter blir alltid
+svart på vitt.
+
+**Lägga till ett eget tema:** lägg ett block `html[data-theme="namn"] { … }` med alla variabler (kopiera ett av de befintliga) sist i `app/static/style.css` och en rad
+i `THEMES` i `app/themes.py`. Testerna kontrollerar att blocket är komplett, att förhandsvisningen stämmer och att all text når kontrast 4,5:1 mot sin bakgrund.
+
 ## Ämnen
 
 Matte och svenska har generatorer. **Engelska** har generatorer för glosor (engelska ↔ svenska, nivå 1–5) och oregelbundna verb,
