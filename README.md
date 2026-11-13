@@ -149,6 +149,17 @@ Koppla en bild till en övning med `"image": "filnamn.png"` i importen.
 
 Uppgraderar du en befintlig installation läggs de nya tabellerna och kolumnerna till automatiskt, utan att data försvinner.
 
+## Lägg till på hemskärmen (mobil och surfplatta)
+
+Hemskola har en egen app-ikon (en uppslagen bok med gnistor) och kan läggas på hemskärmen så att den öppnas i helskärm, utan adressfält:
+
+* **iPhone/iPad (Safari):** dela-knappen → *Lägg till på hemskärmen*.
+* **Android (Chrome):** menyn ⋮ → *Lägg till på startskärmen* / *Installera app*.
+
+Ikonerna ligger i `app/static/icons/` (180 px för iOS, 192 och 512 px för Android, samt favicon). De är helt ogenomskinliga, eftersom iOS annars fyller
+genomskinliga delar med svart. Vill du byta ut dem: ändra `tools/make_icons.py` och kör `python tools/make_icons.py app/static/icons` (kräver Pillow).
+Ikonen och namnet läses när appen läggs till, så en redan tillagd genväg med fult utseende behöver tas bort och läggas till igen.
+
 ## Teman (utseende)
 
 Knappen 🎨 i menyn öppnar **Utseende**, där var och en (elev eller admin) väljer sitt eget färgtema:

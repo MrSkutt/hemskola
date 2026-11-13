@@ -214,6 +214,36 @@ def logout(request: Request):
     return go("/login")
 
 
+# ---------------------------------------------------------------- app-ikon (Lägg till på hemskärmen)
+
+ICONS = BASE / "static" / "icons"
+
+
+@app.get("/manifest.webmanifest")
+def web_manifest():
+    """Gör att Hemskola kan läggas på hemskärmen som en app, med egen ikon och utan webbläsarens adressfält."""
+    icon = lambda size, purpose: {"src": f"/static/icons/icon-{size}.png", "sizes": f"{size}x{size}",
+                                  "type": "image/png", "purpose": purpose}
+    return JSONResponse({
+        "name": "Hemskola", "short_name": "Hemskola", "lang": "sv", "description": "Hemskola – övningar och uppgifter",
+        "start_url": "/", "scope": "/", "display": "standalone",
+        "background_color": "#f6f7f4", "theme_color": "#2f7d5b",
+        "icons": [icon(192, "any"), icon(512, "any"), icon(512, "maskable")],
+    }, media_type="application/manifest+json", headers={"Cache-Control": "public, max-age=3600"})
+
+
+@app.get("/favicon.ico", include_in_schema=False)
+def favicon():
+    return FileResponse(ICONS / "favicon.ico", media_type="image/x-icon", headers={"Cache-Control": "public, max-age=86400"})
+
+
+@app.get("/apple-touch-icon.png", include_in_schema=False)
+@app.get("/apple-touch-icon-precomposed.png", include_in_schema=False)
+def apple_touch_icon():
+    """iOS frågar efter den här adressen om sidan saknar en egen länk, till exempel på felsidor."""
+    return FileResponse(ICONS / "apple-touch-icon.png", media_type="image/png", headers={"Cache-Control": "public, max-age=86400"})
+
+
 @app.get("/tema")
 def theme_page(request: Request, user=Depends(current_user)):
     return render(request, "tema.html", all_themes=themes.THEMES, current=_theme_key(request, user))

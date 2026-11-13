@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}Hemskola{% endblock %}</title>
   {% if theme and theme.key != 'auto' %}<meta name="theme-color" content="{{ theme.preview[0].card }}">{% endif %}
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="/static/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="application-name" content="Hemskola">
+  <meta name="apple-mobile-web-app-title" content="Hemskola">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
