@@ -90,7 +90,7 @@
       <p>Först ett kort test, så vet vi var vi ska börja. Det är inga betyg – svara bara så gott du kan. Gissa gärna, och hoppa inte över!</p>
       <form method="post" action="/test/start/{{ s.key }}"><button>Starta inledande test</button></form>
     {% endif %}
-    {% if s.key in has_facts %}<p class="factlink"><a href="/fakta/{{ s.key }}">📖 Fakta om {{ label(s.key)|lower }}</a></p>{% endif %}
+    {% if s.key in has_facts %}<p class="factlink"><a href="/fakta/{{ s.key }}">📖 Fakta om {{ label_inline(s.key) }}</a></p>{% endif %}
   </div>
 {% endfor %}
 </div></div>

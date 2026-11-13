@@ -97,7 +97,7 @@ app.add_middleware(
 )
 app.mount("/static", StaticFiles(directory=BASE / "static"), name="static")
 templates = Jinja2Templates(directory=BASE / "templates")
-templates.env.globals.update(label=logic.label, LEVEL_HINTS=logic.LEVEL_HINTS, WINDOW=logic.WINDOW,
+templates.env.globals.update(label=logic.label, label_inline=logic.label_inline, LEVEL_HINTS=logic.LEVEL_HINTS, WINDOW=logic.WINDOW,
                              version=version.info())
 templates.env.filters["fmt"] = facts.fmt
 templates.env.filters["fromjson"] = lambda v: json.loads(v) if v else []

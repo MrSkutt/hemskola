@@ -108,6 +108,17 @@ AREAS = {
         "Koreanska": ["Språk", "Koreanska", "Läs hangul", "K-pop-ord"],
         RAKNA: ["Matte"],
     },
+    "linux": {
+        "Terminal och filer": ["Navigering", "Filer och kataloger", "Textfiler", "Pipes och omdirigering",
+                               "Skal och genvägar", "Filsystemet"],
+        "Rättigheter och användare": ["Rättigheter", "Användare och sudo"],
+        "Processer och tjänster": ["Processer", "systemd", "Cron"],
+        "Paket och uppdateringar": ["Paket och uppdateringar"],
+        "Nätverk och säkerhet": ["Nätverk", "SSH", "Brandvägg", "Säkerhet"],
+        "Diskar, loggar och backup": ["Diskar", "Loggar", "Backup"],
+        "Docker": ["Docker"],
+        "Felsökning och skript": ["Felsökning", "Skript", "System"],
+    },
 }
 
 _LOOKUP = {sub: {t: area for area, topics in areas.items() for t in topics} for sub, areas in AREAS.items()}

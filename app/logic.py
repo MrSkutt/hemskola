@@ -33,6 +33,7 @@ SUBJECT_LABELS = {
     "no": "NO (natur)",      # gamla samlingsämnen, delades upp i enskilda ämnen
     "so": "SO (samhälle)",
     "kpop": "K-pop",
+    "linux": "Linux",
 }
 
 # Ämnesgrupper på startsidan och i adminvyerna. Okända ämnen (som admin själv skapat) hamnar i "Övrigt".
@@ -41,10 +42,14 @@ SUBJECT_GROUPS = [
     ("no", "Naturorienterande ämnen (NO)", ("biologi", "fysik", "kemi", "teknik")),
     ("so", "Samhällsorienterande ämnen (SO)", ("geografi", "historia", "religionskunskap", "samhallskunskap")),
     ("fritid", "Fritid och skoj", ("kpop",)),
+    ("extra", "Extra", ("linux",)),
 ]
 OTHER_GROUP = ("ovrigt", "Övrigt")
 # Fritidsämnen tas som standard inte med i rapporten till skolan (admin kan slå på dem per elev).
 LEISURE_SUBJECTS = frozenset(s for key, _, members in SUBJECT_GROUPS if key == "fritid" for s in members)
+# Ämnen som ingen elev ser förrän admin slår på dem för just den eleven. De är också som standard utanför rapporten.
+# Det gör att ett sådant ämne kan läggas in och godkännas utan att det dyker upp hos någon som inte ska ha det.
+OPT_IN_SUBJECTS = frozenset({"linux"})
 
 LEVEL_HINTS = {  # visas bara för admin
     1: "ungefär åk 4–5",
@@ -57,6 +62,16 @@ LEVEL_HINTS = {  # visas bara för admin
 
 def label(subject: str) -> str:
     return SUBJECT_LABELS.get(subject, subject.capitalize())
+
+
+# Ämnen vars namn är egennamn och därför behåller stor bokstav mitt i en mening ("Fakta om Linux")
+PROPER_NAMES = frozenset({"linux"})
+
+
+def label_inline(subject: str) -> str:
+    """Ämnets namn som det skrivs mitt i en mening: gemener, utom för egennamn."""
+    name = label(subject)
+    return name if subject in PROPER_NAMES else name.lower()
 
 
 # ---------------------------------------------------------------- tid
@@ -658,14 +673,14 @@ def subject_settings(db, user_id: int, subjects=None) -> dict:
     out = {}
     for s in subs:
         r = stored.get(s)
-        out[s] = {"enabled": bool(r["enabled"]) if r else True,
-                  "in_report": bool(r["in_report"]) if r else s not in LEISURE_SUBJECTS}
+        out[s] = {"enabled": bool(r["enabled"]) if r else s not in OPT_IN_SUBJECTS,
+                  "in_report": bool(r["in_report"]) if r else s not in LEISURE_SUBJECTS | OPT_IN_SUBJECTS}
     return out
 
 
 def subject_enabled(db, user_id: int, subject: str) -> bool:
     r = db.execute("SELECT enabled FROM user_subjects WHERE user_id=? AND subject=?", (user_id, subject)).fetchone()
-    return bool(r["enabled"]) if r else True
+    return bool(r["enabled"]) if r else subject not in OPT_IN_SUBJECTS
 
 
 def enabled_subjects(db, user_id: int) -> list:

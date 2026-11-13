@@ -1,0 +1,1912 @@
+[
+ {
+  "subject": "linux",
+  "topic": "Navigering",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket kommando visar vilken katalog du står i just nu?",
+  "options": [
+   "pwd",
+   "ls",
+   "cd",
+   "whoami"
+  ],
+  "answer": "pwd",
+  "explanation": "pwd betyder print working directory och skriver ut sökvägen till katalogen du är i."
+ },
+ {
+  "subject": "linux",
+  "topic": "Navigering",
+  "level": 1,
+  "type": "text",
+  "question": "Skriv kommandot som listar filerna i den katalog du står i. Svara bara med kommandot, utan flaggor.",
+  "answer": [
+   "ls"
+  ],
+  "explanation": "ls listar innehållet i en katalog. Flaggor som -l och -a ändrar hur det visas."
+ },
+ {
+  "subject": "linux",
+  "topic": "Navigering",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad betyder '..' i kommandot 'cd ..'?",
+  "options": [
+   "Katalogen ovanför den du står i",
+   "Din egen hemkatalog (till exempel /home/anna)",
+   "Rotkatalogen längst upp i trädet",
+   "Den katalog du var i förut"
+  ],
+  "answer": "Katalogen ovanför den du står i",
+  "explanation": "'..' är katalogen ett steg uppåt. '.' är den aktuella katalogen, '~' är hemkatalogen och 'cd -' går tillbaka till förra katalogen."
+ },
+ {
+  "subject": "linux",
+  "topic": "Navigering",
+  "level": 1,
+  "type": "mc",
+  "question": "Vart tar kommandot 'cd ~' dig?",
+  "options": [
+   "Till din hemkatalog",
+   "Till rotkatalogen /",
+   "Ett steg uppåt",
+   "Till katalogen /tmp"
+  ],
+  "answer": "Till din hemkatalog",
+  "explanation": "~ är en genväg till hemkatalogen, till exempel /home/anna. Bara 'cd' utan något mer gör samma sak."
+ },
+ {
+  "subject": "linux",
+  "topic": "Filsystemet",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken katalog är rotkatalogen, den som allt annat ligger under?",
+  "options": [
+   "/",
+   "/root",
+   "~",
+   "/home"
+  ],
+  "answer": "/",
+  "explanation": "Rotkatalogen heter / (bara ett snedstreck). /root är något annat: det är root-användarens hemkatalog."
+ },
+ {
+  "subject": "linux",
+  "topic": "Filer och kataloger",
+  "level": 1,
+  "type": "text",
+  "question": "Skriv kommandot som skapar en ny katalog som heter test.",
+  "answer": [
+   "mkdir test"
+  ],
+  "explanation": "mkdir betyder make directory. Med -p kan du skapa flera nivåer på en gång, till exempel mkdir -p a/b/c."
+ },
+ {
+  "subject": "linux",
+  "topic": "Filer och kataloger",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket kommando skapar en tom fil som heter notes.txt (om den inte redan finns)?",
+  "options": [
+   "touch notes.txt",
+   "mkfile notes.txt",
+   "new notes.txt",
+   "create notes.txt"
+  ],
+  "answer": "touch notes.txt",
+  "explanation": "touch skapar en tom fil, eller uppdaterar tidsstämpeln om filen redan finns."
+ },
+ {
+  "subject": "linux",
+  "topic": "Filer och kataloger",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket kommando kopierar filen a.txt till en ny fil som heter b.txt?",
+  "options": [
+   "cp a.txt b.txt",
+   "copy a.txt b.txt",
+   "mv a.txt b.txt",
+   "cat a.txt b.txt"
+  ],
+  "answer": "cp a.txt b.txt",
+  "explanation": "cp kopierar. mv flyttar eller döper om, och cat skriver ut innehåll."
+ },
+ {
+  "subject": "linux",
+  "topic": "Filer och kataloger",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad gör 'mv gammal.txt ny.txt' när båda ligger i samma katalog?",
+  "options": [
+   "Döper om filen till ny.txt",
+   "Kopierar filen",
+   "Raderar filen",
+   "Skapar en genväg till filen"
+  ],
+  "answer": "Döper om filen till ny.txt",
+  "explanation": "mv flyttar filer, och att flytta en fil till ett nytt namn i samma katalog är samma sak som att döpa om den."
+ },
+ {
+  "subject": "linux",
+  "topic": "Filer och kataloger",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket kommando raderar en fil? Det finns ingen papperskorg, så den går inte att ångra.",
+  "options": [
+   "rm",
+   "del",
+   "delete",
+   "erase"
+  ],
+  "answer": "rm",
+  "explanation": "rm betyder remove. Var försiktig, särskilt med rm -r och rm -rf, som tar bort hela kataloger utan att fråga."
+ },
+ {
+  "subject": "linux",
+  "topic": "Skal och genvägar",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket kommando öppnar manualsidan för kommandot ls?",
+  "options": [
+   "man ls",
+   "manual ls",
+   "read ls",
+   "docs ls"
+  ],
+  "answer": "man ls",
+  "explanation": "man visar manualsidan. Tryck q för att lämna den. Många kommandon har också --help, till exempel ls --help."
+ },
+ {
+  "subject": "linux",
+  "topic": "Skal och genvägar",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken tangentkombination avbryter ett program som körs i terminalen?",
+  "options": [
+   "Ctrl+C",
+   "Ctrl+V",
+   "Ctrl+Q",
+   "Ctrl+A"
+  ],
+  "answer": "Ctrl+C",
+  "explanation": "Ctrl+C skickar ett avbrott till programmet. Det är bra att kunna när något hänger sig eller går i en oändlig loop."
+ },
+ {
+  "subject": "linux",
+  "topic": "Skal och genvägar",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad gör Tab-tangenten när du skriver ett kommando eller ett filnamn?",
+  "options": [
+   "Fyller i resten automatiskt, om det går",
+   "Rensar skärmen och visar prompten igen",
+   "Avslutar kommandot du håller på att skriva",
+   "Kör kommandot direkt utan att du trycker Enter"
+  ],
+  "answer": "Fyller i resten automatiskt, om det går",
+  "explanation": "Tab-komplettering sparar tid och minskar stavfel. Trycker du två gånger får du en lista med alternativ."
+ },
+ {
+  "subject": "linux",
+  "topic": "Användare och sudo",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket kommando skriver ut ditt användarnamn?",
+  "options": [
+   "whoami",
+   "hostname",
+   "uname",
+   "pwd"
+  ],
+  "answer": "whoami",
+  "explanation": "whoami visar användarnamnet du kör som. hostname visar datorns namn och uname visar information om systemet."
+ },
+ {
+  "subject": "linux",
+  "topic": "Filer och kataloger",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad kallas filer och kataloger som har ett namn som börjar med punkt, till exempel .bashrc?",
+  "options": [
+   "Dolda filer. De syns bara med ls -a",
+   "Systemfiler som inte går att öppna",
+   "Tillfälliga filer",
+   "Skrivskyddade filer"
+  ],
+  "answer": "Dolda filer. De syns bara med ls -a",
+  "explanation": "Punkten i början gör att ls inte visar dem som standard. De används ofta för inställningar, till exempel .bashrc och .ssh."
+ },
+ {
+  "subject": "linux",
+  "topic": "Skal och genvägar",
+  "level": 1,
+  "type": "text",
+  "question": "Skriv kommandot som rensar skärmen i terminalen.",
+  "answer": [
+   "clear"
+  ],
+  "explanation": "clear rensar skärmen. Ctrl+L gör samma sak."
+ },
+ {
+  "subject": "linux",
+  "topic": "Navigering",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad gör 'cd -'?",
+  "options": [
+   "Går tillbaka till katalogen du var i förut",
+   "Går upp ett steg, till katalogen ovanför",
+   "Går direkt till din egen hemkatalog",
+   "Skapar en ny, tom katalog som heter -"
+  ],
+  "answer": "Går tillbaka till katalogen du var i förut",
+  "explanation": "cd - hoppar mellan den här och den förra katalogen, praktiskt när du växlar mellan två ställen."
+ },
+ {
+  "subject": "linux",
+  "topic": "Filer och kataloger",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken flagga får ls att visa även dolda filer?",
+  "options": [
+   "-a",
+   "-l",
+   "-r",
+   "-t"
+  ],
+  "answer": "-a",
+  "explanation": "ls -a visar alla filer, även de som börjar med punkt. -l ger långt format, -r omvänd ordning och -t sorterar på tid."
+ },
+ {
+  "subject": "linux",
+  "topic": "Filer och kataloger",
+  "level": 2,
+  "type": "text",
+  "question": "Skriv kommandot som listar filer i långt format, med rättigheter, ägare och storlek. Svara med kommando och flagga.",
+  "answer": [
+   "ls -l",
+   "ls -la",
+   "ls -al",
+   "ls -lh",
+   "ls -lah",
+   "ls -lha"
+  ],
+  "explanation": "ls -l visar en rad per fil med rättigheter, ägare, grupp, storlek och datum. Flaggor kan kombineras, till exempel ls -la (med dolda filer) eller ls -lh (med läsbara storlekar)."
+ },
+ {
+  "subject": "linux",
+  "topic": "Filer och kataloger",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad visar 'ls -lh'?",
+  "options": [
+   "Långt format, med storlekar som KB och MB",
+   "Bara de dolda filerna i katalogen, med storlekar",
+   "Alla filer sorterade efter storlek, minst först",
+   "En kort hjälptext med alla flaggor för ls"
+  ],
+  "answer": "Långt format, med storlekar som KB och MB",
+  "explanation": "-h betyder human-readable. Utan den får du storleken i bytes."
+ },
+ {
+  "subject": "linux",
+  "topic": "Filer och kataloger",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad betyder 'rm -r mapp'?",
+  "options": [
+   "Raderar mappen och allt som ligger i den",
+   "Döper om mappen och alla filer som ligger i den",
+   "Raderar bara mappen om den är tom",
+   "Flyttar mappen till papperskorgen"
+  ],
+  "answer": "Raderar mappen och allt som ligger i den",
+  "explanation": "-r står för rekursivt. rmdir tar däremot bara bort tomma kataloger. Dubbelkolla alltid sökvägen innan du kör rm -r."
+ },
+ {
+  "subject": "linux",
+  "topic": "Filer och kataloger",
+  "level": 2,
+  "type": "text",
+  "question": "Skriv kommandot som raderar mappen gammal och allt i den (rm med flaggor).",
+  "answer": [
+   "rm -r gammal",
+   "rm -rf gammal",
+   "rm -fr gammal",
+   "rm -R gammal",
+   "rm -Rf gammal",
+   "rm -r gammal/",
+   "rm -rf gammal/"
+  ],
+  "explanation": "rm -r tar bort rekursivt. Med -f frågar den inte ens när filer är skrivskyddade, så var extra försiktig."
+ },
+ {
+  "subject": "linux",
+  "topic": "Textfiler",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket kommando skriver ut innehållet i en textfil direkt i terminalen?",
+  "options": [
+   "cat",
+   "print",
+   "show",
+   "open"
+  ],
+  "answer": "cat",
+  "explanation": "cat skriver ut en eller flera filer. Namnet kommer från concatenate, att sätta ihop."
+ },
+ {
+  "subject": "linux",
+  "topic": "Textfiler",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket kommando visar en lång fil en sida i taget, så att du kan bläddra?",
+  "options": [
+   "less",
+   "cat",
+   "touch",
+   "tail -f"
+  ],
+  "answer": "less",
+  "explanation": "Med less bläddrar du med piltangenterna och mellanslag, söker med / och lämnar med q."
+ },
+ {
+  "subject": "linux",
+  "topic": "Textfiler",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket kommando söker efter ordet error i filen app.log?",
+  "options": [
+   "grep error app.log",
+   "find error app.log",
+   "search error app.log",
+   "cat error app.log"
+  ],
+  "answer": "grep error app.log",
+  "explanation": "grep söker efter text i filer. find letar däremot efter filer och kataloger."
+ },
+ {
+  "subject": "linux",
+  "topic": "Textfiler",
+  "level": 2,
+  "type": "text",
+  "question": "Skriv kommandot som söker efter ordet fel, oavsett stora eller små bokstäver, i filen app.log (flaggan -i).",
+  "answer": [
+   "grep -i fel app.log",
+   "grep -i 'fel' app.log",
+   "grep -i \"fel\" app.log",
+   "grep fel -i app.log"
+  ],
+  "explanation": "-i betyder ignore case. Då matchar grep både fel, Fel och FEL."
+ },
+ {
+  "subject": "linux",
+  "topic": "Textfiler",
+  "level": 2,
+  "type": "text",
+  "question": "Skriv kommandot som visar de 20 sista raderna i filen app.log.",
+  "answer": [
+   "tail -n 20 app.log",
+   "tail -20 app.log",
+   "tail -n20 app.log",
+   "tail --lines=20 app.log"
+  ],
+  "explanation": "tail visar slutet av en fil, och som standard de 10 sista raderna. head visar början."
+ },
+ {
+  "subject": "linux",
+  "topic": "Pipes och omdirigering",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad gör tecknet | (pipe) mellan två kommandon?",
+  "options": [
+   "Skickar utdata från det första som indata till det andra",
+   "Kör kommandona efter varandra, helt oavsett hur det gick",
+   "Sparar utdata i en fil och skriver ut den på skärmen",
+   "Kör bara det andra kommandot om det första lyckas"
+  ],
+  "answer": "Skickar utdata från det första som indata till det andra",
+  "explanation": "Pipes är grunden i hur man bygger ihop små kommandon till något större, till exempel ps aux | grep nginx."
+ },
+ {
+  "subject": "linux",
+  "topic": "Pipes och omdirigering",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad gör '>' i kommandot 'echo hej > fil.txt'?",
+  "options": [
+   "Skriver texten till fil.txt och ersätter det som stod där",
+   "Lägger till texten sist i fil.txt utan att radera något",
+   "Läser in texten från fil.txt och visar den på skärmen",
+   "Skickar texten vidare som indata till nästa kommando i kedjan"
+  ],
+  "answer": "Skriver texten till fil.txt och ersätter det som stod där",
+  "explanation": "> skriver över filen. >> lägger till sist i filen utan att radera det som redan finns."
+ },
+ {
+  "subject": "linux",
+  "topic": "Pipes och omdirigering",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad gör '>>' i kommandot 'echo hej >> fil.txt'?",
+  "options": [
+   "Lägger till texten sist i fil.txt",
+   "Skriver över allt som stod i fil.txt",
+   "Raderar fil.txt och skapar den på nytt",
+   "Kopierar fil.txt till en ny fil"
+  ],
+  "answer": "Lägger till texten sist i fil.txt",
+  "explanation": ">> är säkrare än > när du vill behålla det som redan står i filen, till exempel i loggar."
+ },
+ {
+  "subject": "linux",
+  "topic": "Pipes och omdirigering",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad ger 'ls | wc -l'?",
+  "options": [
+   "Antalet filer och kataloger i katalogen",
+   "Storleken på katalogen i byte",
+   "En lista sorterad efter längd på namnen",
+   "Antalet dolda filer i katalogen"
+  ],
+  "answer": "Antalet filer och kataloger i katalogen",
+  "explanation": "wc -l räknar rader. Eftersom ls skriver ut ett namn per rad när det går genom en pipe får du antalet poster."
+ },
+ {
+  "subject": "linux",
+  "topic": "Användare och sudo",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket kommando kör ett annat kommando med administratörsrättigheter (som root)?",
+  "options": [
+   "sudo",
+   "admin",
+   "root",
+   "runas"
+  ],
+  "answer": "sudo",
+  "explanation": "sudo betyder ungefär superuser do. Använd det bara när det behövs, eftersom fel som root kan förstöra systemet."
+ },
+ {
+  "subject": "linux",
+  "topic": "Diskar",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket kommando visar hur mycket diskutrymme som är ledigt på filsystemen, i läsbar form?",
+  "options": [
+   "df -h",
+   "free -h",
+   "uptime",
+   "top"
+  ],
+  "answer": "df -h",
+  "explanation": "df betyder disk free. free -h visar däremot minnet (RAM)."
+ },
+ {
+  "subject": "linux",
+  "topic": "System",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket kommando visar hur mycket RAM-minne som används och är ledigt?",
+  "options": [
+   "free -h",
+   "df -h",
+   "lsblk",
+   "ls -lh"
+  ],
+  "answer": "free -h",
+  "explanation": "free -h visar minne och swap i läsbar form. Titta på kolumnen available för hur mycket som faktiskt går att använda."
+ },
+ {
+  "subject": "linux",
+  "topic": "Rättigheter",
+  "level": 2,
+  "type": "mc",
+  "question": "Du ser '-rwxr-xr--' i början av en rad i ls -l. Vad betyder det första tecknet, '-'?",
+  "options": [
+   "Att det är en vanlig fil",
+   "Att det är en katalog",
+   "Att filen är skrivskyddad",
+   "Att filen är dold"
+  ],
+  "answer": "Att det är en vanlig fil",
+  "explanation": "Första tecknet visar typ: - är fil, d är katalog och l är länk. Därefter kommer tre grupper om tre tecken för ägare, grupp och övriga."
+ },
+ {
+  "subject": "linux",
+  "topic": "Filer och kataloger",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad gör 'find /home -name \"*.txt\"'?",
+  "options": [
+   "Letar efter filer vars namn slutar på .txt under /home",
+   "Skriver ut innehållet i alla .txt-filer under /home",
+   "Raderar alla .txt-filer som den hittar i /home",
+   "Söker efter texten .txt inuti alla filer i /home"
+  ],
+  "answer": "Letar efter filer vars namn slutar på .txt under /home",
+  "explanation": "find letar efter filer efter namn, typ, storlek, ålder och mycket annat. grep söker däremot efter text i filers innehåll."
+ },
+ {
+  "subject": "linux",
+  "topic": "Filsystemet",
+  "level": 2,
+  "type": "mc",
+  "question": "Var hittar du normalt systemets konfigurationsfiler?",
+  "options": [
+   "I /etc",
+   "I /tmp",
+   "I /home",
+   "I /dev"
+  ],
+  "answer": "I /etc",
+  "explanation": "/etc innehåller inställningar för system och tjänster, till exempel /etc/ssh/sshd_config. /tmp är för tillfälliga filer och /home är för användarnas filer."
+ },
+ {
+  "subject": "linux",
+  "topic": "Filsystemet",
+  "level": 2,
+  "type": "mc",
+  "question": "Var hittar du normalt systemloggarna?",
+  "options": [
+   "I /var/log",
+   "I /etc/log",
+   "I /home/log",
+   "I /usr/bin"
+  ],
+  "answer": "I /var/log",
+  "explanation": "/var/log innehåller loggfiler som syslog, auth.log och loggar från tjänster. Många tjänster loggar också till journalen, som läses med journalctl."
+ },
+ {
+  "subject": "linux",
+  "topic": "Skal och genvägar",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken textredigerare i terminalen visar sina genvägar längst ned och är därför enklast för nybörjare?",
+  "options": [
+   "nano",
+   "vim",
+   "emacs",
+   "sed"
+  ],
+  "answer": "nano",
+  "explanation": "nano visar genvägarna längst ned, till exempel Ctrl+O för att spara och Ctrl+X för att avsluta. vim är kraftfullt men har en brant inlärningskurva."
+ },
+ {
+  "subject": "linux",
+  "topic": "Skript",
+  "level": 2,
+  "type": "text",
+  "question": "Skriv kommandot som kör skriptet backup.sh som ligger i katalogen du står i (det är redan körbart).",
+  "answer": [
+   "./backup.sh",
+   "bash backup.sh",
+   "sh backup.sh"
+  ],
+  "explanation": "./ betyder den här katalogen. Utan ./ letar skalet bara i katalogerna i PATH. Du kan också starta det med bash backup.sh."
+ },
+ {
+  "subject": "linux",
+  "topic": "Rättigheter",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad betyder 'chmod 755 fil'?",
+  "options": [
+   "Ägaren får läsa, skriva och köra. Övriga får läsa och köra",
+   "Alla användare får läsa, skriva och köra filen utan begränsning",
+   "Bara ägaren får läsa och skriva, och övriga får ingenting alls",
+   "Ägaren får bara läsa, övriga får läsa och köra"
+  ],
+  "answer": "Ägaren får läsa, skriva och köra. Övriga får läsa och köra",
+  "explanation": "Siffrorna är summor: 4 = läsa, 2 = skriva, 1 = köra. 7 = 4+2+1, och 5 = 4+1. Platserna är ägare, grupp och övriga."
+ },
+ {
+  "subject": "linux",
+  "topic": "Rättigheter",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad betyder 'chmod 600 fil'?",
+  "options": [
+   "Bara ägaren får läsa och skriva",
+   "Alla får läsa filen, bara ägaren får ändra",
+   "Bara ägaren får köra filen",
+   "Filen är skrivskyddad för alla, även ägaren"
+  ],
+  "answer": "Bara ägaren får läsa och skriva",
+  "explanation": "6 = 4+2 (läsa och skriva) för ägaren, och 0 för grupp och övriga. Det är rätt rättigheter för privata nycklar och hemliga filer."
+ },
+ {
+  "subject": "linux",
+  "topic": "Rättigheter",
+  "level": 3,
+  "type": "text",
+  "question": "Vilket tresiffrigt chmod-nummer motsvarar rw-r--r--? Svara bara med siffrorna.",
+  "answer": [
+   "644"
+  ],
+  "explanation": "Ägaren rw- = 6, gruppen r-- = 4 och övriga r-- = 4. 644 är vanligt för vanliga filer."
+ },
+ {
+  "subject": "linux",
+  "topic": "Rättigheter",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket kommando ändrar vem som äger en fil?",
+  "options": [
+   "chown",
+   "chmod",
+   "owner",
+   "setowner"
+  ],
+  "answer": "chown",
+  "explanation": "chown byter ägare, till exempel sudo chown anna:anna fil. chmod ändrar rättigheterna."
+ },
+ {
+  "subject": "linux",
+  "topic": "Rättigheter",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad gör 'chmod +x skript.sh'?",
+  "options": [
+   "Gör filen körbar",
+   "Krypterar filen",
+   "Raderar filen",
+   "Gör filen dold"
+  ],
+  "answer": "Gör filen körbar",
+  "explanation": "Utan körrättighet kan du inte starta filen som ett program. Efteråt kör du den med ./skript.sh."
+ },
+ {
+  "subject": "linux",
+  "topic": "Processer",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket kommando visar en ögonblicksbild av alla processer som körs?",
+  "options": [
+   "ps aux",
+   "top",
+   "jobs",
+   "uptime"
+  ],
+  "answer": "ps aux",
+  "explanation": "ps visar en lista vid just det tillfället. top uppdateras hela tiden."
+ },
+ {
+  "subject": "linux",
+  "topic": "Processer",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket kommando visar processer och resursanvändning live, så att listan uppdateras hela tiden?",
+  "options": [
+   "top",
+   "ps aux",
+   "ls /proc",
+   "df -h"
+  ],
+  "answer": "top",
+  "explanation": "Avsluta top med q. Många installerar htop, som är mer lättläst."
+ },
+ {
+  "subject": "linux",
+  "topic": "Processer",
+  "level": 3,
+  "type": "mc",
+  "question": "Hur ber du processen med process-ID 1234 att avsluta sig på ett snällt sätt?",
+  "options": [
+   "kill 1234",
+   "kill -9 1234",
+   "stop 1234",
+   "end 1234"
+  ],
+  "answer": "kill 1234",
+  "explanation": "kill skickar som standard SIGTERM, som låter programmet städa upp. Först om det inte hjälper tar man kill -9."
+ },
+ {
+  "subject": "linux",
+  "topic": "Processer",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad gör 'kill -9 1234'?",
+  "options": [
+   "Dödar processen direkt, utan att den får städa upp",
+   "Pausar processen så att den kan fortsätta senare",
+   "Startar om processen från början",
+   "Sänker processens prioritet så att den får mindre CPU"
+  ],
+  "answer": "Dödar processen direkt, utan att den får städa upp",
+  "explanation": "-9 är SIGKILL, som processen inte kan fånga eller ignorera. Använd det sist, eftersom filer och lås kan lämnas i ett dåligt skick."
+ },
+ {
+  "subject": "linux",
+  "topic": "Paket och uppdateringar",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket kommando uppdaterar listan över tillgängliga paket och versioner på Ubuntu, utan att installera något?",
+  "options": [
+   "sudo apt update",
+   "sudo apt upgrade",
+   "sudo apt install",
+   "sudo apt clean"
+  ],
+  "answer": "sudo apt update",
+  "explanation": "apt update hämtar paketlistorna. apt upgrade installerar sedan de nya versionerna. Kör alltså först update och därefter upgrade."
+ },
+ {
+  "subject": "linux",
+  "topic": "Paket och uppdateringar",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad gör 'sudo apt upgrade'?",
+  "options": [
+   "Installerar nyare versioner av redan installerade paket",
+   "Hämtar bara listan över nya paket och deras versioner från nätet",
+   "Uppgraderar hela Ubuntu till nästa stora utgåva",
+   "Tar bort gamla paket som inte längre behövs"
+  ],
+  "answer": "Installerar nyare versioner av redan installerade paket",
+  "explanation": "Att byta hela Ubuntu-utgåvan görs med do-release-upgrade, och apt autoremove städar bort paket som inte behövs."
+ },
+ {
+  "subject": "linux",
+  "topic": "Paket och uppdateringar",
+  "level": 3,
+  "type": "text",
+  "question": "Skriv kommandot, med sudo, som installerar paketet htop med apt.",
+  "answer": [
+   "sudo apt install htop",
+   "sudo apt-get install htop",
+   "sudo apt install -y htop",
+   "sudo apt-get install -y htop"
+  ],
+  "explanation": "apt install installerar paket och deras beroenden. -y svarar ja automatiskt på frågorna."
+ },
+ {
+  "subject": "linux",
+  "topic": "systemd",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket kommando visar status för tjänsten ssh i systemd?",
+  "options": [
+   "systemctl status ssh",
+   "systemctl show-status ssh",
+   "ssh --status",
+   "status systemctl ssh"
+  ],
+  "answer": "systemctl status ssh",
+  "explanation": "systemctl status visar om tjänsten körs och de senaste loggraderna. På Ubuntu heter SSH-tjänsten ssh, och på vissa andra system sshd."
+ },
+ {
+  "subject": "linux",
+  "topic": "systemd",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad gör 'sudo systemctl enable nginx'?",
+  "options": [
+   "Gör att nginx startar automatiskt när datorn startar",
+   "Startar nginx just nu, men inte automatiskt vid nästa start",
+   "Stoppar nginx tills du själv startar det igen",
+   "Visar status och senaste loggraderna för nginx"
+  ],
+  "answer": "Gör att nginx startar automatiskt när datorn startar",
+  "explanation": "enable styr uppstarten, medan start startar tjänsten nu. Med enable --now gör du båda på en gång."
+ },
+ {
+  "subject": "linux",
+  "topic": "systemd",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad gör 'sudo systemctl restart nginx'?",
+  "options": [
+   "Stoppar nginx och startar det igen",
+   "Läser om datorns konfiguration utan att stoppa något",
+   "Startar om hela datorn",
+   "Tar bort nginx"
+  ],
+  "answer": "Stoppar nginx och startar det igen",
+  "explanation": "restart avbryter tjänsten en kort stund. reload ber tjänsten läsa om sin konfiguration utan att stoppa, om den stöder det."
+ },
+ {
+  "subject": "linux",
+  "topic": "Nätverk",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket kommando visar datorns IP-adresser och nätverkskort?",
+  "options": [
+   "ip a",
+   "dig",
+   "traceroute",
+   "ssh -i"
+  ],
+  "answer": "ip a",
+  "explanation": "ip a (ip addr) visar adresserna. ip r visar routingtabellen och därmed bland annat standardgatewayen."
+ },
+ {
+  "subject": "linux",
+  "topic": "Nätverk",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket kommando testar om en annan dator svarar på nätverket?",
+  "options": [
+   "ping",
+   "scp",
+   "chmod",
+   "tar"
+  ],
+  "answer": "ping",
+  "explanation": "ping skickar ICMP echo och mäter svarstiden. Om ping till en IP-adress funkar men inte till ett namn är det ofta DNS som strular."
+ },
+ {
+  "subject": "linux",
+  "topic": "Nätverk",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket kommando hämtar svaret från en webbadress och skriver det i terminalen?",
+  "options": [
+   "curl",
+   "ping",
+   "ssh",
+   "grep"
+  ],
+  "answer": "curl",
+  "explanation": "curl är bra för att testa webbtjänster, till exempel curl -I https://example.com för att bara se svarshuvudena."
+ },
+ {
+  "subject": "linux",
+  "topic": "SSH",
+  "level": 3,
+  "type": "mc",
+  "question": "Hur ansluter du med SSH till 192.168.1.10 som användaren anna?",
+  "options": [
+   "ssh anna@192.168.1.10",
+   "ssh 192.168.1.10@anna",
+   "ssh -u anna 192.168.1.10",
+   "connect anna@192.168.1.10"
+  ],
+  "answer": "ssh anna@192.168.1.10",
+  "explanation": "Formen är användare@dator. Vill du använda en annan port än 22 anger du -p, till exempel ssh -p 2222 anna@192.168.1.10."
+ },
+ {
+  "subject": "linux",
+  "topic": "SSH",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket kommando kopierar en fil till en annan dator via SSH?",
+  "options": [
+   "scp",
+   "cp",
+   "tar",
+   "ping"
+  ],
+  "answer": "scp",
+  "explanation": "scp fil anna@192.168.1.10:/tmp/ kopierar filen. För större eller återkommande kopiering är rsync oftast bättre."
+ },
+ {
+  "subject": "linux",
+  "topic": "Backup",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad gör 'tar -czf backup.tar.gz mapp'?",
+  "options": [
+   "Packar mapp till ett komprimerat arkiv, backup.tar.gz",
+   "Packar upp arkivet backup.tar.gz i den katalog du står i",
+   "Kopierar mapp till en annan dator som en säkerhetskopia",
+   "Raderar mapp och sparar den i backup.tar.gz"
+  ],
+  "answer": "Packar mapp till ett komprimerat arkiv, backup.tar.gz",
+  "explanation": "c = create, z = gzip, f = filnamn. Packa upp med tar -xzf backup.tar.gz."
+ },
+ {
+  "subject": "linux",
+  "topic": "Skal och genvägar",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad innehåller miljövariabeln PATH?",
+  "options": [
+   "Listan med kataloger där skalet letar efter kommandon",
+   "Sökvägen till din hemkatalog och alla dina filer och mappar",
+   "Den katalog du står i just nu, skriven som en fullständig sökväg",
+   "En lista med de filer och program du använt senast"
+  ],
+  "answer": "Listan med kataloger där skalet letar efter kommandon",
+  "explanation": "Skriver du ls letar skalet igenom katalogerna i PATH tills den hittar programmet. Du ser PATH med echo $PATH."
+ },
+ {
+  "subject": "linux",
+  "topic": "Skal och genvägar",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket kommando visar de kommandon du kört tidigare?",
+  "options": [
+   "history",
+   "last",
+   "recent",
+   "log"
+  ],
+  "answer": "history",
+  "explanation": "history listar kommandona. Ctrl+R låter dig söka bakåt bland dem, och !! upprepar det senaste."
+ },
+ {
+  "subject": "linux",
+  "topic": "Skal och genvägar",
+  "level": 3,
+  "type": "mc",
+  "question": "Du skrev ett kommando och fick 'permission denied'. Vad gör 'sudo !!'?",
+  "options": [
+   "Kör det senaste kommandot igen, nu med sudo",
+   "Kör det senaste kommandot två gånger i rad",
+   "Visar listan över dina senaste kommandon",
+   "Avslutar sudo-sessionen och loggar ut dig"
+  ],
+  "answer": "Kör det senaste kommandot igen, nu med sudo",
+  "explanation": "!! betyder det senaste kommandot. Det är en bra genväg, men titta först på vad som faktiskt ska köras som root."
+ },
+ {
+  "subject": "linux",
+  "topic": "System",
+  "level": 3,
+  "type": "text",
+  "question": "Skriv kommandot som visar vilken version av Linux-kärnan som körs (uname med en flagga).",
+  "answer": [
+   "uname -r",
+   "uname --kernel-release"
+  ],
+  "explanation": "uname -r visar kärnversionen. uname -a visar all information på en rad."
+ },
+ {
+  "subject": "linux",
+  "topic": "System",
+  "level": 3,
+  "type": "text",
+  "question": "Skriv kommandot som visar hur länge datorn varit igång och load average (tre tal).",
+  "answer": [
+   "uptime"
+  ],
+  "explanation": "uptime visar tid, antal inloggade och load average för de senaste 1, 5 och 15 minuterna."
+ },
+ {
+  "subject": "linux",
+  "topic": "System",
+  "level": 3,
+  "type": "text",
+  "question": "Skriv kommandot, med sudo, som startar om datorn.",
+  "answer": [
+   "sudo reboot",
+   "sudo shutdown -r now",
+   "sudo shutdown -r 0",
+   "sudo systemctl reboot",
+   "sudo init 6"
+  ],
+  "explanation": "reboot startar om, och shutdown -h now (eller poweroff) stänger av. Gör det med omsorg på servrar som andra använder."
+ },
+ {
+  "subject": "linux",
+  "topic": "Loggar",
+  "level": 4,
+  "type": "text",
+  "question": "Skriv kommandot som visar journalen (loggen) för systemd-tjänsten nginx. Använd journalctl med flaggan för tjänst.",
+  "answer": [
+   "journalctl -u nginx",
+   "sudo journalctl -u nginx",
+   "journalctl --unit nginx",
+   "journalctl --unit=nginx",
+   "journalctl -u nginx.service",
+   "sudo journalctl -u nginx.service"
+  ],
+  "explanation": "journalctl -u visar loggen för en tjänst. Lägg till -f för att följa den live eller -n 50 för de 50 senaste raderna."
+ },
+ {
+  "subject": "linux",
+  "topic": "Loggar",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad gör 'journalctl -f'?",
+  "options": [
+   "Följer journalen live och visar nya rader",
+   "Visar bara de rader som innehåller ordet fel",
+   "Tömmer journalen så att den börjar om",
+   "Filtrerar loggen så att bara en fil visas"
+  ],
+  "answer": "Följer journalen live och visar nya rader",
+  "explanation": "-f betyder follow, och fungerar som tail -f fast för systemd-journalen."
+ },
+ {
+  "subject": "linux",
+  "topic": "Loggar",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad gör 'tail -f /var/log/syslog'?",
+  "options": [
+   "Visar slutet av filen och fortsätter visa nya rader",
+   "Rensar loggen så att den blir tom igen",
+   "Skickar loggen vidare till en annan dator via nätverket",
+   "Söker igenom hela loggen efter ordet fel"
+  ],
+  "answer": "Visar slutet av filen och fortsätter visa nya rader",
+  "explanation": "Perfekt för att titta på loggen medan du provar något i ett annat fönster. Avbryt med Ctrl+C."
+ },
+ {
+  "subject": "linux",
+  "topic": "Nätverk",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket kommando visar vilka TCP-portar som lyssnar, och vilka program som använder dem?",
+  "options": [
+   "sudo ss -tlnp",
+   "ip route",
+   "df -h",
+   "sudo ufw status"
+  ],
+  "answer": "sudo ss -tlnp",
+  "explanation": "t = TCP, l = lyssnande, n = siffror i stället för namn, p = process. Utan sudo ser du inte alltid processnamnen."
+ },
+ {
+  "subject": "linux",
+  "topic": "Nätverk",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken port använder SSH som standard?",
+  "options": [
+   "22",
+   "80",
+   "443",
+   "3306"
+  ],
+  "answer": "22",
+  "explanation": "SSH använder 22. HTTP är 80, HTTPS är 443 och MySQL/MariaDB är 3306."
+ },
+ {
+  "subject": "linux",
+  "topic": "Nätverk",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilka portar används som standard för HTTP respektive HTTPS?",
+  "options": [
+   "80 och 443",
+   "22 och 80",
+   "8080 och 8443",
+   "21 och 22"
+  ],
+  "answer": "80 och 443",
+  "explanation": "80 är okrypterad webbtrafik och 443 är krypterad. 8080 används ofta för test och för tjänster bakom en proxy."
+ },
+ {
+  "subject": "linux",
+  "topic": "Brandvägg",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket kommando slår på brandväggen ufw på Ubuntu?",
+  "options": [
+   "sudo ufw enable",
+   "sudo ufw start",
+   "sudo ufw on",
+   "sudo ufw --turn-on"
+  ],
+  "answer": "sudo ufw enable",
+  "explanation": "Tillåt SSH först, till exempel med sudo ufw allow ssh, annars kan du låsa ut dig själv när brandväggen slås på."
+ },
+ {
+  "subject": "linux",
+  "topic": "Brandvägg",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket ufw-kommando tillåter inkommande trafik till SSH-porten?",
+  "options": [
+   "sudo ufw allow 22/tcp",
+   "sudo ufw open 22",
+   "sudo ufw enable 22",
+   "sudo ufw ssh --allow"
+  ],
+  "answer": "sudo ufw allow 22/tcp",
+  "explanation": "sudo ufw allow ssh fungerar också. Med sudo ufw status numbered ser du reglerna och med sudo ufw delete 2 tar du bort regel 2."
+ },
+ {
+  "subject": "linux",
+  "topic": "SSH",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket kommando skapar ett SSH-nyckelpar?",
+  "options": [
+   "ssh-keygen",
+   "ssh-add",
+   "ssh-copy-id",
+   "ssh-key"
+  ],
+  "answer": "ssh-keygen",
+  "explanation": "ssh-keygen -t ed25519 är ett bra val idag. Den publika nyckeln (.pub) lägger du på servern och den privata nyckeln behåller du hos dig."
+ },
+ {
+  "subject": "linux",
+  "topic": "SSH",
+  "level": 4,
+  "type": "mc",
+  "question": "I vilken fil på servern ligger de publika nycklar som får logga in utan lösenord?",
+  "options": [
+   "~/.ssh/authorized_keys",
+   "~/.ssh/known_hosts",
+   "~/.ssh/config",
+   "/etc/passwd"
+  ],
+  "answer": "~/.ssh/authorized_keys",
+  "explanation": "known_hosts är klientens lista över servrar den har sett. ssh-copy-id lägger till din nyckel i authorized_keys åt dig."
+ },
+ {
+  "subject": "linux",
+  "topic": "Diskar",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken fil beskriver vilka filsystem som monteras när datorn startar?",
+  "options": [
+   "/etc/fstab",
+   "/etc/hosts",
+   "/etc/passwd",
+   "/var/log/mount"
+  ],
+  "answer": "/etc/fstab",
+  "explanation": "Fel i fstab kan göra att datorn inte startar normalt. Testa ändringar med sudo mount -a innan du startar om."
+ },
+ {
+  "subject": "linux",
+  "topic": "Diskar",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket kommando visar diskar och partitioner som ett träd?",
+  "options": [
+   "lsblk",
+   "lsusb",
+   "lspci",
+   "ls -d"
+  ],
+  "answer": "lsblk",
+  "explanation": "lsblk listar blockenheter med storlek och monteringspunkt. df visar belastning på de monterade filsystemen."
+ },
+ {
+  "subject": "linux",
+  "topic": "Diskar",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad är skillnaden mellan df och du?",
+  "options": [
+   "df visar ledigt utrymme på filsystemen, du visar vad kataloger tar",
+   "df visar bara dolda filer och du visar alla vanliga filer i katalogen",
+   "df är till för diskar och partitioner, du är till för användarkonton",
+   "Det är samma kommando, där du är kortformen som många använder"
+  ],
+  "answer": "df visar ledigt utrymme på filsystemen, du visar vad kataloger tar",
+  "explanation": "du -sh /var/log visar storleken på en katalog. Kombinerar du dem hittar du snabbt vad som fyller disken."
+ },
+ {
+  "subject": "linux",
+  "topic": "Backup",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket kommando synkar en katalog till en annan dator och kopierar bara det som ändrats?",
+  "options": [
+   "rsync",
+   "scp",
+   "cp",
+   "tar"
+  ],
+  "answer": "rsync",
+  "explanation": "rsync -av källa/ användare@dator:mål/ är ett bra standardkommando för backuper. Med --delete speglar den också borttagna filer, så var försiktig."
+ },
+ {
+  "subject": "linux",
+  "topic": "Cron",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket cron-schema kör ett jobb varje dag klockan 03:30?",
+  "options": [
+   "30 3 * * *",
+   "3 30 * * *",
+   "30 3 1 * *",
+   "* 3 30 * *"
+  ],
+  "answer": "30 3 * * *",
+  "explanation": "Fälten är minut, timme, dag i månaden, månad och veckodag. 30 3 1 * * hade bara kört den första varje månad."
+ },
+ {
+  "subject": "linux",
+  "topic": "Cron",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad betyder '*/5 * * * *' i en crontab?",
+  "options": [
+   "Var femte minut",
+   "Klockan 05:00 varje dag",
+   "Fem gånger per timme, vid slumpmässiga tider",
+   "Var femte timme"
+  ],
+  "answer": "Var femte minut",
+  "explanation": "*/5 i minutfältet betyder var femte minut, alltså 0, 5, 10 och så vidare."
+ },
+ {
+  "subject": "linux",
+  "topic": "Cron",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket kommando redigerar din egen crontab?",
+  "options": [
+   "crontab -e",
+   "cron --edit",
+   "sudo cron edit",
+   "crontab -l"
+  ],
+  "answer": "crontab -e",
+  "explanation": "crontab -l visar den och crontab -e redigerar den. Jobb som behöver root lägger du i root:s crontab med sudo crontab -e."
+ },
+ {
+  "subject": "linux",
+  "topic": "Paket och uppdateringar",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad gör 'sudo apt autoremove'?",
+  "options": [
+   "Tar bort beroendepaket som inte längre behövs",
+   "Tar bort alla paket som inte är uppdaterade",
+   "Avinstallerar det senast installerade paketet",
+   "Tömmer papperskorgen och gamla loggar"
+  ],
+  "answer": "Tar bort beroendepaket som inte längre behövs",
+  "explanation": "Efter kärnuppdateringar blir gamla kärnor kvar, och autoremove städar bort dem och frigör diskutrymme."
+ },
+ {
+  "subject": "linux",
+  "topic": "Paket och uppdateringar",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad gör paketet unattended-upgrades på Ubuntu?",
+  "options": [
+   "Installerar säkerhetsuppdateringar automatiskt",
+   "Tar säkerhetskopior av systemet varje natt",
+   "Övervakar disken och larmar när den är full",
+   "Stänger av tjänster som ingen använder"
+  ],
+  "answer": "Installerar säkerhetsuppdateringar automatiskt",
+  "explanation": "Det är en enkel och bra grundskydd för servrar. Den kan också starta om datorn automatiskt om du slår på det i inställningarna."
+ },
+ {
+  "subject": "linux",
+  "topic": "Docker",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket kommando visar de Docker-containrar som körs just nu?",
+  "options": [
+   "docker ps",
+   "docker list",
+   "docker images",
+   "docker status"
+  ],
+  "answer": "docker ps",
+  "explanation": "docker ps -a visar även containrar som har stoppats. docker images listar de images som finns hämtade."
+ },
+ {
+  "subject": "linux",
+  "topic": "Docker",
+  "level": 4,
+  "type": "mc",
+  "question": "Hur visar du de senaste loggraderna från containern web och följer dem live?",
+  "options": [
+   "docker logs -f --tail 50 web",
+   "docker log web --live",
+   "docker tail web",
+   "docker show logs web"
+  ],
+  "answer": "docker logs -f --tail 50 web",
+  "explanation": "docker logs visar vad containern skrivit till standard ut. -f följer och --tail 50 begränsar till de 50 senaste raderna."
+ },
+ {
+  "subject": "linux",
+  "topic": "Docker",
+  "level": 4,
+  "type": "text",
+  "question": "Skriv kommandot som startar alla tjänster i docker-compose.yml i bakgrunden.",
+  "answer": [
+   "docker compose up -d",
+   "docker-compose up -d",
+   "sudo docker compose up -d",
+   "sudo docker-compose up -d"
+  ],
+  "explanation": "-d står för detached, alltså att containrarna körs i bakgrunden. docker compose down stoppar dem och tar bort containrarna."
+ },
+ {
+  "subject": "linux",
+  "topic": "Docker",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad gör 'docker compose pull' följt av 'docker compose up -d'?",
+  "options": [
+   "Hämtar nya images och startar om de som uppdaterats",
+   "Tar bort alla containrar och volymer med data",
+   "Bygger om images från Dockerfile i alla fall",
+   "Kopierar filerna från datorn in i alla containrar"
+  ],
+  "answer": "Hämtar nya images och startar om de som uppdaterats",
+  "explanation": "Det är ett vanligt sätt att uppdatera tjänster. Data i volymer ligger kvar, så länge du inte tar bort volymerna."
+ },
+ {
+  "subject": "linux",
+  "topic": "Docker",
+  "level": 4,
+  "type": "mc",
+  "question": "Var hamnar data som en container skriver, om du inte har monterat någon volym eller katalog?",
+  "options": [
+   "Inne i containern, och försvinner när den tas bort",
+   "På värddatorn, i en katalog som Docker väljer",
+   "I molnet, hos företaget bakom Docker",
+   "I katalogen du stod i när du startade containern"
+  ],
+  "answer": "Inne i containern, och försvinner när den tas bort",
+  "explanation": "Därför monterar man volymer eller kataloger, till exempel ./data:/data, för allt som ska finnas kvar, som databaser och uppladdade filer."
+ },
+ {
+  "subject": "linux",
+  "topic": "Docker",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket kommando öppnar ett skal inne i den körande containern web?",
+  "options": [
+   "docker exec -it web sh",
+   "docker run web sh",
+   "docker ssh web",
+   "docker attach sh web"
+  ],
+  "answer": "docker exec -it web sh",
+  "explanation": "exec kör ett kommando i en container som redan körs. -it ger ett interaktivt skal. docker run skulle starta en ny container."
+ },
+ {
+  "subject": "linux",
+  "topic": "Felsökning",
+  "level": 4,
+  "type": "mc",
+  "question": "Ett kommando har just körts. Vilket kommando visar dess exit-kod?",
+  "options": [
+   "echo $?",
+   "echo $PATH",
+   "history -c",
+   "exit"
+  ],
+  "answer": "echo $?",
+  "explanation": "0 betyder att det gick bra. Allt annat betyder fel, och olika program använder olika siffror för olika fel."
+ },
+ {
+  "subject": "linux",
+  "topic": "Felsökning",
+  "level": 5,
+  "type": "mc",
+  "question": "Disken verkar full och du får 'No space left on device', men df -h visar ledigt utrymme. Vilket kommando kollar om inodena är slut?",
+  "options": [
+   "df -i",
+   "df -h --all",
+   "du -sh /",
+   "free -i"
+  ],
+  "answer": "df -i",
+  "explanation": "Varje fil använder en inod. Miljontals små filer kan fylla inodtabellen trots ledigt utrymme."
+ },
+ {
+  "subject": "linux",
+  "topic": "Felsökning",
+  "level": 5,
+  "type": "mc",
+  "question": "I loggen står 'Out of memory: Killed process 4321'. Vad har hänt?",
+  "options": [
+   "Kärnan dödade en process eftersom minnet tog slut",
+   "Du dödade processen själv med kill -9",
+   "Disken blev full och processen kunde inte skriva",
+   "Processen avslutades normalt, med exit-kod 0"
+  ],
+  "answer": "Kärnan dödade en process eftersom minnet tog slut",
+  "explanation": "Det är OOM killer. Titta med dmesg eller journalctl -k på vilken process den valde, och överväg mer RAM, swap eller att begränsa tjänsten."
+ },
+ {
+  "subject": "linux",
+  "topic": "Felsökning",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilket kommando visar kärnans meddelanden, till exempel hårdvarufel och OOM-händelser?",
+  "options": [
+   "dmesg",
+   "lsmod",
+   "dmidecode",
+   "uname -a"
+  ],
+  "answer": "dmesg",
+  "explanation": "dmesg läser kärnans ringbuffer. På många system behöver du sudo, och du kan filtrera med dmesg | grep -i error."
+ },
+ {
+  "subject": "linux",
+  "topic": "Felsökning",
+  "level": 5,
+  "type": "mc",
+  "question": "Load average är 8,0 på en dator med 4 CPU-kärnor. Vad betyder det oftast?",
+  "options": [
+   "Systemet är överbelastat, processer får vänta på CPU",
+   "Allt är normalt och inget behöver göras",
+   "Datorn är nästan helt overksam och kan stängas av",
+   "Minnet är fullt och swap används hårt"
+  ],
+  "answer": "Systemet är överbelastat, processer får vänta på CPU",
+  "explanation": "En tumregel är att load kring antalet kärnor är fullt utnyttjat och över det är köbildning. Titta med top eller htop efter vad som tar resurser."
+ },
+ {
+  "subject": "linux",
+  "topic": "Felsökning",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilket kommando visar vilken process som använder port 8080?",
+  "options": [
+   "sudo lsof -i :8080",
+   "sudo ps -p 8080",
+   "sudo ls /port/8080",
+   "sudo netstat --kill 8080"
+  ],
+  "answer": "sudo lsof -i :8080",
+  "explanation": "sudo ss -tlnp | grep 8080 går också bra. ps -p tar däremot ett process-ID, inte ett portnummer."
+ },
+ {
+  "subject": "linux",
+  "topic": "Felsökning",
+  "level": 5,
+  "type": "mc",
+  "question": "Ett cron-jobb fungerar när du kör skriptet för hand men inte från cron. Vad är en vanlig orsak?",
+  "options": [
+   "Cron har minimal PATH, så skriptet behöver fullständiga sökvägar",
+   "Cron kan bara köra ett enda kort kommando per jobb, aldrig skript",
+   "Cron kör bara jobb åt root och inte åt vanliga användare på datorn",
+   "Skriptet måste ha filändelsen .cron för att köras"
+  ],
+  "answer": "Cron har minimal PATH, så skriptet behöver fullständiga sökvägar",
+  "explanation": "Skriv /usr/bin/docker i stället för docker, eller sätt PATH överst i crontab. Skicka utdata till en loggfil, till exempel >> /tmp/jobb.log 2>&1, så ser du vad som gick fel."
+ },
+ {
+  "subject": "linux",
+  "topic": "systemd",
+  "level": 5,
+  "type": "mc",
+  "question": "Du har ändrat en .service-fil för en tjänst. Vilket kommando får systemd att läsa om filerna?",
+  "options": [
+   "sudo systemctl daemon-reload",
+   "sudo systemctl reload-all",
+   "sudo systemctl enable --reload",
+   "sudo systemd restart"
+  ],
+  "answer": "sudo systemctl daemon-reload",
+  "explanation": "Därefter startar du om tjänsten med sudo systemctl restart namn så att ändringen gäller."
+ },
+ {
+  "subject": "linux",
+  "topic": "systemd",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilket kommando listar de systemd-tjänster som har misslyckats?",
+  "options": [
+   "systemctl --failed",
+   "systemctl list-errors",
+   "journalctl --crashed",
+   "systemctl status --all"
+  ],
+  "answer": "systemctl --failed",
+  "explanation": "Bra som första kontroll efter en omstart. Gå sedan vidare med systemctl status namn och journalctl -u namn."
+ },
+ {
+  "subject": "linux",
+  "topic": "Säkerhet",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken inställning i /etc/ssh/sshd_config stänger av lösenordsinloggning, så att bara nycklar fungerar?",
+  "options": [
+   "PasswordAuthentication no",
+   "LoginWithPassword off",
+   "PermitPasswords false",
+   "KeysOnly yes"
+  ],
+  "answer": "PasswordAuthentication no",
+  "explanation": "Se till att din nyckel fungerar innan du stänger av lösenord, och starta om tjänsten med sudo systemctl restart ssh. Behåll en inloggad session öppen medan du testar."
+ },
+ {
+  "subject": "linux",
+  "topic": "Säkerhet",
+  "level": 5,
+  "type": "mc",
+  "question": "Varför sätter man ofta 'PermitRootLogin no' i sshd_config?",
+  "options": [
+   "Så att ingen kan gissa root-lösenordet direkt över SSH",
+   "För att root inte ska kunna använda sudo på servern längre",
+   "För att SSH-inloggningen ska gå snabbare",
+   "För att root-kontot inte har något lösenord alls"
+  ],
+  "answer": "Så att ingen kan gissa root-lösenordet direkt över SSH",
+  "explanation": "Roten är ett känt kontonamn, så alla angripare provar det. Logga in som en vanlig användare och använd sudo vid behov."
+ },
+ {
+  "subject": "linux",
+  "topic": "Säkerhet",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilka rättigheter ska din privata SSH-nyckel, ~/.ssh/id_ed25519, ha?",
+  "options": [
+   "600, så att bara du kan läsa och skriva den",
+   "777, så att alla program och användare kommer åt den",
+   "644, så att andra kan läsa den",
+   "755, så att den går att köra"
+  ],
+  "answer": "600, så att bara du kan läsa och skriva den",
+  "explanation": "SSH vägrar använda en privat nyckel som andra kan läsa, och skriver 'UNPROTECTED PRIVATE KEY FILE'."
+ },
+ {
+  "subject": "linux",
+  "topic": "Säkerhet",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad är fail2ban bra för?",
+  "options": [
+   "Blockerar IP-adresser som gång på gång misslyckas att logga in",
+   "Krypterar hela hårddisken med en stark nyckel så att den är säker",
+   "Tar säkerhetskopior av loggar varje natt och packar dem",
+   "Uppdaterar systemet automatiskt med säkerhetspatchar"
+  ],
+  "answer": "Blockerar IP-adresser som gång på gång misslyckas att logga in",
+  "explanation": "Den läser loggar och lägger in brandväggsregler mot misstänkta adresser. Det minskar bruset från automatiska lösenordsattacker."
+ },
+ {
+  "subject": "linux",
+  "topic": "Säkerhet",
+  "level": 5,
+  "type": "mc",
+  "question": "Varför är 'sudo chmod -R 777 /var/www' en dålig idé?",
+  "options": [
+   "Alla på systemet får läsa, ändra och köra allt där",
+   "Det tar för lång tid på stora kataloger",
+   "Kommandot fungerar inte tillsammans med sudo",
+   "Det raderar alla filer och kataloger i /var/www"
+  ],
+  "answer": "Alla på systemet får läsa, ändra och köra allt där",
+  "explanation": "Hitta rätt ägare och rättigheter i stället, till exempel chown -R www-data:www-data och 755 för kataloger och 644 för filer."
+ },
+ {
+  "subject": "linux",
+  "topic": "Säkerhet",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad betyder en fil med rättigheterna 4755 (setuid)?",
+  "options": [
+   "Programmet körs med filägarens rättigheter, inte startarens",
+   "Filen är skrivskyddad för alla användare utom för root",
+   "Filen raderas automatiskt efter att den körts en gång",
+   "Filen kan bara startas av root och aldrig av någon annan användare"
+  ],
+  "answer": "Programmet körs med filägarens rättigheter, inte startarens",
+  "explanation": "Det är kraftfullt och riskabelt, eftersom ett fel i ett setuid-program kan ge root. Ett exempel är passwd, som måste kunna ändra /etc/shadow."
+ },
+ {
+  "subject": "linux",
+  "topic": "Skript",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad gör 'set -e' högst upp i ett bash-skript?",
+  "options": [
+   "Skriptet avbryts så fort ett kommando misslyckas",
+   "Det skriver ut varje rad i skriptet innan den körs",
+   "Det kör skriptet med root-rättigheter",
+   "Det döljer alla felmeddelanden från skriptet"
+  ],
+  "answer": "Skriptet avbryts så fort ett kommando misslyckas",
+  "explanation": "Många lägger set -euo pipefail överst: avbryt vid fel, avbryt vid oanvända variabler och fånga fel i pipes. Det gör skript mindre överraskande."
+ },
+ {
+  "subject": "linux",
+  "topic": "Backup",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad säger 3-2-1-regeln för säkerhetskopior?",
+  "options": [
+   "3 kopior, på 2 sorters lagring, varav 1 på annan plats",
+   "3 backuper per dag, sparade i 2 veckor och därefter i 1 år",
+   "3 diskar i RAID, på 2 servrar, med 1 användare som ansvarig",
+   "Ta backup 3 gånger, testa 2 gånger och radera 1 gång"
+  ],
+  "answer": "3 kopior, på 2 sorters lagring, varav 1 på annan plats",
+  "explanation": "RAID är ingen backup, eftersom det inte hjälper mot radering, virus eller brand. Testa också att du kan återställa, för först då vet du att kopiorna fungerar."
+ },
+ {
+  "subject": "linux",
+  "topic": "Backup",
+  "level": 5,
+  "type": "mc",
+  "question": "Varför ska man regelbundet testa att återställa en säkerhetskopia?",
+  "options": [
+   "Först då vet man att kopian faktiskt går att använda",
+   "För att backuper annars blir för gamla efter en tid",
+   "För att återställning rensar bort gamla filer",
+   "För att kopian blir mindre varje gång den testas"
+  ],
+  "answer": "Först då vet man att kopian faktiskt går att använda",
+  "explanation": "En backup man aldrig har provat att återställa är en förhoppning. Testa gärna till en annan katalog eller dator."
+ },
+ {
+  "subject": "linux",
+  "topic": "Skal och genvägar",
+  "level": 1,
+  "type": "mc",
+  "question": "Du ser prompten 'anna@dator:~$'. Vad säger tecknet $ på slutet?",
+  "options": [
+   "Att du är en vanlig användare (root har #)",
+   "Att du är inloggad som root, med full makt",
+   "Att det förra kommandot har misslyckats",
+   "Att du står i rotkatalogen längst upp"
+  ],
+  "answer": "Att du är en vanlig användare (root har #)",
+  "explanation": "Prompten visar användare, dator och katalog. ~ betyder hemkatalogen. $ betyder vanlig användare och # betyder root, så ett # är en signal att vara extra försiktig."
+ },
+ {
+  "subject": "linux",
+  "topic": "System",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad är skillnaden mellan Linux och Ubuntu?",
+  "options": [
+   "Linux är kärnan och Ubuntu en distribution med program och verktyg",
+   "Det är samma sak, Ubuntu är bara det nyare namnet på Linux",
+   "Ubuntu är kärnan, och Linux är ett grafiskt program för skrivbordet",
+   "Linux är en distribution, och Ubuntu är en webbläsare för den"
+  ],
+  "answer": "Linux är kärnan och Ubuntu en distribution med program och verktyg",
+  "explanation": "Andra distributioner är till exempel Debian, Fedora och Arch. Kommandona är för det mesta likadana, men pakethanteraren skiljer: Debian och Ubuntu använder apt, och Fedora använder dnf."
+ },
+ {
+  "subject": "linux",
+  "topic": "Skal och genvägar",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad skriver kommandot 'echo hej' ut i terminalen?",
+  "options": [
+   "hej",
+   "echo hej",
+   "Ingenting, det sparar bara ordet",
+   "Ett felmeddelande"
+  ],
+  "answer": "hej",
+  "explanation": "echo skriver ut den text du ger det. Tillsammans med > eller >> kan du skriva texten till en fil."
+ },
+ {
+  "subject": "linux",
+  "topic": "Användare och sudo",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket kommando byter ditt eget lösenord?",
+  "options": [
+   "passwd",
+   "pwd",
+   "whoami",
+   "newpass"
+  ],
+  "answer": "passwd",
+  "explanation": "passwd frågar efter ditt nuvarande lösenord och sedan det nya. Som admin byter du någon annans lösenord med sudo passwd användarnamn."
+ },
+ {
+  "subject": "linux",
+  "topic": "Skal och genvägar",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket kommando visar var programmet python3 ligger, alltså vilken fil som körs när du skriver python3?",
+  "options": [
+   "which python3",
+   "who python3",
+   "whois python3",
+   "whoami python3"
+  ],
+  "answer": "which python3",
+  "explanation": "which letar igenom katalogerna i PATH i ordning och visar den första träffen. Praktiskt när du har flera versioner installerade."
+ },
+ {
+  "subject": "linux",
+  "topic": "Textfiler",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad gör 'grep -r fel /var/log'?",
+  "options": [
+   "Söker efter fel i alla filer under /var/log, även i underkataloger",
+   "Raderar alla filer under /var/log som innehåller ordet fel, rekursivt",
+   "Listar alla filer under /var/log som heter fel",
+   "Söker bara i själva katalogen, inte i filerna i den"
+  ],
+  "answer": "Söker efter fel i alla filer under /var/log, även i underkataloger",
+  "explanation": "-r betyder rekursivt. Det går åt fler rättigheter än du har som vanlig användare, så lägg ofta till sudo."
+ },
+ {
+  "subject": "linux",
+  "topic": "Pipes och omdirigering",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad gör tecknet & sist på en rad, till exempel 'sleep 60 &'?",
+  "options": [
+   "Kör kommandot i bakgrunden så att du kan skriva vidare",
+   "Kör kommandot som root utan att fråga efter lösenord",
+   "Kör kommandot två gånger efter varandra",
+   "Kör kommandot bara om det förra kommandot lyckades"
+  ],
+  "answer": "Kör kommandot i bakgrunden så att du kan skriva vidare",
+  "explanation": "Med jobs ser du vad som körs i bakgrunden. Ett program som ska överleva att du stänger terminalen startar du med nohup eller, ännu bättre, som en tjänst."
+ },
+ {
+  "subject": "linux",
+  "topic": "Filer och kataloger",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad gör 'ln -s /var/log/nginx loggar'?",
+  "options": [
+   "Skapar en symbolisk länk, loggar, som pekar på /var/log/nginx",
+   "Kopierar innehållet i /var/log/nginx till katalogen loggar",
+   "Flyttar katalogen /var/log/nginx och döper om den till loggar",
+   "Raderar /var/log/nginx och skapar loggar i stället"
+  ],
+  "answer": "Skapar en symbolisk länk, loggar, som pekar på /var/log/nginx",
+  "explanation": "En symbolisk länk är som en genväg. Tar du bort länken försvinner inte originalet."
+ },
+ {
+  "subject": "linux",
+  "topic": "Skal och genvägar",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad gör 'export NAMN=värde' i skalet?",
+  "options": [
+   "Gör variabeln tillgänglig för program som startas från skalet",
+   "Skapar en fil som heter NAMN med värdet inuti",
+   "Skriver ut värdet på variabeln NAMN i terminalen",
+   "Sparar variabeln för alltid i alla terminaler, även efter omstart"
+  ],
+  "answer": "Gör variabeln tillgänglig för program som startas från skalet",
+  "explanation": "För att en variabel ska finnas kvar i nya terminaler lägger du raden i ~/.bashrc eller ~/.profile."
+ },
+ {
+  "subject": "linux",
+  "topic": "Användare och sudo",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket kommando skapar en ny användare på Ubuntu med hemkatalog och frågar efter lösenord?",
+  "options": [
+   "sudo adduser anna",
+   "sudo newuser anna",
+   "sudo mkuser anna",
+   "sudo passwd -n anna"
+  ],
+  "answer": "sudo adduser anna",
+  "explanation": "adduser är den vänligare varianten på Debian och Ubuntu. Du kan sedan ge användaren sudo-rättigheter, men bara om hon verkligen ska ha dem."
+ },
+ {
+  "subject": "linux",
+  "topic": "Användare och sudo",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket kommando lägger användaren anna till gruppen sudo, utan att ta bort henne från andra grupper?",
+  "options": [
+   "sudo usermod -aG sudo anna",
+   "sudo groupadd anna sudo",
+   "sudo chmod +sudo anna",
+   "sudo adduser sudo --remove anna"
+  ],
+  "answer": "sudo usermod -aG sudo anna",
+  "explanation": "-a betyder append, och utan det ersätter -G alla andra grupper. Användaren måste logga ut och in igen innan det gäller."
+ },
+ {
+  "subject": "linux",
+  "topic": "Användare och sudo",
+  "level": 5,
+  "type": "mc",
+  "question": "Varför redigerar man sudo-reglerna med 'sudo visudo' och inte direkt i /etc/sudoers?",
+  "options": [
+   "visudo kontrollerar syntaxen före sparning, så du inte blir utlåst",
+   "visudo startar snabbare och är enklare att använda än nano",
+   "visudo ger dig root-rättigheter utan att du behöver lösenord",
+   "Filen /etc/sudoers går inte att öppna med andra redigerare än visudo"
+  ],
+  "answer": "visudo kontrollerar syntaxen före sparning, så du inte blir utlåst",
+  "explanation": "Ett fel i sudoers kan göra att ingen kan använda sudo, och då kan du hamna i en situation där du måste starta från en räddningsskiva."
+ },
+ {
+  "subject": "linux",
+  "topic": "SSH",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket kommando kopierar din publika nyckel till servern så att du kan logga in utan lösenord?",
+  "options": [
+   "ssh-copy-id anna@192.168.1.10",
+   "ssh-add anna@192.168.1.10",
+   "scp -k anna@192.168.1.10",
+   "ssh-send anna@192.168.1.10"
+  ],
+  "answer": "ssh-copy-id anna@192.168.1.10",
+  "explanation": "ssh-copy-id lägger nyckeln i ~/.ssh/authorized_keys på servern. Därefter kan du stänga av lösenordsinloggning."
+ },
+ {
+  "subject": "linux",
+  "topic": "Pipes och omdirigering",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad ger 'sort access.log | uniq -c'?",
+  "options": [
+   "Antalet gånger varje unik rad förekommer",
+   "Raderar alla dubbletter ur access.log",
+   "Sorterar filen i omvänd ordning",
+   "Räknar antalet ord i filen"
+  ],
+  "answer": "Antalet gånger varje unik rad förekommer",
+  "explanation": "uniq tar bara bort rader som står bredvid varandra, så man sorterar först. Lägg till | sort -nr | head för att se de vanligaste överst."
+ },
+ {
+  "subject": "linux",
+  "topic": "Pipes och omdirigering",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad gör '2>&1' i kommandot 'jobb > logg.txt 2>&1'?",
+  "options": [
+   "Skickar felen dit vanlig utdata går, så båda hamnar i filen",
+   "Kör kommandot två gånger och sparar båda körningarna",
+   "Raderar felmeddelandena så att de inte syns någonstans alls",
+   "Skickar all utdata både till skärmen och till filen samtidigt"
+  ],
+  "answer": "Skickar felen dit vanlig utdata går, så båda hamnar i filen",
+  "explanation": "Fel skrivs på en egen ström (nummer 2). I cron-jobb är det ovärderligt att få med felen i loggen."
+ },
+ {
+  "subject": "linux",
+  "topic": "Loggar",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad gör logrotate?",
+  "options": [
+   "Roterar, packar och tar bort gamla loggar så disken inte fylls",
+   "Läser igenom loggarna och larmar när något är fel",
+   "Skickar loggarna vidare till en annan dator för lagring",
+   "Gör gamla loggfiler skrivskyddade så att de inte kan ändras"
+  ],
+  "answer": "Roterar, packar och tar bort gamla loggar så disken inte fylls",
+  "explanation": "Inställningarna ligger i /etc/logrotate.conf och /etc/logrotate.d/. Utan rotation kan en bråkig tjänst fylla disken med loggar."
+ },
+ {
+  "subject": "linux",
+  "topic": "Docker",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad gör 'docker system prune'?",
+  "options": [
+   "Rensar stoppade containrar, oanvända nätverk och namnlösa images",
+   "Stoppar alla containrar som körs just nu och tar sedan bort dem",
+   "Tar bort alla volymer och därmed all data som sparats i dem",
+   "Uppdaterar alla images och startar sedan om alla containrar"
+  ],
+  "answer": "Rensar stoppade containrar, oanvända nätverk och namnlösa images",
+  "explanation": "Bra när disken fylls av gamla images. Lägg till -a för att också ta bort alla oanvända images, och läs frågan innan du svarar y."
+ },
+ {
+  "subject": "linux",
+  "topic": "Backup",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad gör 'rsync -av --delete källa/ mål/'?",
+  "options": [
+   "Gör mål till en exakt kopia av källa, även genom att radera",
+   "Kopierar bara nya filer och rör aldrig något i mål",
+   "Flyttar alla filer från källa till mål och tömmer källa",
+   "Raderar hela källa när kopieringen är klar, för att spara plats"
+  ],
+  "answer": "Gör mål till en exakt kopia av källa, även genom att radera",
+  "explanation": "--delete är användbart för speglingar och farligt när du blandar ihop källa och mål. Prova alltid med --dry-run (-n) först."
+ },
+ {
+  "subject": "linux",
+  "topic": "Paket och uppdateringar",
+  "level": 5,
+  "type": "mc",
+  "question": "Efter en kärnuppdatering finns filen /var/run/reboot-required. Vad betyder det?",
+  "options": [
+   "Datorn behöver startas om så att den nya kärnan används",
+   "Uppdateringen misslyckades och måste därför göras om från början",
+   "Datorn är infekterad och bör stängas av direkt",
+   "Du måste köra apt update igen innan nästa omstart"
+  ],
+  "answer": "Datorn behöver startas om så att den nya kärnan används",
+  "explanation": "Tills du startar om körs den gamla kärnan fortfarande. På en server planerar man omstarten vid en lämplig tidpunkt."
+ }
+]

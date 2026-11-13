@@ -190,7 +190,7 @@ som hämtar ord ur ordlistan (ordklass `glosa`, se `app/seed/words_en.json`). L�
            {"word": "wake", "pos": "glosa", "level": 3, "sv": ["vakna"], "forms": {"past": "woke", "pastpart": "woken"}}]}
 ```
 
-Det finns 12 ämnen: matte, svenska, engelska, K-pop, de naturorienterande **biologi, fysik, kemi och teknik** samt de samhällsorienterande
+Det finns 12 ämnen (plus det valfria extraämnet Linux, se nedan): matte, svenska, engelska, K-pop, de naturorienterande **biologi, fysik, kemi och teknik** samt de samhällsorienterande
 **geografi, historia, religionskunskap och samhällskunskap** (ämnesnamn i importen: `biologi`, `fysik`, `kemi`, `teknik`, `geografi`, `historia`,
 `religionskunskap`, `samhallskunskap`). Äldre installationer hade samlingsämnena `no` och `so`: vid uppgradering flyttas deras övningar, svar och
 nivåer automatiskt till de nya ämnena. Egna övningar som blev kvar i `no`/`so` visas som "NO (natur)" respektive "SO (samhälle)" tills du flyttar dem:
@@ -217,6 +217,24 @@ Under **Elever → en elev** finns rutan **Ämnen för eleven** med två val per
 
 Rutorna vid gruppnamnen slår på eller av hela gruppen. Nya elever och nya ämnen får standardvalen (allt visas, allt utom fritidsämnen
 är med i rapporten). Valen sparas i tabellen `user_subjects`, som läggs till automatiskt vid uppgradering.
+
+**Ämnen som är avstängda tills du slår på dem.** Ämnen i `OPT_IN_SUBJECTS` (i `app/logic.py`) är tvärtom avstängda för *alla* elever som standard,
+och är dessutom inte med i rapporten. De syns, kan övas och har en faktasida först när du bockar i **Visas för eleven** för just den eleven. Det gör
+att ett sådant ämne kan importeras och godkännas utan att någon som inte ska ha det får se det. Det gäller även elever som sparat sina ämnesval förut.
+Än så länge är det bara Linux (se nedan). Ämnet visas under gruppen *Extra*.
+
+### Linux (valfritt extraämne)
+
+Filen `exercises/linux.json` innehåller 129 övningar om terminalkommandon och att sköta och drifta Linux: navigera och hantera filer, text och pipes,
+rättigheter och användare, processer, systemd och cron, paket och uppdateringar, nätverk, SSH och brandvägg, diskar, loggar och backup, Docker samt
+felsökning och säkerhet. Nivå 1 är de allra första kommandona och nivå 5 är riktig driftkunskap (inoder, OOM, sshd_config, setuid, 3-2-1-regeln).
+Nivåtexterna "ungefär åk …" som admin ser gäller skolämnena och betyder inget för Linux.
+Textfrågorna accepterar de vanliga skrivsätten av kommandot (till exempel både `docker compose up -d` och `docker-compose up -d`).
+Det finns också en faktasida med kommandon (`app/facts/linux.md`).
+
+1. Gå till **Importera**, välj `exercises/linux.json` och låt **Granska först** vara ikryssad. Övningarna läggs in dolda.
+2. Läs igenom dem under **Övningar → Väntar på godkännande** och godkänn (*Godkänn alla* med ämnet Linux valt).
+3. Slå på Linux för de elever som ska ha det under **Elever → eleven → Ämnen för eleven**. Ingen elev ser något av detta förrän du gjort det.
 
 ## Fakta
 
