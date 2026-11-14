@@ -135,6 +135,10 @@ document.querySelectorAll('input[data-toggle]').forEach(function (t) {
   <div class="chartlabels">{% for c in chart %}<span>{{ c.date.day }}</span>{% endfor %}</div>
 </div>
 
+<h2 id="utveckling">📈 Utveckling över tid</h2>
+<p class="muted" style="margin-top:0">Andel rätt per vecka. Veckosammanfattningen på startsidan visar bara de senaste sju dagarna.</p>
+{% include "_trend.html" %}
+
 {% for g in groups %}
 <h2 class="grouphead">{{ g.title }}</h2>
 <div class="groupbody">

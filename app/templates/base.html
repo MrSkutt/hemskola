@@ -34,9 +34,10 @@
       <a href="/admin/import">Importera</a>
       <a href="/admin/users">Användare</a>
     {% else %}
-      <a href="/home" {{ 'class=active' if not (path.startswith('/fakta') or path.startswith('/uppgifter')) }}>Övningar</a>
+      <a href="/home" {{ 'class=active' if not (path.startswith('/fakta') or path.startswith('/uppgifter') or path.startswith('/utveckling')) }}>Övningar</a>
       <a href="/fakta" {{ 'class=active' if path.startswith('/fakta') }}>Fakta</a>
       <a href="/uppgifter" {{ 'class=active' if path.startswith('/uppgifter') }}>Uppgifter{% if tb %} <span class="pill wait" title="Uppgifter att göra och nya svar från admin">{{ tb }}</span>{% endif %}</a>
+      <a href="/utveckling" {{ 'class=active' if path.startswith('/utveckling') }}>Utveckling</a>
     {% endif %}
   </nav>
   <form method="post" action="/logout"><span class="muted">{{ user.display_name }}</span> <a class="btn ghost small" href="/tema" title="Byt utseende" aria-label="Byt utseende">🎨</a> <button class="ghost small">Logga ut</button></form>

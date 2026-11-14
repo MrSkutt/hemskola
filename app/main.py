@@ -20,7 +20,7 @@ from starlette.concurrency import run_in_threadpool
 from starlette.middleware.sessions import SessionMiddleware
 
 from . import db as database
-from . import backup, diagrams, facts, logic, missed, motivation, report, tasks, themes, version, weekly
+from . import backup, diagrams, facts, logic, missed, motivation, report, tasks, themes, trend, version, weekly
 from . import exercise_editor as editor
 from . import words as wordlist
 from .security import hash_password, verify_password
@@ -423,6 +423,11 @@ def progress_page(request: Request, user=Depends(student_user), db=Depends(datab
     return render(request, "progress.html", prog=prog, rules=motivation.RULES)
 
 
+@app.get("/utveckling")
+def trend_page(request: Request, veckor: str = "", user=Depends(student_user), db=Depends(database.get_db)):
+    return render(request, "trend.html", tr=trend.for_student(db, user["id"], veckor), trend_url="/utveckling")
+
+
 # ---------------------------------------------------------------- fakta
 
 def _fact_subjects(db, user) -> list:
@@ -536,7 +541,7 @@ def admin_home(request: Request, user=Depends(admin_user), db=Depends(database.g
 
 
 @app.get("/admin/student/{student_id}")
-def admin_student(request: Request, student_id: int, user=Depends(admin_user), db=Depends(database.get_db)):
+def admin_student(request: Request, student_id: int, veckor: str = "", user=Depends(admin_user), db=Depends(database.get_db)):
     s = db.execute("SELECT * FROM users WHERE id=? AND role='student'", (student_id,)).fetchone()
     if not s:
         raise HTTPException(404)
@@ -570,7 +575,8 @@ def admin_student(request: Request, student_id: int, user=Depends(admin_user), d
     return render(request, "admin_student.html", s=s, blocks=blocks, recent=recent, chart=chart,
                   prefs=prefs, pts=pts, rewards=rewards,
                   chart_max=max([c["total"] for c in chart] + [1]), streak=streak, today=count_today,
-                  json=json, groups=groups, settings=settings, bmap={b["subject"]: b for b in blocks})
+                  json=json, groups=groups, settings=settings, bmap={b["subject"]: b for b in blocks},
+                  tr=trend.for_student(db, student_id, veckor, only_enabled=False), trend_url=f"/admin/student/{student_id}")
 
 
 @app.get("/admin/student/{student_id}/report.pdf")

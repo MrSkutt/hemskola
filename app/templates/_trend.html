@@ -1,0 +1,58 @@
+{# Utveckling över tid. Behöver: tr (från trend.build) och trend_url (sidans adress, utan frågedel). #}
+{% macro summary(e, short=false) %}
+  {% if e.latest %}<span>{{ 'Den här veckan' if e.latest.current else 'Senast, ' ~ e.latest.label }}: <strong>{{ e.latest.pct }} %</strong> rätt <span class="muted">({{ e.latest.n }} svar{% if e.latest.unsure %}, för få för att vara säkert{% endif %})</span></span>{% endif %}
+  {% if e.change %}
+    <span class="trchg {{ 'up' if e.change.direction > 0 else ('down' if e.change.direction < 0 else 'flat') }}">
+      {% if e.change.direction > 0 %}↗ {{ e.change.diff }} procentenheter bättre{% elif e.change.direction < 0 %}↘ {{ -e.change.diff }} procentenheter sämre{% else %}→ ungefär som förut{% endif %}</span>
+    <span class="muted psmall">{{ e.change.first_weeks }}: {{ e.change.first }} % → {{ e.change.last_weeks }}: {{ e.change.last }} %</span>
+  {% elif not short %}<span class="muted psmall">För lite data för att jämföra än: det behövs minst 10 svar i både första och sista halvan av perioden.</span>
+  {% else %}<span class="muted psmall">För lite data för att jämföra än.</span>{% endif %}
+{% endmacro %}
+
+{% if tr.ever %}
+<div class="trperiod muted">Period:
+  {% for c in tr.choices %}{% if c == tr.asked %}<strong>{{ c }} veckor</strong>{% else %}<a href="{{ trend_url }}?veckor={{ c }}#utveckling">{{ c }} veckor</a>{% endif %}{{ ' · ' if not loop.last }}{% endfor %}
+  {% if tr.has_data and tr.count < tr.asked %}<span class="psmall">(visar från första veckan med svar)</span>{% endif %}
+</div>
+{% endif %}
+
+{% if not tr.has_data %}
+<div class="card"><p class="muted" style="margin:0">{% if tr.ever %}Inga svar under de här veckorna. Välj en längre period.{% else %}Inga svar än. När det finns svar syns andelen rätt per vecka här.{% endif %}</p></div>
+{% else %}
+<div class="card">
+  <h3 class="trtitle">{{ tr.all.label }}</h3>
+  {% if tr.all.n %}
+    <div class="trsum">{{ summary(tr.all) }}</div>
+    {{ tr.all.svg }}
+    <p class="muted psmall trlegend"><span class="trkey"></span> andel rätt per vecka · <span class="trkey low"></span> färre än {{ tr.unsure_below }} svar den veckan, så det är osäkert · staplarna visar antal svar.
+      Veckan som pågår är med, men den är inte slut än.
+      {% if tr.left_out %}Räknas inte med här: {{ tr.left_out|join(', ') }}.{% endif %}</p>
+  {% else %}
+    <p class="muted" style="margin:0">Inga svar i ämnena som räknas med här{% if tr.left_out %} (svaren är i {{ tr.left_out|join(', ') }}){% endif %}.</p>
+  {% endif %}
+</div>
+
+<h3 class="trhead">Per ämne</h3>
+<div class="trgrid">
+  {% for e in tr.subjects %}
+  <div class="card trcard">
+    <div class="trtitle">{{ e.label }} <span class="muted psmall">{{ e.n }} svar</span></div>
+    <div class="trsum small">{{ summary(e, true) }}</div>
+    {{ e.svg }}
+  </div>
+  {% endfor %}
+</div>
+
+<details class="card trtable">
+  <summary>Visa siffrorna (andel rätt och antal svar per vecka)</summary>
+  <div class="trscroll">
+  <table>
+    <tr>{% for h in tr.table_head %}<th>{{ h }}</th>{% endfor %}</tr>
+    {% for row in tr.table %}
+    <tr><td title="Veckan som börjar {{ row.from }}">{{ row.week }}</td>{% for c in row.cells %}<td>{{ c }}</td>{% endfor %}</tr>
+    {% endfor %}
+  </table>
+  </div>
+  <p class="muted psmall" style="margin-bottom:0">Siffran i parentes är antal svar. Prov räknas med, och veckan går från måndag till söndag.</p>
+</details>
+{% endif %}

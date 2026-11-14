@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}Utveckling – Hemskola{% endblock %}
+{% block content %}
+<p><a href="/home">← Övningar</a></p>
+<h1 id="utveckling">Din utveckling</h1>
+<p class="muted">Så här stor andel du har svarat rätt på varje vecka. Det är normalt att det går upp och ner, så titta på hur linjen ser ut över flera veckor.</p>
+{% include "_trend.html" %}
+{% endblock %}

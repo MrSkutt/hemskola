@@ -28,7 +28,7 @@
   <p class="muted" style="margin-top:0">De senaste 7 dagarna, jämfört med veckan före.</p>
   {% for st in students if st.week %}{% set w = st.week %}
   <div class="weekrow">
-    <div class="rtop"><strong>{{ st.u.display_name }}</strong>
+    <div class="rtop"><strong>{{ st.u.display_name }}</strong> <a class="psmall" href="/admin/student/{{ st.u.id }}#utveckling">📈 Utveckling</a>
       {% if w.n %}<span><strong>{{ w.n }}</strong> svar · <strong>{{ w.pct }} %</strong> rätt · <strong>{{ w.active_days }}</strong> av {{ w.days }} dagar</span>
       <span class="muted">{% if w.trend > 0 %}↑ upp från {{ w.prev_n }}{% elif w.trend < 0 %}↓ ned från {{ w.prev_n }}{% else %}lika många som veckan före{% endif %}{% if w.prev_pct is not none %} ({{ w.prev_pct }} % rätt){% endif %}</span>
       {% else %}<span class="muted">Inga svar de senaste {{ w.days }} dagarna{% if w.prev_n %} (veckan före: {{ w.prev_n }}){% endif %}.</span>{% endif %}

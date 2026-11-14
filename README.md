@@ -308,6 +308,25 @@ Nya elever och befintliga elever får standardvärdena (område på, dagsmål 15
 aktiva dagar, mest övade ämnen, nya nivåer, prov, dagsmålsdagar, områden som behöver mer träning (minst 4 svar och högst 60 % rätt, inte fritidsämnen)
 och hur många frågor som väntar under *Öva på det jag missat*. Allt räknas ut från svaren när sidan öppnas, så inget nytt sparas.
 
+### Utveckling över tid
+
+Veckosammanfattningen ser bara sju dagar bakåt. För att se om eleven faktiskt går framåt finns **andel rätt per vecka** som diagram, på två ställen:
+eleven har en egen flik **Utveckling** i menyn, och du hittar samma diagram under **Elever → eleven → Utveckling över tid** (det finns också en länk
+från veckosammanfattningen). Där kan du välja 8, 12, 26 eller 52 veckor bakåt.
+
+* **Alla ämnen tillsammans** är ett stort diagram med andel rätt (linjen) och antal svar (staplarna). Här räknas bara ämnen som är med i rapporten,
+  så fritidsämnen som K-pop (och Linux) påverkar inte linjen. Vilka som lämnats utanför står under diagrammet.
+* **Per ämne** finns ett litet diagram för varje ämne som eleven svarat i. Eleven ser bara de ämnen som är påslagna för henne, du ser alla.
+* Veckorna är lokala (måndag–söndag) och numrerade som i skolan. Veckan som pågår är med, men den är inte slut än. Prov räknas med.
+* **Veckor med färre än 5 svar är osäkra** och ritas som ringar med streckad linje, för en vecka med två svar och båda rätt betyder inte 100 % kunnande.
+  Veckor utan svar bryter linjen. Axeln börjar vid elevens första svar (men visar aldrig färre än fyra veckor).
+* Över varje diagram står senaste veckan och en jämförelse mellan periodens första och sista halva ("↗ 11 procentenheter bättre"). Jämförelsen visas
+  bara när båda halvorna har minst 10 svar, annars står det att det är för lite data.
+* Under diagrammen finns en tabell med siffrorna (andel rätt och antal svar per vecka). Diagrammen är vanlig SVG som ritas på servern, utan JavaScript,
+  och följer elevens valda tema.
+
+Allt räknas ut från svaren när sidan öppnas (`app/trend.py`), så inget nytt sparas i databasen.
+
 ## Uppgifter
 
 Egna uppgifter som eleven ska göra utanför appen (städa rummet, läsa en bok, rita något) och som ger poäng när du godkänt dem.

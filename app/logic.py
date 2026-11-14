@@ -84,6 +84,11 @@ def today() -> date:
     return datetime.now(TZ).date()
 
 
+def utc_start(day: date) -> str:
+    """Början av en lokal dag som UTC-tid i databasens format."""
+    return datetime.combine(day, dtime.min, TZ).astimezone(timezone.utc).strftime("%Y-%m-%d %H:%M:%S")
+
+
 # ---------------------------------------------------------------- rättning
 
 def _num(text: str):

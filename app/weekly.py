@@ -1,5 +1,5 @@
 """Veckosammanfattning per elev för admins startsida: de senaste sju dagarna (inklusive idag) mot sju dagarna före."""
-from datetime import datetime, time as dtime, timedelta, timezone
+from datetime import timedelta
 
 from . import logic, missed
 
@@ -9,9 +9,7 @@ WEAK_MAX_PCT = 60         # och högst så stor andel rätt
 WEAK_SHOWN = 3
 
 
-def _utc(day) -> str:
-    """Början av en lokal dag som UTC-tid i databasens format."""
-    return datetime.combine(day, dtime.min, logic.TZ).astimezone(timezone.utc).strftime("%Y-%m-%d %H:%M:%S")
+_utc = logic.utc_start
 
 
 def _rate(correct, n):
