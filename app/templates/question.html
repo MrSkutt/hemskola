@@ -1,5 +1,6 @@
 {% extends "base.html" %}
-{% block title %}Fråga – Hemskola{% endblock %}
+{% block title %}Fråga – Hemskola{% if speech %}<script src="/static/speak.js?v={{ version.signature }}" defer></script>{% endif %}
+{% endblock %}
 {% block content %}
 <p class="muted">
   {% if mode == 'test' %}
@@ -14,14 +15,20 @@
 </p>
 <div class="card">
   {% if mode == 'test' %}<div class="bar"><i style="width:{{ ((pos - 1) / test.total * 100)|round }}%"></i></div>{% endif %}
-  <div class="question">{{ ex.question }}</div>
+  {% if speech and speech.question %}<div class="qrow"><div class="question">{{ ex.question }}</div>
+    <button type="button" class="speak" hidden data-speak='{{ speech.question|tojson }}' aria-label="Lyssna på frågan" title="Lyssna">🔊</button></div>
+  {% else %}<div class="question">{{ ex.question }}</div>{% endif %}
   {% if ex.image %}<img class="qimg" src="/media/{{ ex.image }}" alt="Bild till frågan">{% endif %}
   {% if ex.svg %}{{ ex.svg|safe }}{% endif %}
   <form method="post" action="{{ action }}">
     <input type="hidden" name="exercise_id" value="{{ ex.id }}">
     <input type="hidden" name="generated_id" value="{{ ex.generated_id or '' }}">
     {% if options %}
-      {% for o in options %}<button class="choice" name="given" value="{{ o }}">{{ o }}</button>{% endfor %}
+      {% for o in options %}
+        {% if speech and speech.options.get(o) %}<div class="choicerow"><button class="choice" name="given" value="{{ o }}">{{ o }}</button>
+          <button type="button" class="speak" hidden data-speak='{{ speech.options[o]|tojson }}' aria-label="Lyssna på {{ o }}" title="Lyssna">🔊</button></div>
+        {% else %}<button class="choice" name="given" value="{{ o }}">{{ o }}</button>{% endif %}
+      {% endfor %}
     {% else %}
       <div class="answerbox">
         <input name="given" autocomplete="off" autocapitalize="off" autofocus required placeholder="Skriv ditt svar">
@@ -30,6 +37,8 @@
     {% endif %}
   </form>
 </div>
+{% if speech %}<p class="speakmsg muted" role="status" aria-live="polite" hidden></p>{% endif %}
 {% if mode == 'test' %}<p class="muted">Du får se rätt svar när provet är klart.</p>{% endif %}
 {% if facts_subject %}<p class="factlink"><a href="/fakta/{{ facts_subject }}" target="_blank" rel="noopener">📖 Fakta om {{ label_inline(facts_subject) }} (öppnas i ny flik)</a></p>{% endif %}
+{% if speech %}<script src="/static/speak.js?v={{ version.signature }}" defer></script>{% endif %}
 {% endblock %}

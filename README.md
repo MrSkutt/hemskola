@@ -327,6 +327,24 @@ från veckosammanfattningen). Där kan du välja 8, 12, 26 eller 52 veckor bakå
 
 Allt räknas ut från svaren när sidan öppnas (`app/trend.py`), så inget nytt sparas i databasen.
 
+### Uppläsning i språkämnen (🔊)
+
+I språkämnen får frågor och svarsalternativ en **högtalarknapp** som läser upp texten med enhetens egen röst (webbläsarens inbyggda `speechSynthesis`).
+Det kostar inget, skickar ingenting till någon tjänst och passar bäst för uttal. Ämnen som heter `engelska`, `franska`, `tyska`, `spanska` eller
+`italienska` får knapparna (engelska finns redan, de andra när du lägger in ämnen med de namnen, se *Lägg in fler övningar*).
+
+* **Bara det som är på språket läses upp**, med rätt röst. "Vad betyder 'dog' på svenska?" läser bara upp *dog*, och i "Hur säger man 'hund' på engelska?"
+  får i stället varje svarsalternativ en egen knapp. Svenska delar läses aldrig med en utländsk röst. Är servern osäker på vilket språk en text har
+  läses den inte upp alls, så en fråga utan knapp är ett säkert val och inget fel. Reglerna finns i `app/speech.py`.
+* **Rätt svar läses aldrig upp före svaret.** Först på svarssidan finns knappen *Hör hur det låter*, och för en lucka ("I ___ twelve years old.") läses då hela
+  meningen med rätt ord i.
+* Inget spelas av sig självt, bara när man trycker. Ett tryck till på samma knapp stoppar.
+* Det är enhetens röster som gäller. Saknas en röst för språket (vanligt på en Linux-dator utan talsyntes) visas ett meddelande om det i stället för att
+  fel röst läser. Telefoner och Windows/Mac brukar ha engelska, franska, tyska, spanska och italienska. I webbläsare utan talstöd syns inga knappar.
+* Admin kan slå av och på uppläsning per elev under **Elever → eleven → Dagsmål, poäng och belöningar** (på som standard).
+* När du ber Claude skriva övningar i ett språkämne: skriv hela frågan på språket, eller en svensk fråga med det främmande ordet inom enkla citattecken och
+  en ledtråd (*på svenska* / *på franska*). Under **Importera** finns texten att kopiera, med den instruktionen inbyggd.
+
 ## Uppgifter
 
 Egna uppgifter som eleven ska göra utanför appen (städa rummet, läsa en bok, rita något) och som ger poäng när du godkänt dem.

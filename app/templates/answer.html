@@ -3,7 +3,9 @@
 {% block content %}
 <p class="muted">{{ label(ex.subject) }} · {{ ex.topic }}{% if area %} · Område: {{ area }}{% endif %}</p>
 <div class="card">
-  <div class="question">{{ ex.question }}</div>
+  {% if speech and speech.question %}<div class="qrow"><div class="question">{{ ex.question }}</div>
+    <button type="button" class="speak" hidden data-speak='{{ speech.question|tojson }}' aria-label="Lyssna på frågan" title="Lyssna">🔊</button></div>
+  {% else %}<div class="question">{{ ex.question }}</div>{% endif %}
   {% if ex.image %}<img class="qimg" src="/media/{{ ex.image }}" alt="Bild till frågan">{% endif %}
   {% if ex.svg %}{{ ex.svg|safe }}{% endif %}
   {% if a.correct %}
@@ -11,6 +13,8 @@
   {% else %}
     <div class="result wrong">Inte riktigt. Du svarade <strong>{{ a.given }}</strong>.<br>Rätt svar: <strong>{{ answers[0] }}</strong></div>
   {% endif %}
+  {% if speech and speech.answer %}<p><button type="button" class="speak wide" hidden data-speak='{{ speech.answer|tojson }}'>🔊 Hör hur det låter</button></p>
+  <p class="speakmsg muted" role="status" aria-live="polite" hidden></p>{% endif %}
   {% if ex.explanation %}<p>💡 {{ ex.explanation }}</p>{% endif %}
   {% if from_missed %}
     <p class="muted">{% if a.correct %}Den är avklarad. {% else %}Den kommer tillbaka lite senare. {% endif %}{% if remaining %}Kvar att klara: <strong>{{ remaining }}</strong>.{% else %}🎉 Du har klarat allt du missat!{% endif %}</p>
@@ -27,4 +31,5 @@
      <a class="btn ghost" href="/home">Avsluta</a></p>
   {% endif %}
 </div>
+{% if speech %}<script src="/static/speak.js?v={{ version.signature }}" defer></script>{% endif %}
 {% endblock %}

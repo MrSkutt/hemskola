@@ -20,7 +20,7 @@ from starlette.concurrency import run_in_threadpool
 from starlette.middleware.sessions import SessionMiddleware
 
 from . import db as database
-from . import backup, diagrams, facts, logic, missed, motivation, report, tasks, themes, trend, version, weekly
+from . import backup, diagrams, facts, logic, missed, motivation, report, speech, tasks, themes, trend, version, weekly
 from . import exercise_editor as editor
 from . import words as wordlist
 from .security import hash_password, verify_password
@@ -339,7 +339,7 @@ def practice(request: Request, subject: str, omrade: str = "", user=Depends(stud
         return go("/home")
     return render(request, "question.html", ex=item, options=_shuffled(item),
                   action=f"/practice/{subject}{_area_qs(area)}", mode="practice", level=level, area=area,
-                  window=logic.window_results(db, user["id"], subject),
+                  window=logic.window_results(db, user["id"], subject), speech=_speech(db, user["id"], item),
                   facts_subject=subject if facts.exists(subject) else None)
 
 
@@ -349,6 +349,14 @@ def _shuffled(item):
     opts = list(item["options"])
     random.shuffle(opts)
     return opts
+
+
+def _speech(db, user_id: int, item, reveal: bool = False):
+    """Det som får läsas upp för frågan (bara språkämnen, och bara om uppläsning är på för eleven).
+    Rätt svar följer bara med på svarssidan (reveal)."""
+    if item["subject"] not in speech.LANGUAGES or not logic.get_prefs(db, user_id)["speech_on"]:
+        return None
+    return speech.plan(item["subject"], item["question"], item["options"], item["answers"], reveal)
 
 
 @app.post("/practice/{subject}")
@@ -379,7 +387,7 @@ def missed_page(request: Request, amne: str = "", user=Depends(student_user), db
         return render(request, "missed_done.html", remaining=state["remaining"], paused=state["paused"], amne=amne)
     return render(request, "question.html", ex=item, options=_shuffled(item), mode="missed",
                   action="/missat" + (f"?amne={quote(amne)}" if amne else ""), level=logic.get_level(db, user["id"], item["subject"]),
-                  area="", remaining=state["remaining"], window=[],
+                  area="", remaining=state["remaining"], window=[], speech=_speech(db, user["id"], item),
                   facts_subject=item["subject"] if facts.exists(item["subject"]) else None)
 
 
@@ -411,7 +419,7 @@ def answer_page(request: Request, attempt_id: int, change: str = "", omrade: str
     return render(request, "answer.html", a=a, ex=item, answers=item["answers"],
                   change=change if change in ("up", "down") else "", level=level, area=omrade[:80],
                   window=logic.window_results(db, user["id"], item["subject"]),
-                  from_missed=from_missed, amne=amne,
+                  speech=_speech(db, user["id"], item, reveal=True), from_missed=from_missed, amne=amne,
                   remaining=len(missed.missed_items(db, user["id"], amne)) if from_missed else 0)
 
 
@@ -494,7 +502,7 @@ def test_page(request: Request, test_id: int, user=Depends(student_user), db=Dep
         return go(f"/test/{test_id}/result")
     pos, item = nxt
     return render(request, "question.html", ex=item, options=_shuffled(item), action=f"/test/{test_id}",
-                  mode="test", test=t, pos=pos)
+                  mode="test", test=t, pos=pos, speech=_speech(db, user["id"], item))
 
 
 @app.post("/test/{test_id}")
@@ -618,11 +626,11 @@ def _require_student(db, student_id: int) -> None:
 
 @app.post("/admin/student/{student_id}/prefs")
 def admin_set_prefs(request: Request, student_id: int, daily_goal: str = Form("0"), areas_on: str = Form(""),
-                    points_on: str = Form(""), badges_on: str = Form(""),
+                    points_on: str = Form(""), badges_on: str = Form(""), speech_on: str = Form(""),
                     user=Depends(admin_user), db=Depends(database.get_db)):
     _require_student(db, student_id)
     goal = int(daily_goal) if daily_goal.strip().isdigit() else 0
-    logic.save_prefs(db, student_id, bool(areas_on), goal, bool(points_on), bool(badges_on))
+    logic.save_prefs(db, student_id, bool(areas_on), goal, bool(points_on), bool(badges_on), speech_on=bool(speech_on))
     db.commit()
     flash(request, "Inställningarna är sparade.")
     return go(f"/admin/student/{student_id}#motivation")

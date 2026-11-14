@@ -546,14 +546,15 @@ def get_prefs(db, user_id: int, commit: bool = True) -> dict:
         db.commit()
     r = db.execute("SELECT * FROM user_prefs WHERE user_id=?", (user_id,)).fetchone()
     return {"areas_on": bool(r["areas_on"]), "daily_goal": r["daily_goal"], "points_on": bool(r["points_on"]),
-            "badges_on": bool(r["badges_on"]), "points_since": r["points_since"]}
+            "badges_on": bool(r["badges_on"]), "speech_on": bool(r["speech_on"]), "points_since": r["points_since"]}
 
 
-def save_prefs(db, user_id: int, areas_on: bool, daily_goal: int, points_on: bool, badges_on: bool) -> None:
+def save_prefs(db, user_id: int, areas_on: bool, daily_goal: int, points_on: bool, badges_on: bool,
+               speech_on: bool = True) -> None:
     get_prefs(db, user_id, commit=False)
-    db.execute("UPDATE user_prefs SET areas_on=?, daily_goal=?, points_on=?, badges_on=? WHERE user_id=?",
+    db.execute("UPDATE user_prefs SET areas_on=?, daily_goal=?, points_on=?, badges_on=?, speech_on=? WHERE user_id=?",
                (1 if areas_on else 0, max(0, min(200, int(daily_goal))), 1 if points_on else 0,
-                1 if badges_on else 0, user_id))
+                1 if badges_on else 0, 1 if speech_on else 0, user_id))
 
 
 def answers_today(db, user_id: int, subjects) -> int:

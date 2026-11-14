@@ -20,9 +20,9 @@
 <details class="card">
   <summary><strong>Be Claude skriva nya övningar</strong></summary>
   <p class="muted">Kopiera texten, ändra ämne, nivå och antal och skicka den till Claude. Klistra sedan in svaret här ovanför. Med <em>Granska först</em> ikryssad ser eleven inget förrän du godkänt.</p>
-  <textarea id="aiprompt" readonly spellcheck="false" style="min-height:11rem">Skriv 30 nya övningar i ämnet matte, nivå 3 (skala 1–5, för en 14-åring i årskurs 8), område: procent. Svara bara med JSON, en lista med objekt i det här formatet:
+  <textarea id="aiprompt" readonly spellcheck="false" style="min-height:14rem">Skriv 30 nya övningar i ämnet matte, nivå 3 (skala 1–5, för en 14-åring i årskurs 8), område: procent. Svara bara med JSON, en lista med objekt i det här formatet:
 {"subject": "matte", "topic": "Procent", "level": 3, "type": "text", "question": "Hur mycket är 10 % av 350? Svara endast med talet.", "answer": "35", "explanation": "10 % är en tiondel."}
-Regler: type är "mc" (då med "options": [...] där "answer" finns bland alternativen) eller "text" (då ska frågan säga hur man ska svara, t.ex. "Svara endast med talet", och "answer" får vara en lista med alla godkända sätt att svara). Blanda svårighet inom nivån, skriv på svenska, och ge varje övning en kort förklaring. Frågorna får inte upprepa varandra.</textarea>
+Regler: type är "mc" (då med "options": [...] där "answer" finns bland alternativen) eller "text" (då ska frågan säga hur man ska svara, t.ex. "Svara endast med talet", och "answer" får vara en lista med alla godkända sätt att svara). Blanda svårighet inom nivån, skriv på svenska, och ge varje övning en kort förklaring. Frågorna får inte upprepa varandra. Om ämnet är ett språk (engelska, franska, tyska, spanska eller italienska): skriv antingen hela frågan på språket, eller en svensk fråga där det främmande ordet står inom enkla citattecken, t.ex. Vad betyder 'chat' på svenska? eller Hur säger man 'hund' på franska? Då kan appen läsa upp orden med rätt röst.</textarea>
   <p><button type="button" class="small ghost" id="copyprompt">Kopiera texten</button> <span class="muted" id="copied" hidden>Kopierad ✔</span></p>
 </details>
 <div class="card">
@@ -51,6 +51,8 @@ Regler: type är "mc" (då med "options": [...] där "answer" finns bland altern
     <li><code>coordinate</code>: <code>xmin</code>, <code>xmax</code>, <code>ymin</code>, <code>ymax</code>, <code>points</code> [{"x":2,"y":3,"label":"A"}], valfritt <code>line</code> {"k":2,"m":1}</li>
     <li><code>angle</code>: <code>degrees</code> (1–180), valfritt <code>label</code></li>
   </ul>
+  <h3>Språkämnen och uppläsning 🔊</h3>
+  <p>I ämnen som heter <code>engelska</code>, <code>franska</code>, <code>tyska</code>, <code>spanska</code> eller <code>italienska</code> får frågor och alternativ en högtalarknapp som läser upp texten med enhetens egen röst. Appen läser bara det som säkert är på språket, så skriv antingen hela frågan på språket (<em>Which word is a verb?</em>) eller en svensk fråga med det främmande ordet inom enkla citattecken och en ledtråd om språket: <em>Vad betyder 'dog' på svenska?</em> / <em>Hur säger man 'hund' på engelska?</em>. En lucka skrivs <code>___</code>. Är appen osäker läses ingenting upp.</p>
   <h3>Ord till ordlistan</h3>
   <p>Samma fält kan även innehålla ord: <code>{"exercises": [...], "words": [...]}</code>. Ett ord:</p>
   <pre style="white-space:pre-wrap">{"word": "springa", "pos": "verb", "level": 1,

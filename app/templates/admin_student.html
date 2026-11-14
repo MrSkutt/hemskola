@@ -71,7 +71,9 @@ document.querySelectorAll('input[data-toggle]').forEach(function (t) {
       <label class="check"><input type="checkbox" name="areas_on" value="1" {{ 'checked' if prefs.areas_on }}> Får välja område att öva på</label>
       <label class="check"><input type="checkbox" name="points_on" value="1" {{ 'checked' if prefs.points_on }}> Poäng och belöningar</label>
       <label class="check"><input type="checkbox" name="badges_on" value="1" {{ 'checked' if prefs.badges_on }}> Märken</label>
+      <label class="check"><input type="checkbox" name="speech_on" value="1" {{ 'checked' if prefs.speech_on }}> Uppläsning i språkämnen (🔊)</label>
     </div>
+    <div class="muted" style="margin-top:.4rem">🔊 läser upp engelska (och franska, tyska, spanska och italienska om du lagt in ämnen med de namnen) med enhetens egen röst. Rätt svar läses aldrig upp före svaret.</div>
     <p style="margin:.6rem 0 0"><button class="small">Spara</button></p>
   </form>
 

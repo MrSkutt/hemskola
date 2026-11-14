@@ -312,3 +312,15 @@ button.themecard.on { border-color: var(--accent); box-shadow: 0 0 0 2px var(--a
   .trsvg.big .tr-num { font-size: 12px; }
   .trsvg.big .tr-value { font-size: 17px; }
 }
+
+/* Uppläsning (🔊): knappen göms tills webbläsaren visat sig kunna tala */
+.qrow { display: flex; gap: .7rem; align-items: flex-start; } .qrow .question { flex: 1; }
+.choicerow { display: flex; gap: .5rem; align-items: stretch; margin-bottom: .6rem; } .choicerow .choice { flex: 1; margin-bottom: 0; }
+button.speak { background: var(--tint); color: var(--text); border: 2px solid var(--line); border-radius: 12px; padding: .35rem .7rem;
+  font-size: 1.15rem; line-height: 1.2; min-width: 2.8rem; min-height: 2.8rem; flex: none; }
+button.speak:hover { border-color: var(--accent); background: var(--tint); }
+button.speak.speaking { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+button.speak.wide { font-size: 1rem; font-weight: 600; }
+button.speak[hidden], .speakmsg[hidden] { display: none; }
+.speakmsg { margin: .5rem 0 0; }
+@media (max-width: 600px) { .qrow { gap: .5rem; } }

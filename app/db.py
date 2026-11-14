@@ -197,6 +197,7 @@ ADDED_COLUMNS = [
     ("rewards", "retired", "INTEGER NOT NULL DEFAULT 0"),
     ("attempts", "generated_id", "INTEGER REFERENCES generated(id)"),
     ("test_items", "generated_id", "INTEGER REFERENCES generated(id)"),
+    ("user_prefs", "speech_on", "INTEGER NOT NULL DEFAULT 1"),
 ]
 LATE_INDEXES = [
     "CREATE INDEX IF NOT EXISTS idx_attempts_generated ON attempts(generated_id)",
