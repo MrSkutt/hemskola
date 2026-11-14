@@ -4,6 +4,7 @@ Ett litet webbaserat övningssystem för hemmabruk: eleven gör ett inledande te
 på en nivå som anpassar sig, och gör statusprov då och då. Admin ser resultat och lägger in nya övningar.
 
 * 12 ämnen från start (matte, svenska, engelska, K-pop och åtta NO/SO-ämnen), nivå 1–5, ungefär åk 4–9: drygt 1 200 färdiga frågor plus generatorer som skapar nya
+* Tyska finns med som valfritt extraämne (drygt 200 frågor, ordlista med artiklar och verbformer, faktasida och uppläsning), avstängt tills du slår på det för en elev
 * Backend: Python / FastAPI, databas: SQLite, webbserver: nginx, allt i Docker
 * Inloggning med rollerna **admin** och **elev** (flera elever går bra)
 
@@ -190,7 +191,7 @@ som hämtar ord ur ordlistan (ordklass `glosa`, se `app/seed/words_en.json`). L�
            {"word": "wake", "pos": "glosa", "level": 3, "sv": ["vakna"], "forms": {"past": "woke", "pastpart": "woken"}}]}
 ```
 
-Det finns 12 ämnen (plus det valfria extraämnet Linux, se nedan): matte, svenska, engelska, K-pop, de naturorienterande **biologi, fysik, kemi och teknik** samt de samhällsorienterande
+Det finns 12 ämnen (plus de valfria extraämnena tyska och Linux, se nedan): matte, svenska, engelska, K-pop, de naturorienterande **biologi, fysik, kemi och teknik** samt de samhällsorienterande
 **geografi, historia, religionskunskap och samhällskunskap** (ämnesnamn i importen: `biologi`, `fysik`, `kemi`, `teknik`, `geografi`, `historia`,
 `religionskunskap`, `samhallskunskap`). Äldre installationer hade samlingsämnena `no` och `so`: vid uppgradering flyttas deras övningar, svar och
 nivåer automatiskt till de nya ämnena. Egna övningar som blev kvar i `no`/`so` visas som "NO (natur)" respektive "SO (samhälle)" tills du flyttar dem:
@@ -221,7 +222,7 @@ Rutorna vid gruppnamnen slår på eller av hela gruppen. Nya elever och nya ämn
 **Ämnen som är avstängda tills du slår på dem.** Ämnen i `OPT_IN_SUBJECTS` (i `app/logic.py`) är tvärtom avstängda för *alla* elever som standard,
 och är dessutom inte med i rapporten. De syns, kan övas och har en faktasida först när du bockar i **Visas för eleven** för just den eleven. Det gör
 att ett sådant ämne kan importeras och godkännas utan att någon som inte ska ha det får se det. Det gäller även elever som sparat sina ämnesval förut.
-Än så länge är det bara Linux (se nedan). Ämnet visas under gruppen *Extra*.
+Än så länge är det tyska och Linux (se nedan). Ämnena visas under gruppen *Extra*.
 
 ### Linux (valfritt extraämne)
 
@@ -235,6 +236,24 @@ Det finns också en faktasida med kommandon (`app/facts/linux.md`).
 1. Gå till **Importera**, välj `exercises/linux.json` och låt **Granska först** vara ikryssad. Övningarna läggs in dolda.
 2. Läs igenom dem under **Övningar → Väntar på godkännande** och godkänn (*Godkänn alla* med ämnet Linux valt).
 3. Slå på Linux för de elever som ska ha det under **Elever → eleven → Ämnen för eleven**. Ingen elev ser något av detta förrän du gjort det.
+
+### Tyska (valfritt extraämne)
+
+Tyska följer med i installationen (`app/seed/tyska.json`, `app/seed/words_de.json`), så det finns direkt, men det är **avstängt för alla elever** tills du
+bockar i **Visas för eleven** för just den eleven under **Elever → eleven → Ämnen för eleven**. Vill du ha tyskan med i PDF-rapporten bockar du också i
+**Med i rapporten** (som standard är det av).
+
+* **202 färdiga frågor**, nivå 1–5, i sex områden: *Ord och fraser* (hälsningar, siffror och tid, länder och vardag), *Uttal och stavning*,
+  *Artiklar och substantiv*, *Verb* (presens, modalverb, perfekt, verb med delar), *Meningar* (ordföljd, nekande, frågeord, bisatser) samt *Kasus och adjektiv*.
+* **Ordlista med 331 ord** (`pos: "tyska"`): substantiv med artikel (`der`/`die`/`das`) och pluralform, verb med alla personer i presens och perfekt,
+  adjektiv, siffror och småord. Generatorerna (`app/generators_de.py`) skapar glosor åt båda hållen, artikelfrågor, plural, verbformer och perfekt, så att
+  det aldrig tar slut. Substantiv visas alltid med sin artikel.
+* **Faktasida** (`app/facts/tyska.md`) med uttal, artiklar, plural, verb, ordföljd, kasus och ord som luras.
+* **Skrivsvar utan ä, ö, ü och ß** godkänns (ae, oe, ue och ss), eftersom många inte har de tangenterna. Stor bokstav på substantiv kontrolleras inte i skrivsvar.
+* **Uppläsning** med tysk röst (se nedan). Enheten behöver ha en tysk röst installerad.
+* Innehållet är skrivet av AI och har kontrollerats i tester (artiklar, pluralformer, verbböjning, att rätt svar bara finns en gång). Be gärna någon som kan
+  tyska läsa igenom det en gång. Fel går att rätta eller stänga av under **Övningar**.
+* Nivåtexterna "ungefär åk …" som admin ser gäller skolämnena och betyder inget för tyska: nivå 1 är första orden och fraserna, nivå 5 är bisatser, kasus och perfekt.
 
 ## Fakta
 
@@ -331,7 +350,7 @@ Allt räknas ut från svaren när sidan öppnas (`app/trend.py`), så inget nytt
 
 I språkämnen får frågor och svarsalternativ en **högtalarknapp** som läser upp texten med enhetens egen röst (webbläsarens inbyggda `speechSynthesis`).
 Det kostar inget, skickar ingenting till någon tjänst och passar bäst för uttal. Ämnen som heter `engelska`, `franska`, `tyska`, `spanska` eller
-`italienska` får knapparna (engelska finns redan, de andra när du lägger in ämnen med de namnen, se *Lägg in fler övningar*).
+`italienska` får knapparna (engelska och tyska finns redan, de andra när du lägger in ämnen med de namnen, se *Lägg in fler övningar*).
 
 * **Bara det som är på språket läses upp**, med rätt röst. "Vad betyder 'dog' på svenska?" läser bara upp *dog*, och i "Hur säger man 'hund' på engelska?"
   får i stället varje svarsalternativ en egen knapp. Svenska delar läses aldrig med en utländsk röst. Är servern osäker på vilket språk en text har

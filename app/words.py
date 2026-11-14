@@ -2,9 +2,12 @@
 import json
 
 POS = ["substantiv", "verb", "adjektiv", "adverb", "preposition", "pronomen", "räkneord",
-       "konjunktion", "subjunktion", "interjektion", "glosa", "koreanska"]
+       "konjunktion", "subjunktion", "interjektion", "glosa", "koreanska", "tyska"]
 FORM_KEYS = {"plural", "bestamd", "bestamd_plural", "presens", "preteritum", "supinum", "imperativ",
-             "komparativ", "superlativ", "neutrum", "past", "pastpart"}
+             "komparativ", "superlativ", "neutrum", "past", "pastpart",
+             # tyska verb: presens per person (er = er/sie/es, sie = de), samt perfekt i er-form ("hat gemacht")
+             "ich", "du", "er", "wir", "ihr", "sie", "perfekt"}
+ARTICLES = ("der", "die", "das")
 
 
 class WordBank:
@@ -89,10 +92,14 @@ def validate_word(d):
         if d["gender"] not in ("en", "ett"):
             return None, "gender måste vara 'en' eller 'ett'"
         data["gender"] = d["gender"]
+    if pos == "tyska" and d.get("article") is not None:
+        if d["article"] not in ARTICLES:
+            return None, "article måste vara 'der', 'die' eller 'das'"
+        data["article"] = d["article"]
     for k in ("antonym", "synonym", "example"):
         if d.get(k):
             data[k] = str(d[k]).strip()[:120]
-    if pos in ("glosa", "koreanska"):
+    if pos in ("glosa", "koreanska", "tyska"):
         sv = d.get("sv")
         sv = [sv] if isinstance(sv, str) else sv
         if not isinstance(sv, list) or not sv or not all(isinstance(x, str) and x.strip() and len(x) <= 40 for x in sv):

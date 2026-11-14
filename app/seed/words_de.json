@@ -1,0 +1,3551 @@
+{
+ "words": [
+  {
+   "word": "Hund",
+   "pos": "tyska",
+   "level": 1,
+   "article": "der",
+   "sv": [
+    "hund"
+   ],
+   "forms": {
+    "plural": "Hunde"
+   }
+  },
+  {
+   "word": "Katze",
+   "pos": "tyska",
+   "level": 1,
+   "article": "die",
+   "sv": [
+    "katt"
+   ],
+   "forms": {
+    "plural": "Katzen"
+   }
+  },
+  {
+   "word": "Haus",
+   "pos": "tyska",
+   "level": 1,
+   "article": "das",
+   "sv": [
+    "hus"
+   ],
+   "forms": {
+    "plural": "Häuser"
+   }
+  },
+  {
+   "word": "Auto",
+   "pos": "tyska",
+   "level": 1,
+   "article": "das",
+   "sv": [
+    "bil"
+   ],
+   "forms": {
+    "plural": "Autos"
+   }
+  },
+  {
+   "word": "Buch",
+   "pos": "tyska",
+   "level": 1,
+   "article": "das",
+   "sv": [
+    "bok"
+   ],
+   "forms": {
+    "plural": "Bücher"
+   }
+  },
+  {
+   "word": "Wasser",
+   "pos": "tyska",
+   "level": 1,
+   "article": "das",
+   "sv": [
+    "vatten"
+   ]
+  },
+  {
+   "word": "Apfel",
+   "pos": "tyska",
+   "level": 1,
+   "article": "der",
+   "sv": [
+    "äpple"
+   ],
+   "forms": {
+    "plural": "Äpfel"
+   }
+  },
+  {
+   "word": "Schule",
+   "pos": "tyska",
+   "level": 1,
+   "article": "die",
+   "sv": [
+    "skola"
+   ],
+   "forms": {
+    "plural": "Schulen"
+   }
+  },
+  {
+   "word": "Freund",
+   "pos": "tyska",
+   "level": 1,
+   "article": "der",
+   "sv": [
+    "kompis"
+   ],
+   "forms": {
+    "plural": "Freunde"
+   }
+  },
+  {
+   "word": "Freundin",
+   "pos": "tyska",
+   "level": 1,
+   "article": "die",
+   "sv": [
+    "väninna",
+    "flickvän"
+   ],
+   "forms": {
+    "plural": "Freundinnen"
+   }
+  },
+  {
+   "word": "Mutter",
+   "pos": "tyska",
+   "level": 1,
+   "article": "die",
+   "sv": [
+    "mamma",
+    "mor"
+   ],
+   "forms": {
+    "plural": "Mütter"
+   }
+  },
+  {
+   "word": "Vater",
+   "pos": "tyska",
+   "level": 1,
+   "article": "der",
+   "sv": [
+    "pappa",
+    "far"
+   ],
+   "forms": {
+    "plural": "Väter"
+   }
+  },
+  {
+   "word": "Bruder",
+   "pos": "tyska",
+   "level": 1,
+   "article": "der",
+   "sv": [
+    "bror"
+   ],
+   "forms": {
+    "plural": "Brüder"
+   }
+  },
+  {
+   "word": "Schwester",
+   "pos": "tyska",
+   "level": 1,
+   "article": "die",
+   "sv": [
+    "syster"
+   ],
+   "forms": {
+    "plural": "Schwestern"
+   }
+  },
+  {
+   "word": "Kind",
+   "pos": "tyska",
+   "level": 1,
+   "article": "das",
+   "sv": [
+    "barn"
+   ],
+   "forms": {
+    "plural": "Kinder"
+   }
+  },
+  {
+   "word": "Baum",
+   "pos": "tyska",
+   "level": 1,
+   "article": "der",
+   "sv": [
+    "träd"
+   ],
+   "forms": {
+    "plural": "Bäume"
+   }
+  },
+  {
+   "word": "Sonne",
+   "pos": "tyska",
+   "level": 1,
+   "article": "die",
+   "sv": [
+    "sol"
+   ],
+   "forms": {
+    "plural": "Sonnen"
+   }
+  },
+  {
+   "word": "Milch",
+   "pos": "tyska",
+   "level": 1,
+   "article": "die",
+   "sv": [
+    "mjölk"
+   ]
+  },
+  {
+   "word": "Brot",
+   "pos": "tyska",
+   "level": 1,
+   "article": "das",
+   "sv": [
+    "bröd"
+   ],
+   "forms": {
+    "plural": "Brote"
+   }
+  },
+  {
+   "word": "Tag",
+   "pos": "tyska",
+   "level": 1,
+   "article": "der",
+   "sv": [
+    "dag"
+   ],
+   "forms": {
+    "plural": "Tage"
+   }
+  },
+  {
+   "word": "Nacht",
+   "pos": "tyska",
+   "level": 1,
+   "article": "die",
+   "sv": [
+    "natt"
+   ],
+   "forms": {
+    "plural": "Nächte"
+   }
+  },
+  {
+   "word": "Mann",
+   "pos": "tyska",
+   "level": 1,
+   "article": "der",
+   "sv": [
+    "man"
+   ],
+   "forms": {
+    "plural": "Männer"
+   }
+  },
+  {
+   "word": "Frau",
+   "pos": "tyska",
+   "level": 1,
+   "article": "die",
+   "sv": [
+    "kvinna",
+    "fru"
+   ],
+   "forms": {
+    "plural": "Frauen"
+   }
+  },
+  {
+   "word": "Junge",
+   "pos": "tyska",
+   "level": 1,
+   "article": "der",
+   "sv": [
+    "pojke"
+   ],
+   "forms": {
+    "plural": "Jungen"
+   }
+  },
+  {
+   "word": "Mädchen",
+   "pos": "tyska",
+   "level": 1,
+   "article": "das",
+   "sv": [
+    "flicka"
+   ],
+   "forms": {
+    "plural": "Mädchen"
+   }
+  },
+  {
+   "word": "Tisch",
+   "pos": "tyska",
+   "level": 1,
+   "article": "der",
+   "sv": [
+    "bord"
+   ],
+   "forms": {
+    "plural": "Tische"
+   }
+  },
+  {
+   "word": "Stuhl",
+   "pos": "tyska",
+   "level": 1,
+   "article": "der",
+   "sv": [
+    "stol"
+   ],
+   "forms": {
+    "plural": "Stühle"
+   }
+  },
+  {
+   "word": "Zimmer",
+   "pos": "tyska",
+   "level": 1,
+   "article": "das",
+   "sv": [
+    "rum"
+   ],
+   "forms": {
+    "plural": "Zimmer"
+   }
+  },
+  {
+   "word": "Fisch",
+   "pos": "tyska",
+   "level": 1,
+   "article": "der",
+   "sv": [
+    "fisk"
+   ],
+   "forms": {
+    "plural": "Fische"
+   }
+  },
+  {
+   "word": "Vogel",
+   "pos": "tyska",
+   "level": 1,
+   "article": "der",
+   "sv": [
+    "fågel"
+   ],
+   "forms": {
+    "plural": "Vögel"
+   }
+  },
+  {
+   "word": "Blume",
+   "pos": "tyska",
+   "level": 1,
+   "article": "die",
+   "sv": [
+    "blomma"
+   ],
+   "forms": {
+    "plural": "Blumen"
+   }
+  },
+  {
+   "word": "Bett",
+   "pos": "tyska",
+   "level": 1,
+   "article": "das",
+   "sv": [
+    "säng"
+   ],
+   "forms": {
+    "plural": "Betten"
+   }
+  },
+  {
+   "word": "Tür",
+   "pos": "tyska",
+   "level": 1,
+   "article": "die",
+   "sv": [
+    "dörr"
+   ],
+   "forms": {
+    "plural": "Türen"
+   }
+  },
+  {
+   "word": "Fenster",
+   "pos": "tyska",
+   "level": 1,
+   "article": "das",
+   "sv": [
+    "fönster"
+   ],
+   "forms": {
+    "plural": "Fenster"
+   }
+  },
+  {
+   "word": "Ball",
+   "pos": "tyska",
+   "level": 1,
+   "article": "der",
+   "sv": [
+    "boll"
+   ],
+   "forms": {
+    "plural": "Bälle"
+   }
+  },
+  {
+   "word": "Hand",
+   "pos": "tyska",
+   "level": 1,
+   "article": "die",
+   "sv": [
+    "hand"
+   ],
+   "forms": {
+    "plural": "Hände"
+   }
+  },
+  {
+   "word": "Name",
+   "pos": "tyska",
+   "level": 1,
+   "article": "der",
+   "sv": [
+    "namn"
+   ],
+   "forms": {
+    "plural": "Namen"
+   }
+  },
+  {
+   "word": "Tasche",
+   "pos": "tyska",
+   "level": 1,
+   "article": "die",
+   "sv": [
+    "väska"
+   ],
+   "forms": {
+    "plural": "Taschen"
+   }
+  },
+  {
+   "word": "Stift",
+   "pos": "tyska",
+   "level": 1,
+   "article": "der",
+   "sv": [
+    "penna"
+   ],
+   "forms": {
+    "plural": "Stifte"
+   }
+  },
+  {
+   "word": "Lehrer",
+   "pos": "tyska",
+   "level": 1,
+   "article": "der",
+   "sv": [
+    "lärare"
+   ],
+   "forms": {
+    "plural": "Lehrer"
+   }
+  },
+  {
+   "word": "Jahr",
+   "pos": "tyska",
+   "level": 2,
+   "article": "das",
+   "sv": [
+    "år"
+   ],
+   "forms": {
+    "plural": "Jahre"
+   }
+  },
+  {
+   "word": "Woche",
+   "pos": "tyska",
+   "level": 2,
+   "article": "die",
+   "sv": [
+    "vecka"
+   ],
+   "forms": {
+    "plural": "Wochen"
+   }
+  },
+  {
+   "word": "Monat",
+   "pos": "tyska",
+   "level": 2,
+   "article": "der",
+   "sv": [
+    "månad"
+   ],
+   "forms": {
+    "plural": "Monate"
+   }
+  },
+  {
+   "word": "Stunde",
+   "pos": "tyska",
+   "level": 2,
+   "article": "die",
+   "sv": [
+    "timme"
+   ],
+   "forms": {
+    "plural": "Stunden"
+   }
+  },
+  {
+   "word": "Zeit",
+   "pos": "tyska",
+   "level": 2,
+   "article": "die",
+   "sv": [
+    "tid"
+   ]
+  },
+  {
+   "word": "Geld",
+   "pos": "tyska",
+   "level": 2,
+   "article": "das",
+   "sv": [
+    "pengar"
+   ]
+  },
+  {
+   "word": "Familie",
+   "pos": "tyska",
+   "level": 2,
+   "article": "die",
+   "sv": [
+    "familj"
+   ],
+   "forms": {
+    "plural": "Familien"
+   }
+  },
+  {
+   "word": "Garten",
+   "pos": "tyska",
+   "level": 2,
+   "article": "der",
+   "sv": [
+    "trädgård"
+   ],
+   "forms": {
+    "plural": "Gärten"
+   }
+  },
+  {
+   "word": "Stadt",
+   "pos": "tyska",
+   "level": 2,
+   "article": "die",
+   "sv": [
+    "stad"
+   ],
+   "forms": {
+    "plural": "Städte"
+   }
+  },
+  {
+   "word": "Dorf",
+   "pos": "tyska",
+   "level": 2,
+   "article": "das",
+   "sv": [
+    "by"
+   ],
+   "forms": {
+    "plural": "Dörfer"
+   }
+  },
+  {
+   "word": "Land",
+   "pos": "tyska",
+   "level": 2,
+   "article": "das",
+   "sv": [
+    "land"
+   ],
+   "forms": {
+    "plural": "Länder"
+   }
+  },
+  {
+   "word": "Straße",
+   "pos": "tyska",
+   "level": 2,
+   "article": "die",
+   "sv": [
+    "gata"
+   ],
+   "forms": {
+    "plural": "Straßen"
+   }
+  },
+  {
+   "word": "Bus",
+   "pos": "tyska",
+   "level": 2,
+   "article": "der",
+   "sv": [
+    "buss"
+   ],
+   "forms": {
+    "plural": "Busse"
+   }
+  },
+  {
+   "word": "Zug",
+   "pos": "tyska",
+   "level": 2,
+   "article": "der",
+   "sv": [
+    "tåg"
+   ],
+   "forms": {
+    "plural": "Züge"
+   }
+  },
+  {
+   "word": "Fahrrad",
+   "pos": "tyska",
+   "level": 2,
+   "article": "das",
+   "sv": [
+    "cykel"
+   ],
+   "forms": {
+    "plural": "Fahrräder"
+   }
+  },
+  {
+   "word": "Handy",
+   "pos": "tyska",
+   "level": 2,
+   "article": "das",
+   "sv": [
+    "mobiltelefon"
+   ],
+   "forms": {
+    "plural": "Handys"
+   }
+  },
+  {
+   "word": "Computer",
+   "pos": "tyska",
+   "level": 2,
+   "article": "der",
+   "sv": [
+    "dator"
+   ],
+   "forms": {
+    "plural": "Computer"
+   }
+  },
+  {
+   "word": "Spiel",
+   "pos": "tyska",
+   "level": 2,
+   "article": "das",
+   "sv": [
+    "spel",
+    "lek"
+   ],
+   "forms": {
+    "plural": "Spiele"
+   }
+  },
+  {
+   "word": "Lied",
+   "pos": "tyska",
+   "level": 2,
+   "article": "das",
+   "sv": [
+    "sång",
+    "låt"
+   ],
+   "forms": {
+    "plural": "Lieder"
+   }
+  },
+  {
+   "word": "Musik",
+   "pos": "tyska",
+   "level": 2,
+   "article": "die",
+   "sv": [
+    "musik"
+   ]
+  },
+  {
+   "word": "Bild",
+   "pos": "tyska",
+   "level": 2,
+   "article": "das",
+   "sv": [
+    "bild"
+   ],
+   "forms": {
+    "plural": "Bilder"
+   }
+  },
+  {
+   "word": "Film",
+   "pos": "tyska",
+   "level": 2,
+   "article": "der",
+   "sv": [
+    "film"
+   ],
+   "forms": {
+    "plural": "Filme"
+   }
+  },
+  {
+   "word": "Wetter",
+   "pos": "tyska",
+   "level": 2,
+   "article": "das",
+   "sv": [
+    "väder"
+   ]
+  },
+  {
+   "word": "Regen",
+   "pos": "tyska",
+   "level": 2,
+   "article": "der",
+   "sv": [
+    "regn"
+   ]
+  },
+  {
+   "word": "Schnee",
+   "pos": "tyska",
+   "level": 2,
+   "article": "der",
+   "sv": [
+    "snö"
+   ]
+  },
+  {
+   "word": "Käse",
+   "pos": "tyska",
+   "level": 2,
+   "article": "der",
+   "sv": [
+    "ost"
+   ]
+  },
+  {
+   "word": "Fleisch",
+   "pos": "tyska",
+   "level": 2,
+   "article": "das",
+   "sv": [
+    "kött"
+   ]
+  },
+  {
+   "word": "Obst",
+   "pos": "tyska",
+   "level": 2,
+   "article": "das",
+   "sv": [
+    "frukt"
+   ]
+  },
+  {
+   "word": "Gemüse",
+   "pos": "tyska",
+   "level": 2,
+   "article": "das",
+   "sv": [
+    "grönsaker"
+   ]
+  },
+  {
+   "word": "Kuchen",
+   "pos": "tyska",
+   "level": 2,
+   "article": "der",
+   "sv": [
+    "kaka",
+    "tårta"
+   ],
+   "forms": {
+    "plural": "Kuchen"
+   }
+  },
+  {
+   "word": "Kaffee",
+   "pos": "tyska",
+   "level": 2,
+   "article": "der",
+   "sv": [
+    "kaffe"
+   ]
+  },
+  {
+   "word": "Tee",
+   "pos": "tyska",
+   "level": 2,
+   "article": "der",
+   "sv": [
+    "te"
+   ]
+  },
+  {
+   "word": "Ei",
+   "pos": "tyska",
+   "level": 2,
+   "article": "das",
+   "sv": [
+    "ägg"
+   ],
+   "forms": {
+    "plural": "Eier"
+   }
+  },
+  {
+   "word": "Saft",
+   "pos": "tyska",
+   "level": 2,
+   "article": "der",
+   "sv": [
+    "juice",
+    "saft"
+   ],
+   "forms": {
+    "plural": "Säfte"
+   }
+  },
+  {
+   "word": "Banane",
+   "pos": "tyska",
+   "level": 2,
+   "article": "die",
+   "sv": [
+    "banan"
+   ],
+   "forms": {
+    "plural": "Bananen"
+   }
+  },
+  {
+   "word": "Tomate",
+   "pos": "tyska",
+   "level": 2,
+   "article": "die",
+   "sv": [
+    "tomat"
+   ],
+   "forms": {
+    "plural": "Tomaten"
+   }
+  },
+  {
+   "word": "Hunger",
+   "pos": "tyska",
+   "level": 2,
+   "article": "der",
+   "sv": [
+    "hunger"
+   ]
+  },
+  {
+   "word": "Durst",
+   "pos": "tyska",
+   "level": 2,
+   "article": "der",
+   "sv": [
+    "törst"
+   ]
+  },
+  {
+   "word": "Essen",
+   "pos": "tyska",
+   "level": 2,
+   "article": "das",
+   "sv": [
+    "mat"
+   ]
+  },
+  {
+   "word": "Kopf",
+   "pos": "tyska",
+   "level": 2,
+   "article": "der",
+   "sv": [
+    "huvud"
+   ],
+   "forms": {
+    "plural": "Köpfe"
+   }
+  },
+  {
+   "word": "Nase",
+   "pos": "tyska",
+   "level": 2,
+   "article": "die",
+   "sv": [
+    "näsa"
+   ],
+   "forms": {
+    "plural": "Nasen"
+   }
+  },
+  {
+   "word": "Mund",
+   "pos": "tyska",
+   "level": 2,
+   "article": "der",
+   "sv": [
+    "mun"
+   ],
+   "forms": {
+    "plural": "Münder"
+   }
+  },
+  {
+   "word": "Auge",
+   "pos": "tyska",
+   "level": 2,
+   "article": "das",
+   "sv": [
+    "öga"
+   ],
+   "forms": {
+    "plural": "Augen"
+   }
+  },
+  {
+   "word": "Ohr",
+   "pos": "tyska",
+   "level": 2,
+   "article": "das",
+   "sv": [
+    "öra"
+   ],
+   "forms": {
+    "plural": "Ohren"
+   }
+  },
+  {
+   "word": "Arm",
+   "pos": "tyska",
+   "level": 2,
+   "article": "der",
+   "sv": [
+    "arm"
+   ],
+   "forms": {
+    "plural": "Arme"
+   }
+  },
+  {
+   "word": "Bein",
+   "pos": "tyska",
+   "level": 2,
+   "article": "das",
+   "sv": [
+    "ben"
+   ],
+   "forms": {
+    "plural": "Beine"
+   }
+  },
+  {
+   "word": "Fuß",
+   "pos": "tyska",
+   "level": 2,
+   "article": "der",
+   "sv": [
+    "fot"
+   ],
+   "forms": {
+    "plural": "Füße"
+   }
+  },
+  {
+   "word": "Montag",
+   "pos": "tyska",
+   "level": 2,
+   "article": "der",
+   "sv": [
+    "måndag"
+   ]
+  },
+  {
+   "word": "Dienstag",
+   "pos": "tyska",
+   "level": 2,
+   "article": "der",
+   "sv": [
+    "tisdag"
+   ]
+  },
+  {
+   "word": "Mittwoch",
+   "pos": "tyska",
+   "level": 2,
+   "article": "der",
+   "sv": [
+    "onsdag"
+   ]
+  },
+  {
+   "word": "Donnerstag",
+   "pos": "tyska",
+   "level": 2,
+   "article": "der",
+   "sv": [
+    "torsdag"
+   ]
+  },
+  {
+   "word": "Freitag",
+   "pos": "tyska",
+   "level": 2,
+   "article": "der",
+   "sv": [
+    "fredag"
+   ]
+  },
+  {
+   "word": "Samstag",
+   "pos": "tyska",
+   "level": 2,
+   "article": "der",
+   "sv": [
+    "lördag"
+   ]
+  },
+  {
+   "word": "Sonntag",
+   "pos": "tyska",
+   "level": 2,
+   "article": "der",
+   "sv": [
+    "söndag"
+   ]
+  },
+  {
+   "word": "Herz",
+   "pos": "tyska",
+   "level": 3,
+   "article": "das",
+   "sv": [
+    "hjärta"
+   ],
+   "forms": {
+    "plural": "Herzen"
+   }
+  },
+  {
+   "word": "Prüfung",
+   "pos": "tyska",
+   "level": 3,
+   "article": "die",
+   "sv": [
+    "prov"
+   ],
+   "forms": {
+    "plural": "Prüfungen"
+   }
+  },
+  {
+   "word": "Sprache",
+   "pos": "tyska",
+   "level": 3,
+   "article": "die",
+   "sv": [
+    "språk"
+   ],
+   "forms": {
+    "plural": "Sprachen"
+   }
+  },
+  {
+   "word": "Antwort",
+   "pos": "tyska",
+   "level": 3,
+   "article": "die",
+   "sv": [
+    "svar"
+   ],
+   "forms": {
+    "plural": "Antworten"
+   }
+  },
+  {
+   "word": "Frage",
+   "pos": "tyska",
+   "level": 3,
+   "article": "die",
+   "sv": [
+    "fråga"
+   ],
+   "forms": {
+    "plural": "Fragen"
+   },
+   "ambig": true
+  },
+  {
+   "word": "Wort",
+   "pos": "tyska",
+   "level": 3,
+   "article": "das",
+   "sv": [
+    "ord"
+   ],
+   "forms": {
+    "plural": "Wörter"
+   }
+  },
+  {
+   "word": "Satz",
+   "pos": "tyska",
+   "level": 3,
+   "article": "der",
+   "sv": [
+    "mening"
+   ],
+   "forms": {
+    "plural": "Sätze"
+   }
+  },
+  {
+   "word": "Fehler",
+   "pos": "tyska",
+   "level": 3,
+   "article": "der",
+   "sv": [
+    "fel"
+   ],
+   "forms": {
+    "plural": "Fehler"
+   }
+  },
+  {
+   "word": "Reise",
+   "pos": "tyska",
+   "level": 3,
+   "article": "die",
+   "sv": [
+    "resa"
+   ],
+   "forms": {
+    "plural": "Reisen"
+   }
+  },
+  {
+   "word": "Urlaub",
+   "pos": "tyska",
+   "level": 3,
+   "article": "der",
+   "sv": [
+    "semester"
+   ],
+   "forms": {
+    "plural": "Urlaube"
+   }
+  },
+  {
+   "word": "Wochenende",
+   "pos": "tyska",
+   "level": 3,
+   "article": "das",
+   "sv": [
+    "helg"
+   ],
+   "forms": {
+    "plural": "Wochenenden"
+   }
+  },
+  {
+   "word": "Geburtstag",
+   "pos": "tyska",
+   "level": 3,
+   "article": "der",
+   "sv": [
+    "födelsedag"
+   ],
+   "forms": {
+    "plural": "Geburtstage"
+   }
+  },
+  {
+   "word": "Geschenk",
+   "pos": "tyska",
+   "level": 3,
+   "article": "das",
+   "sv": [
+    "present"
+   ],
+   "forms": {
+    "plural": "Geschenke"
+   }
+  },
+  {
+   "word": "Party",
+   "pos": "tyska",
+   "level": 3,
+   "article": "die",
+   "sv": [
+    "fest"
+   ],
+   "forms": {
+    "plural": "Partys"
+   }
+  },
+  {
+   "word": "Konzert",
+   "pos": "tyska",
+   "level": 3,
+   "article": "das",
+   "sv": [
+    "konsert"
+   ],
+   "forms": {
+    "plural": "Konzerte"
+   }
+  },
+  {
+   "word": "Gruppe",
+   "pos": "tyska",
+   "level": 3,
+   "article": "die",
+   "sv": [
+    "grupp"
+   ],
+   "forms": {
+    "plural": "Gruppen"
+   }
+  },
+  {
+   "word": "Fan",
+   "pos": "tyska",
+   "level": 3,
+   "article": "der",
+   "sv": [
+    "fan"
+   ],
+   "forms": {
+    "plural": "Fans"
+   }
+  },
+  {
+   "word": "Sänger",
+   "pos": "tyska",
+   "level": 3,
+   "article": "der",
+   "sv": [
+    "sångare"
+   ],
+   "forms": {
+    "plural": "Sänger"
+   }
+  },
+  {
+   "word": "Küche",
+   "pos": "tyska",
+   "level": 3,
+   "article": "die",
+   "sv": [
+    "kök"
+   ],
+   "forms": {
+    "plural": "Küchen"
+   }
+  },
+  {
+   "word": "Wohnzimmer",
+   "pos": "tyska",
+   "level": 3,
+   "article": "das",
+   "sv": [
+    "vardagsrum"
+   ],
+   "forms": {
+    "plural": "Wohnzimmer"
+   }
+  },
+  {
+   "word": "Hose",
+   "pos": "tyska",
+   "level": 3,
+   "article": "die",
+   "sv": [
+    "byxor"
+   ],
+   "forms": {
+    "plural": "Hosen"
+   }
+  },
+  {
+   "word": "Jacke",
+   "pos": "tyska",
+   "level": 3,
+   "article": "die",
+   "sv": [
+    "jacka"
+   ],
+   "forms": {
+    "plural": "Jacken"
+   }
+  },
+  {
+   "word": "Rock",
+   "pos": "tyska",
+   "level": 3,
+   "article": "der",
+   "sv": [
+    "kjol"
+   ],
+   "forms": {
+    "plural": "Röcke"
+   }
+  },
+  {
+   "word": "Schuh",
+   "pos": "tyska",
+   "level": 3,
+   "article": "der",
+   "sv": [
+    "sko"
+   ],
+   "forms": {
+    "plural": "Schuhe"
+   }
+  },
+  {
+   "word": "Hemd",
+   "pos": "tyska",
+   "level": 3,
+   "article": "das",
+   "sv": [
+    "skjorta"
+   ],
+   "forms": {
+    "plural": "Hemden"
+   }
+  },
+  {
+   "word": "Januar",
+   "pos": "tyska",
+   "level": 3,
+   "article": "der",
+   "sv": [
+    "januari"
+   ]
+  },
+  {
+   "word": "Februar",
+   "pos": "tyska",
+   "level": 3,
+   "article": "der",
+   "sv": [
+    "februari"
+   ]
+  },
+  {
+   "word": "März",
+   "pos": "tyska",
+   "level": 3,
+   "article": "der",
+   "sv": [
+    "mars"
+   ]
+  },
+  {
+   "word": "April",
+   "pos": "tyska",
+   "level": 3,
+   "article": "der",
+   "sv": [
+    "april"
+   ]
+  },
+  {
+   "word": "Mai",
+   "pos": "tyska",
+   "level": 3,
+   "article": "der",
+   "sv": [
+    "maj"
+   ]
+  },
+  {
+   "word": "Juni",
+   "pos": "tyska",
+   "level": 3,
+   "article": "der",
+   "sv": [
+    "juni"
+   ]
+  },
+  {
+   "word": "Juli",
+   "pos": "tyska",
+   "level": 3,
+   "article": "der",
+   "sv": [
+    "juli"
+   ]
+  },
+  {
+   "word": "August",
+   "pos": "tyska",
+   "level": 3,
+   "article": "der",
+   "sv": [
+    "augusti"
+   ]
+  },
+  {
+   "word": "September",
+   "pos": "tyska",
+   "level": 3,
+   "article": "der",
+   "sv": [
+    "september"
+   ]
+  },
+  {
+   "word": "Oktober",
+   "pos": "tyska",
+   "level": 3,
+   "article": "der",
+   "sv": [
+    "oktober"
+   ]
+  },
+  {
+   "word": "November",
+   "pos": "tyska",
+   "level": 3,
+   "article": "der",
+   "sv": [
+    "november"
+   ]
+  },
+  {
+   "word": "Dezember",
+   "pos": "tyska",
+   "level": 3,
+   "article": "der",
+   "sv": [
+    "december"
+   ]
+  },
+  {
+   "word": "Meinung",
+   "pos": "tyska",
+   "level": 4,
+   "article": "die",
+   "sv": [
+    "åsikt"
+   ],
+   "forms": {
+    "plural": "Meinungen"
+   }
+  },
+  {
+   "word": "Unterschied",
+   "pos": "tyska",
+   "level": 4,
+   "article": "der",
+   "sv": [
+    "skillnad"
+   ],
+   "forms": {
+    "plural": "Unterschiede"
+   }
+  },
+  {
+   "word": "Zukunft",
+   "pos": "tyska",
+   "level": 4,
+   "article": "die",
+   "sv": [
+    "framtid"
+   ]
+  },
+  {
+   "word": "Möglichkeit",
+   "pos": "tyska",
+   "level": 4,
+   "article": "die",
+   "sv": [
+    "möjlighet"
+   ],
+   "forms": {
+    "plural": "Möglichkeiten"
+   }
+  },
+  {
+   "word": "Problem",
+   "pos": "tyska",
+   "level": 4,
+   "article": "das",
+   "sv": [
+    "problem"
+   ],
+   "forms": {
+    "plural": "Probleme"
+   }
+  },
+  {
+   "word": "Lösung",
+   "pos": "tyska",
+   "level": 4,
+   "article": "die",
+   "sv": [
+    "lösning"
+   ],
+   "forms": {
+    "plural": "Lösungen"
+   }
+  },
+  {
+   "word": "Beruf",
+   "pos": "tyska",
+   "level": 4,
+   "article": "der",
+   "sv": [
+    "yrke"
+   ],
+   "forms": {
+    "plural": "Berufe"
+   }
+  },
+  {
+   "word": "Erfahrung",
+   "pos": "tyska",
+   "level": 4,
+   "article": "die",
+   "sv": [
+    "erfarenhet"
+   ],
+   "forms": {
+    "plural": "Erfahrungen"
+   }
+  },
+  {
+   "word": "Gesundheit",
+   "pos": "tyska",
+   "level": 4,
+   "article": "die",
+   "sv": [
+    "hälsa"
+   ]
+  },
+  {
+   "word": "Umwelt",
+   "pos": "tyska",
+   "level": 4,
+   "article": "die",
+   "sv": [
+    "miljö"
+   ]
+  },
+  {
+   "word": "Gesellschaft",
+   "pos": "tyska",
+   "level": 4,
+   "article": "die",
+   "sv": [
+    "samhälle"
+   ],
+   "forms": {
+    "plural": "Gesellschaften"
+   }
+  },
+  {
+   "word": "Verkehr",
+   "pos": "tyska",
+   "level": 4,
+   "article": "der",
+   "sv": [
+    "trafik"
+   ]
+  },
+  {
+   "word": "Nachricht",
+   "pos": "tyska",
+   "level": 4,
+   "article": "die",
+   "sv": [
+    "meddelande"
+   ],
+   "forms": {
+    "plural": "Nachrichten"
+   }
+  },
+  {
+   "word": "Ergebnis",
+   "pos": "tyska",
+   "level": 4,
+   "article": "das",
+   "sv": [
+    "resultat"
+   ],
+   "forms": {
+    "plural": "Ergebnisse"
+   }
+  },
+  {
+   "word": "Veranstaltung",
+   "pos": "tyska",
+   "level": 4,
+   "article": "die",
+   "sv": [
+    "evenemang"
+   ],
+   "forms": {
+    "plural": "Veranstaltungen"
+   }
+  },
+  {
+   "word": "Entscheidung",
+   "pos": "tyska",
+   "level": 5,
+   "article": "die",
+   "sv": [
+    "beslut"
+   ],
+   "forms": {
+    "plural": "Entscheidungen"
+   }
+  },
+  {
+   "word": "Verantwortung",
+   "pos": "tyska",
+   "level": 5,
+   "article": "die",
+   "sv": [
+    "ansvar"
+   ]
+  },
+  {
+   "word": "Einladung",
+   "pos": "tyska",
+   "level": 5,
+   "article": "die",
+   "sv": [
+    "inbjudan"
+   ],
+   "forms": {
+    "plural": "Einladungen"
+   }
+  },
+  {
+   "word": "Bedeutung",
+   "pos": "tyska",
+   "level": 5,
+   "article": "die",
+   "sv": [
+    "betydelse"
+   ],
+   "forms": {
+    "plural": "Bedeutungen"
+   }
+  },
+  {
+   "word": "Herausforderung",
+   "pos": "tyska",
+   "level": 5,
+   "article": "die",
+   "sv": [
+    "utmaning"
+   ],
+   "forms": {
+    "plural": "Herausforderungen"
+   }
+  },
+  {
+   "word": "Wirtschaft",
+   "pos": "tyska",
+   "level": 5,
+   "article": "die",
+   "sv": [
+    "ekonomi"
+   ]
+  },
+  {
+   "word": "Eindruck",
+   "pos": "tyska",
+   "level": 5,
+   "article": "der",
+   "sv": [
+    "intryck"
+   ],
+   "forms": {
+    "plural": "Eindrücke"
+   }
+  },
+  {
+   "word": "Wunsch",
+   "pos": "tyska",
+   "level": 5,
+   "article": "der",
+   "sv": [
+    "önskan"
+   ],
+   "forms": {
+    "plural": "Wünsche"
+   }
+  },
+  {
+   "word": "Ausbildung",
+   "pos": "tyska",
+   "level": 5,
+   "article": "die",
+   "sv": [
+    "utbildning"
+   ],
+   "forms": {
+    "plural": "Ausbildungen"
+   }
+  },
+  {
+   "word": "Vergangenheit",
+   "pos": "tyska",
+   "level": 5,
+   "article": "die",
+   "sv": [
+    "det förflutna"
+   ]
+  },
+  {
+   "word": "sein",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "vara"
+   ],
+   "forms": {
+    "ich": "bin",
+    "du": "bist",
+    "er": "ist",
+    "wir": "sind",
+    "ihr": "seid",
+    "sie": "sind",
+    "perfekt": "ist gewesen"
+   }
+  },
+  {
+   "word": "haben",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "ha"
+   ],
+   "forms": {
+    "ich": "habe",
+    "du": "hast",
+    "er": "hat",
+    "wir": "haben",
+    "ihr": "habt",
+    "sie": "haben",
+    "perfekt": "hat gehabt"
+   }
+  },
+  {
+   "word": "machen",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "göra"
+   ],
+   "forms": {
+    "ich": "mache",
+    "du": "machst",
+    "er": "macht",
+    "wir": "machen",
+    "ihr": "macht",
+    "sie": "machen",
+    "perfekt": "hat gemacht"
+   }
+  },
+  {
+   "word": "heißen",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "heta"
+   ],
+   "forms": {
+    "ich": "heiße",
+    "du": "heißt",
+    "er": "heißt",
+    "wir": "heißen",
+    "ihr": "heißt",
+    "sie": "heißen",
+    "perfekt": "hat geheißen"
+   }
+  },
+  {
+   "word": "gehen",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "gå"
+   ],
+   "forms": {
+    "ich": "gehe",
+    "du": "gehst",
+    "er": "geht",
+    "wir": "gehen",
+    "ihr": "geht",
+    "sie": "gehen",
+    "perfekt": "ist gegangen"
+   }
+  },
+  {
+   "word": "kommen",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "komma"
+   ],
+   "forms": {
+    "ich": "komme",
+    "du": "kommst",
+    "er": "kommt",
+    "wir": "kommen",
+    "ihr": "kommt",
+    "sie": "kommen",
+    "perfekt": "ist gekommen"
+   }
+  },
+  {
+   "word": "wohnen",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "bo"
+   ],
+   "forms": {
+    "ich": "wohne",
+    "du": "wohnst",
+    "er": "wohnt",
+    "wir": "wohnen",
+    "ihr": "wohnt",
+    "sie": "wohnen",
+    "perfekt": "hat gewohnt"
+   }
+  },
+  {
+   "word": "spielen",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "spela",
+    "leka"
+   ],
+   "forms": {
+    "ich": "spiele",
+    "du": "spielst",
+    "er": "spielt",
+    "wir": "spielen",
+    "ihr": "spielt",
+    "sie": "spielen",
+    "perfekt": "hat gespielt"
+   }
+  },
+  {
+   "word": "lernen",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "lära sig"
+   ],
+   "forms": {
+    "ich": "lerne",
+    "du": "lernst",
+    "er": "lernt",
+    "wir": "lernen",
+    "ihr": "lernt",
+    "sie": "lernen",
+    "perfekt": "hat gelernt"
+   }
+  },
+  {
+   "word": "essen",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "äta"
+   ],
+   "forms": {
+    "ich": "esse",
+    "du": "isst",
+    "er": "isst",
+    "wir": "essen",
+    "ihr": "esst",
+    "sie": "essen",
+    "perfekt": "hat gegessen"
+   }
+  },
+  {
+   "word": "trinken",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "dricka"
+   ],
+   "forms": {
+    "ich": "trinke",
+    "du": "trinkst",
+    "er": "trinkt",
+    "wir": "trinken",
+    "ihr": "trinkt",
+    "sie": "trinken",
+    "perfekt": "hat getrunken"
+   }
+  },
+  {
+   "word": "sehen",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "se"
+   ],
+   "forms": {
+    "ich": "sehe",
+    "du": "siehst",
+    "er": "sieht",
+    "wir": "sehen",
+    "ihr": "seht",
+    "sie": "sehen",
+    "perfekt": "hat gesehen"
+   }
+  },
+  {
+   "word": "lesen",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "läsa"
+   ],
+   "forms": {
+    "ich": "lese",
+    "du": "liest",
+    "er": "liest",
+    "wir": "lesen",
+    "ihr": "lest",
+    "sie": "lesen",
+    "perfekt": "hat gelesen"
+   }
+  },
+  {
+   "word": "schreiben",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "skriva"
+   ],
+   "forms": {
+    "ich": "schreibe",
+    "du": "schreibst",
+    "er": "schreibt",
+    "wir": "schreiben",
+    "ihr": "schreibt",
+    "sie": "schreiben",
+    "perfekt": "hat geschrieben"
+   }
+  },
+  {
+   "word": "sprechen",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "tala",
+    "prata"
+   ],
+   "forms": {
+    "ich": "spreche",
+    "du": "sprichst",
+    "er": "spricht",
+    "wir": "sprechen",
+    "ihr": "sprecht",
+    "sie": "sprechen",
+    "perfekt": "hat gesprochen"
+   }
+  },
+  {
+   "word": "fahren",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "åka",
+    "köra"
+   ],
+   "forms": {
+    "ich": "fahre",
+    "du": "fährst",
+    "er": "fährt",
+    "wir": "fahren",
+    "ihr": "fahrt",
+    "sie": "fahren",
+    "perfekt": "ist gefahren"
+   }
+  },
+  {
+   "word": "schlafen",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "sova"
+   ],
+   "forms": {
+    "ich": "schlafe",
+    "du": "schläfst",
+    "er": "schläft",
+    "wir": "schlafen",
+    "ihr": "schlaft",
+    "sie": "schlafen",
+    "perfekt": "hat geschlafen"
+   }
+  },
+  {
+   "word": "kaufen",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "köpa"
+   ],
+   "forms": {
+    "ich": "kaufe",
+    "du": "kaufst",
+    "er": "kauft",
+    "wir": "kaufen",
+    "ihr": "kauft",
+    "sie": "kaufen",
+    "perfekt": "hat gekauft"
+   }
+  },
+  {
+   "word": "arbeiten",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "arbeta"
+   ],
+   "forms": {
+    "ich": "arbeite",
+    "du": "arbeitest",
+    "er": "arbeitet",
+    "wir": "arbeiten",
+    "ihr": "arbeitet",
+    "sie": "arbeiten",
+    "perfekt": "hat gearbeitet"
+   }
+  },
+  {
+   "word": "singen",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "sjunga"
+   ],
+   "forms": {
+    "ich": "singe",
+    "du": "singst",
+    "er": "singt",
+    "wir": "singen",
+    "ihr": "singt",
+    "sie": "singen",
+    "perfekt": "hat gesungen"
+   }
+  },
+  {
+   "word": "tanzen",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "dansa"
+   ],
+   "forms": {
+    "ich": "tanze",
+    "du": "tanzt",
+    "er": "tanzt",
+    "wir": "tanzen",
+    "ihr": "tanzt",
+    "sie": "tanzen",
+    "perfekt": "hat getanzt"
+   }
+  },
+  {
+   "word": "sagen",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "säga"
+   ],
+   "forms": {
+    "ich": "sage",
+    "du": "sagst",
+    "er": "sagt",
+    "wir": "sagen",
+    "ihr": "sagt",
+    "sie": "sagen",
+    "perfekt": "hat gesagt"
+   }
+  },
+  {
+   "word": "fragen",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "fråga"
+   ],
+   "forms": {
+    "ich": "frage",
+    "du": "fragst",
+    "er": "fragt",
+    "wir": "fragen",
+    "ihr": "fragt",
+    "sie": "fragen",
+    "perfekt": "hat gefragt"
+   },
+   "ambig": true
+  },
+  {
+   "word": "hören",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "höra"
+   ],
+   "forms": {
+    "ich": "höre",
+    "du": "hörst",
+    "er": "hört",
+    "wir": "hören",
+    "ihr": "hört",
+    "sie": "hören",
+    "perfekt": "hat gehört"
+   }
+  },
+  {
+   "word": "nehmen",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "ta"
+   ],
+   "forms": {
+    "ich": "nehme",
+    "du": "nimmst",
+    "er": "nimmt",
+    "wir": "nehmen",
+    "ihr": "nehmt",
+    "sie": "nehmen",
+    "perfekt": "hat genommen"
+   }
+  },
+  {
+   "word": "geben",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "ge"
+   ],
+   "forms": {
+    "ich": "gebe",
+    "du": "gibst",
+    "er": "gibt",
+    "wir": "geben",
+    "ihr": "gebt",
+    "sie": "geben",
+    "perfekt": "hat gegeben"
+   }
+  },
+  {
+   "word": "helfen",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "hjälpa"
+   ],
+   "forms": {
+    "ich": "helfe",
+    "du": "hilfst",
+    "er": "hilft",
+    "wir": "helfen",
+    "ihr": "helft",
+    "sie": "helfen",
+    "perfekt": "hat geholfen"
+   }
+  },
+  {
+   "word": "laufen",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "springa"
+   ],
+   "forms": {
+    "ich": "laufe",
+    "du": "läufst",
+    "er": "läuft",
+    "wir": "laufen",
+    "ihr": "lauft",
+    "sie": "laufen",
+    "perfekt": "ist gelaufen"
+   }
+  },
+  {
+   "word": "wissen",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "veta"
+   ],
+   "forms": {
+    "ich": "weiß",
+    "du": "weißt",
+    "er": "weiß",
+    "wir": "wissen",
+    "ihr": "wisst",
+    "sie": "wissen",
+    "perfekt": "hat gewusst"
+   }
+  },
+  {
+   "word": "lieben",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "älska"
+   ],
+   "forms": {
+    "ich": "liebe",
+    "du": "liebst",
+    "er": "liebt",
+    "wir": "lieben",
+    "ihr": "liebt",
+    "sie": "lieben",
+    "perfekt": "hat geliebt"
+   }
+  },
+  {
+   "word": "brauchen",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "behöva"
+   ],
+   "forms": {
+    "ich": "brauche",
+    "du": "brauchst",
+    "er": "braucht",
+    "wir": "brauchen",
+    "ihr": "braucht",
+    "sie": "brauchen",
+    "perfekt": "hat gebraucht"
+   }
+  },
+  {
+   "word": "finden",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "hitta"
+   ],
+   "forms": {
+    "ich": "finde",
+    "du": "findest",
+    "er": "findet",
+    "wir": "finden",
+    "ihr": "findet",
+    "sie": "finden",
+    "perfekt": "hat gefunden"
+   }
+  },
+  {
+   "word": "bleiben",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "stanna"
+   ],
+   "forms": {
+    "ich": "bleibe",
+    "du": "bleibst",
+    "er": "bleibt",
+    "wir": "bleiben",
+    "ihr": "bleibt",
+    "sie": "bleiben",
+    "perfekt": "ist geblieben"
+   }
+  },
+  {
+   "word": "fliegen",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "flyga"
+   ],
+   "forms": {
+    "ich": "fliege",
+    "du": "fliegst",
+    "er": "fliegt",
+    "wir": "fliegen",
+    "ihr": "fliegt",
+    "sie": "fliegen",
+    "perfekt": "ist geflogen"
+   }
+  },
+  {
+   "word": "verstehen",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "förstå"
+   ],
+   "forms": {
+    "ich": "verstehe",
+    "du": "verstehst",
+    "er": "versteht",
+    "wir": "verstehen",
+    "ihr": "versteht",
+    "sie": "verstehen",
+    "perfekt": "hat verstanden"
+   }
+  },
+  {
+   "word": "können",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "kunna"
+   ],
+   "forms": {
+    "ich": "kann",
+    "du": "kannst",
+    "er": "kann",
+    "wir": "können",
+    "ihr": "könnt",
+    "sie": "können"
+   }
+  },
+  {
+   "word": "müssen",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "måste"
+   ],
+   "forms": {
+    "ich": "muss",
+    "du": "musst",
+    "er": "muss",
+    "wir": "müssen",
+    "ihr": "müsst",
+    "sie": "müssen"
+   }
+  },
+  {
+   "word": "wollen",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "vilja"
+   ],
+   "forms": {
+    "ich": "will",
+    "du": "willst",
+    "er": "will",
+    "wir": "wollen",
+    "ihr": "wollt",
+    "sie": "wollen"
+   }
+  },
+  {
+   "word": "dürfen",
+   "pos": "tyska",
+   "level": 4,
+   "sv": [
+    "få (ha lov)"
+   ],
+   "forms": {
+    "ich": "darf",
+    "du": "darfst",
+    "er": "darf",
+    "wir": "dürfen",
+    "ihr": "dürft",
+    "sie": "dürfen"
+   }
+  },
+  {
+   "word": "sollen",
+   "pos": "tyska",
+   "level": 4,
+   "sv": [
+    "ska (bör)"
+   ],
+   "forms": {
+    "ich": "soll",
+    "du": "sollst",
+    "er": "soll",
+    "wir": "sollen",
+    "ihr": "sollt",
+    "sie": "sollen"
+   }
+  },
+  {
+   "word": "bringen",
+   "pos": "tyska",
+   "level": 4,
+   "sv": [
+    "ta med"
+   ],
+   "forms": {
+    "ich": "bringe",
+    "du": "bringst",
+    "er": "bringt",
+    "wir": "bringen",
+    "ihr": "bringt",
+    "sie": "bringen",
+    "perfekt": "hat gebracht"
+   }
+  },
+  {
+   "word": "denken",
+   "pos": "tyska",
+   "level": 4,
+   "sv": [
+    "tänka"
+   ],
+   "forms": {
+    "ich": "denke",
+    "du": "denkst",
+    "er": "denkt",
+    "wir": "denken",
+    "ihr": "denkt",
+    "sie": "denken",
+    "perfekt": "hat gedacht"
+   }
+  },
+  {
+   "word": "kennen",
+   "pos": "tyska",
+   "level": 4,
+   "sv": [
+    "känna till"
+   ],
+   "forms": {
+    "ich": "kenne",
+    "du": "kennst",
+    "er": "kennt",
+    "wir": "kennen",
+    "ihr": "kennt",
+    "sie": "kennen",
+    "perfekt": "hat gekannt"
+   }
+  },
+  {
+   "word": "besuchen",
+   "pos": "tyska",
+   "level": 4,
+   "sv": [
+    "besöka"
+   ],
+   "forms": {
+    "ich": "besuche",
+    "du": "besuchst",
+    "er": "besucht",
+    "wir": "besuchen",
+    "ihr": "besucht",
+    "sie": "besuchen",
+    "perfekt": "hat besucht"
+   }
+  },
+  {
+   "word": "groß",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "stor"
+   ]
+  },
+  {
+   "word": "klein",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "liten"
+   ]
+  },
+  {
+   "word": "gut",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "bra"
+   ]
+  },
+  {
+   "word": "schlecht",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "dålig"
+   ]
+  },
+  {
+   "word": "neu",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "ny"
+   ]
+  },
+  {
+   "word": "alt",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "gammal"
+   ]
+  },
+  {
+   "word": "schön",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "vacker"
+   ]
+  },
+  {
+   "word": "schnell",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "snabb"
+   ]
+  },
+  {
+   "word": "langsam",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "långsam"
+   ]
+  },
+  {
+   "word": "warm",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "varm"
+   ]
+  },
+  {
+   "word": "kalt",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "kall"
+   ]
+  },
+  {
+   "word": "rot",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "röd"
+   ]
+  },
+  {
+   "word": "blau",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "blå"
+   ]
+  },
+  {
+   "word": "grün",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "grön"
+   ]
+  },
+  {
+   "word": "gelb",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "gul"
+   ]
+  },
+  {
+   "word": "schwarz",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "svart"
+   ]
+  },
+  {
+   "word": "weiß",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "vit"
+   ]
+  },
+  {
+   "word": "jung",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "ung"
+   ]
+  },
+  {
+   "word": "lang",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "lång"
+   ]
+  },
+  {
+   "word": "kurz",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "kort"
+   ]
+  },
+  {
+   "word": "teuer",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "dyr"
+   ]
+  },
+  {
+   "word": "billig",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "billig"
+   ]
+  },
+  {
+   "word": "leicht",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "lätt"
+   ]
+  },
+  {
+   "word": "interessant",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "intressant"
+   ]
+  },
+  {
+   "word": "langweilig",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "tråkig"
+   ]
+  },
+  {
+   "word": "lustig",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "rolig"
+   ]
+  },
+  {
+   "word": "müde",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "trött"
+   ]
+  },
+  {
+   "word": "hungrig",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "hungrig"
+   ]
+  },
+  {
+   "word": "glücklich",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "lycklig"
+   ]
+  },
+  {
+   "word": "traurig",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "ledsen"
+   ]
+  },
+  {
+   "word": "krank",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "sjuk"
+   ]
+  },
+  {
+   "word": "gesund",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "frisk"
+   ]
+  },
+  {
+   "word": "freundlich",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "vänlig"
+   ]
+  },
+  {
+   "word": "nett",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "snäll"
+   ]
+  },
+  {
+   "word": "laut",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "högljudd"
+   ]
+  },
+  {
+   "word": "leise",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "tyst"
+   ]
+  },
+  {
+   "word": "hell",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "ljus"
+   ]
+  },
+  {
+   "word": "dunkel",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "mörk"
+   ]
+  },
+  {
+   "word": "braun",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "brun"
+   ]
+  },
+  {
+   "word": "grau",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "grå"
+   ]
+  },
+  {
+   "word": "wichtig",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "viktig"
+   ]
+  },
+  {
+   "word": "schwierig",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "svår"
+   ]
+  },
+  {
+   "word": "einfach",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "enkel"
+   ]
+  },
+  {
+   "word": "fleißig",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "flitig"
+   ]
+  },
+  {
+   "word": "faul",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "lat"
+   ]
+  },
+  {
+   "word": "reich",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "rik"
+   ]
+  },
+  {
+   "word": "arm",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "fattig"
+   ]
+  },
+  {
+   "word": "stark",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "stark"
+   ]
+  },
+  {
+   "word": "schwach",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "svag"
+   ]
+  },
+  {
+   "word": "gefährlich",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "farlig"
+   ]
+  },
+  {
+   "word": "berühmt",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "känd"
+   ]
+  },
+  {
+   "word": "beliebt",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "omtyckt"
+   ]
+  },
+  {
+   "word": "schwer",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "tung"
+   ]
+  },
+  {
+   "word": "möglich",
+   "pos": "tyska",
+   "level": 4,
+   "sv": [
+    "möjlig"
+   ]
+  },
+  {
+   "word": "nötig",
+   "pos": "tyska",
+   "level": 4,
+   "sv": [
+    "nödvändig"
+   ]
+  },
+  {
+   "word": "ehrlich",
+   "pos": "tyska",
+   "level": 4,
+   "sv": [
+    "ärlig"
+   ]
+  },
+  {
+   "word": "mutig",
+   "pos": "tyska",
+   "level": 4,
+   "sv": [
+    "modig"
+   ]
+  },
+  {
+   "word": "sicher",
+   "pos": "tyska",
+   "level": 4,
+   "sv": [
+    "säker"
+   ]
+  },
+  {
+   "word": "zuverlässig",
+   "pos": "tyska",
+   "level": 5,
+   "sv": [
+    "pålitlig"
+   ]
+  },
+  {
+   "word": "umweltfreundlich",
+   "pos": "tyska",
+   "level": 5,
+   "sv": [
+    "miljövänlig"
+   ]
+  },
+  {
+   "word": "selbstständig",
+   "pos": "tyska",
+   "level": 5,
+   "sv": [
+    "självständig"
+   ]
+  },
+  {
+   "word": "verantwortlich",
+   "pos": "tyska",
+   "level": 5,
+   "sv": [
+    "ansvarig"
+   ]
+  },
+  {
+   "word": "ähnlich",
+   "pos": "tyska",
+   "level": 5,
+   "sv": [
+    "liknande"
+   ]
+  },
+  {
+   "word": "ja",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "ja"
+   ]
+  },
+  {
+   "word": "nein",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "nej"
+   ]
+  },
+  {
+   "word": "danke",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "tack"
+   ]
+  },
+  {
+   "word": "bitte",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "snälla"
+   ]
+  },
+  {
+   "word": "hallo",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "hej"
+   ]
+  },
+  {
+   "word": "tschüss",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "hej då"
+   ]
+  },
+  {
+   "word": "und",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "och"
+   ]
+  },
+  {
+   "word": "aber",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "men"
+   ]
+  },
+  {
+   "word": "oder",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "eller"
+   ]
+  },
+  {
+   "word": "mit",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "med"
+   ]
+  },
+  {
+   "word": "ohne",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "utan"
+   ]
+  },
+  {
+   "word": "für",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "för"
+   ]
+  },
+  {
+   "word": "wo",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "var"
+   ]
+  },
+  {
+   "word": "wer",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "vem"
+   ]
+  },
+  {
+   "word": "was",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "vad"
+   ]
+  },
+  {
+   "word": "wann",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "när"
+   ]
+  },
+  {
+   "word": "warum",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "varför"
+   ]
+  },
+  {
+   "word": "wie",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "hur"
+   ]
+  },
+  {
+   "word": "woher",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "varifrån"
+   ]
+  },
+  {
+   "word": "wohin",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "vart"
+   ]
+  },
+  {
+   "word": "heute",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "idag"
+   ]
+  },
+  {
+   "word": "morgen",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "imorgon"
+   ]
+  },
+  {
+   "word": "gestern",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "igår"
+   ]
+  },
+  {
+   "word": "jetzt",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "nu"
+   ]
+  },
+  {
+   "word": "immer",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "alltid"
+   ]
+  },
+  {
+   "word": "nie",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "aldrig"
+   ]
+  },
+  {
+   "word": "oft",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "ofta"
+   ]
+  },
+  {
+   "word": "manchmal",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "ibland"
+   ]
+  },
+  {
+   "word": "hier",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "här"
+   ]
+  },
+  {
+   "word": "dort",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "där"
+   ]
+  },
+  {
+   "word": "auch",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "också"
+   ]
+  },
+  {
+   "word": "schon",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "redan"
+   ]
+  },
+  {
+   "word": "sehr",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "mycket"
+   ]
+  },
+  {
+   "word": "gern",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "gärna"
+   ]
+  },
+  {
+   "word": "vielleicht",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "kanske"
+   ]
+  },
+  {
+   "word": "wirklich",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "verkligen"
+   ]
+  },
+  {
+   "word": "zusammen",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "tillsammans"
+   ]
+  },
+  {
+   "word": "zuerst",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "först"
+   ]
+  },
+  {
+   "word": "dann",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "sedan"
+   ]
+  },
+  {
+   "word": "bald",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "snart"
+   ]
+  },
+  {
+   "word": "weil",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "eftersom"
+   ]
+  },
+  {
+   "word": "also",
+   "pos": "tyska",
+   "level": 4,
+   "sv": [
+    "alltså"
+   ]
+  },
+  {
+   "word": "obwohl",
+   "pos": "tyska",
+   "level": 5,
+   "sv": [
+    "fastän"
+   ]
+  },
+  {
+   "word": "deshalb",
+   "pos": "tyska",
+   "level": 5,
+   "sv": [
+    "därför"
+   ]
+  },
+  {
+   "word": "eins",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "ett"
+   ]
+  },
+  {
+   "word": "zwei",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "två"
+   ]
+  },
+  {
+   "word": "drei",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "tre"
+   ]
+  },
+  {
+   "word": "vier",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "fyra"
+   ]
+  },
+  {
+   "word": "fünf",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "fem"
+   ]
+  },
+  {
+   "word": "sechs",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "sex"
+   ]
+  },
+  {
+   "word": "sieben",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "sju"
+   ]
+  },
+  {
+   "word": "acht",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "åtta"
+   ]
+  },
+  {
+   "word": "neun",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "nio"
+   ]
+  },
+  {
+   "word": "zehn",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "tio"
+   ]
+  },
+  {
+   "word": "elf",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "elva"
+   ]
+  },
+  {
+   "word": "zwölf",
+   "pos": "tyska",
+   "level": 1,
+   "sv": [
+    "tolv"
+   ]
+  },
+  {
+   "word": "dreizehn",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "tretton"
+   ]
+  },
+  {
+   "word": "vierzehn",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "fjorton"
+   ]
+  },
+  {
+   "word": "fünfzehn",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "femton"
+   ]
+  },
+  {
+   "word": "sechzehn",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "sexton"
+   ]
+  },
+  {
+   "word": "siebzehn",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "sjutton"
+   ]
+  },
+  {
+   "word": "achtzehn",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "arton"
+   ]
+  },
+  {
+   "word": "neunzehn",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "nitton"
+   ]
+  },
+  {
+   "word": "zwanzig",
+   "pos": "tyska",
+   "level": 2,
+   "sv": [
+    "tjugo"
+   ]
+  },
+  {
+   "word": "dreißig",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "trettio"
+   ]
+  },
+  {
+   "word": "vierzig",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "fyrtio"
+   ]
+  },
+  {
+   "word": "fünfzig",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "femtio"
+   ]
+  },
+  {
+   "word": "hundert",
+   "pos": "tyska",
+   "level": 3,
+   "sv": [
+    "hundra"
+   ]
+  }
+ ]
+}

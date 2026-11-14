@@ -56,7 +56,7 @@ FUNCTION_WORDS = {
 _WORD = re.compile(r"[^\W\d_]+(?:['’][^\W\d_]+)?")
 _BLANK = re.compile(r"_{2,}")
 _QUOTES = re.compile(r"\"|[“”«»]|(?<!\w)['‘’]|['‘’](?!\w)")
-_SPAN = re.compile(r"""(?<!\w)'([^'\n]{1,80}?)'(?!\w)|"([^"\n]{1,80}?)"|“([^”\n]{1,80}?)”|‘([^’\n]{1,80}?)’""")
+_SPAN = re.compile(r"""(?<!\w)'((?:[^'\n]|(?<=\w)'(?=\w)){1,80}?)'(?!\w)|"([^"\n]{1,80}?)"|“([^”\n]{1,80}?)”|‘([^’\n]{1,80}?)’""")
 _CUE = re.compile(r"\b(?:på|till)\s+(svenska|engelska|franska|tyska|spanska|italienska)\b", re.I)
 _CHUNK = re.compile(r"(?<=[.!?:])\s+|\n+")
 _AFTER_SPAN = re.compile(r"\s*(?:på|till)\s+(svenska|engelska|franska|tyska|spanska|italienska)\b", re.I)
@@ -152,7 +152,7 @@ def plan(subject: str, question: str, options=None, answers=None, reveal: bool =
     if answer_is_target:
         for o in options or []:
             text = clean(str(o))
-            if _words(text):
+            if _words(text) and not _is_swedish(text, subject):     # ett svenskt alternativ läses aldrig
                 result["options"][str(o)] = [_segment(text, subject)]
     if reveal and answer_is_target and answers:
         right = str(answers[0])
@@ -163,7 +163,7 @@ def plan(subject: str, question: str, options=None, answers=None, reveal: bool =
                     filled = _BLANK.sub(lambda _m: right, chunk.strip())
                     break
         text = clean(filled or right)
-        if _words(text):
+        if _words(text) and not _is_swedish(text, subject):
             result["answer"] = [_segment(text, subject)]
     if not (result["question"] or result["options"] or result["answer"]):
         return None

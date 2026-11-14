@@ -108,6 +108,14 @@ AREAS = {
         "Koreanska": ["Språk", "Koreanska", "Läs hangul", "K-pop-ord"],
         RAKNA: ["Matte"],
     },
+    "tyska": {
+        "Ord och fraser": ["Glosor", "Hälsningar och fraser", "Siffror och tid", "Länder och vardag"],
+        "Uttal och stavning": ["Uttal", "Stavning"],
+        "Artiklar och substantiv": ["Artiklar", "Plural"],
+        "Verb": ["Verb i presens", "Modalverb", "Perfekt", "Verb med delar"],
+        "Meningar": ["Ordföljd", "Nekande", "Frågeord", "Bisatser"],
+        "Kasus och adjektiv": ["Kasus", "Adjektiv", "Jämförelse"],
+    },
     "linux": {
         "Terminal och filer": ["Navigering", "Filer och kataloger", "Textfiler", "Pipes och omdirigering",
                                "Skal och genvägar", "Filsystemet"],

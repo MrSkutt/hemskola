@@ -1,0 +1,2967 @@
+[
+ {
+  "subject": "tyska",
+  "topic": "Hälsningar och fraser",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad betyder 'Guten Morgen' på svenska?",
+  "options": [
+   "God morgon",
+   "God natt",
+   "God kväll",
+   "Hej då"
+  ],
+  "answer": "God morgon",
+  "explanation": "'Guten Morgen' säger du på förmiddagen. 'Guten Tag' är god dag och 'Guten Abend' är god kväll."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Hälsningar och fraser",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad betyder 'Danke' på svenska?",
+  "options": [
+   "Tack",
+   "Förlåt",
+   "Hej",
+   "Snälla"
+  ],
+  "answer": "Tack",
+  "explanation": "'Danke' är tack. Vill du säga tack så mycket kan du säga 'Danke schön' eller 'Vielen Dank'."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Hälsningar och fraser",
+  "level": 1,
+  "type": "mc",
+  "question": "Hur säger man 'hej då' på tyska?",
+  "options": [
+   "Tschüss",
+   "Hallo",
+   "Danke",
+   "Guten Morgen"
+  ],
+  "answer": "Tschüss",
+  "explanation": "'Tschüss' är det vanliga sättet att säga hej då. 'Auf Wiedersehen' är lite mer artigt."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Hälsningar och fraser",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad betyder 'Wie heißt du?' på svenska?",
+  "options": [
+   "Vad heter du?",
+   "Hur mår du?",
+   "Var bor du?",
+   "Hur gammal är du?"
+  ],
+  "answer": "Vad heter du?",
+  "explanation": "'Wie heißt du?' = Vad heter du? Du svarar 'Ich heiße ...' (Jag heter ...)."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Hälsningar och fraser",
+  "level": 1,
+  "type": "mc",
+  "question": "Fyll i: Ich ___ Anna.",
+  "options": [
+   "heiße",
+   "heißt",
+   "heißen",
+   "heiß"
+  ],
+  "answer": "heiße",
+  "explanation": "Efter 'ich' får verbet ändelsen -e: ich heiße = jag heter."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Hälsningar och fraser",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad betyder 'Wie geht's?' på svenska?",
+  "options": [
+   "Hur mår du?",
+   "Vad heter du?",
+   "Var bor du?",
+   "Vad gör du?"
+  ],
+  "answer": "Hur mår du?",
+  "explanation": "'Wie geht's?' är förkortning av 'Wie geht es dir?'. Svara 'Gut, danke.' (Bra, tack.)"
+ },
+ {
+  "subject": "tyska",
+  "topic": "Hälsningar och fraser",
+  "level": 1,
+  "type": "mc",
+  "question": "Du mår bra och någon frågar 'Wie geht's?' Vad svarar du på tyska?",
+  "options": [
+   "Gut, danke.",
+   "Ich heiße Anna.",
+   "Ich bin vierzehn.",
+   "Tschüss, bis bald!"
+  ],
+  "answer": "Gut, danke.",
+  "explanation": "'Gut, danke.' betyder 'Bra, tack.'"
+ },
+ {
+  "subject": "tyska",
+  "topic": "Hälsningar och fraser",
+  "level": 1,
+  "type": "mc",
+  "question": "Hur säger man 'Jag heter Sofia' på tyska?",
+  "options": [
+   "Ich heiße Sofia.",
+   "Ich bin heiße Sofia.",
+   "Ich heißt Sofia.",
+   "Du heißt Sofia."
+  ],
+  "answer": "Ich heiße Sofia.",
+  "explanation": "Efter ich får verbet ändelsen -e. 'Du heißt Sofia' betyder 'Du heter Sofia'."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Hälsningar och fraser",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad betyder 'Entschuldigung' på svenska?",
+  "options": [
+   "Ursäkta",
+   "Tack",
+   "Hej då",
+   "Varsågod"
+  ],
+  "answer": "Ursäkta",
+  "explanation": "Du säger 'Entschuldigung' när du vill ursäkta dig eller dra till dig någons uppmärksamhet."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Hälsningar och fraser",
+  "level": 1,
+  "type": "mc",
+  "question": "Någon säger 'Danke!' till dig. Vad svarar du på tyska?",
+  "options": [
+   "Bitte!",
+   "Hallo!",
+   "Nein!",
+   "Tschüss!"
+  ],
+  "answer": "Bitte!",
+  "explanation": "'Bitte' betyder både snälla och varsågod, så det är svaret på 'Danke'."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Hälsningar och fraser",
+  "level": 1,
+  "type": "text",
+  "question": "Hur säger man 'tack' på tyska?\nSkriv ordet på tyska.",
+  "answer": [
+   "Danke"
+  ],
+  "explanation": "'Danke' = tack."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Hälsningar och fraser",
+  "level": 1,
+  "type": "text",
+  "question": "Hur säger man 'nej' på tyska?\nSkriv ordet på tyska.",
+  "answer": [
+   "nein"
+  ],
+  "explanation": "'Nein' = nej, och 'ja' är 'ja'. 'Nein' uttalas 'najn'."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Hälsningar och fraser",
+  "level": 1,
+  "type": "text",
+  "question": "Hur säger man 'god morgon' på tyska?\nSkriv orden på tyska.",
+  "answer": [
+   "Guten Morgen"
+  ],
+  "explanation": "'Guten Morgen' = god morgon. Båda orden skrivs med stor bokstav."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Hälsningar och fraser",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad betyder 'Woher kommst du?' på svenska?",
+  "options": [
+   "Varifrån kommer du?",
+   "Var bor du någonstans?",
+   "Vart ska du åka nu?",
+   "Vem är du egentligen?"
+  ],
+  "answer": "Varifrån kommer du?",
+  "explanation": "'Woher' = varifrån. Du svarar 'Ich komme aus Schweden.'"
+ },
+ {
+  "subject": "tyska",
+  "topic": "Hälsningar och fraser",
+  "level": 2,
+  "type": "mc",
+  "question": "Fyll i: Ich ___ aus Schweden.",
+  "options": [
+   "komme",
+   "kommst",
+   "kommt",
+   "kommen"
+  ],
+  "answer": "komme",
+  "explanation": "Efter 'ich' får verbet ändelsen -e: ich komme."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Hälsningar och fraser",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad betyder 'Ich verstehe nicht.' på svenska?",
+  "options": [
+   "Jag förstår inte.",
+   "Jag hör dig inte.",
+   "Jag minns inte.",
+   "Jag känner dig inte."
+  ],
+  "answer": "Jag förstår inte.",
+  "explanation": "'verstehen' = förstå och 'nicht' = inte."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Hälsningar och fraser",
+  "level": 2,
+  "type": "mc",
+  "question": "Hur säger man 'Hur gammal är du?' på tyska?",
+  "options": [
+   "Wie alt bist du?",
+   "Wie heißt du?",
+   "Wo wohnst du?",
+   "Wer bist du?"
+  ],
+  "answer": "Wie alt bist du?",
+  "explanation": "'Wie alt' = hur gammal. Svaret är 'Ich bin ... Jahre alt.'"
+ },
+ {
+  "subject": "tyska",
+  "topic": "Hälsningar och fraser",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad betyder 'Wie bitte?' på svenska?",
+  "options": [
+   "Hur sa du?",
+   "Hur mår du?",
+   "Hur gammal?",
+   "Hur mycket?"
+  ],
+  "answer": "Hur sa du?",
+  "explanation": "'Wie bitte?' säger du när du inte hörde vad någon sa."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Hälsningar och fraser",
+  "level": 2,
+  "type": "text",
+  "question": "Hur säger man 'Jag bor i Stockholm' på tyska?\nSkriv hela meningen på tyska.",
+  "answer": [
+   "Ich wohne in Stockholm",
+   "Ich wohne in Stockholm."
+  ],
+  "explanation": "'wohnen' = bo. Efter ich: ich wohne."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Hälsningar och fraser",
+  "level": 2,
+  "type": "text",
+  "question": "Hur säger man 'Jag är 14 år gammal' på tyska?\nSkriv hela meningen på tyska.",
+  "answer": [
+   "Ich bin 14 Jahre alt",
+   "Ich bin 14 Jahre alt.",
+   "Ich bin vierzehn Jahre alt",
+   "Ich bin vierzehn Jahre alt."
+  ],
+  "explanation": "Ålder säger man med 'sein' (vara): Ich bin 14 Jahre alt. Man säger inte 'jag har 14 år'."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Hälsningar och fraser",
+  "level": 2,
+  "type": "text",
+  "question": "Hur säger man 'Jag heter Anna' på tyska?\nSkriv hela meningen på tyska.",
+  "answer": [
+   "Ich heiße Anna",
+   "Ich heiße Anna.",
+   "Ich heisse Anna",
+   "Ich heisse Anna."
+  ],
+  "explanation": "Ich heiße Anna. Utan ß kan du skriva 'ss': Ich heisse Anna."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Hälsningar och fraser",
+  "level": 2,
+  "type": "mc",
+  "question": "Du vill fråga hur man säger något på tyska. Vad frågar du?",
+  "options": [
+   "Wie sagt man das auf Deutsch?",
+   "Wo findet man das auf Deutsch?",
+   "Was bedeutet das in Deutsch?",
+   "Wer sagt das immer auf Deutsch?"
+  ],
+  "answer": "Wie sagt man das auf Deutsch?",
+  "explanation": "'Wie sagt man ...' = hur säger man ... och 'auf Deutsch' = på tyska."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Hälsningar och fraser",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad betyder 'Ich möchte ein Wasser, bitte.' på svenska?",
+  "options": [
+   "Jag skulle vilja ha ett vatten, tack.",
+   "Jag dricker gärna ett vatten också.",
+   "Jag har druckit ett vatten, tack.",
+   "Jag behöver inget vatten, tack."
+  ],
+  "answer": "Jag skulle vilja ha ett vatten, tack.",
+  "explanation": "'ich möchte' = jag skulle vilja ha. Så beställer man artigt."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Hälsningar och fraser",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad betyder 'Das schmeckt gut.' på svenska?",
+  "options": [
+   "Det smakar gott.",
+   "Det luktar gott.",
+   "Det ser gott ut.",
+   "Det är mycket varmt."
+  ],
+  "answer": "Det smakar gott.",
+  "explanation": "'schmecken' = smaka."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Hälsningar och fraser",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad betyder 'Ich habe Hunger.' på svenska?",
+  "options": [
+   "Jag är hungrig.",
+   "Jag är törstig.",
+   "Jag är trött.",
+   "Jag är glad."
+  ],
+  "answer": "Jag är hungrig.",
+  "explanation": "På tyska 'har' man hunger: Ich habe Hunger. Likadant: Ich habe Durst (jag är törstig)."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Hälsningar och fraser",
+  "level": 3,
+  "type": "mc",
+  "question": "Hur lyder en artig beställning på tyska?",
+  "options": [
+   "Ich möchte einen Kaffee, bitte.",
+   "Ich will einen Kaffee, jetzt!",
+   "Gib mir sofort einen Kaffee.",
+   "Einen Kaffee, aber schnell!"
+  ],
+  "answer": "Ich möchte einen Kaffee, bitte.",
+  "explanation": "'Ich möchte ... , bitte' är artigt. De andra låter krävande."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Siffror och tid",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket tal är 'fünf'?",
+  "options": [
+   "5",
+   "4",
+   "6",
+   "7"
+  ],
+  "answer": "5",
+  "explanation": "fünf = 5. Uttalas ungefär 'fynf'."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Siffror och tid",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket tal är 'zehn'?",
+  "options": [
+   "10",
+   "7",
+   "8",
+   "12"
+  ],
+  "answer": "10",
+  "explanation": "zehn = 10. Z låter som 'ts': 'tsejn'."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Siffror och tid",
+  "level": 1,
+  "type": "mc",
+  "question": "Hur säger man 'sju' på tyska?",
+  "options": [
+   "sieben",
+   "sechs",
+   "acht",
+   "neun"
+  ],
+  "answer": "sieben",
+  "explanation": "sieben = 7. 'sechs' = 6, 'acht' = 8, 'neun' = 9."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Siffror och tid",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilket tal är 'zwölf'?",
+  "options": [
+   "12",
+   "11",
+   "13",
+   "20"
+  ],
+  "answer": "12",
+  "explanation": "zwölf = 12 och elf = 11."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Siffror och tid",
+  "level": 1,
+  "type": "mc",
+  "question": "Hur säger man 'tre' på tyska?",
+  "options": [
+   "drei",
+   "zwei",
+   "vier",
+   "dreizehn"
+  ],
+  "answer": "drei",
+  "explanation": "drei = 3. dreizehn = 13."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Siffror och tid",
+  "level": 1,
+  "type": "text",
+  "question": "Skriv 'sieben' som en siffra.\nSvara endast med talet.",
+  "answer": [
+   "7"
+  ],
+  "explanation": "sieben = 7."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Siffror och tid",
+  "level": 1,
+  "type": "text",
+  "question": "Hur säger man 'åtta' på tyska?\nSkriv ordet på tyska.",
+  "answer": [
+   "acht"
+  ],
+  "explanation": "acht = 8. 'ch' efter a låter hårt, bak i halsen."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Siffror och tid",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket tal är 'fünfzehn'?",
+  "options": [
+   "15",
+   "50",
+   "5",
+   "25"
+  ],
+  "answer": "15",
+  "explanation": "fünfzehn = fem + tio = 15. fünfzig = 50."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Siffror och tid",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket tal är 'zwanzig'?",
+  "options": [
+   "20",
+   "12",
+   "22",
+   "200"
+  ],
+  "answer": "20",
+  "explanation": "zwanzig = 20."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Siffror och tid",
+  "level": 2,
+  "type": "mc",
+  "question": "Hur säger man '17' på tyska?",
+  "options": [
+   "siebzehn",
+   "siebzig",
+   "sieben",
+   "siebenzehn"
+  ],
+  "answer": "siebzehn",
+  "explanation": "Från 13 till 19 sätter man ental + zehn, men 'sieben' tappar sin 'en': siebzehn. siebzig = 70."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Siffror och tid",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad betyder 'Es ist halb drei.' på svenska?",
+  "options": [
+   "Klockan är halv tre.",
+   "Klockan är tre.",
+   "Klockan är kvart över tre.",
+   "Klockan är halv fyra."
+  ],
+  "answer": "Klockan är halv tre.",
+  "explanation": "'halb drei' = halv tre = 2:30, precis som på svenska."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Siffror och tid",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad betyder 'Viertel nach vier' på svenska?",
+  "options": [
+   "kvart över fyra",
+   "kvart i fyra",
+   "halv fyra",
+   "fem över fyra"
+  ],
+  "answer": "kvart över fyra",
+  "explanation": "'Viertel' = kvart. 'nach' = över och 'vor' = i. 4:15 = Viertel nach vier."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Siffror och tid",
+  "level": 2,
+  "type": "text",
+  "question": "Hur säger man 'måndag' på tyska?\nSkriv ordet på tyska.",
+  "answer": [
+   "Montag"
+  ],
+  "explanation": "Alla veckodagar skrivs med stor bokstav och är der-ord: der Montag."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Siffror och tid",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad betyder 'Mittwoch' på svenska?",
+  "options": [
+   "onsdag",
+   "tisdag",
+   "torsdag",
+   "lördag"
+  ],
+  "answer": "onsdag",
+  "explanation": "Mittwoch = mitt i veckan = onsdag."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Siffror och tid",
+  "level": 2,
+  "type": "mc",
+  "question": "Hur säger man 'fredag' på tyska?",
+  "options": [
+   "Freitag",
+   "Samstag",
+   "Sonntag",
+   "Mittwoch"
+  ],
+  "answer": "Freitag",
+  "explanation": "Freitag = fredag, Samstag = lördag, Sonntag = söndag."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Siffror och tid",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket tal är 'einundzwanzig'?",
+  "options": [
+   "21",
+   "12",
+   "11",
+   "31"
+  ],
+  "answer": "21",
+  "explanation": "Ental kommer före tiotal: ein-und-zwanzig = ett-och-tjugo = 21."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Siffror och tid",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket tal är 'dreißig'?",
+  "options": [
+   "30",
+   "13",
+   "3",
+   "33"
+  ],
+  "answer": "30",
+  "explanation": "dreißig = 30. dreizehn = 13."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Siffror och tid",
+  "level": 3,
+  "type": "text",
+  "question": "Skriv 'vierzig' som en siffra.\nSvara endast med talet.",
+  "answer": [
+   "40"
+  ],
+  "explanation": "vierzig = 40."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Siffror och tid",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket tal är 'fünfundvierzig'?",
+  "options": [
+   "45",
+   "54",
+   "15",
+   "40"
+  ],
+  "answer": "45",
+  "explanation": "fünf-und-vierzig = fem-och-fyrtio = 45."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Siffror och tid",
+  "level": 3,
+  "type": "mc",
+  "question": "Hur säger man 'kvart i tio' på tyska?",
+  "options": [
+   "Viertel vor zehn",
+   "Viertel nach zehn",
+   "halb zehn",
+   "Viertel vor neun"
+  ],
+  "answer": "Viertel vor zehn",
+  "explanation": "'vor' = i (före). Kvart i tio = 9:45 = Viertel vor zehn."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Siffror och tid",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad betyder 'Es ist fünf vor acht.' på svenska?",
+  "options": [
+   "Klockan är fem i åtta.",
+   "Klockan är fem över åtta.",
+   "Klockan är åtta.",
+   "Klockan är fem i fem."
+  ],
+  "answer": "Klockan är fem i åtta.",
+  "explanation": "'fünf vor acht' = fem i åtta = 7:55."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Siffror och tid",
+  "level": 3,
+  "type": "mc",
+  "question": "Hur säger man 'på måndag' på tyska?",
+  "options": [
+   "am Montag",
+   "im Montag",
+   "auf Montag",
+   "um Montag"
+  ],
+  "answer": "am Montag",
+  "explanation": "Med veckodagar använder man 'am': am Montag, am Freitag."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Siffror och tid",
+  "level": 3,
+  "type": "mc",
+  "question": "Hur säger man 'i juli' på tyska?",
+  "options": [
+   "im Juli",
+   "am Juli",
+   "in Juli",
+   "um Juli"
+  ],
+  "answer": "im Juli",
+  "explanation": "Med månader använder man 'im': im Juli, im Mai."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Länder och vardag",
+  "level": 1,
+  "type": "mc",
+  "question": "Hur säger man 'Sverige' på tyska?",
+  "options": [
+   "Schweden",
+   "Schweiz",
+   "Deutschland",
+   "Norwegen"
+  ],
+  "answer": "Schweden",
+  "explanation": "'Schweden' är Sverige. 'die Schweiz' är Schweiz, så se upp!"
+ },
+ {
+  "subject": "tyska",
+  "topic": "Länder och vardag",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad betyder 'Deutschland' på svenska?",
+  "options": [
+   "Tyskland",
+   "Holland",
+   "Danmark",
+   "Österrike"
+  ],
+  "answer": "Tyskland",
+  "explanation": "Deutschland = Tyskland. På tyska heter språket 'Deutsch'."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Länder och vardag",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad heter Tysklands huvudstad?",
+  "options": [
+   "Berlin",
+   "München",
+   "Hamburg",
+   "Wien"
+  ],
+  "answer": "Berlin",
+  "explanation": "Berlin är huvudstad. Wien (Wien) är Österrikes huvudstad."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Länder och vardag",
+  "level": 1,
+  "type": "mc",
+  "question": "Vilken grupp består av länder där tyska är ett officiellt språk?",
+  "options": [
+   "Tyskland, Österrike och Schweiz",
+   "Tyskland, Spanien och Portugal",
+   "Tyskland, Polen och Ungern",
+   "Tyskland, Grekland och Turkiet"
+  ],
+  "answer": "Tyskland, Österrike och Schweiz",
+  "explanation": "Tyska är officiellt språk i Tyskland, Österrike, Schweiz (tillsammans med franska och italienska), Liechtenstein och Luxemburg."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Länder och vardag",
+  "level": 2,
+  "type": "text",
+  "question": "Hur säger man 'Sverige' på tyska?\nSkriv ordet på tyska.",
+  "answer": [
+   "Schweden"
+  ],
+  "explanation": "Schweden = Sverige."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Länder och vardag",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad betyder 'die Schweiz' på svenska?",
+  "options": [
+   "Schweiz",
+   "Sverige",
+   "Tyskland",
+   "Österrike"
+  ],
+  "answer": "Schweiz",
+  "explanation": "die Schweiz = Schweiz. Sverige heter 'Schweden'."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Länder och vardag",
+  "level": 2,
+  "type": "mc",
+  "question": "Hur säger man 'Österrike' på tyska?",
+  "options": [
+   "Österreich",
+   "Schweden",
+   "Dänemark",
+   "Frankreich"
+  ],
+  "answer": "Österreich",
+  "explanation": "Österreich = Österrike. Frankreich = Frankrike, Dänemark = Danmark."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Länder och vardag",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad betyder 'Ich komme aus Schweden.' på svenska?",
+  "options": [
+   "Jag kommer från Sverige.",
+   "Jag bor i Sverige.",
+   "Jag reser till Sverige.",
+   "Jag älskar Sverige."
+  ],
+  "answer": "Jag kommer från Sverige.",
+  "explanation": "'aus' = från/ur. 'Ich komme aus ...' säger man om varifrån man kommer."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Uttal",
+  "level": 1,
+  "type": "mc",
+  "question": "Hur uttalas 'w' i 'Wasser' (vatten)?",
+  "options": [
+   "Som ett svenskt v",
+   "Som ett svenskt f",
+   "Som ett svenskt j",
+   "Som ett svenskt s"
+  ],
+  "answer": "Som ett svenskt v",
+  "explanation": "Tyskans w låter som svenskt v: Wasser uttalas 'vasser'."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Uttal",
+  "level": 1,
+  "type": "mc",
+  "question": "Hur uttalas 'v' i 'Vater' (far)?",
+  "options": [
+   "Som ett svenskt f",
+   "Som ett svenskt v",
+   "Som ett svenskt b",
+   "Som ett svenskt h"
+  ],
+  "answer": "Som ett svenskt f",
+  "explanation": "Tyskans v låter oftast som f: Vater uttalas 'fater'. I främmande ord som 'Vase' låter det som v."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Uttal",
+  "level": 1,
+  "type": "mc",
+  "question": "Hur uttalas 'z' i 'Zeit' (tid)?",
+  "options": [
+   "Som 'ts'",
+   "Som ett svenskt s",
+   "Som ett svenskt k",
+   "Som 'sj'"
+  ],
+  "answer": "Som 'ts'",
+  "explanation": "Tyskans z är alltid 'ts': Zeit uttalas 'tsajt'."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Uttal",
+  "level": 1,
+  "type": "mc",
+  "question": "Hur uttalas 'sch' i 'Schule' (skola)?",
+  "options": [
+   "Som 'sj'",
+   "Som 'sk'",
+   "Som 's'",
+   "Som 'tj'"
+  ],
+  "answer": "Som 'sj'",
+  "explanation": "sch = sj: Schule uttalas 'sjule'."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Uttal",
+  "level": 1,
+  "type": "mc",
+  "question": "Hur uttalas 'ei' i 'nein' (nej)?",
+  "options": [
+   "Som 'aj'",
+   "Som 'ej'",
+   "Som 'ii'",
+   "Som 'e'"
+  ],
+  "answer": "Som 'aj'",
+  "explanation": "ei låter 'aj': nein = 'najn'."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Uttal",
+  "level": 1,
+  "type": "mc",
+  "question": "Hur uttalas 'ie' i 'Tier' (djur)?",
+  "options": [
+   "Som ett långt i",
+   "Som 'aj'",
+   "Som 'ej'",
+   "Som ett kort e"
+  ],
+  "answer": "Som ett långt i",
+  "explanation": "ie är ett långt i: Tier = 'tiir'. Kom ihåg: ie = i, ei = aj."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Uttal",
+  "level": 2,
+  "type": "mc",
+  "question": "Hur uttalas 'eu' i 'Freund' (kompis)?",
+  "options": [
+   "Som 'oj'",
+   "Som 'aj'",
+   "Som 'ö'",
+   "Som 'ju'"
+  ],
+  "answer": "Som 'oj'",
+  "explanation": "eu och äu låter 'oj': Freund = 'frojnd', Häuser = 'hojser'."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Uttal",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket svenskt ljud liknar tyskans 'ü' (som i 'Tür')?",
+  "options": [
+   "y",
+   "u",
+   "o",
+   "i"
+  ],
+  "answer": "y",
+  "explanation": "Tyskans ü låter som svenskt y: Tür = 'tyr', für = 'fyr'."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Uttal",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad är tecknet 'ß' i 'Straße'?",
+  "options": [
+   "Ett dubbelt s",
+   "Ett stort b",
+   "Ett långt f",
+   "Ett tyst h"
+  ],
+  "answer": "Ett dubbelt s",
+  "explanation": "ß låter som ss. Har du inget ß på tangentbordet skriver du 'ss'."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Uttal",
+  "level": 2,
+  "type": "mc",
+  "question": "Hur uttalas 'st' i början av 'Stein' (sten)?",
+  "options": [
+   "Som 'sjt'",
+   "Som 'st'",
+   "Som 'sk'",
+   "Som 'tst'"
+  ],
+  "answer": "Som 'sjt'",
+  "explanation": "Först i ett ord blir st 'sjt' och sp 'sjp': Stein = 'sjtajn', Sport = 'sjport'."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Uttal",
+  "level": 2,
+  "type": "mc",
+  "question": "Hur uttalas 'ch' i 'Buch' (bok)?",
+  "options": [
+   "Hårt, bak i halsen",
+   "Mjukt, som i 'ich'",
+   "Som ett svenskt k",
+   "Som ett svenskt s"
+  ],
+  "answer": "Hårt, bak i halsen",
+  "explanation": "Efter a, o, u och au är ch hårt (bak i halsen). Efter i, e, ä, ö och ü är det mjukt: ich, Milch."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Uttal",
+  "level": 2,
+  "type": "mc",
+  "question": "Hur ska substantiv skrivas på tyska?",
+  "options": [
+   "Alltid med stor bokstav",
+   "Alltid med liten bokstav",
+   "Stor bokstav bara i namn",
+   "Stor bokstav först i meningen"
+  ],
+  "answer": "Alltid med stor bokstav",
+  "explanation": "Alla substantiv har stor bokstav, även mitt i meningen: Ich habe einen Hund."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Uttal",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket ord på tyska uttalas med 'ts' i början?",
+  "options": [
+   "Zeit",
+   "Sonne",
+   "Schule",
+   "Wasser"
+  ],
+  "answer": "Zeit",
+  "explanation": "z = ts: Zeit. Sonne börjar med ett mjukt s och Schule med sj."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Stavning",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket ord på tyska är rätt stavat? (kompis)",
+  "options": [
+   "Freund",
+   "Froind",
+   "Frojnd",
+   "Freunt"
+  ],
+  "answer": "Freund",
+  "explanation": "'oj'-ljudet stavas eu: Freund. Ordet slutar på d, men uttalas som t."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Stavning",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket ord på tyska är rätt stavat? (skola)",
+  "options": [
+   "Schule",
+   "Shule",
+   "Schuhle",
+   "Schulle"
+  ],
+  "answer": "Schule",
+  "explanation": "sj-ljudet stavas sch: Schule."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Stavning",
+  "level": 3,
+  "type": "mc",
+  "question": "Hur skriver du 'gata' på tyska?",
+  "options": [
+   "Straße",
+   "Strase",
+   "Strasse?",
+   "Stra-sse"
+  ],
+  "answer": "Straße",
+  "explanation": "Straße stavas med ß. På tangentbord utan ß skriver man 'Strasse'."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Artiklar",
+  "level": 1,
+  "type": "mc",
+  "question": "Fyll i: ___ Hund ist groß.",
+  "options": [
+   "Der",
+   "Die",
+   "Das",
+   "Den"
+  ],
+  "answer": "Der",
+  "explanation": "Hund är ett der-ord: der Hund."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Artiklar",
+  "level": 1,
+  "type": "mc",
+  "question": "Fyll i: ___ Katze ist klein.",
+  "options": [
+   "Die",
+   "Der",
+   "Das",
+   "Dem"
+  ],
+  "answer": "Die",
+  "explanation": "Katze är ett die-ord: die Katze."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Artiklar",
+  "level": 1,
+  "type": "mc",
+  "question": "Fyll i: ___ Haus ist alt.",
+  "options": [
+   "Das",
+   "Der",
+   "Die",
+   "Den"
+  ],
+  "answer": "Das",
+  "explanation": "Haus är ett das-ord: das Haus."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Artiklar",
+  "level": 1,
+  "type": "mc",
+  "question": "Fyll i: ___ Schule ist neu.",
+  "options": [
+   "Die",
+   "Der",
+   "Das",
+   "Dem"
+  ],
+  "answer": "Die",
+  "explanation": "Schule är ett die-ord: die Schule."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Artiklar",
+  "level": 1,
+  "type": "text",
+  "question": "Vilken bestämd artikel hör till 'Mutter'?\nSkriv bara artikeln.",
+  "answer": [
+   "die"
+  ],
+  "explanation": "die Mutter. Kvinnor och flickor är oftast die-ord, men inte alltid: das Mädchen."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Artiklar",
+  "level": 1,
+  "type": "text",
+  "question": "Vilken bestämd artikel hör till 'Vater'?\nSkriv bara artikeln.",
+  "answer": [
+   "der"
+  ],
+  "explanation": "der Vater."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Artiklar",
+  "level": 2,
+  "type": "mc",
+  "question": "Fyll i: Das ist ___ Hund.",
+  "options": [
+   "ein",
+   "eine",
+   "einen",
+   "einem"
+  ],
+  "answer": "ein",
+  "explanation": "Efter 'Das ist' står nominativ. Hund är maskulint: ein Hund."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Artiklar",
+  "level": 2,
+  "type": "mc",
+  "question": "Fyll i: Das ist ___ Katze.",
+  "options": [
+   "eine",
+   "ein",
+   "einen",
+   "einem"
+  ],
+  "answer": "eine",
+  "explanation": "Katze är feminint: eine Katze."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Artiklar",
+  "level": 2,
+  "type": "mc",
+  "question": "Fyll i: Das ist ___ Buch.",
+  "options": [
+   "ein",
+   "eine",
+   "einen",
+   "einer"
+  ],
+  "answer": "ein",
+  "explanation": "Buch är neutrum: ein Buch."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Artiklar",
+  "level": 2,
+  "type": "mc",
+  "question": "Hur säger man 'en katt' på tyska?",
+  "options": [
+   "eine Katze",
+   "ein Katze",
+   "einen Katze",
+   "das Katze"
+  ],
+  "answer": "eine Katze",
+  "explanation": "Katze är feminint, så det blir eine Katze."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Artiklar",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilken bestämd artikel används på tyska framför alla ord i plural?",
+  "options": [
+   "die",
+   "der",
+   "das",
+   "den"
+  ],
+  "answer": "die",
+  "explanation": "I plural är det alltid 'die': die Hunde, die Katzen, die Häuser."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Artiklar",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad betyder 'ein' och 'eine' på svenska?",
+  "options": [
+   "en eller ett",
+   "den eller det",
+   "min eller din",
+   "två eller tre"
+  ],
+  "answer": "en eller ett",
+  "explanation": "'ein' och 'eine' är obestämd artikel: en eller ett."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Artiklar",
+  "level": 3,
+  "type": "mc",
+  "question": "Fyll i: ___ Mädchen ist nett.",
+  "options": [
+   "Das",
+   "Die",
+   "Der",
+   "Den"
+  ],
+  "answer": "Das",
+  "explanation": "Alla ord som slutar på -chen är das-ord, trots att flickan är en hon: das Mädchen."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Artiklar",
+  "level": 3,
+  "type": "mc",
+  "question": "Fyll i: ___ Zeitung ist neu.",
+  "options": [
+   "Die",
+   "Der",
+   "Das",
+   "Dem"
+  ],
+  "answer": "Die",
+  "explanation": "Ord på -ung är nästan alltid die-ord: die Zeitung, die Wohnung."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Artiklar",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken artikel har 'Freiheit' (frihet)?",
+  "options": [
+   "der",
+   "die",
+   "das"
+  ],
+  "answer": "die",
+  "explanation": "Ord på -heit, -keit, -ung och -schaft är die-ord."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Artiklar",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken artikel har veckodagar och månader, till exempel 'Montag' och 'Juli'?",
+  "options": [
+   "der",
+   "die",
+   "das"
+  ],
+  "answer": "der",
+  "explanation": "Veckodagar, månader och årstider är alla der-ord: der Montag, der Juli, der Sommer."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Plural",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad är pluralen på tyska av 'das Kind'?",
+  "options": [
+   "die Kinder",
+   "die Kinde",
+   "die Kinds",
+   "die Kinden"
+  ],
+  "answer": "die Kinder",
+  "explanation": "das Kind → die Kinder. Många neutrum-ord får -er."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Plural",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad är pluralen på tyska av 'der Tag'?",
+  "options": [
+   "die Tage",
+   "die Tags",
+   "die Täge",
+   "die Tagen"
+  ],
+  "answer": "die Tage",
+  "explanation": "der Tag → die Tage."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Plural",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad är pluralen på tyska av 'die Frau'?",
+  "options": [
+   "die Frauen",
+   "die Fraue",
+   "die Fräuer",
+   "die Fraus"
+  ],
+  "answer": "die Frauen",
+  "explanation": "die Frau → die Frauen. Feminina ord får oftast -n eller -en."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Plural",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad är pluralen på tyska av 'das Auto'?",
+  "options": [
+   "die Autos",
+   "die Autoen",
+   "die Autoe",
+   "die Auter"
+  ],
+  "answer": "die Autos",
+  "explanation": "das Auto → die Autos. Ord från andra språk får ofta -s."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Plural",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad är pluralen på tyska av 'der Apfel'?",
+  "options": [
+   "die Äpfel",
+   "die Apfels",
+   "die Apfeln",
+   "die Apfeler"
+  ],
+  "answer": "die Äpfel",
+  "explanation": "der Apfel → die Äpfel. Här sker bara ett omljud, a blir ä."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Plural",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad är pluralen på tyska av 'das Buch'?",
+  "options": [
+   "die Bücher",
+   "die Buchen",
+   "die Buche",
+   "die Büche"
+  ],
+  "answer": "die Bücher",
+  "explanation": "das Buch → die Bücher (omljud + -er)."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Plural",
+  "level": 3,
+  "type": "text",
+  "question": "Skriv på tyska pluralformen av 'die Katze' (börja med die).",
+  "answer": [
+   "die Katzen",
+   "Katzen"
+  ],
+  "explanation": "die Katze → die Katzen."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Plural",
+  "level": 3,
+  "type": "text",
+  "question": "Skriv på tyska pluralformen av 'das Haus' (börja med die).",
+  "answer": [
+   "die Häuser",
+   "die Haeuser",
+   "Häuser",
+   "Haeuser"
+  ],
+  "explanation": "das Haus → die Häuser (omljud + -er)."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Plural",
+  "level": 3,
+  "type": "text",
+  "question": "Skriv på tyska pluralformen av 'der Bruder' (börja med die).",
+  "answer": [
+   "die Brüder",
+   "die Brueder",
+   "Brüder",
+   "Brueder"
+  ],
+  "explanation": "der Bruder → die Brüder. Bara omljud."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Plural",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilket av orden på tyska ändras inte alls i plural?",
+  "options": [
+   "das Zimmer",
+   "das Kind",
+   "das Haus",
+   "das Buch"
+  ],
+  "answer": "das Zimmer",
+  "explanation": "das Zimmer → die Zimmer. Ord på -er, -el och -chen ändras ofta inte."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Plural",
+  "level": 4,
+  "type": "text",
+  "question": "Skriv på tyska pluralformen av 'das Mädchen' (börja med die).",
+  "answer": [
+   "die Mädchen",
+   "die Maedchen",
+   "Mädchen",
+   "Maedchen"
+  ],
+  "explanation": "das Mädchen → die Mädchen. Ord på -chen ändras inte i plural."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Verb i presens",
+  "level": 1,
+  "type": "mc",
+  "question": "Fyll i: Ich ___ in Berlin. (wohnen)",
+  "options": [
+   "wohne",
+   "wohnst",
+   "wohnt",
+   "wohnen"
+  ],
+  "answer": "wohne",
+  "explanation": "ich + -e: ich wohne."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Verb i presens",
+  "level": 1,
+  "type": "mc",
+  "question": "Fyll i: Du ___ Fußball. (spielen)",
+  "options": [
+   "spielst",
+   "spiele",
+   "spielt",
+   "spielen"
+  ],
+  "answer": "spielst",
+  "explanation": "du + -st: du spielst."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Verb i presens",
+  "level": 1,
+  "type": "mc",
+  "question": "Fyll i: Er ___ Deutsch. (lernen)",
+  "options": [
+   "lernt",
+   "lerne",
+   "lernst",
+   "lernen"
+  ],
+  "answer": "lernt",
+  "explanation": "er/sie/es + -t: er lernt."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Verb i presens",
+  "level": 1,
+  "type": "mc",
+  "question": "Fyll i: Wir ___ Pizza. (machen)",
+  "options": [
+   "machen",
+   "macht",
+   "mache",
+   "machst"
+  ],
+  "answer": "machen",
+  "explanation": "wir + -en: wir machen."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Verb i presens",
+  "level": 1,
+  "type": "mc",
+  "question": "Fyll i: Ich ___ 14 Jahre alt.",
+  "options": [
+   "bin",
+   "bist",
+   "ist",
+   "sind"
+  ],
+  "answer": "bin",
+  "explanation": "sein: ich bin, du bist, er ist, wir sind, ihr seid, sie sind."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Verb i presens",
+  "level": 1,
+  "type": "mc",
+  "question": "Fyll i: Du ___ mein Freund.",
+  "options": [
+   "bist",
+   "bin",
+   "ist",
+   "seid"
+  ],
+  "answer": "bist",
+  "explanation": "sein: du bist."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Verb i presens",
+  "level": 1,
+  "type": "mc",
+  "question": "Fyll i: Anna ___ eine Katze. (haben)",
+  "options": [
+   "hat",
+   "habe",
+   "hast",
+   "haben"
+  ],
+  "answer": "hat",
+  "explanation": "haben: ich habe, du hast, er hat, wir haben, ihr habt, sie haben."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Verb i presens",
+  "level": 1,
+  "type": "mc",
+  "question": "Fyll i: Wir ___ Hunger. (haben)",
+  "options": [
+   "haben",
+   "habt",
+   "hat",
+   "hast"
+  ],
+  "answer": "haben",
+  "explanation": "wir haben."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Verb i presens",
+  "level": 2,
+  "type": "mc",
+  "question": "Fyll i: Ihr ___ in der Schule. (sein)",
+  "options": [
+   "seid",
+   "sind",
+   "bist",
+   "ist"
+  ],
+  "answer": "seid",
+  "explanation": "ihr seid."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Verb i presens",
+  "level": 2,
+  "type": "mc",
+  "question": "Fyll i: Er ___ gern Pizza. (essen)",
+  "options": [
+   "isst",
+   "esst",
+   "esse",
+   "essen"
+  ],
+  "answer": "isst",
+  "explanation": "essen byter vokal: ich esse, du isst, er isst."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Verb i presens",
+  "level": 2,
+  "type": "mc",
+  "question": "Fyll i: Du ___ ein Buch. (lesen)",
+  "options": [
+   "liest",
+   "lest",
+   "lese",
+   "lesen"
+  ],
+  "answer": "liest",
+  "explanation": "lesen byter e till ie: ich lese, du liest, er liest."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Verb i presens",
+  "level": 2,
+  "type": "mc",
+  "question": "Fyll i: Anna ___ sehr gut Deutsch. (sprechen)",
+  "options": [
+   "spricht",
+   "sprecht",
+   "sprichst",
+   "sprechen"
+  ],
+  "answer": "spricht",
+  "explanation": "sprechen byter e till i: ich spreche, du sprichst, er spricht."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Verb i presens",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad betyder 'Wir spielen Fußball.' på svenska?",
+  "options": [
+   "Vi spelar fotboll.",
+   "Ni spelar fotboll.",
+   "De spelar fotboll.",
+   "Jag spelar fotboll."
+  ],
+  "answer": "Vi spelar fotboll.",
+  "explanation": "wir = vi, ihr = ni, ich = jag."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Verb i presens",
+  "level": 2,
+  "type": "mc",
+  "question": "Hur bildar man du-formen av ett regelbundet verb?",
+  "options": [
+   "stam + -st",
+   "stam + -t",
+   "stam + -e",
+   "stam + -en"
+  ],
+  "answer": "stam + -st",
+  "explanation": "du machst, du spielst, du wohnst."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Verb i presens",
+  "level": 3,
+  "type": "mc",
+  "question": "Fyll i: Du ___ nach Berlin. (fahren)",
+  "options": [
+   "fährst",
+   "fahrst",
+   "fährt",
+   "fahrt"
+  ],
+  "answer": "fährst",
+  "explanation": "fahren får omljud i du- och er-formen: du fährst, er fährt."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Verb i presens",
+  "level": 3,
+  "type": "mc",
+  "question": "Fyll i: Er ___ bis neun Uhr. (schlafen)",
+  "options": [
+   "schläft",
+   "schlaft",
+   "schläfst",
+   "schlafe"
+  ],
+  "answer": "schläft",
+  "explanation": "schlafen får omljud: du schläfst, er schläft."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Verb i presens",
+  "level": 3,
+  "type": "text",
+  "question": "Fyll i: Wir ___ heute Pizza. (essen)\nSkriv verbet i rätt form.",
+  "answer": [
+   "essen"
+  ],
+  "explanation": "wir essen. I wir- och sie-formen är verbet som infinitiv."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Modalverb",
+  "level": 3,
+  "type": "mc",
+  "question": "Fyll i: Ich ___ Deutsch sprechen. (können)",
+  "options": [
+   "kann",
+   "kannst",
+   "können",
+   "könnt"
+  ],
+  "answer": "kann",
+  "explanation": "können: ich kann, du kannst, er kann, wir können, ihr könnt."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Modalverb",
+  "level": 3,
+  "type": "mc",
+  "question": "Fyll i: Du ___ deine Hausaufgaben machen. (müssen)",
+  "options": [
+   "musst",
+   "muss",
+   "müssen",
+   "müsst"
+  ],
+  "answer": "musst",
+  "explanation": "müssen: ich muss, du musst, er muss, wir müssen."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Modalverb",
+  "level": 3,
+  "type": "mc",
+  "question": "Fyll i: Wir ___ ins Kino gehen. (wollen)",
+  "options": [
+   "wollen",
+   "wollt",
+   "will",
+   "willst"
+  ],
+  "answer": "wollen",
+  "explanation": "wollen: ich will, du willst, er will, wir wollen."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Modalverb",
+  "level": 3,
+  "type": "mc",
+  "question": "Fyll i: Ich ___ ein Eis, bitte. (möchten)",
+  "options": [
+   "möchte",
+   "möchtest",
+   "möchten",
+   "möchtet"
+  ],
+  "answer": "möchte",
+  "explanation": "möchten: ich möchte, du möchtest."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Modalverb",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad betyder 'ich möchte' på svenska?",
+  "options": [
+   "jag skulle vilja",
+   "jag tycker mycket om",
+   "jag måste göra det",
+   "jag får inte lov"
+  ],
+  "answer": "jag skulle vilja",
+  "explanation": "'möchte' är ett artigt sätt att säga vad man vill ha."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Modalverb",
+  "level": 3,
+  "type": "mc",
+  "question": "Var står huvudverbet i 'Ich kann heute nicht kommen.'?",
+  "options": [
+   "Sist i meningen",
+   "På plats två",
+   "Först i meningen",
+   "Efter 'heute'"
+  ],
+  "answer": "Sist i meningen",
+  "explanation": "Modalverbet står på plats 2 och huvudverbet (infinitiv) sist."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Modalverb",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken mening på tyska är rätt? (Jag kan tala tyska.)",
+  "options": [
+   "Ich kann Deutsch sprechen.",
+   "Ich kann sprechen Deutsch.",
+   "Ich spreche kann Deutsch.",
+   "Ich Deutsch kann sprechen."
+  ],
+  "answer": "Ich kann Deutsch sprechen.",
+  "explanation": "Modalverbet står på plats 2 och infinitiven sist."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Modalverb",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad betyder 'Du darfst hier nicht spielen.' på svenska?",
+  "options": [
+   "Du får inte spela här.",
+   "Du kan inte spela här.",
+   "Du behöver inte spela här.",
+   "Du ska inte spela här."
+  ],
+  "answer": "Du får inte spela här.",
+  "explanation": "'dürfen' = få (ha lov). 'nicht dürfen' = inte få."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Modalverb",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad betyder 'Du musst nicht kommen.' på svenska?",
+  "options": [
+   "Du behöver inte komma.",
+   "Du får inte komma.",
+   "Du kan inte komma.",
+   "Du vill inte komma."
+  ],
+  "answer": "Du behöver inte komma.",
+  "explanation": "Pass upp! 'nicht müssen' betyder 'behöva inte'. 'Du darfst nicht kommen' betyder 'du får inte komma'."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Modalverb",
+  "level": 4,
+  "type": "mc",
+  "question": "Hur säger man 'Jag vill spela fotboll' på tyska?",
+  "options": [
+   "Ich will Fußball spielen.",
+   "Ich will spielen Fußball.",
+   "Ich spielen will Fußball.",
+   "Ich Fußball will spielen."
+  ],
+  "answer": "Ich will Fußball spielen.",
+  "explanation": "Modalverbet på plats 2 och infinitiven sist."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Perfekt",
+  "level": 4,
+  "type": "mc",
+  "question": "Fyll i: Ich habe gestern Fußball ___. (spielen)",
+  "options": [
+   "gespielt",
+   "spielt",
+   "gespielen",
+   "spielte"
+  ],
+  "answer": "gespielt",
+  "explanation": "Regelbundna verb: ge- + stam + -t: spielen → gespielt."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Perfekt",
+  "level": 4,
+  "type": "mc",
+  "question": "Fyll i: Wir haben Pizza ___. (essen)",
+  "options": [
+   "gegessen",
+   "gessen",
+   "gegesst",
+   "geessen"
+  ],
+  "answer": "gegessen",
+  "explanation": "essen är oregelbundet: gegessen."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Perfekt",
+  "level": 4,
+  "type": "mc",
+  "question": "Fyll i: Er ist nach Berlin ___. (fahren)",
+  "options": [
+   "gefahren",
+   "gefahrt",
+   "gefärt",
+   "gefaren"
+  ],
+  "answer": "gefahren",
+  "explanation": "fahren → gefahren. Rörelseverb tar 'sein': er ist gefahren."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Perfekt",
+  "level": 4,
+  "type": "mc",
+  "question": "Fyll i: Du ___ gestern lange geschlafen.",
+  "options": [
+   "hast",
+   "bist",
+   "hat",
+   "wirst"
+  ],
+  "answer": "hast",
+  "explanation": "schlafen tar 'haben': du hast geschlafen."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Perfekt",
+  "level": 4,
+  "type": "mc",
+  "question": "Fyll i: Ich ___ nach Hause gegangen.",
+  "options": [
+   "bin",
+   "habe",
+   "hast",
+   "werde"
+  ],
+  "answer": "bin",
+  "explanation": "gehen (rörelse) tar 'sein': ich bin gegangen."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Perfekt",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket hjälpverb på tyska använder man med 'gehen' i perfekt?",
+  "options": [
+   "sein",
+   "haben",
+   "werden",
+   "können"
+  ],
+  "answer": "sein",
+  "explanation": "Verb för rörelse och förändring (gehen, fahren, kommen) tar 'sein'."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Perfekt",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken mening på tyska är rätt? (Jag har läst boken.)",
+  "options": [
+   "Ich habe das Buch gelesen.",
+   "Ich habe gelesen das Buch.",
+   "Ich gelesen habe das Buch.",
+   "Ich bin das Buch gelesen."
+  ],
+  "answer": "Ich habe das Buch gelesen.",
+  "explanation": "Hjälpverbet på plats 2 och participet sist."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Perfekt",
+  "level": 4,
+  "type": "text",
+  "question": "Skriv participet av verbet 'kaufen' (köpa).\nSkriv bara ordet på tyska.",
+  "answer": [
+   "gekauft"
+  ],
+  "explanation": "kaufen → gekauft (ge- + stam + -t)."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Perfekt",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad betyder 'Ich war müde.' på svenska?",
+  "options": [
+   "Jag var trött.",
+   "Jag är trött.",
+   "Jag blir trött.",
+   "Jag har varit trött."
+  ],
+  "answer": "Jag var trött.",
+  "explanation": "'war' är imperfekt av 'sein' (var). Man använder oftast 'war' och 'hatte' i stället för perfekt."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Perfekt",
+  "level": 4,
+  "type": "mc",
+  "question": "Fyll i: Gestern ___ ich sehr müde. (sein)",
+  "options": [
+   "war",
+   "waren",
+   "wart",
+   "warst"
+  ],
+  "answer": "war",
+  "explanation": "sein i imperfekt: ich war, du warst, er war, wir waren, ihr wart."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Perfekt",
+  "level": 4,
+  "type": "mc",
+  "question": "Fyll i: Ich ___ gestern Hunger. (haben)",
+  "options": [
+   "hatte",
+   "hat",
+   "habe",
+   "hattest"
+  ],
+  "answer": "hatte",
+  "explanation": "haben i imperfekt: ich hatte, du hattest, er hatte."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Perfekt",
+  "level": 5,
+  "type": "text",
+  "question": "Skriv participet av verbet 'besuchen' (besöka).\nSkriv bara ordet på tyska.",
+  "answer": [
+   "besucht"
+  ],
+  "explanation": "Verb som börjar på be-, ver-, er- och ent- får ingen ge-: besucht."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Perfekt",
+  "level": 5,
+  "type": "mc",
+  "question": "Vad är participet på tyska av 'verstehen' (förstå)?",
+  "options": [
+   "verstanden",
+   "geverstanden",
+   "verstehnt",
+   "gestanden"
+  ],
+  "answer": "verstanden",
+  "explanation": "verstehen är oregelbundet och börjar på ver-, så ingen ge-: verstanden."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Verb med delar",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken mening på tyska är rätt? (Jag stiger upp klockan sju.)",
+  "options": [
+   "Ich stehe um sieben Uhr auf.",
+   "Ich aufstehe um sieben Uhr.",
+   "Ich auf stehe um sieben Uhr.",
+   "Ich stehen um sieben Uhr auf."
+  ],
+  "answer": "Ich stehe um sieben Uhr auf.",
+  "explanation": "Delbara verb som aufstehen delas: verbet på plats 2 och 'auf' sist."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Verb med delar",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad betyder 'aufstehen' på svenska?",
+  "options": [
+   "stiga upp",
+   "gå ut",
+   "gå in",
+   "åka hem"
+  ],
+  "answer": "stiga upp",
+  "explanation": "aufstehen = stiga upp: Ich stehe um sieben Uhr auf."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Verb med delar",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad betyder 'Wir kaufen heute ein.' på svenska?",
+  "options": [
+   "Vi handlar idag.",
+   "Vi köper en idag.",
+   "Vi säljer idag.",
+   "Vi går hem idag."
+  ],
+  "answer": "Vi handlar idag.",
+  "explanation": "einkaufen = handla. Prefixet 'ein' hamnar sist."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Verb med delar",
+  "level": 5,
+  "type": "mc",
+  "question": "Fyll i: Ich stehe um acht Uhr ___. (aufstehen)",
+  "options": [
+   "auf",
+   "an",
+   "aus",
+   "zu"
+  ],
+  "answer": "auf",
+  "explanation": "aufstehen delas: 'Ich stehe ... auf.'"
+ },
+ {
+  "subject": "tyska",
+  "topic": "Ordföljd",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken mening på tyska har rätt ordföljd?",
+  "options": [
+   "Heute gehe ich in die Schule.",
+   "Heute ich gehe in die Schule.",
+   "Ich heute gehe in die Schule.",
+   "Gehe heute ich in die Schule."
+  ],
+  "answer": "Heute gehe ich in die Schule.",
+  "explanation": "Verbet står alltid på plats 2. Börjar meningen med 'Heute' kommer verbet direkt efter."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Ordföljd",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken mening på tyska är en ja/nej-fråga?",
+  "options": [
+   "Spielst du Gitarre?",
+   "Du spielst Gitarre.",
+   "Wo spielst du Gitarre?",
+   "Wer spielt Gitarre?"
+  ],
+  "answer": "Spielst du Gitarre?",
+  "explanation": "I en ja/nej-fråga står verbet först."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Ordföljd",
+  "level": 3,
+  "type": "mc",
+  "question": "Vilken mening på tyska är rätt? (Jag spelar fotboll idag.)",
+  "options": [
+   "Ich spiele heute Fußball.",
+   "Ich heute spiele Fußball.",
+   "Ich Fußball heute spiele.",
+   "Spiele heute ich Fußball."
+  ],
+  "answer": "Ich spiele heute Fußball.",
+  "explanation": "Verbet står på plats 2."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Ordföljd",
+  "level": 3,
+  "type": "mc",
+  "question": "På vilken plats står verbet i en vanlig påståendesats?",
+  "options": [
+   "Plats 2",
+   "Plats 1",
+   "Sist",
+   "Plats 3"
+  ],
+  "answer": "Plats 2",
+  "explanation": "Verbet står alltid på plats 2, men plats 1 kan vara vad som helst: 'Heute gehe ich ...'."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Ordföljd",
+  "level": 3,
+  "type": "mc",
+  "question": "Hur börjar en ja/nej-fråga på tyska?",
+  "options": [
+   "Med verbet",
+   "Med frågeordet",
+   "Med subjektet",
+   "Med 'nicht'"
+  ],
+  "answer": "Med verbet",
+  "explanation": "Spielst du Fußball? Verbet kommer före subjektet."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Ordföljd",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken mening på tyska är rätt? (Imorgon går jag på bio.)",
+  "options": [
+   "Morgen gehe ich ins Kino.",
+   "Morgen ich gehe ins Kino.",
+   "Ich morgen gehe ins Kino.",
+   "Morgen gehen ins Kino ich."
+  ],
+  "answer": "Morgen gehe ich ins Kino.",
+  "explanation": "Verbet på plats 2: 'Morgen' är plats 1, 'gehe' plats 2."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Nekande",
+  "level": 3,
+  "type": "mc",
+  "question": "Fyll i: Ich habe ___ Auto.",
+  "options": [
+   "kein",
+   "keine",
+   "nicht",
+   "keinen"
+  ],
+  "answer": "kein",
+  "explanation": "Framför ett substantiv använder man 'kein'. Auto är neutrum: kein Auto."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Nekande",
+  "level": 3,
+  "type": "mc",
+  "question": "Fyll i: Das ist ___ gut.",
+  "options": [
+   "nicht",
+   "kein",
+   "keine",
+   "nichts"
+  ],
+  "answer": "nicht",
+  "explanation": "'nicht' står framför adjektiv: nicht gut."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Nekande",
+  "level": 3,
+  "type": "mc",
+  "question": "Fyll i: Ich habe ___ Katze.",
+  "options": [
+   "keine",
+   "kein",
+   "nicht",
+   "keinen"
+  ],
+  "answer": "keine",
+  "explanation": "Katze är feminint: keine Katze."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Nekande",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad betyder 'Ich habe keine Zeit.' på svenska?",
+  "options": [
+   "Jag har ingen tid.",
+   "Jag har lite tid.",
+   "Jag har mycket tid.",
+   "Jag har tid nu."
+  ],
+  "answer": "Jag har ingen tid.",
+  "explanation": "'keine' = ingen."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Nekande",
+  "level": 3,
+  "type": "mc",
+  "question": "Hur säger man 'Jag spelar inte' på tyska?",
+  "options": [
+   "Ich spiele nicht.",
+   "Ich spiele kein.",
+   "Ich nicht spiele.",
+   "Ich spiele keine."
+  ],
+  "answer": "Ich spiele nicht.",
+  "explanation": "Efter ett verb använder man 'nicht'."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Nekande",
+  "level": 3,
+  "type": "mc",
+  "question": "När använder man 'kein'?",
+  "options": [
+   "Framför ett substantiv",
+   "Efter ett verb",
+   "Före ett adjektiv",
+   "I slutet av en mening"
+  ],
+  "answer": "Framför ett substantiv",
+  "explanation": "kein + substantiv: kein Hund, keine Katze. nicht används annars."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Nekande",
+  "level": 4,
+  "type": "mc",
+  "question": "Fyll i: Ich habe ___ Bruder.",
+  "options": [
+   "keinen",
+   "kein",
+   "keine",
+   "nicht"
+  ],
+  "answer": "keinen",
+  "explanation": "Bruder är maskulint och står i ackusativ (objekt): keinen Bruder."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Frågeord",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad betyder 'wo' på svenska?",
+  "options": [
+   "var",
+   "vem",
+   "varför",
+   "hur"
+  ],
+  "answer": "var",
+  "explanation": "wo = var. wer = vem, warum = varför, wie = hur."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Frågeord",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket frågeord på tyska betyder 'när'?",
+  "options": [
+   "wann",
+   "warum",
+   "wer",
+   "wo"
+  ],
+  "answer": "wann",
+  "explanation": "wann = när."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Frågeord",
+  "level": 2,
+  "type": "mc",
+  "question": "Vilket frågeord på tyska betyder 'varför'?",
+  "options": [
+   "warum",
+   "wann",
+   "wie",
+   "was"
+  ],
+  "answer": "warum",
+  "explanation": "warum = varför."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Frågeord",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad betyder 'wer' på svenska?",
+  "options": [
+   "vem",
+   "vad",
+   "var",
+   "när"
+  ],
+  "answer": "vem",
+  "explanation": "wer = vem. was = vad."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Frågeord",
+  "level": 2,
+  "type": "mc",
+  "question": "Fyll i: ___ heißt du?",
+  "options": [
+   "Wie",
+   "Wo",
+   "Wer",
+   "Wann"
+  ],
+  "answer": "Wie",
+  "explanation": "'Wie heißt du?' = vad heter du (egentligen: hur heter du)."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Frågeord",
+  "level": 2,
+  "type": "mc",
+  "question": "Fyll i: ___ wohnst du?",
+  "options": [
+   "Wo",
+   "Wie",
+   "Was",
+   "Wer"
+  ],
+  "answer": "Wo",
+  "explanation": "'Wo wohnst du?' = var bor du?"
+ },
+ {
+  "subject": "tyska",
+  "topic": "Frågeord",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad betyder 'Was machst du?' på svenska?",
+  "options": [
+   "Vad gör du?",
+   "Vem är du?",
+   "Vart går du?",
+   "Hur mår du?"
+  ],
+  "answer": "Vad gör du?",
+  "explanation": "was = vad, machen = göra."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Frågeord",
+  "level": 3,
+  "type": "mc",
+  "question": "Fyll i: ___ kommst du? – Aus Schweden.",
+  "options": [
+   "Woher",
+   "Wohin",
+   "Wo",
+   "Wann"
+  ],
+  "answer": "Woher",
+  "explanation": "woher = varifrån."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Frågeord",
+  "level": 3,
+  "type": "mc",
+  "question": "Fyll i: ___ gehst du? – Nach Hause.",
+  "options": [
+   "Wohin",
+   "Woher",
+   "Wo",
+   "Wer"
+  ],
+  "answer": "Wohin",
+  "explanation": "wohin = vart (riktning)."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Frågeord",
+  "level": 3,
+  "type": "mc",
+  "question": "Hur säger man 'Hur mycket kostar det?' på tyska?",
+  "options": [
+   "Wie viel kostet das?",
+   "Wie viele kostet das?",
+   "Was viel kostet das?",
+   "Wo kostet das viel?"
+  ],
+  "answer": "Wie viel kostet das?",
+  "explanation": "'wie viel' = hur mycket, 'wie viele' = hur många."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Bisatser",
+  "level": 5,
+  "type": "mc",
+  "question": "Fyll i: Ich bleibe zu Hause, ___ ich krank bin.",
+  "options": [
+   "weil",
+   "denn",
+   "aber",
+   "und"
+  ],
+  "answer": "weil",
+  "explanation": "Efter 'weil' hamnar verbet sist: weil ich krank bin. Efter 'denn' står verbet kvar på plats 2: denn ich bin krank."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Bisatser",
+  "level": 5,
+  "type": "mc",
+  "question": "Fyll i: Ich weiß, ___ er nett ist.",
+  "options": [
+   "dass",
+   "das",
+   "dessen",
+   "wenn"
+  ],
+  "answer": "dass",
+  "explanation": "'dass' (att) inleder en bisats, och verbet hamnar sist. 'das' betyder det/den."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Bisatser",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken mening på tyska är rätt? (Jag vet att han är snäll.)",
+  "options": [
+   "Ich weiß, dass er nett ist.",
+   "Ich weiß, dass er ist nett.",
+   "Ich weiß, dass ist er nett.",
+   "Ich weiß, er dass nett ist."
+  ],
+  "answer": "Ich weiß, dass er nett ist.",
+  "explanation": "I bisatsen efter 'dass' står verbet sist."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Bisatser",
+  "level": 5,
+  "type": "mc",
+  "question": "Vilken mening på tyska är rätt? (Jag lär mig tyska eftersom jag ska åka till Wien.)",
+  "options": [
+   "Ich lerne Deutsch, weil ich nach Wien fahre.",
+   "Ich lerne Deutsch, weil ich fahre nach Wien.",
+   "Ich lerne Deutsch, weil fahre ich nach Wien.",
+   "Ich lerne Deutsch, ich weil nach Wien fahre."
+  ],
+  "answer": "Ich lerne Deutsch, weil ich nach Wien fahre.",
+  "explanation": "Efter 'weil' kommer subjektet och verbet sist."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Bisatser",
+  "level": 5,
+  "type": "mc",
+  "question": "Fyll i: Sie fragt, ___ er kommt. (hon frågar om han kommer)",
+  "options": [
+   "ob",
+   "dass",
+   "weil",
+   "wenn"
+  ],
+  "answer": "ob",
+  "explanation": "'ob' betyder om (i frågor): Sie fragt, ob er kommt."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Bisatser",
+  "level": 5,
+  "type": "mc",
+  "question": "Var hamnar verbet efter 'weil'?",
+  "options": [
+   "Sist i bisatsen",
+   "På plats två",
+   "Först i bisatsen",
+   "Före subjektet"
+  ],
+  "answer": "Sist i bisatsen",
+  "explanation": "Efter weil, dass, wenn och ob hamnar det böjda verbet sist."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Kasus",
+  "level": 4,
+  "type": "mc",
+  "question": "Fyll i: Ich sehe ___ Hund. (der Hund)",
+  "options": [
+   "den",
+   "der",
+   "dem",
+   "des"
+  ],
+  "answer": "den",
+  "explanation": "Hund är objekt, alltså ackusativ. Maskulinum ändras i ackusativ: der → den."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Kasus",
+  "level": 4,
+  "type": "mc",
+  "question": "Fyll i: Ich kaufe ___ Apfel. (der Apfel)",
+  "options": [
+   "einen",
+   "ein",
+   "eine",
+   "einem"
+  ],
+  "answer": "einen",
+  "explanation": "Apfel är objekt (ackusativ) och maskulint: ein → einen."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Kasus",
+  "level": 4,
+  "type": "mc",
+  "question": "Fyll i: Ich lese ___ Buch. (das Buch)",
+  "options": [
+   "das",
+   "der",
+   "den",
+   "dem"
+  ],
+  "answer": "das",
+  "explanation": "Neutrum ändras inte i ackusativ: das Buch."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Kasus",
+  "level": 4,
+  "type": "mc",
+  "question": "Fyll i: Ich fahre mit ___ Bus. (der Bus)",
+  "options": [
+   "dem",
+   "den",
+   "der",
+   "des"
+  ],
+  "answer": "dem",
+  "explanation": "'mit' kräver alltid dativ. Maskulinum i dativ: dem."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Kasus",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken kasus används efter 'mit'?",
+  "options": [
+   "Dativ",
+   "Akkusativ",
+   "Genitiv",
+   "Nominativ"
+  ],
+  "answer": "Dativ",
+  "explanation": "mit, aus, bei, nach, seit, von och zu tar alltid dativ."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Kasus",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken kasus används efter 'für'?",
+  "options": [
+   "Akkusativ",
+   "Dativ",
+   "Genitiv",
+   "Nominativ"
+  ],
+  "answer": "Akkusativ",
+  "explanation": "durch, für, gegen, ohne och um tar alltid ackusativ."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Kasus",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilken kasus har det direkta objektet?",
+  "options": [
+   "Akkusativ",
+   "Nominativ",
+   "Dativ",
+   "Genitiv"
+  ],
+  "answer": "Akkusativ",
+  "explanation": "Det du gör något med (vad/vem) står i ackusativ."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Kasus",
+  "level": 4,
+  "type": "mc",
+  "question": "Fyll i: Ich schenke ___ Mutter eine Blume. (die Mutter)",
+  "options": [
+   "der",
+   "die",
+   "dem",
+   "den"
+  ],
+  "answer": "der",
+  "explanation": "Mottagaren (indirekt objekt) står i dativ. Femininum i dativ: der."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Kasus",
+  "level": 5,
+  "type": "mc",
+  "question": "Fyll i: Ich gebe ___ Mann das Buch. (der Mann)",
+  "options": [
+   "dem",
+   "den",
+   "der",
+   "des"
+  ],
+  "answer": "dem",
+  "explanation": "Mannen får boken: indirekt objekt = dativ, maskulinum: dem."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Kasus",
+  "level": 5,
+  "type": "mc",
+  "question": "Fyll i: Ich gehe zu ___ Schule. (die Schule)",
+  "options": [
+   "der",
+   "die",
+   "dem",
+   "den"
+  ],
+  "answer": "der",
+  "explanation": "'zu' tar alltid dativ. Femininum i dativ: der (zur Schule)."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Kasus",
+  "level": 5,
+  "type": "mc",
+  "question": "Fyll i: Ich gehe in ___ Schule. (riktning)",
+  "options": [
+   "die",
+   "der",
+   "dem",
+   "den"
+  ],
+  "answer": "die",
+  "explanation": "'in' med riktning (Wohin?) tar ackusativ: in die Schule."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Kasus",
+  "level": 5,
+  "type": "mc",
+  "question": "Fyll i: Ich bin in ___ Schule. (plats)",
+  "options": [
+   "der",
+   "die",
+   "dem",
+   "den"
+  ],
+  "answer": "der",
+  "explanation": "'in' med plats (Wo?) tar dativ: in der Schule."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Kasus",
+  "level": 5,
+  "type": "mc",
+  "question": "Fyll i: Das ist das Auto ___ Vaters. (ägare)",
+  "options": [
+   "des",
+   "der",
+   "dem",
+   "den"
+  ],
+  "answer": "des",
+  "explanation": "Ägaren står i genitiv: des Vaters."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Kasus",
+  "level": 5,
+  "type": "mc",
+  "question": "Fyll i: Ich helfe ___ Kind. (das Kind)",
+  "options": [
+   "dem",
+   "das",
+   "den",
+   "des"
+  ],
+  "answer": "dem",
+  "explanation": "'helfen' kräver dativ: dem Kind."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Kasus",
+  "level": 5,
+  "type": "mc",
+  "question": "Fyll i: Wir fahren ohne ___ Auto. (das Auto)",
+  "options": [
+   "das",
+   "dem",
+   "den",
+   "des"
+  ],
+  "answer": "das",
+  "explanation": "'ohne' tar ackusativ, och neutrum ändras inte: das Auto."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Adjektiv",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad är motsatsen på tyska till 'groß'?",
+  "options": [
+   "klein",
+   "alt",
+   "neu",
+   "gut"
+  ],
+  "answer": "klein",
+  "explanation": "groß = stor, klein = liten."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Adjektiv",
+  "level": 1,
+  "type": "mc",
+  "question": "Vad är motsatsen på tyska till 'alt' (gammal)?",
+  "options": [
+   "neu",
+   "klein",
+   "groß",
+   "schnell"
+  ],
+  "answer": "neu",
+  "explanation": "alt = gammal, neu = ny."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Adjektiv",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad är motsatsen på tyska till 'warm'?",
+  "options": [
+   "kalt",
+   "kurz",
+   "klein",
+   "lang"
+  ],
+  "answer": "kalt",
+  "explanation": "warm = varm, kalt = kall."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Adjektiv",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad är motsatsen på tyska till 'schnell'?",
+  "options": [
+   "langsam",
+   "leise",
+   "leicht",
+   "lang"
+  ],
+  "answer": "langsam",
+  "explanation": "schnell = snabb, langsam = långsam."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Adjektiv",
+  "level": 2,
+  "type": "mc",
+  "question": "Vad betyder 'schön' på svenska?",
+  "options": [
+   "vacker",
+   "stor",
+   "snabb",
+   "trött"
+  ],
+  "answer": "vacker",
+  "explanation": "schön = vacker eller fin."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Jämförelse",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad är komparativen på tyska av 'groß'?",
+  "options": [
+   "größer",
+   "großer",
+   "größter",
+   "am größten"
+  ],
+  "answer": "größer",
+  "explanation": "groß → größer → am größten."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Jämförelse",
+  "level": 3,
+  "type": "mc",
+  "question": "Vad är komparativen på tyska av 'klein'?",
+  "options": [
+   "kleiner",
+   "kleinster",
+   "kleinern",
+   "am kleiner"
+  ],
+  "answer": "kleiner",
+  "explanation": "klein → kleiner → am kleinsten."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Jämförelse",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad är komparativen på tyska av 'gut' (bra)?",
+  "options": [
+   "besser",
+   "guter",
+   "gutter",
+   "bester"
+  ],
+  "answer": "besser",
+  "explanation": "gut är oregelbundet: gut → besser → am besten."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Jämförelse",
+  "level": 4,
+  "type": "mc",
+  "question": "Vad är superlativen på tyska av 'gut' (bra)?",
+  "options": [
+   "am besten",
+   "am gutesten",
+   "am bessersten",
+   "am bessten"
+  ],
+  "answer": "am besten",
+  "explanation": "gut → besser → am besten."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Jämförelse",
+  "level": 4,
+  "type": "mc",
+  "question": "Vilket ord på tyska betyder 'än' i en jämförelse, som i 'större än'?",
+  "options": [
+   "als",
+   "wie",
+   "dass",
+   "oder"
+  ],
+  "answer": "als",
+  "explanation": "Er ist größer als ich. 'als' = än."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Jämförelse",
+  "level": 4,
+  "type": "mc",
+  "question": "Fyll i: Sie ist so alt ___ du.",
+  "options": [
+   "wie",
+   "als",
+   "dass",
+   "denn"
+  ],
+  "answer": "wie",
+  "explanation": "'so ... wie' = lika ... som."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Adjektiv",
+  "level": 5,
+  "type": "mc",
+  "question": "Fyll i: Ein ___ Hund spielt im Garten. (groß)",
+  "options": [
+   "großer",
+   "groß",
+   "große",
+   "großen"
+  ],
+  "answer": "großer",
+  "explanation": "Framför ett substantiv får adjektivet en ändelse. Efter 'ein' + maskulinum: -er."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Adjektiv",
+  "level": 5,
+  "type": "mc",
+  "question": "Fyll i: Ich habe eine ___ Katze. (klein)",
+  "options": [
+   "kleine",
+   "kleiner",
+   "kleines",
+   "kleinen"
+  ],
+  "answer": "kleine",
+  "explanation": "Efter 'eine' + femininum: -e."
+ },
+ {
+  "subject": "tyska",
+  "topic": "Adjektiv",
+  "level": 5,
+  "type": "mc",
+  "question": "Fyll i: Das ist ein ___ Haus. (neu)",
+  "options": [
+   "neues",
+   "neuer",
+   "neue",
+   "neuen"
+  ],
+  "answer": "neues",
+  "explanation": "Efter 'ein' + neutrum: -es."
+ }
+]

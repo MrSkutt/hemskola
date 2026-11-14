@@ -38,9 +38,9 @@ def test_import_for_review_hides_and_marks(client):
 
 def test_import_default_is_visible_as_before(client):
     conn = _conn()
-    res = logic.import_exercises(conn, _items(2, subject="tyska"))
+    res = logic.import_exercises(conn, _items(2, subject="spanska"))
     assert res["added"] == 2 and res["review"] is False
-    rows = conn.execute("SELECT active, review FROM exercises WHERE subject='tyska'").fetchall()
+    rows = conn.execute("SELECT active, review FROM exercises WHERE subject='spanska'").fetchall()
     assert all(r["active"] == 1 and r["review"] == 0 for r in rows)
     conn.close()
 
@@ -156,10 +156,10 @@ def test_import_with_review_checked_hides_and_links_to_the_list(client):
 
 def test_import_without_review_is_visible_straight_away(client):
     _admin(client)
-    r = client.post("/admin/import", data={"pasted": json.dumps(_items(2, subject="tyska"))})
+    r = client.post("/admin/import", data={"pasted": json.dumps(_items(2, subject="spanska"))})
     assert "2 nya övningar" in r.text and "dolda för eleverna" not in r.text
     conn = _conn()
-    assert conn.execute("SELECT COUNT(*) FROM exercises WHERE subject='tyska' AND active=1").fetchone()[0] == 2
+    assert conn.execute("SELECT COUNT(*) FROM exercises WHERE subject='spanska' AND active=1").fetchone()[0] == 2
     assert _review_ids(conn) == []
     conn.close()
 
@@ -236,9 +236,9 @@ def test_state_filters_keep_review_apart_from_hidden(client):
 
 
 def test_review_list_can_be_filtered_by_subject_and_text(client):
-    _import_review(client, _items(2, subject="franska") + _items(2, subject="tyska"))
-    only = ed.search(_conn(), state="review", subject="tyska")
-    assert only["total"] == 2 and {r["subject"] for r in only["rows"]} == {"tyska"}
+    _import_review(client, _items(2, subject="franska") + _items(2, subject="spanska"))
+    only = ed.search(_conn(), state="review", subject="spanska")
+    assert only["total"] == 2 and {r["subject"] for r in only["rows"]} == {"spanska"}
     hit = ed.search(_conn(), state="review", q="(1)")
     assert hit["total"] == 2
     empty = client.get("/admin/exercises?state=review&subject=matte").text
@@ -284,12 +284,12 @@ def test_approve_all_covers_every_page_and_only_the_filter(client):
     _admin(client)
     many = [{"subject": "franska", "topic": "Ord", "level": 1, "type": "text", "question": f"Fråga nummer {i}?",
              "answer": "x"} for i in range(ed.PAGE_SIZE + 10)]
-    client.post("/admin/import", data={"pasted": json.dumps(many + _items(2, subject="tyska")), "review": "1"})
+    client.post("/admin/import", data={"pasted": json.dumps(many + _items(2, subject="spanska")), "review": "1"})
     conn = _conn()
     assert ed.review_count(conn) == ed.PAGE_SIZE + 12
     r = client.post("/admin/exercises/approve-all", data={"subject": "franska", "back": "/admin/exercises?state=review"})
     assert r.status_code == 303
-    assert ed.review_count(conn) == 2                                # bara tyskan väntar kvar
+    assert ed.review_count(conn) == 2                                # bara spanskan väntar kvar
     assert conn.execute("SELECT COUNT(*) FROM exercises WHERE subject='franska' AND active=1 AND review=0"
                         ).fetchone()[0] == ed.PAGE_SIZE + 10
     assert "60 övningar är godkända" in client.get("/admin/exercises?state=review").text
@@ -297,11 +297,11 @@ def test_approve_all_covers_every_page_and_only_the_filter(client):
 
 
 def test_approve_all_without_filter_takes_everything_that_waits(client):
-    _import_review(client, _items(3) + _items(2, subject="tyska"))
+    _import_review(client, _items(3) + _items(2, subject="spanska"))
     client.post("/admin/exercises/approve-all", data={})
     conn = _conn()
     assert ed.review_count(conn) == 0
-    assert conn.execute("SELECT COUNT(*) FROM exercises WHERE subject IN ('franska','tyska') AND active=1").fetchone()[0] == 5
+    assert conn.execute("SELECT COUNT(*) FROM exercises WHERE subject IN ('franska','spanska') AND active=1").fetchone()[0] == 5
     conn.close()
     assert "Inget att godkänna" not in client.get("/admin/exercises").text
     client.post("/admin/exercises/approve-all", data={})

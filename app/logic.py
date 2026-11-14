@@ -34,6 +34,7 @@ SUBJECT_LABELS = {
     "so": "SO (samhälle)",
     "kpop": "K-pop",
     "linux": "Linux",
+    "tyska": "Tyska",
 }
 
 # Ämnesgrupper på startsidan och i adminvyerna. Okända ämnen (som admin själv skapat) hamnar i "Övrigt".
@@ -42,14 +43,14 @@ SUBJECT_GROUPS = [
     ("no", "Naturorienterande ämnen (NO)", ("biologi", "fysik", "kemi", "teknik")),
     ("so", "Samhällsorienterande ämnen (SO)", ("geografi", "historia", "religionskunskap", "samhallskunskap")),
     ("fritid", "Fritid och skoj", ("kpop",)),
-    ("extra", "Extra", ("linux",)),
+    ("extra", "Extra", ("tyska", "linux")),
 ]
 OTHER_GROUP = ("ovrigt", "Övrigt")
 # Fritidsämnen tas som standard inte med i rapporten till skolan (admin kan slå på dem per elev).
 LEISURE_SUBJECTS = frozenset(s for key, _, members in SUBJECT_GROUPS if key == "fritid" for s in members)
 # Ämnen som ingen elev ser förrän admin slår på dem för just den eleven. De är också som standard utanför rapporten.
 # Det gör att ett sådant ämne kan läggas in och godkännas utan att det dyker upp hos någon som inte ska ha det.
-OPT_IN_SUBJECTS = frozenset({"linux"})
+OPT_IN_SUBJECTS = frozenset({"linux", "tyska"})
 
 LEVEL_HINTS = {  # visas bara för admin
     1: "ungefär åk 4–5",

@@ -33,7 +33,8 @@ def test_defaults_everything_visible_but_kpop_not_in_report(client):
     conn = _conn()
     uid = _uid(conn)
     settings = logic.subject_settings(conn, uid)
-    assert all(v["enabled"] for v in settings.values())
+    assert all(v["enabled"] for k, v in settings.items() if k not in logic.OPT_IN_SUBJECTS)
+    assert not any(v["enabled"] for k, v in settings.items() if k in logic.OPT_IN_SUBJECTS)   # tyska och Linux är avstängda tills admin slår på dem
     assert settings["kpop"]["in_report"] is False
     assert settings["matte"]["in_report"] is True and settings["biologi"]["in_report"] is True
     assert "kpop" in logic.enabled_subjects(conn, uid) and "kpop" not in logic.report_subjects(conn, uid)
@@ -66,7 +67,7 @@ def test_settings_are_per_student(client):
     a, b = _uid(conn, "mia"), _uid(conn, "ben")
     logic.save_subject_settings(conn, a, [], [], logic.active_subjects(conn))
     conn.commit()
-    assert logic.enabled_subjects(conn, a) == [] and len(logic.enabled_subjects(conn, b)) == len(logic.active_subjects(conn))
+    assert logic.enabled_subjects(conn, a) == [] and len(logic.enabled_subjects(conn, b)) == len([s for s in logic.active_subjects(conn) if s not in logic.OPT_IN_SUBJECTS])
     conn.close()
 
 
@@ -209,5 +210,5 @@ def test_upgrade_adds_the_table_without_losing_data(client):
     conn = _conn()
     assert conn.execute("SELECT COUNT(*) FROM users WHERE username='mia'").fetchone()[0] == 1
     assert conn.execute("SELECT COUNT(*) FROM user_subjects").fetchone()[0] == 0
-    assert all(v["enabled"] for v in logic.subject_settings(conn, _uid(conn)).values())
+    assert all(v["enabled"] for k, v in logic.subject_settings(conn, _uid(conn)).items() if k not in logic.OPT_IN_SUBJECTS)
     conn.close()

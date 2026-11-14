@@ -18,7 +18,7 @@ def test_seed_loaded_and_admin_pages(client):
     for url in ["/admin", "/admin/users", "/admin/exercises", "/admin/import", "/admin/exercises/export.json"]:
         r = client.get(url)
         assert r.status_code == 200, url
-    assert len(client.get("/admin/exercises/export.json").json()) == 1235   # statiska övningar i alla seed-filer; generatorer exporteras inte
+    assert len(client.get("/admin/exercises/export.json").json()) == 1437   # statiska övningar i alla seed-filer; generatorer exporteras inte
 
 
 def test_full_student_flow(client):

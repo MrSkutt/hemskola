@@ -18,7 +18,7 @@ BANK = WordBank(json.loads((SEED / "words.json").read_text(encoding="utf-8"))["w
 MATH = {n: g for n, g in generators.REGISTRY.items() if g.subject == "matte"}
 SV = {n: g for n, g in generators.REGISTRY.items() if g.subject == "svenska"}
 # Dessa har inget talsvar att räkna om med ett uttryck (klocka, bråkfigur, avläsning ur diagram)
-SUBJECTS_WITH_GENERATORS = ("matte", "svenska", "engelska", "kpop", "kemi", "fysik", "teknik", "biologi", "geografi", "historia", "samhallskunskap")
+SUBJECTS_WITH_GENERATORS = ("matte", "svenska", "engelska", "tyska", "kpop", "kemi", "fysik", "teknik", "biologi", "geografi", "historia", "samhallskunskap")
 NO_CALC = {"m1_clock", "m1_fraction", "m1_bar_read", "m1_bar_max", "m2_number_line", "m3_coord_read"}
 NS = {"math": math, "Fraction": Fraction, "Decimal": Decimal, "ROUND_HALF_UP": ROUND_HALF_UP}
 
