@@ -5,7 +5,7 @@ import hashlib
 from functools import lru_cache
 from pathlib import Path
 
-RELEASE = "2026.11.14.3"
+RELEASE = "2026.11.16"
 SUFFIXES = {".py", ".html", ".css", ".js", ".json"}
 
 

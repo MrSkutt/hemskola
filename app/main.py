@@ -742,7 +742,8 @@ def admin_test(request: Request, test_id: int, user=Depends(admin_user), db=Depe
 @app.get("/admin/users")
 def admin_users(request: Request, user=Depends(admin_user), db=Depends(database.get_db)):
     users = db.execute("SELECT * FROM users ORDER BY role, display_name").fetchall()
-    return render(request, "admin_users.html", users=users)
+    answers = {r["user_id"]: r["n"] for r in db.execute("SELECT user_id, COUNT(*) AS n FROM attempts GROUP BY user_id")}
+    return render(request, "admin_users.html", users=users, answers=answers)
 
 
 @app.post("/admin/users/new")
@@ -783,6 +784,17 @@ def admin_user_active(request: Request, uid: int, user=Depends(admin_user), db=D
     else:
         db.execute("UPDATE users SET active = 1 - active WHERE id=?", (uid,))
         db.commit()
+    return go("/admin/users")
+
+
+@app.post("/admin/users/{uid}/delete")
+def admin_user_delete(request: Request, uid: int, user=Depends(admin_user), db=Depends(database.get_db)):
+    name, error = logic.delete_user(db, uid, user["id"])
+    if error:
+        flash(request, error, "warn")
+    else:
+        db.commit()
+        flash(request, f"Användaren {name} är borttagen.")
     return go("/admin/users")
 
 

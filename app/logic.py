@@ -127,6 +127,22 @@ def get_level(db, user_id: int, subject: str):
     return row["level"] if row else None
 
 
+def delete_user(db, uid: int, acting_id: int):
+    """Tar bort en användare med allt som hör till: svar, prov, nivåer, ämnesval, belöningar och uppgifter (de följer med via
+    ON DELETE CASCADE). Frågor som skapats åt användaren av generatorerna saknar sådan koppling och tas bort för hand.
+    Returnerar (visningsnamn, None) när det gick, annars (None, felmeddelande). Anroparen gör commit."""
+    row = db.execute("SELECT display_name FROM users WHERE id=?", (uid,)).fetchone()
+    if not row:
+        return None, "Användaren finns inte."
+    if uid == acting_id:
+        return None, "Du kan inte ta bort dig själv."
+    db.execute("DELETE FROM users WHERE id=?", (uid,))
+    db.execute("DELETE FROM generated WHERE user_id=? "
+               "AND id NOT IN (SELECT generated_id FROM attempts WHERE generated_id IS NOT NULL) "
+               "AND id NOT IN (SELECT generated_id FROM test_items WHERE generated_id IS NOT NULL)", (uid,))
+    return row["display_name"], None
+
+
 def set_level(db, user_id: int, subject: str, level: int) -> None:
     level = max(1, min(5, int(level)))
     last = db.execute("SELECT COALESCE(MAX(id), 0) AS m FROM attempts WHERE user_id=?", (user_id,)).fetchone()["m"]

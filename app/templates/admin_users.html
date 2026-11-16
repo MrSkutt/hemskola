@@ -21,8 +21,12 @@
       <td>{{ u.username }}</td><td>{{ 'Admin' if u.role == 'admin' else 'Elev' }}</td>
       <td><form class="inline" method="post" action="/admin/users/{{ u.id }}/password">
         <input name="password" minlength="6" placeholder="nytt lösenord" required style="width:140px"> <button class="small ghost">Byt</button></form></td>
+      {% set n = answers.get(u.id, 0) %}
+      {% set msg = 'Ta bort ' ~ u.display_name ~ ' (' ~ u.username ~ ')' ~ (' och allt som hör till kontot, bland annat ' ~ n ~ ' svar' if n else '') ~ '? Det går inte att ångra.' ~ (' Vill du bara att kontot ska sluta fungera kan du välja Stäng av i stället.' if n else '') %}
       <td>{% if u.id != user.id %}<form class="inline" method="post" action="/admin/users/{{ u.id }}/active">
-        <button class="small ghost">{{ 'Stäng av' if u.active else 'Aktivera' }}</button></form>{% endif %}</td>
+        <button class="small ghost">{{ 'Stäng av' if u.active else 'Aktivera' }}</button></form>
+        <form class="inline" method="post" action="/admin/users/{{ u.id }}/delete" onsubmit='return confirm({{ msg|tojson }})'>
+        <button class="small danger">Ta bort</button></form>{% endif %}</td>
     </tr>
     {% endfor %}
   </table>

@@ -16,6 +16,9 @@ docker compose up -d --build
 ```
 
 Öppna `http://servern:8080`, logga in som admin och skapa elever under **Användare**.
+Där kan du också byta lösenord, **Stäng av** ett konto (det går att slå på igen, och allt sparas) eller **Ta bort** det helt. Att ta bort en användare tar
+även bort allt som hör till kontot: svar, prov, nivåer, belöningar och uppgifter. Det går inte att ångra (annat än från en säkerhetskopia), och du kan inte
+ta bort dig själv. Rutan som frågar innan visar hur många svar som försvinner.
 Databasen ligger i `./data/hemskola.db`. Startövningarna läggs in automatiskt första gången, och nya läggs till vid uppgradering utan att befintlig data påverkas.
 
 Om du inte sätter `ADMIN_PASSWORD` skapas ett slumpmässigt lösenord som skrivs i loggen
